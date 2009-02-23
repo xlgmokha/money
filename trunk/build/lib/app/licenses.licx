@@ -1,0 +1,11 @@
+LogicNP.ShellObjects.ShellPopupNotification, LogicNP.ShellObjects, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ff6f27194af4af75
+DataDynamics.ActiveReports.ActiveReport3, ActiveReports3, Version=5.2.1013.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff
+LogicNP.ShellObjects.SystemIdleTimer, LogicNP.ShellObjects, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ff6f27194af4af75
+ComponentFactory.Krypton.Workspace.KryptonWorkspace, ComponentFactory.Krypton.Workspace, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e
+LogicNP.FolderViewControl.FolderView, LogicNP.FolderView, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ff6f27194af4af75
+LogicNP.FileViewControl.FileView, LogicNP.FileView, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ff6f27194af4af75
+ComponentFactory.Krypton.Ribbon.KryptonRibbon, ComponentFactory.Krypton.Ribbon, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e
+LogicNP.ShComboBoxControl.ShComboBox, LogicNP.ShComboBox, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ff6f27194af4af75
+LogicNP.ShellObjects.ShellNotifyIcon, LogicNP.ShellObjects, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ff6f27194af4af75
+LogicNP.ShellObjects.SystemHotKey, LogicNP.ShellObjects, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ff6f27194af4af75
+LogicNP.ShellObjects.ShellFileOperation, LogicNP.ShellObjects, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ff6f27194af4af75

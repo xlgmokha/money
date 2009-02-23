@@ -1,0 +1,89 @@
+using System;
+using System.Globalization;
+using MyMoney.Utility.Extensions;
+
+namespace MyMoney.Domain.Core
+{
+    public interface IDate : IComparable<IDate>, IComparable, IEquatable<IDate>
+    {
+        bool is_in(IYear year);
+        DateTime to_date_time();
+    }
+
+    public class date : IDate, IEquatable<date>
+    {
+        private readonly long ticks;
+
+        public date(int year, int month, int day)
+        {
+            ticks = new DateTime(year, month, day).Ticks;
+        }
+
+        public bool is_in(IYear the_year)
+        {
+            return the_year.represents(to_date_time());
+        }
+
+        public DateTime to_date_time()
+        {
+            return new DateTime(ticks);
+        }
+
+        public static implicit operator date(DateTime date)
+        {
+            return new date(date.Year, date.Month, date.Day);
+        }
+
+        public static implicit operator DateTime(date date)
+        {
+            return date.to_date_time();
+        }
+
+        public int CompareTo(IDate other)
+        {
+            var the_other_date = other.downcast_to<date>();
+            if (ticks.Equals(the_other_date.ticks))
+            {
+                return 0;
+            }
+            return ticks > the_other_date.ticks ? 1 : -1;
+        }
+
+        public bool Equals(date obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            return obj.ticks == ticks;
+        }
+
+        public bool Equals(IDate other)
+        {
+            return other.CompareTo(this) == 0;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != typeof (date)) return false;
+            return Equals((date) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return ticks.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return new DateTime(ticks, DateTimeKind.Local).ToString("MMM dd yyyy", CultureInfo.InvariantCulture);
+        }
+
+        int IComparable.CompareTo(object obj)
+        {
+            if (obj.is_an_implementation_of<IDate>())
+                return CompareTo(obj.downcast_to<IDate>());
+            throw new InvalidOperationException();
+        }
+    }
+}

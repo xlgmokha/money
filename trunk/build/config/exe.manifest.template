@@ -1,0 +1,2054 @@
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="mymoney.exe" version="2008.10.18.196" publicKeyToken="b602bcfb76b4e90d" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:publisher="mokhan.ca" asmv2:product="mymoney" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <asmv2:application />
+  <asmv2:entryPoint>
+    <asmv2:assemblyIdentity name="mymoney" version="2008.10.18.196" publicKeyToken="687787CCB6C36C9F" language="neutral" processorArchitecture="msil" />
+    <asmv2:commandLine file="mymoney.exe" parameters="" />
+  </asmv2:entryPoint>
+  <co.v1:useManifestForTrust xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <asmv2:trustInfo>
+    <asmv2:security>
+      <asmv2:applicationRequestMinimum>
+        <asmv2:PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <asmv2:defaultAssemblyRequest permissionSetReference="Custom" />
+      </asmv2:applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </asmv2:security>
+  </asmv2:trustInfo>
+  <asmv2:dependency>
+    <asmv2:dependentOS>
+      <asmv2:osVersionInfo>
+        <asmv2:os majorVersion="4" minorVersion="10" buildNumber="0" servicePackMajor="0" />
+      </asmv2:osVersionInfo>
+    </asmv2:dependentOS>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <asmv2:assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.Chart.dll" size="3851264">
+      <asmv2:assemblyIdentity name="ActiveReports.Chart" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>ivaEIGUlCyJNrwTUYmvaai9et1g=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.CodeDomSerializer.dll" size="19456">
+      <asmv2:assemblyIdentity name="ActiveReports.CodeDomSerializer" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>UTqNnGn3uBPLdNn/myNSjGu/+9o=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.Design3.dll" size="2664448">
+      <asmv2:assemblyIdentity name="ActiveReports.Design3" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Ue5A1MjKw8koV9RFeUcVTDho+fM=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.HtmlExport.dll" size="730112">
+      <asmv2:assemblyIdentity name="ActiveReports.HtmlExport" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>9/armZSaThUcyRkQzJGSqdkNkUQ=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.Interop.dll" size="118784">
+      <asmv2:assemblyIdentity name="ActiveReports.Interop" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="x86" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>rxOkEe/SIvxvsKN6UgkZ5laPQno=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.PdfExport.dll" size="329728">
+      <asmv2:assemblyIdentity name="ActiveReports.PdfExport" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>jR+108HcNOmLcGcwBKwLMpA+6V4=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.RtfExport.dll" size="84480">
+      <asmv2:assemblyIdentity name="ActiveReports.RtfExport" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>ZOLzfF8piioFcuSbnHXjxuKm7QU=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.TextExport.dll" size="47104">
+      <asmv2:assemblyIdentity name="ActiveReports.TextExport" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>bdAI0QIa9QgdKmi/DiQl6IDqYys=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.TiffExport.dll" size="43008">
+      <asmv2:assemblyIdentity name="ActiveReports.TiffExport" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>rklmY518JfN2DlUkQ6MNmZWoKCk=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.Viewer3.dll" size="1216000">
+      <asmv2:assemblyIdentity name="ActiveReports.Viewer3" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>3Pc62OgmREAH8+Wfms/1ZPLmFD0=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.Web.dll" size="143872">
+      <asmv2:assemblyIdentity name="ActiveReports.Web" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>UfGQpQoNnGmF9aH2x6wN8+fbXH0=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.Web.Design.dll" size="24576">
+      <asmv2:assemblyIdentity name="ActiveReports.Web.Design" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>R6k/NvM2k7T1jVvITxE0V96nPwM=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports.XlsExport.dll" size="269824">
+      <asmv2:assemblyIdentity name="ActiveReports.XlsExport" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Ez5iI8VnDzmOSOxw7ltTr+t4tBo=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveReports3.dll" size="1353216">
+      <asmv2:assemblyIdentity name="ActiveReports3" version="5.2.1013.2" publicKeyToken="CC4967777C49A3FF" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>w0wSAnstOSnMmy4bjobXxjUERzk=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ascend.dll" size="36864">
+      <asmv2:assemblyIdentity name="Ascend" version="1.0.0.6" publicKeyToken="25C7A393BA3F37CD" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>UUdcsRWjO7yn+uamYlRgfOM9LRE=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ascend.Design.dll" size="45056">
+      <asmv2:assemblyIdentity name="Ascend.Design" version="1.0.0.6" publicKeyToken="5123E2AC4258B06A" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Q9gJYFQAtXHTXNY7J88PZE4hODs=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ascend.Resources.dll" size="90112">
+      <asmv2:assemblyIdentity name="Ascend.Resources" version="1.0.0.6" publicKeyToken="9C9AECB37B1E03B6" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>y/PIGByXAgXNg5JpuhVM89rOR6Y=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ascend.Windows.Forms.dll" size="208896">
+      <asmv2:assemblyIdentity name="Ascend.Windows.Forms" version="1.0.0.6" publicKeyToken="ECD86ECE2D3EB46D" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>ZQ0Bx4GWwMSzVRqYHmjw9CSEwsI=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Castle.Core.dll" size="73728">
+      <asmv2:assemblyIdentity name="Castle.Core" version="1.0.3.0" publicKeyToken="407DD0808D44FBDC" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>paScUhBygiQlYzcPGioiwKQeCb8=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Castle.DynamicProxy2.dll" size="106496">
+      <asmv2:assemblyIdentity name="Castle.DynamicProxy2" version="2.0.3.0" publicKeyToken="407DD0808D44FBDC" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>uw1efIJWf50BwsC9BAW8MVrTTPc=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Castle.MicroKernel.dll" size="155648">
+      <asmv2:assemblyIdentity name="Castle.MicroKernel" version="1.0.3.0" publicKeyToken="407DD0808D44FBDC" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>0Q/UdTtRs71su2V2uwfod31yob0=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Castle.Windsor.dll" size="61440">
+      <asmv2:assemblyIdentity name="Castle.Windsor" version="1.0.3.0" publicKeyToken="407DD0808D44FBDC" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>muQLsnM4Iesd7OSc9ZOeZ/8O2V0=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cecil.FlowAnalysis.dll" size="86016">
+      <asmv2:assemblyIdentity name="Cecil.FlowAnalysis" version="0.1.0.0" publicKeyToken="0738EB9F132ED756" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>OI40R86jcfSL4X9gMAJD6yvNKNw=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ComponentFactory.Krypton.Navigator.dll" size="516096">
+      <asmv2:assemblyIdentity name="ComponentFactory.Krypton.Navigator" version="3.0.8.0" publicKeyToken="A87E673E9ECB6E8E" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>qz4jxeXtXFiWp+BxqIJC85AT5Cg=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ComponentFactory.Krypton.Ribbon.dll" size="974848">
+      <asmv2:assemblyIdentity name="ComponentFactory.Krypton.Ribbon" version="3.0.8.0" publicKeyToken="A87E673E9ECB6E8E" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>5tiIdySBvCUviyzvqZpgzhnOCgs=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ComponentFactory.Krypton.Toolkit.dll" size="2027520">
+      <asmv2:assemblyIdentity name="ComponentFactory.Krypton.Toolkit" version="3.0.8.0" publicKeyToken="A87E673E9ECB6E8E" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>EikusijgX1jOjqkeZJBUjARouYs=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ComponentFactory.Krypton.Workspace.dll" size="266240">
+      <asmv2:assemblyIdentity name="ComponentFactory.Krypton.Workspace" version="3.0.8.0" publicKeyToken="A87E673E9ECB6E8E" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>LT9cIU4NTe8OUAHPqZrnjcAxqKA=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Db4oBench.dll" size="36864">
+      <asmv2:assemblyIdentity name="Db4oBench" version="7.5.57.11498" publicKeyToken="6199CD4F203AA8EB" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>GbCjHbQjEnsMix22AxT+FbRh8K8=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Db4objects.Db4o.dll" size="672256">
+      <asmv2:assemblyIdentity name="Db4objects.Db4o" version="7.5.57.11498" publicKeyToken="6199CD4F203AA8EB" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>m9J05TcGuDpeAXFedPnwsByKY68=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Db4objects.Db4o.Instrumentation.dll" size="12800">
+      <asmv2:assemblyIdentity name="Db4objects.Db4o.Instrumentation" version="7.5.57.11498" publicKeyToken="6199CD4F203AA8EB" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>y4BJR7jS/P5WkBxm9dTgCr28NSo=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Db4objects.Db4o.Linq.dll" size="43520">
+      <asmv2:assemblyIdentity name="Db4objects.Db4o.Linq" version="7.5.57.11498" publicKeyToken="6199CD4F203AA8EB" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>EDHgs76fxaeAik/tIeRuWfJ40pA=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Db4objects.Db4o.NativeQueries.dll" size="53248">
+      <asmv2:assemblyIdentity name="Db4objects.Db4o.NativeQueries" version="7.5.57.11498" publicKeyToken="6199CD4F203AA8EB" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>97uU7VUzgRRBBuwW8BM1/v/mL+w=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Db4oTool.MSBuild.dll" size="6656">
+      <asmv2:assemblyIdentity name="Db4oTool.MSBuild" version="7.5.57.11498" publicKeyToken="6199CD4F203AA8EB" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>b724CTgoUVpaFCCVOp7SivVTKS0=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="log4net.dll" size="270336">
+      <asmv2:assemblyIdentity name="log4net" version="1.2.10.0" publicKeyToken="1B44E1D426115821" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>gs3mWnUUwORl7g1QW+VsVmOf8LE=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LogicNP.FileView.dll" size="323584">
+      <asmv2:assemblyIdentity name="LogicNP.FileView" version="10.0.0.0" publicKeyToken="FF6F27194AF4AF75" language="neutral" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>eDz26ZJZxnxUqR/WnrrESvvb9rY=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LogicNP.FolderView.dll" size="249856">
+      <asmv2:assemblyIdentity name="LogicNP.FolderView" version="10.0.0.0" publicKeyToken="FF6F27194AF4AF75" language="neutral" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>s05/u4Ov3cIuQL6I4eVt/0HjnCY=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LogicNP.ShComboBox.dll" size="135168">
+      <asmv2:assemblyIdentity name="LogicNP.ShComboBox" version="10.0.0.0" publicKeyToken="FF6F27194AF4AF75" language="neutral" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>uWFVp6w0Z3ICR/DjI+rx7LARlWc=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LogicNP.ShellObjects.dll" size="507904">
+      <asmv2:assemblyIdentity name="LogicNP.ShellObjects" version="10.0.0.0" publicKeyToken="FF6F27194AF4AF75" language="neutral" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>8ye2J+K2QL2UB2HmnXe2RcRI0Fw=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mono.Cecil.dll" size="368640">
+      <asmv2:assemblyIdentity name="Mono.Cecil" version="0.6.8.8607" publicKeyToken="0738EB9F132ED756" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Z8Iw6Rr8PjOUOMB7x94o5VfrKYk=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mono.Cecil.Pdb.dll" size="13312">
+      <asmv2:assemblyIdentity name="Mono.Cecil.Pdb" version="0.2.0.0" publicKeyToken="0738EB9F132ED756" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>i/2bRVawFgOvRF2kjPa+eCljd1c=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mono.GetOptions.dll" size="46080">
+      <asmv2:assemblyIdentity name="Mono.GetOptions" version="2.0.0.0" publicKeyToken="0738EB9F132ED756" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>miQ1B5O5waqMpAE2M5AKkIcJsIE=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="mymoney.exe" size="172032">
+      <asmv2:assemblyIdentity name="mymoney" version="2008.10.18.196" publicKeyToken="687787CCB6C36C9F" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>sxLaFPg05wovpw1cT8AkKhHfUL0=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QuickGraph.dll" size="230912">
+      <asmv2:assemblyIdentity name="QuickGraph" version="2.0.30831.0" publicKeyToken="F3FB40175EEC2AF3" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>qKL3ku4MerXILdazGcXjYYmbwxY=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QuickGraph.Data.dll" size="5120">
+      <asmv2:assemblyIdentity name="QuickGraph.Data" version="2.0.30831.0" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Cw/DlfASDs1G5krpQiRuLSajfpQ=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QuickGraph.Glee.dll" size="9216">
+      <asmv2:assemblyIdentity name="QuickGraph.Glee" version="2.0.30831.0" publicKeyToken="F3FB40175EEC2AF3" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>KgDhg90M1WgbPK6XURn4tMwsPHU=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QuickGraph.Graphviz.dll" size="38912">
+      <asmv2:assemblyIdentity name="QuickGraph.Graphviz" version="2.0.30831.0" publicKeyToken="F3FB40175EEC2AF3" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>NoDxkD0VHpcOclBluXu5sVfSUek=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QuickGraph.Msagl.dll" size="9216">
+      <asmv2:assemblyIdentity name="QuickGraph.Msagl" version="2.0.30831.0" publicKeyToken="F3FB40175EEC2AF3" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>YUt/ajC1YqqQybHfeeHt64cD5n0=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SqlServerCe.dll" size="263248">
+      <asmv2:assemblyIdentity name="System.Data.SqlServerCe" version="3.5.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>S6Dr9MEXzV8P6O7ORegkPgDzwd4=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Windows.Forms.Ribbon.dll" size="151552">
+      <asmv2:assemblyIdentity name="System.Windows.Forms.Ribbon" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>kf0U16DEl68Z/K6QHex00Jwb+X4=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WeifenLuo.WinFormsUI.Docking.dll" size="446464">
+      <asmv2:assemblyIdentity name="WeifenLuo.WinFormsUI.Docking" version="2.2.3198.36522" publicKeyToken="687787CCB6C36C9F" language="neutral" processorArchitecture="msil" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>E5qlcjV1bhi663e9w7NZ8SRwQgY=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:dependency>
+    <asmv2:dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="XPExplorerBar.dll" size="155648">
+      <asmv2:assemblyIdentity name="XPExplorerBar" version="3.3.0.0" publicKeyToken="26272737B5F33015" language="neutral" />
+      <asmv2:hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>B3L5p+dLpXNSfvBqSVeAB1CATXc=</dsig:DigestValue>
+      </asmv2:hash>
+    </asmv2:dependentAssembly>
+  </asmv2:dependency>
+  <asmv2:file name="bw.dat" size="69120" writeableType="applicationData">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lkE6dTigwo2FlFmxd1y9G/jlx/k=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="foreverblue.dat" size="62464" writeableType="applicationData">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>SMKCI0vxRAO7hvx28ax+cDORO2A=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\about.ico" size="29926">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lyzvP+lxI04dapFZSHY+CNici+o=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\application_ready.ico" size="2550">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>/VKRs9dZPIiP2IUEatCjjwEz0EY=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\autoList.ico" size="89125">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>7YOoyAzB06CcRMoYSzzrU3m2sSM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\autoplay.ico" size="59615">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>gbEG8tUWeg+s6xEsHO9sB1+UOoQ=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\autorun.ico" size="84451">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EAkFMrtUf8v5a1WclG8xSSEmk4c=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\batfile.ico" size="25214">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>W1mEW+AyobHclDRDgeuEc61E6bk=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\bluraymovie.ico" size="93801">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>mNgDgc4hWgpEJVCJmQGQarFR0Zg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\burnCD.ico" size="91468">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>oFr6nLvbWtOQ9orUBFGVkxb4h68=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\calculator.ico" size="85405">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>o/oBetTpk4hIDTq/rddovmYwPCg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Camera.ico" size="84704">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HHQjHPd0oL9kd5VOPqR3+I/htzM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\CD_Drive.ico" size="73021">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>CwYsmp/dqfUGFpBeHkBbmICSMGo=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\CD_R.ico" size="77326">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>M7A3f2Kjp+P0Ds4zj3N5FeFNQlk=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\CD_ROM.ico" size="79672">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>mOlO3es0fmKd2TDMiOVY6A6h+rI=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\CD_RW.ico" size="78143">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OeyPG2qmNhJcOhXv2xBBeJx8zI4=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\CD_SV.ico" size="93940">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>iO/y8sc4dOr2g6sjVygsaaCZp5w=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\CD_V.ico" size="93865">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>gq/LDa9PVbbVucZMBsj5oNjg5eM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\cdaudioplus.ico" size="83952">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Y0GvZ7zelCsm+4fg/j30FW6/P34=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\cdempty.ico" size="86212">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>59np/2OUx985vg8A3KB2tVa7jQc=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\cellphone.ico" size="60782">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ddj3lOpus0xyK7BGmRSC2mkzl0k=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\check_spelling.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>K7NLjq31s8Lwm20qyVV/j9Ip+7s=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\cmd.ico" size="31016">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>dUxswkRZdRypY+RarFn4+Tq11xE=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\compactflash.ico" size="87286">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>tpfy6DO9liWvFQ6mNXaoWXPTYeA=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\computer.ico" size="99567">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8R0Z4keqvzQKe8R2h3SnrPWMyxM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\connect_toNetwork.ico" size="113103">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+XV0WT8q13q5BBnLJu/SUtRBqrE=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\ConnectionManager.ico" size="73753">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ntE9VZbLWC99KSHDH+20NWrrWPA=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\copy.ico" size="37611">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>6xhXZIUXaNtJCHac0/xvfUiJO3M=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\CPU.ico" size="149525">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lYAnHN9T2HSXdEKa5puYmi+LfH4=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\cut.ico" size="25214">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bIkycRXYKxumKusoSXOKGFVkqUU=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Default_Fax.ico" size="84678">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IykrydHRfN4/WMc2E+PPUz9UHm4=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\default_icon.ico" size="1150">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>h3ZiXlMUoyEn4wwWUVw/Pt+s6Us=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\delete.ico" size="127440">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GIXhGvOh7UiV27fU7bae+wpXQmI=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\delete_16x.ico" size="2550">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>YXHLh2UowAZ8dXbfaxMT1Hqsm+s=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Dialup.ico" size="97434">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>kqdaMIjBsYyNY9apzsSUKFGlEsY=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\disconnect2.ico" size="2550">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>PxJeC9JwQlaHx9VtELGrxLktHl0=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\documentation.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>TudSFithSSpuO3sjPxY/0zwBDho=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\DVD.ico" size="78271">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>BeXRSA7S0plz6JLy7PNq+txYDk8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\DVD_R.ico" size="77796">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>AOQHs0fIy9Cq5ix5JqnbeTWKlmI=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\DVD_ROM.ico" size="79496">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>t3Bntck1m1ARSvqb+AnZ0l/MLJQ=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\dvddrive.ico" size="77120">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>p3f/Qo4RsyJ0CCDCLa9zL33GX24=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\DVDplusR.ico" size="77965">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>7lSSbrqOwbE/8VJmyJ0ewTwo/Pg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\dvdram.ico" size="79807">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>pXxFsuBiFVIXw63KAAxscb3Kb+g=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\dvdrw.ico" size="79629">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>BJq1z43VH2ZK48609tvJZ6G88rw=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\emd.ico" size="95991">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>jCNZNw5k64p9J4wT8PRHAO1zves=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\EmptyDrive.ico" size="55478">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>rUOrXnNclq+xdwL9JUaYqbuyHmQ=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Enhanced_DVD.ico" size="93514">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>PMchkmgtL1eGCyeczRt4Jt8wnfg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\EnhancedAudioCD.ico" size="82619">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Wtzltt5XynMivss9XDZc6kIO3bo=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\error.ico" size="1150">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>h3ZiXlMUoyEn4wwWUVw/Pt+s6Us=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Favorites.ico" size="64391">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>y3v5EaB/19SfheYaFhUXRyY4kn0=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Fax.ico" size="70689">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>d6H9dlezuwBNQXjx8p5Ar2He9X0=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\FloppyDisk.ico" size="304054">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>DIDxAHXMDrCHfIxjBhp6X6QNagA=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Folder_Back.ico" size="43836">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>dzW9zUxhCezXIZyY+hl+YAhNvkM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\folder_closed_16x16.ico" size="2862">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>oMhWG/P9w/mE229P+PVK59cyrNI=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\folder_open.ico" size="53411">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>f30Y6Ba5VHWXobuozc4quKKaVeU=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Folder_stuffed.ico" size="62287">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>gtRO9mxJrcwIsIVt6cN/2VvRLtI=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\foldergreen.ico" size="50283">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>II85MLr9dyY31kk3LLs7jXoKRA8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\font.ico" size="47647">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>qNp3v8lGebx8TKQpVM/VscazGHg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\gamecontroller.ico" size="87131">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>w2b9NFCCaZ2tD729jJ38jQWJHXc=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\generate_report.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>VsSfv4vPpWDV4oASU0lDXOcuHBE=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Generic_Application.ico" size="46372">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HowUFMLz0uAnThPRPlt5PYR7kPY=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Generic_Device.ico" size="58648">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>n3wZ7LTCSc1yF1NcoM4LpBvDIOg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Generic_Document.ico" size="33464">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>uwJ7z+pprSiGsZyRlpMWq/ZgHkw=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\generic_picture.ico" size="83560">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>f79ETJNhaEIo9kOYTxMzwnHoa/I=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\GenericMovieClip.ico" size="58591">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WcDX7yxsVMCi4Zqgiz0x7XM8PcM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Globe.ico" size="210064">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FIM7Fs8I9dzP5vmbcuyHp1x8+Jo=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Hard_Drive.ico" size="78885">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>zlrfMnDbemxJ8MCLDmmvZ6O8TqU=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\hddvdmovie.ico" size="92906">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>5zz6/MMiFL4BCtHvEzH2APWZefc=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\help.ico" size="114406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>49SJyT5O0Zw7YQb7Q4keNbcrdZg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Image_File.ico" size="51151">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Uc5HZLsj34+lzV3B/a5N6PT0vCY=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\install.ico" size="25214">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>XrCwLi66zm9wU7r1K9ZYX3T0t0U=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\interview.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>/vHdrqx6ueAgRwVy21OP40PEpyc=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Journal.ico" size="100076">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+Fb0fN8kzL11wLufL+9MFdMaQzo=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\keybd.ico" size="67281">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>QXWc9bQyktXVyr3FMrPd++1o09I=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Keys.ico" size="53971">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>eYnXlgDIZXukrhmZ3jAAP3OVMcU=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Laptop.ico" size="79051">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GpwIQ+goyjG+Rs8pYYXlGI4caJ8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\license.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>QEKugbvkShjOsFxR7xkV2wqzTFs=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\merge_audits.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>vyUwUs3pJnunuV3jTWl/c8Qa++M=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\MixedMediaFile.ico" size="300318">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>TlQ71nGKtDZD9rf0yGZSnFIbwUQ=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\mokhan.ico" size="3262">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EB7M2C2uL6w+RjV68xSwrYQNi0A=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Monitor.ico" size="66047">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>oNEwkIoI+03Qr3Y/e2kd44Chj/M=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Mouse.ico" size="58346">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>7GnSFgnwU5l9EfKCQjqPxsoPeV4=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\move.ico" size="45161">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3Bkm8D8INFZTxxr10zzSDWbXss0=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\mynet.ico" size="10134">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>xHGSVUH96FxQuoCiS+wvPXYN3A0=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Network.ico" size="108903">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>zGdfo4kGZwP/lZwUp+TLmi4zJVU=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\network_center.ico" size="96521">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bzT4AZxuf6pIOArgva1nBo/K6mc=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Network_Drive.ico" size="73375">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>RRxCMPzb1qQclXW068hJ1GLqlLk=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Network_Fax.ico" size="88183">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>YFuGsyMSuO15Nuf0h+k0cI9rvKU=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\network_fax_default.ico" size="102245">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EmN12f0LsIpaNGVKTRi+sDXVUAs=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Network_Folder.ico" size="66933">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>J672i1KkCsVVj/AEGBSluuLaG0M=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Network_Internet.ico" size="106121">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hC68MMOTFa2uJw29I3tEj3uRm5U=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Network_Map.ico" size="94123">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>tPhZjiYMSimQ2awvFAnOD9oXGN0=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\network_printer.ico" size="73943">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3NEWkM5ddPlSrE0ijv8PVhTqpCs=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\new_project.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>tUNQfwqrXoTFXIFl176af8ctq2o=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\observation.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>tlil52NVqZJVr9FALrUuQHEJBLE=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\open.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bd4TDJr2bLB79MSgpgU/d1V130o=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\paste.ico" size="50135">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>O2ifvRFSi3YYKSiv7mJJrQPfJXI=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\pdf_document.ico" size="51151">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Uc5HZLsj34+lzV3B/a5N6PT0vCY=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\personalization.ico" size="103213">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>BynTmo8ak6WeeOeWbICeOtiokW8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\printer.ico" size="55326">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HMh5aNlijC9+vl5ZBfNafUHB2RE=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\printof.ico" size="58950">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>qQlWW6qjVJEiBV78+nQ2bkn6JL8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\PriorityHigh.ico" size="2862">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>9bIr+LBsddNFC4K977/7oXscF9Y=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\PriorityLow.ico" size="2862">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>W1BwKn9bWi8/2JR8PVaqT9Iq1Qg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\PriorityMedium.ico" size="2862">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>O+Zcy6cVXKzw89CPLM6mWjl5q6o=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\ram.ico" size="51025">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lw8I7w1+PI+XDPgztoSARXPQ6G8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\readonly.ico" size="1150">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZHsRQ81TWWBRP7ljXEhe1ugSccE=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\RecycleBin.ico" size="79858">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>yVe399pss4aIRKfhO/gnP6zEwH0=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Rename.ico" size="39851">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>O9/ABbkxF79PGYih7BJ6dvF4nj0=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\repair.ico" size="2550">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>/VKRs9dZPIiP2IUEatCjjwEz0EY=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\replace.ico" size="50342">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>jYGeu1kvOuP+JfWNauRCDuC6azM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\save.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>0pIOy4w6kba/xNs3lseGkTcR+58=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\save_as.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WrLwILKMN9mxesSIJPvTZakphN8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\search.ico" size="92176">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>wg2h0YbcKkKLHu2IB9oA1F8zyF4=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\search4doc.ico" size="28086">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>KddII3wU/w/G+C4D3HDDSO268qA=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\search4files.ico" size="22486">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>yhMZfViL2Xee92ma4H7ehPoNRPo=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\search4people.ico" size="22486">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>21SzAMFGyHoWzTCu+EXoCLhX07E=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\search4printer.ico" size="22486">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZM0dtNTBU35NorC2AS4TBmKgJRk=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\searchweb.ico" size="27766">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>15J8vZiSqcKc/9UqhAYn3n2sDl8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\SecurityLock.ico" size="76163">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>DRPamzgeS3iiw1eBVevyyxmMSHM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\servicepaused.ico" size="2862">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>0tHTQtV3OoiukWPrUVC8kVNU2mo=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\servicerunning.ico" size="2862">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>qIMP8dQh8clpWTnnsr2OuFWsIas=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\servicestopped.ico" size="2862">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>1ygvp3eKE4VIZddYiTVY4gHi548=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\serviceunknown.ico" size="2862">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>0gBLYJ3V7sq/WgabTlS1/VxUM04=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Settings.ico" size="67664">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>fVLpNVmY8bRIf47ysbN4Xew12YE=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\setup.ico" size="10134">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WAINH2xCAf6FuHdfFpX+uNQwQ4w=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Setup_Install.ico" size="80992">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>phY5kAUYepspyyxxVUOv6yoRgHg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\share.ico" size="25214">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hY6xFLu/Gi2YMhIUdwcskbgLsJw=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\smartmed.ico" size="90376">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EgljNR56XR+Su+QSm1onEzGBUZg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\text_document.ico" size="1406">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>tUNQfwqrXoTFXIFl176af8ctq2o=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Thumbs.db" size="8192">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>eveF0sLqiN+j3c+0zDv1gAdCDGM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\UnknownDrive.ico" size="60106">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>g4/FRhVQl4zAySRNyf9ZmZqWoGw=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\Users.ico" size="79950">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>6MeHrcoPVpJdnOOcFPNKa1iRU2E=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\validcomplete.ico" size="1150">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>2szqAzK5D32TVud9XgypSYq0P9o=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\VideoCamera.ico" size="104325">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>NZJxDQe12hl5IJB9R/Fw3RIKdeE=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\VPN.ico" size="86144">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Aqp/3ysEYaUKvuA5GhPoZWk3x80=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\warning.ico" size="1150">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>0AxX8ugx17jD9IxKf+OCpKeRsyI=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\XAML_file.ico" size="48092">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WVH+egpKM97rDaczgSq0CSPdVKs=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="icons\zippedFile.ico" size="59607">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>seW9dB+wLKIxrRfYpUBEbl+oPqo=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="images\installing.png" size="25558">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hbJc18xEyX3oC89FhxG+9DOEO58=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="images\paying_a_bill.jpg" size="30111">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>sRg8MfpEGB2GB1G1RVIxi04k6bM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="images\reading_a_bill.jpg" size="21130">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GDUmA7qRoLnotaILme12ID47UUs=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="images\splash_screen.gif" size="14488">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>vcIOgLkbQHlBRcIp3RqUgN7a8i4=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="images\splash_screen.png" size="1342415">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>rS/He0GbRqvRJq5sNl8Zt2Se0ok=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="images\Thumbs.db" size="11776">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>QjmoMyVvuvA9D17z3oX9xNvGRAM=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="itunes.dat" size="50688" writeableType="applicationData">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>dLFjolHIfNnZ9DkpzXPFa/Qkiro=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="log4net.config.xml" size="548">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FuOI7rbCLMlh5snfQGWSR9rFhGg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="panther.dat" size="62464" writeableType="applicationData">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>9YsJ2RvMxvYatwChXP8U7ywO0Fg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="sqlceca35.dll" size="299072">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Sli+XAkp7rFvRire2ddf6wKU8Vg=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="sqlcecompact35.dll" size="64064">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>h3gy0rDeLzJG2uye+01D1aipmLs=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="sqlceer35EN.dll" size="142928">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>kpmzoeSfy3UBYcmx3uTJjWphSG4=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="sqlceme35.dll" size="55872">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>9gjIsH86uwHzScdmo0/Pb7eAHM8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="sqlceoledb35.dll" size="143424">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>nflvmAP9BB5Q9w/l0YGHVbwmia8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="sqlceqp35.dll" size="567360">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>csuHpLvSpo78pceNjT+Yt8OuFOE=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="sqlcese35.dll" size="312384">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>7hPAMEoNqlv1dBl2LimjKGJ5xd8=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:file name="xbox.dat" size="72704" writeableType="applicationData">
+    <asmv2:hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>LacfBSxfyRrsbDNQpXA7GcNJFaY=</dsig:DigestValue>
+    </asmv2:hash>
+  </asmv2:file>
+  <asmv2:publisherIdentity name="CN=mOKhan.ca" issuerKeyHash="1d394e8e3ab5e9f1fb9921b3431543e288810066" />
+  
+<Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>v3sF0UOgwouz7yOuf1+DyDae1OE=</DigestValue></Reference></SignedInfo><SignatureValue>UhJNVwP+Ppv5GkXGaxdNEFerxtowg0CdWAF0loK6iMS33plQonhGDUi915VzswGrrNdjyJ7qWtfsQVWcM4zv2aNcNkqe9AIVy4bjQCdIa7eBuPtDD6QySAtyOpamirRXqh2LdFXk/lnEEAN5aVK8QRevKcdfLeCr5OZAIskBEQs=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>kA9m8ecXEuEe26Svvv9xxWguSzGFGR3VdykaiOagEmZNCVpJoXrhHut2ObncB7C0yfYYTDEe7RUk1ueetnRSk5wiXTPAQZ8H1Us8AqjFzd4y5EjpgAdgE90fFzWGG233HMXrljd9j+U9KmvoOEgFSWWKeaphvKGjLQNbvcd+OfU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="e1d49e36c8835f7fae23efb38bc2a043d1057bbf" Description="" Url=""><as:assemblyIdentity name="mymoney.exe" version="2008.10.18.196" publicKeyToken="b602bcfb76b4e90d" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=mOKhan.ca</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>27J11LDEBWI9ttw9Ph7WV+8AVBM=</DigestValue></Reference></SignedInfo><SignatureValue>EY006WY9hRXRFb/iIiGkC41VBR9hI41wuLW9wUhpozZ4H8LdDzXYUbVlrZnoKJBw9TKZMkVcX6rmT5P2XolbeL35fPRSt5TJFN5DjgbjIwP7vhvO1/ecBdVqR02TgLnvPlkxL0AM1JPBn9WFMp9fJ1ouyYmnErkBbGoPAC7pooQ=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>kA9m8ecXEuEe26Svvv9xxWguSzGFGR3VdykaiOagEmZNCVpJoXrhHut2ObncB7C0yfYYTDEe7RUk1ueetnRSk5wiXTPAQZ8H1Us8AqjFzd4y5EjpgAdgE90fFzWGG233HMXrljd9j+U9KmvoOEgFSWWKeaphvKGjLQNbvcd+OfU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBuTCCAWOgAwIBAgIQcqL9MTujEYtP75lW9bPOADANBgkqhkiG9w0BAQQFADAWMRQwEgYDVQQDEwtSb290IEFnZW5jeTAeFw0wODEwMDQwMzQxNDdaFw0zOTEyMzEyMzU5NTlaMBQxEjAQBgNVBAMTCW1PS2hhbi5jYTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAkA9m8ecXEuEe26Svvv9xxWguSzGFGR3VdykaiOagEmZNCVpJoXrhHut2ObncB7C0yfYYTDEe7RUk1ueetnRSk5wiXTPAQZ8H1Us8AqjFzd4y5EjpgAdgE90fFzWGG233HMXrljd9j+U9KmvoOEgFSWWKeaphvKGjLQNbvcd+OfUCAwEAAaNLMEkwRwYDVR0BBEAwPoAQEuQJLQYdHU8AjWEh3BZkY6EYMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5ghAGN2wAqgBkihHPuNSqXDX0MA0GCSqGSIb3DQEBBAUAA0EAZIthXZlve9RSeQZ3O6UDVzrmD0i32iUNBHkwY4PkqpP2yLC0jvhK+n+7pSNht6nORTnhOM0g8lsds736sgRV+g==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

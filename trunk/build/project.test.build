@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project name="project.test">
+	<property name="test.output" value="${project.name}.test.dll" />
+	<property name="xunit.cons.exe" value="${build.tools.dir}\gallio\gallio.echo.exe" />
+
+	<fileset id="test.references.fileset">
+		<include name="${build.lib.dir}\**\*.dll" />
+		<exclude name="${build.lib.dir}\app\sql.server.compact\**\*.dll" />
+		<include name="${build.lib.dir}\app\sql.server.compact\**\System.Data.SqlServerCe.dll" />
+	</fileset>
+
+	<target name="test.compile" depends="init, test.copy.dependencies">
+		<csc output="${build.compile.dir}\${test.output}" target="library" debug="${debug}">
+			<sources basedir="${src.dir}">
+				<include name="**\*.cs" />
+			</sources>
+			<references refid="test.references.fileset"/>
+		</csc>
+	</target>
+
+	<target name="test.copy.dependencies">
+		<copy todir="${build.compile.dir}" flatten="true">
+			<fileset basedir="${build.lib.dir}">
+				<include name="\**\*.dll" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="run.test" depends="test.compile">
+		<exec
+			program="${xunit.cons.exe}"
+			commandline="${xunit.arguments}" />
+	</target>
+
+	<target name="test">
+		<property name="xunit.arguments" value="${build.compile.dir}/${test.output} /sr /rt:text /rd:${build.compile.dir}" />
+		<call target="run.test" />
+	</target>
+
+	<target name="test.html">
+		<property name="xunit.arguments" value="${build.compile.dir}/${test.output} /sr /rt:html /rd:${build.compile.dir}" />
+		<call target="run.test" />
+	</target>
+
+</project>
