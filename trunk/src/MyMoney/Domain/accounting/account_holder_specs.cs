@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using jpboodhoo.bdd.contexts;
 using MyMoney.Domain.accounting.billing;
 using MyMoney.Domain.accounting.financial_growth;
 using MyMoney.Domain.Core;
@@ -9,96 +10,92 @@ using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.Domain.accounting
 {
-    public class account_holder_specs
-    {}
-
     [Concern(typeof (account_holder))]
-    public class when_a_customer_is_checking_for_any_bills_that_have_not_been_paid : old_context_specification<IAccountHolder>
+    public class behaves_like_an_account_holder : concerns_for<IAccountHolder>
     {
-        [Observation]
-        public void it_should_return_all_the_unpaid_bills()
+        public override IAccountHolder create_sut()
         {
-            result.should_contain(first_unpaid_bill);
-            result.should_contain(second_unpaid_bill);
+            return new account_holder();
         }
+    }
 
-        protected override IAccountHolder context()
-        {
-            first_unpaid_bill = an<IBill>();
-            second_unpaid_bill = an<IBill>();
-            paid_bill = an<IBill>();
+    public class when_a_customer_is_checking_for_any_bills_that_have_not_been_paid : behaves_like_an_account_holder
+    {
+        it should_return_all_the_unpaid_bills = () =>
+                                                    {
+                                                        result.should_contain(first_unpaid_bill);
+                                                        result.should_contain(second_unpaid_bill);
+                                                    };
 
+        context c = () =>
+                        {
+                            first_unpaid_bill = an<IBill>();
+                            second_unpaid_bill = an<IBill>();
+                            paid_bill = an<IBill>();
 
-            first_unpaid_bill.is_told_to(x => x.is_paid_for()).Return(false);
-            second_unpaid_bill.is_told_to(x => x.is_paid_for()).Return(false);
-            paid_bill.is_told_to(x => x.is_paid_for()).Return(true);
+                            first_unpaid_bill.is_told_to(x => x.is_paid_for()).it_will_return(false);
+                            second_unpaid_bill.is_told_to(x => x.is_paid_for()).it_will_return(false);
+                            paid_bill.is_told_to(x => x.is_paid_for()).it_will_return(true);
+                        };
 
-            var customer = new account_holder();
-            customer.recieve(first_unpaid_bill);
-            customer.recieve(paid_bill);
-            customer.recieve(second_unpaid_bill);
-            return customer;
-        }
+        because b = () =>
+                        {
+                            sut.recieve(first_unpaid_bill);
+                            sut.recieve(paid_bill);
+                            sut.recieve(second_unpaid_bill);
+                            result = sut.collect_all_the_unpaid_bills();
+                        };
 
-        protected override void because()
-        {
-            result = sut.collect_all_the_unpaid_bills();
-        }
-
-        private IEnumerable<IBill> result;
-        private IBill first_unpaid_bill;
-        private IBill second_unpaid_bill;
-        private IBill paid_bill;
+        static IEnumerable<IBill> result;
+        static IBill first_unpaid_bill;
+        static IBill second_unpaid_bill;
+        static IBill paid_bill;
     }
 
     [Concern(typeof (account_holder))]
-    public class when_an_account_holder_is_calculating_their_income_for_a_year : old_context_specification<IAccountHolder>
+    public class when_an_account_holder_is_calculating_their_income_for_a_year : behaves_like_an_account_holder
     {
-        protected override IAccountHolder context()
-        {
-            var income_for_january_2007 = an<IIncome>();
-            var income_for_february_2007 = an<IIncome>();
-            var income_for_february_2008 = an<IIncome>();
+        context c = () =>
+                        {
+                            income_for_january_2007 = an<IIncome>();
+                            income_for_february_2007 = an<IIncome>();
+                            income_for_february_2008 = an<IIncome>();
 
-            income_for_january_2007
-                .is_told_to(x => x.date_of_issue)
-                .Return(new DateTime(2007, 01, 01).as_a_date());
-            income_for_january_2007
-                .is_told_to(x => x.amount_tendered)
-                .Return(new money(1000, 00));
+                            income_for_january_2007
+                                .is_told_to(x => x.date_of_issue)
+                                .it_will_return(new DateTime(2007, 01, 01).as_a_date());
+                            income_for_january_2007
+                                .is_told_to(x => x.amount_tendered)
+                                .it_will_return(new money(1000, 00));
 
-            income_for_february_2007
-                .is_told_to(x => x.date_of_issue)
-                .Return(new DateTime(2007, 02, 01).as_a_date());
-            income_for_february_2007
-                .is_told_to(x => x.amount_tendered)
-                .Return(new money(1000, 00));
+                            income_for_february_2007
+                                .is_told_to(x => x.date_of_issue)
+                                .it_will_return(new DateTime(2007, 02, 01).as_a_date());
+                            income_for_february_2007
+                                .is_told_to(x => x.amount_tendered)
+                                .it_will_return(new money(1000, 00));
 
-            income_for_february_2008
-                .is_told_to(x => x.date_of_issue)
-                .Return(new DateTime(2008, 02, 01).as_a_date());
-            income_for_february_2008
-                .is_told_to(x => x.amount_tendered)
-                .Return(new money(1000, 00));
+                            income_for_february_2008
+                                .is_told_to(x => x.date_of_issue)
+                                .it_will_return(new DateTime(2008, 02, 01).as_a_date());
+                            income_for_february_2008
+                                .is_told_to(x => x.amount_tendered)
+                                .it_will_return(new money(1000, 00));
+                        };
 
-            var system_under_test = new account_holder();
-            system_under_test.recieve(income_for_january_2007);
-            system_under_test.recieve(income_for_february_2007);
-            system_under_test.recieve(income_for_february_2008);
-            return system_under_test;
-        }
+        because b = () =>
+                        {
+                            sut.recieve(income_for_january_2007);
+                            sut.recieve(income_for_february_2007);
+                            sut.recieve(income_for_february_2008);
+                            result = sut.calculate_income_for(2007.as_a_year());
+                        };
 
-        protected override void because()
-        {
-            result = sut.calculate_income_for(2007.as_a_year());
-        }
+        it should_return_the_correct_amount = () => result.should_be_equal_to(2000.as_money());
 
-        [Observation]
-        public void it_should_return_the_correct_amount()
-        {
-            result.should_be_equal_to(2000.as_money());
-        }
-
-        private IMoney result;
+        static IMoney result;
+        static IIncome income_for_january_2007;
+        static IIncome income_for_february_2007;
+        static IIncome income_for_february_2008;
     }
 }

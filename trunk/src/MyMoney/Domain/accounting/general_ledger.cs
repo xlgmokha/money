@@ -10,7 +10,7 @@ namespace MyMoney.Domain.accounting
         IEnumerable<ILedgerEntry> get_all_the_entries_for(IMonth month);
     }
 
-    internal class general_ledger : IGeneralLedger
+    public class general_ledger : IGeneralLedger
     {
         private readonly List<ILedgerEntry> entries;
 
