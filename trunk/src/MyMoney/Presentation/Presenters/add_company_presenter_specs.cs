@@ -4,6 +4,7 @@ using MyMoney.Presentation.Views;
 using MyMoney.Tasks.application;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
+using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.Presentation.Presenters
 {

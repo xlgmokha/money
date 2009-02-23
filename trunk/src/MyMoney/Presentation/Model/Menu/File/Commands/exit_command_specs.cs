@@ -4,6 +4,7 @@ using MyMoney.Infrastructure.System;
 using MyMoney.Presentation.Model.messages;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
+using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.Presentation.Model.Menu.File.Commands
 {

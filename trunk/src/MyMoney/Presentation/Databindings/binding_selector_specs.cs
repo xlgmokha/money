@@ -2,6 +2,7 @@ using System;
 using System.Linq.Expressions;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
+using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.Presentation.Databindings
 {

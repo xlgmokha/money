@@ -1,7 +1,8 @@
 using jpboodhoo.bdd.mbunit.standard.observations;
+using MyMoney.Testing.Extensions;
 using Rhino.Mocks;
 
-namespace MyMoney.Testing.Extensions
+namespace MyMoney.Testing.spechelpers.contexts
 {
     public abstract class concerns_for<Contract> : observations_for_a_sut_without_a_contract<Contract>,
                                                    IHideObjectMembers

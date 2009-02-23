@@ -1,67 +1,51 @@
 using System.Collections.Generic;
 using System.IO;
 using Db4objects.Db4o;
+using jpboodhoo.bdd.contexts;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
+using MyMoney.Testing.spechelpers.contexts;
 using MyMoney.Utility.Extensions;
 
 namespace MyMoney.DataAccess.db40.spiking
 {
-    public class db40_spike_specs
-    {}
-
-    [Concern(typeof(Db4oFactory))]
-    public class when_opening_an_existing_database_ : context_specification
+    [Concern(typeof (Db4oFactory))]
+    public class when_opening_an_existing_database_ : concerns_for
     {
-        public override void before_each_observation()
-        {
-            the_database_file = Path.GetTempFileName();
-            database = Db4oFactory.OpenFile(the_database_file);
-            base.before_each_observation();
-        }
+        before_each_observation be = () => { };
 
-        protected override void context()
-        {
-            original = new TestObject(88, "mo");
-            database.Store(original);
-        }
+        context c = () =>
+                        {
+                            original = new TestObject(88, "mo");
+                                             the_database_file = Path.GetTempFileName();
+                                             database = Db4oFactory.OpenFile(the_database_file);
+                        };
 
-        protected override void because()
-        {
-            database.Close();
-            database.Dispose();
-            database = Db4oFactory.OpenFile(the_database_file);
-            results = database.Query<ITestObject>().databind();
-        }
+        because b = () =>
+                        {
+                            database.Store(original);
+                            database.Close();
+                            database.Dispose();
+                            database = Db4oFactory.OpenFile(the_database_file);
+                            results = database.Query<ITestObject>().databind();
+                        };
 
-        [Observation]
-        public void it_should_be_able_to_load_the_original_contents()
-        {
-            results.should_contain(original);
-        }
+        it should_be_able_to_load_the_original_contents = () => results.should_contain(original);
 
-        [Observation]
-        public void they_should_be_equal()
-        {
-            new TestObject(99, "gretzky").Equals(new TestObject(99, "gretzky"));
-        }
+        it they_should_be_equal = () => new TestObject(99, "gretzky").Equals(new TestObject(99, "gretzky"));
 
-        [Observation]
-        public void it_should_only_contain_the_original_item()
-        {
-            results.Count.should_be_equal_to(1);
-        }
+        it should_only_contain_the_original_item = () => results.Count.should_be_equal_to(1);
 
-        public override void after_each_observation()
-        {
-            database.Close();
-            database.Dispose();
-        }
+        after_each_observation ae = () =>
+                                        {
+                                            database.Close();
+                                            database.Dispose();
+                                        };
 
-        private ITestObject original;
-        private string the_database_file;
-        private IList<ITestObject> results;
-        private IObjectContainer database;
+        static ITestObject original;
+        static string the_database_file;
+        static IList<ITestObject> results;
+        static IObjectContainer database;
     }
 
     public interface ITestObject
@@ -98,7 +82,8 @@ namespace MyMoney.DataAccess.db40.spiking
 
         public override int GetHashCode()
         {
-            unchecked {
+            unchecked
+            {
                 return (Id*397) ^ (Name != null ? Name.GetHashCode() : 0);
             }
         }

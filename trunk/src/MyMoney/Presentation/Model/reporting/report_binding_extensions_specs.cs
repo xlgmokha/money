@@ -3,6 +3,7 @@ using DataDynamics.ActiveReports;
 using jpboodhoo.bdd.contexts;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
+using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.Presentation.Model.reporting
 {

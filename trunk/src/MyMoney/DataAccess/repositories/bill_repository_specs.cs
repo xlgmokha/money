@@ -1,38 +1,24 @@
 using System.Collections.Generic;
+using jpboodhoo.bdd.contexts;
 using MyMoney.Domain.accounting.billing;
-using MyMoney.Domain.Core;
 using MyMoney.Testing.Extensions;
-using MyMoney.Testing.MetaData;
+using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.DataAccess.repositories
 {
-    public class bill_repository_specs
+    public class when_loading_all_the_bills_from_the_repository : behaves_like_a_repository
     {
-    }
+        it should_return_all_the_bills_in_the_database = () => results.should_contain(first_bill);
 
-    [Concern(typeof (IRepository))]
-    public class when_loading_all_the_bills_from_the_repository : database_context_spec
-    {
-        [Observation]
-        public void it_should_return_all_the_bills_in_the_database()
-        {
-            results.should_contain(first_bill);
-        }
+        context c = () => { first_bill = an<IBill>(); };
 
-        protected override IRepository context()
-        {
-            var repository = base.context();
-            first_bill = an<IBill>();
-            repository.save(first_bill);
-            return repository;
-        }
+        because b = () =>
+                        {
+                            sut.save(first_bill);
+                            results = sut.all<IBill>();
+                        };
 
-        protected override void because()
-        {
-            results = sut.all<IBill>();
-        }
-
-        private IEnumerable<IBill> results;
-        private IBill first_bill;
+        static IEnumerable<IBill> results;
+        static IBill first_bill;
     }
 }

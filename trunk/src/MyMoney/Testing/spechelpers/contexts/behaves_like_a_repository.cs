@@ -2,12 +2,13 @@ using MyMoney.Domain.Core;
 using MyMoney.Infrastructure.Container;
 using MyMoney.Testing.MetaData;
 
-namespace MyMoney.Testing.Extensions
+namespace MyMoney.Testing.spechelpers.contexts
 {
     [run_in_real_container]
-    public abstract class database_context_spec : old_context_specification<IRepository>
+    [Concern(typeof (IRepository))]
+    public abstract class behaves_like_a_repository : concerns_for<IRepository>
     {
-        protected override IRepository context()
+        public override IRepository create_sut()
         {
             return resolve.dependency_for<IRepository>();
         }

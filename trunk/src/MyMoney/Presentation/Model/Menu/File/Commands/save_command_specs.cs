@@ -2,6 +2,7 @@ using jpboodhoo.bdd.contexts;
 using MyMoney.Presentation.Model.Projects;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
+using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.Presentation.Model.Menu.File.Commands
 {

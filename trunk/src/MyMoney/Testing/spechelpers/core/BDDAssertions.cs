@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MbUnit.Framework;
 
-namespace MyMoney.Testing.spechelpers
+namespace MyMoney.Testing.spechelpers.core
 {
     public static class BDDAssertions
     {

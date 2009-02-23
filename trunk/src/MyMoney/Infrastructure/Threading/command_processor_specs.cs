@@ -1,6 +1,7 @@
 using jpboodhoo.bdd.contexts;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
+using MyMoney.Testing.spechelpers.contexts;
 using MyMoney.Utility.Core;
 
 namespace MyMoney.Infrastructure.Threading

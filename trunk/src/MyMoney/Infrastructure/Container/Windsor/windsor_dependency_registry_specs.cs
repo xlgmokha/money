@@ -2,6 +2,7 @@ using Castle.Core;
 using Castle.Windsor;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
+using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.Infrastructure.Container.Windsor
 {

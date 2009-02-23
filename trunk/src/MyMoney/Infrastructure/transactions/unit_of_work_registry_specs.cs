@@ -2,6 +2,7 @@ using jpboodhoo.bdd.contexts;
 using MyMoney.Domain.Core;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
+using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.Infrastructure.transactions
 {

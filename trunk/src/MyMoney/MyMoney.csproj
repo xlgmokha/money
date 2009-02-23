@@ -394,14 +394,14 @@
     <Compile Include="Tasks\application\customer_tasks.cs" />
     <Compile Include="Tasks\application\file_system_tasks.cs" />
     <Compile Include="Tasks\application\income_tasks.cs" />
-    <Compile Include="Testing\Extensions\concerns_for.cs" />
-    <Compile Include="Testing\Extensions\context_specification.cs" />
-    <Compile Include="Testing\Extensions\database_context_spec.cs" />
-    <Compile Include="Testing\Extensions\IHideObjectMembers.cs" />
+    <Compile Include="Testing\spechelpers\contexts\concerns_for.cs" />
+    <Compile Include="Testing\spechelpers\contexts\context_specification.cs" />
+    <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
+    <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
     <Compile Include="Testing\MetaData\Observation.cs" />
     <Compile Include="Testing\MetaData\Observations.cs" />
-    <Compile Include="Testing\Extensions\old_context_specification.cs" />
-    <Compile Include="Testing\Extensions\method_call_occurance.cs" />
+    <Compile Include="Testing\spechelpers\contexts\old_context_specification.cs" />
+    <Compile Include="Testing\spechelpers\core\method_call_occurance.cs" />
     <Compile Include="Testing\MetaData\run_in_real_container.cs" />
     <Compile Include="Testing\spechelpers\core\BDDAssertions.cs" />
     <Compile Include="Utility\Core\chained_mapper.cs" />
@@ -585,8 +585,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Testing\Call.cs" />
-    <Compile Include="Testing\Extensions\assertion_extensions.cs" />
-    <Compile Include="Testing\Extensions\mocking_extensions.cs" />
+    <Compile Include="Testing\spechelpers\core\assertion_extensions.cs" />
+    <Compile Include="Testing\spechelpers\core\mocking_extensions.cs" />
     <Compile Include="Testing\MetaData\ConcernAttribute.cs" />
     <Compile Include="windows.ui\start_the_application.cs" />
     <Compile Include="windows.ui\wire_up_the_container.cs" />
@@ -602,8 +602,8 @@
     <Folder Include="Presentation\Presenters\messages\" />
     <Folder Include="Tasks\domain\" />
     <Folder Include="Tasks\Stubs\" />
+    <Folder Include="Testing\Extensions\" />
     <Folder Include="Testing\spechelpers\concerns\" />
-    <Folder Include="Testing\spechelpers\contexts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

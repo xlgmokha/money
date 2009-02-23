@@ -2,7 +2,7 @@ using MbUnit.Framework;
 using MyMoney.Testing.MetaData;
 using Rhino.Mocks;
 
-namespace MyMoney.Testing.Extensions
+namespace MyMoney.Testing.spechelpers.contexts
 {
     [Observations]
     public abstract class old_context_specification<SystemUnderTest>
