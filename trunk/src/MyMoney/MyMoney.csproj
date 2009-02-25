@@ -309,11 +309,14 @@
     <Compile Include="Presentation\Model\messages\new_project_opened.cs" />
     <Compile Include="Presentation\Model\messages\saved_changes_event.cs" />
     <Compile Include="Presentation\Model\messages\unsaved_changes_event.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\AddBillingTaskPane.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\AddIncomeTaskPane.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\AddReportingTaskPane.cs" />
     <Compile Include="Presentation\Presenters\Navigation\Build.cs" />
-    <Compile Include="Presentation\Presenters\Navigation\company_task_presenter.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\AddCompanyTaskPane.cs" />
     <Compile Include="Presentation\Presenters\Navigation\ExpandoBuilder.cs" />
     <Compile Include="Presentation\Presenters\Navigation\ExpandoItemBuilder.cs" />
-    <Compile Include="Presentation\Presenters\Navigation\IActionTaskPresenter.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\IActionTaskPaneFactory.cs" />
     <Compile Include="Presentation\Presenters\Shell\tool_bar_presenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\action_tasks_presenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\navigation_presenter.cs" />
@@ -413,6 +416,7 @@
     <Compile Include="Utility\Core\and_specification.cs" />
     <Compile Include="Utility\Core\command.cs" />
     <Compile Include="Utility\Core\empty_command.cs" />
+    <Compile Include="Utility\Core\IBuilder.cs" />
     <Compile Include="Utility\Core\IDisposableCommand.cs" />
     <Compile Include="Utility\Core\IFactory.cs" />
     <Compile Include="Utility\Core\IParameterizedCommand.cs" />

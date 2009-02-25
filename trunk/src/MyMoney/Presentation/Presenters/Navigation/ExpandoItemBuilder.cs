@@ -2,16 +2,16 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using MyMoney.Presentation.Resources;
+using MyMoney.Utility.Core;
 using XPExplorerBar;
 
 namespace MyMoney.Presentation.Presenters.Navigation
 {
-    public interface IExpandoItemBuilder
+    public interface IExpandoItemBuilder : IBuilder<TaskItem>
     {
-        IExpandoItemBuilder Named(string name);
-        IExpandoItemBuilder RepresentedByImage(ApplicationImage image);
-        IExpandoItemBuilder WhenClickedExecute(Action action);
-        TaskItem Build();
+        IExpandoItemBuilder named(string name);
+        IExpandoItemBuilder represented_by_image(ApplicationImage image);
+        IExpandoItemBuilder when_clicked_execute(Action action);
     }
 
     public class ExpandoItemBuilder : IExpandoItemBuilder
@@ -20,25 +20,25 @@ namespace MyMoney.Presentation.Presenters.Navigation
         ApplicationImage the_image;
         Action the_action = () => { };
 
-        public IExpandoItemBuilder Named(string name)
+        public IExpandoItemBuilder named(string name)
         {
             the_name = name;
             return this;
         }
 
-        public IExpandoItemBuilder RepresentedByImage(ApplicationImage image)
+        public IExpandoItemBuilder represented_by_image(ApplicationImage image)
         {
             the_image = image;
             return this;
         }
 
-        public IExpandoItemBuilder WhenClickedExecute(Action action)
+        public IExpandoItemBuilder when_clicked_execute(Action action)
         {
             the_action = action;
             return this;
         }
 
-        public TaskItem Build()
+        public TaskItem build()
         {
             var item = new TaskItem
                            {

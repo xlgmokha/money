@@ -2,17 +2,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using MyMoney.Utility.Core;
 using MyMoney.Utility.Extensions;
 using XPExplorerBar;
 using Padding=System.Windows.Forms.Padding;
 
 namespace MyMoney.Presentation.Presenters.Navigation
 {
-    public interface IExpandoBuilder
+    public interface IExpandoBuilder : IBuilder<Expando>
     {
-        IExpandoBuilder Named(string name);
-        IExpandoBuilder WithItem(IExpandoItemBuilder builder);
-        Expando Build();
+        IExpandoBuilder named(string name);
+        IExpandoBuilder with_item(IExpandoItemBuilder builder);
     }
 
     public class ExpandoBuilder : IExpandoBuilder
@@ -20,19 +20,19 @@ namespace MyMoney.Presentation.Presenters.Navigation
         readonly IList<IExpandoItemBuilder> builders = new List<IExpandoItemBuilder>();
         string the_name = "";
 
-        public IExpandoBuilder Named(string name)
+        public IExpandoBuilder named(string name)
         {
             the_name = name;
             return this;
         }
 
-        public IExpandoBuilder WithItem(IExpandoItemBuilder builder)
+        public IExpandoBuilder with_item(IExpandoItemBuilder builder)
         {
             builders.Add(builder);
             return this;
         }
 
-        public Expando Build()
+        public Expando build()
         {
             var pane = new Expando {};
             ((ISupportInitialize) (pane)).BeginInit();
@@ -61,7 +61,7 @@ namespace MyMoney.Presentation.Presenters.Navigation
         TaskItem[] create_items()
         {
             var items = new List<TaskItem>();
-            builders.each(x => items.Add(x.Build()));
+            builders.each(x => items.Add(x.build()));
             return items.ToArray();
         }
     }

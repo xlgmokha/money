@@ -2,12 +2,12 @@ namespace MyMoney.Presentation.Presenters.Navigation
 {
     public class Build
     {
-        public static IExpandoBuilder Expando()
+        public static IExpandoBuilder task_pane()
         {
             return new ExpandoBuilder();
         }
 
-        public static IExpandoItemBuilder ExpandoItem()
+        public static IExpandoItemBuilder task_pane_item()
         {
             return new ExpandoItemBuilder();
         }

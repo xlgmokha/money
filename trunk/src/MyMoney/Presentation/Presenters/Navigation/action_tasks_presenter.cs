@@ -12,9 +12,9 @@ namespace MyMoney.Presentation.Presenters.Navigation
     public class action_tasks_presenter : IActionTasksPresenter
     {
         readonly IActionsTaskView view;
-        readonly IRegistry<IActionTaskPresenter> registry;
+        readonly IRegistry<IActionTaskPaneFactory> registry;
 
-        public action_tasks_presenter(IActionsTaskView view, IRegistry<IActionTaskPresenter> registry)
+        public action_tasks_presenter(IActionsTaskView view, IRegistry<IActionTaskPaneFactory> registry)
         {
             this.view = view;
             this.registry = registry;
@@ -23,7 +23,7 @@ namespace MyMoney.Presentation.Presenters.Navigation
         public void run()
         {
             view.display();
-            registry.all().each(x => x.run(view));
+            registry.all().each(x => view.add(x.create()));
         }
     }
 }
