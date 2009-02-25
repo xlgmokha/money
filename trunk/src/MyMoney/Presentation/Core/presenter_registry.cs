@@ -4,11 +4,12 @@ using MyMoney.Domain.Core;
 namespace MyMoney.Presentation.Core
 {
     public interface IPresenterRegistry : IRegistry<IPresenter>
-    {}
+    {
+    }
 
     public class presenter_registry : IPresenterRegistry
     {
-        private readonly IRegistry<IPresenter> presenters;
+        readonly IRegistry<IPresenter> presenters;
 
         public presenter_registry(IRegistry<IPresenter> presenters)
         {

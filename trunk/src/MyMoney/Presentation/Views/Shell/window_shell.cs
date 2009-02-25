@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows.Forms;
 using MyMoney.Presentation.Resources;
@@ -18,6 +19,7 @@ namespace MyMoney.Presentation.Views.Shell
         void clear_menu_items();
     }
 
+    [Export(typeof(IShell))]
     public partial class window_shell : Form, IShell
     {
         public window_shell()

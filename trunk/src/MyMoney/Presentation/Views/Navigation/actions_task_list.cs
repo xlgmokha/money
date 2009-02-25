@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using MyMoney.Presentation.Presenters;
+﻿using MyMoney.Presentation.Presenters;
 using MyMoney.Presentation.Presenters.billing;
 using MyMoney.Presentation.Presenters.Commands;
 using MyMoney.Presentation.Presenters.income;
@@ -9,18 +7,20 @@ using MyMoney.Presentation.Resources;
 using MyMoney.Presentation.Views.core;
 using MyMoney.Presentation.Views.Shell;
 using WeifenLuo.WinFormsUI.Docking;
+using XPExplorerBar;
 
 namespace MyMoney.Presentation.Views.Navigation
 {
     public interface IActionsTaskView : IDockedContentView
     {
         void display();
+        void Add(Expando expando);
     }
 
     public partial class actions_task_list : DockContent, IActionsTaskView
     {
-        private readonly IShell shell;
-        private readonly IRunPresenterCommand command;
+        readonly IShell shell;
+        readonly IRunPresenterCommand command;
 
         public actions_task_list(IShell shell, IRunPresenterCommand command)
         {
@@ -33,7 +33,7 @@ namespace MyMoney.Presentation.Views.Navigation
             initialize_the_ui();
         }
 
-        private void initialize_the_ui()
+        void initialize_the_ui()
         {
             TabText = "Action Items";
             Icon = ApplicationIcons.FileExplorer;
@@ -69,6 +69,11 @@ namespace MyMoney.Presentation.Views.Navigation
 
             shell.add(this);
             DockState = DockState.DockLeft;
+        }
+
+        public void Add(Expando expando)
+        {
+            ux_system_task_pane.Expandos.Add(expando);
         }
     }
 }

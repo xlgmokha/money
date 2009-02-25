@@ -309,6 +309,11 @@
     <Compile Include="Presentation\Model\messages\new_project_opened.cs" />
     <Compile Include="Presentation\Model\messages\saved_changes_event.cs" />
     <Compile Include="Presentation\Model\messages\unsaved_changes_event.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\Build.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\company_task_presenter.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\ExpandoBuilder.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\ExpandoItemBuilder.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\IActionTaskPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\tool_bar_presenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\action_tasks_presenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\navigation_presenter.cs" />
