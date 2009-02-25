@@ -22,8 +22,8 @@ namespace MyMoney.Presentation.Presenters.Navigation
 
         public void run()
         {
-            view.display();
             registry.all().each(x => view.add(x.create()));
+            view.display();
         }
     }
 }
