@@ -1,56 +1,51 @@
 using System;
 using System.Linq.Expressions;
+using jpboodhoo.bdd.contexts;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.Presentation.Databindings
 {
-    public class binding_selector_specs
-    {}
-
     [Concern(typeof (binding_selector<IAnInterface>))]
-    public class when_selecting_a_property_as_the_target_of_a_binding : old_context_specification<IBindingSelector<IAnInterface>>
+    public class when_selecting_a_property_as_the_target_of_a_binding : concerns_for<IBindingSelector<IAnInterface>>
     {
-        [Observation]
-        public void should_return_a_binder_bound_to_the_correct_property()
+        it should_return_a_binder_bound_to_the_correct_property =
+            () => result.property.Name.should_be_equal_to("FirstName");
+
+        it should_inspect_the_expression_for_the_property_information =
+            () => inspector.was_told_to(i => i.inspect(expression_to_parse));
+
+        context c = () =>
+                        {
+                            thing_to_bind_to = an<IAnInterface>();
+                            factory = an<IPropertyInspectorFactory>();
+                            inspector = an<IPropertyInspector<IAnInterface, string>>();
+
+                            factory
+                                .is_told_to(f => f.create<IAnInterface, string>())
+                                .it_will_return(inspector);
+
+                            inspector.is_told_to(i => i.inspect(null))
+                                .IgnoreArguments()
+                                .it_will_return(typeof (IAnInterface).GetProperty("FirstName"));
+                        };
+
+        because b = () =>
+                        {
+                            expression_to_parse = (s => s.FirstName);
+                            result = sut.bind_to_property(expression_to_parse);
+                        };
+
+        public override IBindingSelector<IAnInterface> create_sut()
         {
-            result.property.Name.should_be_equal_to("FirstName");
-        }
-
-        [Observation]
-        public void should_inspect_the_expression_for_the_property_information()
-        {
-            inspector.was_told_to(i => i.inspect(expression_to_parse));
-        }
-
-        protected override IBindingSelector<IAnInterface> context()
-        {
-            thing_to_bind_to = an<IAnInterface>();
-            factory = an<IPropertyInspectorFactory>();
-            inspector = an<IPropertyInspector<IAnInterface, string>>();
-
-            factory
-                .is_told_to(f => f.create<IAnInterface, string>())
-                .Return(inspector);
-
-            inspector.is_told_to(i => i.inspect(null))
-                .IgnoreArguments()
-                .Return(typeof (IAnInterface).GetProperty("FirstName"));
-
             return new binding_selector<IAnInterface>(thing_to_bind_to, factory);
         }
 
-        protected override void because()
-        {
-            expression_to_parse = (s => s.FirstName);
-            result = sut.bind_to_property(expression_to_parse);
-        }
-
-        private IAnInterface thing_to_bind_to;
-        private IPropertyBinder<IAnInterface, string> result;
-        private IPropertyInspectorFactory factory;
-        private IPropertyInspector<IAnInterface, string> inspector;
-        private Expression<Func<IAnInterface, string>> expression_to_parse;
+        static IAnInterface thing_to_bind_to;
+        static IPropertyBinder<IAnInterface, string> result;
+        static IPropertyInspectorFactory factory;
+        static IPropertyInspector<IAnInterface, string> inspector;
+        static Expression<Func<IAnInterface, string>> expression_to_parse;
     }
 }

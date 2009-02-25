@@ -1,71 +1,51 @@
+using jpboodhoo.bdd.contexts;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
 
 namespace MyMoney.Domain.Core
 {
-    public class money_specs
-    {}
-
     [Concern(typeof (money))]
-    public class when_adding_two_monies_together : old_context_specification<IMoney>
+    public class when_adding_two_monies_together : concerns_for<IMoney>
     {
-        [Observation]
-        public void it_should_return_the_correct_money()
-        {
-            result.should_be_equal_to(new money(2, 98));
-        }
+        it should_return_the_correct_money = () => result.should_be_equal_to(new money(2, 98));
 
-        protected override IMoney context()
+
+        because b = () => { result = sut.add(new money(1, 99)); };
+
+        public override IMoney create_sut()
         {
             return new money(0, 99);
         }
 
-        protected override void because()
-        {
-            result = sut.add(new money(1, 99));
-        }
-
-        private IMoney result;
+        static IMoney result;
     }
 
     [Concern(typeof (money))]
-    public class when_two_monies_of_the_same_value_are_compared_to_one_another : old_context_specification<IMoney>
+    public class when_two_monies_of_the_same_value_are_compared_to_one_another : concerns_for<IMoney>
     {
-        [Observation]
-        public void they_should_be_equal()
-        {
-            result.should_be_equal_to(true);
-        }
+        it they_should_be_equal = () => result.should_be_equal_to(true);
 
-        protected override IMoney context()
+
+        because b = () => { result = sut.Equals(new money(1, 99)); };
+
+        public override IMoney create_sut()
         {
             return new money(1, 99);
         }
 
-        protected override void because()
-        {
-            result = sut.Equals(new money(1, 99));
-        }
-
-        private bool result;
+        static bool result;
     }
 
     [Concern(typeof (money))]
-    public class when_creating_a_money_with_pennies_greater_than_a_dollar : old_context_specification<IMoney>
+    public class when_creating_a_money_with_pennies_greater_than_a_dollar : concerns_for<IMoney>
     {
-        [Observation]
-        public void it_should_create_a_money_representing_the_correct_amount_of_dollars_and_pennies()
-        {
-            sut.should_be_equal_to(new money(3, 00));
-        }
+        it should_create_a_money_representing_the_correct_amount_of_dollars_and_pennies =
+            () => sut.should_be_equal_to(new money(3, 00));
 
-        protected override IMoney context()
+        public override IMoney create_sut()
         {
             return new money(1, 200);
         }
-
-        protected override void because()
-        {}
     }
 }

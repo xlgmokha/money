@@ -38,7 +38,6 @@ namespace MyMoney.Presentation.Views.Navigation
             TabText = "Action Items";
             Icon = ApplicationIcons.FileExplorer;
             ux_system_task_pane.UseClassicTheme();
-            ux_system_task_pane.Expandos.Add
             //ux_system_task_pane.UseCustomTheme(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "itunes.dat"));
         }
 
