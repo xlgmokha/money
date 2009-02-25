@@ -41,45 +41,35 @@ namespace MyMoney.Infrastructure.Threading
         because b = () => sut.start_notifying(client, new TimeSpan(0, 10, 0));
     }
 
-    [Concern(typeof (interval_timer))]
-    public class when_starting_a_timer_for_an_existing_client : old_context_specification<ITimer>
+    public class when_starting_a_timer_for_an_existing_client : behaves_like_an_interval_timer
     {
-        ITimerFactory factory;
-        ITimerClient client;
-        Timer first_timer;
-        Timer second_timer;
+        it should_stop_the_previously_started_timer = () =>
+                                                          {
+                                                              first_timer.was_told_to(t => t.Stop());
+                                                              first_timer.was_told_to(t => t.Dispose());
+                                                          };
 
-        [Observation]
-        public void should_stop_the_previously_started_timer()
-        {
-            first_timer.was_told_to(t => t.Stop());
-            first_timer.was_told_to(t => t.Dispose());
-        }
+        it should_start_a_new_timer = () => second_timer.was_told_to(t => t.Start());
 
-        [Observation]
-        public void should_start_a_new_timer()
-        {
-            second_timer.was_told_to(t => t.Start());
-        }
+        context c = () =>
+                        {
+                            client = an<ITimerClient>();
+                            first_timer = dependency<Timer>();
+                            second_timer = dependency<Timer>();
 
-        protected override ITimer context()
-        {
-            factory = an<ITimerFactory>();
-            client = an<ITimerClient>();
-            first_timer = an<Timer>();
-            second_timer = an<Timer>();
+                            factory.is_told_to(f => f.create_for(new TimeSpan(0, 1, 1))).it_will_return(first_timer);
+                            factory.is_told_to(f => f.create_for(new TimeSpan(0, 2, 2))).it_will_return(second_timer);
+                        };
 
-            factory.is_told_to(f => f.create_for(new TimeSpan(0, 1, 1))).Return(first_timer);
-            factory.is_told_to(f => f.create_for(new TimeSpan(0, 2, 2))).Return(second_timer);
+        because b = () =>
+                        {
+                            sut.start_notifying(client, new TimeSpan(0, 1, 1));
+                            sut.start_notifying(client, new TimeSpan(0, 2, 2));
+                        };
 
-            return new interval_timer(factory);
-        }
-
-        protected override void because()
-        {
-            sut.start_notifying(client, new TimeSpan(0, 1, 1));
-            sut.start_notifying(client, new TimeSpan(0, 2, 2));
-        }
+        static ITimerClient client;
+        static Timer first_timer;
+        static Timer second_timer;
     }
 
     public class when_a_timer_elapses : behaves_like_an_interval_timer

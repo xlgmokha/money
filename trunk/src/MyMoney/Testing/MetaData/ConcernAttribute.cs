@@ -2,14 +2,10 @@ using System;
 
 namespace MyMoney.Testing.MetaData
 {
-    [AttributeUsage(AttributeTargets.Class)]
-    public class ConcernAttribute : Attribute
+    public class ConcernAttribute : bdddoc.core.ConcernAttribute
     {
-        public ConcernAttribute(Type concern)
+        public ConcernAttribute(Type concern) : base(concern)
         {
-            Concern = concern;
         }
-
-        public Type Concern { get; private set; }
     }
 }

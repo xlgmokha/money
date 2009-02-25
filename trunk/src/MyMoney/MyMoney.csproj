@@ -39,6 +39,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\active.reports\ActiveReports3.dll</HintPath>
     </Reference>
+    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\castle\Castle.Core.dll</HintPath>
@@ -397,9 +401,6 @@
     <Compile Include="Testing\spechelpers\contexts\concerns_for.cs" />
     <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
-    <Compile Include="Testing\MetaData\Observation.cs" />
-    <Compile Include="Testing\MetaData\Observations.cs" />
-    <Compile Include="Testing\spechelpers\contexts\old_context_specification.cs" />
     <Compile Include="Testing\spechelpers\core\method_call_occurance.cs" />
     <Compile Include="Testing\MetaData\run_in_real_container.cs" />
     <Compile Include="Testing\spechelpers\core\BDDAssertions.cs" />
@@ -484,7 +485,6 @@
       <DependentUpon>window_shell.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\Menu\Mappers\sub_menu_to_tool_strip_menu_item_mapper.cs" />
-    <Compile Include="Presentation\Views\Menu\Mappers\sub_menu_to_tool_strip_menu_item_mapper_specs.cs" />
     <Compile Include="Presentation\Context\the_application_context_specs.cs" />
     <Compile Include="Presentation\Context\the_application_context.cs" />
     <Compile Include="Presentation\Views\Startup\ISplashScreenView.cs" />
