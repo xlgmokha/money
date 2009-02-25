@@ -9,7 +9,7 @@ namespace MyMoney.Presentation.Presenters.Navigation
 
     public class action_tasks_presenter : IActionTasksPresenter
     {
-        readonly IActionsTaskView view;
+        private readonly IActionsTaskView view;
 
         public action_tasks_presenter(IActionsTaskView view)
         {
