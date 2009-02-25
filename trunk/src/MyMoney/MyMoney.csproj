@@ -395,7 +395,6 @@
     <Compile Include="Tasks\application\file_system_tasks.cs" />
     <Compile Include="Tasks\application\income_tasks.cs" />
     <Compile Include="Testing\spechelpers\contexts\concerns_for.cs" />
-    <Compile Include="Testing\spechelpers\contexts\context_specification.cs" />
     <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
     <Compile Include="Testing\MetaData\Observation.cs" />
