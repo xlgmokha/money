@@ -9,8 +9,7 @@ namespace MyMoney.Testing.spechelpers.core
 {
     public static class mocking_extensions
     {
-        public static method_call_occurance<T> was_told_to<T>(this T mocked_item,
-                                                              Action<T> actionToPerform)
+        public static method_call_occurance<T> was_told_to<T>(this T mocked_item, Action<T> actionToPerform)
         {
             return new method_call_occurance<T>(mocked_item, actionToPerform);
         }
