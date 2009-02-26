@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using jpboodhoo.bdd.contexts;
 using MyMoney.Domain.Core;
 using MyMoney.Infrastructure.Container;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using assertion_extensions=MyMoney.Testing.spechelpers.core.assertion_extensions;
 using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Infrastructure.registries
@@ -16,7 +16,7 @@ namespace MyMoney.Infrastructure.registries
         it should_leverage_the_resolver_to_retrieve_all_the_implementations =
             () => mocking_extensions.was_told_to(registry, r => r.all_implementations_of<int>());
 
-        it should_return_the_items_resolved_by_the_registry = () => result.should_contain(24);
+        it should_return_the_items_resolved_by_the_registry = () => assertion_extensions.should_contain(result, 24);
 
         context c = () =>
                         {

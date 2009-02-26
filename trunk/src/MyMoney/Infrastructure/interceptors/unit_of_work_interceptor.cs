@@ -6,12 +6,13 @@ using MyMoney.Presentation.Model.messages;
 namespace MyMoney.Infrastructure.interceptors
 {
     public interface IUnitOfWorkInterceptor : IInterceptor
-    {}
+    {
+    }
 
     public class unit_of_work_interceptor : IUnitOfWorkInterceptor
     {
-        private readonly IUnitOfWorkRegistry registry;
-        private readonly IEventAggregator broker;
+        readonly IUnitOfWorkRegistry registry;
+        readonly IEventAggregator broker;
 
         public unit_of_work_interceptor(IUnitOfWorkRegistry registry, IEventAggregator broker)
         {
@@ -21,7 +22,8 @@ namespace MyMoney.Infrastructure.interceptors
 
         public void Intercept(IInvocation invocation)
         {
-            using (registry) {
+            using (registry)
+            {
                 invocation.Proceed();
                 registry.commit_all();
                 broker.publish<unsaved_changes_event>();

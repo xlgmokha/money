@@ -51,6 +51,10 @@ namespace MyMoney.Presentation.Model.Menu.File.Commands
                 view.attach_to(this);
                 view.prompt_user_to_save();
             }
+            else
+            {
+                item.not_saved();
+            }
         }
 
         public void save()

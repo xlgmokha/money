@@ -1,9 +1,9 @@
 using Db4objects.Db4o;
 using jpboodhoo.bdd.contexts;
 using MyMoney.Presentation.Model.Projects;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.DataAccess.db40

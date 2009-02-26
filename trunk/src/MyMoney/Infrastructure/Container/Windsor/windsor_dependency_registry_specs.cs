@@ -1,9 +1,9 @@
 using Castle.Core;
 using Castle.Windsor;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Infrastructure.Container.Windsor
@@ -14,7 +14,7 @@ namespace MyMoney.Infrastructure.Container.Windsor
         it should_return_the_same_instance_each_time_its_resolved =
             () => result.should_be_the_same_instance_as(sut.find_an_implementation_of<IBird>());
 
-        it should_not_return_null = () => result.should_not_be_null();
+        it should_not_return_null = () => assertion_extensions.should_not_be_null(result);
 
         public override IDependencyRegistry create_sut()
         {

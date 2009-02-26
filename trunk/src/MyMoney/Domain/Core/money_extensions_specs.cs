@@ -1,6 +1,6 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Domain.Core
 {

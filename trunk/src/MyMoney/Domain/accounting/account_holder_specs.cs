@@ -4,9 +4,9 @@ using jpboodhoo.bdd.contexts;
 using MyMoney.Domain.accounting.billing;
 using MyMoney.Domain.accounting.financial_growth;
 using MyMoney.Domain.Core;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Domain.accounting
@@ -24,8 +24,8 @@ namespace MyMoney.Domain.accounting
     {
         it should_return_all_the_unpaid_bills = () =>
                                                     {
-                                                        result.should_contain(first_unpaid_bill);
-                                                        result.should_contain(second_unpaid_bill);
+                                                        assertion_extensions.should_contain(result, first_unpaid_bill);
+                                                        assertion_extensions.should_contain(result, second_unpaid_bill);
                                                     };
 
         context c = () =>

@@ -1,7 +1,7 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Domain.Core
 {
@@ -23,7 +23,7 @@ namespace MyMoney.Domain.Core
     [Concern(typeof (date))]
     public class when_an_older_date_is_compared_to_a_younger_date : concerns_for<IDate>
     {
-        it should_return_a_positive_number = () => result.should_be_greater_than(0);
+        it should_return_a_positive_number = () => assertion_extensions.should_be_greater_than(result, 0);
 
         public override IDate create_sut()
         {

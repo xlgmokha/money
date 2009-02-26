@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Db4objects.Db4o;
 using jpboodhoo.bdd.contexts;
 using MyMoney.Domain.Core;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using assertion_extensions=MyMoney.Testing.spechelpers.core.assertion_extensions;
 using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.DataAccess.db40
@@ -26,8 +26,8 @@ namespace MyMoney.DataAccess.db40
     {
         it should_return_all_the_items_from_the_database = () =>
                                                                {
-                                                                   result.should_contain(first_item);
-                                                                   result.should_contain(second_item);
+                                                                   assertion_extensions.should_contain(result, first_item);
+                                                                   assertion_extensions.should_contain(result, second_item);
                                                                };
 
         context c = () =>

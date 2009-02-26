@@ -1,8 +1,8 @@
 using System.Windows.Forms;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Presentation.Databindings

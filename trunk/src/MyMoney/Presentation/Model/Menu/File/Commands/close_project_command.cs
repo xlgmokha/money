@@ -4,7 +4,7 @@ using MyMoney.Utility.Core;
 
 namespace MyMoney.Presentation.Model.Menu.File.Commands
 {
-    public interface ICloseCommand : ICommand
+    public interface ICloseCommand : ICommand, ISaveChangesCallback
     {
     }
 
@@ -12,17 +12,34 @@ namespace MyMoney.Presentation.Model.Menu.File.Commands
     {
         readonly IShell shell;
         readonly IProject project;
+        readonly ISaveChangesCommand command;
 
-        public close_project_command(IShell shell, IProject project)
+        public close_project_command(IShell shell, IProject project, ISaveChangesCommand command)
         {
             this.shell = shell;
+            this.command = command;
             this.project = project;
         }
 
         public void run()
         {
+            command.run(this);
+        }
+
+        public void saved()
+        {
             project.start_a_new_project();
             shell.close_all_windows();
+        }
+
+        public void not_saved()
+        {
+            project.start_a_new_project();
+            shell.close_all_windows();
+        }
+
+        public void cancelled()
+        {
         }
     }
 }

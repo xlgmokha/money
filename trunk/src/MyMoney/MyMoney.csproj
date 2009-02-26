@@ -425,7 +425,6 @@
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
     <Compile Include="Testing\spechelpers\core\method_call_occurance.cs" />
     <Compile Include="Testing\MetaData\run_in_real_container.cs" />
-    <Compile Include="Testing\spechelpers\core\BDDAssertions.cs" />
     <Compile Include="Utility\Core\chained_mapper.cs" />
     <Compile Include="Utility\Core\and_specification.cs" />
     <Compile Include="Utility\Core\command.cs" />
