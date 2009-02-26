@@ -27,9 +27,7 @@ namespace MyMoney.Presentation.Presenters.Commands
         {
             shell.clear_menu_items();
             shell.close_all_windows();
-            registry
-                .all_implementations_of<IPresentationModule>()
-                .each(x => controller.run(x));
+            registry.all_implementations_of<IPresentationModule>().each(x => controller.run(x));
         }
     }
 }

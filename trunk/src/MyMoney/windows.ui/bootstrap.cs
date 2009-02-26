@@ -10,7 +10,7 @@ namespace MyMoney.windows.ui
         {
             hookup.the<global_error_handling>()
                 .then<wire_up_the_container>()
-                .then<check_for_updates>()
+                //.then<check_for_updates>()
                 .then<start_the_application>()
                 .run();
         }

@@ -7,11 +7,12 @@ namespace MyMoney.Presentation.Presenters.Commands
 {
     public class display_the_splash_screen : IDisposableCommand
     {
-        private readonly ISplashScreenPresenter presenter;
+        readonly ISplashScreenPresenter presenter;
 
         public display_the_splash_screen()
             : this(new splash_screen_presenter(new interval_timer(new timer_factory()), new splash_screen_view()))
-        {}
+        {
+        }
 
         public display_the_splash_screen(ISplashScreenPresenter presenter)
         {

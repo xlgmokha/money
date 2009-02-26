@@ -11,10 +11,12 @@ namespace MyMoney.windows.ui
     {
         public void run()
         {
-            try {
+            try
+            {
                 Application.Run(resolve.dependency_for<the_application_context>());
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 this.log().error(e);
                 MessageBox.Show(e.ToString(), e.Message);
             }

@@ -243,6 +243,7 @@
     <Compile Include="Presentation\Model\Menu\File\Commands\close_project_command.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\close_window_command.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\new_command_specs.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\SaveChangesCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\save_as_command_specs.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\save_command_specs.cs" />
     <Compile Include="Presentation\Model\Menu\menu_item_separator.cs" />
@@ -349,6 +350,7 @@
       <DependentUpon>add_bill_payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\billing\IAddBillPaymentView.cs" />
+    <Compile Include="Presentation\Views\dialogs\ISaveChangesView.cs" />
     <Compile Include="Presentation\Views\IAddCompanyView.cs" />
     <Compile Include="Presentation\Views\billing\IViewAllBills.cs" />
     <Compile Include="Presentation\Views\billing\view_all_bills.cs">

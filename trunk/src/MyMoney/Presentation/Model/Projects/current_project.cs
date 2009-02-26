@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using Castle.Core;
 using MyMoney.DataAccess.db40;
@@ -14,6 +15,7 @@ namespace MyMoney.Presentation.Model.Projects
         void save_to(IFile new_file);
         bool has_been_saved_at_least_once();
         void save_changes();
+        bool has_unsaved_changes();
     }
 
     [Singleton]
@@ -68,6 +70,11 @@ namespace MyMoney.Presentation.Model.Projects
             ensure_that_a_path_to_save_to_has_been_specified();
             configuration.path_to_the_database().copy_to(current_file);
             broker.publish<saved_changes_event>();
+        }
+
+        public bool has_unsaved_changes()
+        {
+            throw new NotImplementedException();
         }
 
         private void ensure_that_a_path_to_save_to_has_been_specified()

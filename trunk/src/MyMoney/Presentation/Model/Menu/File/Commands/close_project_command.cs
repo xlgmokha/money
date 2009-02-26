@@ -5,12 +5,14 @@ using MyMoney.Utility.Core;
 namespace MyMoney.Presentation.Model.Menu.File.Commands
 {
     public interface ICloseCommand : ICommand
-    {}
+    {
+    }
 
     public class close_project_command : ICloseCommand
     {
-        private readonly IShell shell;
-        private IProject project;
+        readonly IShell shell;
+        readonly IProject project;
+
         public close_project_command(IShell shell, IProject project)
         {
             this.shell = shell;
