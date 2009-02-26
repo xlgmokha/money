@@ -190,7 +190,13 @@
     <Compile Include="Domain\Core\range.cs" />
     <Compile Include="Domain\Core\range_specs.cs" />
     <Compile Include="Domain\repositories\company_repository_extensions.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\component_exclusion_specification.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\ApplyLoggingInterceptor.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\component_exclusion_specification.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\IComponentExclusionSpecification.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\ImplementationOfDependencyRegistry.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\NoInterfaces.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\RegisterComponentContract.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\SubclassesForm.cs" />
     <Compile Include="Infrastructure\Container\Windsor\windsor_container_factory.cs" />
     <Compile Include="Infrastructure\eventing\event_aggregator.cs" />
     <Compile Include="Infrastructure\eventing\IEvent.cs" />
@@ -202,6 +208,7 @@
     <Compile Include="Infrastructure\interceptors\logging_interceptor.cs" />
     <Compile Include="Infrastructure\interceptors\raise_event_interceptor.cs" />
     <Compile Include="Infrastructure\interceptors\unit_of_work_interceptor.cs" />
+    <Compile Include="Infrastructure\Logging\ILoggable.cs" />
     <Compile Include="Infrastructure\registries\default_registry.cs" />
     <Compile Include="Infrastructure\registries\default_registry_specs.cs" />
     <Compile Include="Domain\accounting\billing\Bill.cs" />
@@ -214,7 +221,7 @@
     <Compile Include="Domain\Core\Month.cs" />
     <Compile Include="Domain\Core\Months.cs" />
     <Compile Include="Domain\Core\registry_extensions.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\component_registration_configuration.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\component_registration_configuration.cs" />
     <Compile Include="Infrastructure\System\application_environment.cs" />
     <Compile Include="Infrastructure\Threading\background_thread_factory.cs" />
     <Compile Include="Infrastructure\Threading\background_thread.cs">
@@ -425,12 +432,14 @@
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
     <Compile Include="Testing\spechelpers\core\method_call_occurance.cs" />
     <Compile Include="Testing\MetaData\run_in_real_container.cs" />
+    <Compile Include="Utility\Core\ChainedConfiguration.cs" />
     <Compile Include="Utility\Core\chained_mapper.cs" />
     <Compile Include="Utility\Core\and_specification.cs" />
     <Compile Include="Utility\Core\command.cs" />
     <Compile Include="Utility\Core\empty_command.cs" />
     <Compile Include="Utility\Core\IBuilder.cs" />
     <Compile Include="Utility\Core\ICallback.cs" />
+    <Compile Include="Utility\Core\IConfiguration.cs" />
     <Compile Include="Utility\Core\IDisposableCommand.cs" />
     <Compile Include="Utility\Core\IFactory.cs" />
     <Compile Include="Utility\Core\IParameterizedCommand.cs" />
@@ -469,6 +478,7 @@
     <Compile Include="Utility\Core\ISpecification.cs" />
     <Compile Include="Utility\Core\Map.cs" />
     <Compile Include="Utility\Core\or_specification.cs" />
+    <Compile Include="Utility\Extensions\configuration_extensions.cs" />
     <Compile Include="Utility\Extensions\conversion_extensions.cs" />
     <Compile Include="Utility\Extensions\enumerable_extensions.cs" />
     <Compile Include="Utility\Extensions\func_extensions.cs" />

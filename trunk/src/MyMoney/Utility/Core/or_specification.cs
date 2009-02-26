@@ -2,8 +2,8 @@ namespace MyMoney.Utility.Core
 {
     public class or_specification<T> : ISpecification<T>
     {
-        private readonly ISpecification<T> left;
-        private readonly ISpecification<T> right;
+        readonly ISpecification<T> left;
+        readonly ISpecification<T> right;
 
         public or_specification(ISpecification<T> left, ISpecification<T> right)
         {
