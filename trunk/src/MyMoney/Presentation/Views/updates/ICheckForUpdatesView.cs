@@ -7,5 +7,6 @@ namespace MyMoney.Presentation.Views.updates
     public interface ICheckForUpdatesView : IView<ICheckForUpdatesPresenter>
     {
         void display(ApplicationVersion information);
+        void update_complete();
     }
 }

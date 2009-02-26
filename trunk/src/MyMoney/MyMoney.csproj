@@ -422,6 +422,7 @@
     <Compile Include="Utility\Core\command.cs" />
     <Compile Include="Utility\Core\empty_command.cs" />
     <Compile Include="Utility\Core\IBuilder.cs" />
+    <Compile Include="Utility\Core\ICallback.cs" />
     <Compile Include="Utility\Core\IDisposableCommand.cs" />
     <Compile Include="Utility\Core\IFactory.cs" />
     <Compile Include="Utility\Core\IParameterizedCommand.cs" />
