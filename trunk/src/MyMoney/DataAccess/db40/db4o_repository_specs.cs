@@ -5,6 +5,7 @@ using MyMoney.Domain.Core;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.DataAccess.db40
 {
@@ -35,8 +36,8 @@ namespace MyMoney.DataAccess.db40
                             second_item = an<IEntity>();
                             var session = an<IObjectContainer>();
 
-                            factory.is_told_to(x => x.create()).it_will_return(session);
-                            session.is_told_to(x => x.Query<IEntity>()).it_will_return(new List<IEntity>
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(factory, x => x.create()), session);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(session, x => x.Query<IEntity>()), new List<IEntity>
                                                                                            {first_item, second_item});
                         };
 

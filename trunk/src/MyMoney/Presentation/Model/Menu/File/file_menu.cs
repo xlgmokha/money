@@ -6,7 +6,8 @@ using MyMoney.Presentation.Resources;
 namespace MyMoney.Presentation.Model.Menu.File
 {
     public interface IFileMenu : ISubMenu
-    {}
+    {
+    }
 
     public class file_menu : IFileMenu
     {

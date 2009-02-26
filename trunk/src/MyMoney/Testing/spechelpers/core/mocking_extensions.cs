@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MyMoney.Testing.Extensions;
 using Rhino.Mocks;
 using Rhino.Mocks.Interfaces;
 
-namespace MyMoney.Testing.Extensions
+namespace MyMoney.Testing.spechelpers.core
 {
     public static class mocking_extensions
     {
         public static method_call_occurance<T> was_told_to<T>(this T mocked_item,
-                                                                Action<T> actionToPerform)
+                                                              Action<T> actionToPerform)
         {
             return new method_call_occurance<T>(mocked_item, actionToPerform);
         }

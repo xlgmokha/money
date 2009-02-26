@@ -4,6 +4,7 @@ using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
 using MyMoney.Utility.Core;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Infrastructure.Threading
 {
@@ -26,7 +27,7 @@ namespace MyMoney.Infrastructure.Threading
         it should_return_an_instance_of_a_background_thread = () => result.should_not_be_null();
 
         it should_lookup_an_instance_of_the_command_to_execute =
-            () => registry.was_told_to(r => r.find_an_implementation_of<IDisposableCommand>());
+            () => mocking_extensions.was_told_to(registry, r => r.find_an_implementation_of<IDisposableCommand>());
 
         because b = () => { result = sut.create_for<IDisposableCommand>(); };
 

@@ -11,15 +11,15 @@ namespace MyMoney.Testing.spechelpers.contexts
         {
             return item;
         }
-    }
 
-    public abstract class concerns_for<Contract, Implementation> : concerns_for<Contract>, IHideObjectMembers
-        where Implementation : Contract
-    {
         protected static T dependency<T>() where T : class
         {
             return MockRepository.GenerateMock<T>();
         }
+    }
+
+    public abstract class concerns_for<Contract, Implementation> : concerns_for<Contract>, IHideObjectMembers where Implementation : Contract
+    {
     }
 
     public abstract class concerns_for : observations_for_a_static_sut, IHideObjectMembers

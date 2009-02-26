@@ -4,7 +4,7 @@ namespace MyMoney.Presentation.Presenters.Commands
 {
     public interface IRunPresenterCommand
     {
-        void execute<Presenter>() where Presenter : IPresenter;
+        void run<Presenter>() where Presenter : IPresenter;
     }
 
     public class run_presenter_command : IRunPresenterCommand
@@ -16,7 +16,7 @@ namespace MyMoney.Presentation.Presenters.Commands
             application_controller = applicationController;
         }
 
-        public void execute<Presenter>() where Presenter : IPresenter
+        public void run<Presenter>() where Presenter : IPresenter
         {
             application_controller.run<Presenter>();
         }

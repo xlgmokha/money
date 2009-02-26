@@ -3,6 +3,7 @@ using jpboodhoo.bdd.contexts;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Presentation.Databindings
 {
@@ -16,7 +17,7 @@ namespace MyMoney.Presentation.Databindings
                         {
                             thing_to_bind_to = an<IAnInterface>();
                             text_box = new TextBox();
-                            thing_to_bind_to.is_asked_for(t => t.FirstName).it_will_return(first_name);
+                            mocking_extensions.it_will_return(mocking_extensions.is_asked_for(thing_to_bind_to, t => t.FirstName), first_name);
                         };
 
         because b = () => Create

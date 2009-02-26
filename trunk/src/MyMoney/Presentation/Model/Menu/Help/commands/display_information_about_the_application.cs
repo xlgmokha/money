@@ -5,7 +5,8 @@ using MyMoney.Utility.Core;
 namespace MyMoney.Presentation.Model.Menu.Help.commands
 {
     public interface IDisplayInformationAboutTheApplication : ICommand
-    {}
+    {
+    }
 
     public class display_information_about_the_application : IDisplayInformationAboutTheApplication
     {
@@ -16,9 +17,9 @@ namespace MyMoney.Presentation.Model.Menu.Help.commands
 
         public void run()
         {
-            run_presenter.execute<IAboutApplicationPresenter>();
+            run_presenter.run<IAboutApplicationPresenter>();
         }
 
-        private readonly IRunPresenterCommand run_presenter;
+        readonly IRunPresenterCommand run_presenter;
     }
 }

@@ -21,7 +21,7 @@ namespace MyMoney.Presentation.Presenters.Navigation
                 Build.task_pane_item()
                     .named("Add Company")
                     .represented_by_image(ApplicationImages.ReadingABill)
-                    .when_clicked_execute(() => command.execute<IAddCompanyPresenter>()))
+                    .when_clicked_execute(() => command.run<IAddCompanyPresenter>()))
                 .build();
         }
     }

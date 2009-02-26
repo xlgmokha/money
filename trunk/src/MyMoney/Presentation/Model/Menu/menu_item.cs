@@ -1,7 +1,7 @@
+using System;
 using System.Windows.Forms;
 using MyMoney.Presentation.Model.keyboard;
 using MyMoney.Presentation.Resources;
-using MyMoney.Utility.Core;
 
 namespace MyMoney.Presentation.Model.Menu
 {
@@ -15,7 +15,7 @@ namespace MyMoney.Presentation.Model.Menu
 
     public class menu_item : IMenuItem
     {
-        public menu_item(string name, ICommand command, HybridIcon underlying_icon, shortcut_key key)
+        public menu_item(string name, Action command, HybridIcon underlying_icon, shortcut_key key)
         {
             this.name = name;
             this.command = command;
@@ -24,13 +24,13 @@ namespace MyMoney.Presentation.Model.Menu
         }
 
         public string name { get; private set; }
-        public ICommand command { get; private set; }
+        public Action command { get; private set; }
         public HybridIcon underlying_icon { get; private set; }
         public shortcut_key key { get; set; }
 
         public void click()
         {
-            command.run();
+            command();
         }
 
         public ToolStripItem build()

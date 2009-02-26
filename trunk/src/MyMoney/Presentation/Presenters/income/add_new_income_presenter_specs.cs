@@ -6,9 +6,9 @@ using MyMoney.Domain.Core;
 using MyMoney.Presentation.Presenters.income.dto;
 using MyMoney.Presentation.Views.income;
 using MyMoney.Tasks.application;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Presentation.Presenters.income
 {

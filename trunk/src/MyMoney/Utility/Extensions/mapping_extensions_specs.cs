@@ -3,6 +3,7 @@ using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
 using MyMoney.Utility.Core;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Utility.Extensions
 {
@@ -17,8 +18,8 @@ namespace MyMoney.Utility.Extensions
                             second_mapper = an<IMapper<string, int>>();
                             a = 1;
 
-                            when_the(first_mapper).is_told_to(x => x.map_from(a)).it_will_return("1");
-                            when_the(second_mapper).is_told_to(x => x.map_from("1")).it_will_return(1);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(first_mapper), x => x.map_from(a)), "1");
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(second_mapper), x => x.map_from("1")), 1);
                         };
 
         because b = () => { result = first_mapper.then(second_mapper).map_from(a); };

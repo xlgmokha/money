@@ -279,6 +279,7 @@
     <Compile Include="Presentation\Model\reporting\IReport.cs" />
     <Compile Include="Presentation\Model\reporting\report_binding_extensions.cs" />
     <Compile Include="Presentation\Model\reporting\report_binding_extensions_specs.cs" />
+    <Compile Include="Presentation\Model\updates\ApplicationVersion.cs" />
     <Compile Include="Presentation\Presenters\billing\add_bill_payment_presenter.cs" />
     <Compile Include="Presentation\Presenters\add_company_presenter.cs" />
     <Compile Include="Presentation\Presenters\add_company_presenter_specs.cs" />
@@ -331,6 +332,8 @@
     <Compile Include="Presentation\Presenters\Startup\hide_the_splash_screen.cs" />
     <Compile Include="Presentation\Presenters\Startup\ISplashScreenState.cs" />
     <Compile Include="Presentation\Presenters\Startup\splash_screen_presenter.cs" />
+    <Compile Include="Presentation\Presenters\updates\CheckForUpdatesPresenter.cs" />
+    <Compile Include="Presentation\Presenters\updates\CheckForUpdatesPresenterSpecs.cs" />
     <Compile Include="Presentation\Resources\HybridIcon.cs" />
     <Compile Include="Presentation\Views\add_new_company_view.cs">
       <SubType>Form</SubType>
@@ -402,10 +405,12 @@
     <Compile Include="Presentation\Views\Shell\notification_icon_view.cs" />
     <Compile Include="Presentation\Views\Shell\task_tray_message.cs" />
     <Compile Include="Presentation\Views\Shell\title_bar.cs" />
+    <Compile Include="Presentation\Views\updates\ICheckForUpdatesView.cs" />
     <Compile Include="Tasks\application\billing_tasks.cs" />
     <Compile Include="Tasks\application\customer_tasks.cs" />
     <Compile Include="Tasks\application\file_system_tasks.cs" />
     <Compile Include="Tasks\application\income_tasks.cs" />
+    <Compile Include="Tasks\infrastructure\IUpdateTasks.cs" />
     <Compile Include="Testing\spechelpers\contexts\concerns_for.cs" />
     <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />

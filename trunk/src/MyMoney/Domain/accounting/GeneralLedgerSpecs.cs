@@ -6,6 +6,7 @@ using MyMoney.Domain.Core;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Domain.accounting
 {
@@ -50,9 +51,9 @@ namespace MyMoney.Domain.accounting
                             february_twenty_first = an<ILedgerEntry>();
                             april_first = an<ILedgerEntry>();
 
-                            february_first.is_told_to(x => x.entry_date()).Return(new DateTime(2008, 02, 01));
-                            february_twenty_first.is_told_to(x => x.entry_date()).Return(new DateTime(2008, 02, 21));
-                            april_first.is_told_to(x => x.entry_date()).Return(new DateTime(2008, 04, 01));
+                            mocking_extensions.is_told_to(february_first, x => x.entry_date()).Return(new DateTime(2008, 02, 01));
+                            mocking_extensions.is_told_to(february_twenty_first, x => x.entry_date()).Return(new DateTime(2008, 02, 21));
+                            mocking_extensions.is_told_to(april_first, x => x.entry_date()).Return(new DateTime(2008, 04, 01));
                         };
 
         because b = () => { result = sut.get_all_the_entries_for(Months.February); };

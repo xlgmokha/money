@@ -3,6 +3,7 @@ using MyMoney.Infrastructure.Container;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Infrastructure.Logging
 {
@@ -16,13 +17,9 @@ namespace MyMoney.Infrastructure.Logging
                             var factory = an<ILogFactory>();
                             var registry = an<IDependencyRegistry>();
                             logger = an<ILogger>();
-                            registry
-                                .is_told_to(x => x.find_an_implementation_of<ILogFactory>())
-                                .it_will_return(factory);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(registry, x => x.find_an_implementation_of<ILogFactory>()), factory);
 
-                            factory
-                                .is_told_to(x => x.create_for(typeof (string)))
-                                .it_will_return(logger);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(factory, x => x.create_for(typeof (string))), logger);
 
                             resolve.initialize_with(registry);
                         };

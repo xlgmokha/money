@@ -4,6 +4,7 @@ using MyMoney.Presentation.Model.Projects;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.DataAccess.db40
 {
@@ -35,12 +36,8 @@ namespace MyMoney.DataAccess.db40
                     var the_path_to_the_database_file = an<IFile>();
                     session = an<IObjectContainer>();
 
-                    database_configuration
-                        .is_told_to(x => x.path_to_the_database())
-                        .it_will_return(the_path_to_the_database_file);
-                    connection_factory
-                        .is_told_to(x => x.open_connection_to(the_path_to_the_database_file))
-                        .it_will_return(session);
+                    mocking_extensions.it_will_return(mocking_extensions.is_told_to(database_configuration, x => x.path_to_the_database()), the_path_to_the_database_file);
+                    mocking_extensions.it_will_return(mocking_extensions.is_told_to(connection_factory, x => x.open_connection_to(the_path_to_the_database_file)), session);
                 };
 
         because b = () => { result = sut.create(); };
@@ -52,7 +49,7 @@ namespace MyMoney.DataAccess.db40
     public class when_creating_a_session_for_a_file_that_has_already_been_opened : behaves_like_a_session_factory
     {
         it should_only_open_the_connection_once =
-            () => connection_factory.was_told_to(x => x.open_connection_to(the_path_to_the_database_file)).only_once();
+            () => mocking_extensions.was_told_to(connection_factory, x => x.open_connection_to(the_path_to_the_database_file)).only_once();
 
         it should_return_the_original_connection = () => result.should_be_equal_to(original_connection);
 
@@ -61,13 +58,9 @@ namespace MyMoney.DataAccess.db40
                             the_path_to_the_database_file = an<IFile>();
                             original_connection = an<IObjectContainer>();
 
-                            when_the(database_configuration)
-                                .is_told_to(x => x.path_to_the_database())
-                                .it_will_return(the_path_to_the_database_file);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(database_configuration), x => x.path_to_the_database()), the_path_to_the_database_file);
 
-                            when_the(connection_factory)
-                                .is_told_to(x => x.open_connection_to(the_path_to_the_database_file))
-                                .it_will_return(original_connection);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(connection_factory), x => x.open_connection_to(the_path_to_the_database_file)), original_connection);
                         };
 
         because b = () =>
@@ -83,7 +76,7 @@ namespace MyMoney.DataAccess.db40
 
     public class when_opening_a_new_file_after_one_has_already_been_opened : behaves_like_a_session_factory
     {
-        it should_close_the_previous_file = () => original_connection.was_told_to(x => x.Close()).only_once();
+        it should_close_the_previous_file = () => mocking_extensions.was_told_to(original_connection, x => x.Close()).only_once();
 
         context c = () =>
                         {
@@ -91,19 +84,13 @@ namespace MyMoney.DataAccess.db40
                             var a_new_path = an<IFile>();
                             original_connection = an<IObjectContainer>();
 
-                            database_configuration
-                                .is_told_to(x => x.path_to_the_database())
-                                .it_will_return(the_path_to_the_database_file)
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(database_configuration, x => x.path_to_the_database()), the_path_to_the_database_file)
                                 .Repeat.Once();
 
-                            database_configuration
-                                .is_told_to(x => x.path_to_the_database())
-                                .it_will_return(a_new_path)
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(database_configuration, x => x.path_to_the_database()), a_new_path)
                                 .Repeat.Once();
 
-                            connection_factory
-                                .is_told_to(x => x.open_connection_to(the_path_to_the_database_file))
-                                .it_will_return(original_connection);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(connection_factory, x => x.open_connection_to(the_path_to_the_database_file)), original_connection);
                         };
 
         because b = () =>

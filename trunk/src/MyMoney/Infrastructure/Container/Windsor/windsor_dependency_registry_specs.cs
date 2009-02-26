@@ -4,6 +4,7 @@ using jpboodhoo.bdd.contexts;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Infrastructure.Container.Windsor
 {
@@ -28,7 +29,7 @@ namespace MyMoney.Infrastructure.Container.Windsor
     [Concern(typeof (windsor_dependency_registry))]
     public class when_creating_the_windsor_resolver_ : concerns_for<IDependencyRegistry>
     {
-        it should_leverage_the_factory_to_create_the_underlying_container = () => factory.was_told_to(f => f.create());
+        it should_leverage_the_factory_to_create_the_underlying_container = () => mocking_extensions.was_told_to(factory, f => f.create());
 
         public override IDependencyRegistry create_sut()
         {
@@ -39,7 +40,7 @@ namespace MyMoney.Infrastructure.Container.Windsor
                         {
                             var container = an<IWindsorContainer>();
                             factory = an<IWindsorContainerFactory>();
-                            factory.is_told_to(f => f.create()).it_will_return(container);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(factory, f => f.create()), container);
                         };
 
 

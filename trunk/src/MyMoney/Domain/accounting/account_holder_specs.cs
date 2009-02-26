@@ -7,6 +7,7 @@ using MyMoney.Domain.Core;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Domain.accounting
 {
@@ -33,9 +34,9 @@ namespace MyMoney.Domain.accounting
                             second_unpaid_bill = an<IBill>();
                             paid_bill = an<IBill>();
 
-                            first_unpaid_bill.is_told_to(x => x.is_paid_for()).it_will_return(false);
-                            second_unpaid_bill.is_told_to(x => x.is_paid_for()).it_will_return(false);
-                            paid_bill.is_told_to(x => x.is_paid_for()).it_will_return(true);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(first_unpaid_bill, x => x.is_paid_for()), false);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(second_unpaid_bill, x => x.is_paid_for()), false);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(paid_bill, x => x.is_paid_for()), true);
                         };
 
         because b = () =>
@@ -61,26 +62,14 @@ namespace MyMoney.Domain.accounting
                             income_for_february_2007 = an<IIncome>();
                             income_for_february_2008 = an<IIncome>();
 
-                            income_for_january_2007
-                                .is_told_to(x => x.date_of_issue)
-                                .it_will_return(new DateTime(2007, 01, 01).as_a_date());
-                            income_for_january_2007
-                                .is_told_to(x => x.amount_tendered)
-                                .it_will_return(new money(1000, 00));
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(income_for_january_2007, x => x.date_of_issue), new DateTime(2007, 01, 01).as_a_date());
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(income_for_january_2007, x => x.amount_tendered), new money(1000, 00));
 
-                            income_for_february_2007
-                                .is_told_to(x => x.date_of_issue)
-                                .it_will_return(new DateTime(2007, 02, 01).as_a_date());
-                            income_for_february_2007
-                                .is_told_to(x => x.amount_tendered)
-                                .it_will_return(new money(1000, 00));
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(income_for_february_2007, x => x.date_of_issue), new DateTime(2007, 02, 01).as_a_date());
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(income_for_february_2007, x => x.amount_tendered), new money(1000, 00));
 
-                            income_for_february_2008
-                                .is_told_to(x => x.date_of_issue)
-                                .it_will_return(new DateTime(2008, 02, 01).as_a_date());
-                            income_for_february_2008
-                                .is_told_to(x => x.amount_tendered)
-                                .it_will_return(new money(1000, 00));
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(income_for_february_2008, x => x.date_of_issue), new DateTime(2008, 02, 01).as_a_date());
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(income_for_february_2008, x => x.amount_tendered), new money(1000, 00));
                         };
 
         because b = () =>

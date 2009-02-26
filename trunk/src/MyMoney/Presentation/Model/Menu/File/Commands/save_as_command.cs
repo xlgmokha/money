@@ -5,12 +5,13 @@ using MyMoney.Utility.Core;
 namespace MyMoney.Presentation.Model.Menu.File.Commands
 {
     public interface ISaveAsCommand : ICommand
-    {}
+    {
+    }
 
     public class save_as_command : ISaveAsCommand
     {
-        private readonly IProject current_project;
-        private readonly ISelectFileToSaveToDialog view;
+        readonly IProject current_project;
+        readonly ISelectFileToSaveToDialog view;
 
         public save_as_command(ISelectFileToSaveToDialog view, IProject current_project)
         {

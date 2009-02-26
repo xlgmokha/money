@@ -6,6 +6,7 @@ using MyMoney.Testing;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Presentation.Model.Projects
 {
@@ -30,19 +31,15 @@ namespace MyMoney.Presentation.Model.Projects
     public class when_saving_the_current_project : behaves_like_a_project
     {
         it should_save_the_current_database_to_the_path_specified_by_the_user =
-            () => current_file.was_told_to(x => x.copy_to(file_to_update));
+            () => mocking_extensions.was_told_to(current_file, x => x.copy_to(file_to_update));
 
         context c = () =>
                         {
                             file_to_update = an<IFile>();
                             current_file = an<IFile>();
 
-                            when_the(configuration)
-                                .is_told_to(x => x.path_to_the_database())
-                                .it_will_return(current_file);
-                            when_the(file_to_update)
-                                .is_told_to(x => x.does_the_file_exist())
-                                .it_will_return(true);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(configuration), x => x.path_to_the_database()), current_file);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(file_to_update), x => x.does_the_file_exist()), true);
                         };
 
         because b = () =>
@@ -67,7 +64,7 @@ namespace MyMoney.Presentation.Model.Projects
 
     public class when_specifying_a_new_path_to_save_an_opened_project_to : behaves_like_a_project
     {
-        it should_save_the_current_database_to_the_new_path = () => database_file.was_told_to(x => x.copy_to(new_file));
+        it should_save_the_current_database_to_the_new_path = () => mocking_extensions.was_told_to(database_file, x => x.copy_to(new_file));
 
         context c = () =>
                         {
@@ -75,12 +72,8 @@ namespace MyMoney.Presentation.Model.Projects
                             new_file = an<IFile>();
                             database_file = an<IFile>();
 
-                            when_the(configuration)
-                                .is_told_to(x => x.path_to_the_database())
-                                .it_will_return(database_file);
-                            when_the(new_file)
-                                .is_told_to(x => x.path)
-                                .it_will_return("blah");
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(configuration), x => x.path_to_the_database()), database_file);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(new_file), x => x.path), "blah");
                         };
 
         because b = () =>
@@ -101,7 +94,7 @@ namespace MyMoney.Presentation.Model.Projects
         context c = () =>
                         {
                             invalid_file = an<IFile>();
-                            when_the(invalid_file).is_told_to(x => x.does_the_file_exist()).it_will_return(false);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(invalid_file), x => x.does_the_file_exist()), false);
                         };
 
         because b = () =>
@@ -122,9 +115,7 @@ namespace MyMoney.Presentation.Model.Projects
                         {
                             invalid_file = an<IFile>();
 
-                            when_the(invalid_file)
-                                .is_told_to(x => x.path)
-                                .it_will_return(string.Empty);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(invalid_file), x => x.path), string.Empty);
                         };
 
         because b = () =>
@@ -143,9 +134,7 @@ namespace MyMoney.Presentation.Model.Projects
                         {
                             file = an<IFile>();
 
-                            when_the(file)
-                                .is_told_to(x => x.does_the_file_exist())
-                                .it_will_return(true);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(when_the(file), x => x.does_the_file_exist()), true);
                         };
 
         because b = () => sut.open(file);

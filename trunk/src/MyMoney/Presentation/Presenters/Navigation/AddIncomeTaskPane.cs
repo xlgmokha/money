@@ -22,13 +22,13 @@ namespace MyMoney.Presentation.Presenters.Navigation
                 Build.task_pane_item()
                     .named("Add New Income")
                     .represented_by_image(ApplicationImages.ReadingABill)
-                    .when_clicked_execute(() => command.execute<IAddNewIncomePresenter>())
+                    .when_clicked_execute(() => command.run<IAddNewIncomePresenter>())
                 )
                 .with_item(
                 Build.task_pane_item()
                     .named("View All Income")
                     .represented_by_image(ApplicationImages.ReadingABill)
-                    .when_clicked_execute(() => command.execute<IViewIncomeHistoryPresenter>())
+                    .when_clicked_execute(() => command.run<IViewIncomeHistoryPresenter>())
                 )
                 .build();
         }

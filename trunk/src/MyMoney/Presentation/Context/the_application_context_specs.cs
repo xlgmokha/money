@@ -7,6 +7,7 @@ using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
 using Rhino.Mocks;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Presentation.Context
 {
@@ -34,7 +35,7 @@ namespace MyMoney.Presentation.Context
     {
         it should_specify_the_main_shell_view_as_the_main_form = () => result.should_be_equal_to(shell_view);
 
-        it should_run_the_main_shell_presenter = () => load_application.was_told_to(x => x.run());
+        it should_run_the_main_shell_presenter = () => mocking_extensions.was_told_to(load_application, x => x.run());
 
         because b = () => { result = sut.MainForm; };
         static Form result;
@@ -42,7 +43,7 @@ namespace MyMoney.Presentation.Context
 
     public class when_the_application_shell_is_closed : behaves_like_an_application_context
     {
-        it should_shut_the_application_down = () => exit_command.was_told_to(x => x.run());
+        it should_shut_the_application_down = () => mocking_extensions.was_told_to(exit_command, x => x.run());
 
         because b = () => shell_view.Raise(x => x.Closed += null, null, null);
     }

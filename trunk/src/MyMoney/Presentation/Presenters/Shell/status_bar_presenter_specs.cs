@@ -1,9 +1,9 @@
 using jpboodhoo.bdd.contexts;
 using MyMoney.Presentation.Resources;
 using MyMoney.Presentation.Views.Shell;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Presentation.Presenters.Shell
 {

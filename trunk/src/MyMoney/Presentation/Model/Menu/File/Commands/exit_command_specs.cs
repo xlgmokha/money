@@ -2,9 +2,9 @@ using jpboodhoo.bdd.contexts;
 using MyMoney.Infrastructure.eventing;
 using MyMoney.Infrastructure.System;
 using MyMoney.Presentation.Model.messages;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Presentation.Model.Menu.File.Commands
 {

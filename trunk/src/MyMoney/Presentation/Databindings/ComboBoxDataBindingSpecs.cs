@@ -3,6 +3,7 @@ using jpboodhoo.bdd.contexts;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Presentation.Databindings
 {
@@ -22,9 +23,7 @@ namespace MyMoney.Presentation.Databindings
                             combo_box.Items.Add(baby_boy);
                             combo_box.Items.Add(baby_girl);
 
-                            when_the(thing_to_bind_to)
-                                .is_asked_for(t => t.Child)
-                                .it_will_return(baby_girl);
+                            mocking_extensions.it_will_return(mocking_extensions.is_asked_for(when_the(thing_to_bind_to), t => t.Child), baby_girl);
                         };
 
         because b = () => Create

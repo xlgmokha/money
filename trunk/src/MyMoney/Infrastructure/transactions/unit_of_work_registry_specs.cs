@@ -3,6 +3,7 @@ using MyMoney.Domain.Core;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Infrastructure.transactions
 {
@@ -21,14 +22,14 @@ namespace MyMoney.Infrastructure.transactions
 
     public class when_starting_a_unit_of_work_for_a_new_type : behaves_like_unit_of_work_registery
     {
-        it should_register_a_new_unit_of_work = () => factory.was_told_to(x => x.create_for<IEntity>());
+        it should_register_a_new_unit_of_work = () => mocking_extensions.was_told_to(factory, x => x.create_for<IEntity>());
 
         it should_return_the_new_unit_of_work = () => result.should_be_equal_to(unit_of_work);
 
         context c = () =>
                         {
                             unit_of_work = an<IUnitOfWork<IEntity>>();
-                            factory.is_told_to(x => x.create_for<IEntity>()).it_will_return(unit_of_work);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(factory, x => x.create_for<IEntity>()), unit_of_work);
                         };
 
         because b = () => { result = sut.start_unit_of_work_for<IEntity>(); };
@@ -46,9 +47,7 @@ namespace MyMoney.Infrastructure.transactions
                         {
                             unit_of_work = an<IUnitOfWork<IEntity>>();
 
-                            factory
-                                .is_told_to(x => x.create_for<IEntity>())
-                                .it_will_return(unit_of_work)
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(factory, x => x.create_for<IEntity>()), unit_of_work)
                                 .Repeat.Once();
                         };
 
@@ -64,12 +63,12 @@ namespace MyMoney.Infrastructure.transactions
 
     public class when_committing_all_the_active_units_of_work : behaves_like_unit_of_work_registery
     {
-        it should_commit_each_one = () => unit_of_work.was_told_to(x => x.commit());
+        it should_commit_each_one = () => mocking_extensions.was_told_to(unit_of_work, x => x.commit());
 
         context c = () =>
                         {
                             unit_of_work = an<IUnitOfWork<IEntity>>();
-                            factory.is_told_to(x => x.create_for<IEntity>()).it_will_return(unit_of_work).Repeat.Once();
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(factory, x => x.create_for<IEntity>()), unit_of_work).Repeat.Once();
                         };
 
         because b = () =>

@@ -3,9 +3,9 @@ using System.Linq;
 using jpboodhoo.bdd.contexts;
 using MyMoney.Presentation.Views.core;
 using MyMoney.Presentation.Views.Shell;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Presentation.Core
 {

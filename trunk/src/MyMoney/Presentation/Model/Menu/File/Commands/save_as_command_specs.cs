@@ -1,9 +1,9 @@
 using jpboodhoo.bdd.contexts;
 using MyMoney.Presentation.Model.Projects;
 using MyMoney.Presentation.Views.dialogs;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Presentation.Model.Menu.File.Commands
 {

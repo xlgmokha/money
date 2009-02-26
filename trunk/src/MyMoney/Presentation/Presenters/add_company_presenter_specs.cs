@@ -2,9 +2,9 @@ using jpboodhoo.bdd.contexts;
 using MyMoney.Presentation.Presenters.billing.dto;
 using MyMoney.Presentation.Views;
 using MyMoney.Tasks.application;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Presentation.Presenters
 {

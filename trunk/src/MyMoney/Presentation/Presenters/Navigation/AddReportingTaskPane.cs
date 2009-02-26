@@ -22,7 +22,7 @@ namespace MyMoney.Presentation.Presenters.Navigation
                 Build.task_pane_item()
                     .named("View All Bills")
                     .represented_by_image(ApplicationImages.ReadingABill)
-                    .when_clicked_execute(() => command.execute<IViewAllBillsReportPresenter>())
+                    .when_clicked_execute(() => command.run<IViewAllBillsReportPresenter>())
                 )
                 .build();
         }

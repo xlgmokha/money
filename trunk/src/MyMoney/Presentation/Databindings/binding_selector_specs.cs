@@ -4,6 +4,7 @@ using jpboodhoo.bdd.contexts;
 using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Presentation.Databindings
 {
@@ -14,7 +15,7 @@ namespace MyMoney.Presentation.Databindings
             () => result.property.Name.should_be_equal_to("FirstName");
 
         it should_inspect_the_expression_for_the_property_information =
-            () => inspector.was_told_to(i => i.inspect(expression_to_parse));
+            () => mocking_extensions.was_told_to(inspector, i => i.inspect(expression_to_parse));
 
         context c = () =>
                         {
@@ -22,13 +23,10 @@ namespace MyMoney.Presentation.Databindings
                             factory = an<IPropertyInspectorFactory>();
                             inspector = an<IPropertyInspector<IAnInterface, string>>();
 
-                            factory
-                                .is_told_to(f => f.create<IAnInterface, string>())
-                                .it_will_return(inspector);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(factory, f => f.create<IAnInterface, string>()), inspector);
 
-                            inspector.is_told_to(i => i.inspect(null))
-                                .IgnoreArguments()
-                                .it_will_return(typeof (IAnInterface).GetProperty("FirstName"));
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(inspector, i => i.inspect(null))
+                                                    .IgnoreArguments(), typeof (IAnInterface).GetProperty("FirstName"));
                         };
 
         because b = () =>

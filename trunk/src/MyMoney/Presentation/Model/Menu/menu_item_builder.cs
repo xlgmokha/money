@@ -1,3 +1,4 @@
+using System;
 using MyMoney.Infrastructure.Container;
 using MyMoney.Presentation.Model.keyboard;
 using MyMoney.Presentation.Resources;
@@ -9,6 +10,7 @@ namespace MyMoney.Presentation.Model.Menu
     {
         IMenuItemBuilder named(string name);
         IMenuItemBuilder that_executes<TheCommand>() where TheCommand : ICommand;
+        IMenuItemBuilder that_executes(Action action);
         IMenuItemBuilder represented_by(HybridIcon project);
         IMenuItemBuilder can_be_accessed_with(shortcut_key hot_key);
         IMenuItem build();
@@ -16,19 +18,19 @@ namespace MyMoney.Presentation.Model.Menu
 
     public class menu_item_builder : IMenuItemBuilder
     {
-        private readonly IDependencyRegistry registry;
+        readonly IDependencyRegistry registry;
 
         public menu_item_builder(IDependencyRegistry registry)
         {
             name_of_the_menu = "Unknown";
-            command_to_execute = new empty_command();
+            command_to_execute = () => { };
             this.registry = registry;
             icon = ApplicationIcons.Empty;
             key = shortcut_keys.none;
         }
 
         public string name_of_the_menu { get; private set; }
-        public ICommand command_to_execute { get; private set; }
+        public Action command_to_execute { get; private set; }
         public HybridIcon icon { get; private set; }
         public shortcut_key key { get; private set; }
 
@@ -40,7 +42,13 @@ namespace MyMoney.Presentation.Model.Menu
 
         public IMenuItemBuilder that_executes<TheCommand>() where TheCommand : ICommand
         {
-            command_to_execute = registry.find_an_implementation_of<TheCommand>();
+            command_to_execute = () => registry.find_an_implementation_of<TheCommand>().run();
+            return this;
+        }
+
+        public IMenuItemBuilder that_executes(Action action)
+        {
+            command_to_execute = action;
             return this;
         }
 

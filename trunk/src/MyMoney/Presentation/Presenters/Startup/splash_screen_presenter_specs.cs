@@ -2,9 +2,9 @@ using System;
 using jpboodhoo.bdd.contexts;
 using MyMoney.Infrastructure.Threading;
 using MyMoney.Presentation.Views.Startup;
-using MyMoney.Testing.Extensions;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Presentation.Presenters.Startup
 {

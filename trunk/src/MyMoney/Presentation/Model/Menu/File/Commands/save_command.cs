@@ -4,12 +4,13 @@ using MyMoney.Utility.Core;
 namespace MyMoney.Presentation.Model.Menu.File.Commands
 {
     public interface ISaveCommand : ICommand
-    {}
+    {
+    }
 
     public class save_command : ISaveCommand
     {
-        private readonly IProject the_current_project;
-        private readonly ISaveAsCommand save_as_command;
+        readonly IProject the_current_project;
+        readonly ISaveAsCommand save_as_command;
 
         public save_command(IProject current_project, ISaveAsCommand save_as_command)
         {
@@ -19,10 +20,12 @@ namespace MyMoney.Presentation.Model.Menu.File.Commands
 
         public void run()
         {
-            if (the_current_project.has_been_saved_at_least_once()) {
+            if (the_current_project.has_been_saved_at_least_once())
+            {
                 the_current_project.save_changes();
             }
-            else {
+            else
+            {
                 save_as_command.run();
             }
         }
