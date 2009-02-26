@@ -3,18 +3,18 @@ using MyMoney.Infrastructure.System;
 using MyMoney.Presentation.Model.messages;
 using MyMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Model.Menu.File.Commands
+namespace MyMoney.Presentation.Presenters.Commands
 {
-    public interface IExitCommand : ICommand
+    public interface IRestartCommand : ICommand
     {
     }
 
-    public class exit_command : IExitCommand
+    public class RestartCommand : IRestartCommand
     {
         readonly IApplicationEnvironment application;
         readonly IEventAggregator broker;
 
-        public exit_command(IApplicationEnvironment application, IEventAggregator broker)
+        public RestartCommand(IApplicationEnvironment application, IEventAggregator broker)
         {
             this.application = application;
             this.broker = broker;
@@ -23,7 +23,7 @@ namespace MyMoney.Presentation.Model.Menu.File.Commands
         public void run()
         {
             broker.publish<closing_the_application>();
-            application.shut_down();
+            application.restart();
         }
     }
 }

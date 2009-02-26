@@ -1,5 +1,6 @@
 using jpboodhoo.bdd.contexts;
 using MyMoney.Presentation.Model.updates;
+using MyMoney.Presentation.Presenters.Commands;
 using MyMoney.Presentation.Views.updates;
 using MyMoney.Tasks.infrastructure;
 using MyMoney.Testing.MetaData;
@@ -9,21 +10,24 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Presentation.Presenters.updates
 {
     [Concern(typeof (CheckForUpdatesPresenter))]
-    public class behaves_like_check_for_updates_presenter : concerns_for<ICheckForUpdatesPresenter, CheckForUpdatesPresenter>
+    public class behaves_like_check_for_updates_presenter :
+        concerns_for<ICheckForUpdatesPresenter, CheckForUpdatesPresenter>
     {
         public override ICheckForUpdatesPresenter create_sut()
         {
-            return new CheckForUpdatesPresenter(view, tasks);
+            return new CheckForUpdatesPresenter(view, tasks, command);
         }
 
         context c = () =>
                         {
                             view = the_dependency<ICheckForUpdatesView>();
                             tasks = the_dependency<IUpdateTasks>();
+                            command = the_dependency<IRestartCommand>();
                         };
 
         protected static ICheckForUpdatesView view;
         protected static IUpdateTasks tasks;
+        protected static IRestartCommand command;
     }
 
     public class when_attempting_to_check_for_updates : behaves_like_check_for_updates_presenter
@@ -57,5 +61,20 @@ namespace MyMoney.Presentation.Presenters.updates
         it should_notify_the_view_that_the_update_is_complete = () => view.was_told_to(x => x.update_complete());
 
         because b = () => sut.complete();
+    }
+
+    public class when_an_update_is_cancelled : behaves_like_check_for_updates_presenter
+    {
+        it should_stop_downloading_the_latest_update = () => tasks.was_told_to(x => x.stop_updating());
+
+        because b = () => sut.cancel_update();
+    }
+
+    public class when_an_update_is_complete_and_the_user_agrees_to_restart_the_application :
+        behaves_like_check_for_updates_presenter
+    {
+        it should_restart_the_application = () => command.run();
+
+        because b = () => sut.restart();
     }
 }

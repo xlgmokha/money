@@ -287,6 +287,7 @@
     <Compile Include="Presentation\Presenters\billing\dto\bill_information_dto.cs" />
     <Compile Include="Presentation\Presenters\billing\dto\register_new_company.cs" />
     <Compile Include="Presentation\Presenters\billing\view_all_bills_presenter.cs" />
+    <Compile Include="Presentation\Presenters\Commands\RestartCommand.cs" />
     <Compile Include="Presentation\Presenters\Commands\run_presenter_command.cs" />
     <Compile Include="Presentation\Presenters\Commands\run_the.cs" />
     <Compile Include="Presentation\Presenters\Commands\run_the_specs.cs" />
@@ -410,7 +411,7 @@
     <Compile Include="Tasks\application\customer_tasks.cs" />
     <Compile Include="Tasks\application\file_system_tasks.cs" />
     <Compile Include="Tasks\application\income_tasks.cs" />
-    <Compile Include="Tasks\infrastructure\IUpdateTasks.cs" />
+    <Compile Include="Tasks\infrastructure\UpdateTasks.cs" />
     <Compile Include="Testing\spechelpers\contexts\concerns_for.cs" />
     <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
