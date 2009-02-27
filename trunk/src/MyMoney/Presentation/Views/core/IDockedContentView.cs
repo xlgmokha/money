@@ -7,6 +7,6 @@ namespace MyMoney.Presentation.Views.core
     public interface IDockedContentView : IDockContent, ISynchronizeInvoke, IDisposable
     {
         string TabText { get; }
-        void AddTo(DockPanel panel);
+        void add_to(DockPanel panel);
     }
 }

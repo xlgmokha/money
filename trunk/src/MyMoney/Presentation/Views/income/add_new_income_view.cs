@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms;
 using MyMoney.Domain.accounting.billing;
 using MyMoney.Presentation.Model.interaction;
 using MyMoney.Presentation.Presenters.income;
@@ -34,7 +36,9 @@ namespace MyMoney.Presentation.Views.income
 
         public void notify(params notification_message[] messages)
         {
-            throw new NotImplementedException();
+            var builder = new StringBuilder();
+            messages.each(x => builder.AppendLine(x));
+            MessageBox.Show(builder.ToString(), "Ooops...", MessageBoxButtons.OK);
         }
 
         income_submission_dto create_income()

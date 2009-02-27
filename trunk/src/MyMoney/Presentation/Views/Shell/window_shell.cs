@@ -44,7 +44,7 @@ namespace MyMoney.Presentation.Views.Shell
             //}
             //view.Show(ux_dock_panel);
 
-            view.AddTo(ux_dock_panel);
+            view.add_to(ux_dock_panel);
         }
 
         public void add_to_main_menu(ToolStripMenuItem item)

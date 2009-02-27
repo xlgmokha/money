@@ -19,8 +19,6 @@ namespace MyMoney.Presentation.Views.Navigation
         public actions_task_list(IShell shell)
         {
             InitializeComponent();
-            CloseButton = false;
-            CloseButtonVisible = false;
             this.shell = shell;
 
             initialize_the_ui();
@@ -29,7 +27,9 @@ namespace MyMoney.Presentation.Views.Navigation
         void initialize_the_ui()
         {
             titled("Actions Items")
-                .icon(ApplicationIcons.FileExplorer);
+                .icon(ApplicationIcons.FileExplorer)
+                .cannot_be_closed()
+                .docked_to(DockState.DockLeft);
 
             ux_system_task_pane.UseClassicTheme();
             //ux_system_task_pane.UseCustomTheme(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "itunes.dat"));
@@ -43,7 +43,6 @@ namespace MyMoney.Presentation.Views.Navigation
         public void display()
         {
             shell.add(this);
-            DockState = DockState.DockLeft;
         }
     }
 }

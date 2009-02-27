@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows.Forms;
 using MyMoney.Presentation.Resources;
 using WeifenLuo.WinFormsUI.Docking;
@@ -11,19 +10,20 @@ namespace MyMoney.Presentation.Views.core
         IApplicationDockedWindow create_tool_tip_for(string title, string caption, Control control);
         IApplicationDockedWindow titled(string title);
         IApplicationDockedWindow icon(ApplicationIcon icon);
+        IApplicationDockedWindow cannot_be_closed();
+        IApplicationDockedWindow docked_to(DockState state);
     }
 
     public partial class ApplicationDockedWindow : DockContent, IApplicationDockedWindow
     {
+        DockState dock_state;
+
         public ApplicationDockedWindow()
         {
             InitializeComponent();
-            Id = Guid.NewGuid();
-            TabText = "Undefined";
             Icon = ApplicationIcons.Application;
+            dock_state = DockState.Unknown;
         }
-
-        Guid Id { get; set; }
 
         public IApplicationDockedWindow create_tool_tip_for(string title, string caption, Control control)
         {
@@ -43,15 +43,49 @@ namespace MyMoney.Presentation.Views.core
             return this;
         }
 
-        public void AddTo(DockPanel panel)
+        public IApplicationDockedWindow cannot_be_closed()
         {
-            var panel_to_remove = panel.Documents.SingleOrDefault(x => x.DockHandler.TabText.Equals(TabText));
-            if (panel_to_remove != null)
+            CloseButton = false;
+            CloseButtonVisible = false;
+            return this;
+        }
+
+        public IApplicationDockedWindow docked_to(DockState state)
+        {
+            dock_state = state;
+            return this;
+        }
+
+        public void add_to(DockPanel panel)
+        {
+            if (window_is_already_contained_in(panel))
             {
-                panel_to_remove.DockHandler.Close();
-                panel_to_remove.DockHandler.Dispose();
+                remove_from(panel);
             }
             Show(panel);
+            DockState = dock_state;
+        }
+
+        void remove_from(DockPanel panel)
+        {
+            var panel_to_remove = get_window_from(panel);
+            panel_to_remove.DockHandler.Close();
+            panel_to_remove.DockHandler.Dispose();
+        }
+
+        IDockContent get_window_from(DockPanel panel)
+        {
+            return panel.Documents.Single(matches);
+        }
+
+        bool window_is_already_contained_in(DockPanel panel)
+        {
+            return panel.Documents.Count(matches) > 0;
+        }
+
+        bool matches(IDockContent x)
+        {
+            return x.DockHandler.TabText.Equals(TabText);
         }
     }
 }
