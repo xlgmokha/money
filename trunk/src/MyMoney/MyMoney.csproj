@@ -617,6 +617,9 @@
       <DependentUpon>window_shell.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\Startup\splash_screen_view.resx">
+      <DependentUpon>splash_screen_view.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\updates\check_for_updates.resx">
       <DependentUpon>check_for_updates.cs</DependentUpon>
     </EmbeddedResource>

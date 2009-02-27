@@ -149,6 +149,7 @@
             this.Controls.Add(this.ux_dont_update_button);
             this.Controls.Add(this.ux_update_button);
             this.Name = "check_for_updates";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MoMoney - Check For Updates";
             ((System.ComponentModel.ISupportInitialize)(this.ux_image)).EndInit();
             this.ResumeLayout(false);
