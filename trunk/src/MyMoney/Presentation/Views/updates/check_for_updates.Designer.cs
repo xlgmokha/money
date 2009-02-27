@@ -30,11 +30,13 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ux_current_version = new System.Windows.Forms.Label();
             this.ux_image = new System.Windows.Forms.PictureBox();
             this.ux_cancel_button = new System.Windows.Forms.Button();
             this.ux_dont_update_button = new System.Windows.Forms.Button();
             this.ux_update_button = new System.Windows.Forms.Button();
+            this.ux_new_version = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ux_image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,15 +61,15 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "What would you like to do?";
             // 
-            // label1
+            // ux_current_version
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(178, 50);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 17);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "You have unsaved changes.";
+            this.ux_current_version.AutoSize = true;
+            this.ux_current_version.Location = new System.Drawing.Point(178, 13);
+            this.ux_current_version.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ux_current_version.Name = "ux_current_version";
+            this.ux_current_version.Size = new System.Drawing.Size(59, 17);
+            this.ux_current_version.TabIndex = 13;
+            this.ux_current_version.Text = "Current:";
             // 
             // ux_image
             // 
@@ -112,20 +114,42 @@
             this.ux_update_button.Text = "&Update";
             this.ux_update_button.UseVisualStyleBackColor = true;
             // 
-            // check_for_updatescs
+            // ux_new_version
+            // 
+            this.ux_new_version.AutoSize = true;
+            this.ux_new_version.Location = new System.Drawing.Point(182, 49);
+            this.ux_new_version.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ux_new_version.Name = "ux_new_version";
+            this.ux_new_version.Size = new System.Drawing.Size(39, 17);
+            this.ux_new_version.TabIndex = 16;
+            this.ux_new_version.Text = "New:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(253, 32);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 17);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "to";
+            // 
+            // check_for_updates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 403);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.ux_new_version);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ux_current_version);
             this.Controls.Add(this.ux_image);
             this.Controls.Add(this.ux_cancel_button);
             this.Controls.Add(this.ux_dont_update_button);
             this.Controls.Add(this.ux_update_button);
-            this.Name = "check_for_updatescs";
-            this.Text = "check_for_updatescs";
+            this.Name = "check_for_updates";
+            this.Text = "MoMoney - Check For Updates";
             ((System.ComponentModel.ISupportInitialize)(this.ux_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -136,11 +160,13 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ux_current_version;
         private System.Windows.Forms.PictureBox ux_image;
         private System.Windows.Forms.Button ux_cancel_button;
         private System.Windows.Forms.Button ux_dont_update_button;
         private System.Windows.Forms.Button ux_update_button;
+        private System.Windows.Forms.Label ux_new_version;
+        private System.Windows.Forms.Label label5;
 
     }
 }

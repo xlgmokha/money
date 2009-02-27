@@ -2,14 +2,15 @@
 using System.Windows.Forms;
 using MyMoney.Presentation.Model.Menu.File.Commands;
 using MyMoney.Presentation.Resources;
+using MyMoney.Presentation.Views.core;
 
 namespace MyMoney.Presentation.Views.dialogs
 {
-    public partial class save_changes_view : Form, ISaveChangesView
+    public partial class save_changes_view : ApplicationForm, ISaveChangesView
     {
         private bool can_be_closed;
 
-        public save_changes_view()
+        public save_changes_view():base("Unsaved Changes")
         {
             InitializeComponent();
             ux_image.Image = ApplicationImages.Splash;
@@ -39,11 +40,6 @@ namespace MyMoney.Presentation.Views.dialogs
             Hide();
             Close();
             action();
-        }
-
-        private void create_tool_tip_for(string title, string caption, Control control)
-        {
-            new ToolTip {IsBalloon = true, ToolTipTitle = title}.SetToolTip(control, caption);
         }
     }
 }

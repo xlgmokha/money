@@ -1,13 +1,15 @@
-﻿using System.Windows.Forms;
+﻿using System.Reflection;
+using System.Windows.Forms;
 using MyMoney.Presentation.Model.updates;
 using MyMoney.Presentation.Presenters.updates;
 using MyMoney.Presentation.Resources;
+using MyMoney.Presentation.Views.core;
 
 namespace MyMoney.Presentation.Views.updates
 {
-    public partial class check_for_updates : Form, ICheckForUpdatesView
+    public partial class check_for_updates : ApplicationForm, ICheckForUpdatesView
     {
-        public check_for_updates()
+        public check_for_updates() : base("Check For Updates")
         {
             InitializeComponent();
             ux_image.Image = ApplicationImages.Splash;
@@ -29,6 +31,13 @@ namespace MyMoney.Presentation.Views.updates
             if (information.updates_available)
             {
                 ux_update_button.Enabled = information.updates_available;
+                ux_current_version.Text = "Current: " + information.current;
+                ux_new_version.Text = "New: " + information.available_version;
+            }
+            else
+            {
+                ux_current_version.Text = "Current: " + Assembly.GetExecutingAssembly().GetName().Version;
+                ux_new_version.Text = "New: " + Assembly.GetExecutingAssembly().GetName().Version;
             }
             ShowDialog();
         }
@@ -36,11 +45,6 @@ namespace MyMoney.Presentation.Views.updates
         public void update_complete()
         {
             MessageBox.Show("update complete", "Complete");
-        }
-
-        private void create_tool_tip_for(string title, string caption, Control control)
-        {
-            new ToolTip {IsBalloon = true, ToolTipTitle = title}.SetToolTip(control, caption);
         }
     }
 }

@@ -360,6 +360,12 @@
       <DependentUpon>add_bill_payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\billing\IAddBillPaymentView.cs" />
+    <Compile Include="Presentation\Views\core\ApplicationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\core\ApplicationForm.Designer.cs">
+      <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Views\dialogs\ISaveChangesView.cs" />
     <Compile Include="Presentation\Views\dialogs\save_changes_view.cs">
       <SubType>Form</SubType>
@@ -573,6 +579,9 @@
       <DependentUpon>view_all_bills.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\core\ApplicationForm.resx">
+      <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\dialogs\save_changes_view.resx">
       <DependentUpon>save_changes_view.cs</DependentUpon>
     </EmbeddedResource>
@@ -611,7 +620,6 @@
     <EmbeddedResource Include="Presentation\Views\updates\check_for_updates.resx">
       <DependentUpon>check_for_updates.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
