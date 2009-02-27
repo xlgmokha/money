@@ -9,14 +9,18 @@ namespace MyMoney.Presentation.Views.updates
 {
     public partial class check_for_updates : ApplicationWindow, ICheckForUpdatesView
     {
-        public check_for_updates() : base("Check For Updates")
+        ICheckForUpdatesPresenter the_presenter;
+
+        public check_for_updates()
         {
             InitializeComponent();
             ux_image.Image = ApplicationImages.Splash;
             ux_image.SizeMode = PictureBoxSizeMode.StretchImage;
-            create_tool_tip_for("Update", "Update the application, and then re-start it.", ux_update_button);
-            create_tool_tip_for("Don't Update", "Discard the latest version.", ux_dont_update_button);
-            create_tool_tip_for("Cancel", "Go back.", ux_cancel_button);
+
+            titled("Check For Updates")
+                .create_tool_tip_for("Update", "Update the application, and then re-start it.", ux_update_button)
+                .create_tool_tip_for("Don't Update", "Discard the latest version.", ux_dont_update_button)
+                .create_tool_tip_for("Cancel", "Go back.", ux_cancel_button);
         }
 
         public void attach_to(ICheckForUpdatesPresenter presenter)
@@ -24,6 +28,7 @@ namespace MyMoney.Presentation.Views.updates
             ux_update_button.Click += (sender, e) => presenter.begin_update();
             ux_dont_update_button.Click += (sender, e) => presenter.do_not_update();
             ux_cancel_button.Click += (sender, e) => presenter.cancel_update();
+            the_presenter = presenter;
         }
 
         public void display(ApplicationVersion information)
@@ -44,7 +49,8 @@ namespace MyMoney.Presentation.Views.updates
 
         public void update_complete()
         {
-            MessageBox.Show("update complete", "Complete");
+            MessageBox.Show("update complete, the application will now restart.", "Complete", MessageBoxButtons.OK);
+            the_presenter.restart();
         }
     }
 }

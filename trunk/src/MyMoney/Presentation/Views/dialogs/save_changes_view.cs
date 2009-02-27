@@ -8,16 +8,18 @@ namespace MyMoney.Presentation.Views.dialogs
 {
     public partial class save_changes_view : ApplicationWindow, ISaveChangesView
     {
-        private bool can_be_closed;
+        bool can_be_closed;
 
-        public save_changes_view():base("Unsaved Changes")
+        public save_changes_view()
         {
             InitializeComponent();
             ux_image.Image = ApplicationImages.Splash;
             ux_image.SizeMode = PictureBoxSizeMode.StretchImage;
-            create_tool_tip_for("Save", "Save the document, and then close it.", ux_save_button);
-            create_tool_tip_for("Don't Save", "Discard the unsaved changes.", ux_do_not_save_button);
-            create_tool_tip_for("Cancel", "Go back.", ux_cancel_button);
+
+            titled("Unsaved Changes")
+                .create_tool_tip_for("Save", "Save the document, and then close it.", ux_save_button)
+                .create_tool_tip_for("Don't Save", "Discard the unsaved changes.", ux_do_not_save_button)
+                .create_tool_tip_for("Cancel", "Go back.", ux_cancel_button);
         }
 
 
@@ -34,7 +36,7 @@ namespace MyMoney.Presentation.Views.dialogs
             ShowDialog();
         }
 
-        private void execute(Action action)
+        void execute(Action action)
         {
             can_be_closed = true;
             Hide();

@@ -17,7 +17,7 @@ namespace MyMoney.Presentation.Views.reporting
             var the_active_report = report.downcast_to<ActiveReport3>();
             the_active_report.Run();
             ux_report_viewer.Document = the_active_report.Document;
-            TabText = report.name;
+            titled(report.name);
         }
     }
 }

@@ -3,18 +3,29 @@ using MyMoney.Presentation.Resources;
 
 namespace MyMoney.Presentation.Views.core
 {
-    public partial class ApplicationWindow : Form
+    public interface IApplicationWindow : IView
     {
-        public ApplicationWindow(string title)
+        IApplicationWindow titled(string title);
+        IApplicationWindow create_tool_tip_for(string title, string caption, Control control);
+    }
+
+    public partial class ApplicationWindow : Form, IApplicationWindow
+    {
+        public ApplicationWindow()
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
-            base.Text = "MoMoney - " + title;
         }
 
-        protected ApplicationWindow create_tool_tip_for(string title, string caption, Control control)
+        public IApplicationWindow create_tool_tip_for(string title, string caption, Control control)
         {
             new ToolTip {IsBalloon = true, ToolTipTitle = title}.SetToolTip(control, caption);
+            return this;
+        }
+
+        public IApplicationWindow titled(string title)
+        {
+            base.Text = "MoMoney - " + title;
             return this;
         }
     }

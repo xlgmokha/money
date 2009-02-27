@@ -21,10 +21,12 @@ namespace MyMoney.Presentation.Views.Navigation
 
         void initialize_the_ui()
         {
+            icon(ApplicationIcons.FileExplorer)
+                .cannot_be_closed()
+                .docked_to(DockState.DockLeft);
+
             uxNavigationTreeView.ImageList = new ImageList();
             ApplicationIcons.all().each(x => uxNavigationTreeView.ImageList.Images.Add(x.name_of_the_icon, x));
-            CloseButton = false;
-            Icon = ApplicationIcons.FileExplorer;
         }
 
         public void accept(INavigationTreeVisitor tree_view_visitor)
@@ -32,7 +34,6 @@ namespace MyMoney.Presentation.Views.Navigation
             uxNavigationTreeView.Nodes.Clear();
             tree_view_visitor.visit(uxNavigationTreeView);
             shell.add(this);
-            DockState = DockState.DockLeft;
         }
     }
 }

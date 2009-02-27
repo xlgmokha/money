@@ -4,9 +4,8 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace MyMoney.Presentation.Views.core
 {
-    public interface IDockedContentView : IDockContent, ISynchronizeInvoke, IDisposable
+    public interface IDockedContentView : IDockContent, IView
     {
-        string TabText { get; }
         void add_to(DockPanel panel);
     }
 }
