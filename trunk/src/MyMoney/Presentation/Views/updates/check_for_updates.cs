@@ -7,7 +7,7 @@ using MyMoney.Presentation.Views.core;
 
 namespace MyMoney.Presentation.Views.updates
 {
-    public partial class check_for_updates : ApplicationForm, ICheckForUpdatesView
+    public partial class check_for_updates : ApplicationWindow, ICheckForUpdatesView
     {
         public check_for_updates() : base("Check For Updates")
         {

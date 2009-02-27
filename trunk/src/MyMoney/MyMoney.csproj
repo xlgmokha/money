@@ -360,11 +360,17 @@
       <DependentUpon>add_bill_payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\billing\IAddBillPaymentView.cs" />
-    <Compile Include="Presentation\Views\core\ApplicationForm.cs">
+    <Compile Include="Presentation\Views\core\ApplicationDockedWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Views\core\ApplicationForm.Designer.cs">
-      <DependentUpon>ApplicationForm.cs</DependentUpon>
+    <Compile Include="Presentation\Views\core\ApplicationDockedWindow.Designer.cs">
+      <DependentUpon>ApplicationDockedWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\core\ApplicationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\core\ApplicationWindow.Designer.cs">
+      <DependentUpon>ApplicationWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\dialogs\ISaveChangesView.cs" />
     <Compile Include="Presentation\Views\dialogs\save_changes_view.cs">
@@ -579,8 +585,8 @@
       <DependentUpon>view_all_bills.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Views\core\ApplicationForm.resx">
-      <DependentUpon>ApplicationForm.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Views\core\ApplicationWindow.resx">
+      <DependentUpon>ApplicationWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\dialogs\save_changes_view.resx">
       <DependentUpon>save_changes_view.cs</DependentUpon>
@@ -660,7 +666,6 @@
     <Folder Include="Presentation\Presenters\messages\" />
     <Folder Include="Tasks\domain\" />
     <Folder Include="Tasks\Stubs\" />
-    <Folder Include="Testing\Extensions\" />
     <Folder Include="Testing\spechelpers\concerns\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

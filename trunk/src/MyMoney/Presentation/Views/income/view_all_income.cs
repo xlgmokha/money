@@ -1,17 +1,16 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using MyMoney.Presentation.Presenters.income.dto;
+using MyMoney.Presentation.Views.core;
 using MyMoney.Utility.Extensions;
-using WeifenLuo.WinFormsUI.Docking;
 
 namespace MyMoney.Presentation.Views.income
 {
-    public partial class view_all_income : DockContent, IViewIncomeHistory
+    public partial class view_all_income : ApplicationDockedWindow, IViewIncomeHistory
     {
         public view_all_income()
         {
             InitializeComponent();
-            TabText = "View All Income";
+            titled("View All Income");
         }
 
         public void display(IEnumerable<income_information_dto> summary)

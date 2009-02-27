@@ -1,11 +1,11 @@
 ﻿using DataDynamics.ActiveReports;
 using MyMoney.Presentation.Model.reporting;
+using MyMoney.Presentation.Views.core;
 using MyMoney.Utility.Extensions;
-using WeifenLuo.WinFormsUI.Docking;
 
 namespace MyMoney.Presentation.Views.reporting
 {
-    public partial class report_viewer : DockContent, IReportView
+    public partial class report_viewer : ApplicationDockedWindow, IReportView
     {
         public report_viewer()
         {

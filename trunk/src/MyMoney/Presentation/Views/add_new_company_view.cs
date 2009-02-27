@@ -6,19 +6,19 @@ using MyMoney.Presentation.Databindings;
 using MyMoney.Presentation.Model.interaction;
 using MyMoney.Presentation.Presenters;
 using MyMoney.Presentation.Presenters.billing.dto;
+using MyMoney.Presentation.Views.core;
 using MyMoney.Utility.Extensions;
-using WeifenLuo.WinFormsUI.Docking;
 
 namespace MyMoney.Presentation.Views
 {
-    public partial class add_new_company_view : DockContent, IAddCompanyView
+    public partial class add_new_company_view : ApplicationDockedWindow, IAddCompanyView
     {
-        private readonly register_new_company dto;
+        readonly register_new_company dto;
 
         public add_new_company_view()
         {
             InitializeComponent();
-            TabText = "Add A Company";
+            titled("Add A Company");
             dto = new register_new_company();
         }
 
@@ -40,7 +40,5 @@ namespace MyMoney.Presentation.Views
             messages.each(x => builder.Append(x));
             MessageBox.Show(builder.ToString());
         }
-
-
     }
 }

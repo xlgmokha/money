@@ -4,17 +4,17 @@ using MyMoney.Domain.accounting.billing;
 using MyMoney.Presentation.Model.interaction;
 using MyMoney.Presentation.Presenters.income;
 using MyMoney.Presentation.Presenters.income.dto;
+using MyMoney.Presentation.Views.core;
 using MyMoney.Utility.Extensions;
-using WeifenLuo.WinFormsUI.Docking;
 
 namespace MyMoney.Presentation.Views.income
 {
-    public partial class add_new_income_view : DockContent, IAddNewIncomeView
+    public partial class add_new_income_view : ApplicationDockedWindow, IAddNewIncomeView
     {
         public add_new_income_view()
         {
             InitializeComponent();
-            TabText = "Add Income";
+            titled("Add Income");
         }
 
         public void attach_to(IAddNewIncomePresenter presenter)
@@ -37,7 +37,7 @@ namespace MyMoney.Presentation.Views.income
             throw new NotImplementedException();
         }
 
-        private income_submission_dto create_income()
+        income_submission_dto create_income()
         {
             return new income_submission_dto
                        {

@@ -2,17 +2,17 @@
 using MyMoney.Domain.accounting.billing;
 using MyMoney.Presentation.Presenters.billing;
 using MyMoney.Presentation.Presenters.billing.dto;
+using MyMoney.Presentation.Views.core;
 using MyMoney.Utility.Extensions;
-using WeifenLuo.WinFormsUI.Docking;
 
 namespace MyMoney.Presentation.Views.billing
 {
-    public partial class add_bill_payment : DockContent, IAddBillPaymentView
+    public partial class add_bill_payment : ApplicationDockedWindow, IAddBillPaymentView
     {
         public add_bill_payment()
         {
             InitializeComponent();
-            TabText = "Add Bill Payment";
+            titled("Add Bill Payment");
         }
 
         public void attach_to(IAddBillPaymentPresenter presenter)
@@ -30,7 +30,7 @@ namespace MyMoney.Presentation.Views.billing
             ux_bil_payments_grid.DataSource = bills.databind();
         }
 
-        private add_new_bill_dto create_dto()
+        add_new_bill_dto create_dto()
         {
             return new add_new_bill_dto
                        {

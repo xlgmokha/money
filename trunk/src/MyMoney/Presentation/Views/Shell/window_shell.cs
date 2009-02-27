@@ -35,15 +35,16 @@ namespace MyMoney.Presentation.Views.Shell
 
         public void add(IDockedContentView view)
         {
-            var panel_to_remove = ux_dock_panel
-                .Documents
-                .SingleOrDefault(x => x.DockHandler.TabText.Equals(view.TabText));
-            if (panel_to_remove != null) {
-                panel_to_remove.DockHandler.Close();
-                panel_to_remove.DockHandler.Dispose();
-            }
+            //var panel_to_remove = ux_dock_panel
+            //    .Documents
+            //    .SingleOrDefault(x => x.DockHandler.TabText.Equals(view.TabText));
+            //if (panel_to_remove != null) {
+            //    panel_to_remove.DockHandler.Close();
+            //    panel_to_remove.DockHandler.Dispose();
+            //}
+            //view.Show(ux_dock_panel);
 
-            view.Show(ux_dock_panel);
+            view.AddTo(ux_dock_panel);
         }
 
         public void add_to_main_menu(ToolStripMenuItem item)

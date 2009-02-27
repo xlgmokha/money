@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using MyMoney.Presentation.Model.Menu.File.Commands;
 using MyMoney.Presentation.Resources;
@@ -6,7 +6,7 @@ using MyMoney.Presentation.Views.core;
 
 namespace MyMoney.Presentation.Views.dialogs
 {
-    public partial class save_changes_view : ApplicationForm, ISaveChangesView
+    public partial class save_changes_view : ApplicationWindow, ISaveChangesView
     {
         private bool can_be_closed;
 

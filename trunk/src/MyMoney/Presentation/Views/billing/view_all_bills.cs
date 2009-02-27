@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using MyMoney.Presentation.Presenters.billing.dto;
-using WeifenLuo.WinFormsUI.Docking;
+using MyMoney.Presentation.Views.core;
 
 namespace MyMoney.Presentation.Views.billing
 {
-    public partial class view_all_bills : DockContent, IViewAllBills
+    public partial class view_all_bills : ApplicationDockedWindow, IViewAllBills
     {
         public view_all_bills()
         {
             InitializeComponent();
-            TabText = "View Bills";
+            titled("View Bills");
         }
 
         public void display(IEnumerable<bill_information_dto> bills)

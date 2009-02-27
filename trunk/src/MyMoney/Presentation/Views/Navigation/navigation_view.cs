@@ -1,15 +1,16 @@
 using System.Windows.Forms;
 using MyMoney.Presentation.Model.Navigation;
 using MyMoney.Presentation.Resources;
+using MyMoney.Presentation.Views.core;
 using MyMoney.Presentation.Views.Shell;
 using MyMoney.Utility.Extensions;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MyMoney.Presentation.Views.Navigation
 {
-    public partial class navigation_view : DockContent, INavigationView
+    public partial class navigation_view : ApplicationDockedWindow, INavigationView
     {
-        private readonly IShell shell;
+        readonly IShell shell;
 
         public navigation_view(IShell shell)
         {
@@ -18,7 +19,7 @@ namespace MyMoney.Presentation.Views.Navigation
             initialize_the_ui();
         }
 
-        private void initialize_the_ui()
+        void initialize_the_ui()
         {
             uxNavigationTreeView.ImageList = new ImageList();
             ApplicationIcons.all().each(x => uxNavigationTreeView.ImageList.Images.Add(x.name_of_the_icon, x));

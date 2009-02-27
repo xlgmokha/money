@@ -1,5 +1,4 @@
-﻿using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Resources;
+﻿using MyMoney.Presentation.Resources;
 using MyMoney.Presentation.Views.core;
 using MyMoney.Presentation.Views.Shell;
 using WeifenLuo.WinFormsUI.Docking;
@@ -13,7 +12,7 @@ namespace MyMoney.Presentation.Views.Navigation
         void add(Expando expando);
     }
 
-    public partial class actions_task_list : DockContent, IActionsTaskView
+    public partial class actions_task_list : ApplicationDockedWindow, IActionsTaskView
     {
         readonly IShell shell;
 
@@ -29,8 +28,9 @@ namespace MyMoney.Presentation.Views.Navigation
 
         void initialize_the_ui()
         {
-            TabText = "Action Items";
-            Icon = ApplicationIcons.FileExplorer;
+            titled("Actions Items")
+                .icon(ApplicationIcons.FileExplorer);
+
             ux_system_task_pane.UseClassicTheme();
             //ux_system_task_pane.UseCustomTheme(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "itunes.dat"));
         }
