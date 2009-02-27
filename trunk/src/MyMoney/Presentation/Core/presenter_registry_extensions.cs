@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MyMoney.Domain.Core;
@@ -19,10 +20,17 @@ namespace MyMoney.Presentation.Core
         public static Presenter find_an_implementation_of<Presenter>(this IRegistry<IPresenter> registry)
             where Presenter : IPresenter
         {
-            return registry
-                .all()
-                .Single(p => p.is_an_implementation_of<Presenter>())
-                .downcast_to<Presenter>();
+            try
+            {
+                return registry
+                    .all()
+                    .Single(p => p.is_an_implementation_of<Presenter>())
+                    .downcast_to<Presenter>();
+            }
+            catch (Exception exception)
+            {
+                throw new could_not_find_presenter<Presenter>(exception);
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ using MyMoney.Presentation.Views.Menu.Help;
 using MyMoney.Presentation.Views.Navigation;
 using MyMoney.Presentation.Views.Shell;
 using MyMoney.Presentation.Views.Startup;
+using MyMoney.Presentation.Views.updates;
 using MyMoney.Utility.Core;
 
 namespace MyMoney.windows.ui
@@ -35,6 +36,7 @@ namespace MyMoney.windows.ui
             register.transient<IAddNewIncomeView, add_new_income_view>();
             register.transient<IViewIncomeHistory, view_all_income>();
             register.transient<ISaveChangesView, save_changes_view>();
+            register.transient<ICheckForUpdatesView, Presentation.Views.updates.check_for_updates>();
         }
     }
 }

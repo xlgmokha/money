@@ -7,7 +7,7 @@ namespace MyMoney.Presentation.Views.dialogs
 {
     public partial class save_changes_view : Form, ISaveChangesView
     {
-        bool can_be_closed;
+        private bool can_be_closed;
 
         public save_changes_view()
         {
@@ -33,7 +33,7 @@ namespace MyMoney.Presentation.Views.dialogs
             ShowDialog();
         }
 
-        void execute(Action action)
+        private void execute(Action action)
         {
             can_be_closed = true;
             Hide();
@@ -41,9 +41,9 @@ namespace MyMoney.Presentation.Views.dialogs
             action();
         }
 
-        void create_tool_tip_for(string title, string caption, Control control)
+        private void create_tool_tip_for(string title, string caption, Control control)
         {
-            new ToolTip { IsBalloon = true, ToolTipTitle = title }.SetToolTip(control, caption);
+            new ToolTip {IsBalloon = true, ToolTipTitle = title}.SetToolTip(control, caption);
         }
     }
 }

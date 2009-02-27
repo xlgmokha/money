@@ -192,8 +192,10 @@
     <Compile Include="Domain\repositories\company_repository_extensions.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ApplyLoggingInterceptor.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\component_exclusion_specification.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\ConfigureComponentLifestyle.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\IComponentExclusionSpecification.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ImplementationOfDependencyRegistry.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\LogComponent.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\NoInterfaces.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\RegisterComponentContract.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\SubclassesForm.cs" />
@@ -239,6 +241,7 @@
     <Compile Include="Infrastructure\transactions\unit_of_work_registry.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work_registry_specs.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work_specs.cs" />
+    <Compile Include="Presentation\Core\could_not_find_presenter.cs" />
     <Compile Include="Presentation\Core\IContentPresenter.cs" />
     <Compile Include="Presentation\Databindings\date_time_picker_property_binding.cs" />
     <Compile Include="Presentation\Databindings\date_time_property_binding_specs.cs" />
@@ -421,6 +424,12 @@
     <Compile Include="Presentation\Views\Shell\notification_icon_view.cs" />
     <Compile Include="Presentation\Views\Shell\task_tray_message.cs" />
     <Compile Include="Presentation\Views\Shell\title_bar.cs" />
+    <Compile Include="Presentation\Views\updates\check_for_updates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\updates\check_for_updates.Designer.cs">
+      <DependentUpon>check_for_updates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Views\updates\ICheckForUpdatesView.cs" />
     <Compile Include="Tasks\application\billing_tasks.cs" />
     <Compile Include="Tasks\application\customer_tasks.cs" />
@@ -598,6 +607,9 @@
     <EmbeddedResource Include="Presentation\Views\Shell\window_shell.resx">
       <DependentUpon>window_shell.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\updates\check_for_updates.resx">
+      <DependentUpon>check_for_updates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

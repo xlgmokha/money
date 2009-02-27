@@ -1,3 +1,4 @@
+using System;
 using MyMoney.Presentation.Core;
 using MyMoney.Presentation.Presenters.Commands;
 using MyMoney.Presentation.Views.updates;
@@ -11,13 +12,14 @@ namespace MyMoney.Presentation.Presenters.updates
         void begin_update();
         void cancel_update();
         void restart();
+        void do_not_update();
     }
 
     public class CheckForUpdatesPresenter : ICheckForUpdatesPresenter
     {
-        readonly ICheckForUpdatesView view;
-        readonly IUpdateTasks tasks;
-        readonly IRestartCommand command;
+        private readonly ICheckForUpdatesView view;
+        private readonly IUpdateTasks tasks;
+        private readonly IRestartCommand command;
 
         public CheckForUpdatesPresenter(ICheckForUpdatesView view, IUpdateTasks tasks, IRestartCommand command)
         {
@@ -45,6 +47,11 @@ namespace MyMoney.Presentation.Presenters.updates
         public void restart()
         {
             command.run();
+        }
+
+        public void do_not_update()
+        {
+            throw new NotImplementedException();
         }
 
         public void complete()
