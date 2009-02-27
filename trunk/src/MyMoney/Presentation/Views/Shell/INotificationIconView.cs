@@ -1,0 +1,12 @@
+using System;
+using MyMoney.Presentation.Resources;
+
+namespace MyMoney.Presentation.Views.Shell
+{
+    public interface INotificationIconView : IDisposable
+    {
+        void display(ApplicationIcon icon_to_display, string text_to_display);
+        void opened_new_project();
+        void show_popup_message(string message);
+    }
+}

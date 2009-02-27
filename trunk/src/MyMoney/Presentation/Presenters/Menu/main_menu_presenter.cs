@@ -1,5 +1,5 @@
+using MyMoney.Presentation.Core;
 using MyMoney.Presentation.Model.Menu;
-using MyMoney.Presentation.Presenters.Shell;
 using MyMoney.Presentation.Views.Menu;
 using MyMoney.Utility.Extensions;
 

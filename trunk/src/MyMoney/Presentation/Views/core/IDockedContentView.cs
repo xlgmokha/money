@@ -1,5 +1,3 @@
-using System;
-using System.ComponentModel;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MyMoney.Presentation.Views.core

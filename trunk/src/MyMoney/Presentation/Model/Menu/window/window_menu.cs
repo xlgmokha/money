@@ -4,7 +4,8 @@ using MyMoney.Presentation.Model.Menu.File.Commands;
 namespace MyMoney.Presentation.Model.Menu.window
 {
     public interface IWindowMenu : ISubMenu
-    {}
+    {
+    }
 
     public class window_menu : IWindowMenu
     {

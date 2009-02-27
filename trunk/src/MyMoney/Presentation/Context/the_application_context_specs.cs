@@ -21,12 +21,12 @@ namespace MyMoney.Presentation.Context
 
         context c = () =>
                         {
-                            shell_view = dependency<window_shell>();
+                            shell_view = dependency<ApplicationShell>();
                             exit_command = an<IExitCommand>();
                             load_application = an<ILoadApplicationShellCommand>();
                         };
 
-        protected static window_shell shell_view;
+        protected static ApplicationShell shell_view;
         protected static IExitCommand exit_command;
         protected static ILoadApplicationShellCommand load_application;
     }

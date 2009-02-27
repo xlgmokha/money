@@ -7,8 +7,8 @@ using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Presentation.Presenters.Navigation
 {
-    [Concern(typeof (navigation_presenter))]
-    public class when_building_the_navigation_tree : concerns_for<INavigationPresenter, navigation_presenter>
+    [Concern(typeof (NavigationPresenter))]
+    public class when_building_the_navigation_tree : concerns_for<INavigationPresenter, NavigationPresenter>
     {
         it should_visit_the_root_node_of_the_tree = () => view.was_told_to(x => x.accept(tree_view_visitor));
 
@@ -22,7 +22,7 @@ namespace MyMoney.Presentation.Presenters.Navigation
 
         public override INavigationPresenter create_sut()
         {
-            return new navigation_presenter(view, tree_view_visitor);
+            return new NavigationPresenter(view, tree_view_visitor);
         }
 
         static INavigationView view;

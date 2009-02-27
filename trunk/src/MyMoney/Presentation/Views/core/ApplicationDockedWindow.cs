@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Windows.Forms;
+using MyMoney.Infrastructure.debugging;
 using MyMoney.Presentation.Resources;
 using WeifenLuo.WinFormsUI.Docking;
 
@@ -22,7 +23,7 @@ namespace MyMoney.Presentation.Views.core
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
-            dock_state = DockState.Unknown;
+            dock_state = DockState.Document;
         }
 
         public IApplicationDockedWindow create_tool_tip_for(string title, string caption, Control control)
@@ -58,6 +59,7 @@ namespace MyMoney.Presentation.Views.core
 
         public void add_to(DockPanel panel)
         {
+            Launch.the_debugger();
             if (window_is_already_contained_in(panel))
             {
                 remove_from(panel);

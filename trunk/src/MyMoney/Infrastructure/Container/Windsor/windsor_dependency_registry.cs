@@ -10,7 +10,7 @@ namespace MyMoney.Infrastructure.Container.Windsor
     {
         readonly IWindsorContainer underlying_container;
 
-        public windsor_dependency_registry() : this(new windsor_container_factory())
+        public windsor_dependency_registry() : this(new WindsorContainerFactory())
         {
         }
 

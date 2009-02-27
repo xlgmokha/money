@@ -8,8 +8,8 @@ using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Presentation.Presenters.Shell
 {
-    [Concern(typeof (load_application_shell))]
-    public class when_loading_the_application_shell : concerns_for<ILoadApplicationShellCommand, load_application_shell>
+    [Concern(typeof (LoadApplicationShell))]
+    public class when_loading_the_application_shell : concerns_for<ILoadApplicationShellCommand, LoadApplicationShell>
     {
         it should_initialize_all_the_application_shell_presenters =
             () => controller.was_told_to(x => x.run(correct_presenter));
@@ -35,7 +35,7 @@ namespace MyMoney.Presentation.Presenters.Shell
 
         public override ILoadApplicationShellCommand create_sut()
         {
-            return new load_application_shell(registry, controller, shell);
+            return new LoadApplicationShell(registry, controller, shell);
         }
 
         static IPresenterRegistry registry;

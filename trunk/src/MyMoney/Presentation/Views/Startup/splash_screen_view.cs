@@ -1,9 +1,10 @@
 using System.Windows.Forms;
 using MyMoney.Presentation.Resources;
+using MyMoney.Presentation.Views.core;
 
 namespace MyMoney.Presentation.Views.Startup
 {
-    public partial class splash_screen_view : Form, ISplashScreenView
+    public partial class splash_screen_view : ApplicationWindow, ISplashScreenView
     {
         public splash_screen_view()
         {
@@ -11,12 +12,13 @@ namespace MyMoney.Presentation.Views.Startup
             ApplyWindowStyles();
         }
 
-        private void ApplyWindowStyles()
+        void ApplyWindowStyles()
         {
             BackgroundImage = ApplicationImages.Splash;
             FormBorderStyle = FormBorderStyle.None;
             StartPosition = FormStartPosition.CenterScreen;
-            if (null != BackgroundImage) {
+            if (null != BackgroundImage)
+            {
                 ClientSize = BackgroundImage.Size;
             }
             TopMost = true;
