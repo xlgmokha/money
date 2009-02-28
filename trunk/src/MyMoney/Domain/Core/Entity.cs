@@ -9,7 +9,7 @@ namespace MyMoney.Domain.Core
     }
 
     [Serializable]
-    internal abstract class Entity<T> : IEntity where T : class, IEntity
+    public abstract class Entity<T> : IEntity where T : class, IEntity
     {
         protected Entity()
         {

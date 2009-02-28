@@ -236,10 +236,11 @@
     <Compile Include="Infrastructure\Threading\worker_thread.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistration.cs" />
     <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistrationFactory.cs" />
     <Compile Include="Infrastructure\transactions\NullUnitOfWork.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWork.cs" />
+    <Compile Include="Infrastructure\transactions\UnitOfWorkRegistration.cs" />
+    <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrationSpecs.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work_factory.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWorkRegistry.cs" />
@@ -457,6 +458,7 @@
     <Compile Include="Tasks\infrastructure\UpdateTasks.cs" />
     <Compile Include="Testing\spechelpers\contexts\concerns_for.cs" />
     <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
+    <Compile Include="Testing\spechelpers\core\empty_fixture.cs" />
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
     <Compile Include="Testing\spechelpers\core\method_call_occurance.cs" />
     <Compile Include="Testing\MetaData\run_in_real_container.cs" />
