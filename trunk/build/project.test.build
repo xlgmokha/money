@@ -11,7 +11,7 @@
 
 	<target name="test.compile" depends="init, test.copy.dependencies">
 		<csc output="${build.compile.dir}\${test.output}" target="library" debug="${debug}">
-			<sources basedir="${src.dir}">
+			<sources basedir="${product.dir}">
 				<include name="**\*.cs" />
 			</sources>
 			<references refid="test.references.fileset"/>
