@@ -42,7 +42,7 @@ namespace MyMoney.Presentation.Model.Menu
 
         public IMenuItemBuilder that_executes<TheCommand>() where TheCommand : ICommand
         {
-            command_to_execute = () => registry.find_an_implementation_of<TheCommand>().run();
+            command_to_execute = () => registry.get_a<TheCommand>().run();
             return this;
         }
 

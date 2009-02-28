@@ -21,7 +21,7 @@ namespace MyMoney.Infrastructure.Threading
 
         public IBackgroundThread create_for<CommandToExecute>() where CommandToExecute : IDisposableCommand
         {
-            return new background_thread(registry.find_an_implementation_of<CommandToExecute>());
+            return new background_thread(registry.get_a<CommandToExecute>());
         }
 
         public IBackgroundThread create_for(Action action)

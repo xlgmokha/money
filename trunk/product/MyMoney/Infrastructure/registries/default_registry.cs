@@ -15,7 +15,7 @@ namespace MyMoney.Infrastructure.registries
 
         public IEnumerable<T> all()
         {
-            return registry.all_implementations_of<T>();
+            return registry.all_the<T>();
         }
     }
 }

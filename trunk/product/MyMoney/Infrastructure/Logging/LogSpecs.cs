@@ -17,7 +17,7 @@ namespace MyMoney.Infrastructure.Logging
                             var factory = an<ILogFactory>();
                             var registry = an<IDependencyRegistry>();
                             logger = an<ILogger>();
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(registry, x => x.find_an_implementation_of<ILogFactory>()), factory);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(registry, x => x.get_a<ILogFactory>()), factory);
 
                             mocking_extensions.it_will_return(mocking_extensions.is_told_to(factory, x => x.create_for(typeof (string))), logger);
 

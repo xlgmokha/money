@@ -28,7 +28,11 @@ namespace MyMoney.Infrastructure.transactions
             {
                 var original_value = field.GetValue(original);
                 var current_value = field.GetValue(current);
-                if (!original_value.Equals(current_value))
+                if (original_value == null && current_value != null)
+                {
+                    return true;
+                }
+                if (original_value != null && !original_value.Equals(current_value))
                 {
                     return true;
                 }

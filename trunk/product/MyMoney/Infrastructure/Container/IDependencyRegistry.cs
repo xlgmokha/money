@@ -4,7 +4,7 @@ namespace MyMoney.Infrastructure.Container
 {
     public interface IDependencyRegistry
     {
-        Interface find_an_implementation_of<Interface>();
-        IEnumerable<Interface> all_implementations_of<Interface>();
+        Interface get_a<Interface>();
+        IEnumerable<Interface> all_the<Interface>();
     }
 }

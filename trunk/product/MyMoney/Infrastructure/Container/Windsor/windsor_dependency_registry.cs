@@ -19,12 +19,12 @@ namespace MyMoney.Infrastructure.Container.Windsor
             underlying_container = factory.create();
         }
 
-        public Interface find_an_implementation_of<Interface>()
+        public Interface get_a<Interface>()
         {
             return underlying_container.Kernel.Resolve<Interface>();
         }
 
-        public IEnumerable<Interface> all_implementations_of<Interface>()
+        public IEnumerable<Interface> all_the<Interface>()
         {
             return underlying_container.ResolveAll<Interface>();
         }

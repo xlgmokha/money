@@ -46,7 +46,7 @@ namespace MyMoney.Presentation.Model.Navigation
                                 .it_will_return(root_node);
 
                             when_the(registry)
-                                .is_told_to(x => x.all_implementations_of<IBranchVisitor>())
+                                .is_told_to(x => x.all_the<IBranchVisitor>())
                                 .it_will_return(first_node_visitor, second_node_visitor);
                         };
 

@@ -28,7 +28,7 @@ namespace MyMoney.Infrastructure.interceptors
         context c = () =>
                         {
                             target = an<ITargetObject>();
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.find_an_implementation_of<ITargetObject>()), target).Repeat.Once();
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target).Repeat.Once();
                         };
 
         because b = () =>
@@ -50,7 +50,7 @@ namespace MyMoney.Infrastructure.interceptors
                             var target = an<ITargetObject>();
 
                             mocking_extensions.it_will_return(mocking_extensions.is_told_to(target, x => x.FirstValueReturningMethod()), 10);
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.find_an_implementation_of<ITargetObject>()), target)
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target)
                                 .Repeat.Once();
                         };
 
@@ -66,12 +66,12 @@ namespace MyMoney.Infrastructure.interceptors
     public class when_calling_different_methods_on_an_proxied_object : behaves_like_a_lazy_loaded_object
     {
         it should_only_load_the_object_once =
-            () => mocking_extensions.was_told_to(test_container, x => x.find_an_implementation_of<ITargetObject>()).only_once();
+            () => mocking_extensions.was_told_to(test_container, x => x.get_a<ITargetObject>()).only_once();
 
         context c = () =>
                         {
                             var target = an<ITargetObject>();
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.find_an_implementation_of<ITargetObject>()), target).Repeat.Once();
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target).Repeat.Once();
                         };
 
         because b = () =>
@@ -95,7 +95,7 @@ namespace MyMoney.Infrastructure.interceptors
                             target = an<ITargetObject>();
 
                             mocking_extensions.it_will_return(mocking_extensions.is_told_to(target, x => x.ValueReturningMethodWithAnArgument(88)), 99);
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.find_an_implementation_of<ITargetObject>()), target).Repeat.Once();
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target).Repeat.Once();
                         };
 
         because b = () =>
@@ -117,7 +117,7 @@ namespace MyMoney.Infrastructure.interceptors
                             var target = an<ITargetObject>();
 
                             target.GetterAndSetterProperty = "mo";
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.find_an_implementation_of<ITargetObject>()), target).Repeat.Once();
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target).Repeat.Once();
                         };
 
         because b = () =>
@@ -138,7 +138,7 @@ namespace MyMoney.Infrastructure.interceptors
                         {
                             target = dependency<ITargetObject>();
 
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.find_an_implementation_of<ITargetObject>()), target)
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target)
                                 .Repeat.Once();
                         };
 
@@ -163,7 +163,7 @@ namespace MyMoney.Infrastructure.interceptors
                             target = an<IGenericInterface<string>>();
 
                             mocking_extensions.it_will_return(mocking_extensions.is_told_to(target, x => x.ValueReturningMethodWithAnArgument("blah")), "hooray");
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.find_an_implementation_of<IGenericInterface<string>>()), target).Repeat.Once();
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<IGenericInterface<string>>()), target).Repeat.Once();
                         };
 
         because b = () =>

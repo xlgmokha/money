@@ -16,7 +16,7 @@ namespace MyMoney.Infrastructure.Container
         public static DependencyToResolve dependency_for<DependencyToResolve>()
         {
             try {
-                return underlying_registry.find_an_implementation_of<DependencyToResolve>();
+                return underlying_registry.get_a<DependencyToResolve>();
             }
             catch (Exception e) {
                 throw new dependency_resolution_exception<DependencyToResolve>(e);

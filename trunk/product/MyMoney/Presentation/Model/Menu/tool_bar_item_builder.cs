@@ -36,7 +36,7 @@ namespace MyMoney.Presentation.Model.Menu
 
         public IToolbarItemBuilder when_clicked_executes<Command>() where Command : ICommand
         {
-            the_command = registry.find_an_implementation_of<Command>();
+            the_command = registry.get_a<Command>();
             return this;
         }
 

@@ -22,7 +22,7 @@ namespace MyMoney.Presentation.Model.Navigation
         public void visit(TreeView item_to_visit)
         {
             var root_node = mapper.map_from(item_to_visit);
-            registry.all_implementations_of<IBranchVisitor>().each(root_node.accept);
+            registry.all_the<IBranchVisitor>().each(root_node.accept);
         }
     }
 }

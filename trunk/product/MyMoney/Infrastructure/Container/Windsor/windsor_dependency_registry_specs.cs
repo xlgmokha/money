@@ -12,7 +12,7 @@ namespace MyMoney.Infrastructure.Container.Windsor
     public class when_registering_a_singleton_component_with_the_windsor_container : concerns_for<IDependencyRegistry>
     {
         it should_return_the_same_instance_each_time_its_resolved =
-            () => result.should_be_the_same_instance_as(sut.find_an_implementation_of<IBird>());
+            () => result.should_be_the_same_instance_as(sut.get_a<IBird>());
 
         it should_not_return_null = () => assertion_extensions.should_not_be_null(result);
 
@@ -21,7 +21,7 @@ namespace MyMoney.Infrastructure.Container.Windsor
             return new windsor_dependency_registry();
         }
 
-        because b = () => { result = sut.find_an_implementation_of<IBird>(); };
+        because b = () => { result = sut.get_a<IBird>(); };
 
         static IBird result;
     }

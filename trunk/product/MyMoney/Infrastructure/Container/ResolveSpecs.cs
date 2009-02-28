@@ -20,14 +20,14 @@ namespace MyMoney.Infrastructure.Container
                         {
                             registry = an<IDependencyRegistry>();
                             presenter = an<IPresenter>();
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(registry, x => x.find_an_implementation_of<IPresenter>()), presenter);
+                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(registry, x => x.get_a<IPresenter>()), presenter);
                             resolve.initialize_with(registry);
                         };
 
         because b = () => { result = resolve.dependency_for<IPresenter>(); };
 
         it should_leverage_the_underlying_container_it_was_initialized_with =
-            () => mocking_extensions.was_told_to(registry, x => x.find_an_implementation_of<IPresenter>());
+            () => mocking_extensions.was_told_to(registry, x => x.get_a<IPresenter>());
 
         it should_return_the_resolved_dependency = () => result.should_be_equal_to(presenter);
 
@@ -43,7 +43,7 @@ namespace MyMoney.Infrastructure.Container
         context c = () =>
                         {
                             registry = an<IDependencyRegistry>();
-                            mocking_extensions.it_will_throw(mocking_extensions.is_told_to(registry, x => x.find_an_implementation_of<IPresenter>()), new Exception());
+                            mocking_extensions.it_will_throw(mocking_extensions.is_told_to(registry, x => x.get_a<IPresenter>()), new Exception());
                             resolve.initialize_with(registry);
                         };
 

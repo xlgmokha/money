@@ -11,6 +11,7 @@ namespace MyMoney.Domain.accounting.billing
         void pay(IAccountHolder person, IMoney amount, IDate date_of_payment);
     }
 
+    [Serializable]
     internal class Company : Entity<ICompany>, ICompany
     {
         public Company(string name_of_the_company)
