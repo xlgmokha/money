@@ -159,7 +159,7 @@
     <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
     <Compile Include="DataAccess\db40\DatabaseConfiguration.cs" />
     <Compile Include="DataAccess\db40\ObjectRepository.cs" />
-    <Compile Include="DataAccess\db40\db4o_repository_specs.cs" />
+    <Compile Include="DataAccess\db40\ObjectRepositorySpecs.cs" />
     <Compile Include="DataAccess\db40\spiking\db40_spike_specs.cs" />
     <Compile Include="DataAccess\repositories\bill_repository_specs.cs" />
     <Compile Include="DataAccess\sqlcompact\sql_compant_repository_specs.cs" />
@@ -457,10 +457,10 @@
       <DependentUpon>CheckForUpdates.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\updates\ICheckForUpdatesView.cs" />
-    <Compile Include="Tasks\application\billing_tasks.cs" />
-    <Compile Include="Tasks\application\customer_tasks.cs" />
-    <Compile Include="Tasks\application\file_system_tasks.cs" />
-    <Compile Include="Tasks\application\income_tasks.cs" />
+    <Compile Include="Tasks\application\BillingTasks.cs" />
+    <Compile Include="Tasks\application\CustomerTasks.cs" />
+    <Compile Include="Tasks\infrastructure\FileSystemTasks.cs" />
+    <Compile Include="Tasks\application\IncomeTasks.cs" />
     <Compile Include="Tasks\infrastructure\UpdateTasks.cs" />
     <Compile Include="Testing\spechelpers\contexts\concerns_for.cs" />
     <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />

@@ -12,11 +12,11 @@ namespace MyMoney.Tasks.application
     }
 
     [Interceptor(typeof (IUnitOfWorkInterceptor))]
-    public class customer_tasks : ICustomerTasks
+    public class CustomerTasks : ICustomerTasks
     {
         private readonly IRepository repository;
 
-        public customer_tasks(IRepository repository)
+        public CustomerTasks(IRepository repository)
         {
             this.repository = repository;
         }

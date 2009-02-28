@@ -19,7 +19,6 @@ namespace MyMoney.DataAccess.db40
         {
             open_session_with_database().Query<T>().each(x => this.log().debug("found item: {0}", x));
             return open_session_with_database().Query<T>();
-            //return open_session_with_database().Cast<T>();
         }
 
         public void save<T>(T item) where T : IEntity

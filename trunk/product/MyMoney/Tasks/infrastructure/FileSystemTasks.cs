@@ -3,7 +3,7 @@ using Castle.Core;
 using MyMoney.Infrastructure.interceptors;
 using MyMoney.Presentation.Model.file_system;
 
-namespace MyMoney.Tasks.application
+namespace MyMoney.Tasks.infrastructure
 {
     public interface IFileSystemTasks
     {
@@ -13,11 +13,11 @@ namespace MyMoney.Tasks.application
 
     [Interceptor(typeof (IUnitOfWorkInterceptor))]
     [Singleton]
-    public class file_system_tasks : IFileSystemTasks
+    public class FileSystemTasks : IFileSystemTasks
     {
         private IFolder current_folder;
 
-        public file_system_tasks()
+        public FileSystemTasks()
         {
             current_folder = new folder(Environment.GetFolderPath(Environment.SpecialFolder.MyComputer));
         }

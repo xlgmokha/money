@@ -28,18 +28,6 @@ namespace MyMoney.Presentation.Model.Projects
         {
             this.log().debug("copying file {0} to {1}", path, file_to_overwrite.path);
             File.Copy(path, file_to_overwrite.path, true);
-
-            var fs = File.Open("C:\\yourfile.txt", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-
-            var reader = new StreamReader(fs);
-
-            while (!reader.EndOfStream)
-            {
-                var line = reader.ReadLine();
-            }
-
-            reader.Close();
-            fs.Close();
         }
 
         public static implicit operator ApplicationFile(string file_path)
