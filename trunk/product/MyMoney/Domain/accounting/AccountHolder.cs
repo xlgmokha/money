@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MyMoney.Domain.accounting.billing;
 using MyMoney.Domain.accounting.financial_growth;
@@ -14,9 +15,10 @@ namespace MyMoney.Domain.accounting
         IMoney calculate_income_for(IYear year);
     }
 
-    internal class account_holder : Entity<IAccountHolder>, IAccountHolder
+    [Serializable]
+    internal class AccountHolder : Entity<IAccountHolder>, IAccountHolder
     {
-        public account_holder()
+        public AccountHolder()
         {
             all_bills = new List<IBill>();
             income_collected = new List<IIncome>();

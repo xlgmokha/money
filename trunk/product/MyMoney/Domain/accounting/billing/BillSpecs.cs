@@ -7,19 +7,19 @@ using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Domain.accounting.billing
 {
-    [Concern(typeof (bill))]
+    [Concern(typeof (Bill))]
     public class when_checking_to_see_if_a_new_bill_has_been_paid_for : concerns_for<IBill>
     {
         it should_return_false = () => result.should_be_equal_to(false);
 
         public override IBill create_sut()
         {
-            return new bill(enmax, amount_owed, DateTime.Now);
+            return new Bill(enmax, amount_owed, DateTime.Now);
         }
 
         context c = () =>
                         {
-                            amount_owed = new money(100);
+                            amount_owed = new Money(100);
                             enmax = an<ICompany>();
                         };
 
@@ -30,7 +30,7 @@ namespace MyMoney.Domain.accounting.billing
         static ICompany enmax;
     }
 
-    [Concern(typeof (bill))]
+    [Concern(typeof (Bill))]
     public class when_checking_if_a_paid_bill_has_been_paid_for : concerns_for<IBill>
     {
         it should_return_true = () => result.should_be_equal_to(true);
@@ -38,7 +38,7 @@ namespace MyMoney.Domain.accounting.billing
 
         context c = () =>
                         {
-                            one_hundred_twenty_three_dollars_fourty_five_cents = new money(123, 45);
+                            one_hundred_twenty_three_dollars_fourty_five_cents = new Money(123, 45);
                             direct_energy = an<ICompany>();
                         };
 
@@ -50,7 +50,7 @@ namespace MyMoney.Domain.accounting.billing
 
         public override IBill create_sut()
         {
-            return new bill(direct_energy, one_hundred_twenty_three_dollars_fourty_five_cents, DateTime.Now);
+            return new Bill(direct_energy, one_hundred_twenty_three_dollars_fourty_five_cents, DateTime.Now);
         }
 
         static IMoney one_hundred_twenty_three_dollars_fourty_five_cents;
@@ -58,7 +58,7 @@ namespace MyMoney.Domain.accounting.billing
         static ICompany direct_energy;
     }
 
-    [Concern(typeof (bill))]
+    [Concern(typeof (Bill))]
     public class when_checking_if_two_bills_are_the_same_and_they_are : concerns_for<IBill>
     {
         it should_return_true = () => result.should_be_equal_to(true);
@@ -70,11 +70,11 @@ namespace MyMoney.Domain.accounting.billing
                             due_date = new DateTime(2008, 01, 01);
                         };
 
-        because b = () => { result = sut.Equals(new bill(company, new money(0), due_date)); };
+        because b = () => { result = sut.Equals(new Bill(company, new Money(0), due_date)); };
 
         public override IBill create_sut()
         {
-            return new bill(company, new money(0), due_date);
+            return new Bill(company, new Money(0), due_date);
         }
 
         static ICompany company;

@@ -1,3 +1,4 @@
+using System;
 using MyMoney.Domain.Core;
 
 namespace MyMoney.Domain.accounting.billing
@@ -7,6 +8,7 @@ namespace MyMoney.Domain.accounting.billing
         IMoney amount_paid { get; }
     }
 
+    [Serializable]
     internal class Payment : Entity<IPayment>, IPayment
     {
         public Payment(IMoney amount_paid)

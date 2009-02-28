@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MyMoney.Domain.accounting.billing;
 using MyMoney.Domain.Core;
@@ -10,6 +11,7 @@ namespace MyMoney.Domain.accounting
         IEnumerable<ILedgerEntry> get_all_the_entries_for(IMonth month);
     }
 
+    [Serializable]
     public class general_ledger : IGeneralLedger
     {
         private readonly List<ILedgerEntry> entries;

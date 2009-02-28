@@ -13,7 +13,7 @@ namespace MyMoney.Domain.Core
             var roundedAmount = mantissa >= .5m ? .01*(wholePart + 1) : .01*wholePart;
             var cents = (roundedAmount*100).to_int();
 
-            return new money(cents/100, cents%100);
+            return new Money(cents/100, cents%100);
         }
 
         public static IMoney as_money(this int amount)
@@ -25,7 +25,7 @@ namespace MyMoney.Domain.Core
             var roundedAmount = mantissa >= .5m ? .01*(wholePart + 1) : .01*wholePart;
             var cents = (roundedAmount*100).to_int();
 
-            return new money(cents/100, cents%100);
+            return new Money(cents/100, cents%100);
         }
     }
 }

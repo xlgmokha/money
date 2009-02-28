@@ -4,8 +4,7 @@ using MyMoney.Domain.Core;
 using MyMoney.Infrastructure.Container;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
-using assertion_extensions=MyMoney.Testing.spechelpers.core.assertion_extensions;
-using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Infrastructure.registries
 {
@@ -14,16 +13,15 @@ namespace MyMoney.Infrastructure.registries
         concerns_for<IRegistry<int>, default_registry<int>>
     {
         it should_leverage_the_resolver_to_retrieve_all_the_implementations =
-            () => mocking_extensions.was_told_to(registry, r => r.all_the<int>());
+            () => registry.was_told_to(r => r.all_the<int>());
 
-        it should_return_the_items_resolved_by_the_registry = () => assertion_extensions.should_contain(result, 24);
+        it should_return_the_items_resolved_by_the_registry = () => result.should_contain(24);
 
         context c = () =>
                         {
                             var items_to_return = new List<int> {24};
-
                             registry = an<IDependencyRegistry>();
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(registry, r => r.all_the<int>()), items_to_return);
+                            registry.is_told_to(r => r.all_the<int>()).it_will_return(items_to_return);
                         };
 
         public override IRegistry<int> create_sut()

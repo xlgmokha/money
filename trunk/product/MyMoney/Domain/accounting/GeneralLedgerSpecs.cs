@@ -5,7 +5,7 @@ using MyMoney.Domain.accounting.billing;
 using MyMoney.Domain.Core;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
-using assertion_extensions=MyMoney.Testing.spechelpers.core.assertion_extensions;
+using MyMoney.Testing.spechelpers.core;
 using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Domain.accounting
@@ -34,12 +34,12 @@ namespace MyMoney.Domain.accounting
     {
         it should_return_all_the_entries_posted_for_that_month = () =>
                                                                      {
-                                                                         assertion_extensions.should_contain(result, february_first);
-                                                                         assertion_extensions.should_contain(result, february_twenty_first);
+                                                                         result.should_contain(february_first);
+                                                                         result.should_contain(february_twenty_first);
                                                                      };
 
         it should_not_return_any_entries_that_were_not_posted_for_that_month =
-            () => assertion_extensions.should_not_contain(result, april_first);
+            () => assertions.should_not_contain(result, april_first);
 
         context c = () =>
                         {
@@ -47,9 +47,9 @@ namespace MyMoney.Domain.accounting
                             february_twenty_first = an<ILedgerEntry>();
                             april_first = an<ILedgerEntry>();
 
-                            mocking_extensions.is_told_to(february_first, x => x.entry_date()).Return(new DateTime(2008, 02, 01));
-                            mocking_extensions.is_told_to(february_twenty_first, x => x.entry_date()).Return(new DateTime(2008, 02, 21));
-                            mocking_extensions.is_told_to(april_first, x => x.entry_date()).Return(new DateTime(2008, 04, 01));
+                            february_first.is_told_to(x => x.entry_date()).it_will_return(new DateTime(2008, 02, 01));
+                            february_twenty_first.is_told_to(x => x.entry_date()).it_will_return(new DateTime(2008, 02, 21));
+                            april_first.is_told_to(x => x.entry_date()).it_will_return(new DateTime(2008, 04, 01));
                         };
 
         because b = () => { result = sut.get_all_the_entries_for(Months.February); };

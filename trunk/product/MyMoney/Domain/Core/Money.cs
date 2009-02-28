@@ -10,12 +10,13 @@ namespace MyMoney.Domain.Core
         IMoney add(IMoney other);
     }
 
-    internal class money : IMoney
+    [Serializable]
+    internal class Money : IMoney
     {
-        public money(long dollars) : this(dollars, 0)
+        public Money(long dollars) : this(dollars, 0)
         {}
 
-        public money(long dollars, int cents)
+        public Money(long dollars, int cents)
         {
             this.dollars = dollars;
             this.cents = cents;
@@ -34,9 +35,9 @@ namespace MyMoney.Domain.Core
             if (other.cents + cents > 100) {
                 ++new_dollars;
                 var pennies = cents + other.cents - 100;
-                return new money(new_dollars, pennies);
+                return new Money(new_dollars, pennies);
             }
-            return new money(new_dollars, cents + other.cents);
+            return new Money(new_dollars, cents + other.cents);
         }
 
         public bool Equals(IMoney other)

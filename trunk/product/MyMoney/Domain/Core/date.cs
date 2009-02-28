@@ -10,11 +10,12 @@ namespace MyMoney.Domain.Core
         DateTime to_date_time();
     }
 
-    public class date : IDate, IEquatable<date>
+    [Serializable]
+    public class Date : IDate, IEquatable<Date>
     {
         private readonly long ticks;
 
-        public date(int year, int month, int day)
+        public Date(int year, int month, int day)
         {
             ticks = new DateTime(year, month, day).Ticks;
         }
@@ -29,19 +30,19 @@ namespace MyMoney.Domain.Core
             return new DateTime(ticks);
         }
 
-        public static implicit operator date(DateTime date)
+        public static implicit operator Date(DateTime date)
         {
-            return new date(date.Year, date.Month, date.Day);
+            return new Date(date.Year, date.Month, date.Day);
         }
 
-        public static implicit operator DateTime(date date)
+        public static implicit operator DateTime(Date date)
         {
             return date.to_date_time();
         }
 
         public int CompareTo(IDate other)
         {
-            var the_other_date = other.downcast_to<date>();
+            var the_other_date = other.downcast_to<Date>();
             if (ticks.Equals(the_other_date.ticks))
             {
                 return 0;
@@ -49,7 +50,7 @@ namespace MyMoney.Domain.Core
             return ticks > the_other_date.ticks ? 1 : -1;
         }
 
-        public bool Equals(date obj)
+        public bool Equals(Date obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
@@ -65,8 +66,8 @@ namespace MyMoney.Domain.Core
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (date)) return false;
-            return Equals((date) obj);
+            if (obj.GetType() != typeof (Date)) return false;
+            return Equals((Date) obj);
         }
 
         public override int GetHashCode()

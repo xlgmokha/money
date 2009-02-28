@@ -174,19 +174,19 @@
     <Compile Include="Domain\Core\Entity.cs" />
     <Compile Include="Domain\Core\date.cs" />
     <Compile Include="Domain\Core\IRepository.cs" />
-    <Compile Include="DataAccess\db40\session_factory.cs" />
-    <Compile Include="DataAccess\db40\session_factory_specs.cs" />
+    <Compile Include="DataAccess\db40\SessionFactory.cs" />
+    <Compile Include="DataAccess\db40\SessionFactorySpecs.cs" />
     <Compile Include="Domain\accounting\billing\billing_extensions.cs" />
     <Compile Include="Domain\accounting\billing\Company.cs" />
     <Compile Include="Domain\accounting\billing\company_specs.cs" />
-    <Compile Include="Domain\accounting\account_holder.cs" />
-    <Compile Include="Domain\accounting\account_holder_specs.cs" />
+    <Compile Include="Domain\accounting\AccountHolder.cs" />
+    <Compile Include="Domain\accounting\AccountHolderSpecs.cs" />
     <Compile Include="Domain\accounting\billing\total_payments_calculator.cs" />
     <Compile Include="Domain\Core\IYear.cs" />
     <Compile Include="Domain\Core\money_extensions.cs" />
     <Compile Include="Domain\Core\money_extensions_specs.cs" />
     <Compile Include="Domain\accounting\financial_growth\income_specs.cs" />
-    <Compile Include="Domain\Core\money_specs.cs" />
+    <Compile Include="Domain\Core\MoneySpecs.cs" />
     <Compile Include="Domain\Core\range.cs" />
     <Compile Include="Domain\Core\range_specs.cs" />
     <Compile Include="Domain\repositories\company_repository_extensions.cs" />
@@ -221,7 +221,7 @@
     <Compile Include="Infrastructure\registries\default_registry.cs" />
     <Compile Include="Infrastructure\registries\default_registry_specs.cs" />
     <Compile Include="Domain\accounting\billing\Bill.cs" />
-    <Compile Include="Domain\accounting\billing\bill_specs.cs" />
+    <Compile Include="Domain\accounting\billing\BillSpecs.cs" />
     <Compile Include="Domain\accounting\general_ledger.cs" />
     <Compile Include="Domain\accounting\GeneralLedgerSpecs.cs" />
     <Compile Include="Domain\accounting\billing\ILedgerEntry.cs" />
@@ -663,7 +663,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Testing\Call.cs" />
-    <Compile Include="Testing\spechelpers\core\assertion_extensions.cs" />
+    <Compile Include="Testing\spechelpers\core\assertions.cs" />
     <Compile Include="Testing\spechelpers\core\mocking_extensions.cs" />
     <Compile Include="Testing\MetaData\ConcernAttribute.cs" />
     <Compile Include="windows.ui\start_the_application.cs" />

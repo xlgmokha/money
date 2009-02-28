@@ -3,20 +3,22 @@ using System;
 namespace MyMoney.Domain.Core
 {
     public interface IDay
-    {}
-
-    internal class day : IDay
     {
-        private readonly DateTime the_underlying_date;
-        private readonly int the_day;
+    }
 
-        public day(DateTime the_underlying_date)
+    [Serializable]
+    internal class Day : IDay
+    {
+        readonly DateTime the_underlying_date;
+        readonly int the_day;
+
+        public Day(DateTime the_underlying_date)
         {
             this.the_underlying_date = the_underlying_date;
             the_day = the_underlying_date.Day;
         }
 
-        public bool Equals(day obj)
+        public bool Equals(Day obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
@@ -27,8 +29,8 @@ namespace MyMoney.Domain.Core
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (day)) return false;
-            return Equals((day) obj);
+            if (obj.GetType() != typeof (Day)) return false;
+            return Equals((Day) obj);
         }
 
         public override int GetHashCode()

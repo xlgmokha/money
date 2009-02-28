@@ -1,16 +1,18 @@
+using System;
 using System.Collections.Generic;
 using jpboodhoo.bdd.contexts;
 using MyMoney.Domain.accounting.billing;
+using MyMoney.Domain.Core;
 using MyMoney.Testing.spechelpers.contexts;
-using assertion_extensions=MyMoney.Testing.spechelpers.core.assertion_extensions;
+using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.DataAccess.repositories
 {
     public class when_loading_all_the_bills_from_the_repository : behaves_like_a_repository
     {
-        it should_return_all_the_bills_in_the_database = () => assertion_extensions.should_contain(results, first_bill);
+        public it should_return_all_the_bills_in_the_database = () => results.should_contain(first_bill);
 
-        context c = () => { first_bill = an<IBill>(); };
+        context c = () => { first_bill = new Bill(new Company("mokhan.ca"), new Money(1, 00), DateTime.Now); };
 
         because b = () =>
                         {

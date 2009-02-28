@@ -2,7 +2,7 @@ using System;
 
 namespace MyMoney.Domain.Core
 {
-    public class Clock
+    public static class Clock
     {
         private static Func<DateTime> time_provider;
 
@@ -11,7 +11,7 @@ namespace MyMoney.Domain.Core
             reset();
         }
 
-        public static date today()
+        public static Date today()
         {
             return time_provider();
         }

@@ -6,7 +6,7 @@ namespace MyMoney.Domain.Core
     {
         public static IDate as_a_date(this DateTime date)
         {
-            return (date) date;
+            return (Date) date;
         }
 
         public static IYear as_a_year(this int year)

@@ -14,9 +14,10 @@ namespace MyMoney.Domain.accounting.billing
         IDate due_date { get; }
     }
 
-    internal class bill : Entity<IBill>, IBill
+    [Serializable]
+    internal class Bill : Entity<IBill>, IBill
     {
-        public bill(ICompany company_to_pay, IMoney the_amount_owed, DateTime due_date)
+        public Bill(ICompany company_to_pay, IMoney the_amount_owed, DateTime due_date)
         {
             this.company_to_pay = company_to_pay;
             this.the_amount_owed = the_amount_owed;
@@ -44,7 +45,7 @@ namespace MyMoney.Domain.accounting.billing
             return payments.return_value_from_visiting_all_items_with(new total_payments_calculator());
         }
 
-        public bool Equals(bill obj)
+        public bool Equals(Bill obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
@@ -56,8 +57,8 @@ namespace MyMoney.Domain.accounting.billing
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (bill)) return false;
-            return Equals((bill) obj);
+            if (obj.GetType() != typeof (Bill)) return false;
+            return Equals((Bill) obj);
         }
 
         public override int GetHashCode()

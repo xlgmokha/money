@@ -1,3 +1,4 @@
+using System;
 using MyMoney.Domain.accounting.billing;
 using MyMoney.Domain.Core;
 
@@ -10,6 +11,7 @@ namespace MyMoney.Domain.accounting.financial_growth
         ICompany company { get; }
     }
 
+    [Serializable]
     internal class Income : Entity<IIncome>, IIncome
     {
         public Income(IDate date_of_issue, IMoney amount_tendered, ICompany company)

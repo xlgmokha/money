@@ -26,7 +26,7 @@ namespace MyMoney.Tasks.application
             var c = repository.all<IAccountHolder>().SingleOrDefault();
 
             if (null == c) {
-                return new account_holder();
+                return new AccountHolder();
             }
 
             return c;

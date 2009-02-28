@@ -19,7 +19,7 @@ namespace MyMoney.Domain.accounting.billing
 
         public void reset()
         {
-            value = new money(0);
+            value = new Money(0);
         }
     }
 }

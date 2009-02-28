@@ -6,7 +6,7 @@ using MbUnit.Framework;
 
 namespace MyMoney.Testing.spechelpers.core
 {
-    public static class assertion_extensions
+    public static class assertions
     {
         [AssertionMethod]
         public static void should_be_equal_to<T>(this T item_to_validate, T expected_value)

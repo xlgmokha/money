@@ -72,7 +72,7 @@ namespace MyMoney.Presentation.Presenters.income
                         {
                             var a_company = an<ICompany>();
                             var matching_income = an<IIncome>();
-                            var today = new date(2008, 12, 26);
+                            var today = new Date(2008, 12, 26);
 
                             income = new income_submission_dto
                                          {

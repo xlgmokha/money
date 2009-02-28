@@ -13,7 +13,14 @@ namespace MyMoney.Presentation.Resources
         public ApplicationImage(string name_of_the_image)
         {
             this.name_of_the_image = name_of_the_image;
-            underlying_image = Image.FromFile(FullPathToTheFile(this));
+            try
+            {
+                underlying_image = Image.FromFile(FullPathToTheFile(this));
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
         }
 
         public static implicit operator Image(ApplicationImage image_to_convert)

@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using MyMoney.Infrastructure.Extensions;
 
@@ -28,6 +29,13 @@ namespace MyMoney.Presentation.Model.Projects
         {
             this.log().debug("copying file {0} to {1}", path, file_to_overwrite.path);
             File.Copy(path, file_to_overwrite.path, true);
+
+            //using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            //{
+            //    var content = new byte[fs.Length];
+            //    fs.Read(content, 0, Convert.ToInt32(fs.Length));
+            //    File.WriteAllBytes(file_to_overwrite.path, content);
+            //}
         }
 
         public static implicit operator ApplicationFile(string file_path)

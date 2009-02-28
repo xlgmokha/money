@@ -30,7 +30,7 @@ namespace MyMoney.DataAccess.db40.spiking
                             results = database.Query<ITestObject>().databind();
                         };
 
-        it should_be_able_to_load_the_original_contents = () => assertion_extensions.should_contain(results, original);
+        it should_be_able_to_load_the_original_contents = () => results.should_contain(original);
 
         it they_should_be_equal = () => new TestObject(99, "gretzky").Equals(new TestObject(99, "gretzky"));
 
