@@ -6,7 +6,7 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Domain.Core
 {
     [Concern(typeof (range<int>))]
-    public class behaves_like_a_range_from_1_to_10 : concerns_for<IRange<int>>
+    public abstract class behaves_like_a_range_from_1_to_10 : concerns_for<IRange<int>>
     {
         public override IRange<int> create_sut()
         {
@@ -15,7 +15,7 @@ namespace MyMoney.Domain.Core
     }
 
     [Concern(typeof (range<int>))]
-    public class behaves_like_a_range_from_10_to_1 : concerns_for<IRange<int>>
+    public abstract class behaves_like_a_range_from_10_to_1 : concerns_for<IRange<int>>
     {
         public override IRange<int> create_sut()
         {

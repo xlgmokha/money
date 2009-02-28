@@ -10,7 +10,7 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Presentation.Presenters.updates
 {
     [Concern(typeof (CheckForUpdatesPresenter))]
-    public class behaves_like_check_for_updates_presenter :
+    public abstract class behaves_like_check_for_updates_presenter :
         concerns_for<ICheckForUpdatesPresenter, CheckForUpdatesPresenter>
     {
         public override ICheckForUpdatesPresenter create_sut()

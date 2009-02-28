@@ -7,7 +7,7 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Presentation.Databindings
 {
     [Concern(typeof (property_binder<IAnInterface, string>))]
-    public class behaves_like_a_property_binder : concerns_for<IPropertyBinder<IAnInterface, string>, property_binder<IAnInterface, string>>
+    public abstract class behaves_like_a_property_binder : concerns_for<IPropertyBinder<IAnInterface, string>, property_binder<IAnInterface, string>>
     {
         public override IPropertyBinder<IAnInterface, string> create_sut()
         {

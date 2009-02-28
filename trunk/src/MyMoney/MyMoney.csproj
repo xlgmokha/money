@@ -190,6 +190,11 @@
     <Compile Include="Domain\Core\range.cs" />
     <Compile Include="Domain\Core\range_specs.cs" />
     <Compile Include="Domain\repositories\company_repository_extensions.cs" />
+    <Compile Include="Infrastructure\cloning\BinarySerializer.cs" />
+    <Compile Include="Infrastructure\cloning\BinarySerializerSpecs.cs" />
+    <Compile Include="Infrastructure\cloning\ISerializer.cs" />
+    <Compile Include="Infrastructure\cloning\Prototype.cs" />
+    <Compile Include="Infrastructure\cloning\Serializer.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ApplyLoggingInterceptor.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecification.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ConfigureComponentLifestyle.cs" />
@@ -240,6 +245,7 @@
     <Compile Include="Infrastructure\transactions\NullUnitOfWork.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWork.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWorkRegistration.cs" />
+    <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrationFactory.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrationSpecs.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work_factory.cs" />

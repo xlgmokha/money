@@ -7,7 +7,7 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Infrastructure.transactions
 {
     [Concern(typeof (UnitOfWorkRegistry))]
-    public class behaves_like_unit_of_work_registery : concerns_for<IUnitOfWorkRegistry>
+    public abstract class behaves_like_unit_of_work_registery : concerns_for<IUnitOfWorkRegistry>
     {
         public override IUnitOfWorkRegistry create_sut()
         {

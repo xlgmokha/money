@@ -9,8 +9,7 @@ using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 namespace MyMoney.Infrastructure.Threading
 {
     [Concern(typeof (background_thread_factory))]
-    public class behaves_like_a_background_thread_factory :
-        concerns_for<IBackgroundThreadFactory, background_thread_factory>
+    public abstract class behaves_like_a_background_thread_factory : concerns_for<IBackgroundThreadFactory, background_thread_factory>
     {
         public override IBackgroundThreadFactory create_sut()
         {

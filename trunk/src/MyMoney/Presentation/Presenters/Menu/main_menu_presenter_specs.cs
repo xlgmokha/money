@@ -8,7 +8,7 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Presentation.Presenters.Menu
 {
     [Concern(typeof (main_menu_presenter))]
-    public class behaves_like_the_main_menu_presenter : concerns_for<IMainMenuPresenter, main_menu_presenter>
+    public abstract class behaves_like_the_main_menu_presenter : concerns_for<IMainMenuPresenter, main_menu_presenter>
     {
         public override IMainMenuPresenter create_sut()
         {

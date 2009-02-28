@@ -9,7 +9,7 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Presentation.Presenters
 {
     [Concern(typeof (add_company_presenter))]
-    public class behaves_like_the_add_company_presenter : concerns_for<IAddCompanyPresenter, add_company_presenter>
+    public abstract class behaves_like_the_add_company_presenter : concerns_for<IAddCompanyPresenter, add_company_presenter>
     {
         public override IAddCompanyPresenter create_sut()
         {

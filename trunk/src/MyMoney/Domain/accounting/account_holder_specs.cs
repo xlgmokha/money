@@ -12,7 +12,7 @@ using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 namespace MyMoney.Domain.accounting
 {
     [Concern(typeof (account_holder))]
-    public class behaves_like_an_account_holder : concerns_for<IAccountHolder>
+    public abstract class behaves_like_an_account_holder : concerns_for<IAccountHolder>
     {
         public override IAccountHolder create_sut()
         {

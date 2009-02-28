@@ -10,12 +10,8 @@ using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.Domain.accounting
 {
-    public class GeneralLedgerSpecs
-    {
-    }
-
     [Concern(typeof (general_ledger))]
-    public class behaves_like_a_general_ledger : concerns_for<IGeneralLedger, general_ledger>
+    public abstract class behaves_like_a_general_ledger : concerns_for<IGeneralLedger, general_ledger>
     {
         public override IGeneralLedger create_sut()
         {

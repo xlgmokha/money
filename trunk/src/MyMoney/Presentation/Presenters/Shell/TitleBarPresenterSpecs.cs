@@ -10,7 +10,7 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Presentation.Presenters.Shell
 {
     [Concern(typeof (TitleBarPresenter))]
-    public class behaves_like_a_title_bar_presenter : concerns_for<ITitleBarPresenter, TitleBarPresenter>
+    public abstract class behaves_like_a_title_bar_presenter : concerns_for<ITitleBarPresenter, TitleBarPresenter>
     {
         public override ITitleBarPresenter create_sut()
         {

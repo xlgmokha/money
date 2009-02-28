@@ -9,7 +9,7 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Presentation.Presenters.Startup
 {
     [Concern(typeof (splash_screen_presenter))]
-    public class behaves_like_splash_screen_presenter : concerns_for<ISplashScreenPresenter, splash_screen_presenter>
+    public abstract class behaves_like_splash_screen_presenter : concerns_for<ISplashScreenPresenter, splash_screen_presenter>
     {
         public override ISplashScreenPresenter create_sut()
         {

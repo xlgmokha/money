@@ -18,7 +18,6 @@ namespace MyMoney.Infrastructure.Threading
         context c = () =>
                         {
                             command_to_execute = the_dependency<IDisposableCommand>();
-                            //worker_thread = the_dependency<worker_thread>();
                             worker_thread = dependency<worker_thread>();
                         };
 

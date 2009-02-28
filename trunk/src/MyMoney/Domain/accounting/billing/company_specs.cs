@@ -9,7 +9,7 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Domain.accounting.billing
 {
     [Concern(typeof (Company))]
-    public class behaves_like_a_company : concerns_for<ICompany>
+    public abstract class behaves_like_a_company : concerns_for<ICompany>
     {
         protected string company_name;
 
