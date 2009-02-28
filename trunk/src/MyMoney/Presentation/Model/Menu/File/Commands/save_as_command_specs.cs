@@ -29,7 +29,7 @@ namespace MyMoney.Presentation.Model.Menu.File.Commands
         }
 
         static IProject current_project;
-        static file new_path;
+        static Projects.ApplicationFile new_path;
         static ISelectFileToSaveToDialog view;
     }
 }

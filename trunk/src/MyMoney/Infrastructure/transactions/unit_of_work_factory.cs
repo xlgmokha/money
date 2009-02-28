@@ -9,7 +9,7 @@ namespace MyMoney.Infrastructure.transactions
 
     public class unit_of_work_factory : IUnitOfWorkFactory
     {
-        private readonly IRepository repository;
+        readonly IRepository repository;
 
         public unit_of_work_factory(IRepository repository)
         {
@@ -18,7 +18,7 @@ namespace MyMoney.Infrastructure.transactions
 
         public IUnitOfWork<T> create_for<T>() where T : IEntity
         {
-            return new unit_of_work<T>(repository);
+            return new unit_of_work<T>(repository, null);
         }
     }
 }

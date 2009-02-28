@@ -54,7 +54,7 @@ namespace MyMoney.Presentation.Model.Menu.File.Commands
 
         because b = () => sut.saved();
 
-        static file file_path;
+        static Projects.ApplicationFile file_path;
     }
 
     public class when_opening_a_project_after_declining_to_save_the_previous_project :
@@ -72,7 +72,7 @@ namespace MyMoney.Presentation.Model.Menu.File.Commands
 
         because b = () => sut.not_saved();
 
-        static file file_path;
+        static Projects.ApplicationFile file_path;
     }
 
     public class
@@ -92,6 +92,6 @@ namespace MyMoney.Presentation.Model.Menu.File.Commands
 
         because b = () => sut.cancelled();
 
-        static file file_path;
+        static Projects.ApplicationFile file_path;
     }
 }

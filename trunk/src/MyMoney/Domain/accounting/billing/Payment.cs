@@ -7,16 +7,16 @@ namespace MyMoney.Domain.accounting.billing
         IMoney amount_paid { get; }
     }
 
-    internal class payment : entity<IPayment>, IPayment
+    internal class Payment : Entity<IPayment>, IPayment
     {
-        public payment(IMoney amount_paid)
+        public Payment(IMoney amount_paid)
         {
             this.amount_paid = amount_paid;
         }
 
         public IMoney amount_paid { get; private set; }
 
-        public bool Equals(payment obj)
+        public bool Equals(Payment obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
@@ -27,7 +27,7 @@ namespace MyMoney.Domain.accounting.billing
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return Equals(obj as payment);
+            return Equals(obj as Payment);
         }
 
         public override int GetHashCode()

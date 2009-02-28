@@ -8,17 +8,18 @@ namespace MyMoney.Domain.Core
         Guid Id { get; }
     }
 
-    internal abstract class entity<T> : IEntity where T : class, IEntity
+    [Serializable]
+    internal abstract class Entity<T> : IEntity where T : class, IEntity
     {
-        protected entity()
+        protected Entity()
         {
             Id = Guid.NewGuid();
-            UnitOfWork.start_for<T>().register(this as T);
+            UnitOfWork.For<T>().register(this as T);
         }
 
         public Guid Id { get; private set; }
 
-        public bool Equals(entity<T> obj)
+        public bool Equals(Entity<T> obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
@@ -29,8 +30,8 @@ namespace MyMoney.Domain.Core
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (entity<T>)) return false;
-            return Equals((entity<T>) obj);
+            if (obj.GetType() != typeof (Entity<T>)) return false;
+            return Equals((Entity<T>) obj);
         }
 
         public override int GetHashCode()

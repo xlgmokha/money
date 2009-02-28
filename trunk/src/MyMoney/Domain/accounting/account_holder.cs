@@ -14,7 +14,7 @@ namespace MyMoney.Domain.accounting
         IMoney calculate_income_for(IYear year);
     }
 
-    internal class account_holder : entity<IAccountHolder>, IAccountHolder
+    internal class account_holder : Entity<IAccountHolder>, IAccountHolder
     {
         public account_holder()
         {

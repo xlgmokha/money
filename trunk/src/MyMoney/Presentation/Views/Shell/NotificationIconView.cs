@@ -11,11 +11,11 @@ namespace MyMoney.Presentation.Views.Shell
     [Singleton]
     public class NotificationIconView : INotificationIconView
     {
-        NotifyIcon ux_notification_icon;
-        readonly IFileMenu file_menu;
-        readonly IWindowMenu window_menu;
-        readonly IHelpMenu help_menu;
-        bool hooked_up;
+        private NotifyIcon ux_notification_icon;
+        private readonly IFileMenu file_menu;
+        private readonly IWindowMenu window_menu;
+        private readonly IHelpMenu help_menu;
+        private bool hooked_up;
 
         public NotificationIconView(IFileMenu file_menu, IWindowMenu window_menu, IHelpMenu help_menu)
         {
@@ -54,7 +54,7 @@ namespace MyMoney.Presentation.Views.Shell
 
         public void opened_new_project()
         {
-            ux_notification_icon.ShowBalloonTip(100, "If you need any help check out mokhan.ca", "", ToolTipIcon.Info);
+            show_popup_message("If you need any help check out mokhan.ca");
         }
 
         public void show_popup_message(string message)
@@ -62,7 +62,7 @@ namespace MyMoney.Presentation.Views.Shell
             ux_notification_icon.ShowBalloonTip(100, message, message, ToolTipIcon.Info);
         }
 
-        MenuItem map_from(ISubMenu item)
+        private MenuItem map_from(ISubMenu item)
         {
             var toolStripMenuItem = new MenuItem(item.name);
             foreach (var menuItem in item.all_menu_items())

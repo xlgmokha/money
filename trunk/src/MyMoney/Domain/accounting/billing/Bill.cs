@@ -14,7 +14,7 @@ namespace MyMoney.Domain.accounting.billing
         IDate due_date { get; }
     }
 
-    internal class bill : entity<IBill>, IBill
+    internal class bill : Entity<IBill>, IBill
     {
         public bill(ICompany company_to_pay, IMoney the_amount_owed, DateTime due_date)
         {
@@ -36,7 +36,7 @@ namespace MyMoney.Domain.accounting.billing
 
         public void pay(IMoney amount_to_pay)
         {
-            payments.Add(new payment(amount_to_pay));
+            payments.Add(new Payment(amount_to_pay));
         }
 
         private IMoney the_amount_paid()

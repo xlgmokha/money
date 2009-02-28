@@ -8,7 +8,7 @@ using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Domain.accounting.billing
 {
-    [Concern(typeof (company))]
+    [Concern(typeof (Company))]
     public class behaves_like_a_company : concerns_for<ICompany>
     {
         protected string company_name;
@@ -16,7 +16,7 @@ namespace MyMoney.Domain.accounting.billing
         public override ICompany create_sut()
         {
             company_name = "enmax";
-            return new company(company_name);
+            return new Company(company_name);
         }
     }
 
@@ -42,7 +42,7 @@ namespace MyMoney.Domain.accounting.billing
     public class when_a_company_pays_an_employee_or_consultant_for_services : behaves_like_a_company
     {
         it should_pay_the_total_amount_that_is_due =
-            () => person.was_told_to(x => x.recieve(new income(date_of_payment, two_thousand_dollars, sut)));
+            () => person.was_told_to(x => x.recieve(new Income(date_of_payment, two_thousand_dollars, sut)));
 
         context c = () =>
                         {

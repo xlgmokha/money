@@ -20,7 +20,7 @@ namespace MyMoney.Presentation.Views.dialogs
         public IFile tell_me_the_path_to_the_file()
         {
             var result = dialog.ShowDialog();
-            var the_path = (file) (result == DialogResult.Cancel ? string.Empty : dialog.FileName);
+            var the_path = (ApplicationFile) (result == DialogResult.Cancel ? string.Empty : dialog.FileName);
             dialog.Dispose();
             return the_path;
         }

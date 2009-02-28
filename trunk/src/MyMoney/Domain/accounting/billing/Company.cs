@@ -11,9 +11,9 @@ namespace MyMoney.Domain.accounting.billing
         void pay(IAccountHolder person, IMoney amount, IDate date_of_payment);
     }
 
-    internal class company : entity<ICompany>, ICompany
+    internal class Company : Entity<ICompany>, ICompany
     {
-        public company(string name_of_the_company)
+        public Company(string name_of_the_company)
         {
             name = name_of_the_company;
         }
@@ -27,7 +27,7 @@ namespace MyMoney.Domain.accounting.billing
 
         public void pay(IAccountHolder person, IMoney amount, IDate date_of_payment)
         {
-            person.recieve(new income(date_of_payment, amount, this));
+            person.recieve(new Income(date_of_payment, amount, this));
         }
 
         public override string ToString()

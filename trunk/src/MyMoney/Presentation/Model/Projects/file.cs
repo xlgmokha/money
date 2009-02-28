@@ -10,9 +10,9 @@ namespace MyMoney.Presentation.Model.Projects
         bool does_the_file_exist();
     }
 
-    internal class file : IFile
+    internal class ApplicationFile : IFile
     {
-        public file(string path)
+        public ApplicationFile(string path)
         {
             this.path = path;
         }
@@ -28,19 +28,31 @@ namespace MyMoney.Presentation.Model.Projects
         {
             this.log().debug("copying file {0} to {1}", path, file_to_overwrite.path);
             File.Copy(path, file_to_overwrite.path, true);
+
+            var fs = File.Open("C:\\yourfile.txt", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+
+            var reader = new StreamReader(fs);
+
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+            }
+
+            reader.Close();
+            fs.Close();
         }
 
-        public static implicit operator file(string file_path)
+        public static implicit operator ApplicationFile(string file_path)
         {
-            return new file(file_path);
+            return new ApplicationFile(file_path);
         }
 
-        public static implicit operator string(file file)
+        public static implicit operator string(ApplicationFile file)
         {
             return file.path;
         }
 
-        public bool Equals(file obj)
+        public bool Equals(ApplicationFile obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
@@ -51,8 +63,8 @@ namespace MyMoney.Presentation.Model.Projects
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (file)) return false;
-            return Equals((file) obj);
+            if (obj.GetType() != typeof (ApplicationFile)) return false;
+            return Equals((ApplicationFile) obj);
         }
 
         public override int GetHashCode()

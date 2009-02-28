@@ -9,7 +9,7 @@ namespace MyMoney.DataAccess.db40
         IObjectContainer open_connection_to(IFile the_path_to_the_database_file);
     }
 
-    public class connection_factory : IConnectionFactory
+    public class ConnectionFactory : IConnectionFactory
     {
         public IObjectContainer open_connection_to(IFile the_path_to_the_database_file)
         {

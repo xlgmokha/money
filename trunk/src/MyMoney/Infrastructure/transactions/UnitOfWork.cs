@@ -5,12 +5,12 @@ namespace MyMoney.Infrastructure.transactions
 {
     public class UnitOfWork
     {
-        public static IUnitOfWork<T> start_for<T>() where T : IEntity
+        public static IUnitOfWork<T> For<T>() where T : IEntity
         {
             if (resolve.is_initialized()) {
                 return resolve.dependency_for<IUnitOfWorkRegistry>().start_unit_of_work_for<T>();
             }
-            return new null_unit_of_work<T>();
+            return new NullUnitOfWork<T>();
         }
     }
 }

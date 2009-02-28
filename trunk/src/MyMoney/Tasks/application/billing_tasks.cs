@@ -42,7 +42,7 @@ namespace MyMoney.Tasks.application
 
         public void register_new_company(register_new_company dto)
         {
-            new company(dto.company_name);
+            new Company(dto.company_name);
         }
 
         public IEnumerable<ICompany> all_companys()

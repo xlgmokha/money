@@ -9,12 +9,12 @@ using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.DataAccess.db40
 {
-    [Concern(typeof (db4o_repository))]
-    public abstract class behaves_like_a_object_repository : concerns_for<IRepository, db4o_repository>
+    [Concern(typeof (ObjectRepository))]
+    public abstract class behaves_like_a_object_repository : concerns_for<IRepository, ObjectRepository>
     {
         public override IRepository create_sut()
         {
-            return new db4o_repository(factory);
+            return new ObjectRepository(factory);
         }
 
         context c = () => { factory = the_dependency<ISessionFactory>(); };

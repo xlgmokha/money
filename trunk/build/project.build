@@ -1,4 +1,4 @@
-<project name="mymoney">	
+<project name="momoney">	
 	<property name="project.name" value="${project::get-name()}" />
 
 	<property name="base.dir" value="${directory::get-parent-directory(project::get-base-directory())}" />

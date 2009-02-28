@@ -42,8 +42,8 @@
   </target>
 	
 	<target name="create.installer" depends="load_local_properties,create.installation.dir,create.bootstrap">		
-		<property name="args.new.application" value="-n Application -t ${application.manifest} -fd ${build.compile.dir} -v ${assembly.version} -n mymoney -cf ${certificate.filename} -pwd ${certificate.password} -pub mokhan.ca -tr FullTrust -UseManifestForTrust true -wpf false" />
-		<property name="args.new.deployment" value="-n Deployment -t ${deployment.manifest} -pu ${deployment.url}/${app.output}.application -appm ${application.manifest} -i true -v ${assembly.version} -appc ${deployment.url}\${assembly.version}\${app.output}.manifest -cf ${certificate.filename} -pwd ${certificate.password} -n mymoney -pub mokhan.ca -wpf false" />
+		<property name="args.new.application" value="-n Application -t ${application.manifest} -fd ${build.compile.dir} -v ${assembly.version} -n momoney -cf ${certificate.filename} -pwd ${certificate.password} -pub mokhan.ca -tr FullTrust -UseManifestForTrust true -wpf false" />
+		<property name="args.new.deployment" value="-n Deployment -t ${deployment.manifest} -pu ${deployment.url}/${app.output}.application -appm ${application.manifest} -i true -v ${assembly.version} -appc ${deployment.url}\${assembly.version}\${app.output}.manifest -cf ${certificate.filename} -pwd ${certificate.password} -n momoney -pub mokhan.ca -wpf false" />
 		<property name="args.update.deployment" value="-u ${deployment.manifest} -appm ${application.manifest} -v ${assembly.version}" />	
 		<property name="args.sign.application" value="-s ${application.manifest} -cf ${certificate.filename} -Password ${certificate.password}" />
 		<property name="args.sign.deployment" value="-s ${deployment.manifest} -cf ${certificate.filename} -Password ${certificate.password}" />

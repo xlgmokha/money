@@ -10,9 +10,9 @@ namespace MyMoney.Domain.accounting.financial_growth
         ICompany company { get; }
     }
 
-    internal class income : entity<IIncome>, IIncome
+    internal class Income : Entity<IIncome>, IIncome
     {
-        public income(IDate date_of_issue, IMoney amount_tendered, ICompany company)
+        public Income(IDate date_of_issue, IMoney amount_tendered, ICompany company)
         {
             this.company = company;
             this.amount_tendered = amount_tendered;
@@ -23,7 +23,7 @@ namespace MyMoney.Domain.accounting.financial_growth
         public IMoney amount_tendered { get; private set; }
         public IDate date_of_issue { get; private set; }
 
-        public bool Equals(income obj)
+        public bool Equals(Income obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
@@ -35,8 +35,8 @@ namespace MyMoney.Domain.accounting.financial_growth
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (income)) return false;
-            return Equals((income) obj);
+            if (obj.GetType() != typeof (Income)) return false;
+            return Equals((Income) obj);
         }
 
         public override int GetHashCode()

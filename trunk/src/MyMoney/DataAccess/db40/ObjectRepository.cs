@@ -6,11 +6,11 @@ using MyMoney.Utility.Extensions;
 
 namespace MyMoney.DataAccess.db40
 {
-    public class db4o_repository : IRepository
+    public class ObjectRepository : IRepository
     {
         readonly ISessionFactory factory;
 
-        public db4o_repository(ISessionFactory factory)
+        public ObjectRepository(ISessionFactory factory)
         {
             this.factory = factory;
         }

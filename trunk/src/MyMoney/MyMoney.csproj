@@ -156,9 +156,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\db40\connection_factory.cs" />
-    <Compile Include="DataAccess\db40\database_configuration.cs" />
-    <Compile Include="DataAccess\db40\db4o_repository.cs" />
+    <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
+    <Compile Include="DataAccess\db40\DatabaseConfiguration.cs" />
+    <Compile Include="DataAccess\db40\ObjectRepository.cs" />
     <Compile Include="DataAccess\db40\db4o_repository_specs.cs" />
     <Compile Include="DataAccess\db40\spiking\db40_spike_specs.cs" />
     <Compile Include="DataAccess\repositories\bill_repository_specs.cs" />
@@ -210,7 +210,8 @@
     <Compile Include="Infrastructure\interceptors\lazy_loaded_interceptor.cs" />
     <Compile Include="Infrastructure\interceptors\logging_interceptor.cs" />
     <Compile Include="Infrastructure\interceptors\raise_event_interceptor.cs" />
-    <Compile Include="Infrastructure\interceptors\unit_of_work_interceptor.cs" />
+    <Compile Include="Infrastructure\interceptors\UnitOfWorkInterceptor.cs" />
+    <Compile Include="Infrastructure\interceptors\UnitOfWorkInterceptorSpecs.cs" />
     <Compile Include="Infrastructure\Logging\ILoggable.cs" />
     <Compile Include="Infrastructure\registries\default_registry.cs" />
     <Compile Include="Infrastructure\registries\default_registry_specs.cs" />
@@ -235,11 +236,13 @@
     <Compile Include="Infrastructure\Threading\worker_thread.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Infrastructure\transactions\null_unit_of_work.cs" />
+    <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistration.cs" />
+    <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistrationFactory.cs" />
+    <Compile Include="Infrastructure\transactions\NullUnitOfWork.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWork.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work_factory.cs" />
-    <Compile Include="Infrastructure\transactions\unit_of_work_registry.cs" />
+    <Compile Include="Infrastructure\transactions\UnitOfWorkRegistry.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work_registry_specs.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work_specs.cs" />
     <Compile Include="Presentation\Core\could_not_find_presenter.cs" />

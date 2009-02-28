@@ -11,11 +11,11 @@ namespace MyMoney.DataAccess.db40
     }
 
     [Singleton]
-    public class database_configuration : IDatabaseConfiguration
+    public class DatabaseConfiguration : IDatabaseConfiguration
     {
-        file the_path_to_the_database_file;
+        ApplicationFile the_path_to_the_database_file;
 
-        public database_configuration()
+        public DatabaseConfiguration()
         {
             the_path_to_the_database_file = Path.GetTempFileName();
         }

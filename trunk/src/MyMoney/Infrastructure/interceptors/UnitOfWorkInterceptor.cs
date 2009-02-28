@@ -9,12 +9,12 @@ namespace MyMoney.Infrastructure.interceptors
     {
     }
 
-    public class unit_of_work_interceptor : IUnitOfWorkInterceptor
+    public class UnitOfWorkInterceptor : IUnitOfWorkInterceptor
     {
         readonly IUnitOfWorkRegistry registry;
         readonly IEventAggregator broker;
 
-        public unit_of_work_interceptor(IUnitOfWorkRegistry registry, IEventAggregator broker)
+        public UnitOfWorkInterceptor(IUnitOfWorkRegistry registry, IEventAggregator broker)
         {
             this.registry = registry;
             this.broker = broker;
@@ -25,8 +25,11 @@ namespace MyMoney.Infrastructure.interceptors
             using (registry)
             {
                 invocation.Proceed();
-                registry.commit_all();
-                broker.publish<unsaved_changes_event>();
+                if (registry.has_changes_to_commit())
+                {
+                    registry.commit_all();
+                    broker.publish<unsaved_changes_event>();
+                }
             }
         }
     }

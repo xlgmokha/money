@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using Castle.Core;
 using MyMoney.Domain.Core;
@@ -10,16 +11,16 @@ namespace MyMoney.Infrastructure.transactions
     {
         void commit_all();
         IUnitOfWork<T> start_unit_of_work_for<T>() where T : IEntity;
-        void clear_all();
+        bool has_changes_to_commit();
     }
 
     [Singleton]
-    public class unit_of_work_registry : IUnitOfWorkRegistry
+    public class UnitOfWorkRegistry : IUnitOfWorkRegistry
     {
         private readonly IUnitOfWorkFactory factory;
         private readonly IDictionary<Type, IUnitOfWork> units_of_work;
 
-        public unit_of_work_registry(IUnitOfWorkFactory factory)
+        public UnitOfWorkRegistry(IUnitOfWorkFactory factory)
         {
             this.factory = factory;
             units_of_work = new Dictionary<Type, IUnitOfWork>();
@@ -36,6 +37,11 @@ namespace MyMoney.Infrastructure.transactions
             return new_unit_of_work;
         }
 
+        public bool has_changes_to_commit()
+        {
+            return units_of_work.Values.Count(x=>x.is_dirty()) > 0;
+        }
+
         public void commit_all()
         {
             if (contains_items_to_commit()) {
@@ -43,12 +49,12 @@ namespace MyMoney.Infrastructure.transactions
             }
         }
 
-        public void clear_all()
+        void clear_all()
         {
             units_of_work.Clear();
         }
 
-        public bool contains_items_to_commit()
+        bool contains_items_to_commit()
         {
             return units_of_work.Count > 0;
         }

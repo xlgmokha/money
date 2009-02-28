@@ -50,7 +50,7 @@ namespace MyMoney.Presentation.Model.Projects
         public void start_a_new_project()
         {
             current_file = null;
-            configuration.change_path_to((file) Path.GetTempFileName());
+            configuration.change_path_to((ApplicationFile) Path.GetTempFileName());
             changes_to_save = false;
             broker.publish(new new_project_opened(name()));
         }
