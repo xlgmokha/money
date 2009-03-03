@@ -476,7 +476,10 @@
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
     <Compile Include="Testing\spechelpers\core\method_call_occurance.cs" />
     <Compile Include="Testing\MetaData\run_in_real_container.cs" />
-    <Compile Include="Testing\win.forms\testing_controls.cs" />
+    <Compile Include="Testing\win.forms\Events.cs" />
+    <Compile Include="Testing\win.forms\EventTrigger.cs" />
+    <Compile Include="Testing\win.forms\IEventTarget.cs" />
+    <Compile Include="Testing\win.forms\EventTriggerSpecs.cs" />
     <Compile Include="Utility\Core\ChainedConfiguration.cs" />
     <Compile Include="Utility\Core\chained_mapper.cs" />
     <Compile Include="Utility\Core\and_specification.cs" />

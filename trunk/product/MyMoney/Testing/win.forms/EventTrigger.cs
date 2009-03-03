@@ -4,26 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Windows.Forms;
-using jpboodhoo.bdd.contexts;
 using jpboodhoo.bdd.core.extensions;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Testing.win.forms
 {
-    public class when_invoking_a_call_on_a_target_via_reflection : concerns_for
-    {
-        it should_correctly_call_that_method = () => control.was_told_to(x => x.OnKeyPress(args));
-
-        context c = () => { control = an<Events.ControlEvents>(); };
-
-        because b = () => EventTrigger.trigger_event<Events.ControlEvents>(x => x.OnKeyPress(args), control);
-
-        static Events.ControlEvents control;
-        static readonly KeyPressEventArgs args = new KeyPressEventArgs('A');
-    }
-
     static public class EventTrigger
     {
         const BindingFlags binding_flags = BindingFlags.Instance | BindingFlags.NonPublic;
@@ -60,6 +44,7 @@ namespace MyMoney.Testing.win.forms
 
         static object get_value_from_member_access(Expression expression)
         {
+            var member_expression = expression.downcast_to<MemberExpression>();
             throw new NotImplementedException();
         }
 
@@ -92,25 +77,6 @@ namespace MyMoney.Testing.win.forms
         static bool can_handle(Expression expression)
         {
             return expression_handlers.ContainsKey(expression.NodeType);
-        }
-    }
-
-    public interface IEventTarget
-    {
-    }
-
-    public class Events
-    {
-        public interface ControlEvents : IEventTarget
-        {
-            void OnEnter(EventArgs args);
-            void OnKeyPress(KeyPressEventArgs args);
-        }
-
-        public interface FormEvents : ControlEvents
-        {
-            void OnActivated(EventArgs e);
-            void OnDeactivate(EventArgs e);
         }
     }
 }

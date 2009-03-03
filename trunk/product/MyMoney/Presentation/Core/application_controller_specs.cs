@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using jpboodhoo.bdd.contexts;
 using MyMoney.Presentation.Views.core;
 using MyMoney.Presentation.Views.Shell;
@@ -12,19 +10,19 @@ namespace MyMoney.Presentation.Core
     [Concern(typeof (application_controller))]
     public abstract class behaves_like_an_application_controller : concerns_for<IApplicationController, application_controller>
     {
-        public override IApplicationController create_sut()
-        {
-            return new application_controller(presenter_registry, shell);
-        }
+        //public override IApplicationController create_sut()
+        //{
+        //    return new application_controller(presenter_registry, shell);
+        //}
 
         context c = () =>
                         {
-                            presenter_registry = an<IPresenterRegistry>();
-                            shell = an<IShell>();
+                            presenter_registry = the_dependency<IPresenterRegistry>();
+                            shell = the_dependency<IShell>();
                         };
 
-        protected static IShell shell;
-        protected static IPresenterRegistry presenter_registry;
+        static protected IShell shell;
+        static protected IPresenterRegistry presenter_registry;
     }
 
     public class when_the_application_controller_is_asked_to_run_a_presenter : behaves_like_an_application_controller
@@ -35,12 +33,12 @@ namespace MyMoney.Presentation.Core
                             presenter_registry
                                 .is_told_to(r => r.all())
                                 .it_will_return(implementation_of_the_presenter);
-
                         };
 
         because b = () => sut.run<IPresenter>();
 
-        it should_ask_the_registered_presenters_for_an_instance_of_the_presenter_to_run = () => presenter_registry. was_told_to( r => r.all());
+        it should_ask_the_registered_presenters_for_an_instance_of_the_presenter_to_run =
+            () => presenter_registry.was_told_to(r => r.all());
 
         it should_initialize_the_presenter_to_run = () => implementation_of_the_presenter.was_told_to(p => p.run());
 
@@ -56,7 +54,7 @@ namespace MyMoney.Presentation.Core
                             view = an<IDockedContentView>();
                             var presenter = an<IContentPresenter>();
 
-                            presenter_registry.is_told_to(r => r.all()) .it_will_return(presenter);
+                            presenter_registry.is_told_to(r => r.all()).it_will_return(presenter);
                             presenter.is_told_to(x => x.View).it_will_return(view);
                         };
 
