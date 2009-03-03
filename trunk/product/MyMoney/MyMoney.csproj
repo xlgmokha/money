@@ -277,7 +277,7 @@
     <Compile Include="Presentation\Model\Navigation\branches\view_all_bills_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\view_all_bills_report_branch.cs" />
     <Compile Include="Presentation\Model\Projects\current_project.cs" />
-    <Compile Include="Presentation\Core\presenter_registry.cs" />
+    <Compile Include="Presentation\Core\PresenterRegistry.cs" />
     <Compile Include="Presentation\Model\Menu\create.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\exit_command.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\new_command.cs" />
@@ -342,6 +342,8 @@
     <Compile Include="Presentation\Presenters\Navigation\ExpandoBuilder.cs" />
     <Compile Include="Presentation\Presenters\Navigation\ExpandoItemBuilder.cs" />
     <Compile Include="Presentation\Presenters\Navigation\IActionTaskPaneFactory.cs" />
+    <Compile Include="Presentation\Presenters\Shell\GettingStartedPresenter.cs" />
+    <Compile Include="Presentation\Presenters\Shell\GettingStartedPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\ToolBarPresenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\MainMenuPresenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\NavigationPresenter.cs" />
@@ -447,6 +449,7 @@
     <Compile Include="Presentation\Views\billing\view_all_bills_report.Designer.cs">
       <DependentUpon>view_all_bills_report.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Views\Shell\IGettingStartedView.cs" />
     <Compile Include="Presentation\Views\Shell\INotificationIconView.cs" />
     <Compile Include="Presentation\Views\Shell\IShell.cs" />
     <Compile Include="Presentation\Views\Shell\IUnhandledErrorView.cs" />
@@ -454,11 +457,12 @@
     <Compile Include="Presentation\Views\Shell\StatusBarView.cs" />
     <Compile Include="Presentation\Views\Shell\TaskTrayMessage.cs" />
     <Compile Include="Presentation\Views\Shell\TitleBar.cs" />
-    <Compile Include="Presentation\Views\updates\CheckForUpdates.cs">
+    <Compile Include="Presentation\Views\Shell\UnhandledErrorView.cs" />
+    <Compile Include="Presentation\Views\updates\CheckForUpdatesView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Views\updates\CheckForUpdates.Designer.cs">
-      <DependentUpon>CheckForUpdates.cs</DependentUpon>
+    <Compile Include="Presentation\Views\updates\CheckForUpdatesView.Designer.cs">
+      <DependentUpon>CheckForUpdatesView.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\updates\ICheckForUpdatesView.cs" />
     <Compile Include="Tasks\application\BillingTasks.cs" />
@@ -472,6 +476,7 @@
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
     <Compile Include="Testing\spechelpers\core\method_call_occurance.cs" />
     <Compile Include="Testing\MetaData\run_in_real_container.cs" />
+    <Compile Include="Testing\win.forms\testing_controls.cs" />
     <Compile Include="Utility\Core\ChainedConfiguration.cs" />
     <Compile Include="Utility\Core\chained_mapper.cs" />
     <Compile Include="Utility\Core\and_specification.cs" />
@@ -644,8 +649,8 @@
     <EmbeddedResource Include="Presentation\Views\Startup\splash_screen_view.resx">
       <DependentUpon>splash_screen_view.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Views\updates\CheckForUpdates.resx">
-      <DependentUpon>CheckForUpdates.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Views\updates\CheckForUpdatesView.resx">
+      <DependentUpon>CheckForUpdatesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

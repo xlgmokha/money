@@ -1,6 +1,6 @@
 namespace MyMoney.Presentation.Views.updates
 {
-    partial class CheckForUpdates
+    partial class CheckForUpdatesView
     {
         /// <summary>
         /// Required designer variable.

@@ -5,16 +5,16 @@ using MyMoney.Presentation.Views.Shell;
 
 namespace MyMoney.Presentation.Presenters.Shell
 {
-    public interface IUnhandledErrorPresenter : IPresentationModule, IEventSubscriber<unhandled_error_occurred>
+    public interface IGettingStartedPresenter : IPresentationModule, IEventSubscriber<new_project_opened>
     {
     }
 
-    public class UnhandledErrorPresenter : IUnhandledErrorPresenter
+    public class GettingStartedPresenter : IGettingStartedPresenter
     {
-        readonly IUnhandledErrorView view;
+        readonly IGettingStartedView view;
         readonly IEventAggregator broker;
 
-        public UnhandledErrorPresenter(IUnhandledErrorView view, IEventAggregator broker)
+        public GettingStartedPresenter(IGettingStartedView view, IEventAggregator broker)
         {
             this.view = view;
             this.broker = broker;
@@ -25,9 +25,9 @@ namespace MyMoney.Presentation.Presenters.Shell
             broker.subscribe_to(this);
         }
 
-        public void notify(unhandled_error_occurred message)
+        public void notify(new_project_opened message)
         {
-            view.display(message.error);
+            view.display();
         }
     }
 }

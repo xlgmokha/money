@@ -7,11 +7,11 @@ using MyMoney.Presentation.Views.core;
 
 namespace MyMoney.Presentation.Views.updates
 {
-    public partial class CheckForUpdates : ApplicationWindow, ICheckForUpdatesView
+    public partial class CheckForUpdatesView : ApplicationWindow, ICheckForUpdatesView
     {
         ICheckForUpdatesPresenter the_presenter;
 
-        public CheckForUpdates()
+        public CheckForUpdatesView()
         {
             InitializeComponent();
             ux_image.Image = ApplicationImages.Splash;
@@ -49,8 +49,14 @@ namespace MyMoney.Presentation.Views.updates
 
         public void update_complete()
         {
+            //execute(()=> MessageBox.Show("update complete, the application will now restart.", "Complete", MessageBoxButtons.OK));
             MessageBox.Show("update complete, the application will now restart.", "Complete", MessageBoxButtons.OK);
             the_presenter.restart();
+        }
+
+        public void close()
+        {
+            Close();
         }
     }
 }

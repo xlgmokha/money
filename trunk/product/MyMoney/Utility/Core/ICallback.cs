@@ -4,4 +4,9 @@ namespace MyMoney.Utility.Core
     {
         void complete();
     }
+
+    public interface ICallback<T>
+    {
+        void complete(T item);
+    }
 }

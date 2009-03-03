@@ -51,7 +51,7 @@ namespace MyMoney.Presentation.Presenters.updates
 
         public void do_not_update()
         {
-            throw new NotImplementedException();
+            view.close();
         }
 
         public void complete()

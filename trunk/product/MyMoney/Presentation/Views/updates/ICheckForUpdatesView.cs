@@ -8,5 +8,6 @@ namespace MyMoney.Presentation.Views.updates
     {
         void display(ApplicationVersion information);
         void update_complete();
+        void close();
     }
 }

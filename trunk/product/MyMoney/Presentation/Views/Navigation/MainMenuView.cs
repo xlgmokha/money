@@ -21,11 +21,6 @@ namespace MyMoney.Presentation.Views.Navigation
             InitializeComponent();
             this.shell = shell;
 
-            initialize_the_ui();
-        }
-
-        void initialize_the_ui()
-        {
             titled("Main Menu")
                 .icon(ApplicationIcons.FileExplorer)
                 .cannot_be_closed()

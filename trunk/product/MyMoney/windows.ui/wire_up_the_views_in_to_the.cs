@@ -36,7 +36,7 @@ namespace MyMoney.windows.ui
             register.transient<IAddNewIncomeView, AddNewIncomeView>();
             register.transient<IViewIncomeHistory, ViewAllIncome>();
             register.transient<ISaveChangesView, SaveChangesView>();
-            register.transient<ICheckForUpdatesView, CheckForUpdates>();
+            register.transient<ICheckForUpdatesView, CheckForUpdatesView>();
             register.transient<INotificationIconView, NotificationIconView>();
             register.transient<IStatusBarView, StatusBarView>();
         }

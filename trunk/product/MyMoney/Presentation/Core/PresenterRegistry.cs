@@ -7,11 +7,11 @@ namespace MyMoney.Presentation.Core
     {
     }
 
-    public class presenter_registry : IPresenterRegistry
+    public class PresenterRegistry : IPresenterRegistry
     {
         readonly IRegistry<IPresenter> presenters;
 
-        public presenter_registry(IRegistry<IPresenter> presenters)
+        public PresenterRegistry(IRegistry<IPresenter> presenters)
         {
             this.presenters = presenters;
         }

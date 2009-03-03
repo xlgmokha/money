@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using MyMoney.Presentation.Resources;
 
 namespace MyMoney.Presentation.Views.core
@@ -27,6 +28,11 @@ namespace MyMoney.Presentation.Views.core
         {
             base.Text = "MoMoney - " + title;
             return this;
+        }
+
+        public void execute(Action action)
+        {
+            BeginInvoke(action);
         }
     }
 }
