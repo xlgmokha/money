@@ -271,6 +271,7 @@
     <Compile Include="Presentation\Model\Menu\tool_bar_item_builder.cs" />
     <Compile Include="Presentation\Model\Menu\window\window_menu.cs" />
     <Compile Include="Presentation\Model\messages\closing_the_application.cs" />
+    <Compile Include="Presentation\Model\messages\unhandled_error_occurred.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\add_bill_payment_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\add_new_income_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\view_all_bills_branch.cs" />
@@ -351,6 +352,8 @@
     <Compile Include="Presentation\Presenters\Shell\TaskTrayPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\TitleBarPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\TitleBarPresenterSpecs.cs" />
+    <Compile Include="Presentation\Presenters\Shell\UnhandledErrorPresenter.cs" />
+    <Compile Include="Presentation\Presenters\Shell\UnhandledErrorPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Startup\display_the_splash_screen.cs" />
     <Compile Include="Presentation\Presenters\Startup\hide_the_splash_screen.cs" />
     <Compile Include="Presentation\Presenters\Startup\ISplashScreenState.cs" />
@@ -446,6 +449,7 @@
     </Compile>
     <Compile Include="Presentation\Views\Shell\INotificationIconView.cs" />
     <Compile Include="Presentation\Views\Shell\IShell.cs" />
+    <Compile Include="Presentation\Views\Shell\IUnhandledErrorView.cs" />
     <Compile Include="Presentation\Views\Shell\NotificationIconView.cs" />
     <Compile Include="Presentation\Views\Shell\StatusBarView.cs" />
     <Compile Include="Presentation\Views\Shell\TaskTrayMessage.cs" />
@@ -677,7 +681,6 @@
   <ItemGroup>
     <Folder Include="Presentation\Presenters\mapping\" />
     <Folder Include="Presentation\Presenters\Menu\File\" />
-    <Folder Include="Presentation\Presenters\messages\" />
     <Folder Include="Tasks\domain\" />
     <Folder Include="Tasks\Stubs\" />
     <Folder Include="Testing\spechelpers\concerns\" />
