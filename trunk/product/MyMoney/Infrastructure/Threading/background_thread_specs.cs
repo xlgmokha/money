@@ -10,19 +10,14 @@ namespace MyMoney.Infrastructure.Threading
     [Concern(typeof (background_thread))]
     public abstract class behaves_like_a_background_thread : concerns_for<IBackgroundThread, background_thread>
     {
-        public override IBackgroundThread create_sut()
-        {
-            return new background_thread(command_to_execute, worker_thread);
-        }
-
         context c = () =>
                         {
                             command_to_execute = the_dependency<IDisposableCommand>();
-                            worker_thread = dependency<worker_thread>();
+                            worker_thread = the_dependency<IWorkerThread>();
                         };
 
         protected static IDisposableCommand command_to_execute;
-        protected static worker_thread worker_thread;
+        protected static IWorkerThread worker_thread;
     }
 
     public class when_executing_a_command_on_a_background_thread : behaves_like_a_background_thread
