@@ -11,15 +11,15 @@ namespace MyMoney.Presentation.Presenters
     [Concern(typeof (add_company_presenter))]
     public abstract class behaves_like_the_add_company_presenter : concerns_for<IAddCompanyPresenter, add_company_presenter>
     {
-        public override IAddCompanyPresenter create_sut()
-        {
-            return new add_company_presenter(view, tasks);
-        }
+        //public override IAddCompanyPresenter create_sut()
+        //{
+        //    return new add_company_presenter(view, tasks);
+        //}
 
         context c = () =>
                         {
-                            view = an<IAddCompanyView>();
-                            tasks = an<IBillingTasks>();
+                            view = the_dependency<IAddCompanyView>();
+                            tasks = the_dependency<IBillingTasks>();
                         };
 
         protected static IAddCompanyView view;

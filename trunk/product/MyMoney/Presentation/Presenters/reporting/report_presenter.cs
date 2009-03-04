@@ -15,11 +15,11 @@ namespace MyMoney.Presentation.Presenters.reporting
 
     public class report_presenter : IViewAllBillsReportPresenter
     {
-        private readonly IReportView view;
+        private readonly IReportViewer view;
         private readonly IViewAllBillsReport report;
         private readonly IBillingTasks tasks;
 
-        public report_presenter(IReportView view, IViewAllBillsReport report, IBillingTasks tasks)
+        public report_presenter(IReportViewer view, IViewAllBillsReport report, IBillingTasks tasks)
         {
             this.view = view;
             this.tasks = tasks;

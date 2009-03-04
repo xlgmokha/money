@@ -3,9 +3,9 @@ using MyMoney.Infrastructure.Container;
 
 namespace MyMoney.Infrastructure.transactions
 {
-    public class UnitOfWork
+    static public class UnitOfWork
     {
-        public static IUnitOfWork<T> For<T>() where T : IEntity
+        static public IUnitOfWork<T> For<T>() where T : IEntity
         {
             if (resolve.is_initialized())
             {

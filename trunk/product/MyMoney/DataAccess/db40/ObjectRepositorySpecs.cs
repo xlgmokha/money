@@ -5,21 +5,20 @@ using MyMoney.Domain.Core;
 using MyMoney.Testing.MetaData;
 using MyMoney.Testing.spechelpers.contexts;
 using MyMoney.Testing.spechelpers.core;
-using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MyMoney.DataAccess.db40
 {
     [Concern(typeof (ObjectRepository))]
     public abstract class behaves_like_a_object_repository : concerns_for<IRepository, ObjectRepository>
     {
-        public override IRepository create_sut()
-        {
-            return new ObjectRepository(factory);
-        }
+        //public override IRepository create_sut()
+        //{
+        //    return new ObjectRepository(factory);
+        //}
 
         context c = () => { factory = the_dependency<ISessionFactory>(); };
 
-        protected static ISessionFactory factory;
+        static protected ISessionFactory factory;
     }
 
     public class when_loading_all_the_items_from_the_database : behaves_like_a_object_repository
@@ -37,7 +36,8 @@ namespace MyMoney.DataAccess.db40
                             var session = an<IObjectContainer>();
 
                             factory.is_told_to(x => x.create()).it_will_return(session);
-                            session.is_told_to(x => x.Query<IEntity>()).it_will_return(new List<IEntity> {first_item, second_item});
+                            session.is_told_to(x => x.Query<IEntity>()).it_will_return(new List<IEntity>
+                                                                                           {first_item, second_item});
                         };
 
         because b = () => { result = sut.all<IEntity>(); };

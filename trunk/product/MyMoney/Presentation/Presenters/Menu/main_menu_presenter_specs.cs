@@ -10,19 +10,14 @@ namespace MyMoney.Presentation.Presenters.Menu
     [Concern(typeof (main_menu_presenter))]
     public abstract class behaves_like_the_main_menu_presenter : concerns_for<IMainMenuPresenter, main_menu_presenter>
     {
-        public override IMainMenuPresenter create_sut()
-        {
-            return new main_menu_presenter(main_menu, repository);
-        }
-
         context c = () =>
                         {
-                            main_menu = the_dependency<IMainMenuView>();
+                            main_menu = the_dependency<IMenuView>();
                             repository = the_dependency<ISubMenuRegistry>();
                         };
 
-        protected static ISubMenuRegistry repository;
-        protected static IMainMenuView main_menu;
+        static protected ISubMenuRegistry repository;
+        static protected IMenuView main_menu;
     }
 
     public class when_initializing_the_main_menu_presenter : behaves_like_the_main_menu_presenter

@@ -11,10 +11,10 @@ namespace MyMoney.Presentation.Presenters.Menu
 
     public class main_menu_presenter : IMainMenuPresenter
     {
-        readonly IMainMenuView main_menu;
+        readonly IMenuView main_menu;
         readonly ISubMenuRegistry registry;
 
-        public main_menu_presenter(IMainMenuView main_menu, ISubMenuRegistry registry)
+        public main_menu_presenter(IMenuView main_menu, ISubMenuRegistry registry)
         {
             this.main_menu = main_menu;
             this.registry = registry;

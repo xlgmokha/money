@@ -11,10 +11,10 @@ namespace MyMoney.Presentation.Presenters.Shell
     public class behaves_like_unhandled_error_presenter :
         concerns_for<IUnhandledErrorPresenter, UnhandledErrorPresenter>
     {
-        public override IUnhandledErrorPresenter create_sut()
-        {
-            return new UnhandledErrorPresenter(view, broker);
-        }
+        //public override IUnhandledErrorPresenter create_sut()
+        //{
+        //    return new UnhandledErrorPresenter(view, broker);
+        //}
 
         context c = () =>
                         {

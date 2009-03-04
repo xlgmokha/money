@@ -11,12 +11,12 @@ using MyMoney.Testing.spechelpers.core;
 namespace MyMoney.Domain.accounting
 {
     [Concern(typeof (AccountHolder))]
-    public abstract class behaves_like_an_account_holder : concerns_for<IAccountHolder>
+    public abstract class behaves_like_an_account_holder : concerns_for<IAccountHolder, AccountHolder>
     {
-        public override IAccountHolder create_sut()
-        {
-            return new AccountHolder();
-        }
+        //public override IAccountHolder create_sut()
+        //{
+        //    return new AccountHolder();
+        //}
     }
 
     public class when_a_customer_is_checking_for_any_bills_that_have_not_been_paid : behaves_like_an_account_holder
@@ -61,14 +61,19 @@ namespace MyMoney.Domain.accounting
                             income_for_february_2007 = an<IIncome>();
                             income_for_february_2008 = an<IIncome>();
 
-                            income_for_january_2007.is_told_to(x => x.date_of_issue).it_will_return( new DateTime(2007, 01, 01).as_a_date());
-                            income_for_january_2007.is_told_to(x => x.amount_tendered). it_will_return(new Money(1000, 00));
+                            income_for_january_2007.is_told_to(x => x.date_of_issue).it_will_return(
+                                new DateTime(2007, 01, 01).as_a_date());
+                            income_for_january_2007.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000, 00));
 
-                            income_for_february_2007.is_told_to(x => x.date_of_issue).it_will_return (new DateTime(2007, 02, 01).as_a_date());
-                            income_for_february_2007.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000, 00));
+                            income_for_february_2007.is_told_to(x => x.date_of_issue).it_will_return(
+                                new DateTime(2007, 02, 01).as_a_date());
+                            income_for_february_2007.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000,
+                                                                                                                 00));
 
-                            income_for_february_2008.is_told_to(x => x.date_of_issue).it_will_return( new DateTime(2008, 02, 01).as_a_date());
-                            income_for_february_2008.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000, 00));
+                            income_for_february_2008.is_told_to(x => x.date_of_issue).it_will_return(
+                                new DateTime(2008, 02, 01).as_a_date());
+                            income_for_february_2008.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000,
+                                                                                                                 00));
                         };
 
         because b = () =>

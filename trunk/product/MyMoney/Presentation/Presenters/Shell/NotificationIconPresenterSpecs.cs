@@ -11,10 +11,10 @@ namespace MyMoney.Presentation.Presenters.Shell
     [Concern(typeof (NotificationIconPresenter))]
     public abstract class behaves_like_notification_icon_presenter : concerns_for<INotificationIconPresenter, NotificationIconPresenter>
     {
-        public override INotificationIconPresenter create_sut()
-        {
-            return new NotificationIconPresenter(view, broker);
-        }
+        //public override INotificationIconPresenter create_sut()
+        //{
+        //    return new NotificationIconPresenter(view, broker);
+        //}
 
         context c = () =>
                         {

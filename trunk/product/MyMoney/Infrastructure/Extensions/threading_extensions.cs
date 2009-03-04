@@ -7,7 +7,7 @@ namespace MyMoney.Infrastructure.Extensions
     {
         public static IBackgroundThread on_a_background_thread(this IDisposableCommand command)
         {
-            var background_thread = new background_thread(command);
+            var background_thread = new BackgroundThread(command);
             background_thread.run();
             return background_thread;
         }

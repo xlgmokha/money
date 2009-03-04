@@ -10,11 +10,6 @@ namespace MyMoney.Presentation.Core
     [Concern(typeof (application_controller))]
     public abstract class behaves_like_an_application_controller : concerns_for<IApplicationController, application_controller>
     {
-        //public override IApplicationController create_sut()
-        //{
-        //    return new application_controller(presenter_registry, shell);
-        //}
-
         context c = () =>
                         {
                             presenter_registry = the_dependency<IPresenterRegistry>();

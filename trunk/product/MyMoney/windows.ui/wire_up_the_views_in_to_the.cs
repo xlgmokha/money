@@ -26,10 +26,10 @@ namespace MyMoney.windows.ui
         {
             register.singleton<IShell, ApplicationShell>();
             register.singleton<the_application_context, the_application_context>();
-            register.transient<IAboutApplicationView, about_the_application_view>();
-            register.transient<ISplashScreenView, splash_screen_view>();
-            register.transient<INavigationView, navigation_view>();
-            register.transient<IAddCompanyView, add_new_company_view>();
+            register.transient<IAboutApplicationView, AboutTheApplicationView>();
+            register.transient<ISplashScreenView, SplashScreenView>();
+            register.transient<INavigationView, NavigationView>();
+            register.transient<IAddCompanyView, AddCompanyView>();
             register.transient<IViewAllBills, view_all_bills>();
             register.transient<IAddBillPaymentView, add_bill_payment>();
             register.transient<IMainMenuView, MainMenuView>();

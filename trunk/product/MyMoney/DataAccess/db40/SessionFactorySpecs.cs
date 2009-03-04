@@ -10,10 +10,10 @@ namespace MyMoney.DataAccess.db40
     [Concern(typeof (SessionFactory))]
     public abstract class behaves_like_a_session_factory : concerns_for<ISessionFactory, SessionFactory>
     {
-        public override ISessionFactory create_sut()
-        {
-            return new SessionFactory(database_configuration, connection_factory);
-        }
+        //public override ISessionFactory create_sut()
+        //{
+        //    return new SessionFactory(database_configuration, connection_factory);
+        //}
 
         context c = () =>
                         {

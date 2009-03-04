@@ -10,7 +10,7 @@ namespace MyMoney.Presentation.Presenters.Commands
         readonly ISplashScreenPresenter presenter;
 
         public display_the_splash_screen()
-            : this(new splash_screen_presenter(new interval_timer(new timer_factory()), new splash_screen_view()))
+            : this(new SplashScreenPresenter(new IntervalTimer(new TimerFactory()), new SplashScreenView()))
         {
         }
 

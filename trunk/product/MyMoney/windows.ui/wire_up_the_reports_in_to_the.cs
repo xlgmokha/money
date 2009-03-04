@@ -16,7 +16,7 @@ namespace MyMoney.windows.ui
 
         public void run()
         {
-            registry.transient<IReportView, report_viewer>();
+            registry.transient<IReportViewer, ReportViewer>();
             registry.transient<IViewAllBillsReport, view_all_bills_report>();
         }
     }

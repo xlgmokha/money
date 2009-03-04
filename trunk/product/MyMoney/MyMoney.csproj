@@ -185,7 +185,6 @@
     <Compile Include="Domain\Core\IYear.cs" />
     <Compile Include="Domain\Core\money_extensions.cs" />
     <Compile Include="Domain\Core\money_extensions_specs.cs" />
-    <Compile Include="Domain\accounting\financial_growth\income_specs.cs" />
     <Compile Include="Domain\Core\MoneySpecs.cs" />
     <Compile Include="Domain\Core\range.cs" />
     <Compile Include="Domain\Core\range_specs.cs" />
@@ -222,7 +221,7 @@
     <Compile Include="Infrastructure\registries\default_registry_specs.cs" />
     <Compile Include="Domain\accounting\billing\Bill.cs" />
     <Compile Include="Domain\accounting\billing\BillSpecs.cs" />
-    <Compile Include="Domain\accounting\general_ledger.cs" />
+    <Compile Include="Domain\accounting\GeneralLedger.cs" />
     <Compile Include="Domain\accounting\GeneralLedgerSpecs.cs" />
     <Compile Include="Domain\accounting\billing\ILedgerEntry.cs" />
     <Compile Include="Domain\accounting\billing\Payment.cs" />
@@ -232,13 +231,12 @@
     <Compile Include="Domain\Core\registry_extensions.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentRegistrationConfiguration.cs" />
     <Compile Include="Infrastructure\System\application_environment.cs" />
-    <Compile Include="Infrastructure\Threading\background_thread_factory.cs" />
-    <Compile Include="Infrastructure\Threading\background_thread.cs">
+    <Compile Include="Infrastructure\Threading\BackgroundThreadFactory.cs" />
+    <Compile Include="Infrastructure\Threading\BackgroundThread.cs">
     </Compile>
-    <Compile Include="Infrastructure\Threading\interval_timer.cs" />
-    <Compile Include="Infrastructure\Threading\synchronize.cs" />
-    <Compile Include="Infrastructure\Threading\timer_factory.cs" />
-    <Compile Include="Infrastructure\Threading\worker_thread.cs">
+    <Compile Include="Infrastructure\Threading\IntervalTimer.cs" />
+    <Compile Include="Infrastructure\Threading\TimerFactory.cs" />
+    <Compile Include="Infrastructure\Threading\WorkerThread.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistrationFactory.cs" />
@@ -248,9 +246,9 @@
     <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrationFactory.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrationSpecs.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work.cs" />
-    <Compile Include="Infrastructure\transactions\unit_of_work_factory.cs" />
+    <Compile Include="Infrastructure\transactions\UnitOfWorkFactory.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWorkRegistry.cs" />
-    <Compile Include="Infrastructure\transactions\unit_of_work_registry_specs.cs" />
+    <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrySpecs.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work_specs.cs" />
     <Compile Include="Presentation\Core\could_not_find_presenter.cs" />
     <Compile Include="Presentation\Core\IContentPresenter.cs" />
@@ -279,7 +277,7 @@
     <Compile Include="Presentation\Model\Projects\current_project.cs" />
     <Compile Include="Presentation\Core\PresenterRegistry.cs" />
     <Compile Include="Presentation\Model\Menu\create.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\exit_command.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\ExitCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\new_command.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\open_command.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\open_command_specs.cs" />
@@ -347,9 +345,9 @@
     <Compile Include="Presentation\Presenters\Shell\ToolBarPresenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\MainMenuPresenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\NavigationPresenter.cs" />
-    <Compile Include="Presentation\Presenters\Navigation\navigation_presenter_specs.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\NavigationPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\reporting\report_presenter.cs" />
-    <Compile Include="Presentation\Presenters\Shell\load_application_shell_specs.cs" />
+    <Compile Include="Presentation\Presenters\Shell\LoadApplicationShellSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\NotificationIconPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\TaskTrayPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\TitleBarPresenter.cs" />
@@ -359,15 +357,15 @@
     <Compile Include="Presentation\Presenters\Startup\display_the_splash_screen.cs" />
     <Compile Include="Presentation\Presenters\Startup\hide_the_splash_screen.cs" />
     <Compile Include="Presentation\Presenters\Startup\ISplashScreenState.cs" />
-    <Compile Include="Presentation\Presenters\Startup\splash_screen_presenter.cs" />
+    <Compile Include="Presentation\Presenters\Startup\SplashScreenPresenter.cs" />
     <Compile Include="Presentation\Presenters\updates\CheckForUpdatesPresenter.cs" />
     <Compile Include="Presentation\Presenters\updates\CheckForUpdatesPresenterSpecs.cs" />
     <Compile Include="Presentation\Resources\HybridIcon.cs" />
-    <Compile Include="Presentation\Views\add_new_company_view.cs">
+    <Compile Include="Presentation\Views\AddCompanyView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Views\add_new_company_view.Designer.cs">
-      <DependentUpon>add_new_company_view.cs</DependentUpon>
+    <Compile Include="Presentation\Views\AddCompanyView.Designer.cs">
+      <DependentUpon>AddCompanyView.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\billing\add_bill_payment.cs">
       <SubType>Form</SubType>
@@ -422,7 +420,7 @@
       <DependentUpon>ViewAllIncome.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\listbox_extensions.cs" />
-    <Compile Include="Presentation\Views\Menu\main_menu_view.cs" />
+    <Compile Include="Presentation\Views\Menu\ApplicationMenuHost.cs" />
     <Compile Include="Presentation\Views\Navigation\MainMenuView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -430,18 +428,18 @@
       <DependentUpon>MainMenuView.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\Navigation\INavigationView.cs" />
-    <Compile Include="Presentation\Views\Navigation\navigation_view.cs">
+    <Compile Include="Presentation\Views\Navigation\NavigationView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Views\Navigation\navigation_view.Designer.cs">
-      <DependentUpon>navigation_view.cs</DependentUpon>
+    <Compile Include="Presentation\Views\Navigation\NavigationView.Designer.cs">
+      <DependentUpon>NavigationView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Views\reporting\IReportView.cs" />
-    <Compile Include="Presentation\Views\reporting\report_viewer.cs">
+    <Compile Include="Presentation\Views\reporting\IReportViewer.cs" />
+    <Compile Include="Presentation\Views\reporting\ReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Views\reporting\report_viewer.Designer.cs">
-      <DependentUpon>report_viewer.cs</DependentUpon>
+    <Compile Include="Presentation\Views\reporting\ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\billing\view_all_bills_report.cs">
       <SubType>Component</SubType>
@@ -497,13 +495,13 @@
     <Compile Include="Infrastructure\Extensions\environment_extensions.cs" />
     <Compile Include="Infrastructure\Extensions\logging_extensions.cs" />
     <Compile Include="Infrastructure\Logging\ConsoleLogging\console_logger.cs" />
-    <Compile Include="Infrastructure\Threading\background_thread_specs.cs" />
-    <Compile Include="Infrastructure\Threading\command_processor.cs" />
-    <Compile Include="Infrastructure\Threading\command_processor_specs.cs" />
+    <Compile Include="Infrastructure\Threading\BackgroundThreadSpecs.cs" />
+    <Compile Include="Infrastructure\Threading\CommandProcessor.cs" />
+    <Compile Include="Infrastructure\Threading\CommandProcessorSpecs.cs" />
     <Compile Include="Infrastructure\Threading\ITimerClient.cs" />
-    <Compile Include="Infrastructure\Threading\background_thread_factory_specs.cs" />
-    <Compile Include="Infrastructure\Threading\timer_factory_specs.cs" />
-    <Compile Include="Infrastructure\Threading\interval_timer_specs.cs" />
+    <Compile Include="Infrastructure\Threading\BackgroundThreadFactorySpecs.cs" />
+    <Compile Include="Infrastructure\Threading\TimerFactorySpecs.cs" />
+    <Compile Include="Infrastructure\Threading\IntervalTimerSpecs.cs" />
     <Compile Include="Presentation\Databindings\ComboBoxDataBindingSpecs.cs" />
     <Compile Include="Presentation\Databindings\combo_box_property_binding.cs" />
     <Compile Include="Presentation\Databindings\control_binding_extensions.cs" />
@@ -546,16 +544,16 @@
     <Compile Include="Presentation\Presenters\Shell\NotificationIconPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\StatusBarPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\StatusBarPresenterSpecs.cs" />
-    <Compile Include="Presentation\Presenters\Startup\splash_screen_presenter_specs.cs" />
+    <Compile Include="Presentation\Presenters\Startup\SplashScreenPresenterSpecs.cs" />
     <Compile Include="Presentation\Resources\ApplicationIcon.cs" />
     <Compile Include="Presentation\Resources\ApplicationIcons.cs" />
     <Compile Include="Presentation\Resources\ApplicationImage.cs" />
     <Compile Include="Presentation\Resources\ApplicationImages.cs" />
-    <Compile Include="Presentation\Views\Menu\Help\about_the_application_view.cs">
+    <Compile Include="Presentation\Views\Menu\Help\AboutTheApplicationView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Views\Menu\Help\about_the_application_view.Designer.cs">
-      <DependentUpon>about_the_application_view.cs</DependentUpon>
+    <Compile Include="Presentation\Views\Menu\Help\AboutTheApplicationView.Designer.cs">
+      <DependentUpon>AboutTheApplicationView.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\Menu\Help\IAboutApplicationView.cs" />
     <Compile Include="Presentation\Views\Shell\ApplicationShell.cs">
@@ -564,15 +562,15 @@
     <Compile Include="Presentation\Views\Shell\ApplicationShell.Designer.cs">
       <DependentUpon>ApplicationShell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Views\Menu\Mappers\sub_menu_to_tool_strip_menu_item_mapper.cs" />
+    <Compile Include="Presentation\Views\Menu\Mappers\SubMenuToToolStripMenuItemMapper.cs" />
     <Compile Include="Presentation\Context\the_application_context_specs.cs" />
     <Compile Include="Presentation\Context\the_application_context.cs" />
     <Compile Include="Presentation\Views\Startup\ISplashScreenView.cs" />
-    <Compile Include="Presentation\Views\Startup\splash_screen_view.cs">
+    <Compile Include="Presentation\Views\Startup\SplashScreenView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Views\Startup\splash_screen_view.Designer.cs">
-      <DependentUpon>splash_screen_view.cs</DependentUpon>
+    <Compile Include="Presentation\Views\Startup\SplashScreenView.Designer.cs">
+      <DependentUpon>SplashScreenView.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\Core\chained_command.cs" />
     <Compile Include="Utility\Extensions\command_extensions.cs" />
@@ -597,10 +595,10 @@
     <Compile Include="Infrastructure\Container\IDependencyRegistry.cs" />
     <Compile Include="Presentation\Presenters\Menu\main_menu_presenter_specs.cs" />
     <Compile Include="Presentation\Presenters\Commands\LoadApplicationShell.cs" />
-    <Compile Include="Presentation\Views\Menu\main_menu_view_specs.cs" />
+    <Compile Include="Presentation\Views\Menu\ApplicationMenuHostSpecs.cs" />
     <Compile Include="windows.ui\bootstrap.cs" />
-    <EmbeddedResource Include="Presentation\Views\add_new_company_view.resx">
-      <DependentUpon>add_new_company_view.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Views\AddCompanyView.resx">
+      <DependentUpon>AddCompanyView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\billing\add_bill_payment.resx">
@@ -625,20 +623,20 @@
       <DependentUpon>ViewAllIncome.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Views\Menu\Help\about_the_application_view.resx">
-      <DependentUpon>about_the_application_view.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Views\Menu\Help\AboutTheApplicationView.resx">
+      <DependentUpon>AboutTheApplicationView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\Navigation\MainMenuView.resx">
       <DependentUpon>MainMenuView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Views\Navigation\navigation_view.resx">
-      <DependentUpon>navigation_view.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Views\Navigation\NavigationView.resx">
+      <DependentUpon>NavigationView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Views\reporting\report_viewer.resx">
-      <DependentUpon>report_viewer.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Views\reporting\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\billing\view_all_bills_report.resx">
@@ -649,8 +647,8 @@
       <DependentUpon>ApplicationShell.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Views\Startup\splash_screen_view.resx">
-      <DependentUpon>splash_screen_view.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Views\Startup\SplashScreenView.resx">
+      <DependentUpon>SplashScreenView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\updates\CheckForUpdatesView.resx">
       <DependentUpon>CheckForUpdatesView.cs</DependentUpon>
@@ -687,8 +685,6 @@
     <Compile Include="windows.ui\wire_up_the_views_in_to_the.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Presentation\Presenters\mapping\" />
-    <Folder Include="Presentation\Presenters\Menu\File\" />
     <Folder Include="Tasks\domain\" />
     <Folder Include="Tasks\Stubs\" />
     <Folder Include="Testing\spechelpers\concerns\" />

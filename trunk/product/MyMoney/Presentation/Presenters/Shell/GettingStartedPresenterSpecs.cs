@@ -12,10 +12,10 @@ namespace MyMoney.Presentation.Presenters.Shell
         public class behaves_like_the_getting_started_presenter :
             concerns_for<IGettingStartedPresenter, GettingStartedPresenter>
         {
-            public override IGettingStartedPresenter create_sut()
-            {
-                return new GettingStartedPresenter(view, broker);
-            }
+            //public override IGettingStartedPresenter create_sut()
+            //{
+            //    return new GettingStartedPresenter(view, broker);
+            //}
 
             context c = () =>
                             {

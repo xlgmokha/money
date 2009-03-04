@@ -15,10 +15,10 @@ namespace MyMoney.Presentation.Presenters.income
     [Concern(typeof (add_new_income_presenter))]
     public abstract class behaves_like_add_new_income_presenter : concerns_for<IAddNewIncomePresenter, add_new_income_presenter>
     {
-        public override IAddNewIncomePresenter create_sut()
-        {
-            return new add_new_income_presenter(view, tasks);
-        }
+        //public override IAddNewIncomePresenter create_sut()
+        //{
+        //    return new add_new_income_presenter(view, tasks);
+        //}
 
         context c = () =>
                         {

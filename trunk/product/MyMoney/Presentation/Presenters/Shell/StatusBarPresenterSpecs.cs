@@ -23,10 +23,10 @@ namespace MyMoney.Presentation.Presenters.Shell
 
         because b = () => sut.notify(new new_project_opened(""));
 
-        public override IStatusBarPresenter create_sut()
-        {
-            return new StatusBarPresenter(view, broker);
-        }
+        //public override IStatusBarPresenter create_sut()
+        //{
+        //    return new StatusBarPresenter(view, broker);
+        //}
 
         static IStatusBarView view;
         static IEventAggregator broker;

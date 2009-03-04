@@ -16,7 +16,7 @@ namespace MyMoney.Domain.accounting
     }
 
     [Serializable]
-    internal class AccountHolder : Entity<IAccountHolder>, IAccountHolder
+    public class AccountHolder : Entity<IAccountHolder>, IAccountHolder
     {
         public AccountHolder()
         {

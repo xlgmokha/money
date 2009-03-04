@@ -8,12 +8,12 @@ using MyMoney.Testing.spechelpers.core;
 
 namespace MyMoney.Presentation.Model.Menu.File.Commands
 {
-    [Concern(typeof (exit_command))]
+    [Concern(typeof (ExitCommand))]
     public abstract class behaves_like_exit_command : concerns_for<IExitCommand>
     {
         public override IExitCommand create_sut()
         {
-            return new exit_command(application, broker, save_changes_command);
+            return new ExitCommand(application, broker, save_changes_command);
         }
 
         context c = () =>

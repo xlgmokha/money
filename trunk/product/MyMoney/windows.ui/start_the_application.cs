@@ -1,8 +1,10 @@
 using System;
 using System.Windows.Forms;
 using MyMoney.Infrastructure.Container;
+using MyMoney.Infrastructure.eventing;
 using MyMoney.Infrastructure.Extensions;
 using MyMoney.Presentation.Context;
+using MyMoney.Presentation.Model.messages;
 using MyMoney.Utility.Core;
 
 namespace MyMoney.windows.ui
@@ -18,7 +20,8 @@ namespace MyMoney.windows.ui
             catch (Exception e)
             {
                 this.log().error(e);
-                MessageBox.Show(e.ToString(), e.Message);
+                resolve.dependency_for<IEventAggregator>().publish(new unhandled_error_occurred(e));
+                //MessageBox.Show(e.ToString(), e.Message);
             }
         }
     }

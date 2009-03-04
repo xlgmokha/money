@@ -18,7 +18,7 @@ namespace MyMoney.Utility.Extensions
 
         public static ICommand as_command_chain(this IEnumerable<ICommand> commands)
         {
-            var processor = new command_processor();
+            var processor = new CommandProcessor();
             commands.each(processor.add);
             return processor;
         }
