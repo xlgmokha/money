@@ -11,10 +11,10 @@ namespace MyMoney.Infrastructure.Threading
     [Concern(typeof (interval_timer))]
     public abstract class behaves_like_an_interval_timer : concerns_for<ITimer, interval_timer>
     {
-        public override ITimer create_sut()
-        {
-            return new interval_timer(factory);
-        }
+        //public override ITimer create_sut()
+        //{
+        //    return new interval_timer(factory);
+        //}
 
         context c = () => { factory = the_dependency<ITimerFactory>(); };
 
