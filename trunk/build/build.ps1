@@ -21,9 +21,10 @@ properties{#directories
 	$sql_dir = "$build_dir\sql"
 	$sql_ddl_dir = "$sql_dir\ddl" 
 	$sql_data_dir = "$sql_dir\data" 
-  $third_party_dir = "$base_dir\thirdparty"
-  $third_party_tools_dir = "$third_party_dir\tools"
-  $third_party_lib_dir = "$third_party_dir\lib"
+
+	$third_party_dir = "$base_dir\thirdparty"
+	$third_party_tools_dir = "$third_party_dir\tools"
+	$third_party_lib_dir = "$third_party_dir\lib"
 }
 
 properties {#load in the build utilities file
