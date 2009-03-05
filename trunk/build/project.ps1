@@ -1,7 +1,3 @@
-properties{#misc
-  $framework_dir = "$env:windir\microsoft.net\framework\v2.0.50727"
-}  
-
 properties{#directories
 	$project_name = "mo.money"
 	$base_dir = new-object System.IO.DirectoryInfo $pwd
