@@ -36,5 +36,6 @@ task default -depends init
 
 task clean{
 	taskkill /f /im:"$($local_settings.editor)" /FI 'STATUS eq RUNNING'
+	remove-item $build_compile_dir -recurse -ErrorAction SilentlyContinue 
 }
 
