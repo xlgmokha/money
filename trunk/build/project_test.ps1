@@ -20,38 +20,31 @@ task test_compile -depends init,test_copy_dependencies {
 
 	$script:product_exes = get_file_names(get-childitem -path $product_dir -recurse -filter *.exe)
 	$script:product_exes | foreach-object {copy-item -path $_ -destination $build_compile_dir}
-	$product_outputs | foreach-object { write-host "product output: $_" }
+	$product_exes | foreach-object { write-host "product exe: $_" }
 
 	$script:product_debug_outputs = get_file_names(get-childitem -path $product_dir -recurse -filter *.pdb)
 	$script:product_debug_outputs | foreach-object {copy-item -path $_ -destination $build_compile_dir}
+	$product_debug_outputs | foreach-object { write-host "product debug: $_" }
 
-	$product_debug_outputs | foreach-object { write-host "$_" }
-	$result
-}
-
-function run_test($xunit_arguments) {
-	#invoke-item "$xunit_cons_exe $xunit_arguments"
-	#invoke-command -ApplicationName "$xunit_cons_exe" -ArgumentList "$xunit_arguments"
-	#$xunit_cons_exe $xunit_arguments
-
-	#$result = .$xunit_cons_exe "$xunit_arguments"
-	$result = .$xunit_cons_exe
 	$result
 }
 
 task test -depends test_compile {
-	#run_test "$build_compile_dir/$test_output /sr /rt:text /rd:$build_compile_dir"
-#	$result = "$xunit_cons_exe $build_compile_dir/$test_output /sr /rt:text /rd:$build_compile_dir"
-#	$result
-
 	$test_output = "$project_name.exe"
-    $xunit = "$build_tools_dir/gallio/gallio.echo.exe"
-    $result = .$xunit $build_compile_dir\$test_output /sr /rt:text /rd:$build_compile_dir
-	write-host "test output: $test_output"
-	write-host ".$xunit $build_compile_dir\$test_output /sr /rt:text /rd:$build_compile_dir"
+
+    $xunit_cons_exe = "$build_tools_dir/gallio/gallio.echo.exe"
+    $result = .$xunit_cons_exe $build_compile_dir\$test_output /sr /rt:text /rd:$build_compile_dir
     $result
 }
 
-task test_html {
-	run_test "$build_compile_dir/$test_output /sr /rt:html /rd:$build_compile_dir"
+task test_html -depends test_compile { 
+	$test_output = "$project_name.exe"
+
+    $xunit_cons_exe = "$build_tools_dir/gallio/gallio.echo.exe"
+    $result = .$xunit_cons_exe $build_compile_dir\$test_output /sr /rt:html /rd:$build_compile_dir
+    $result
+
+	$a = new-object -type system.media.soundplayer
+	$a.soundlocation = "c:\windows\media\ringin.wav"
+	$a.play()
 }

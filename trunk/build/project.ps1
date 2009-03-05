@@ -16,10 +16,10 @@ properties{#directories
 }	
 
 properties {#load in the build utilities file
-  . $build_dir\tools\psake\build_utilities.ps1
+  . $build_tools_dir\psake\build_utilities.ps1
 }
 
-properties {#load in the file that contains the name for the project
+properties {
 	. .\project_test.ps1
 #	. .\project_test_reports.ps1
 #	. .\project_deploy.ps1
@@ -47,6 +47,7 @@ task app_compile -depends init {
 
 	$result = MSBuild.exe "$base_dir\solution.sln" /t:Rebuild /p:Configuration=Debug
 	$script:product_outputs = get_file_names(get-childitem -path $product_dir -recurse -filter *.dll)
+	$script:product_exes = get_file_names(get-childitem -path $product_dir -recurse -filter *.exe)
 	$script:product_debug_outputs = get_file_names(get-childitem -path $product_dir -recurse -filter *.pdb)
 
 	$result
