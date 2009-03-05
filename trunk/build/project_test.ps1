@@ -26,3 +26,22 @@ task test_compile -depends init,test_copy_dependencies {
 	$result
 }
 
+function run_test($xunit_arguments) {
+	#invoke-item "$xunit_cons_exe $xunit_arguments"
+	#invoke-command -ApplicationName "$xunit_cons_exe" -ArgumentList "$xunit_arguments"
+	#$xunit_cons_exe $xunit_arguments
+
+	#$result = .$xunit_cons_exe "$xunit_arguments"
+	$result = .$xunit_cons_exe
+	$result
+}
+
+task test {
+	#run_test "$build_compile_dir/$test_output /sr /rt:text /rd:$build_compile_dir"
+	$result = "$xunit_cons_exe $build_compile_dir/$test_output /sr /rt:text /rd:$build_compile_dir"
+	$result
+}
+
+task test_html {
+	run_test "$build_compile_dir/$test_output /sr /rt:html /rd:$build_compile_dir"
+}
