@@ -22,7 +22,7 @@ properties {#load in the build utilities file
 properties {
 	. .\project_test.ps1
 #	. .\project_test_reports.ps1
-#	. .\project_deploy.ps1
+	. .\project_deploy.ps1
 #	. .\project_install.ps1
 #	. .\project_ci.ps1
 	. .\local_properties.ps1
