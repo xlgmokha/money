@@ -1,6 +1,6 @@
 ﻿properties{
-	$test_output = "$project_name.test.dll"
-	$xunit_cons_exe = "$build_tools_dir\gallio\gallio.echo.exe"
+	$test_output = "$project_name.exe"
+	$xunit_cons_exe = "$build_tools_dir/gallio/gallio.echo.exe"
 }  
 
 properties{#filesets
@@ -16,8 +16,11 @@ task test_compile -depends init,test_copy_dependencies {
 	$result = MSBuild.exe "$base_dir\solution.sln" /t:Rebuild /p:Configuration=Debug
 	$script:product_outputs = get_file_names(get-childitem -path $product_dir -recurse -filter *.dll)
 	$script:product_outputs | foreach-object {copy-item -path $_ -destination $build_compile_dir}
+	$product_outputs | foreach-object { write-host "product output: $_" }
 
-	$product_outputs | foreach-object { write-host "$_" }
+	$script:product_exes = get_file_names(get-childitem -path $product_dir -recurse -filter *.exe)
+	$script:product_exes | foreach-object {copy-item -path $_ -destination $build_compile_dir}
+	$product_outputs | foreach-object { write-host "product output: $_" }
 
 	$script:product_debug_outputs = get_file_names(get-childitem -path $product_dir -recurse -filter *.pdb)
 	$script:product_debug_outputs | foreach-object {copy-item -path $_ -destination $build_compile_dir}
@@ -36,10 +39,17 @@ function run_test($xunit_arguments) {
 	$result
 }
 
-task test {
+task test -depends test_compile {
 	#run_test "$build_compile_dir/$test_output /sr /rt:text /rd:$build_compile_dir"
-	$result = "$xunit_cons_exe $build_compile_dir/$test_output /sr /rt:text /rd:$build_compile_dir"
-	$result
+#	$result = "$xunit_cons_exe $build_compile_dir/$test_output /sr /rt:text /rd:$build_compile_dir"
+#	$result
+
+	$test_output = "$project_name.exe"
+    $xunit = "$build_tools_dir/gallio/gallio.echo.exe"
+    $result = .$xunit $build_compile_dir\$test_output /sr /rt:text /rd:$build_compile_dir
+	write-host "test output: $test_output"
+	write-host ".$xunit $build_compile_dir\$test_output /sr /rt:text /rd:$build_compile_dir"
+    $result
 }
 
 task test_html {

@@ -1,5 +1,5 @@
 properties{#directories
-	$project_name = "mo.money"
+	$project_name = "mymoney"
 	$base_dir = new-object System.IO.DirectoryInfo $pwd
 	$base_dir = $base_dir.Parent.FullName
 	
@@ -52,7 +52,5 @@ task app_compile -depends init {
 	$result
 }
 
-task expand_template_file($files) {
-  expand_all_template_files $files $local_settings
-}
+# task expand_template_file($files) { expand_all_template_files ( $files $local_settings) }
 
