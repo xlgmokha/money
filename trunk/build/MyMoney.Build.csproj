@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat" />
+    <None Include="local_properties.ps1" />
+    <None Include="project.ps1" />
     <None Include="config\AssemblyInfo.cs.template" />
     <None Include="config\bootStrap.xml.template" />
     <None Include="config\log4net.config.xml.template" />
@@ -57,10 +59,10 @@
     <None Include="project.deploy.build" />
     <None Include="project.install.build" />
     <None Include="project.test.build" />
-    <None Include="project_name.ps1" />
+    <None Include="project_test.ps1" />
     <None Include="ps.bat" />
-    <None Include="studio_build.ps1" />
-    <None Include="web_build.ps1" />
+    <None Include="tools\psake\build_utilities.ps1" />
+    <None Include="tools\psake\psake.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="local.properties.xml" />

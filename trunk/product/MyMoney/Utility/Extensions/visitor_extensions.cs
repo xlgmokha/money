@@ -16,9 +16,7 @@ namespace MyMoney.Utility.Extensions
 
         public static void visit_all_items_with<T>(this IEnumerable<T> items, IVisitor<T> visitor)
         {
-            foreach (var item in items) {
-                visitor.visit(item);
-            }
+            foreach (var item in items) visitor.visit(item);
         }
     }
 }
