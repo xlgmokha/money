@@ -39,3 +39,20 @@ task clean{
 	remove-item $build_compile_dir -recurse -ErrorAction SilentlyContinue 
 }
 
+task init -depends clean {
+	make_folder $build_compile_dir 
+}
+
+task app_compile -depends init {
+#	invoke-item "$build_tools_dir\nant\nant.exe -nologo -buildfile:$build_dir\project.build compile"
+
+#	dir -recurse $build_lib_dir\ *.dll | copy -destination $build_compile_dir
+#	csc.exe /target:library /out:"$build_compile_dir/powershell_lib.dll" /recurse:"$product_dir\*.cs" /lib:"$build_compile_dir"
+
+	$result = MSBuild.exe "$base_dir\solution.sln" /t:Rebuild /p:Configuration=Debug
+	$script:product_outputs = get_file_names(get-childitem -path $product_dir -recurse -filter *.dll)
+	$script:product_debug_outputs = get_file_names(get-childitem -path $product_dir -recurse -filter *.pdb)
+
+	$result
+}
+
