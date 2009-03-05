@@ -56,3 +56,7 @@ task app_compile -depends init {
 	$result
 }
 
+task expand_template_file($files) {
+  expand_all_template_files $files $local_settings
+}
+
