@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Testing.MetaData
+namespace MoMoney.Testing.MetaData
 {
     public class ConcernAttribute : bdddoc.core.ConcernAttribute
     {

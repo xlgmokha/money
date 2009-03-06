@@ -1,5 +1,5 @@
 properties{#directories
-	$project_name = "mymoney"
+	$project_name = "MoMoney"
 	$base_dir = new-object System.IO.DirectoryInfo $pwd
 	$base_dir = $base_dir.Parent.FullName
 	

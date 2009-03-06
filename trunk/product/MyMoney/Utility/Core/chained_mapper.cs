@@ -1,4 +1,4 @@
-namespace MyMoney.Utility.Core
+namespace MoMoney.Utility.Core
 {
     public class chained_mapper<Left, Middle, Right> : IMapper<Left, Right>
     {

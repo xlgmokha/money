@@ -1,15 +1,15 @@
 using System;
 using System.Windows.Forms;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Model.Menu.File.Commands;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 using Rhino.Mocks;
 
-namespace MyMoney.Presentation.Context
+namespace MoMoney.Presentation.Context
 {
     [Concern(typeof (the_application_context))]
     public abstract class behaves_like_an_application_context : concerns_for<ApplicationContext, the_application_context>

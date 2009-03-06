@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Presenters.excel
+namespace MoMoney.Presentation.Presenters.excel
 {
     public interface ICell
     {

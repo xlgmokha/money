@@ -1,7 +1,7 @@
 using System;
-using MyMoney.Infrastructure.Logging;
+using MoMoney.Infrastructure.Logging;
 
-namespace MyMoney.Infrastructure.Extensions
+namespace MoMoney.Infrastructure.Extensions
 {
     public static class logging_extensions
     {

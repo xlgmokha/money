@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using Castle.Core;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Domain.accounting.financial_growth;
-using MyMoney.Domain.Core;
-using MyMoney.Infrastructure.interceptors;
-using MyMoney.Presentation.Presenters.income.dto;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.interceptors;
+using MoMoney.Presentation.Presenters.income.dto;
 
-namespace MyMoney.Tasks.application
+namespace MoMoney.Tasks.application
 {
     public interface IIncomeTasks
     {

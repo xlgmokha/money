@@ -1,17 +1,17 @@
-using MyMoney.Infrastructure.Container.Windsor;
-using MyMoney.Presentation.Context;
-using MyMoney.Presentation.Views;
-using MyMoney.Presentation.Views.billing;
-using MyMoney.Presentation.Views.dialogs;
-using MyMoney.Presentation.Views.income;
-using MyMoney.Presentation.Views.Menu.Help;
-using MyMoney.Presentation.Views.Navigation;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Presentation.Views.Startup;
-using MyMoney.Presentation.Views.updates;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Presentation.Context;
+using MoMoney.Presentation.Views;
+using MoMoney.Presentation.Views.billing;
+using MoMoney.Presentation.Views.dialogs;
+using MoMoney.Presentation.Views.income;
+using MoMoney.Presentation.Views.Menu.Help;
+using MoMoney.Presentation.Views.Navigation;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views.Startup;
+using MoMoney.Presentation.Views.updates;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.windows.ui
+namespace MoMoney.windows.ui
 {
     internal class wire_up_the_views_in_to_the : ICommand
     {

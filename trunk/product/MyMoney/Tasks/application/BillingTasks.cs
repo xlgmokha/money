@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using Castle.Core;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Domain.Core;
-using MyMoney.Domain.repositories;
-using MyMoney.Infrastructure.interceptors;
-using MyMoney.Presentation.Presenters.billing.dto;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.Core;
+using MoMoney.Domain.repositories;
+using MoMoney.Infrastructure.interceptors;
+using MoMoney.Presentation.Presenters.billing.dto;
 
-namespace MyMoney.Tasks.application
+namespace MoMoney.Tasks.application
 {
     public interface IBillingTasks
     {

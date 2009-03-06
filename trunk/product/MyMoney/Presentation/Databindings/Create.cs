@@ -2,7 +2,7 @@ using System;
 using System.Linq.Expressions;
 using System.Windows.Forms;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     public static class Create
     {

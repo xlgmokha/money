@@ -1,8 +1,8 @@
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Model.Navigation;
-using MyMoney.Presentation.Views.Navigation;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Model.Navigation;
+using MoMoney.Presentation.Views.Navigation;
 
-namespace MyMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters.Navigation
 {
     public interface INavigationPresenter : IPresentationModule
     {

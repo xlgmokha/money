@@ -1,7 +1,7 @@
 using System;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.windows.ui
+namespace MoMoney.windows.ui
 {
     internal static class bootstrap
     {

@@ -1,9 +1,9 @@
 using System.Windows.Forms;
-using MyMoney.Presentation.Model.Menu;
-using MyMoney.Utility.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Model.Menu;
+using MoMoney.Utility.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Views.Menu.Mappers
+namespace MoMoney.Presentation.Views.Menu.Mappers
 {
     public interface ISubMenuToToolStripMenuItemMapper : IMapper<ISubMenu, ToolStripMenuItem>
     {

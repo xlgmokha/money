@@ -1,14 +1,14 @@
 using System;
 using jpboodhoo.bdd.contexts;
-using MyMoney.DataAccess.db40;
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Presentation.Model.messages;
-using MyMoney.Testing;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.DataAccess.db40;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Presentation.Model.messages;
+using MoMoney.Testing;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Model.Projects
+namespace MoMoney.Presentation.Model.Projects
 {
     [Concern(typeof (current_project))]
     public abstract class behaves_like_a_project : concerns_for<IProject, current_project>

@@ -1,12 +1,12 @@
 using System.Windows.Forms;
-using MyMoney.Presentation.Model.Navigation;
-using MyMoney.Presentation.Resources;
-using MyMoney.Presentation.Views.core;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Model.Navigation;
+using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Utility.Extensions;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace MyMoney.Presentation.Views.Navigation
+namespace MoMoney.Presentation.Views.Navigation
 {
     public partial class NavigationView : ApplicationDockedWindow, INavigationView
     {

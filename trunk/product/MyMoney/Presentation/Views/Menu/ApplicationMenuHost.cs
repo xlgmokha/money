@@ -1,8 +1,8 @@
-using MyMoney.Presentation.Model.Menu;
-using MyMoney.Presentation.Views.Menu.Mappers;
-using MyMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Model.Menu;
+using MoMoney.Presentation.Views.Menu.Mappers;
+using MoMoney.Presentation.Views.Shell;
 
-namespace MyMoney.Presentation.Views.Menu
+namespace MoMoney.Presentation.Views.Menu
 {
     public interface IMenuView
     {

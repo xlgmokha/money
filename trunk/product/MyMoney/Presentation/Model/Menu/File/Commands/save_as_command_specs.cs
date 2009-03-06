@@ -1,11 +1,11 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Model.Projects;
-using MyMoney.Presentation.Views.dialogs;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Model.Projects;
+using MoMoney.Presentation.Views.dialogs;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File.Commands
 {
     [Concern(typeof (save_as_command))]
     public class when_saving_the_current_project_to_a_new_file_path : concerns_for<ISaveAsCommand, save_as_command>

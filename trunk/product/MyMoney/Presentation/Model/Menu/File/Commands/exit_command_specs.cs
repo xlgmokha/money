@@ -1,12 +1,12 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Infrastructure.System;
-using MyMoney.Presentation.Model.messages;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.System;
+using MoMoney.Presentation.Model.messages;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File.Commands
 {
     [Concern(typeof (ExitCommand))]
     public abstract class behaves_like_exit_command : concerns_for<IExitCommand>

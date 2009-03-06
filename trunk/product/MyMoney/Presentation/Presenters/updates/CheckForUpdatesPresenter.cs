@@ -1,11 +1,10 @@
-using System;
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Views.updates;
-using MyMoney.Tasks.infrastructure;
-using MyMoney.Utility.Core;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Views.updates;
+using MoMoney.Tasks.infrastructure;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Presenters.updates
+namespace MoMoney.Presentation.Presenters.updates
 {
     public interface ICheckForUpdatesPresenter : IPresenter, ICallback
     {
@@ -17,9 +16,9 @@ namespace MyMoney.Presentation.Presenters.updates
 
     public class CheckForUpdatesPresenter : ICheckForUpdatesPresenter
     {
-        private readonly ICheckForUpdatesView view;
-        private readonly IUpdateTasks tasks;
-        private readonly IRestartCommand command;
+        readonly ICheckForUpdatesView view;
+        readonly IUpdateTasks tasks;
+        readonly IRestartCommand command;
 
         public CheckForUpdatesPresenter(ICheckForUpdatesView view, IUpdateTasks tasks, IRestartCommand command)
         {

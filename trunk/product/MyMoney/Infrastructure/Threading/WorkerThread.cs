@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace MyMoney.Infrastructure.Threading
+namespace MoMoney.Infrastructure.Threading
 {
     public interface IWorkerThread : IDisposable
     {

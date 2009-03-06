@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace MyMoney.Testing.win.forms
+namespace MoMoney.Testing.win.forms
 {
     public class Events
     {

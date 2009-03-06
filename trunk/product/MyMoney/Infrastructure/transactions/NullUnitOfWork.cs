@@ -1,6 +1,6 @@
-using MyMoney.Domain.Core;
+using MoMoney.Domain.Core;
 
-namespace MyMoney.Infrastructure.transactions
+namespace MoMoney.Infrastructure.transactions
 {
     internal class NullUnitOfWork<T> : IUnitOfWork<T> where T : IEntity
     {

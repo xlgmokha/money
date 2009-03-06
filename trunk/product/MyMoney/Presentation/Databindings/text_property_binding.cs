@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     public class text_property_binding<TypeToBindTo, PropertyType> : IPropertyBinding<PropertyType>
     {

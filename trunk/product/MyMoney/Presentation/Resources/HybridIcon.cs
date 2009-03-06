@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace MyMoney.Presentation.Resources
+namespace MoMoney.Presentation.Resources
 {
     public class HybridIcon : ApplicationIcon
     {

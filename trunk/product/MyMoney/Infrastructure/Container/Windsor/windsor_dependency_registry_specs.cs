@@ -1,11 +1,11 @@
 using Castle.Core;
 using Castle.Windsor;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Infrastructure.Container.Windsor
+namespace MoMoney.Infrastructure.Container.Windsor
 {
     [Concern(typeof (windsor_dependency_registry))]
     public class when_registering_a_singleton_component_with_the_windsor_container : concerns_for<IDependencyRegistry>

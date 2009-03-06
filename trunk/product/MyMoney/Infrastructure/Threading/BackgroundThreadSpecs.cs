@@ -1,11 +1,11 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
-using MyMoney.Utility.Core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
+using MoMoney.Utility.Core;
 using Rhino.Mocks;
 
-namespace MyMoney.Infrastructure.Threading
+namespace MoMoney.Infrastructure.Threading
 {
     [Concern(typeof (BackgroundThread))]
     public abstract class behaves_like_a_background_thread : concerns_for<IBackgroundThread, BackgroundThread>

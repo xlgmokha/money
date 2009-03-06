@@ -1,8 +1,8 @@
-using MyMoney.Presentation.Presenters;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Resources;
+using MoMoney.Presentation.Presenters;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Resources;
 
-namespace MyMoney.Presentation.Model.Navigation.branches
+namespace MoMoney.Presentation.Model.Navigation.branches
 {
     public class add_new_bill_branch : IBranchVisitor
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using MyMoney.Domain.Core;
+using MoMoney.Domain.Core;
 
-namespace MyMoney.Domain.accounting.financial_growth
+namespace MoMoney.Domain.accounting.financial_growth
 {
     public static class income_extensions
     {

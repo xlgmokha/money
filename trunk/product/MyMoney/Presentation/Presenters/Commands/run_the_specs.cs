@@ -1,10 +1,10 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Core;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters.Commands
 {
     [Concern(typeof (run_the<>))]
     public class when_initializing_different_regions_of_the_user_interface : concerns_for<IRunThe<IPresenter>, run_the<IPresenter>>

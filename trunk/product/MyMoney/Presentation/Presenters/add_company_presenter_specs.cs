@@ -1,12 +1,12 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Presenters.billing.dto;
-using MyMoney.Presentation.Views;
-using MyMoney.Tasks.application;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Presenters.billing.dto;
+using MoMoney.Presentation.Views;
+using MoMoney.Tasks.application;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Presenters
+namespace MoMoney.Presentation.Presenters
 {
     [Concern(typeof (add_company_presenter))]
     public abstract class behaves_like_the_add_company_presenter : concerns_for<IAddCompanyPresenter, add_company_presenter>

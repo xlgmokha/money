@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MyMoney.Utility.Extensions
+namespace MoMoney.Utility.Extensions
 {
     public static class querying_extensions
     {

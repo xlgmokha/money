@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using MyMoney.Infrastructure.Threading;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Threading;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Utility.Extensions
+namespace MoMoney.Utility.Extensions
 {
     public static class command_extensions
     {

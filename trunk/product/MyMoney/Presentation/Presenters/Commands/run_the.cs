@@ -1,7 +1,7 @@
-using MyMoney.Presentation.Core;
-using MyMoney.Utility.Core;
+using MoMoney.Presentation.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters.Commands
 {
     public interface IRunThe<Presenter> : ICommand where Presenter : IPresenter
     {}

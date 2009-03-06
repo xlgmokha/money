@@ -1,4 +1,4 @@
-namespace MyMoney.Utility.Core
+namespace MoMoney.Utility.Core
 {
     internal class empty_command : ICommand
     {

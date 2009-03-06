@@ -1,10 +1,10 @@
 using System.Reflection;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     [Concern(typeof (property_inspector<IAnInterface, string>))]
     public class when_parsing_a_valie_expression_for_the_information_on_the_property :

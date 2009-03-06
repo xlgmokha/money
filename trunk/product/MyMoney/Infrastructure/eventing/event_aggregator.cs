@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Castle.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Infrastructure.eventing
+namespace MoMoney.Infrastructure.eventing
 {
     public interface IEventAggregator
     {

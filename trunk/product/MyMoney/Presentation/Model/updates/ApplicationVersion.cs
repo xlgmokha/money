@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Presentation.Model.updates
+namespace MoMoney.Presentation.Model.updates
 {
     public class ApplicationVersion
     {

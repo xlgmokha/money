@@ -1,8 +1,8 @@
 using System.Deployment.Application;
-using MyMoney.Presentation.Model.updates;
-using MyMoney.Utility.Core;
+using MoMoney.Presentation.Model.updates;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Tasks.infrastructure
+namespace MoMoney.Tasks.infrastructure
 {
     public interface IUpdateTasks
     {

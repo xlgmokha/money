@@ -1,12 +1,12 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters.Shell
 {
     [Concern(typeof (LoadApplicationShell))]
     public class when_loading_the_application_shell : concerns_for<ILoadApplicationShellCommand, LoadApplicationShell>

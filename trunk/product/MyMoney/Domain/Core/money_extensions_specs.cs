@@ -1,8 +1,8 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     public class when_converting_a_valid_amount_to_a_money : concerns_for
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Infrastructure.Container
+namespace MoMoney.Infrastructure.Container
 {
     public static class resolve
     {

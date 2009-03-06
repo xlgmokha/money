@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     public static class control_binding_extensions
     {

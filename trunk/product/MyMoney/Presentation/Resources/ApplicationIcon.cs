@@ -1,9 +1,9 @@
 using System;
 using System.Drawing;
 using System.IO;
-using MyMoney.Infrastructure.Extensions;
+using MoMoney.Infrastructure.Extensions;
 
-namespace MyMoney.Presentation.Resources
+namespace MoMoney.Presentation.Resources
 {
     public class ApplicationIcon : IDisposable
     {

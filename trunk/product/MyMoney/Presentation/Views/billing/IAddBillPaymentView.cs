@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Presentation.Presenters.billing;
-using MyMoney.Presentation.Presenters.billing.dto;
-using MyMoney.Presentation.Views.core;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Presentation.Presenters.billing;
+using MoMoney.Presentation.Presenters.billing.dto;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.billing
+namespace MoMoney.Presentation.Views.billing
 {
     public interface IAddBillPaymentView : IDockedContentView, IView<IAddBillPaymentPresenter>
     {

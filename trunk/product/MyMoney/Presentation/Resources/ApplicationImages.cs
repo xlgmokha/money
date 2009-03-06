@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Resources
+namespace MoMoney.Presentation.Resources
 {
     public static class ApplicationImages
     {

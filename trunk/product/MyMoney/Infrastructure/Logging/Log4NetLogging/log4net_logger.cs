@@ -1,7 +1,7 @@
 using System;
 using log4net;
 
-namespace MyMoney.Infrastructure.Logging.Log4NetLogging
+namespace MoMoney.Infrastructure.Logging.Log4NetLogging
 {
     public class log4net_logger : ILogger
     {

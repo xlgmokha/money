@@ -1,11 +1,11 @@
 using System;
 using System.Timers;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Infrastructure.Threading
+namespace MoMoney.Infrastructure.Threading
 {
     [Concern(typeof (TimerFactory))]
     public abstract class behaves_like_a_timer_factory : concerns_for<ITimerFactory, TimerFactory>

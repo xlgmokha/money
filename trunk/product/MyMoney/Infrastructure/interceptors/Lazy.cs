@@ -1,10 +1,10 @@
 using System;
 using Castle.Core.Interceptor;
 using Castle.DynamicProxy;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Utility.Extensions;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Infrastructure.interceptors
+namespace MoMoney.Infrastructure.interceptors
 {
     public static class lazy
     {

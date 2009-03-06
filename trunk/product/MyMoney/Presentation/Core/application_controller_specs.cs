@@ -1,11 +1,11 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Views.core;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Core
+namespace MoMoney.Presentation.Core
 {
     [Concern(typeof (application_controller))]
     public abstract class behaves_like_an_application_controller : concerns_for<IApplicationController, application_controller>

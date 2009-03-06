@@ -1,4 +1,4 @@
-namespace MyMoney.Infrastructure.eventing
+namespace MoMoney.Infrastructure.eventing
 {
     public interface IEventSubscriber<Event> where Event : IEvent
     {

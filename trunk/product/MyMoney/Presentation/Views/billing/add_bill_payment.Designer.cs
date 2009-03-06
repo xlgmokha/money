@@ -1,4 +1,4 @@
-﻿namespace MyMoney.Presentation.Views.billing
+﻿namespace MoMoney.Presentation.Views.billing
 {
     partial class add_bill_payment
     {

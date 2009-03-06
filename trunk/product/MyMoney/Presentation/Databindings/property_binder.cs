@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     public interface IPropertyBinder<TypeToBindTo, PropertyType>
     {

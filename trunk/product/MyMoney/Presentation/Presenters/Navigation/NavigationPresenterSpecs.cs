@@ -1,11 +1,11 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Model.Navigation;
-using MyMoney.Presentation.Views.Navigation;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Model.Navigation;
+using MoMoney.Presentation.Views.Navigation;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters.Navigation
 {
     [Concern(typeof (NavigationPresenter))]
     public class when_building_the_navigation_tree : concerns_for<INavigationPresenter, NavigationPresenter>

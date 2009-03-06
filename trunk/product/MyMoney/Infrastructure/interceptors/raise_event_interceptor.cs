@@ -1,7 +1,7 @@
 using Castle.Core.Interceptor;
-using MyMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.eventing;
 
-namespace MyMoney.Infrastructure.interceptors
+namespace MoMoney.Infrastructure.interceptors
 {
     public interface IRaiseEventInterceptor<Event> : IInterceptor where Event : IEvent, new()
     {}

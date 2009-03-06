@@ -1,7 +1,8 @@
 using Db4objects.Db4o;
-using MyMoney.Utility.Core;
+using MoMoney.DataAccess.db40;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.DataAccess.db40
+namespace MoMoney.DataAccess.db40
 {
     public interface ISessionFactory : IFactory<IObjectContainer>
     {

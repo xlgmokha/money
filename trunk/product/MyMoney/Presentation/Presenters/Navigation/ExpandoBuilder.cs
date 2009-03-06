@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using MyMoney.Utility.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Core;
+using MoMoney.Utility.Extensions;
 using XPExplorerBar;
 using Padding=System.Windows.Forms.Padding;
 
-namespace MyMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters.Navigation
 {
     public interface IExpandoBuilder : IBuilder<Expando>
     {

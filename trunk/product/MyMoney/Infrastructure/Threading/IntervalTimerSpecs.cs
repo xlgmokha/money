@@ -1,12 +1,12 @@
 using System;
 using System.Timers;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 using Rhino.Mocks;
 
-namespace MyMoney.Infrastructure.Threading
+namespace MoMoney.Infrastructure.Threading
 {
     [Concern(typeof (IntervalTimer))]
     public abstract class behaves_like_an_interval_timer : concerns_for<ITimer, IntervalTimer>

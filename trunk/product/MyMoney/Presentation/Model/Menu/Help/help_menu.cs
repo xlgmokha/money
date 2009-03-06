@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using MyMoney.Presentation.Model.Menu.Help.commands;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Presenters.updates;
-using MyMoney.Presentation.Resources;
+using MoMoney.Presentation.Model.Menu.Help.commands;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters.updates;
+using MoMoney.Presentation.Resources;
 
-namespace MyMoney.Presentation.Model.Menu.Help
+namespace MoMoney.Presentation.Model.Menu.Help
 {
     public interface IHelpMenu : ISubMenu
     {

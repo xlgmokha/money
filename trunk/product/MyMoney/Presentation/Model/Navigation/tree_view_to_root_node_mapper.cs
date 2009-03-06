@@ -1,7 +1,7 @@
 using System.Windows.Forms;
-using MyMoney.Utility.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Model.Navigation
+namespace MoMoney.Presentation.Model.Navigation
 {
     public interface ITreeViewToRootNodeMapper : IMapper<TreeView, ITreeBranch>
     {}

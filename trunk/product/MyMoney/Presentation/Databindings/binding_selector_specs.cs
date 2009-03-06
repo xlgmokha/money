@@ -1,12 +1,12 @@
 using System;
 using System.Linq.Expressions;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
-using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
+using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     [Concern(typeof (binding_selector<IAnInterface>))]
     public class when_selecting_a_property_as_the_target_of_a_binding : concerns_for<IBindingSelector<IAnInterface>>

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using MyMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Model.Menu.File.Commands;
 
-namespace MyMoney.Presentation.Model.Menu.window
+namespace MoMoney.Presentation.Model.Menu.window
 {
     public interface IWindowMenu : ISubMenu
     {

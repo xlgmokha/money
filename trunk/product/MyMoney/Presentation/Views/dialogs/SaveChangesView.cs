@@ -1,11 +1,13 @@
 using System;
 using System.Windows.Forms;
-using MyMoney.Presentation.Model.Menu.File.Commands;
-using MyMoney.Presentation.Resources;
-using MyMoney.Presentation.Views.core;
+using JetBrains.Annotations;
+using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.dialogs
+namespace MoMoney.Presentation.Views.dialogs
 {
+    [UsedImplicitly]
     public partial class SaveChangesView : ApplicationWindow, ISaveChangesView
     {
         bool can_be_closed;

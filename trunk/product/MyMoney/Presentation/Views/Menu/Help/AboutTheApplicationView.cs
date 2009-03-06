@@ -1,10 +1,10 @@
 using System.Linq;
 using System.Reflection;
-using MyMoney.Presentation.Resources;
-using MyMoney.Presentation.Views.core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Views.Menu.Help
+namespace MoMoney.Presentation.Views.Menu.Help
 {
     public partial class AboutTheApplicationView : ApplicationWindow, IAboutApplicationView
     {

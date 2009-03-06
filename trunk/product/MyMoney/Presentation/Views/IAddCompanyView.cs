@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Presentation.Model.interaction;
-using MyMoney.Presentation.Presenters;
-using MyMoney.Presentation.Views.core;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Presentation.Model.interaction;
+using MoMoney.Presentation.Presenters;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views
+namespace MoMoney.Presentation.Views
 {
     public interface IAddCompanyView : IDockedContentView, INotification, IView<IAddCompanyPresenter>
     {

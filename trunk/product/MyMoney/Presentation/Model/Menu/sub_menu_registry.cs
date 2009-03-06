@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using MyMoney.Domain.Core;
-using MyMoney.Presentation.Model.Menu.File;
-using MyMoney.Presentation.Model.Menu.Help;
-using MyMoney.Presentation.Model.Menu.window;
+using MoMoney.Domain.Core;
+using MoMoney.Presentation.Model.Menu.File;
+using MoMoney.Presentation.Model.Menu.Help;
+using MoMoney.Presentation.Model.Menu.window;
 
-namespace MyMoney.Presentation.Model.Menu
+namespace MoMoney.Presentation.Model.Menu
 {
     public interface ISubMenuRegistry : IRegistry<ISubMenu>
     {}

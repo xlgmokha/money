@@ -4,7 +4,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using MbUnit.Framework;
 
-namespace MyMoney.Testing.spechelpers.core
+namespace MoMoney.Testing.spechelpers.core
 {
     public static class assertions
     {

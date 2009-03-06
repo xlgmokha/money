@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     public interface IRange<T> where T : IComparable
     {

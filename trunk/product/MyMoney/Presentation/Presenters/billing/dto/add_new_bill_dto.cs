@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Presentation.Presenters.billing.dto
+namespace MoMoney.Presentation.Presenters.billing.dto
 {
     public class add_new_bill_dto
     {

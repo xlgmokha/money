@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using DataDynamics.ActiveReports;
-using MyMoney.Presentation.Model.reporting;
-using MyMoney.Presentation.Presenters.billing.dto;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Model.reporting;
+using MoMoney.Presentation.Presenters.billing.dto;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Views.billing
+namespace MoMoney.Presentation.Views.billing
 {
     public interface IViewAllBillsReport : IReport
     {

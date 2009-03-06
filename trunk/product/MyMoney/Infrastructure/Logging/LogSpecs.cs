@@ -1,11 +1,11 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
-using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
+using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
-namespace MyMoney.Infrastructure.Logging
+namespace MoMoney.Infrastructure.Logging
 {
     [Concern(typeof (Log))]
     public class when_creating_a_logger_for_a_particular_type_ : concerns_for

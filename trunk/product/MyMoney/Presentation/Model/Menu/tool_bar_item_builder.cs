@@ -1,9 +1,9 @@
 using System.Windows.Forms;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Presentation.Resources;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Presentation.Resources;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Model.Menu
+namespace MoMoney.Presentation.Model.Menu
 {
     public interface IToolbarItemBuilder
     {

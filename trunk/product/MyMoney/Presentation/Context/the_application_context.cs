@@ -1,10 +1,10 @@
 using System.Windows.Forms;
-using MyMoney.Presentation.Model.Menu.File.Commands;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Context
+namespace MoMoney.Presentation.Context
 {
     public class the_application_context : ApplicationContext
     {

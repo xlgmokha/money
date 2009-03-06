@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace MyMoney.Infrastructure.Logging.ConsoleLogging
+namespace MoMoney.Infrastructure.Logging.ConsoleLogging
 {
     public class console_logger : ILogger
     {

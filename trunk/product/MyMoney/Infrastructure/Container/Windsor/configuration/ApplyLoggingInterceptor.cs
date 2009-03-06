@@ -1,9 +1,9 @@
 using Castle.Core;
 using Castle.MicroKernel.Registration;
-using MyMoney.Infrastructure.interceptors;
-using MyMoney.Infrastructure.Logging;
+using MoMoney.Infrastructure.interceptors;
+using MoMoney.Infrastructure.Logging;
 
-namespace MyMoney.Infrastructure.Container.Windsor.configuration
+namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {
     public class ApplyLoggingInterceptor : IRegistrationConfiguration
     {

@@ -1,8 +1,8 @@
-using MyMoney.Infrastructure.Threading;
-using MyMoney.Presentation.Views.Startup;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Threading;
+using MoMoney.Presentation.Views.Startup;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Presenters.Startup
+namespace MoMoney.Presentation.Presenters.Startup
 {
     public interface ISplashScreenPresenter : IDisposableCommand, ITimerClient
     {

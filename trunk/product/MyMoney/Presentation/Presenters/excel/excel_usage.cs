@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using MyMoney.Presentation.Presenters.excel.formatting;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Presenters.excel.formatting;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Presenters.excel
+namespace MoMoney.Presentation.Presenters.excel
 {
     public class excel_usage
     {

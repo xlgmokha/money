@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.Composition;
 using System.Windows.Forms;
-using MyMoney.Presentation.Resources;
-using MyMoney.Presentation.Views.core;
+using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views.Shell
 {
     [Export(typeof (IShell))]
     public partial class ApplicationShell : ApplicationWindow, IShell

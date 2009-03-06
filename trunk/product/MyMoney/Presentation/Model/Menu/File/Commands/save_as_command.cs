@@ -1,8 +1,8 @@
-using MyMoney.Presentation.Model.Projects;
-using MyMoney.Presentation.Views.dialogs;
-using MyMoney.Utility.Core;
+using MoMoney.Presentation.Model.Projects;
+using MoMoney.Presentation.Views.dialogs;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File.Commands
 {
     public interface ISaveAsCommand : ICommand
     {

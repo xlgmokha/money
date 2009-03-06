@@ -1,7 +1,7 @@
 using System.IO;
 using System.Runtime.Serialization;
 
-namespace MyMoney.Infrastructure.cloning
+namespace MoMoney.Infrastructure.cloning
 {
     public class Serializer<T> : ISerializer<T>
     {

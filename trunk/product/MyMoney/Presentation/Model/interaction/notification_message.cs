@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Model.interaction
+namespace MoMoney.Presentation.Model.interaction
 {
     public class notification_message
     {

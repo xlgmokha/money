@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     public static class Months
     {

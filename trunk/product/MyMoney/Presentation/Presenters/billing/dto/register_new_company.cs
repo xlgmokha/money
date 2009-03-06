@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Presenters.billing.dto
+namespace MoMoney.Presentation.Presenters.billing.dto
 {
     public class register_new_company
     {

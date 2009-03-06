@@ -1,11 +1,11 @@
 using System.IO;
 using Castle.Core;
-using MyMoney.DataAccess.db40;
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Presentation.Model.messages;
-using MyMoney.Utility.Extensions;
+using MoMoney.DataAccess.db40;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Presentation.Model.messages;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Model.Projects
+namespace MoMoney.Presentation.Model.Projects
 {
     public interface IProject : IEventSubscriber<unsaved_changes_event>
     {

@@ -1,11 +1,11 @@
 using System.Windows.Forms;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Model.Navigation
+namespace MoMoney.Presentation.Model.Navigation
 {
     [Concern(typeof (navigation_tree_visitor))]
     public abstract class behaves_like_a_navigation_tree_visitor :

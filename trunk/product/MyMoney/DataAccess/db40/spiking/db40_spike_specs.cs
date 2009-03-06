@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.IO;
 using Db4objects.Db4o;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.DataAccess.db40.spiking
+namespace MoMoney.DataAccess.db40.spiking
 {
     [Concern(typeof (Db4oFactory))]
     public class when_opening_an_existing_database_ : concerns_for
@@ -17,8 +17,8 @@ namespace MyMoney.DataAccess.db40.spiking
         context c = () =>
                         {
                             original = new TestObject(88, "mo");
-                                             the_database_file = Path.GetTempFileName();
-                                             database = Db4oFactory.OpenFile(the_database_file);
+                            the_database_file = Path.GetTempFileName();
+                            database = Db4oFactory.OpenFile(the_database_file);
                         };
 
         because b = () =>

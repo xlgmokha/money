@@ -1,11 +1,11 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
-using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
+using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
-namespace MyMoney.Infrastructure.interceptors
+namespace MoMoney.Infrastructure.interceptors
 {
     [Concern(typeof (lazy))]
     public abstract class behaves_like_a_lazy_loaded_object : concerns_for

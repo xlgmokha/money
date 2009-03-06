@@ -1,9 +1,9 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     [Concern(typeof (range<int>))]
     public abstract class behaves_like_a_range_from_1_to_10 : concerns_for<IRange<int>>

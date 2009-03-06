@@ -1,12 +1,12 @@
 using System.Windows.Forms;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
-using MyMoney.Utility.Core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
+using MoMoney.Utility.Core;
 using Rhino.Mocks;
 
-namespace MyMoney.Presentation.Model.Navigation
+namespace MoMoney.Presentation.Model.Navigation
 {
     [Concern(typeof (tree_branch))]
     public abstract class behaves_like_a_tree_branch : concerns_for<ITreeBranch, tree_branch>

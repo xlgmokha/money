@@ -1,7 +1,7 @@
 using System;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views.Shell
 {
     public interface ITaskTrayMessageView
     {

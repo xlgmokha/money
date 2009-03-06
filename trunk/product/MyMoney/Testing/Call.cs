@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Testing
+namespace MoMoney.Testing
 {
     public class call
     {

@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
-using MyMoney.Presentation.Model.keyboard;
-using MyMoney.Presentation.Resources;
+using MoMoney.Presentation.Model.keyboard;
+using MoMoney.Presentation.Resources;
 
-namespace MyMoney.Presentation.Model.Menu
+namespace MoMoney.Presentation.Model.Menu
 {
     public interface IMenuItem
     {

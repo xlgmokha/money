@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using MyMoney.Utility.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Infrastructure.Threading
+namespace MoMoney.Infrastructure.Threading
 {
     public interface ICommandProcessor : ICommand
     {

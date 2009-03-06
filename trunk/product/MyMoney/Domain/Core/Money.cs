@@ -1,7 +1,7 @@
 using System;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     public interface IMoney : IEquatable<IMoney>
     {

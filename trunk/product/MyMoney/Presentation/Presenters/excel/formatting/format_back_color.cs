@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace MyMoney.Presentation.Presenters.excel.formatting
+namespace MoMoney.Presentation.Presenters.excel.formatting
 {
     public class format_back_color : ICellVisitor
     {

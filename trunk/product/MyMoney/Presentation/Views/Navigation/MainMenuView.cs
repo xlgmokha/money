@@ -1,10 +1,10 @@
-using MyMoney.Presentation.Resources;
-using MyMoney.Presentation.Views.core;
-using MyMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Shell;
 using WeifenLuo.WinFormsUI.Docking;
 using XPExplorerBar;
 
-namespace MyMoney.Presentation.Views.Navigation
+namespace MoMoney.Presentation.Views.Navigation
 {
     public interface IMainMenuView : IDockedContentView
     {

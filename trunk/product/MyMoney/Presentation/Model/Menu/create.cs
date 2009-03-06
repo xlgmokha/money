@@ -1,6 +1,6 @@
-using MyMoney.Infrastructure.Container;
+using MoMoney.Infrastructure.Container;
 
-namespace MyMoney.Presentation.Model.Menu
+namespace MoMoney.Presentation.Model.Menu
 {
     public class create
     {

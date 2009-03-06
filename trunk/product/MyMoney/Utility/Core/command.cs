@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Utility.Core
+namespace MoMoney.Utility.Core
 {
     internal class command : IDisposableCommand
     {

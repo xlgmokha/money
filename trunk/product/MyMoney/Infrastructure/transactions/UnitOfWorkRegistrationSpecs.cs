@@ -1,9 +1,9 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Domain.Core;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Domain.Core;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Infrastructure.transactions
+namespace MoMoney.Infrastructure.transactions
 {
     public abstract class behaves_like_unit_of_work_registration : concerns_for<IUnitOfWorkRegistration<Pillow>>
     {

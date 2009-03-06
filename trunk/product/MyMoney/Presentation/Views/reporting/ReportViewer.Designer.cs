@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.reporting
+namespace MoMoney.Presentation.Views.reporting
 {
     partial class ReportViewer
     {

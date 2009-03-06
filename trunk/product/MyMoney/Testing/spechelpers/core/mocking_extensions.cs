@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MyMoney.Testing.Extensions;
+using MoMoney.Testing.Extensions;
 using Rhino.Mocks;
 using Rhino.Mocks.Interfaces;
 
-namespace MyMoney.Testing.spechelpers.core
+namespace MoMoney.Testing.spechelpers.core
 {
     public static class mocking_extensions
     {

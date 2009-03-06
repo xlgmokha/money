@@ -1,7 +1,7 @@
 using System;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Infrastructure.Container
+namespace MoMoney.Infrastructure.Container
 {
     public class dependency_resolution_exception<T> : Exception
     {

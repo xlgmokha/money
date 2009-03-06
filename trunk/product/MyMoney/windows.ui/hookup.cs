@@ -1,6 +1,6 @@
-using MyMoney.Utility.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.windows.ui
+namespace MoMoney.windows.ui
 {
     internal class hookup
     {

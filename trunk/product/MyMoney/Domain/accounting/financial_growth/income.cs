@@ -1,8 +1,8 @@
 using System;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Domain.Core;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.Core;
 
-namespace MyMoney.Domain.accounting.financial_growth
+namespace MoMoney.Domain.accounting.financial_growth
 {
     public interface IIncome : IEntity
     {

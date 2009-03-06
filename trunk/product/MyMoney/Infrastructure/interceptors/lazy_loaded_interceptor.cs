@@ -1,7 +1,7 @@
 using System;
 using Castle.Core.Interceptor;
 
-namespace MyMoney.Infrastructure.interceptors
+namespace MoMoney.Infrastructure.interceptors
 {
     internal class lazy_loaded_interceptor<T> : IInterceptor
     {

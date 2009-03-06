@@ -1,9 +1,9 @@
-using MyMoney.Infrastructure.Container.Windsor;
-using MyMoney.Presentation.Views.billing;
-using MyMoney.Presentation.Views.reporting;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Presentation.Views.billing;
+using MoMoney.Presentation.Views.reporting;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.windows.ui
+namespace MoMoney.windows.ui
 {
     internal class wire_up_the_reports_in_to_the : ICommand
     {

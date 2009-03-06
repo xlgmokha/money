@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Timers;
 using Castle.Core;
 
-namespace MyMoney.Infrastructure.Threading
+namespace MoMoney.Infrastructure.Threading
 {
     public interface ITimer
     {

@@ -1,9 +1,9 @@
 using Castle.Core.Interceptor;
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Infrastructure.transactions;
-using MyMoney.Presentation.Model.messages;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.transactions;
+using MoMoney.Presentation.Model.messages;
 
-namespace MyMoney.Infrastructure.interceptors
+namespace MoMoney.Infrastructure.interceptors
 {
     public interface IUnitOfWorkInterceptor : IInterceptor
     {

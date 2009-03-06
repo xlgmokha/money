@@ -1,8 +1,8 @@
 using System;
 using System.Globalization;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     public interface IDate : IComparable<IDate>, IComparable, IEquatable<IDate>
     {

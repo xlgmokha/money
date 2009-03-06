@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace MyMoney.Infrastructure.Container.Windsor.configuration
+namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {
     public class SubclassesForm : IComponentExclusionSpecification
     {

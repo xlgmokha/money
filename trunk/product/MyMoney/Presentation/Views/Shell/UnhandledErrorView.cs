@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using MyMoney.Presentation.Presenters.Shell;
+using MoMoney.Presentation.Presenters.Shell;
 
-namespace MyMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views.Shell
 {
     public class UnhandledErrorView : IUnhandledErrorView
     {

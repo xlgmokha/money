@@ -1,6 +1,6 @@
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace MyMoney.Infrastructure.cloning
+namespace MoMoney.Infrastructure.cloning
 {
     public class BinarySerializer<T> : Serializer<T>
     {

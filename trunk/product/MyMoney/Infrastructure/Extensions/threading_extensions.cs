@@ -1,7 +1,7 @@
-using MyMoney.Infrastructure.Threading;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Threading;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Infrastructure.Extensions
+namespace MoMoney.Infrastructure.Extensions
 {
     public static class threading_extensions
     {

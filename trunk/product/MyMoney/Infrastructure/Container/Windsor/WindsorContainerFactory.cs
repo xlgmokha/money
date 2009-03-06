@@ -1,9 +1,9 @@
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using MyMoney.Infrastructure.Container.Windsor.configuration;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Container.Windsor.configuration;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Infrastructure.Container.Windsor
+namespace MoMoney.Infrastructure.Container.Windsor
 {
     public interface IWindsorContainerFactory : IFactory<IWindsorContainer>
     {

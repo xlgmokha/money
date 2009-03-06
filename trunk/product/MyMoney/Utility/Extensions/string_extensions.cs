@@ -1,4 +1,4 @@
-namespace MyMoney.Utility.Extensions
+namespace MoMoney.Utility.Extensions
 {
     public static class string_extensions
     {

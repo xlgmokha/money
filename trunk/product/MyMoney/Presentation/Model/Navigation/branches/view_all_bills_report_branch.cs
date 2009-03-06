@@ -1,8 +1,8 @@
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Presenters.reporting;
-using MyMoney.Presentation.Resources;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters.reporting;
+using MoMoney.Presentation.Resources;
 
-namespace MyMoney.Presentation.Model.Navigation.branches
+namespace MoMoney.Presentation.Model.Navigation.branches
 {
     public class view_all_bills_report_branch : IBranchVisitor
     {

@@ -1,7 +1,7 @@
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Utility.Core;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File.Commands
 {
     public interface ICloseWindowCommand : ICommand
     {}

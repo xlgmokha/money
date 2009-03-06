@@ -1,6 +1,6 @@
-using MyMoney.Utility.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Utility.Extensions
+namespace MoMoney.Utility.Extensions
 {
     public static class configuration_extensions
     {

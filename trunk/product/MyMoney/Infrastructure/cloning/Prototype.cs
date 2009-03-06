@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace MyMoney.Infrastructure.cloning
+namespace MoMoney.Infrastructure.cloning
 {
     public interface IPrototype
     {

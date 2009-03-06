@@ -1,4 +1,4 @@
-namespace MyMoney.Infrastructure.interceptors
+namespace MoMoney.Infrastructure.interceptors
 {
     public class UnitOfWorkInterceptorSpecs
     {

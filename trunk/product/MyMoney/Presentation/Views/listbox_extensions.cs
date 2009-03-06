@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Views
+namespace MoMoney.Presentation.Views
 {
     public static class listbox_extensions
     {

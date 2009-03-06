@@ -1,9 +1,9 @@
 using System;
 using System.Linq.Expressions;
 using DataDynamics.ActiveReports;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Model.reporting
+namespace MoMoney.Presentation.Model.reporting
 {
     public static class report_binding_extensions
     {

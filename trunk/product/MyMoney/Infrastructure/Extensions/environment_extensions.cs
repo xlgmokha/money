@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Infrastructure.Extensions
+namespace MoMoney.Infrastructure.Extensions
 {
     public static class environment_extensions
     {

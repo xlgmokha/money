@@ -1,11 +1,11 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using MyMoney.Presentation.Resources;
-using MyMoney.Utility.Core;
+using MoMoney.Presentation.Resources;
+using MoMoney.Utility.Core;
 using XPExplorerBar;
 
-namespace MyMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters.Navigation
 {
     public interface IExpandoItemBuilder : IBuilder<TaskItem>
     {

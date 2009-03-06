@@ -1,8 +1,8 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Utility.Extensions
+namespace MoMoney.Utility.Extensions
 {
     public class when_converting_a_valid_string_to_a_long : concerns_for
     {

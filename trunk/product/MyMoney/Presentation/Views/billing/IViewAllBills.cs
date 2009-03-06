@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using MyMoney.Presentation.Presenters.billing.dto;
-using MyMoney.Presentation.Views.core;
+using MoMoney.Presentation.Presenters.billing.dto;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.billing
+namespace MoMoney.Presentation.Views.billing
 {
     public interface IViewAllBills : IDockedContentView
     {

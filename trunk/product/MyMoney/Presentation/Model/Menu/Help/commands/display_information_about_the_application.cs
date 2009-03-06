@@ -1,8 +1,8 @@
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Presenters.Menu.Help;
-using MyMoney.Utility.Core;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters.Menu.Help;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Model.Menu.Help.commands
+namespace MoMoney.Presentation.Model.Menu.Help.commands
 {
     public interface IDisplayInformationAboutTheApplication : ICommand
     {

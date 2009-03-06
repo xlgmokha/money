@@ -1,10 +1,10 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
-using MyMoney.Utility.Core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Infrastructure.Threading
+namespace MoMoney.Infrastructure.Threading
 {
     [Concern(typeof (CommandProcessor))]
     public abstract class behaves_like_a_command_processor : concerns_for<ICommandProcessor, CommandProcessor>

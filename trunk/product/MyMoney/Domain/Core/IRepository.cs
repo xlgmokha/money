@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using MyMoney.Infrastructure.Logging;
+using MoMoney.Infrastructure.Logging;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     public interface IRepository : ILoggable
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     public interface IBindingSelector<TypeToBindTo>
     {

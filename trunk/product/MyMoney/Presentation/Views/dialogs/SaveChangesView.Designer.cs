@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.dialogs
+namespace MoMoney.Presentation.Views.dialogs
 {
 public    partial class SaveChangesView
     {
@@ -134,7 +134,7 @@ public    partial class SaveChangesView
 
         #endregion
 
-        private System.Windows.Forms.Button ux_save_button;
+    public System.Windows.Forms.Button ux_save_button;
         private System.Windows.Forms.Button ux_do_not_save_button;
         private System.Windows.Forms.Button ux_cancel_button;
         private System.Windows.Forms.PictureBox ux_image;

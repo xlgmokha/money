@@ -1,9 +1,9 @@
 using MbUnit.Framework;
-using MyMoney.Domain.Core;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Testing.MetaData;
+using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Testing.MetaData;
 
-namespace MyMoney.Testing.spechelpers.contexts
+namespace MoMoney.Testing.spechelpers.contexts
 {
     [run_in_real_container]
     [Concern(typeof (IRepository))]

@@ -1,10 +1,10 @@
 using System.Collections;
 using MbUnit.Core.Framework;
 using MbUnit.Core.Invokers;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Infrastructure.Container.Windsor;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Infrastructure.Container.Windsor;
 
-namespace MyMoney.Testing.MetaData
+namespace MoMoney.Testing.MetaData
 {
     public class run_in_real_container : DecoratorPatternAttribute
     {

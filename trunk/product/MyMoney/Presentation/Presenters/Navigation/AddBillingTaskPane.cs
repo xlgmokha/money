@@ -1,9 +1,9 @@
-using MyMoney.Presentation.Presenters.billing;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Resources;
+using MoMoney.Presentation.Presenters.billing;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Resources;
 using XPExplorerBar;
 
-namespace MyMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters.Navigation
 {
     public class AddBillingTaskPane : IActionTaskPaneFactory
     {

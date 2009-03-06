@@ -1,11 +1,11 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
-using MyMoney.Utility.Core;
-using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
+using MoMoney.Utility.Core;
+using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
-namespace MyMoney.Utility.Extensions
+namespace MoMoney.Utility.Extensions
 {
     [Concern(typeof (mapping_extensions))]
     public class when_transforming_type_A_to_type_B_then_C : concerns_for

@@ -1,7 +1,7 @@
 using Castle.MicroKernel.Registration;
-using MyMoney.Infrastructure.Extensions;
+using MoMoney.Infrastructure.Extensions;
 
-namespace MyMoney.Infrastructure.Container.Windsor.configuration
+namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {
     public class LogComponent : IRegistrationConfiguration
     {

@@ -1,8 +1,8 @@
 using System;
 using System.IO;
-using MyMoney.Infrastructure.Extensions;
+using MoMoney.Infrastructure.Extensions;
 
-namespace MyMoney.Presentation.Model.Projects
+namespace MoMoney.Presentation.Model.Projects
 {
     public interface IFile
     {

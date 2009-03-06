@@ -1,9 +1,9 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     [Concern(typeof (Money))]
     public class when_adding_two_monies_together : concerns_for<IMoney>

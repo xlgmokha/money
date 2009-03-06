@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using MyMoney.Domain.Core;
-using MyMoney.Infrastructure.Container;
+using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.Container;
 
-namespace MyMoney.Infrastructure.registries
+namespace MoMoney.Infrastructure.registries
 {
     public class default_registry<T> : IRegistry<T>
     {

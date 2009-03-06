@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MyMoney.Domain.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Domain.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Core
+namespace MoMoney.Presentation.Core
 {
     public static class presenter_registry_extensions
     {

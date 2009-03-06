@@ -1,12 +1,12 @@
 using System;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Infrastructure.Threading;
-using MyMoney.Presentation.Views.Startup;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Infrastructure.Threading;
+using MoMoney.Presentation.Views.Startup;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Presenters.Startup
+namespace MoMoney.Presentation.Presenters.Startup
 {
     [Concern(typeof (SplashScreenPresenter))]
     public abstract class behaves_like_splash_screen_presenter : concerns_for<ISplashScreenPresenter, SplashScreenPresenter>

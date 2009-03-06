@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using MyMoney.Presentation.Presenters.income.dto;
-using MyMoney.Presentation.Views.core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Presenters.income.dto;
+using MoMoney.Presentation.Views.core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Views.income
+namespace MoMoney.Presentation.Views.income
 {
     public partial class ViewAllIncome : ApplicationDockedWindow, IViewIncomeHistory
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Infrastructure.Logging
+namespace MoMoney.Infrastructure.Logging
 {
     public interface ILogger
     {

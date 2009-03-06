@@ -1,4 +1,4 @@
-namespace MyMoney.Utility.Core
+namespace MoMoney.Utility.Core
 {
     public class and_specification<T> : ISpecification<T>
     {

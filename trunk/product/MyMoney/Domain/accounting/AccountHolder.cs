@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Domain.accounting.financial_growth;
-using MyMoney.Domain.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Domain.accounting
+namespace MoMoney.Domain.accounting
 {
     public interface IAccountHolder : IEntity
     {

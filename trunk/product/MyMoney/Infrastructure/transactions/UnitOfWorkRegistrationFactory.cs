@@ -1,7 +1,7 @@
-using MyMoney.Infrastructure.cloning;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.cloning;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Infrastructure.transactions
+namespace MoMoney.Infrastructure.transactions
 {
     public interface IUnitOfWorkRegistrationFactory<T> : IMapper<T, IUnitOfWorkRegistration<T>>
     {

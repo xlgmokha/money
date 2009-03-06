@@ -1,10 +1,10 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Domain.Core;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Domain.Core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Infrastructure.transactions
+namespace MoMoney.Infrastructure.transactions
 {
     [Concern(typeof (UnitOfWorkRegistry))]
     public abstract class behaves_like_unit_of_work_registery : concerns_for<IUnitOfWorkRegistry,UnitOfWorkRegistry>

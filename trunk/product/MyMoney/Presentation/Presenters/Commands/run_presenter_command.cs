@@ -1,6 +1,6 @@
-using MyMoney.Presentation.Core;
+using MoMoney.Presentation.Core;
 
-namespace MyMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters.Commands
 {
     public interface IRunPresenterCommand
     {

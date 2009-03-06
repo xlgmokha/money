@@ -1,12 +1,12 @@
 using System.Windows.Forms;
 using Castle.Core;
-using MyMoney.Presentation.Model.Menu;
-using MyMoney.Presentation.Model.Menu.File;
-using MyMoney.Presentation.Model.Menu.Help;
-using MyMoney.Presentation.Model.Menu.window;
-using MyMoney.Presentation.Resources;
+using MoMoney.Presentation.Model.Menu;
+using MoMoney.Presentation.Model.Menu.File;
+using MoMoney.Presentation.Model.Menu.Help;
+using MoMoney.Presentation.Model.Menu.window;
+using MoMoney.Presentation.Resources;
 
-namespace MyMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views.Shell
 {
     [Singleton]
     public class NotificationIconView : INotificationIconView

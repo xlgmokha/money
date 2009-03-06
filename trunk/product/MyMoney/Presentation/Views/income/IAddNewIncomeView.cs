@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Presentation.Model.interaction;
-using MyMoney.Presentation.Presenters.income;
-using MyMoney.Presentation.Presenters.income.dto;
-using MyMoney.Presentation.Views.core;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Presentation.Model.interaction;
+using MoMoney.Presentation.Presenters.income;
+using MoMoney.Presentation.Presenters.income.dto;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.income
+namespace MoMoney.Presentation.Views.income
 {
     public interface IAddNewIncomeView : IDockedContentView, IView<IAddNewIncomePresenter>, INotification
     {

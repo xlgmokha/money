@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Castle.Core.Interceptor;
-using MyMoney.Infrastructure.Extensions;
+using MoMoney.Infrastructure.Extensions;
 
-namespace MyMoney.Infrastructure.interceptors
+namespace MoMoney.Infrastructure.interceptors
 {
     public interface ILoggingInterceptor : IInterceptor
     {}

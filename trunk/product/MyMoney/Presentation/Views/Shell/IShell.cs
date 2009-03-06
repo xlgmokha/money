@@ -1,8 +1,8 @@
 using System.ComponentModel;
 using System.Windows.Forms;
-using MyMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views.Shell
 {
     public interface IShell : IWin32Window, ISynchronizeInvoke, IContainerControl, IBindableComponent, IDropTarget
     {

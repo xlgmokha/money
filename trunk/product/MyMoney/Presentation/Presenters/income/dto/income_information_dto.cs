@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Presenters.income.dto
+namespace MoMoney.Presentation.Presenters.income.dto
 {
     public class income_information_dto
     {

@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Db4objects.Db4o;
-using MyMoney.Domain.Core;
-using MyMoney.Infrastructure.Extensions;
-using MyMoney.Utility.Extensions;
+using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.DataAccess.db40
+namespace MoMoney.DataAccess.db40
 {
     public class ObjectRepository : IRepository
     {

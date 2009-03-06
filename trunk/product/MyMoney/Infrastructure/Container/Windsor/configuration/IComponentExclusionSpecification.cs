@@ -1,7 +1,7 @@
 using System;
-using MyMoney.Utility.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Infrastructure.Container.Windsor.configuration
+namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {
     public interface IComponentExclusionSpecification : ISpecification<Type>
     {

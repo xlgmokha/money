@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Domain.accounting.financial_growth;
-using MyMoney.Domain.Core;
-using MyMoney.Presentation.Presenters.income.dto;
-using MyMoney.Presentation.Views.income;
-using MyMoney.Tasks.application;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Core;
+using MoMoney.Presentation.Presenters.income.dto;
+using MoMoney.Presentation.Views.income;
+using MoMoney.Tasks.application;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Presenters.income
+namespace MoMoney.Presentation.Presenters.income
 {
     [Concern(typeof (add_new_income_presenter))]
     public abstract class behaves_like_add_new_income_presenter : concerns_for<IAddNewIncomePresenter, add_new_income_presenter>

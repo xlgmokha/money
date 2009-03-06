@@ -1,4 +1,4 @@
-namespace MyMoney.Utility.Core
+namespace MoMoney.Utility.Core
 {
     public interface IValueReturningVisitor<Value, T> : IVisitor<T>
     {

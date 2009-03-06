@@ -1,9 +1,9 @@
 using System.Deployment.Application;
 using System.Windows.Forms;
-using MyMoney.Infrastructure.Extensions;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Extensions;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.windows.ui
+namespace MoMoney.windows.ui
 {
     public class check_for_updates : ICommand
     {

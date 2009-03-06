@@ -1,6 +1,6 @@
-using MyMoney.Utility.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Infrastructure.transactions
+namespace MoMoney.Infrastructure.transactions
 {
 
 }

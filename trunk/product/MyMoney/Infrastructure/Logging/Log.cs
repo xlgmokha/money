@@ -1,8 +1,8 @@
 using System;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Infrastructure.Logging.ConsoleLogging;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Infrastructure.Logging.ConsoleLogging;
 
-namespace MyMoney.Infrastructure.Logging
+namespace MoMoney.Infrastructure.Logging
 {
     public static class Log
     {

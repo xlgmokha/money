@@ -1,7 +1,7 @@
 using System;
-using MyMoney.Infrastructure.transactions;
+using MoMoney.Infrastructure.transactions;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     public interface IEntity
     {

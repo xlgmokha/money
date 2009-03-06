@@ -1,6 +1,6 @@
-using MyMoney.Domain.Core;
+using MoMoney.Domain.Core;
 
-namespace MyMoney.Domain.accounting
+namespace MoMoney.Domain.accounting
 {
     public interface IInvoice
     {

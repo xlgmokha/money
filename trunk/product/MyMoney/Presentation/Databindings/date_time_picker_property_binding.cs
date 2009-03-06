@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     public class date_time_picker_property_binding<TypeToBindTo> : IPropertyBinding<DateTime>
     {

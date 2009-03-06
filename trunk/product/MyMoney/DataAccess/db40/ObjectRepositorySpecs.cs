@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using Db4objects.Db4o;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Domain.Core;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Domain.Core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.DataAccess.db40
+namespace MoMoney.DataAccess.db40
 {
     [Concern(typeof (ObjectRepository))]
     public abstract class behaves_like_a_object_repository : concerns_for<IRepository, ObjectRepository>

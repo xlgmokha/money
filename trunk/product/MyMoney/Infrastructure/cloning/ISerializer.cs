@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Infrastructure.cloning
+namespace MoMoney.Infrastructure.cloning
 {
     public interface ISerializer<T> : IDisposable
     {

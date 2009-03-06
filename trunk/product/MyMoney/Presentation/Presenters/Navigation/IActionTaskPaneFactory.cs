@@ -1,7 +1,7 @@
-using MyMoney.Utility.Core;
+using MoMoney.Utility.Core;
 using XPExplorerBar;
 
-namespace MyMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters.Navigation
 {
     public interface IActionTaskPaneFactory : IFactory<Expando>
     {

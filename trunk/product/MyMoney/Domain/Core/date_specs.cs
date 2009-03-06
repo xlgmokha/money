@@ -1,9 +1,9 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     [Concern(typeof (Date))]
     public class when_two_dates_that_represent_the_same_day_are_asked_if_they_are_equal : concerns_for<IDate>

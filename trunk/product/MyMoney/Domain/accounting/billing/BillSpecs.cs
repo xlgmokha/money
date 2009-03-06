@@ -1,11 +1,11 @@
 using System;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Domain.Core;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Domain.Core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Domain.accounting.billing
+namespace MoMoney.Domain.accounting.billing
 {
     [Concern(typeof (Bill))]
     public class when_checking_to_see_if_a_new_bill_has_been_paid_for : concerns_for<IBill>

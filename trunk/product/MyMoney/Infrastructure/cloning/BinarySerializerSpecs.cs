@@ -2,11 +2,11 @@ using System;
 using System.IO;
 using jpboodhoo.bdd.contexts;
 using MbUnit.Framework;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Infrastructure.cloning
+namespace MoMoney.Infrastructure.cloning
 {
     [Concern(typeof(BinarySerializer<TestItem>))]
     public abstract class behaves_like_serializer : concerns_for<ISerializer<TestItem>>

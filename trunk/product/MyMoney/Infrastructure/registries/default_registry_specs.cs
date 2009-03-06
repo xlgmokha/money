@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Domain.Core;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Infrastructure.registries
+namespace MoMoney.Infrastructure.registries
 {
     [Concern(typeof (default_registry<int>))]
     public class when_retrieving_all_the_items_from_the_default_repository :

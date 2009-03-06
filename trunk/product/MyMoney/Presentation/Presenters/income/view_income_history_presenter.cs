@@ -1,13 +1,13 @@
 using System.Linq;
-using MyMoney.Domain.accounting.financial_growth;
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Presenters.income.dto;
-using MyMoney.Presentation.Views.core;
-using MyMoney.Presentation.Views.income;
-using MyMoney.Tasks.application;
-using MyMoney.Utility.Extensions;
+using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Presenters.income.dto;
+using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.income;
+using MoMoney.Tasks.application;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Presenters.income
+namespace MoMoney.Presentation.Presenters.income
 {
     public interface IViewIncomeHistoryPresenter : IContentPresenter
     {

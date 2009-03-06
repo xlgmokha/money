@@ -1,12 +1,12 @@
-using MyMoney.Domain.Core;
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Model.messages;
-using MyMoney.Presentation.Resources;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Utility.Extensions;
+using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Model.messages;
+using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters.Shell
 {
     public interface IStatusBarPresenter : IPresentationModule,
                                            IEventSubscriber<saved_changes_event>,

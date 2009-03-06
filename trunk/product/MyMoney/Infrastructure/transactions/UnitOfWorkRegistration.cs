@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace MyMoney.Infrastructure.transactions
+namespace MoMoney.Infrastructure.transactions
 {
     public interface IUnitOfWorkRegistration<T>
     {

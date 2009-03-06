@@ -1,13 +1,13 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Presentation.Model.messages;
-using MyMoney.Presentation.Resources;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Presentation.Model.messages;
+using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters.Shell
 {
     [Concern(typeof (StatusBarPresenter))]
     public class when_initializing_the_status_bar : concerns_for<IStatusBarPresenter, StatusBarPresenter>

@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Core
+namespace MoMoney.Presentation.Core
 {
     public interface IPresentationModule : IPresenter
     {

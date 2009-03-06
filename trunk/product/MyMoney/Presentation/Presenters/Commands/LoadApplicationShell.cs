@@ -1,9 +1,9 @@
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Utility.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Utility.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters.Commands
 {
     public interface ILoadApplicationShellCommand : ICommand
     {

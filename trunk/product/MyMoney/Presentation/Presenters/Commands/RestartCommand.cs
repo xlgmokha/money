@@ -1,9 +1,9 @@
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Infrastructure.System;
-using MyMoney.Presentation.Model.messages;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.System;
+using MoMoney.Presentation.Model.messages;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters.Commands
 {
     public interface IRestartCommand : ICommand
     {

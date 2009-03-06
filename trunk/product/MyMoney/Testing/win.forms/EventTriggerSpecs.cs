@@ -2,10 +2,10 @@ using System;
 using System.Windows.Forms;
 using jpboodhoo.bdd.contexts;
 using MbUnit.Framework;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Testing.win.forms
+namespace MoMoney.Testing.win.forms
 {
     [Ignore]
     public class when_invoking_a_call_on_a_target_via_reflection : concerns_for

@@ -1,9 +1,9 @@
-using MyMoney.Infrastructure.Threading;
-using MyMoney.Presentation.Presenters.Startup;
-using MyMoney.Presentation.Views.Startup;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Threading;
+using MoMoney.Presentation.Presenters.Startup;
+using MoMoney.Presentation.Views.Startup;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters.Commands
 {
     public class display_the_splash_screen : IDisposableCommand
     {

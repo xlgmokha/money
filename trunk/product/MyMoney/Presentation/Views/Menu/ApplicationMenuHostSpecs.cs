@@ -1,13 +1,13 @@
 using System.Windows.Forms;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Model.Menu;
-using MyMoney.Presentation.Views.Menu.Mappers;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Model.Menu;
+using MoMoney.Presentation.Views.Menu.Mappers;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Views.Menu
+namespace MoMoney.Presentation.Views.Menu
 {
     [Concern(typeof (ApplicationMenuHost))]
     public class behaves_like_application_menu_host : concerns_for<IMenuView, ApplicationMenuHost>

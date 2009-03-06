@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using log4net;
 using log4net.Config;
-using MyMoney.Infrastructure.Extensions;
+using MoMoney.Infrastructure.Extensions;
 
-namespace MyMoney.Infrastructure.Logging.Log4NetLogging
+namespace MoMoney.Infrastructure.Logging.Log4NetLogging
 {
     public class log4net_log_factory : ILogFactory
     {

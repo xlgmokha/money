@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.Navigation
+namespace MoMoney.Presentation.Views.Navigation
 {
     partial class MainMenuView
     {

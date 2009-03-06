@@ -1,7 +1,7 @@
 using System;
-using MyMoney.Domain.accounting.billing;
+using MoMoney.Domain.accounting.billing;
 
-namespace MyMoney.Presentation.Presenters.income.dto
+namespace MoMoney.Presentation.Presenters.income.dto
 {
     public class income_submission_dto
     {

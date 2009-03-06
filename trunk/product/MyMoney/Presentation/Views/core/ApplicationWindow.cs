@@ -1,8 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using MyMoney.Presentation.Resources;
+﻿using System.Windows.Forms;
+using MoMoney.Presentation.Resources;
 
-namespace MyMoney.Presentation.Views.core
+namespace MoMoney.Presentation.Views.core
 {
     public interface IApplicationWindow : IView
     {
@@ -30,9 +29,9 @@ namespace MyMoney.Presentation.Views.core
             return this;
         }
 
-        public void execute(Action action)
-        {
-            BeginInvoke(action);
-        }
+        //public void execute(Action action)
+        //{
+        //    BeginInvoke(action);
+        //}
     }
 }

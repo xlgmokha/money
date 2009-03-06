@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Presentation.Databindings;
-using MyMoney.Presentation.Model.interaction;
-using MyMoney.Presentation.Presenters;
-using MyMoney.Presentation.Presenters.billing.dto;
-using MyMoney.Presentation.Views.core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Presentation.Databindings;
+using MoMoney.Presentation.Model.interaction;
+using MoMoney.Presentation.Presenters;
+using MoMoney.Presentation.Presenters.billing.dto;
+using MoMoney.Presentation.Views.core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Views
+namespace MoMoney.Presentation.Views
 {
     public partial class AddCompanyView : ApplicationDockedWindow, IAddCompanyView
     {

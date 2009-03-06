@@ -1,13 +1,13 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Model.updates;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Views.updates;
-using MyMoney.Tasks.infrastructure;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Model.updates;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Views.updates;
+using MoMoney.Tasks.infrastructure;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Presenters.updates
+namespace MoMoney.Presentation.Presenters.updates
 {
     [Concern(typeof (CheckForUpdatesPresenter))]
     public abstract class behaves_like_check_for_updates_presenter : concerns_for<ICheckForUpdatesPresenter, CheckForUpdatesPresenter>

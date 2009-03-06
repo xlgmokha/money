@@ -1,6 +1,6 @@
-using MyMoney.Presentation.Resources;
+using MoMoney.Presentation.Resources;
 
-namespace MyMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views.Shell
 {
     public interface IStatusBarView
     {

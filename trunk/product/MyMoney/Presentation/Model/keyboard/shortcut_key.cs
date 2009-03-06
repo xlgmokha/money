@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace MyMoney.Presentation.Model.keyboard
+namespace MoMoney.Presentation.Model.keyboard
 {
     public class shortcut_key
     {

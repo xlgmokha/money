@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.Menu.Help
+namespace MoMoney.Presentation.Views.Menu.Help
 {
     public interface IAboutApplicationView
     {

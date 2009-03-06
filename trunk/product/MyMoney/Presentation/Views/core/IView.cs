@@ -1,8 +1,8 @@
 using System;
 using System.ComponentModel;
-using MyMoney.Presentation.Core;
+using MoMoney.Presentation.Core;
 
-namespace MyMoney.Presentation.Views.core
+namespace MoMoney.Presentation.Views.core
 {
     public interface IView : ISynchronizeInvoke, IDisposable
     {

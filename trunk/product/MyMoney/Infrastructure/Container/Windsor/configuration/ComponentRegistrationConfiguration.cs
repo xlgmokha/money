@@ -1,8 +1,8 @@
 using Castle.MicroKernel.Registration;
-using MyMoney.Utility.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Infrastructure.Container.Windsor.configuration
+namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {
     public interface IRegistrationConfiguration : IConfiguration<ComponentRegistration>
     {

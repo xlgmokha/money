@@ -1,6 +1,6 @@
-using MyMoney.Utility.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Core
+namespace MoMoney.Presentation.Core
 {
     public interface IPresenter : ICommand
     {

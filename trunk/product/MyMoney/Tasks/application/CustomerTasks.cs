@@ -1,10 +1,10 @@
 using System.Linq;
 using Castle.Core;
-using MyMoney.Domain.accounting;
-using MyMoney.Domain.Core;
-using MyMoney.Infrastructure.interceptors;
+using MoMoney.Domain.accounting;
+using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.interceptors;
 
-namespace MyMoney.Tasks.application
+namespace MoMoney.Tasks.application
 {
     public interface ICustomerTasks
     {

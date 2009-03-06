@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using MyMoney.Presentation.Presenters.income.dto;
-using MyMoney.Presentation.Views.core;
+using MoMoney.Presentation.Presenters.income.dto;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.income
+namespace MoMoney.Presentation.Views.income
 {
     public interface IViewIncomeHistory : IDockedContentView
     {

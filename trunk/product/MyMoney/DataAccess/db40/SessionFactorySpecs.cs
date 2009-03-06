@@ -1,11 +1,12 @@
 using Db4objects.Db4o;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Model.Projects;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.DataAccess.db40;
+using MoMoney.Presentation.Model.Projects;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.DataAccess.db40
+namespace MoMoney.DataAccess.db40
 {
     [Concern(typeof (SessionFactory))]
     public abstract class behaves_like_a_session_factory : concerns_for<ISessionFactory, SessionFactory>

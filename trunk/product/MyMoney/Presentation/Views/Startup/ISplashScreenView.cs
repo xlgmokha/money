@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.Startup
+namespace MoMoney.Presentation.Views.Startup
 {
     public interface ISplashScreenView
     {

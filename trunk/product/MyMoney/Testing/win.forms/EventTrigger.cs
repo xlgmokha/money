@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using jpboodhoo.bdd.core.extensions;
 
-namespace MyMoney.Testing.win.forms
+namespace MoMoney.Testing.win.forms
 {
     static public class EventTrigger
     {

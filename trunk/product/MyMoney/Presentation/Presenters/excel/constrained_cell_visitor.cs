@@ -1,6 +1,6 @@
-using MyMoney.Utility.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Presenters.excel
+namespace MoMoney.Presentation.Presenters.excel
 {
     public class constrained_cell_visitor : ICellVisitor
     {

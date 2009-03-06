@@ -1,11 +1,11 @@
 using System.Windows.Forms;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
-using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
+using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     [Concern(typeof (Create))]
     public class when_binding_a_property_on_an_object_to_a_textbox : concerns_for

@@ -1,13 +1,13 @@
 using System;
 using System.Windows.Forms;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Infrastructure.Extensions;
-using MyMoney.Presentation.Model.messages;
-using MyMoney.Utility.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.Extensions;
+using MoMoney.Presentation.Model.messages;
+using MoMoney.Utility.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.windows.ui
+namespace MoMoney.windows.ui
 {
     internal class global_error_handling : ICommand
     {

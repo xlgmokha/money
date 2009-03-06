@@ -1,8 +1,8 @@
-using MyMoney.Presentation.Presenters.billing;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Resources;
+using MoMoney.Presentation.Presenters.billing;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Resources;
 
-namespace MyMoney.Presentation.Model.Navigation.branches
+namespace MoMoney.Presentation.Model.Navigation.branches
 {
     public class add_bill_payment_branch : IBranchVisitor
     {

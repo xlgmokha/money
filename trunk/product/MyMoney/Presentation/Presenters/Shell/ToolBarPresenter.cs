@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Model.Menu;
-using MyMoney.Presentation.Model.Menu.File.Commands;
-using MyMoney.Presentation.Resources;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Model.Menu;
+using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters.Shell
 {
     public interface IToolbarPresenter : IPresentationModule
     {

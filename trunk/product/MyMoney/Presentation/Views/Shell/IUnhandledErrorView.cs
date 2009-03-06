@@ -1,8 +1,8 @@
 using System;
-using MyMoney.Presentation.Presenters.Shell;
-using MyMoney.Presentation.Views.core;
+using MoMoney.Presentation.Presenters.Shell;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views.Shell
 {
     public interface IUnhandledErrorView : IView<IUnhandledErrorPresenter>
     {

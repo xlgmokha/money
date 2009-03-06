@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Utility.Extensions
+namespace MoMoney.Utility.Extensions
 {
     public static class func_extensions
     {

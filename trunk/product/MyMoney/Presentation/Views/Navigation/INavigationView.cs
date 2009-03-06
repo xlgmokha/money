@@ -1,7 +1,7 @@
-using MyMoney.Presentation.Model.Navigation;
-using MyMoney.Presentation.Views.core;
+using MoMoney.Presentation.Model.Navigation;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.Navigation
+namespace MoMoney.Presentation.Views.Navigation
 {
     public interface INavigationView : IDockedContentView
     {

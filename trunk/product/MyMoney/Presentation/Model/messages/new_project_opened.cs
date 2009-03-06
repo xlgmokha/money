@@ -1,6 +1,6 @@
-using MyMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.eventing;
 
-namespace MyMoney.Presentation.Model.messages
+namespace MoMoney.Presentation.Model.messages
 {
     public class new_project_opened : IEvent
     {

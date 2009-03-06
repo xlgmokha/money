@@ -1,11 +1,11 @@
 using System;
 using System.Windows.Forms;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     [Concern(typeof (Create))]
     public class when_a_new_date_is_selected_by_a_date_time_picker_that_is_bound_to_a_property : concerns_for

@@ -1,6 +1,6 @@
-using MyMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views.Shell
 {
     public interface IGettingStartedView : IDockedContentView
     {

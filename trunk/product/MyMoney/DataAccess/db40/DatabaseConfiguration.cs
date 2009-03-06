@@ -1,8 +1,8 @@
 using System.IO;
 using Castle.Core;
-using MyMoney.Presentation.Model.Projects;
+using MoMoney.Presentation.Model.Projects;
 
-namespace MyMoney.DataAccess.db40
+namespace MoMoney.DataAccess.db40
 {
     public interface IDatabaseConfiguration
     {

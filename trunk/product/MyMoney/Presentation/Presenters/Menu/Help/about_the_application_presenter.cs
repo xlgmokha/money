@@ -1,7 +1,7 @@
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Views.Menu.Help;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Views.Menu.Help;
 
-namespace MyMoney.Presentation.Presenters.Menu.Help
+namespace MoMoney.Presentation.Presenters.Menu.Help
 {
     public interface IAboutApplicationPresenter : IPresenter
     {

@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.updates
+namespace MoMoney.Presentation.Views.updates
 {
     partial class CheckForUpdatesView
     {

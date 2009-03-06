@@ -1,10 +1,10 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Views.Menu.Help;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Views.Menu.Help;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Presenters.Menu.Help
+namespace MoMoney.Presentation.Presenters.Menu.Help
 {
     [Concern(typeof (about_the_application_presenter))]
     public abstract class behaves_like_the_application_information_presenter :

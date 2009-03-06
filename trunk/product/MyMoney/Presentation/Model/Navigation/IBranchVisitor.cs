@@ -1,6 +1,6 @@
-using MyMoney.Utility.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Model.Navigation
+namespace MoMoney.Presentation.Model.Navigation
 {
     public interface IBranchVisitor : IVisitor<ITreeBranch>
     {}

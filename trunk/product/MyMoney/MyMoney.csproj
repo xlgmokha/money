@@ -8,8 +8,8 @@
     <ProjectGuid>{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyMoney</RootNamespace>
-    <AssemblyName>MyMoney</AssemblyName>
+    <RootNamespace>MoMoney</RootNamespace>
+    <AssemblyName>MoMoney</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

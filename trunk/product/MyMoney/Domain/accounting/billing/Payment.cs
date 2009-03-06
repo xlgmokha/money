@@ -1,7 +1,7 @@
 using System;
-using MyMoney.Domain.Core;
+using MoMoney.Domain.Core;
 
-namespace MyMoney.Domain.accounting.billing
+namespace MoMoney.Domain.accounting.billing
 {
     public interface IPayment : IEntity
     {

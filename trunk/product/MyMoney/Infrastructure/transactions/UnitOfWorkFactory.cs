@@ -1,7 +1,7 @@
-using MyMoney.Domain.Core;
-using MyMoney.Infrastructure.Container;
+using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.Container;
 
-namespace MyMoney.Infrastructure.transactions
+namespace MoMoney.Infrastructure.transactions
 {
     public interface IUnitOfWorkFactory
     {

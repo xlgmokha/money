@@ -1,8 +1,8 @@
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Utility.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Utility.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Core
+namespace MoMoney.Presentation.Core
 {
     public interface IApplicationController : IParameterizedCommand<IPresenter>
     {

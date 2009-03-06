@@ -1,9 +1,9 @@
 using System;
 using Castle.Core;
-using MyMoney.Infrastructure.interceptors;
-using MyMoney.Presentation.Model.file_system;
+using MoMoney.Infrastructure.interceptors;
+using MoMoney.Presentation.Model.file_system;
 
-namespace MyMoney.Tasks.infrastructure
+namespace MoMoney.Tasks.infrastructure
 {
     public interface IFileSystemTasks
     {

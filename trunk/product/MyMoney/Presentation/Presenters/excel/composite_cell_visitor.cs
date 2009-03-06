@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Presenters.excel
+namespace MoMoney.Presentation.Presenters.excel
 {
     public class composite_cell_visitor : ICellVisitor
     {

@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Model.reporting
+namespace MoMoney.Presentation.Model.reporting
 {
     public interface IReport
     {

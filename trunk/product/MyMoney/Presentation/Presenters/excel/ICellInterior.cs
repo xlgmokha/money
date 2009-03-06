@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace MyMoney.Presentation.Presenters.excel
+namespace MoMoney.Presentation.Presenters.excel
 {
     public interface ICellInterior
     {

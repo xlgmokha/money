@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using System.Windows.Forms;
-using MyMoney.Presentation.Model.updates;
-using MyMoney.Presentation.Presenters.updates;
-using MyMoney.Presentation.Resources;
-using MyMoney.Presentation.Views.core;
+using MoMoney.Presentation.Model.updates;
+using MoMoney.Presentation.Presenters.updates;
+using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Views.updates
+namespace MoMoney.Presentation.Views.updates
 {
     public partial class CheckForUpdatesView : ApplicationWindow, ICheckForUpdatesView
     {

@@ -1,9 +1,9 @@
 using System.Drawing;
 using System.Windows.Forms;
-using MyMoney.Presentation.Resources;
-using MyMoney.Utility.Core;
+using MoMoney.Presentation.Resources;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Model.Navigation
+namespace MoMoney.Presentation.Model.Navigation
 {
     public interface ITreeBranch
     {

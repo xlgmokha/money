@@ -1,12 +1,12 @@
 using jpboodhoo.bdd.contexts;
-using MyMoney.Presentation.Model.Projects;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Views.dialogs;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Presentation.Model.Projects;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Views.dialogs;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File.Commands
 {
     [Concern(typeof (open_command))]
     public abstract class behaves_like_command_to_open_a_project : concerns_for<IOpenCommand, open_command>

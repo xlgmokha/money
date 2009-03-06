@@ -1,6 +1,6 @@
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     public static class money_extensions
     {

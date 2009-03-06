@@ -1,9 +1,9 @@
 using System.Linq;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Domain.Core;
-using MyMoney.Infrastructure.Logging;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.Logging;
 
-namespace MyMoney.Domain.repositories
+namespace MoMoney.Domain.repositories
 {
     public static class company_repository_extensions
     {

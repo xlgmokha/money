@@ -1,7 +1,7 @@
-using MyMoney.Presentation.Resources;
-using MyMoney.Utility.Core;
+using MoMoney.Presentation.Resources;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Model.Navigation.branches
+namespace MoMoney.Presentation.Model.Navigation.branches
 {
     public class add_new_income_branch : IBranchVisitor
     {

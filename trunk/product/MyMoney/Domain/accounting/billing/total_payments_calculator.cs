@@ -1,7 +1,7 @@
-using MyMoney.Domain.Core;
-using MyMoney.Utility.Core;
+using MoMoney.Domain.Core;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Domain.accounting.billing
+namespace MoMoney.Domain.accounting.billing
 {
     internal class total_payments_calculator : IValueReturningVisitor<IMoney, IPayment>
     {

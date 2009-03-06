@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace MyMoney.Testing.Extensions
+namespace MoMoney.Testing.Extensions
 {
     [EditorBrowsable(EditorBrowsableState.Never)]
     public interface IHideObjectMembers

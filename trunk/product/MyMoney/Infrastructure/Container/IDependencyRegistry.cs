@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MyMoney.Infrastructure.Container
+namespace MoMoney.Infrastructure.Container
 {
     public interface IDependencyRegistry
     {

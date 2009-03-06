@@ -1,14 +1,16 @@
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Model.messages;
-using MyMoney.Presentation.Views.Shell;
+using JetBrains.Annotations;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Model.messages;
+using MoMoney.Presentation.Views.Shell;
 
-namespace MyMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters.Shell
 {
     public interface IGettingStartedPresenter : IPresentationModule, IEventSubscriber<new_project_opened>
     {
     }
 
+    [UsedImplicitly]
     public class GettingStartedPresenter : IGettingStartedPresenter
     {
         readonly IGettingStartedView view;

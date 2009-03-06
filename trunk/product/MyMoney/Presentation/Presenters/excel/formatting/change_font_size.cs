@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Presenters.excel.formatting
+namespace MoMoney.Presentation.Presenters.excel.formatting
 {
     public class change_font_size : ICellVisitor
     {

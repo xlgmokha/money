@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.income
+namespace MoMoney.Presentation.Views.income
 {
     partial class ViewAllIncome
     {

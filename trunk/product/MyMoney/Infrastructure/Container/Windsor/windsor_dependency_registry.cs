@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using Castle.Core;
 using Castle.Windsor;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Infrastructure.Container.Windsor
+namespace MoMoney.Infrastructure.Container.Windsor
 {
     public class windsor_dependency_registry : IDependencyRegistry
     {

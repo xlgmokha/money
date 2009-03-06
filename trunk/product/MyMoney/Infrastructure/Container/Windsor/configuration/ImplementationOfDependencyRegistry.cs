@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Infrastructure.Container.Windsor.configuration
+namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {
     public class ImplementationOfDependencyRegistry : IComponentExclusionSpecification
     {

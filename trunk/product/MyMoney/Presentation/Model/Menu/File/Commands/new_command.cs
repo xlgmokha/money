@@ -1,8 +1,8 @@
-using MyMoney.Presentation.Model.Projects;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Utility.Core;
+using MoMoney.Presentation.Model.Projects;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File.Commands
 {
     public interface INewCommand : ICommand, ISaveChangesCallback
     {

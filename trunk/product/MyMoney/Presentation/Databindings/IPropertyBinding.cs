@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     public interface IPropertyBinding<PropertyType>
     {

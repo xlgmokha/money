@@ -1,7 +1,7 @@
 using System;
 using Rhino.Mocks;
 
-namespace MyMoney.Testing.Extensions
+namespace MoMoney.Testing.Extensions
 {
     public class method_call_occurance<T> : IHideObjectMembers
     {

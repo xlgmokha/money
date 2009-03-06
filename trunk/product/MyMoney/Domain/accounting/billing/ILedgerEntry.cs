@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMoney.Domain.accounting.billing
+namespace MoMoney.Domain.accounting.billing
 {
     public interface ILedgerEntry
     {

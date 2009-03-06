@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using MyMoney.Domain.Core;
+using MoMoney.Domain.Core;
 
-namespace MyMoney.Presentation.Core
+namespace MoMoney.Presentation.Core
 {
     public interface IPresenterRegistry : IRegistry<IPresenter>
     {

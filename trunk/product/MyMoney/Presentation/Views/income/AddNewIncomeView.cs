@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Presentation.Model.interaction;
-using MyMoney.Presentation.Presenters.income;
-using MyMoney.Presentation.Presenters.income.dto;
-using MyMoney.Presentation.Views.core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Presentation.Model.interaction;
+using MoMoney.Presentation.Presenters.income;
+using MoMoney.Presentation.Presenters.income.dto;
+using MoMoney.Presentation.Views.core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Views.income
+namespace MoMoney.Presentation.Views.income
 {
     public partial class AddNewIncomeView : ApplicationDockedWindow, IAddNewIncomeView
     {

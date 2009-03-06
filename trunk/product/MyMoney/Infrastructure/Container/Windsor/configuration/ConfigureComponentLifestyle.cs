@@ -1,7 +1,7 @@
 using Castle.Core;
 using Castle.MicroKernel.Registration;
 
-namespace MyMoney.Infrastructure.Container.Windsor.configuration
+namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {
     public class ConfigureComponentLifestyle : IRegistrationConfiguration
     {

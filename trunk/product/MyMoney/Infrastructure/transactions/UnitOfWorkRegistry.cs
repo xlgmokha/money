@@ -2,10 +2,10 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Castle.Core;
-using MyMoney.Domain.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Domain.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Infrastructure.transactions
+namespace MoMoney.Infrastructure.transactions
 {
     public interface IUnitOfWorkRegistry : IDisposable
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Drawing;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Resources
+namespace MoMoney.Presentation.Resources
 {
     public static class ApplicationIcons
     {

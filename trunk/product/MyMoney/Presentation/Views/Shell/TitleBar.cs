@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views.Shell
 {
     public interface ITitleBar
     {

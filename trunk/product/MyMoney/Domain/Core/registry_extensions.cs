@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using MyMoney.Utility.Extensions;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Domain.Core
+namespace MoMoney.Domain.Core
 {
     public static class registry_extensions
     {

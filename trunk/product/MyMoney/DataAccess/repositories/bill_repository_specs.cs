@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Domain.Core;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.Core;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.DataAccess.repositories
+namespace MoMoney.DataAccess.repositories
 {
     public class when_loading_all_the_bills_from_the_repository : behaves_like_a_repository
     {

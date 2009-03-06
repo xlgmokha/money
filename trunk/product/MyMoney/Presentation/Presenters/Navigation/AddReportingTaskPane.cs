@@ -1,9 +1,9 @@
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Presentation.Presenters.reporting;
-using MyMoney.Presentation.Resources;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters.reporting;
+using MoMoney.Presentation.Resources;
 using XPExplorerBar;
 
-namespace MyMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters.Navigation
 {
     public class AddReportingTaskPane : IActionTaskPaneFactory
     {

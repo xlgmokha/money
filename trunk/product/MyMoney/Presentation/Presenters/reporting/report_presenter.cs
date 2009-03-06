@@ -1,13 +1,13 @@
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Presenters.billing.dto;
-using MyMoney.Presentation.Views.billing;
-using MyMoney.Presentation.Views.core;
-using MyMoney.Presentation.Views.reporting;
-using MyMoney.Tasks.application;
-using MyMoney.Utility.Extensions;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Presenters.billing.dto;
+using MoMoney.Presentation.Views.billing;
+using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.reporting;
+using MoMoney.Tasks.application;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Presenters.reporting
+namespace MoMoney.Presentation.Presenters.reporting
 {
     public interface IViewAllBillsReportPresenter : IContentPresenter
     {

@@ -1,12 +1,12 @@
 using System;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Domain.accounting.financial_growth;
-using MyMoney.Domain.Core;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Domain.accounting.billing
+namespace MoMoney.Domain.accounting.billing
 {
     [Concern(typeof (Company))]
     public abstract class behaves_like_a_company : concerns_for<ICompany>

@@ -1,10 +1,10 @@
-using MyMoney.Infrastructure.Container.Windsor;
-using MyMoney.Infrastructure.Extensions;
-using MyMoney.Presentation.Presenters.Commands;
-using MyMoney.Utility.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Infrastructure.Extensions;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Utility.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.windows.ui
+namespace MoMoney.windows.ui
 {
     internal class wire_up_the_container : ICommand
     {

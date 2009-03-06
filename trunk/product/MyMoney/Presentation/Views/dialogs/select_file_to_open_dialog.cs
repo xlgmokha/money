@@ -1,7 +1,7 @@
 using System.Windows.Forms;
-using MyMoney.Presentation.Model.Projects;
+using MoMoney.Presentation.Model.Projects;
 
-namespace MyMoney.Presentation.Views.dialogs
+namespace MoMoney.Presentation.Views.dialogs
 {
     public interface ISelectFileToOpenDialog
     {

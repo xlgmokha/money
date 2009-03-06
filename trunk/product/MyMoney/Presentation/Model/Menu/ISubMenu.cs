@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MyMoney.Presentation.Model.Menu
+namespace MoMoney.Presentation.Model.Menu
 {
     public interface ISubMenu
     {

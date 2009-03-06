@@ -1,9 +1,9 @@
 using System.Windows.Forms;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Utility.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Utility.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Model.Navigation
+namespace MoMoney.Presentation.Model.Navigation
 {
     public interface INavigationTreeVisitor : IVisitor<TreeView>
     {}

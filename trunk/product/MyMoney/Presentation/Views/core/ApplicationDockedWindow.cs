@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Windows.Forms;
-using MyMoney.Presentation.Resources;
+using MoMoney.Presentation.Resources;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace MyMoney.Presentation.Views.core
+namespace MoMoney.Presentation.Views.core
 {
     public interface IApplicationDockedWindow : IDockedContentView
     {

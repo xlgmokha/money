@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace MyMoney.Infrastructure.debugging
+namespace MoMoney.Infrastructure.debugging
 {
     public static class Launch
     {

@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.Shell {
+namespace MoMoney.Presentation.Views.Shell {
     partial class ApplicationShell
     {
         /// <summary>
@@ -92,7 +92,7 @@ namespace MyMoney.Presentation.Views.Shell {
             this.MainMenuStrip = this.ux_main_menu_strip;
             this.Name = "window_shell";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MyMoney";
+            this.Text = "MoMoney";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using MyMoney.Domain.Core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Domain.Core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Domain.accounting.billing
+namespace MoMoney.Domain.accounting.billing
 {
     public interface IBill : IEntity
     {

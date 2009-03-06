@@ -1,13 +1,13 @@
 using System;
 using System.Windows.Forms;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Infrastructure.Extensions;
-using MyMoney.Presentation.Context;
-using MyMoney.Presentation.Model.messages;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.Extensions;
+using MoMoney.Presentation.Context;
+using MoMoney.Presentation.Model.messages;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.windows.ui
+namespace MoMoney.windows.ui
 {
     internal class start_the_application : ICommand
     {

@@ -1,12 +1,12 @@
 using System;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Infrastructure.eventing;
-using MyMoney.Presentation.Model.messages;
-using MyMoney.Presentation.Views.Shell;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Infrastructure.eventing;
+using MoMoney.Presentation.Model.messages;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters.Shell
 {
     public class behaves_like_unhandled_error_presenter :
         concerns_for<IUnhandledErrorPresenter, UnhandledErrorPresenter>

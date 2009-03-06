@@ -1,6 +1,6 @@
-using MyMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.core;
 
-namespace MyMoney.Presentation.Core
+namespace MoMoney.Presentation.Core
 {
     public interface IContentPresenter : IPresenter
     {

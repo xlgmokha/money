@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.billing
+namespace MoMoney.Presentation.Views.billing
 {
     /// <summary>
     /// Summary description for view_all_bills.

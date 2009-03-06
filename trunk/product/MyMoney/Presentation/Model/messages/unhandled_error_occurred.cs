@@ -1,7 +1,7 @@
 using System;
-using MyMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.eventing;
 
-namespace MyMoney.Presentation.Model.messages
+namespace MoMoney.Presentation.Model.messages
 {
     public class unhandled_error_occurred : IEvent
     {

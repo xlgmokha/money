@@ -9,3 +9,11 @@ task copy_app_dependencies {
 task create_licenses -depends clean {
 
 }
+
+task deploy {
+
+}
+
+task run -depends deploy {
+
+}

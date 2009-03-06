@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace MyMoney.Presentation.Model.Menu
+namespace MoMoney.Presentation.Model.Menu
 {
     internal class menu_item_separator : IMenuItem
     {

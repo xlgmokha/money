@@ -1,11 +1,11 @@
 using System;
 using DataDynamics.ActiveReports;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Model.reporting
+namespace MoMoney.Presentation.Model.reporting
 {
     [Concern(typeof (report_binding_extensions))]
     public class when_binding_a_active_report_control_to_a_string_property_of_a_dto : concerns_for

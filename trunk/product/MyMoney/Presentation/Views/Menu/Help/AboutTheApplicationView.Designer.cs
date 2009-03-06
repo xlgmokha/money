@@ -1,4 +1,4 @@
-namespace MyMoney.Presentation.Views.Menu.Help
+namespace MoMoney.Presentation.Views.Menu.Help
 {
     public partial class AboutTheApplicationView
     {
@@ -162,7 +162,7 @@ namespace MyMoney.Presentation.Views.Menu.Help
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "About MyMoney";
+            this.Text = "About MoMoney";
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ux_logo)).EndInit();

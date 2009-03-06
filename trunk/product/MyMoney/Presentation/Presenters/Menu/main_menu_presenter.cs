@@ -1,9 +1,9 @@
-using MyMoney.Presentation.Core;
-using MyMoney.Presentation.Model.Menu;
-using MyMoney.Presentation.Views.Menu;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Model.Menu;
+using MoMoney.Presentation.Views.Menu;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Presenters.Menu
+namespace MoMoney.Presentation.Presenters.Menu
 {
     public interface IMainMenuPresenter : IPresentationModule
     {

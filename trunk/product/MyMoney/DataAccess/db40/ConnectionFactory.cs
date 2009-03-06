@@ -1,14 +1,16 @@
 using Db4objects.Db4o;
-using MyMoney.Infrastructure.Extensions;
-using MyMoney.Presentation.Model.Projects;
+using JetBrains.Annotations;
+using MoMoney.Infrastructure.Extensions;
+using MoMoney.Presentation.Model.Projects;
 
-namespace MyMoney.DataAccess.db40
+namespace MoMoney.DataAccess.db40
 {
     public interface IConnectionFactory
     {
         IObjectContainer open_connection_to(IFile the_path_to_the_database_file);
     }
 
+    [UsedImplicitly]
     public class ConnectionFactory : IConnectionFactory
     {
         public IObjectContainer open_connection_to(IFile the_path_to_the_database_file)

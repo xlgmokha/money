@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Domain.accounting.billing;
-using MyMoney.Domain.Core;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
-using mocking_extensions=MyMoney.Testing.spechelpers.core.mocking_extensions;
+using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.Core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
+using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
-namespace MyMoney.Domain.accounting
+namespace MoMoney.Domain.accounting
 {
     [Concern(typeof (GeneralLedger))]
     public abstract class behaves_like_a_general_ledger : concerns_for<IGeneralLedger, GeneralLedger>

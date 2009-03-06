@@ -1,9 +1,9 @@
 ﻿using DataDynamics.ActiveReports;
-using MyMoney.Presentation.Model.reporting;
-using MyMoney.Presentation.Views.core;
-using MyMoney.Utility.Extensions;
+using MoMoney.Presentation.Model.reporting;
+using MoMoney.Presentation.Views.core;
+using MoMoney.Utility.Extensions;
 
-namespace MyMoney.Presentation.Views.reporting
+namespace MoMoney.Presentation.Views.reporting
 {
     public partial class ReportViewer : ApplicationDockedWindow, IReportViewer
     {

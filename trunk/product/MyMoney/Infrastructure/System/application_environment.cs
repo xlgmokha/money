@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace MyMoney.Infrastructure.System
+namespace MoMoney.Infrastructure.System
 {
     public interface IApplicationEnvironment
     {

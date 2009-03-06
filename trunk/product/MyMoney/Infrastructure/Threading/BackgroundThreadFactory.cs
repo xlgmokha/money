@@ -1,8 +1,8 @@
 using System;
-using MyMoney.Infrastructure.Container;
-using MyMoney.Utility.Core;
+using MoMoney.Infrastructure.Container;
+using MoMoney.Utility.Core;
 
-namespace MyMoney.Infrastructure.Threading
+namespace MoMoney.Infrastructure.Threading
 {
     public interface IBackgroundThreadFactory
     {

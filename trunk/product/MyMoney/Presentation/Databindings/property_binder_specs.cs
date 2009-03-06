@@ -1,10 +1,10 @@
 using System.Reflection;
 using jpboodhoo.bdd.contexts;
-using MyMoney.Testing.MetaData;
-using MyMoney.Testing.spechelpers.contexts;
-using MyMoney.Testing.spechelpers.core;
+using MoMoney.Testing.MetaData;
+using MoMoney.Testing.spechelpers.contexts;
+using MoMoney.Testing.spechelpers.core;
 
-namespace MyMoney.Presentation.Databindings
+namespace MoMoney.Presentation.Databindings
 {
     [Concern(typeof (property_binder<IAnInterface, string>))]
     public abstract class behaves_like_a_property_binder : concerns_for<IPropertyBinder<IAnInterface, string>, property_binder<IAnInterface, string>>
