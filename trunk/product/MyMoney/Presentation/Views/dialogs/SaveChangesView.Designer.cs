@@ -135,9 +135,9 @@ public    partial class SaveChangesView
         #endregion
 
     public System.Windows.Forms.Button ux_save_button;
-        private System.Windows.Forms.Button ux_do_not_save_button;
-        private System.Windows.Forms.Button ux_cancel_button;
-        private System.Windows.Forms.PictureBox ux_image;
+        public System.Windows.Forms.Button ux_do_not_save_button;
+        public System.Windows.Forms.Button ux_cancel_button;
+        public System.Windows.Forms.PictureBox ux_image;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
