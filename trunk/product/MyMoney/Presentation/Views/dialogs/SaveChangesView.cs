@@ -1,6 +1,8 @@
 using System;
 using System.Windows.Forms;
+using Castle.Core;
 using JetBrains.Annotations;
+using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
@@ -8,6 +10,7 @@ using MoMoney.Presentation.Views.core;
 namespace MoMoney.Presentation.Views.dialogs
 {
     [UsedImplicitly]
+    [Interceptor(typeof (ISynchronizedInterceptor))]
     public partial class SaveChangesView : ApplicationWindow, ISaveChangesView
     {
         bool can_be_closed;

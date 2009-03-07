@@ -1,5 +1,6 @@
 using System.Windows.Forms;
 using Castle.Core;
+using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
@@ -9,6 +10,7 @@ using MoMoney.Presentation.Resources;
 namespace MoMoney.Presentation.Views.Shell
 {
     [Singleton]
+    [Interceptor(typeof (ISynchronizedInterceptor))]
     public class NotificationIconView : INotificationIconView
     {
         private NotifyIcon ux_notification_icon;

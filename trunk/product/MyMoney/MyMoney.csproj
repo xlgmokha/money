@@ -196,6 +196,7 @@
     <Compile Include="Infrastructure\cloning\Serializer.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ApplyLoggingInterceptor.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecification.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecificationSpecs.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ConfigureComponentLifestyle.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\IComponentExclusionSpecification.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ImplementationOfDependencyRegistry.cs" />
@@ -210,10 +211,11 @@
     <Compile Include="Infrastructure\eventing\IEventSubscriber.cs" />
     <Compile Include="Infrastructure\Extensions\threading_extensions.cs" />
     <Compile Include="Infrastructure\interceptors\Lazy.cs" />
-    <Compile Include="Infrastructure\interceptors\lazy_specs.cs" />
-    <Compile Include="Infrastructure\interceptors\lazy_loaded_interceptor.cs" />
-    <Compile Include="Infrastructure\interceptors\logging_interceptor.cs" />
-    <Compile Include="Infrastructure\interceptors\raise_event_interceptor.cs" />
+    <Compile Include="Infrastructure\interceptors\LazySpecs.cs" />
+    <Compile Include="Infrastructure\interceptors\LazyLoadedInterceptor.cs" />
+    <Compile Include="Infrastructure\interceptors\LoggingInterceptor.cs" />
+    <Compile Include="Infrastructure\interceptors\RaiseEventInterceptor.cs" />
+    <Compile Include="Infrastructure\interceptors\SynchronizedInterceptor.cs" />
     <Compile Include="Infrastructure\interceptors\UnitOfWorkInterceptor.cs" />
     <Compile Include="Infrastructure\interceptors\UnitOfWorkInterceptorSpecs.cs" />
     <Compile Include="Infrastructure\Logging\ILoggable.cs" />
@@ -422,6 +424,7 @@
     </Compile>
     <Compile Include="Presentation\Views\listbox_extensions.cs" />
     <Compile Include="Presentation\Views\Menu\ApplicationMenuHost.cs" />
+    <Compile Include="Presentation\Views\Navigation\IMainMenuView.cs" />
     <Compile Include="Presentation\Views\Navigation\MainMenuView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -451,6 +454,7 @@
     <Compile Include="Presentation\Views\Shell\IGettingStartedView.cs" />
     <Compile Include="Presentation\Views\Shell\INotificationIconView.cs" />
     <Compile Include="Presentation\Views\Shell\IShell.cs" />
+    <Compile Include="Presentation\Views\Shell\IStatusBarView.cs" />
     <Compile Include="Presentation\Views\Shell\IUnhandledErrorView.cs" />
     <Compile Include="Presentation\Views\Shell\NotificationIconView.cs" />
     <Compile Include="Presentation\Views\Shell\StatusBarView.cs" />
@@ -575,7 +579,8 @@
     </Compile>
     <Compile Include="Utility\Core\chained_command.cs" />
     <Compile Include="Utility\Extensions\command_extensions.cs" />
-    <Compile Include="Utility\Extensions\type_extensions.cs" />
+    <Compile Include="Utility\Extensions\TypeExtensions.cs" />
+    <Compile Include="Utility\Extensions\TypeExtensionsSpecs.cs" />
     <Compile Include="Utility\Extensions\visitor_extensions.cs" />
     <Compile Include="windows.ui\check_for_updates.cs" />
     <Compile Include="windows.ui\hookup.cs" />
@@ -584,8 +589,8 @@
     <Compile Include="Infrastructure\Container\dependency_resolution_exception.cs" />
     <Compile Include="Infrastructure\Container\Resolve.cs" />
     <Compile Include="Infrastructure\Container\ResolveSpecs.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\windsor_dependency_registry.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\windsor_dependency_registry_specs.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\WindsorDependencyRegistry.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\WindsorDependencyRegistrySpecs.cs" />
     <Compile Include="Utility\Core\ICommand.cs" />
     <Compile Include="Utility\Core\IMapper.cs" />
     <Compile Include="Utility\Extensions\string_extensions.cs" />

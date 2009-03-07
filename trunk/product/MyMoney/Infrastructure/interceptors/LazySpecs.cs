@@ -7,7 +7,7 @@ using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MoMoney.Infrastructure.interceptors
 {
-    [Concern(typeof (lazy))]
+    [Concern(typeof (Lazy))]
     public abstract class behaves_like_a_lazy_loaded_object : concerns_for
     {
         context c = () =>
@@ -33,7 +33,7 @@ namespace MoMoney.Infrastructure.interceptors
 
         because b = () =>
                         {
-                            var result = lazy.Load<ITargetObject>();
+                            var result = Lazy.load<ITargetObject>();
                             result.OneMethod();
                         };
 
@@ -56,7 +56,7 @@ namespace MoMoney.Infrastructure.interceptors
 
         because b = () =>
                         {
-                            var proxy = lazy.Load<ITargetObject>();
+                            var proxy = Lazy.load<ITargetObject>();
                             result = proxy.FirstValueReturningMethod();
                         };
 
@@ -76,7 +76,7 @@ namespace MoMoney.Infrastructure.interceptors
 
         because b = () =>
                         {
-                            var proxy = lazy.Load<ITargetObject>();
+                            var proxy = Lazy.load<ITargetObject>();
                             proxy.SecondMethod();
                             proxy.FirstValueReturningMethod();
                         };
@@ -100,7 +100,7 @@ namespace MoMoney.Infrastructure.interceptors
 
         because b = () =>
                         {
-                            var proxy = lazy.Load<ITargetObject>();
+                            var proxy = Lazy.load<ITargetObject>();
                             result = proxy.ValueReturningMethodWithAnArgument(88);
                         };
 
@@ -122,7 +122,7 @@ namespace MoMoney.Infrastructure.interceptors
 
         because b = () =>
                         {
-                            var proxy = lazy.Load<ITargetObject>();
+                            var proxy = Lazy.load<ITargetObject>();
                             result = proxy.GetterAndSetterProperty;
                         };
 
@@ -144,7 +144,7 @@ namespace MoMoney.Infrastructure.interceptors
 
         because b = () =>
                         {
-                            var proxy = lazy.Load<ITargetObject>();
+                            var proxy = Lazy.load<ITargetObject>();
                             proxy.GetterAndSetterProperty = "khan";
                         };
 
@@ -168,7 +168,7 @@ namespace MoMoney.Infrastructure.interceptors
 
         because b = () =>
                         {
-                            var proxy = lazy.Load<IGenericInterface<string>>();
+                            var proxy = Lazy.load<IGenericInterface<string>>();
                             result = proxy.ValueReturningMethodWithAnArgument("blah");
                         };
 

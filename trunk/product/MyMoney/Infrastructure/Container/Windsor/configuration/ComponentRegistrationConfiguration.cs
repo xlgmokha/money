@@ -15,7 +15,7 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
             new RegisterComponentContract()
                 .then(new ConfigureComponentLifestyle())
                 .then(new ApplyLoggingInterceptor())
-                .then(new LogComponent())
+                //.then(new LogComponent())
                 .configure(registration);
         }
     }

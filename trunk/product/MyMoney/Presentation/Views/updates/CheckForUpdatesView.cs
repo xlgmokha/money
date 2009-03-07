@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using System.Windows.Forms;
+using Castle.Core;
+using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.updates;
 using MoMoney.Presentation.Resources;
@@ -7,6 +9,7 @@ using MoMoney.Presentation.Views.core;
 
 namespace MoMoney.Presentation.Views.updates
 {
+    [Interceptor(typeof (ISynchronizedInterceptor))]
     public partial class CheckForUpdatesView : ApplicationWindow, ICheckForUpdatesView
     {
         ICheckForUpdatesPresenter the_presenter;

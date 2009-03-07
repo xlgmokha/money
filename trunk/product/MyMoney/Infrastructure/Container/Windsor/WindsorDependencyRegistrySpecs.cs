@@ -7,7 +7,7 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Infrastructure.Container.Windsor
 {
-    [Concern(typeof (windsor_dependency_registry))]
+    [Concern(typeof (WindsorDependencyRegistry))]
     public class when_registering_a_singleton_component_with_the_windsor_container : concerns_for<IDependencyRegistry>
     {
         it should_return_the_same_instance_each_time_its_resolved =
@@ -17,7 +17,7 @@ namespace MoMoney.Infrastructure.Container.Windsor
 
         public override IDependencyRegistry create_sut()
         {
-            return new windsor_dependency_registry();
+            return new WindsorDependencyRegistry();
         }
 
         because b = () => { result = sut.get_a<IBird>(); };
@@ -25,14 +25,14 @@ namespace MoMoney.Infrastructure.Container.Windsor
         static IBird result;
     }
 
-    [Concern(typeof (windsor_dependency_registry))]
+    [Concern(typeof (WindsorDependencyRegistry))]
     public class when_creating_the_windsor_resolver_ : concerns_for<IDependencyRegistry>
     {
         it should_leverage_the_factory_to_create_the_underlying_container = () => factory.was_told_to(f => f.create());
 
         public override IDependencyRegistry create_sut()
         {
-            return new windsor_dependency_registry(factory);
+            return new WindsorDependencyRegistry(factory);
         }
 
         context c = () =>

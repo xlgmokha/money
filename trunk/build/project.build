@@ -37,7 +37,7 @@
 				<include name="${build.config.dir}\**\*.cs" />
 				<exclude name="${product.dir}\**\AssemblyInfo.cs" />
 				<exclude name="${product.dir}\**\*Specs.cs" />
-				<exclude name="${product.dir}\MoMoney\Testing\**\*.*" />
+				<exclude name="${product.dir}\MyMoney\Testing\**\*.*" />
 			</sources>			
 			<references>
 				<include name="${build.lib.dir}\app\**\*.dll" />

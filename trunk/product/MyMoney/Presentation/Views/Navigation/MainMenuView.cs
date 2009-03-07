@@ -1,3 +1,5 @@
+using Castle.Core;
+using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.Shell;
@@ -6,12 +8,7 @@ using XPExplorerBar;
 
 namespace MoMoney.Presentation.Views.Navigation
 {
-    public interface IMainMenuView : IDockedContentView
-    {
-        void display();
-        void add(Expando expando);
-    }
-
+    [Interceptor(typeof (ISynchronizedInterceptor))]
     public partial class MainMenuView : ApplicationDockedWindow, IMainMenuView
     {
         readonly IShell shell;

@@ -1,4 +1,6 @@
 using System.Windows.Forms;
+using Castle.Core;
+using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Model.Navigation;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
@@ -8,6 +10,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace MoMoney.Presentation.Views.Navigation
 {
+    [Interceptor(typeof (ISynchronizedInterceptor))]
     public partial class NavigationView : ApplicationDockedWindow, INavigationView
     {
         readonly IShell shell;

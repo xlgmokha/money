@@ -12,7 +12,7 @@ namespace MoMoney.windows.ui
         {
             using (new display_the_splash_screen().on_a_background_thread())
             {
-                var registry = new windsor_dependency_registry();
+                var registry = new WindsorDependencyRegistry();
                 new wire_up_the_core_services_into_the(registry)
                     .then(new wire_up_the_mappers_in_to_the(registry))
                     .then(new wire_up_the_views_in_to_the(registry))

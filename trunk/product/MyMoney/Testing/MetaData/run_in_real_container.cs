@@ -22,7 +22,7 @@ namespace MoMoney.Testing.MetaData
         public override object Execute(object o, IList args)
         {
             try {
-                resolve.initialize_with(new windsor_dependency_registry());
+                resolve.initialize_with(new WindsorDependencyRegistry());
                 return Invoker.Execute(o, args);
             }
             finally {

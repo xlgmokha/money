@@ -7,9 +7,9 @@ namespace MoMoney.windows.ui
 {
     internal class wire_up_the_reports_in_to_the : ICommand
     {
-        private readonly windsor_dependency_registry registry;
+        private readonly WindsorDependencyRegistry registry;
 
-        public wire_up_the_reports_in_to_the(windsor_dependency_registry registry)
+        public wire_up_the_reports_in_to_the(WindsorDependencyRegistry registry)
         {
             this.registry = registry;
         }

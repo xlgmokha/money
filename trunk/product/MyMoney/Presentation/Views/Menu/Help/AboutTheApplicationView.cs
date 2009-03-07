@@ -1,11 +1,14 @@
 using System.Linq;
 using System.Reflection;
+using Castle.Core;
+using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.Menu.Help
 {
+    [Interceptor(typeof (ISynchronizedInterceptor))]
     public partial class AboutTheApplicationView : ApplicationWindow, IAboutApplicationView
     {
         public AboutTheApplicationView()

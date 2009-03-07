@@ -3,11 +3,11 @@ using Castle.Core.Interceptor;
 
 namespace MoMoney.Infrastructure.interceptors
 {
-    internal class lazy_loaded_interceptor<T> : IInterceptor
+    internal class LazyLoadedInterceptor<T> : IInterceptor
     {
         private readonly Func<T> get_the_implementation;
 
-        public lazy_loaded_interceptor(Func<T> get_the_implementation)
+        public LazyLoadedInterceptor(Func<T> get_the_implementation)
         {
             this.get_the_implementation = get_the_implementation;
         }

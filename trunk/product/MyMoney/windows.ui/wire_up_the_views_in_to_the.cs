@@ -15,9 +15,9 @@ namespace MoMoney.windows.ui
 {
     internal class wire_up_the_views_in_to_the : ICommand
     {
-        readonly windsor_dependency_registry register;
+        readonly WindsorDependencyRegistry register;
 
-        public wire_up_the_views_in_to_the(windsor_dependency_registry registry)
+        public wire_up_the_views_in_to_the(WindsorDependencyRegistry registry)
         {
             register = registry;
         }

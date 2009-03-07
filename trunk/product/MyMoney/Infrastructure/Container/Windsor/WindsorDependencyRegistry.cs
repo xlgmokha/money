@@ -6,15 +6,15 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container.Windsor
 {
-    public class windsor_dependency_registry : IDependencyRegistry
+    public class WindsorDependencyRegistry : IDependencyRegistry
     {
         readonly IWindsorContainer underlying_container;
 
-        public windsor_dependency_registry() : this(new WindsorContainerFactory())
+        public WindsorDependencyRegistry() : this(new WindsorContainerFactory())
         {
         }
 
-        public windsor_dependency_registry(IWindsorContainerFactory factory)
+        public WindsorDependencyRegistry(IWindsorContainerFactory factory)
         {
             underlying_container = factory.create();
         }

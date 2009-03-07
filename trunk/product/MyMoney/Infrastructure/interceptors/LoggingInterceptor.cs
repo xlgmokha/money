@@ -5,9 +5,10 @@ using MoMoney.Infrastructure.Extensions;
 namespace MoMoney.Infrastructure.interceptors
 {
     public interface ILoggingInterceptor : IInterceptor
-    {}
+    {
+    }
 
-    public class logging_interceptor : ILoggingInterceptor
+    public class LoggingInterceptor : ILoggingInterceptor
     {
         public void Intercept(IInvocation invocation)
         {
