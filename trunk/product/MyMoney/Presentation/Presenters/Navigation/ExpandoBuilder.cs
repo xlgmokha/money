@@ -41,15 +41,10 @@ namespace MoMoney.Presentation.Presenters.Navigation
             pane.Anchor = (AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right;
             pane.Animate = true;
             pane.AutoLayout = true;
-            pane.ExpandedHeight = 63;
-            pane.Font = new Font("Tahoma", 8.25F);
             pane.Items.AddRange(create_items());
-            pane.Location = new Point(12, 12);
-            pane.Margin = new Padding(4);
+            //pane.Margin = new Padding(4);
             pane.Name = "ux_" + the_name;
-            pane.Size = new Size(292, 63);
             pane.SpecialGroup = true;
-            pane.TabIndex = 5;
             pane.Text = the_name;
 
             ((ISupportInitialize) (pane)).EndInit();

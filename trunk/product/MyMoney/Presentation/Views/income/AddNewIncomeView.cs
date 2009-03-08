@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using MoMoney.Domain.accounting.billing;
+using MoMoney.Presentation.Databindings;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters.income;
 using MoMoney.Presentation.Presenters.income.dto;
@@ -23,9 +24,9 @@ namespace MoMoney.Presentation.Views.income
             ux_submit_button.Click += (sender, e) => presenter.submit_new(create_income());
         }
 
-        public void display(IEnumerable<ICompany> companys)
+        public void display(IEnumerable<ICompany> companies)
         {
-            ux_companys.bind_to(companys);
+            ux_companys.bind_to(companies);
         }
 
         public void display(IEnumerable<income_information_dto> incomes)

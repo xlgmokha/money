@@ -21,7 +21,6 @@ namespace MoMoney.windows.ui
             {
                 this.log().error(e);
                 resolve.dependency_for<IEventAggregator>().publish(new unhandled_error_occurred(e));
-                //MessageBox.Show(e.ToString(), e.Message);
             }
         }
     }

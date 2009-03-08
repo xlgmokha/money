@@ -12,7 +12,7 @@ namespace MoMoney.Presentation.Context
                                        IExitCommand exit_command,
                                        ILoadApplicationShellCommand command)
         {
-            shell_view.downcast_to<Form>().Closed += delegate { exit_command.run(); };
+            shell_view.downcast_to<Form>().Closed += ((sender, args) => exit_command.run());
             MainForm = shell_view.downcast_to<Form>();
             command.run();
         }

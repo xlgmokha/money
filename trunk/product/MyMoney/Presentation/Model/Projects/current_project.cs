@@ -16,6 +16,8 @@ namespace MoMoney.Presentation.Model.Projects
         bool has_been_saved_at_least_once();
         void save_changes();
         bool has_unsaved_changes();
+        bool is_open();
+        void close();
     }
 
     [Singleton]
@@ -24,6 +26,7 @@ namespace MoMoney.Presentation.Model.Projects
         readonly IDatabaseConfiguration configuration;
         readonly IEventAggregator broker;
         IFile current_file;
+        bool is_project_open = false;
         bool changes_to_save = false;
 
         public current_project(IDatabaseConfiguration configuration, IEventAggregator broker)
@@ -49,6 +52,7 @@ namespace MoMoney.Presentation.Model.Projects
 
         public void start_a_new_project()
         {
+            is_project_open = true;
             current_file = null;
             configuration.change_path_to((ApplicationFile) Path.GetTempFileName());
             changes_to_save = false;
@@ -81,6 +85,18 @@ namespace MoMoney.Presentation.Model.Projects
         public bool has_unsaved_changes()
         {
             return changes_to_save;
+        }
+
+        public bool is_open()
+        {
+            return is_project_open;
+        }
+
+        public void close()
+        {
+            is_project_open = false;
+            changes_to_save = false;
+            broker.publish<closing_project_event>();
         }
 
         void ensure_that_a_path_to_save_to_has_been_specified()

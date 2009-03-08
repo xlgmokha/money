@@ -34,21 +34,26 @@ namespace MoMoney.Presentation.Views.Navigation
             // 
             // ux_system_task_pane
             // 
+            this.ux_system_task_pane.AllowDrop = true;
             this.ux_system_task_pane.AutoScrollMargin = new System.Drawing.Size(12, 12);
+            this.ux_system_task_pane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ux_system_task_pane.CausesValidation = false;
             this.ux_system_task_pane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ux_system_task_pane.Location = new System.Drawing.Point(0, 0);
+            this.ux_system_task_pane.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ux_system_task_pane.Name = "ux_system_task_pane";
-            this.ux_system_task_pane.Size = new System.Drawing.Size(237, 743);
+            this.ux_system_task_pane.Size = new System.Drawing.Size(316, 914);
             this.ux_system_task_pane.TabIndex = 2;
             this.ux_system_task_pane.Text = "taskPane1";
             // 
-            // actions_task_list
+            // MainMenuView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(237, 743);
+            this.ClientSize = new System.Drawing.Size(316, 914);
             this.Controls.Add(this.ux_system_task_pane);
-            this.Name = "actions_task_list";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "MainMenuView";
             this.TabText = "actions_task_list";
             this.Text = "actions_task_list";
             ((System.ComponentModel.ISupportInitialize)(this.ux_system_task_pane)).EndInit();

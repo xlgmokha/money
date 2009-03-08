@@ -1,42 +1,24 @@
-using System;
-using System.Windows.Forms;
+﻿using System;
 using MoMoney.Presentation.Presenters.Shell;
+using MoMoney.Presentation.Views.core;
 
 namespace MoMoney.Presentation.Views.Shell
 {
-    public class UnhandledErrorView : IUnhandledErrorView
+    public partial class UnhandledErrorView : ApplicationWindow, IUnhandledErrorView
     {
+        public UnhandledErrorView()
+        {
+            InitializeComponent();
+            titled("Aw snap... an error occurred");
+        }
+
         public void attach_to(IUnhandledErrorPresenter presenter)
         {
         }
 
         public void display(Exception exception)
         {
-            MessageBox.Show(exception.ToString());
-        }
-
-        public IAsyncResult BeginInvoke(Delegate method, object[] args)
-        {
-            return null;
-        }
-
-        public object EndInvoke(IAsyncResult result)
-        {
-            return new object();
-        }
-
-        public object Invoke(Delegate method, object[] args)
-        {
-            return new object();
-        }
-
-        public bool InvokeRequired
-        {
-            get { return false; }
-        }
-
-        public void Dispose()
-        {
+            ux_message.Text = exception.ToString();
         }
     }
 }

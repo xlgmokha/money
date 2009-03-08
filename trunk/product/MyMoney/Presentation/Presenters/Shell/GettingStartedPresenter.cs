@@ -24,6 +24,7 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void run()
         {
+            view.display();
             broker.subscribe_to(this);
         }
 

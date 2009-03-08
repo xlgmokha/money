@@ -27,7 +27,7 @@ namespace MoMoney.Presentation.Presenters.Shell
             all_tool_bar_buttons().each(x => shell.add_to_tool_bar(x));
         }
 
-        IEnumerable<ToolStripItem> all_tool_bar_buttons()
+        static IEnumerable<ToolStripItem> all_tool_bar_buttons()
         {
             yield return create
                 .a_tool_bar_item()

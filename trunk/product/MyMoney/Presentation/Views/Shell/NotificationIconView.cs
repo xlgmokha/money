@@ -5,6 +5,8 @@ using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
 using MoMoney.Presentation.Resources;
+using MoMoney.Utility.Extensions;
+using MenuItem=System.Windows.Forms.MenuItem;
 
 namespace MoMoney.Presentation.Views.Shell
 {
@@ -64,12 +66,9 @@ namespace MoMoney.Presentation.Views.Shell
 
         MenuItem map_from(ISubMenu item)
         {
-            var toolStripMenuItem = new MenuItem(item.name);
-            foreach (var menuItem in item.all_menu_items())
-            {
-                toolStripMenuItem.MenuItems.Add(menuItem.build_menu_item());
-            }
-            return toolStripMenuItem;
+            var menu_item = new MenuItem(item.name);
+            item.all_menu_items().each(x => menu_item.MenuItems.Add(x.build_menu_item()) );
+            return menu_item;
         }
 
         public void Dispose()

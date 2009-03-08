@@ -32,6 +32,8 @@ namespace MoMoney.Testing.win.forms
         {
             void OnActivated(EventArgs e);
             void OnDeactivate(EventArgs e);
+            void OnClosed(EventArgs e);
+            void OnClosing(CancelEventArgs e);
         }
     }
 }

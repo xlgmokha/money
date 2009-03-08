@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.Composition;
 using System.Windows.Forms;
-using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 
 namespace MoMoney.Presentation.Views.Shell
@@ -11,7 +10,6 @@ namespace MoMoney.Presentation.Views.Shell
         public ApplicationShell()
         {
             InitializeComponent();
-            Icon = ApplicationIcons.Application;
         }
 
         public StatusStrip status_bar()

@@ -2,15 +2,15 @@ using System.Windows.Forms;
 
 namespace MoMoney.Presentation.Model.keyboard
 {
-    public class shortcut_keys
+    public static class shortcut_keys
     {
-        public static readonly shortcut_key control = new shortcut_key(Keys.Control);
-        public static readonly shortcut_key alt = new shortcut_key(Keys.Alt);
-        public static readonly shortcut_key none = new shortcut_key(Keys.None);
-        public static readonly shortcut_key L = new shortcut_key(Keys.L);
-        public static readonly shortcut_key N = new shortcut_key(Keys.N);
-        public static readonly shortcut_key O = new shortcut_key(Keys.O);
-        public static readonly shortcut_key S = new shortcut_key(Keys.S);
-        public static readonly shortcut_key X = new shortcut_key(Keys.X);
+        public static readonly ShortcutKey control = new ShortcutKey(Keys.Control);
+        public static readonly ShortcutKey alt = new ShortcutKey(Keys.Alt);
+        public static readonly ShortcutKey none = new ShortcutKey(Keys.None);
+        public static readonly ShortcutKey L = new ShortcutKey(Keys.L);
+        public static readonly ShortcutKey N = new ShortcutKey(Keys.N);
+        public static readonly ShortcutKey O = new ShortcutKey(Keys.O);
+        public static readonly ShortcutKey S = new ShortcutKey(Keys.S);
+        public static readonly ShortcutKey X = new ShortcutKey(Keys.X);
     }
 }

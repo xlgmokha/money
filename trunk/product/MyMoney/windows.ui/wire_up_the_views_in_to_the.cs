@@ -29,6 +29,7 @@ namespace MoMoney.windows.ui
         {
             register.singleton<IShell, ApplicationShell>();
             //register.proxy(new SynchronizedViewProxyConfiguration<IShell>(), () => new ApplicationShell());
+            //register.proxy(new ShellConfiguration(), () => new ApplicationShell());
             register.singleton<the_application_context, the_application_context>();
             register.transient<IAboutApplicationView, AboutTheApplicationView>();
             register.transient<ISplashScreenView, SplashScreenView>();
@@ -43,6 +44,8 @@ namespace MoMoney.windows.ui
             register.transient<ICheckForUpdatesView, CheckForUpdatesView>();
             register.singleton<INotificationIconView, NotificationIconView>();
             register.transient<IStatusBarView, StatusBarView>();
+            register.transient<IUnhandledErrorView, UnhandledErrorView>();
+            register.transient<IGettingStartedView, WelcomeScreen>();
         }
     }
 
@@ -51,6 +54,21 @@ namespace MoMoney.windows.ui
         public void configure(IProxyBuilder<T> item)
         {
             item.add_interceptor<SynchronizedInterceptor<T>>();
+        }
+    }
+
+    internal class ShellConfiguration : IConfiguration<IProxyBuilder<IShell>>
+    {
+        public void configure(IProxyBuilder<IShell> item)
+        {
+            IShell shell = item.add_interceptor<SynchronizedInterceptor<IShell>>().InterceptOn;
+            shell.add(null);
+            shell.add_to_main_menu(null);
+            shell.add_to_tool_bar(null);
+            shell.clear_menu_items();
+            shell.close_all_windows();
+            shell.close_the_active_window();
+            shell.status_bar();
         }
     }
 }

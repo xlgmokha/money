@@ -7,8 +7,8 @@ namespace MoMoney.Presentation.Resources
 {
     public class ApplicationImage : IDisposable
     {
-        private readonly string name_of_the_image;
-        private readonly Image underlying_image;
+        readonly string name_of_the_image;
+        readonly Image underlying_image;
 
         public ApplicationImage(string name_of_the_image)
         {
@@ -28,7 +28,12 @@ namespace MoMoney.Presentation.Resources
             return image_to_convert.underlying_image;
         }
 
-        private string FullPathToTheFile(ApplicationImage image_to_convert)
+        public static implicit operator Bitmap(ApplicationImage image_to_convert)
+        {
+            return new Bitmap(image_to_convert);
+        }
+
+        string FullPathToTheFile(ApplicationImage image_to_convert)
         {
             return Path.Combine(image_to_convert.startup_directory() + @"\images", image_to_convert.name_of_the_image);
         }

@@ -208,7 +208,7 @@
     <Compile Include="Infrastructure\Container\Windsor\configuration\SubclassesForm.cs" />
     <Compile Include="Infrastructure\Container\Windsor\WindsorContainerFactory.cs" />
     <Compile Include="Infrastructure\debugging\Launch.cs" />
-    <Compile Include="Infrastructure\eventing\event_aggregator.cs" />
+    <Compile Include="Infrastructure\eventing\EventAggregator.cs" />
     <Compile Include="Infrastructure\eventing\IEvent.cs" />
     <Compile Include="Infrastructure\eventing\IEventSubscriber.cs" />
     <Compile Include="Infrastructure\Extensions\threading_extensions.cs" />
@@ -279,16 +279,17 @@
     <Compile Include="Presentation\Model\interaction\INotification.cs" />
     <Compile Include="Presentation\Model\interaction\notification_message.cs" />
     <Compile Include="Presentation\Model\keyboard\shortcut_keys.cs" />
-    <Compile Include="Presentation\Model\keyboard\shortcut_key.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\close_project_command.cs" />
+    <Compile Include="Presentation\Model\keyboard\ShortcutKey.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\CloseProjectCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\close_window_command.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\new_command_specs.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\SaveChangesCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\save_as_command_specs.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\save_command_specs.cs" />
-    <Compile Include="Presentation\Model\Menu\menu_item_separator.cs" />
+    <Compile Include="Presentation\Model\Menu\MenuItemSeparator.cs" />
     <Compile Include="Presentation\Model\Menu\tool_bar_item_builder.cs" />
     <Compile Include="Presentation\Model\Menu\window\window_menu.cs" />
+    <Compile Include="Presentation\Model\messages\closing_project_event.cs" />
     <Compile Include="Presentation\Model\messages\closing_the_application.cs" />
     <Compile Include="Presentation\Model\messages\unhandled_error_occurred.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\add_bill_payment_branch.cs" />
@@ -299,18 +300,18 @@
     <Compile Include="Presentation\Core\PresenterRegistry.cs" />
     <Compile Include="Presentation\Model\Menu\create.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\ExitCommand.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\new_command.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\open_command.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\open_command_specs.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\NewCommand.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\OpenCommand.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\OpenCommandSpecs.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\save_as_command.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\save_command.cs" />
     <Compile Include="Presentation\Model\Menu\Help\commands\display_information_about_the_application.cs" />
-    <Compile Include="Presentation\Model\Menu\menu_item.cs" />
-    <Compile Include="Presentation\Model\Menu\menu_item_builder.cs" />
-    <Compile Include="Presentation\Model\Menu\sub_menu_registry.cs" />
+    <Compile Include="Presentation\Model\Menu\MenuItem.cs" />
+    <Compile Include="Presentation\Model\Menu\MenuItemBuilder.cs" />
+    <Compile Include="Presentation\Model\Menu\SubMenuRegistry.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\add_new_bill_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\IBranchVisitor.cs" />
-    <Compile Include="Presentation\Model\Navigation\navigation_tree_visitor.cs" />
+    <Compile Include="Presentation\Model\Navigation\NavigationTreeVisitor.cs" />
     <Compile Include="Presentation\Model\Navigation\navigation_tree_visitor_specs.cs" />
     <Compile Include="Presentation\Model\Navigation\tree_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\tree_branch_specs.cs" />
@@ -322,13 +323,13 @@
     <Compile Include="Presentation\Model\reporting\report_binding_extensions.cs" />
     <Compile Include="Presentation\Model\reporting\report_binding_extensions_specs.cs" />
     <Compile Include="Presentation\Model\updates\ApplicationVersion.cs" />
-    <Compile Include="Presentation\Presenters\billing\add_bill_payment_presenter.cs" />
-    <Compile Include="Presentation\Presenters\add_company_presenter.cs" />
-    <Compile Include="Presentation\Presenters\add_company_presenter_specs.cs" />
+    <Compile Include="Presentation\Presenters\billing\AddBillPaymentPresenter.cs" />
+    <Compile Include="Presentation\Presenters\AddCompanyPresenter.cs" />
+    <Compile Include="Presentation\Presenters\AddCompanyPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\billing\dto\add_new_bill_dto.cs" />
     <Compile Include="Presentation\Presenters\billing\dto\bill_information_dto.cs" />
     <Compile Include="Presentation\Presenters\billing\dto\register_new_company.cs" />
-    <Compile Include="Presentation\Presenters\billing\view_all_bills_presenter.cs" />
+    <Compile Include="Presentation\Presenters\billing\ViewAllBillsPresenter.cs" />
     <Compile Include="Presentation\Presenters\Commands\RestartCommand.cs" />
     <Compile Include="Presentation\Presenters\Commands\run_presenter_command.cs" />
     <Compile Include="Presentation\Presenters\Commands\run_the.cs" />
@@ -342,14 +343,14 @@
     <Compile Include="Presentation\Presenters\excel\ICell.cs" />
     <Compile Include="Presentation\Presenters\excel\ICellInterior.cs" />
     <Compile Include="Presentation\Presenters\excel\ICellVisitor.cs" />
-    <Compile Include="Presentation\Presenters\income\add_new_income_presenter.cs" />
-    <Compile Include="Presentation\Presenters\income\add_new_income_presenter_specs.cs" />
+    <Compile Include="Presentation\Presenters\income\AddNewIncomePresenter.cs" />
+    <Compile Include="Presentation\Presenters\income\AddNewIncomePresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\income\dto\income_information_dto.cs" />
     <Compile Include="Presentation\Presenters\income\dto\income_submission_dto.cs" />
     <Compile Include="Presentation\Presenters\income\dto\monthly_summary_dto.cs" />
-    <Compile Include="Presentation\Presenters\income\view_income_history_presenter.cs" />
+    <Compile Include="Presentation\Presenters\income\ViewIncomeHistoryPresenter.cs" />
     <Compile Include="Presentation\Presenters\Menu\Help\about_the_application_presenter.cs" />
-    <Compile Include="Presentation\Presenters\Menu\main_menu_presenter.cs" />
+    <Compile Include="Presentation\Presenters\Menu\MainMenuPresenter.cs" />
     <Compile Include="Presentation\Model\messages\new_project_opened.cs" />
     <Compile Include="Presentation\Model\messages\saved_changes_event.cs" />
     <Compile Include="Presentation\Model\messages\unsaved_changes_event.cs" />
@@ -367,7 +368,7 @@
     <Compile Include="Presentation\Presenters\Navigation\MainMenuPresenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\NavigationPresenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\NavigationPresenterSpecs.cs" />
-    <Compile Include="Presentation\Presenters\reporting\report_presenter.cs" />
+    <Compile Include="Presentation\Presenters\reporting\ReportPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\LoadApplicationShellSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\NotificationIconPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\TaskTrayPresenter.cs" />
@@ -441,7 +442,7 @@
     <Compile Include="Presentation\Views\income\ViewAllIncome.Designer.cs">
       <DependentUpon>ViewAllIncome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Views\listbox_extensions.cs" />
+    <Compile Include="Presentation\Databindings\listbox_extensions.cs" />
     <Compile Include="Presentation\Views\Menu\ApplicationMenuHost.cs" />
     <Compile Include="Presentation\Views\Navigation\IMainMenuView.cs" />
     <Compile Include="Presentation\Views\Navigation\MainMenuView.cs">
@@ -470,6 +471,9 @@
     <Compile Include="Presentation\Views\billing\view_all_bills_report.Designer.cs">
       <DependentUpon>view_all_bills_report.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Views\Shell\ApplicationShellSpecs.cs" />
+    <Compile Include="Presentation\Views\Shell\BitmapRegion.cs" />
+    <Compile Include="Presentation\Views\Shell\button_extensions.cs" />
     <Compile Include="Presentation\Views\Shell\IGettingStartedView.cs" />
     <Compile Include="Presentation\Views\Shell\INotificationIconView.cs" />
     <Compile Include="Presentation\Views\Shell\IShell.cs" />
@@ -479,7 +483,18 @@
     <Compile Include="Presentation\Views\Shell\StatusBarView.cs" />
     <Compile Include="Presentation\Views\Shell\TaskTrayMessage.cs" />
     <Compile Include="Presentation\Views\Shell\TitleBar.cs" />
-    <Compile Include="Presentation\Views\Shell\UnhandledErrorView.cs" />
+    <Compile Include="Presentation\Views\Shell\UnhandledErrorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\Shell\UnhandledErrorView.Designer.cs">
+      <DependentUpon>UnhandledErrorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\Shell\WelcomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\Shell\WelcomeScreen.Designer.cs">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Views\updates\CheckForUpdatesView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -544,7 +559,7 @@
     <Compile Include="Presentation\Presenters\Commands\display_the_splash_screen.cs" />
     <Compile Include="Presentation\Core\IPresentationModule.cs" />
     <Compile Include="Presentation\Core\presenter_registry_extensions.cs" />
-    <Compile Include="Presentation\Model\Menu\File\file_menu.cs" />
+    <Compile Include="Presentation\Model\Menu\File\FileMenu.cs" />
     <Compile Include="Presentation\Model\Menu\Help\help_menu.cs" />
     <Compile Include="Utility\Core\ISpecification.cs" />
     <Compile Include="Utility\Core\Map.cs" />
@@ -619,7 +634,7 @@
     <Compile Include="Presentation\Core\application_controller.cs" />
     <Compile Include="Presentation\Core\IPresenter.cs" />
     <Compile Include="Infrastructure\Container\IDependencyRegistry.cs" />
-    <Compile Include="Presentation\Presenters\Menu\main_menu_presenter_specs.cs" />
+    <Compile Include="Presentation\Presenters\Menu\MainMenuPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Commands\LoadApplicationShell.cs" />
     <Compile Include="Presentation\Views\Menu\ApplicationMenuHostSpecs.cs" />
     <Compile Include="windows.ui\bootstrap.cs" />
@@ -672,6 +687,12 @@
     <EmbeddedResource Include="Presentation\Views\Shell\ApplicationShell.resx">
       <DependentUpon>ApplicationShell.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\Shell\UnhandledErrorView.resx">
+      <DependentUpon>UnhandledErrorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\Shell\WelcomeScreen.resx">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\Startup\SplashScreenView.resx">
       <DependentUpon>SplashScreenView.cs</DependentUpon>

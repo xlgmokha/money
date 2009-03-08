@@ -7,13 +7,13 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Model.Navigation
 {
-    [Concern(typeof (navigation_tree_visitor))]
+    [Concern(typeof (NavigationTreeVisitor))]
     public abstract class behaves_like_a_navigation_tree_visitor :
-        concerns_for<INavigationTreeVisitor, navigation_tree_visitor>
+        concerns_for<INavigationTreeVisitor, NavigationTreeVisitor>
     {
         public override INavigationTreeVisitor create_sut()
         {
-            return new navigation_tree_visitor(factory, registry);
+            return new NavigationTreeVisitor(factory, registry);
         }
 
         context c = () =>

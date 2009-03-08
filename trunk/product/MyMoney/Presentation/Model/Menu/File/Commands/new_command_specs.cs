@@ -7,13 +7,13 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Model.Menu.File.Commands
 {
-    [Concern(typeof (new_command))]
-    public abstract class behaves_like_new_command : concerns_for<INewCommand, new_command>
+    [Concern(typeof (NewCommand))]
+    public abstract class behaves_like_new_command : concerns_for<INewCommand, NewCommand>
     {
-        public override INewCommand create_sut()
-        {
-            return new new_command(current_project, command, save_changes_command);
-        }
+        //public override INewCommand create_sut()
+        //{
+        //    return new NewCommand(current_project, command, save_changes_command);
+        //}
 
         context c = () =>
                         {
