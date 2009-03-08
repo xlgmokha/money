@@ -1,9 +1,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using Castle.Core;
 using MoMoney.Domain.accounting.billing;
-using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters.income;
 using MoMoney.Presentation.Presenters.income.dto;
@@ -12,7 +10,6 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.income
 {
-    [Interceptor(typeof (ISynchronizedInterceptor))]
     public partial class AddNewIncomeView : ApplicationDockedWindow, IAddNewIncomeView
     {
         public AddNewIncomeView()

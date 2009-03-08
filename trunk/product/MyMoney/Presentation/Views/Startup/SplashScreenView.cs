@@ -1,12 +1,9 @@
 using System.Windows.Forms;
-using Castle.Core;
-using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 
 namespace MoMoney.Presentation.Views.Startup
 {
-    [Interceptor(typeof (ISynchronizedInterceptor))]
     public partial class SplashScreenView : ApplicationWindow, ISplashScreenView
     {
         public SplashScreenView()

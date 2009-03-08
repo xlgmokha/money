@@ -1,4 +1,7 @@
+using System.ComponentModel;
 using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Infrastructure.interceptors;
+using MoMoney.Infrastructure.proxies;
 using MoMoney.Presentation.Context;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.billing;
@@ -25,6 +28,7 @@ namespace MoMoney.windows.ui
         public void run()
         {
             register.singleton<IShell, ApplicationShell>();
+            //register.proxy(new SynchronizedViewProxyConfiguration<IShell>(), () => new ApplicationShell());
             register.singleton<the_application_context, the_application_context>();
             register.transient<IAboutApplicationView, AboutTheApplicationView>();
             register.transient<ISplashScreenView, SplashScreenView>();
@@ -37,9 +41,16 @@ namespace MoMoney.windows.ui
             register.transient<IViewIncomeHistory, ViewAllIncome>();
             register.transient<ISaveChangesView, SaveChangesView>();
             register.transient<ICheckForUpdatesView, CheckForUpdatesView>();
-            register.transient<INotificationIconView, NotificationIconView>();
+            register.singleton<INotificationIconView, NotificationIconView>();
             register.transient<IStatusBarView, StatusBarView>();
-            //register.proxy<IStatusBarView>(;
+        }
+    }
+
+    internal class SynchronizedViewProxyConfiguration<T> : IConfiguration<IProxyBuilder<T>> where T : ISynchronizeInvoke
+    {
+        public void configure(IProxyBuilder<T> item)
+        {
+            item.add_interceptor<SynchronizedInterceptor<T>>();
         }
     }
 }

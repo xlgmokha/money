@@ -56,11 +56,11 @@ namespace MoMoney.Infrastructure.Container.Windsor
             return "{0}-{1}".formatted_using(interface_type.FullName, implementation_type.FullName);
         }
 
-        public void proxy<T>(IConfiguration<IProxyBuilder<T>> configuration)
+        public void proxy<T>(IConfiguration<IProxyBuilder<T>> configuration, Func<T> target)
         {
             var builder = new ProxyBuilder<T>();
             configuration.configure(builder);
-            singleton(builder.create_proxy_for(() => underlying_container.Resolve<T>()));
+            singleton(builder.create_proxy_for(target));
         }
     }
 }

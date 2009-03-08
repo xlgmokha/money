@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using Castle.Core;
 using MoMoney.Domain.accounting.billing;
-using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Presenters.billing;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.core;
@@ -9,7 +7,6 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.billing
 {
-    [Interceptor(typeof (ISynchronizedInterceptor))]
     public partial class add_bill_payment : ApplicationDockedWindow, IAddBillPaymentView
     {
         public add_bill_payment()

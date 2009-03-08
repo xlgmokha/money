@@ -1,14 +1,11 @@
 ﻿using System.ComponentModel.Composition;
 using System.Windows.Forms;
-using Castle.Core;
-using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 
 namespace MoMoney.Presentation.Views.Shell
 {
     [Export(typeof (IShell))]
-    //[Interceptor(typeof (ISynchronizedInterceptor))]
     public partial class ApplicationShell : ApplicationWindow, IShell
     {
         public ApplicationShell()

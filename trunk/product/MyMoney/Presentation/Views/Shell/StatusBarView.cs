@@ -1,10 +1,7 @@
-using Castle.Core;
-using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Resources;
 
 namespace MoMoney.Presentation.Views.Shell
 {
-    [Interceptor(typeof (ISynchronizedInterceptor))]
     public class StatusBarView : IStatusBarView
     {
         readonly IShell shell;

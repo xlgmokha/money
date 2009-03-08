@@ -1,6 +1,5 @@
 using System.Windows.Forms;
 using Castle.Core;
-using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
@@ -10,14 +9,13 @@ using MoMoney.Presentation.Resources;
 namespace MoMoney.Presentation.Views.Shell
 {
     [Singleton]
-    [Interceptor(typeof (ISynchronizedInterceptor))]
     public class NotificationIconView : INotificationIconView
     {
-        private NotifyIcon ux_notification_icon;
-        private readonly IFileMenu file_menu;
-        private readonly IWindowMenu window_menu;
-        private readonly IHelpMenu help_menu;
-        private bool hooked_up;
+        NotifyIcon ux_notification_icon;
+        readonly IFileMenu file_menu;
+        readonly IWindowMenu window_menu;
+        readonly IHelpMenu help_menu;
+        bool hooked_up;
 
         public NotificationIconView(IFileMenu file_menu, IWindowMenu window_menu, IHelpMenu help_menu)
         {
@@ -64,7 +62,7 @@ namespace MoMoney.Presentation.Views.Shell
             ux_notification_icon.ShowBalloonTip(100, message, message, ToolTipIcon.Info);
         }
 
-        private MenuItem map_from(ISubMenu item)
+        MenuItem map_from(ISubMenu item)
         {
             var toolStripMenuItem = new MenuItem(item.name);
             foreach (var menuItem in item.all_menu_items())

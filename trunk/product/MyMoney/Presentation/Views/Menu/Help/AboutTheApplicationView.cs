@@ -8,7 +8,6 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.Menu.Help
 {
-    [Interceptor(typeof (ISynchronizedInterceptor))]
     public partial class AboutTheApplicationView : ApplicationWindow, IAboutApplicationView
     {
         public AboutTheApplicationView()
