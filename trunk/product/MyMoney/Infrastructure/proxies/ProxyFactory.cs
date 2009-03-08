@@ -20,21 +20,30 @@ namespace MoMoney.Infrastructure.proxies
             this.generator = generator;
         }
 
-        public TypeToProxy create_proxy_for<TypeToProxy>(TypeToProxy implementation,
-                                                         IEnumerable<IInterceptor> interceptors)
+        public TypeToProxy create_proxy_for<TypeToProxy>(Func<TypeToProxy> implementation, params IInterceptor[] interceptors)
         {
-            return generator.CreateInterfaceProxyWithTarget<TypeToProxy>(implementation, interceptors.ToArray());
+            return create_proxy_for(lazy_load(implementation), interceptors);
         }
 
-        public TypeToProxy create_proxy_for<TypeToProxy>(Func<TypeToProxy> implementation, IEnumerable<IInterceptor> interceptors)
+        T lazy_load<T>(Func<T> implementation)
         {
-            var proxy = create_proxy_for<TypeToProxy>(() => new LazyLoadedInterceptor<TypeToProxy>(implementation));
-            return create_proxy_for(proxy, interceptors);
+            if (typeof (T).IsInterface)
+            {
+                return generator.CreateInterfaceProxyWithoutTarget<T>(new LazyLoadedInterceptor<T>(implementation));
+            }
+            return generator.CreateClassProxy<T>(new LazyLoadedInterceptor<T>(implementation));
         }
 
-        static T create_proxy_for<T>(Func<IInterceptor> interceptor)
+        TypeToProxy create_proxy_for<TypeToProxy>(TypeToProxy implementation,
+                                                  IEnumerable<IInterceptor> interceptors)
         {
-            return new ProxyGenerator().CreateInterfaceProxyWithoutTarget<T>(interceptor());
+            if (typeof (TypeToProxy).IsInterface)
+            {
+                return generator.CreateInterfaceProxyWithTarget<TypeToProxy>(implementation, interceptors.ToArray());
+            }
+            var list = interceptors.ToList();
+            list.Add(new LazyLoadedInterceptor<TypeToProxy>(() => implementation));
+            return generator.CreateClassProxy<TypeToProxy>(list.ToArray());
         }
     }
 }

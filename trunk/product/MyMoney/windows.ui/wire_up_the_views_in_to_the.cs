@@ -39,6 +39,7 @@ namespace MoMoney.windows.ui
             register.transient<ICheckForUpdatesView, CheckForUpdatesView>();
             register.transient<INotificationIconView, NotificationIconView>();
             register.transient<IStatusBarView, StatusBarView>();
+            //register.proxy<IStatusBarView>(;
         }
     }
 }

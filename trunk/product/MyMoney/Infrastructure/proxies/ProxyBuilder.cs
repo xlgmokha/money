@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Interceptor;
@@ -9,6 +10,7 @@ namespace MoMoney.Infrastructure.proxies
     {
         IConstraintSelector<TypeToProxy> add_interceptor<Interceptor>() where Interceptor : IInterceptor, new();
         TypeToProxy create_proxy_for(TypeToProxy target);
+        TypeToProxy create_proxy_for(Func<TypeToProxy> target);
     }
 
     public class ProxyBuilder<TypeToProxy> : IProxyBuilder<TypeToProxy>
@@ -38,7 +40,12 @@ namespace MoMoney.Infrastructure.proxies
 
         public TypeToProxy create_proxy_for(TypeToProxy target)
         {
-            return proxy_factory.create_proxy_for(()=>target, all_interceptors_with_their_constraints());
+            return create_proxy_for(() => target);
+        }
+
+        public TypeToProxy create_proxy_for(Func<TypeToProxy> target)
+        {
+            return proxy_factory.create_proxy_for(target, all_interceptors_with_their_constraints().ToArray());
         }
 
         IEnumerable<IInterceptor> all_interceptors_with_their_constraints()

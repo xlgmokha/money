@@ -23,12 +23,12 @@ namespace MoMoney.Infrastructure.interceptors
 
     public class when_calling_a_method_with_no_arguments_on_a_lazy_loaded_proxy : behaves_like_a_lazy_loaded_object
     {
-        it should_forward_the_original_call_to_the_target = () => mocking_extensions.was_told_to(target, t => t.OneMethod());
+        it should_forward_the_original_call_to_the_target = () => target.was_told_to(t => t.OneMethod());
 
         context c = () =>
                         {
                             target = an<ITargetObject>();
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target).Repeat.Once();
+                            test_container.is_told_to(t => t.get_a<ITargetObject>()).it_will_return(target).Repeat.Once();
                         };
 
         because b = () =>
@@ -49,9 +49,8 @@ namespace MoMoney.Infrastructure.interceptors
                         {
                             var target = an<ITargetObject>();
 
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(target, x => x.FirstValueReturningMethod()), 10);
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target)
-                                .Repeat.Once();
+                            target.is_told_to(x => x.FirstValueReturningMethod()).it_will_return(10);
+                            test_container.is_told_to(t => t.get_a<ITargetObject>()).it_will_return(target) .Repeat.Once();
                         };
 
         because b = () =>
@@ -71,7 +70,7 @@ namespace MoMoney.Infrastructure.interceptors
         context c = () =>
                         {
                             var target = an<ITargetObject>();
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target).Repeat.Once();
+                            test_container.is_told_to(t => t.get_a<ITargetObject>()).it_will_return(target).Repeat.Once();
                         };
 
         because b = () =>
@@ -86,7 +85,7 @@ namespace MoMoney.Infrastructure.interceptors
         behaves_like_a_lazy_loaded_object
     {
         it should_forward_the_call_to_the_original_target =
-            () => mocking_extensions.was_told_to(target, x => x.ValueReturningMethodWithAnArgument(88));
+            () => target.was_told_to(x => x.ValueReturningMethodWithAnArgument(88));
 
         it should_return_the_correct_result = () => result.should_be_equal_to(99);
 
@@ -94,8 +93,8 @@ namespace MoMoney.Infrastructure.interceptors
                         {
                             target = an<ITargetObject>();
 
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(target, x => x.ValueReturningMethodWithAnArgument(88)), 99);
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target).Repeat.Once();
+                            target.is_told_to(x => x.ValueReturningMethodWithAnArgument(88)).it_will_return(99);
+                            test_container.is_told_to(t => t.get_a<ITargetObject>()).it_will_return(target).Repeat.Once();
                         };
 
         because b = () =>
@@ -117,7 +116,7 @@ namespace MoMoney.Infrastructure.interceptors
                             var target = an<ITargetObject>();
 
                             target.GetterAndSetterProperty = "mo";
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target).Repeat.Once();
+                            test_container.is_told_to(t => t.get_a<ITargetObject>()).it_will_return(target).Repeat.Once();
                         };
 
         because b = () =>
@@ -132,14 +131,12 @@ namespace MoMoney.Infrastructure.interceptors
     public class when_setting_the_value_of_a_property_on_a_proxied_object : behaves_like_a_lazy_loaded_object
     {
         it should_set_the_value_on_the_original_target =
-            () => mocking_extensions.was_told_to(target, x => x.GetterAndSetterProperty = "khan");
+            () => target.was_told_to(x => x.GetterAndSetterProperty = "khan");
 
         context c = () =>
                         {
                             target = dependency<ITargetObject>();
-
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<ITargetObject>()), target)
-                                .Repeat.Once();
+                            test_container.is_told_to(t => t.get_a<ITargetObject>()).it_will_return(target) .Repeat.Once();
                         };
 
         because b = () =>
@@ -162,8 +159,8 @@ namespace MoMoney.Infrastructure.interceptors
                         {
                             target = an<IGenericInterface<string>>();
 
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(target, x => x.ValueReturningMethodWithAnArgument("blah")), "hooray");
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(test_container, t => t.get_a<IGenericInterface<string>>()), target).Repeat.Once();
+                            target.is_told_to(x => x.ValueReturningMethodWithAnArgument("blah")).it_will_return("hooray");
+                            test_container.is_told_to(t => t.get_a<IGenericInterface<string>>()).it_will_return(target).Repeat.Once();
                         };
 
         because b = () =>

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using Castle.Core;
 using Castle.Windsor;
+using MoMoney.Infrastructure.proxies;
+using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container.Windsor
@@ -52,6 +54,13 @@ namespace MoMoney.Infrastructure.Container.Windsor
         string create_a_key_using(Type interface_type, Type implementation_type)
         {
             return "{0}-{1}".formatted_using(interface_type.FullName, implementation_type.FullName);
+        }
+
+        public void proxy<T>(IConfiguration<IProxyBuilder<T>> configuration)
+        {
+            var builder = new ProxyBuilder<T>();
+            configuration.configure(builder);
+            singleton(builder.create_proxy_for(() => underlying_container.Resolve<T>()));
         }
     }
 }
