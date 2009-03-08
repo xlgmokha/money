@@ -1,3 +1,4 @@
+using System;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
@@ -51,11 +52,31 @@ namespace MoMoney.Infrastructure.Container.Windsor
                     .Pick()
                     .FromAssembly(GetType().Assembly)
                     .WithService
-                    .FirstInterface()
+                    .LastInterface()
+                    //.FirstInterface()
                     .Unless(criteria_to_satisfy.is_satisfied_by)
                     .Configure(x => configuration.configure(x))
                 );
             return the_container;
+        }
+    }
+
+    public static class e
+    {
+        public static BasedOnDescriptor LastInterface(this ServiceDescriptor descriptor)
+        {
+            return descriptor.Select(delegate(Type type, Type baseType)
+                                         {
+                                             Type first = null;
+                                             var interfaces = type.GetInterfaces();
+
+                                             if (interfaces.Length > 0)
+                                             {
+                                                 first = interfaces[0];
+                                             }
+
+                                             return (first != null) ? new Type[] {first} : null;
+                                         });
         }
     }
 }

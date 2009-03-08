@@ -37,7 +37,7 @@ namespace MoMoney.Infrastructure.Container.Windsor
                                               implementation_type);
         }
 
-        public void register_instance_of<Interface>(Interface instanceOfTheInterface)
+        public void singleton<Interface>(Interface instanceOfTheInterface)
         {
             underlying_container.Kernel.AddComponentInstance<Interface>(instanceOfTheInterface);
         }
