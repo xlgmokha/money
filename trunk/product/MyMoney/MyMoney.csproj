@@ -236,6 +236,7 @@
     <Compile Include="Infrastructure\proxies\IProxyFactory.cs" />
     <Compile Include="Infrastructure\proxies\ProxyBuilder.cs" />
     <Compile Include="Infrastructure\proxies\ProxyBuilderSpecs.cs" />
+    <Compile Include="Infrastructure\proxies\ProxyFactory.cs" />
     <Compile Include="Infrastructure\registries\default_registry.cs" />
     <Compile Include="Infrastructure\registries\default_registry_specs.cs" />
     <Compile Include="Domain\accounting\billing\Bill.cs" />

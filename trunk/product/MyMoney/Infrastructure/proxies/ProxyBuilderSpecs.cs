@@ -40,9 +40,9 @@ namespace MoMoney.Infrastructure.proxies
 
         because b = () =>
                         {
-                            sut.AddInterceptor<SomeInterceptor>();
-                            sut.AddInterceptor<AnotherInterceptor>();
-                            var proxy = sut.CreateProxyFor(an_implementation_of_the_interface);
+                            sut.add_interceptor<SomeInterceptor>();
+                            sut.add_interceptor<AnotherInterceptor>();
+                            var proxy = sut.create_proxy_for(an_implementation_of_the_interface);
                             proxy.OneMethod();
                             proxy.SecondMethod();
                         };
@@ -70,10 +70,10 @@ namespace MoMoney.Infrastructure.proxies
 
         because b = () =>
                         {
-                            var constraint = sut.AddInterceptor<SomeInterceptor>();
+                            var constraint = sut.add_interceptor<SomeInterceptor>();
                             constraint.InterceptOn.OneMethod();
 
-                            var proxy = sut.CreateProxyFor(an_implementation);
+                            var proxy = sut.create_proxy_for(an_implementation);
                             proxy.OneMethod();
                             proxy.SecondMethod();
                         };

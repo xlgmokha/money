@@ -1,15 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Interceptor;
-using Ec.AuditTool.Infrastructure.Proxies;
 using Ec.AuditTool.Infrastructure.Proxies.Interceptors;
 
 namespace MoMoney.Infrastructure.proxies
 {
     public interface IProxyBuilder<TypeToProxy>
     {
-        IConstraintSelector<TypeToProxy> AddInterceptor<Interceptor>() where Interceptor : IInterceptor, new();
-        TypeToProxy CreateProxyFor(TypeToProxy an_implementation_of_the_interface);
+        IConstraintSelector<TypeToProxy> add_interceptor<Interceptor>() where Interceptor : IInterceptor, new();
+        TypeToProxy create_proxy_for(TypeToProxy target);
     }
 
     public class ProxyBuilder<TypeToProxy> : IProxyBuilder<TypeToProxy>
@@ -30,20 +29,19 @@ namespace MoMoney.Infrastructure.proxies
         }
 
 
-        public IConstraintSelector<TypeToProxy> AddInterceptor<Interceptor>() where Interceptor : IInterceptor, new()
+        public IConstraintSelector<TypeToProxy> add_interceptor<Interceptor>() where Interceptor : IInterceptor, new()
         {
             var constraint = constraint_factory.CreateFor<TypeToProxy>();
             constraints.Add(new Interceptor(), constraint);
             return constraint;
         }
 
-        public TypeToProxy CreateProxyFor(TypeToProxy an_implementation_of_the_interface)
+        public TypeToProxy create_proxy_for(TypeToProxy target)
         {
-            return proxy_factory.CreateProxyFor(an_implementation_of_the_interface,
-                                                AllInterceptorsWithTheirConstraints());
+            return proxy_factory.create_proxy_for(()=>target, all_interceptors_with_their_constraints());
         }
 
-        IEnumerable<IInterceptor> AllInterceptorsWithTheirConstraints()
+        IEnumerable<IInterceptor> all_interceptors_with_their_constraints()
         {
             foreach (var pair in constraints)
             {
