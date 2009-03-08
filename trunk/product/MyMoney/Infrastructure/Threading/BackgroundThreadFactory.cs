@@ -26,7 +26,7 @@ namespace MoMoney.Infrastructure.Threading
 
         public IBackgroundThread create_for(Action action)
         {
-            return new BackgroundThread(new command(action));
+            return new BackgroundThread(new DisposableCommand(action));
         }
     }
 }

@@ -22,13 +22,13 @@ namespace MoMoney.Presentation.Context
         context c = () =>
                         {
                             shell_view = dependency<ApplicationShell>();
-                            exit_command = an<IExitCommand>();
-                            load_application = an<ILoadApplicationShellCommand>();
+                            exit_command = the_dependency<IExitCommand>();
+                            load_application = the_dependency<ILoadPresentationModulesCommand>();
                         };
 
         static protected ApplicationShell shell_view;
         static protected IExitCommand exit_command;
-        static protected ILoadApplicationShellCommand load_application;
+        static protected ILoadPresentationModulesCommand load_application;
     }
 
     public class when_starting_the_application : behaves_like_an_application_context

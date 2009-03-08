@@ -1,6 +1,8 @@
+using MoMoney.Utility.Core;
+
 namespace MoMoney.Presentation.Core
 {
-    public interface IPresentationModule : IPresenter
+    public interface IPresentationModule : ICommand
     {
     }
 }

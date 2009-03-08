@@ -10,7 +10,7 @@ namespace MoMoney.Presentation.Context
     {
         public the_application_context(IShell shell_view,
                                        IExitCommand exit_command,
-                                       ILoadApplicationShellCommand command)
+                                       ILoadPresentationModulesCommand command)
         {
             shell_view.downcast_to<Form>().Closed += ((sender, args) => exit_command.run());
             MainForm = shell_view.downcast_to<Form>();

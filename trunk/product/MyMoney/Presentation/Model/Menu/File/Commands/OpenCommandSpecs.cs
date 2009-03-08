@@ -1,6 +1,5 @@
 using jpboodhoo.bdd.contexts;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.dialogs;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
@@ -11,22 +10,17 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     [Concern(typeof (OpenCommand))]
     public abstract class behaves_like_command_to_open_a_project : concerns_for<IOpenCommand, OpenCommand>
     {
-        public override IOpenCommand create_sut()
-        {
-            return new OpenCommand(view, project, command, save_changes_command);
-        }
-
         context c = () =>
                         {
                             view = the_dependency<ISelectFileToOpenDialog>();
-                            command = the_dependency<ILoadApplicationShellCommand>();
+                            //command = the_dependency<ILoadPresentationModulesCommand>();
                             project = the_dependency<IProject>();
                             save_changes_command = the_dependency<ISaveChangesCommand>();
                         };
 
         protected static IProject project;
         protected static ISelectFileToOpenDialog view;
-        protected static ILoadApplicationShellCommand command;
+        //protected static ILoadPresentationModulesCommand command;
         protected static ISaveChangesCommand save_changes_command;
     }
 
@@ -44,7 +38,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     {
         it should_open_the_project_at_the_file_path_specified = () => project.was_told_to(x => x.open(file_path));
 
-        it will_re_load_the_application_shell = () => command.was_told_to(x => x.run());
+        //it will_re_load_the_application_shell = () => command.was_told_to(x => x.run());
 
         context c = () =>
                         {
@@ -54,7 +48,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         because b = () => sut.saved();
 
-        static Projects.ApplicationFile file_path;
+        static ApplicationFile file_path;
     }
 
     public class when_opening_a_project_after_declining_to_save_the_previous_project :
@@ -62,7 +56,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     {
         it should_open_the_project_at_the_file_path_specified = () => project.was_told_to(x => x.open(file_path));
 
-        it will_re_load_the_application_shell = () => command.was_told_to(x => x.run());
+        //it will_re_load_the_application_shell = () => command.was_told_to(x => x.run());
 
         context c = () =>
                         {
@@ -72,7 +66,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         because b = () => sut.not_saved();
 
-        static Projects.ApplicationFile file_path;
+        static ApplicationFile file_path;
     }
 
     public class
@@ -82,7 +76,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         it should_not_open_the_project_at_the_file_path_specified =
             () => project.should_not_have_been_asked_to(x => x.open(file_path));
 
-        it will_not_re_load_the_application_shell = () => command.should_not_have_been_asked_to(x => x.run());
+        //it will_not_re_load_the_application_shell = () => command.should_not_have_been_asked_to(x => x.run());
 
         context c = () =>
                         {
@@ -92,6 +86,6 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         because b = () => sut.cancelled();
 
-        static Projects.ApplicationFile file_path;
+        static ApplicationFile file_path;
     }
 }

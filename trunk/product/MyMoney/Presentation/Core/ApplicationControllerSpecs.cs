@@ -7,8 +7,9 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Core
 {
-    [Concern(typeof (application_controller))]
-    public abstract class behaves_like_an_application_controller : concerns_for<IApplicationController, application_controller>
+    [Concern(typeof (ApplicationController))]
+    public abstract class behaves_like_an_application_controller :
+        concerns_for<IApplicationController, ApplicationController>
     {
         context c = () =>
                         {
@@ -16,8 +17,8 @@ namespace MoMoney.Presentation.Core
                             shell = the_dependency<IShell>();
                         };
 
-        static protected IShell shell;
-        static protected IPresenterRegistry presenter_registry;
+        protected static IShell shell;
+        protected static IPresenterRegistry presenter_registry;
     }
 
     public class when_the_application_controller_is_asked_to_run_a_presenter : behaves_like_an_application_controller

@@ -5,7 +5,7 @@ using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {
-    public interface IUnhandledErrorPresenter : IPresentationModule, IEventSubscriber<unhandled_error_occurred>
+    public interface IUnhandledErrorPresenter : IPresentationModule, IPresenter, IEventSubscriber<unhandled_error_occurred>
     {
     }
 

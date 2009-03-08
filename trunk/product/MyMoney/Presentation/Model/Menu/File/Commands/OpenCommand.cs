@@ -1,5 +1,4 @@
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.dialogs;
 using MoMoney.Utility.Core;
 
@@ -13,15 +12,12 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     {
         readonly ISelectFileToOpenDialog view;
         readonly IProject project;
-        readonly ILoadApplicationShellCommand command;
         readonly ISaveChangesCommand save_changes_command;
 
-        public OpenCommand(ISelectFileToOpenDialog view, IProject project, ILoadApplicationShellCommand command,
-                            ISaveChangesCommand save_changes_command)
+        public OpenCommand(ISelectFileToOpenDialog view, IProject project, ISaveChangesCommand save_changes_command)
         {
             this.view = view;
             this.save_changes_command = save_changes_command;
-            this.command = command;
             this.project = project;
         }
 
@@ -47,7 +43,6 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         void open_project()
         {
             project.open(view.tell_me_the_path_to_the_file());
-            command.run();
         }
     }
 }

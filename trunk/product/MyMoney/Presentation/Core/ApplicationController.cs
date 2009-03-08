@@ -9,12 +9,12 @@ namespace MoMoney.Presentation.Core
         void run<Presenter>() where Presenter : IPresenter;
     }
 
-    public class application_controller : IApplicationController
+    public class ApplicationController : IApplicationController
     {
-        private readonly IPresenterRegistry registered_presenters;
-        private readonly IShell shell;
+        readonly IPresenterRegistry registered_presenters;
+        readonly IShell shell;
 
-        public application_controller(IPresenterRegistry registered_presenters, IShell shell)
+        public ApplicationController(IPresenterRegistry registered_presenters, IShell shell)
         {
             this.registered_presenters = registered_presenters;
             this.shell = shell;
@@ -22,7 +22,7 @@ namespace MoMoney.Presentation.Core
 
         public void run<Presenter>() where Presenter : IPresenter
         {
-            run(registered_presenters.find_an_implementation_of<Presenter>());
+            run(registered_presenters.find_an_implementation_of<IPresenter, Presenter>());
         }
 
         public void run(IPresenter presenter)

@@ -10,12 +10,12 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Model.Projects
 {
-    [Concern(typeof (current_project))]
-    public abstract class behaves_like_a_project : concerns_for<IProject, current_project>
+    [Concern(typeof (CurrentProject))]
+    public abstract class behaves_like_a_project : concerns_for<IProject, CurrentProject>
     {
         public override IProject create_sut()
         {
-            return new current_project(configuration, broker);
+            return new CurrentProject(configuration, broker);
         }
 
         context c = () =>

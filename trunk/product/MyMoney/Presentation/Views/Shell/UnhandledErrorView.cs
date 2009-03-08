@@ -18,7 +18,14 @@ namespace MoMoney.Presentation.Views.Shell
 
         public void display(Exception exception)
         {
-            ux_message.Text = exception.ToString();
+            if (InvokeRequired)
+            {
+                on_ui_thread(() => ux_message.Text = exception.ToString());
+            }
+            else
+            {
+                ux_message.Text = exception.ToString();
+            }
         }
     }
 }

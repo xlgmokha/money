@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.Container;
+using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.registries
 {

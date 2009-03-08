@@ -1,5 +1,4 @@
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Model.Menu.File.Commands
@@ -11,14 +10,12 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     public class NewCommand : INewCommand
     {
         readonly IProject current_project;
-        readonly ILoadApplicationShellCommand command;
         readonly ISaveChangesCommand save_changes_command;
 
-        public NewCommand(IProject current_project, ILoadApplicationShellCommand command, ISaveChangesCommand save_changes_command)
+        public NewCommand(IProject current_project, ISaveChangesCommand save_changes_command)
         {
             this.current_project = current_project;
             this.save_changes_command = save_changes_command;
-            this.command = command;
         }
 
         public void run()
@@ -29,13 +26,11 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         public void saved()
         {
             current_project.start_a_new_project();
-            command.run();
         }
 
         public void not_saved()
         {
             current_project.start_a_new_project();
-            command.run();
         }
 
         public void cancelled()

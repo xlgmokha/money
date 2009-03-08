@@ -14,7 +14,7 @@ namespace MoMoney.Presentation.Presenters.Navigation
     {
         readonly INavigationView view;
         readonly INavigationTreeVisitor tree_view_visitor;
-        IEventAggregator broker;
+        readonly IEventAggregator broker;
 
         public NavigationPresenter(INavigationView view, INavigationTreeVisitor tree_view_visitor,
                                    IEventAggregator broker)

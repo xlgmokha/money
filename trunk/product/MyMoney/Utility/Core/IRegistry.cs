@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MoMoney.Domain.Core
+namespace MoMoney.Utility.Core
 {
     public interface IRegistry<T>
     {

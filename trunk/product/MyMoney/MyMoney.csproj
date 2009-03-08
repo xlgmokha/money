@@ -249,7 +249,6 @@
     <Compile Include="Domain\Core\Money.cs" />
     <Compile Include="Domain\Core\Month.cs" />
     <Compile Include="Domain\Core\Months.cs" />
-    <Compile Include="Domain\Core\registry_extensions.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentRegistrationConfiguration.cs" />
     <Compile Include="Infrastructure\System\application_environment.cs" />
     <Compile Include="Infrastructure\Threading\BackgroundThreadFactory.cs" />
@@ -271,7 +270,6 @@
     <Compile Include="Infrastructure\transactions\UnitOfWorkRegistry.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrySpecs.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work_specs.cs" />
-    <Compile Include="Presentation\Core\could_not_find_presenter.cs" />
     <Compile Include="Presentation\Core\IContentPresenter.cs" />
     <Compile Include="Presentation\Databindings\date_time_picker_property_binding.cs" />
     <Compile Include="Presentation\Databindings\date_time_property_binding_specs.cs" />
@@ -296,7 +294,7 @@
     <Compile Include="Presentation\Model\Navigation\branches\add_new_income_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\view_all_bills_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\view_all_bills_report_branch.cs" />
-    <Compile Include="Presentation\Model\Projects\current_project.cs" />
+    <Compile Include="Presentation\Model\Projects\CurrentProject.cs" />
     <Compile Include="Presentation\Core\PresenterRegistry.cs" />
     <Compile Include="Presentation\Model\Menu\create.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\ExitCommand.cs" />
@@ -316,7 +314,7 @@
     <Compile Include="Presentation\Model\Navigation\tree_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\tree_branch_specs.cs" />
     <Compile Include="Presentation\Model\Navigation\tree_view_to_root_node_mapper.cs" />
-    <Compile Include="Presentation\Model\Projects\current_project_specs.cs" />
+    <Compile Include="Presentation\Model\Projects\CurrentProjectSpecs.cs" />
     <Compile Include="Presentation\Model\Projects\file.cs" />
     <Compile Include="Presentation\Model\Projects\file_not_specified_exception.cs" />
     <Compile Include="Presentation\Model\reporting\IReport.cs" />
@@ -362,6 +360,7 @@
     <Compile Include="Presentation\Presenters\Navigation\ExpandoBuilder.cs" />
     <Compile Include="Presentation\Presenters\Navigation\ExpandoItemBuilder.cs" />
     <Compile Include="Presentation\Presenters\Navigation\IActionTaskPaneFactory.cs" />
+    <Compile Include="Presentation\Presenters\Shell\ApplicationShellPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\GettingStartedPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\GettingStartedPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\ToolBarPresenter.cs" />
@@ -369,7 +368,7 @@
     <Compile Include="Presentation\Presenters\Navigation\NavigationPresenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\NavigationPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\reporting\ReportPresenter.cs" />
-    <Compile Include="Presentation\Presenters\Shell\LoadApplicationShellSpecs.cs" />
+    <Compile Include="Presentation\Presenters\Commands\LoadPresentationModulesCommandSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\NotificationIconPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\TaskTrayPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\TitleBarPresenter.cs" />
@@ -521,7 +520,7 @@
     <Compile Include="Utility\Core\ChainedConfiguration.cs" />
     <Compile Include="Utility\Core\chained_mapper.cs" />
     <Compile Include="Utility\Core\and_specification.cs" />
-    <Compile Include="Utility\Core\command.cs" />
+    <Compile Include="Utility\Core\DisposableCommand.cs" />
     <Compile Include="Utility\Core\empty_command.cs" />
     <Compile Include="Utility\Core\IBuilder.cs" />
     <Compile Include="Utility\Core\ICallback.cs" />
@@ -558,7 +557,7 @@
     <Compile Include="Presentation\Databindings\text_property_binding.cs" />
     <Compile Include="Presentation\Presenters\Commands\display_the_splash_screen.cs" />
     <Compile Include="Presentation\Core\IPresentationModule.cs" />
-    <Compile Include="Presentation\Core\presenter_registry_extensions.cs" />
+    <Compile Include="Utility\Extensions\RegistryExtensions.cs" />
     <Compile Include="Presentation\Model\Menu\File\FileMenu.cs" />
     <Compile Include="Presentation\Model\Menu\Help\help_menu.cs" />
     <Compile Include="Utility\Core\ISpecification.cs" />
@@ -620,7 +619,7 @@
     <Compile Include="windows.ui\check_for_updates.cs" />
     <Compile Include="windows.ui\hookup.cs" />
     <Compile Include="Presentation\Model\Menu\ISubMenu.cs" />
-    <Compile Include="Domain\Core\IRegistry.cs" />
+    <Compile Include="Utility\Core\IRegistry.cs" />
     <Compile Include="Infrastructure\Container\dependency_resolution_exception.cs" />
     <Compile Include="Infrastructure\Container\Resolve.cs" />
     <Compile Include="Infrastructure\Container\ResolveSpecs.cs" />
@@ -630,12 +629,12 @@
     <Compile Include="Utility\Core\IMapper.cs" />
     <Compile Include="Utility\Extensions\string_extensions.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\exit_command_specs.cs" />
-    <Compile Include="Presentation\Core\application_controller_specs.cs" />
-    <Compile Include="Presentation\Core\application_controller.cs" />
+    <Compile Include="Presentation\Core\ApplicationControllerSpecs.cs" />
+    <Compile Include="Presentation\Core\ApplicationController.cs" />
     <Compile Include="Presentation\Core\IPresenter.cs" />
     <Compile Include="Infrastructure\Container\IDependencyRegistry.cs" />
     <Compile Include="Presentation\Presenters\Menu\MainMenuPresenterSpecs.cs" />
-    <Compile Include="Presentation\Presenters\Commands\LoadApplicationShell.cs" />
+    <Compile Include="Presentation\Presenters\Commands\LoadPresentationModulesCommand.cs" />
     <Compile Include="Presentation\Views\Menu\ApplicationMenuHostSpecs.cs" />
     <Compile Include="windows.ui\bootstrap.cs" />
     <EmbeddedResource Include="Presentation\Views\AddCompanyView.resx">
@@ -732,6 +731,7 @@
     <Compile Include="windows.ui\wire_up_the_views_in_to_the.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Presentation\module\" />
     <Folder Include="Tasks\domain\" />
     <Folder Include="Tasks\Stubs\" />
     <Folder Include="Testing\spechelpers\concerns\" />

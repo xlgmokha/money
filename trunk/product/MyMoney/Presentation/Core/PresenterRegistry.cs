@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using MoMoney.Domain.Core;
+using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Core
 {

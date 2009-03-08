@@ -21,7 +21,7 @@ namespace MoMoney.Presentation.Model.Projects
     }
 
     [Singleton]
-    public class current_project : IProject
+    public class CurrentProject : IProject
     {
         readonly IDatabaseConfiguration configuration;
         readonly IEventAggregator broker;
@@ -29,7 +29,7 @@ namespace MoMoney.Presentation.Model.Projects
         bool is_project_open = false;
         bool changes_to_save = false;
 
-        public current_project(IDatabaseConfiguration configuration, IEventAggregator broker)
+        public CurrentProject(IDatabaseConfiguration configuration, IEventAggregator broker)
         {
             this.broker = broker;
             this.configuration = configuration;

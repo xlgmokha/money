@@ -42,7 +42,7 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .named("&Save")
                 .that_executes<ISaveCommand>()
                 .represented_by(ApplicationIcons.SaveProject)
-                .can_be_clicked_when(() => project.has_unsaved_changes())
+                //.can_be_clicked_when(() => project.has_unsaved_changes())
                 .can_be_accessed_with(shortcut_keys.control.and(shortcut_keys.S))
                 .build();
 

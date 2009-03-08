@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using MoMoney.Presentation.Resources;
 
 namespace MoMoney.Presentation.Views.core
@@ -29,9 +30,16 @@ namespace MoMoney.Presentation.Views.core
             return this;
         }
 
-        //public void execute(Action action)
-        //{
-        //    BeginInvoke(action);
-        //}
+        public void on_ui_thread(Action action)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(action);
+            }
+            else
+            {
+                action();
+            }
+        }
     }
 }

@@ -1,8 +1,8 @@
-using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Views.Navigation;
+using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Presenters.Navigation
@@ -27,11 +27,11 @@ namespace MoMoney.Presentation.Presenters.Navigation
         public void run()
         {
             broker.subscribe_to(this);
+            registry.all().each(x => view.add(x.create()));
         }
 
         public void notify(new_project_opened message)
         {
-            registry.all().each(x => view.add(x.create()));
             view.display();
         }
     }

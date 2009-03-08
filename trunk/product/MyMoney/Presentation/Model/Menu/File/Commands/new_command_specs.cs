@@ -10,20 +10,15 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     [Concern(typeof (NewCommand))]
     public abstract class behaves_like_new_command : concerns_for<INewCommand, NewCommand>
     {
-        //public override INewCommand create_sut()
-        //{
-        //    return new NewCommand(current_project, command, save_changes_command);
-        //}
-
         context c = () =>
                         {
                             current_project = the_dependency<IProject>();
-                            command = the_dependency<ILoadApplicationShellCommand>();
+                            command = the_dependency<ILoadPresentationModulesCommand>();
                             save_changes_command = the_dependency<ISaveChangesCommand>();
                         };
 
         protected static IProject current_project;
-        protected static ILoadApplicationShellCommand command;
+        protected static ILoadPresentationModulesCommand command;
         protected static ISaveChangesCommand save_changes_command;
     }
 

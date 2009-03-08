@@ -2,11 +2,11 @@ using System;
 
 namespace MoMoney.Utility.Core
 {
-    internal class command : IDisposableCommand
+    internal class DisposableCommand : IDisposableCommand
     {
-        private readonly Action action;
+        readonly Action action;
 
-        public command(Action action)
+        public DisposableCommand(Action action)
         {
             this.action = action;
         }
@@ -17,6 +17,7 @@ namespace MoMoney.Utility.Core
         }
 
         public void Dispose()
-        {}
+        {
+        }
     }
 }
