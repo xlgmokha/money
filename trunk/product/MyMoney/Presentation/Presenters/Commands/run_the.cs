@@ -4,11 +4,12 @@ using MoMoney.Utility.Core;
 namespace MoMoney.Presentation.Presenters.Commands
 {
     public interface IRunThe<Presenter> : ICommand where Presenter : IPresenter
-    {}
+    {
+    }
 
     public class run_the<Presenter> : IRunThe<Presenter> where Presenter : IPresenter
     {
-        private readonly IApplicationController applicationController;
+        readonly IApplicationController applicationController;
 
         public run_the(IApplicationController applicationController)
         {

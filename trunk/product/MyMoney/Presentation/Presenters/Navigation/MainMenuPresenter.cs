@@ -1,13 +1,12 @@
-using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Model.messages;
+using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.Navigation;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Presenters.Navigation
 {
-    public interface IMainMenuPresenter : IPresentationModule, IEventSubscriber<new_project_opened>
+    public interface IMainMenuPresenter : IContentPresenter
     {
     }
 
@@ -15,24 +14,21 @@ namespace MoMoney.Presentation.Presenters.Navigation
     {
         readonly IMainMenuView view;
         readonly IRegistry<IActionTaskPaneFactory> registry;
-        readonly IEventAggregator broker;
 
-        public MainMenuPresenter(IMainMenuView view, IRegistry<IActionTaskPaneFactory> registry, IEventAggregator broker)
+        public MainMenuPresenter(IMainMenuView view, IRegistry<IActionTaskPaneFactory> registry)
         {
             this.view = view;
-            this.broker = broker;
             this.registry = registry;
         }
 
         public void run()
         {
-            broker.subscribe_to(this);
             registry.all().each(x => view.add(x.create()));
         }
 
-        public void notify(new_project_opened message)
+        IDockedContentView IContentPresenter.View
         {
-            view.display();
+            get { return view; }
         }
     }
 }

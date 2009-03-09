@@ -329,7 +329,7 @@
     <Compile Include="Presentation\Presenters\billing\dto\register_new_company.cs" />
     <Compile Include="Presentation\Presenters\billing\ViewAllBillsPresenter.cs" />
     <Compile Include="Presentation\Presenters\Commands\RestartCommand.cs" />
-    <Compile Include="Presentation\Presenters\Commands\run_presenter_command.cs" />
+    <Compile Include="Presentation\Presenters\Commands\RunPresenterCommand.cs" />
     <Compile Include="Presentation\Presenters\Commands\run_the.cs" />
     <Compile Include="Presentation\Presenters\Commands\run_the_specs.cs" />
     <Compile Include="Presentation\Presenters\excel\Cell.cs" />
@@ -360,7 +360,11 @@
     <Compile Include="Presentation\Presenters\Navigation\ExpandoBuilder.cs" />
     <Compile Include="Presentation\Presenters\Navigation\ExpandoItemBuilder.cs" />
     <Compile Include="Presentation\Presenters\Navigation\IActionTaskPaneFactory.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\MainMenuModule.cs" />
+    <Compile Include="Presentation\Presenters\Navigation\NavigationModule.cs" />
     <Compile Include="Presentation\Presenters\Shell\ApplicationShellPresenter.cs" />
+    <Compile Include="Presentation\Presenters\Shell\GettingStartedModule.cs" />
+    <Compile Include="Presentation\Presenters\Shell\GettingStartedModuleSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\GettingStartedPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\GettingStartedPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\ToolBarPresenter.cs" />

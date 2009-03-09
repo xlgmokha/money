@@ -7,11 +7,11 @@ namespace MoMoney.Presentation.Presenters.Commands
         void run<Presenter>() where Presenter : IPresenter;
     }
 
-    public class run_presenter_command : IRunPresenterCommand
+    public class RunPresenterCommand : IRunPresenterCommand
     {
         private readonly IApplicationController application_controller;
 
-        public run_presenter_command(IApplicationController applicationController)
+        public RunPresenterCommand(IApplicationController applicationController)
         {
             application_controller = applicationController;
         }

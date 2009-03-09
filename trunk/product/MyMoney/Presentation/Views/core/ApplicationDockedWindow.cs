@@ -23,6 +23,7 @@ namespace MoMoney.Presentation.Views.core
             InitializeComponent();
             Icon = ApplicationIcons.Application;
             dock_state = DockState.Document;
+            HideOnClose = true;
         }
 
         public IApplicationDockedWindow create_tool_tip_for(string title, string caption, Control control)

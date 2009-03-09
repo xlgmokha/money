@@ -1,5 +1,4 @@
 using jpboodhoo.bdd.contexts;
-using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Model.Navigation;
 using MoMoney.Presentation.Views.Navigation;
 using MoMoney.Testing.MetaData;
@@ -19,7 +18,7 @@ namespace MoMoney.Presentation.Presenters.Navigation
                             tree_view_visitor = the_dependency<INavigationTreeVisitor>();
                         };
 
-        because b = () => sut.notify(new new_project_opened(""));
+        because b = () => sut.run();
 
         static INavigationView view;
         static INavigationTreeVisitor tree_view_visitor;
