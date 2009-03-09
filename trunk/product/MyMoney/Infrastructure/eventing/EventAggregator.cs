@@ -37,7 +37,7 @@ namespace MoMoney.Infrastructure.eventing
                 .Select(x => x.downcast_to<IEventSubscriber<Event>>())
                 .each(x =>
                           {
-                              this.log().debug("publishing event {0} to {1}", typeof (Event), x.GetType().FullName);
+                              this.log().debug("publishing event {0} to {1}", typeof (Event).Name, x.GetType().FullName);
                               x.notify(the_event_to_broadcast);
                           }
                 );

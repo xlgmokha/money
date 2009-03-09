@@ -1,9 +1,10 @@
+using MoMoney.Infrastructure.Logging;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Model.Menu.File.Commands
 {
-    public interface ICloseCommand : ICommand, ISaveChangesCallback
+    public interface ICloseCommand : ICommand, ISaveChangesCallback, ILoggable
     {
     }
 

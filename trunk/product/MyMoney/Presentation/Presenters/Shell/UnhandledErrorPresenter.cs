@@ -1,4 +1,5 @@
 using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Views.Shell;
@@ -27,6 +28,7 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void notify(unhandled_error_occurred message)
         {
+            this.log().debug("received error");
             view.display(message.error);
         }
     }

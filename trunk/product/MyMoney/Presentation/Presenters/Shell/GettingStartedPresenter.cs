@@ -25,12 +25,12 @@ namespace MoMoney.Presentation.Presenters.Shell
         public void run()
         {
             broker.subscribe_to(this);
-            //view.display();
+            view.display();
         }
 
         public void notify(new_project_opened message)
         {
-            view.display();
+            //view.display();
         }
     }
 }
