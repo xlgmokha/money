@@ -1,9 +1,9 @@
 using System;
 using jpboodhoo.bdd.contexts;
 using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Views.helpers;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
-using MoMoney.Testing.win.forms;
 
 namespace MoMoney.Presentation.Views.dialogs
 {

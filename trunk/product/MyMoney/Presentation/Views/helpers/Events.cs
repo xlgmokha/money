@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace MoMoney.Testing.win.forms
+namespace MoMoney.Presentation.Views.helpers
 {
     public class Events
     {

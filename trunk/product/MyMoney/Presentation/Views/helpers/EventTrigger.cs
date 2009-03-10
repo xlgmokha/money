@@ -6,11 +6,11 @@ using System.Linq.Expressions;
 using System.Reflection;
 using jpboodhoo.bdd.core.extensions;
 
-namespace MoMoney.Testing.win.forms
+namespace MoMoney.Presentation.Views.helpers
 {
     static public class EventTrigger
     {
-        const BindingFlags binding_flags = BindingFlags.Instance | BindingFlags.NonPublic;
+        const BindingFlags binding_flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy | BindingFlags.Instance;
         static readonly IDictionary<ExpressionType, Func<Expression, object>> expression_handlers;
 
         static EventTrigger()
@@ -30,9 +30,7 @@ namespace MoMoney.Testing.win.forms
             var method = target.GetType().GetMethod(method_name, binding_flags);
 
             Debug.Assert(target != null, "The target to raise the event on cannot be null");
-            Debug.Assert(method != null,
-                         "There is no method called {0}, on a {1}".format_using(method_name,
-                                                                                target.GetType().proper_name()));
+            Debug.Assert(method != null, "There is no method called {0}, on a {1}".format_using(method_name, target.GetType().proper_name()));
 
             method.Invoke(target, method_args.ToArray());
         }
@@ -45,7 +43,10 @@ namespace MoMoney.Testing.win.forms
         static object get_value_from_member_access(Expression expression)
         {
             var member_expression = expression.downcast_to<MemberExpression>();
-            throw new NotImplementedException();
+            var type = member_expression.Member.DeclaringType;
+            var member = (FieldInfo)member_expression.Member;
+            var value = member.GetValue(Activator.CreateInstance(type));
+            return value;
         }
 
         static object instantiate_value(Expression expression)
@@ -66,7 +67,7 @@ namespace MoMoney.Testing.win.forms
 
         static void cannot_handle(Expression expression)
         {
-            throw new NotImplementedException();
+            throw new ArgumentException("cannot parse {0}".format_using(expression));
         }
 
         static object get_value_from_evaluating(Expression expression)

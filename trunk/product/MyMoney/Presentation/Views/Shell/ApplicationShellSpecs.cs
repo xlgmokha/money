@@ -3,7 +3,6 @@ using jpboodhoo.bdd.contexts;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
-using MoMoney.Testing.win.forms;
 
 namespace MoMoney.Presentation.Views.Shell
 {
