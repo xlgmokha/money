@@ -1,4 +1,6 @@
 using System;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.eventing;
@@ -13,6 +15,7 @@ namespace MoMoney.windows.ui
     {
         public void run()
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.ThreadException += (sender, e) => handle_error(e.Exception);

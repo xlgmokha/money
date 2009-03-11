@@ -45,6 +45,7 @@ namespace MoMoney.windows.ui
             register.transient<IStatusBarView, StatusBarView>();
             register.transient<IUnhandledErrorView, UnhandledErrorView>();
             register.transient<IGettingStartedView, WelcomeScreen>();
+            register.transient<ILogFileView, LogFileView>();
         }
     }
 

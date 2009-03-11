@@ -1,7 +1,6 @@
 using System;
 using System.Windows.Forms;
 using jpboodhoo.bdd.contexts;
-using MbUnit.Framework;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
 
@@ -29,14 +28,14 @@ namespace MoMoney.Presentation.Views.helpers
     {
         it should_make_the_call_correctly = () => control.key_press_arguments.should_be_equal_to(args);
 
-        [Test]
-        public void should_make_the_call_correctly2()
-        {
-            var new_args = new KeyPressEventArgs('A');
-            control = new TestControl();
-            EventTrigger.trigger_event<Events.ControlEvents>(x => x.OnKeyPress(new_args), control);
-            control.key_press_arguments.should_be_equal_to(new_args);
-        }
+        //[Test]
+        //public void should_make_the_call_correctly2()
+        //{
+        //    var new_args = new KeyPressEventArgs('A');
+        //    control = new TestControl();
+        //    EventTrigger.trigger_event<Events.ControlEvents>(x => x.OnKeyPress(new_args), control);
+        //    control.key_press_arguments.should_be_equal_to(new_args);
+        //}
 
         context c = () => { control = new TestControl(); };
 

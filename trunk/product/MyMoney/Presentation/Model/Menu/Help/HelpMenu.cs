@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using MoMoney.Presentation.Model.Menu.Help.commands;
 using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Presenters.updates;
 using MoMoney.Presentation.Resources;
 
@@ -10,11 +11,11 @@ namespace MoMoney.Presentation.Model.Menu.Help
     {
     }
 
-    public class help_menu : IHelpMenu
+    public class HelpMenu : IHelpMenu
     {
         readonly IRunPresenterCommand command;
 
-        public help_menu(IRunPresenterCommand command)
+        public HelpMenu(IRunPresenterCommand command)
         {
             this.command = command;
         }
@@ -32,6 +33,14 @@ namespace MoMoney.Presentation.Model.Menu.Help
                 .a_menu_item()
                 .named("Check For Updates...")
                 .that_executes(() => command.run<ICheckForUpdatesPresenter>())
+                .build();
+
+            yield return create.a_menu_item_separator();
+
+            yield return create
+                .a_menu_item()
+                .named("View Log File")
+                .that_executes(() => command.run<ILogFilePresenter>())
                 .build();
         }
 
