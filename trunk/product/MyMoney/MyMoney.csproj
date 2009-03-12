@@ -238,8 +238,8 @@
     <Compile Include="Infrastructure\proxies\ProxyBuilderSpecs.cs" />
     <Compile Include="Infrastructure\proxies\ProxyFactory.cs" />
     <Compile Include="Infrastructure\proxies\ProxyFactorySpecs.cs" />
-    <Compile Include="Infrastructure\registries\default_registry.cs" />
-    <Compile Include="Infrastructure\registries\default_registry_specs.cs" />
+    <Compile Include="Infrastructure\registries\DefaultRegistry.cs" />
+    <Compile Include="Infrastructure\registries\DefaultRegistrySpecs.cs" />
     <Compile Include="Domain\accounting\billing\Bill.cs" />
     <Compile Include="Domain\accounting\billing\BillSpecs.cs" />
     <Compile Include="Domain\accounting\GeneralLedger.cs" />

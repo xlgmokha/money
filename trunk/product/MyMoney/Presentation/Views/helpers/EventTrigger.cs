@@ -1,16 +1,17 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using jpboodhoo.bdd.core.extensions;
+using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.helpers
 {
-    static public class EventTrigger
+    public static class EventTrigger
     {
-        const BindingFlags binding_flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy | BindingFlags.Instance;
+        const BindingFlags binding_flags =
+            BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy | BindingFlags.Instance;
+
         static readonly IDictionary<ExpressionType, Func<Expression, object>> expression_handlers;
 
         static EventTrigger()
@@ -21,16 +22,13 @@ namespace MoMoney.Presentation.Views.helpers
             expression_handlers[ExpressionType.Constant] = get_constant_value;
         }
 
-        static public void trigger_event<Target>(Expression<Action<Target>> expression_representing_event_to_raise,
+        public static void trigger_event<Target>(Expression<Action<Target>> expression_representing_event_to_raise,
                                                  object target) where Target : IEventTarget
         {
             var method_call_expression = expression_representing_event_to_raise.Body.downcast_to<MethodCallExpression>();
             var method_args = get_parameters_from(method_call_expression.Arguments);
             var method_name = method_call_expression.Method.Name;
             var method = target.GetType().GetMethod(method_name, binding_flags);
-
-            Debug.Assert(target != null, "The target to raise the event on cannot be null");
-            Debug.Assert(method != null, "There is no method called {0}, on a {1}".format_using(method_name, target.GetType().proper_name()));
 
             method.Invoke(target, method_args.ToArray());
         }
@@ -44,7 +42,7 @@ namespace MoMoney.Presentation.Views.helpers
         {
             var member_expression = expression.downcast_to<MemberExpression>();
             var type = member_expression.Member.DeclaringType;
-            var member = (FieldInfo)member_expression.Member;
+            var member = (FieldInfo) member_expression.Member;
             var value = member.GetValue(Activator.CreateInstance(type));
             return value;
         }
@@ -67,7 +65,7 @@ namespace MoMoney.Presentation.Views.helpers
 
         static void cannot_handle(Expression expression)
         {
-            throw new ArgumentException("cannot parse {0}".format_using(expression));
+            throw new ArgumentException("cannot parse {0}".formatted_using(expression));
         }
 
         static object get_value_from_evaluating(Expression expression)

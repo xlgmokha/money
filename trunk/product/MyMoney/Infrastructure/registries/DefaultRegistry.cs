@@ -4,11 +4,11 @@ using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.registries
 {
-    public class default_registry<T> : IRegistry<T>
+    public class DefaultRegistry<T> : IRegistry<T>
     {
         private readonly IDependencyRegistry registry;
 
-        public default_registry(IDependencyRegistry registry)
+        public DefaultRegistry(IDependencyRegistry registry)
         {
             this.registry = registry;
         }

@@ -8,9 +8,9 @@ using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.registries
 {
-    [Concern(typeof (default_registry<int>))]
+    [Concern(typeof (DefaultRegistry<int>))]
     public class when_retrieving_all_the_items_from_the_default_repository :
-        concerns_for<IRegistry<int>, default_registry<int>>
+        concerns_for<IRegistry<int>, DefaultRegistry<int>>
     {
         it should_leverage_the_resolver_to_retrieve_all_the_implementations =
             () => registry.was_told_to(r => r.all_the<int>());
@@ -26,7 +26,7 @@ namespace MoMoney.Infrastructure.registries
 
         public override IRegistry<int> create_sut()
         {
-            return new default_registry<int>(registry);
+            return new DefaultRegistry<int>(registry);
         }
 
         because b = () => { result = sut.all(); };

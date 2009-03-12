@@ -12,7 +12,7 @@ namespace MoMoney.Presentation.Presenters.Shell
     public class GettingStartedModule : IGettingStartedModule
     {
         readonly IEventAggregator broker;
-        IRunPresenterCommand command;
+        readonly IRunPresenterCommand command;
 
         public GettingStartedModule(IEventAggregator broker, IRunPresenterCommand command)
         {
