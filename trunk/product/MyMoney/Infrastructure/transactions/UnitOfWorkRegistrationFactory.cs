@@ -9,7 +9,7 @@ namespace MoMoney.Infrastructure.transactions
 
     public class UnitOfWorkRegistrationFactory<T> : IUnitOfWorkRegistrationFactory<T>
     {
-        IPrototype prototype;
+        readonly IPrototype prototype;
 
         public UnitOfWorkRegistrationFactory(IPrototype prototype)
         {

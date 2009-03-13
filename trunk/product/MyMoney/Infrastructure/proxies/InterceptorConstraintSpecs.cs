@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Infrastructure.proxies.Interceptors;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;

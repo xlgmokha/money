@@ -1,9 +1,9 @@
 using System;
 using System.Data;
 using Castle.Core.Interceptor;
-using jpboodhoo.bdd;
-using jpboodhoo.bdd.contexts;
-using jpboodhoo.bdd.mbunit;
+using developwithpassion.bdd;
+using developwithpassion.bdd.contexts;
+using developwithpassion.bdd.mbunit;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 

@@ -1,7 +1,7 @@
 using System.Windows.Forms;
 using bdddoc.domain;
-using jpboodhoo.bdd.concerns;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.concerns;
+using developwithpassion.bdd.contexts;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
 

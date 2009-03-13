@@ -1,4 +1,4 @@
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.updates;

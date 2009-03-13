@@ -1,5 +1,5 @@
 using System;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Views.Startup;
 using MoMoney.Testing.MetaData;

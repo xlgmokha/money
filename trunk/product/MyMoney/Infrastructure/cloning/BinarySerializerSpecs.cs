@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MbUnit.Framework;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;

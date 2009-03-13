@@ -1,5 +1,5 @@
 using System;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Views.helpers;
 using MoMoney.Testing.spechelpers.contexts;

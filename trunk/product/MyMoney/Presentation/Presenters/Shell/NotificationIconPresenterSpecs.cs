@@ -1,4 +1,4 @@
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.Shell;

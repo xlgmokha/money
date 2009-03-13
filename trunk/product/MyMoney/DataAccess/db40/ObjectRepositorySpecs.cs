@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Db4objects.Db4o;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Domain.Core;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;

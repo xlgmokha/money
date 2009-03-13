@@ -41,7 +41,7 @@ namespace MoMoney.Tasks.infrastructure
                            application_name = deployment.UpdatedApplicationFullName,
                            deployment_url = deployment.UpdateLocation,
                            available_version = update.AvailableVersion,
-                           size_of_update_in_bytes=update.UpdateSizeBytes,
+                           size_of_update_in_bytes = update.UpdateSizeBytes,
                        };
         }
 

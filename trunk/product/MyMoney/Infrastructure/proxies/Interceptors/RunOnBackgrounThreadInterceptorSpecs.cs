@@ -1,5 +1,5 @@
 using Castle.Core.Interceptor;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;

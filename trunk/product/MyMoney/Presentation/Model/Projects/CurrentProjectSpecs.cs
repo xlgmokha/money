@@ -1,5 +1,5 @@
 using System;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.DataAccess.db40;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Model.messages;

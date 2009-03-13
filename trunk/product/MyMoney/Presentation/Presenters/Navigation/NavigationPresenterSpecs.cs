@@ -1,4 +1,4 @@
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Model.Navigation;
 using MoMoney.Presentation.Views.Navigation;
 using MoMoney.Testing.MetaData;

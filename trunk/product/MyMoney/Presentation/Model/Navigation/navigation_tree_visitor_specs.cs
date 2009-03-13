@@ -1,5 +1,5 @@
 using System.Windows.Forms;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;

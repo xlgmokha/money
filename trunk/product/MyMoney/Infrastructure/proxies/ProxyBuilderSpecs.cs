@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Castle.Core.Interceptor;
 using Ec.AuditTool.Infrastructure.Proxies;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;

@@ -1,4 +1,4 @@
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Views.Menu.Help;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;

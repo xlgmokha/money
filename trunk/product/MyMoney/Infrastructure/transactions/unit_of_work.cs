@@ -20,19 +20,19 @@ namespace MoMoney.Infrastructure.transactions
     public class unit_of_work<T> : IUnitOfWork<T> where T : IEntity
     {
         readonly IRepository repository;
-        readonly IUnitOfWorkRegistrationFactory<T> mapper;
+        readonly IUnitOfWorkRegistrationFactory<T> factory;
         readonly IList<IUnitOfWorkRegistration<T>> registered_items;
 
-        public unit_of_work(IRepository repository, IUnitOfWorkRegistrationFactory<T> mapper)
+        public unit_of_work(IRepository repository, IUnitOfWorkRegistrationFactory<T> factory)
         {
             this.repository = repository;
-            this.mapper = mapper;
+            this.factory = factory;
             registered_items = new List<IUnitOfWorkRegistration<T>>();
         }
 
         public void register(T entity)
         {
-            registered_items.Add(mapper.map_from(entity));
+            registered_items.Add(factory.map_from(entity));
         }
 
         public void commit()

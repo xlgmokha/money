@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.accounting.financial_growth;
 using MoMoney.Domain.Core;

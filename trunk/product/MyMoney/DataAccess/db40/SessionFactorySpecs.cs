@@ -1,5 +1,5 @@
 using Db4objects.Db4o;
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.DataAccess.db40;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Testing.MetaData;

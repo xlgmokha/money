@@ -1,4 +1,4 @@
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Testing.MetaData;

@@ -1,6 +1,6 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using Castle.Core;
 using MoMoney.Domain.Core;
 using MoMoney.Utility.Extensions;
@@ -17,8 +17,8 @@ namespace MoMoney.Infrastructure.transactions
     [Singleton]
     public class UnitOfWorkRegistry : IUnitOfWorkRegistry
     {
-        private readonly IUnitOfWorkFactory factory;
-        private readonly IDictionary<Type, IUnitOfWork> units_of_work;
+        readonly IUnitOfWorkFactory factory;
+        readonly IDictionary<Type, IUnitOfWork> units_of_work;
 
         public UnitOfWorkRegistry(IUnitOfWorkFactory factory)
         {
@@ -28,7 +28,8 @@ namespace MoMoney.Infrastructure.transactions
 
         public IUnitOfWork<T> start_unit_of_work_for<T>() where T : IEntity
         {
-            if (units_of_work.ContainsKey(typeof (T))) {
+            if (units_of_work.ContainsKey(typeof (T)))
+            {
                 return units_of_work[typeof (T)].downcast_to<IUnitOfWork<T>>();
             }
 
@@ -39,18 +40,20 @@ namespace MoMoney.Infrastructure.transactions
 
         public bool has_changes_to_commit()
         {
-            return units_of_work.Values.Count(x=>x.is_dirty()) > 0;
+            return units_of_work.Values.Count(x => x.is_dirty()) > 0;
         }
 
         public void commit_all()
         {
-            if (contains_items_to_commit()) {
+            if (contains_items_to_commit())
+            {
                 units_of_work.Values.each(x => x.commit());
             }
         }
 
         void clear_all()
         {
+            units_of_work.Values.each(x => x.Dispose());
             units_of_work.Clear();
         }
 

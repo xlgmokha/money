@@ -83,17 +83,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Annotations, Version=4.1.933.3, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\jetbrains\JetBrains.Annotations.dll</HintPath>
-    </Reference>
-    <Reference Include="jpboodhoo.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\jpboodhoo\jpboodhoo.bdd.dll</HintPath>
-    </Reference>
-    <Reference Include="jpboodhoo.commons.core.infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\jpboodhoo\jpboodhoo.commons.core.infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

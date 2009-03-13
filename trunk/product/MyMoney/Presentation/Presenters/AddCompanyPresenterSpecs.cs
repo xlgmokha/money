@@ -1,4 +1,4 @@
-using jpboodhoo.bdd.contexts;
+using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views;
 using MoMoney.Tasks.application;

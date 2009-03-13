@@ -1,4 +1,4 @@
-using jpboodhoo.bdd.mbunit.standard.observations;
+using developwithpassion.bdd.mbunit.standard.observations;
 using MoMoney.Testing.Extensions;
 using Rhino.Mocks;
 
