@@ -17,6 +17,7 @@ namespace MoMoney.Presentation.Views.Shell
         public ApplicationShell()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
             regions = new Dictionary<string, Control>
                           {
                               {GetType().FullName, this},
