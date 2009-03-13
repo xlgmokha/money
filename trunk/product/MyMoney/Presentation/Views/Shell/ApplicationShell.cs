@@ -17,10 +17,11 @@ namespace MoMoney.Presentation.Views.Shell
             InitializeComponent();
             regions = new Dictionary<string, Control>
                           {
+                              {GetType().FullName, this},
                               {ux_main_menu_strip.GetType().FullName, ux_main_menu_strip},
                               {ux_dock_panel.GetType().FullName, ux_dock_panel},
                               {ux_tool_bar_strip.GetType().FullName, ux_tool_bar_strip},
-                              {ux_status_bar.GetType().FullName, ux_status_bar}
+                              {ux_status_bar.GetType().FullName, ux_status_bar},
                           };
         }
 
@@ -29,12 +30,11 @@ namespace MoMoney.Presentation.Views.Shell
             on_ui_thread(() => view.add_to(ux_dock_panel));
         }
 
-        public void region<T>(Action<T> action) where T : Control
+        public void region<Region>(Action<Region> action) where Region : Control
         {
-            ensure_that_the_region_exists<T>();
-            on_ui_thread(() => action(regions[typeof (T).FullName].downcast_to<T>()));
+            ensure_that_the_region_exists<Region>();
+            on_ui_thread(() => action(regions[typeof (Region).FullName].downcast_to<Region>()));
         }
-
 
         public void close_the_active_window()
         {
@@ -52,14 +52,6 @@ namespace MoMoney.Presentation.Views.Shell
                              });
         }
 
-        //public void clear_menu_items()
-        //{
-        //    on_ui_thread(() =>
-        //                     {
-        //                         ux_tool_bar_strip.Items.Clear();
-        //                         ux_main_menu_strip.Items.Clear();
-        //                     });
-        //}
         void ensure_that_the_region_exists<T>()
         {
             if (!regions.ContainsKey(typeof (T).FullName))

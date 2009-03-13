@@ -7,10 +7,10 @@ namespace MoMoney.Presentation.Views.Shell
 {
     public interface IShell : IWin32Window, ISynchronizeInvoke, IContainerControl, IBindableComponent, IDropTarget
     {
+        string Text { get; set; }
         void add(IDockedContentView view);
         void region<T>(Action<T> action) where T : Control;
         void close_the_active_window();
-        string Text { get; set; }
         void close_all_windows();
     }
 }

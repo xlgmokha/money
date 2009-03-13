@@ -1,5 +1,4 @@
 using developwithpassion.bdd.contexts;
-using developwithpassion.bdd.contexts;
 using MoMoney.Domain.Core;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
@@ -8,16 +7,11 @@ using MoMoney.Testing.spechelpers.core;
 namespace MoMoney.Infrastructure.transactions
 {
     [Concern(typeof (UnitOfWorkRegistry))]
-    public abstract class behaves_like_unit_of_work_registery : concerns_for<IUnitOfWorkRegistry,UnitOfWorkRegistry>
+    public abstract class behaves_like_unit_of_work_registery : concerns_for<IUnitOfWorkRegistry, UnitOfWorkRegistry>
     {
-        //public override IUnitOfWorkRegistry create_sut()
-        //{
-        //    return new UnitOfWorkRegistry(factory);
-        //}
-
         context c = () => { factory = the_dependency<IUnitOfWorkFactory>(); };
 
-        protected static IUnitOfWorkFactory factory;
+        static protected IUnitOfWorkFactory factory;
     }
 
     public class when_starting_a_unit_of_work_for_a_new_type : behaves_like_unit_of_work_registery
@@ -29,7 +23,7 @@ namespace MoMoney.Infrastructure.transactions
         context c = () =>
                         {
                             unit_of_work = an<IUnitOfWork<IEntity>>();
-                            factory.is_told_to(x => x.create_for<IEntity>()).it_will_return( unit_of_work);
+                            factory.is_told_to(x => x.create_for<IEntity>()).it_will_return(unit_of_work);
                         };
 
         because b = () => { result = sut.start_unit_of_work_for<IEntity>(); };
@@ -47,7 +41,7 @@ namespace MoMoney.Infrastructure.transactions
                         {
                             unit_of_work = an<IUnitOfWork<IEntity>>();
 
-                            factory.is_told_to(x => x.create_for<IEntity>()).it_will_return( unit_of_work).Repeat.Once();
+                            factory.is_told_to(x => x.create_for<IEntity>()).it_will_return(unit_of_work).Repeat.Once();
                         };
 
         because b = () =>
@@ -67,7 +61,7 @@ namespace MoMoney.Infrastructure.transactions
         context c = () =>
                         {
                             unit_of_work = an<IUnitOfWork<IEntity>>();
-                            factory.is_told_to(x => x.create_for<IEntity>()).it_will_return( unit_of_work).Repeat.Once();
+                            factory.is_told_to(x => x.create_for<IEntity>()).it_will_return(unit_of_work).Repeat.Once();
                         };
 
         because b = () =>
