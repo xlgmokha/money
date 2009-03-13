@@ -17,7 +17,7 @@ namespace MoMoney.Presentation.Views.Shell
         readonly IFileMenu file_menu;
         readonly IWindowMenu window_menu;
         readonly IHelpMenu help_menu;
-        bool hooked_up;
+        //bool hooked_up;
 
         public NotificationIconView(IFileMenu file_menu, IWindowMenu window_menu, IHelpMenu help_menu)
         {
@@ -29,10 +29,10 @@ namespace MoMoney.Presentation.Views.Shell
 
         public void display(ApplicationIcon icon_to_display, string text_to_display)
         {
-            if (hooked_up)
-            {
-                return;
-            }
+            //if (hooked_up)
+            //{
+            //    return;
+            //}
             ux_notification_icon =
                 new NotifyIcon
                     {
@@ -51,7 +51,7 @@ namespace MoMoney.Presentation.Views.Shell
                                                   }
                                           }
                     };
-            hooked_up = true;
+            //hooked_up = true;
         }
 
         public void opened_new_project()

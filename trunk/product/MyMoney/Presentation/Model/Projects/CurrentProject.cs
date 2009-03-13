@@ -52,6 +52,10 @@ namespace MoMoney.Presentation.Model.Projects
 
         public void start_a_new_project()
         {
+            if (is_open())
+            {
+                close();
+            }
             is_project_open = true;
             current_file = null;
             configuration.change_path_to((ApplicationFile) Path.GetTempFileName());
