@@ -31,8 +31,10 @@ namespace MoMoney.Presentation.Views.Shell
 
         public void region<T>(Action<T> action) where T : Control
         {
+            ensure_that_the_region_exists<T>();
             on_ui_thread(() => action(regions[typeof (T).FullName].downcast_to<T>()));
         }
+
 
         public void close_the_active_window()
         {
@@ -58,5 +60,12 @@ namespace MoMoney.Presentation.Views.Shell
         //                         ux_main_menu_strip.Items.Clear();
         //                     });
         //}
+        void ensure_that_the_region_exists<T>()
+        {
+            if (!regions.ContainsKey(typeof (T).FullName))
+            {
+                throw new Exception("Could not find region: {0}".formatted_using(typeof (T)));
+            }
+        }
     }
 }
