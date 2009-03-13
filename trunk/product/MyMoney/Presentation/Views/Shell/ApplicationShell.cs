@@ -1,20 +1,27 @@
-﻿using System.ComponentModel.Composition;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Windows.Forms;
 using MoMoney.Presentation.Views.core;
+using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.Shell
 {
     [Export(typeof (IShell))]
     public partial class ApplicationShell : ApplicationWindow, IShell
     {
+        readonly IDictionary<string, Control> regions;
+
         public ApplicationShell()
         {
             InitializeComponent();
-        }
-
-        public StatusStrip status_bar()
-        {
-            return ux_status_bar;
+            regions = new Dictionary<string, Control>
+                          {
+                              {ux_main_menu_strip.GetType().FullName, ux_main_menu_strip},
+                              {ux_dock_panel.GetType().FullName, ux_dock_panel},
+                              {ux_tool_bar_strip.GetType().FullName, ux_tool_bar_strip},
+                              {ux_status_bar.GetType().FullName, ux_status_bar}
+                          };
         }
 
         public void add(IDockedContentView view)
@@ -22,14 +29,9 @@ namespace MoMoney.Presentation.Views.Shell
             on_ui_thread(() => view.add_to(ux_dock_panel));
         }
 
-        public void add_to_main_menu(ToolStripMenuItem item)
+        public void region<T>(Action<T> action) where T : Control
         {
-            on_ui_thread(() => ux_main_menu_strip.Items.Add(item));
-        }
-
-        public void add_to_tool_bar(ToolStripItem item)
-        {
-            on_ui_thread(() => ux_tool_bar_strip.Items.Add(item));
+            on_ui_thread(() => action(regions[typeof (T).FullName].downcast_to<T>()));
         }
 
         public void close_the_active_window()
@@ -48,13 +50,13 @@ namespace MoMoney.Presentation.Views.Shell
                              });
         }
 
-        public void clear_menu_items()
-        {
-            on_ui_thread(() =>
-                             {
-                                 ux_tool_bar_strip.Items.Clear();
-                                 ux_main_menu_strip.Items.Clear();
-                             });
-        }
+        //public void clear_menu_items()
+        //{
+        //    on_ui_thread(() =>
+        //                     {
+        //                         ux_tool_bar_strip.Items.Clear();
+        //                         ux_main_menu_strip.Items.Clear();
+        //                     });
+        //}
     }
 }

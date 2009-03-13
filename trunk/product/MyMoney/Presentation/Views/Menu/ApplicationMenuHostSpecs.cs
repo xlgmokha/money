@@ -1,5 +1,6 @@
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
+using MbUnit.Framework;
 using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Views.Menu.Mappers;
 using MoMoney.Presentation.Views.Shell;
@@ -22,10 +23,10 @@ namespace MoMoney.Presentation.Views.Menu
         static protected IShell main_shell;
     }
 
+    [Ignore]
     public class when_adding_sub_menus_to_the_main_menu : behaves_like_application_menu_host
     {
-        it should_add_the_mapped_menu_strip_item_to_the_main_menu_strip =
-            () => main_shell.was_told_to(x => x.add_to_main_menu(tool_strip_menu_item));
+        //it should_add_the_mapped_menu_strip_item_to_the_main_menu_strip = () => main_shell.was_told_to(x => x.region<MenuStrip>((m)=>tool_strip_menu_item));
 
         context c = () =>
                         {

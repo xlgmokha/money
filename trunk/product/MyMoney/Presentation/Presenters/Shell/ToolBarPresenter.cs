@@ -24,7 +24,8 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void run()
         {
-            all_tool_bar_buttons().each(x => shell.add_to_tool_bar(x));
+            shell.region<ToolStrip>(x => all_tool_bar_buttons().each(y => x.Items.Add(y)));
+            //all_tool_bar_buttons().each(x => shell.add_to_tool_bar(x));
         }
 
         static IEnumerable<ToolStripItem> all_tool_bar_buttons()
