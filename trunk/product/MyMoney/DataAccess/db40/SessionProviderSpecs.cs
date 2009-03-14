@@ -28,7 +28,7 @@ namespace MoMoney.DataAccess.db40
             () =>
                 {
                     var the_path_to_the_database_file = an<IFile>();
-                    session = an<IObjectContainer>();
+                    session = an<ISession>();
 
                     database_configuration.is_told_to(x => x.path_to_the_database()).it_will_return(
                         the_path_to_the_database_file);
@@ -38,7 +38,7 @@ namespace MoMoney.DataAccess.db40
 
         because b = () => { result = sut.get_session(); };
 
-        static IObjectContainer result;
-        static IObjectContainer session;
+        static ISession result;
+        static ISession session;
     }
 }

@@ -156,6 +156,7 @@
     <Compile Include="DataAccess\db40\DatabaseConfiguration.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGateway.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGatewaySpecs.cs" />
+    <Compile Include="DataAccess\db40\Session.cs" />
     <Compile Include="DataAccess\db40\spiking\db40_spike_specs.cs" />
     <Compile Include="DataAccess\repositories\BillRepository.cs" />
     <Compile Include="DataAccess\repositories\bill_repository_specs.cs" />

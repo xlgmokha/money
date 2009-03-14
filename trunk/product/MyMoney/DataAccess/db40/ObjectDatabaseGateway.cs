@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Db4objects.Db4o;
 using MoMoney.DataAccess.core;
 using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.Extensions;
@@ -28,7 +27,6 @@ namespace MoMoney.DataAccess.db40
 
         public void save<T>(T item) where T : IEntity
         {
-            this.log().debug("saving: {0}, {1}", item.ToString(), item.Id);
             using (var container = open_session_with_database())
             {
                 container.Store(item);
@@ -36,7 +34,7 @@ namespace MoMoney.DataAccess.db40
             }
         }
 
-        IObjectContainer open_session_with_database()
+        ISession open_session_with_database()
         {
             return provider.get_session();
         }

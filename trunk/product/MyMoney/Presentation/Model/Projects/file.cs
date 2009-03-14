@@ -1,11 +1,9 @@
 using System.IO;
-using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Presentation.Model.Projects
 {
     public interface IFile
     {
-        void copy_to(IFile file_to_overwrite);
         string path { get; }
         bool does_the_file_exist();
     }
@@ -17,17 +15,11 @@ namespace MoMoney.Presentation.Model.Projects
             this.path = path;
         }
 
-        public string path { get; private set; }
+        public virtual string path { get; private set; }
 
-        public bool does_the_file_exist()
+        public virtual bool does_the_file_exist()
         {
             return !string.IsNullOrEmpty(path) && File.Exists(path);
-        }
-
-        public void copy_to(IFile file_to_overwrite)
-        {
-            this.log().debug("copying file {0} to {1}", path, file_to_overwrite.path);
-            File.Copy(path, file_to_overwrite.path, true);
         }
 
         public static implicit operator ApplicationFile(string file_path)
