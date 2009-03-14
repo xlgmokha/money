@@ -1,11 +1,10 @@
 using Db4objects.Db4o;
-using MoMoney.DataAccess.db40;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.DataAccess.db40
 {
-    public interface ISessionFactory : IFactory<IObjectContainer>
+    public interface ISessionFactory // : IFactory<IObjectContainer>
     {
+        IObjectContainer create();
     }
 
     public class SessionFactory : ISessionFactory

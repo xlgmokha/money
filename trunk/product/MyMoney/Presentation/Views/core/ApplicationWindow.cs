@@ -16,6 +16,7 @@ namespace MoMoney.Presentation.Views.core
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
+            SetStyle(ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
         }
 
         public IApplicationWindow create_tool_tip_for(string title, string caption, Control control)

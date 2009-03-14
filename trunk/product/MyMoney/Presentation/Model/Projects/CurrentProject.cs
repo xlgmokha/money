@@ -44,7 +44,13 @@ namespace MoMoney.Presentation.Model.Projects
         public void open(IFile file)
         {
             if (!file.does_the_file_exist()) return;
+            if (is_open())
+            {
+                close();
+            }
+
             current_file = file;
+            is_project_open = true;
             configuration.change_path_to(file);
             changes_to_save = false;
             broker.publish(new new_project_opened(name()));

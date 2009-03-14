@@ -17,15 +17,18 @@ namespace MoMoney.Testing.MetaData
     public class run_in_real_container_interceptor : DecoratorRunInvoker
     {
         public run_in_real_container_interceptor(IRunInvoker wrapper) : base(wrapper)
-        {}
+        {
+        }
 
         public override object Execute(object o, IList args)
         {
-            try {
+            try
+            {
                 resolve.initialize_with(new WindsorDependencyRegistry());
                 return Invoker.Execute(o, args);
             }
-            finally {
+            finally
+            {
                 resolve.initialize_with(null);
             }
         }

@@ -417,6 +417,7 @@
       <DependentUpon>SaveChangesView.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\dialogs\SaveChangesViewSpecs.cs" />
+    <Compile Include="Presentation\Views\helpers\EventTriggerExtensions.cs" />
     <Compile Include="Presentation\Views\IAddCompanyView.cs" />
     <Compile Include="Presentation\Views\billing\IViewAllBills.cs" />
     <Compile Include="Presentation\Views\billing\view_all_bills.cs">

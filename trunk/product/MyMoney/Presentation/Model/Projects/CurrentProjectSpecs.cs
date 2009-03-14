@@ -13,11 +13,6 @@ namespace MoMoney.Presentation.Model.Projects
     [Concern(typeof (CurrentProject))]
     public abstract class behaves_like_a_project : concerns_for<IProject, CurrentProject>
     {
-        public override IProject create_sut()
-        {
-            return new CurrentProject(configuration, broker);
-        }
-
         context c = () =>
                         {
                             configuration = the_dependency<IDatabaseConfiguration>();
@@ -175,5 +170,35 @@ namespace MoMoney.Presentation.Model.Projects
         static bool result;
         static IFile file;
         static unsaved_changes_event message;
+    }
+
+    public class when_starting_a_new_project_and_a_project_was_already_open : behaves_like_a_project
+    {
+        it should_close_the_previous_project = () => broker.was_told_to(x => x.publish<closing_project_event>());
+
+        because b = () =>
+                        {
+                            sut.start_a_new_project();
+                            sut.start_a_new_project();
+                        };
+    }
+
+    public class when_opening_an_existing_project_and_a_project_was_already_open : behaves_like_a_project
+    {
+        it should_close_the_previous_project = () => broker.was_told_to(x => x.publish<closing_project_event>());
+
+        context c = () =>
+                        {
+                            file = an<IFile>();
+                            when_the(file).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
+                        };
+
+        because b = () =>
+                        {
+                            sut.open(file);
+                            sut.start_a_new_project();
+                        };
+
+        static IFile file;
     }
 }
