@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Windows.Forms;
 using MoMoney.Presentation.Resources;
+using MoMoney.Utility.Extensions;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MoMoney.Presentation.Views.core
@@ -8,7 +9,7 @@ namespace MoMoney.Presentation.Views.core
     public interface IApplicationDockedWindow : IDockedContentView
     {
         IApplicationDockedWindow create_tool_tip_for(string title, string caption, Control control);
-        IApplicationDockedWindow titled(string title);
+        IApplicationDockedWindow titled(string title, params object[] arguments);
         IApplicationDockedWindow icon(ApplicationIcon icon);
         IApplicationDockedWindow cannot_be_closed();
         IApplicationDockedWindow docked_to(DockState state);
@@ -32,9 +33,9 @@ namespace MoMoney.Presentation.Views.core
             return this;
         }
 
-        public IApplicationDockedWindow titled(string title)
+        public IApplicationDockedWindow titled(string title, params object[] arguments)
         {
-            TabText = title;
+            TabText = title.formatted_using(arguments);
             return this;
         }
 
@@ -67,7 +68,7 @@ namespace MoMoney.Presentation.Views.core
             DockState = dock_state;
         }
 
-        void remove_from(DockPanel panel)
+        public void remove_from(DockPanel panel)
         {
             var panel_to_remove = get_window_from(panel);
             panel_to_remove.DockHandler.Close();

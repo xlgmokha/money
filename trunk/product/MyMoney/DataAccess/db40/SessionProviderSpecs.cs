@@ -1,6 +1,5 @@
 using Db4objects.Db4o;
 using developwithpassion.bdd.contexts;
-using MoMoney.DataAccess.db40;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
@@ -8,14 +7,9 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.DataAccess.db40
 {
-    [Concern(typeof (SessionFactory))]
-    public abstract class behaves_like_a_session_factory : concerns_for<ISessionFactory, SessionFactory>
+    [Concern(typeof (SessionProvider))]
+    public abstract class behaves_like_a_session_factory : concerns_for<ISessionProvider, SessionProvider>
     {
-        //public override ISessionFactory create_sut()
-        //{
-        //    return new SessionFactory(database_configuration, connection_factory);
-        //}
-
         context c = () =>
                         {
                             connection_factory = the_dependency<IConnectionFactory>();
@@ -36,11 +30,13 @@ namespace MoMoney.DataAccess.db40
                     var the_path_to_the_database_file = an<IFile>();
                     session = an<IObjectContainer>();
 
-                    database_configuration.is_told_to(x => x.path_to_the_database()).it_will_return( the_path_to_the_database_file);
-                    connection_factory.is_told_to(x => x.open_connection_to(the_path_to_the_database_file)). it_will_return(session);
+                    database_configuration.is_told_to(x => x.path_to_the_database()).it_will_return(
+                        the_path_to_the_database_file);
+                    connection_factory.is_told_to(x => x.open_connection_to(the_path_to_the_database_file)).
+                        it_will_return(session);
                 };
 
-        because b = () => { result = sut.create(); };
+        because b = () => { result = sut.get_session(); };
 
         static IObjectContainer result;
         static IObjectContainer session;

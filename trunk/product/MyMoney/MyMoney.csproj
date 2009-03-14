@@ -171,8 +171,8 @@
     <Compile Include="Domain\Core\Entity.cs" />
     <Compile Include="Domain\Core\date.cs" />
     <Compile Include="DataAccess\core\IDatabaseGateway.cs" />
-    <Compile Include="DataAccess\db40\SessionFactory.cs" />
-    <Compile Include="DataAccess\db40\SessionFactorySpecs.cs" />
+    <Compile Include="DataAccess\db40\SessionProvider.cs" />
+    <Compile Include="DataAccess\db40\SessionProviderSpecs.cs" />
     <Compile Include="Domain\accounting\billing\billing_extensions.cs" />
     <Compile Include="Domain\accounting\billing\Company.cs" />
     <Compile Include="Domain\accounting\billing\company_specs.cs" />

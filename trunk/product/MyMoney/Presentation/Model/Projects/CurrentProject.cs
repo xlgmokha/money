@@ -1,4 +1,3 @@
-using System.IO;
 using Castle.Core;
 using MoMoney.DataAccess.db40;
 using MoMoney.Infrastructure.eventing;
@@ -64,7 +63,6 @@ namespace MoMoney.Presentation.Model.Projects
             }
             is_project_open = true;
             current_file = null;
-            configuration.change_path_to((ApplicationFile) Path.GetTempFileName());
             changes_to_save = false;
             broker.publish(new new_project_opened(name()));
         }
@@ -76,6 +74,7 @@ namespace MoMoney.Presentation.Model.Projects
                 return;
             }
             current_file = new_file;
+            configuration.change_path_to(new_file);
             save_changes();
         }
 
@@ -87,7 +86,6 @@ namespace MoMoney.Presentation.Model.Projects
         public void save_changes()
         {
             ensure_that_a_path_to_save_to_has_been_specified();
-            configuration.path_to_the_database().copy_to(current_file);
             changes_to_save = false;
             broker.publish<saved_changes_event>();
         }

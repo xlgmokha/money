@@ -14,10 +14,6 @@ namespace MoMoney.Presentation.Views.Shell
 
         public void display(HybridIcon icon_to_display, string text_to_display)
         {
-            //shell.status_bar().Items.Clear();
-            //shell.status_bar().Items.Add(icon_to_display);
-            //shell.status_bar().Items.Add(text_to_display);
-
             shell.region<StatusStrip>(x =>
                                           {
                                               x.Items.Clear();

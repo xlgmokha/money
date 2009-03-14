@@ -12,9 +12,9 @@ namespace MoMoney.DataAccess.db40
     [Concern(typeof (ObjectDatabaseGateway))]
     public abstract class behaves_like_a_object_repository : concerns_for<IDatabaseGateway, ObjectDatabaseGateway>
     {
-        context c = () => { factory = the_dependency<ISessionFactory>(); };
+        context c = () => { _provider = the_dependency<ISessionProvider>(); };
 
-        protected static ISessionFactory factory;
+        protected static ISessionProvider _provider;
     }
 
     public class when_loading_all_the_items_from_the_database : behaves_like_a_object_repository
@@ -31,7 +31,7 @@ namespace MoMoney.DataAccess.db40
                             second_item = an<IEntity>();
                             var session = an<IObjectContainer>();
 
-                            factory.is_told_to(x => x.create()).it_will_return(session);
+                            _provider.is_told_to(x => x.get_session()).it_will_return(session);
                             session.is_told_to(x => x.Query<IEntity>()).it_will_return(new List<IEntity>
                                                                                            {first_item, second_item});
                         };

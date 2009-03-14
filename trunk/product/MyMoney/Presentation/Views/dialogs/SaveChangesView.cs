@@ -20,7 +20,7 @@ namespace MoMoney.Presentation.Views.dialogs
 
             titled("Unsaved Changes")
                 .create_tool_tip_for("Save", "Save the document, and then close it.", save_button)
-                .create_tool_tip_for("Don't Save", "Discard the unsaved changes.", do_not_save_button)
+                .create_tool_tip_for("Don't Save", "Discard any unsaved changes.", do_not_save_button)
                 .create_tool_tip_for("Cancel", "Go back.", cancel_button);
         }
 

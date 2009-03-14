@@ -25,18 +25,15 @@ namespace MoMoney.Presentation.Model.Projects
 
     public class when_saving_the_current_project : behaves_like_a_project
     {
-        it should_save_the_current_database_to_the_path_specified_by_the_user =
-            () => current_file.was_told_to(x => x.copy_to(file_to_update));
+        it should_notify_the_rest_of_the_application = () => broker.was_told_to(x => x.publish<saved_changes_event>());
 
         context c = () =>
                         {
                             file_to_update = an<IFile>();
                             current_file = an<IFile>();
 
-                            when_the(configuration).is_told_to(x => x.path_to_the_database()).
-                                it_will_return(current_file);
-                            when_the(file_to_update).is_told_to(x => x.does_the_file_exist()).
-                                it_will_return(true);
+                            when_the(configuration).is_told_to(x => x.path_to_the_database()). it_will_return(current_file);
+                            when_the(file_to_update).is_told_to(x => x.does_the_file_exist()). it_will_return(true);
                         };
 
         because b = () =>
@@ -61,17 +58,13 @@ namespace MoMoney.Presentation.Model.Projects
 
     public class when_specifying_a_new_path_to_save_an_opened_project_to : behaves_like_a_project
     {
-        it should_save_the_current_database_to_the_new_path =
-            () => database_file.was_told_to(x => x.copy_to(new_file));
+        it should_save_the_current_database_to_the_new_path = () => configuration.was_told_to(x => x.change_path_to(new_file));
 
         context c = () =>
                         {
                             original_file = an<IFile>();
                             new_file = an<IFile>();
                             database_file = an<IFile>();
-
-                            when_the(configuration).is_told_to(x => x.path_to_the_database()).
-                                it_will_return(database_file);
                             when_the(new_file).is_told_to(x => x.path).it_will_return("blah");
                         };
 

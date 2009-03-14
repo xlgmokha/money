@@ -9,9 +9,10 @@ namespace MoMoney.Presentation.Views.Shell
             InitializeComponent();
         }
 
-        public void display(string contents)
+        public void display(string file_path, string file_contents)
         {
-            ux_log_file.Text = contents;
+            titled("Log File - {0}", file_path);
+            ux_log_file.Text = file_contents;
         }
     }
 }

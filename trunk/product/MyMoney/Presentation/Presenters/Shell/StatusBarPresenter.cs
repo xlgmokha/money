@@ -11,7 +11,8 @@ namespace MoMoney.Presentation.Presenters.Shell
     public interface IStatusBarPresenter : IPresentationModule,
                                            IEventSubscriber<saved_changes_event>,
                                            IEventSubscriber<new_project_opened>,
-                                           IEventSubscriber<closing_the_application>
+                                           IEventSubscriber<closing_the_application>,
+                                           IEventSubscriber<closing_project_event>
     {
     }
 
@@ -31,6 +32,7 @@ namespace MoMoney.Presentation.Presenters.Shell
             broker.subscribe_to<saved_changes_event>(this);
             broker.subscribe_to<new_project_opened>(this);
             broker.subscribe_to<closing_the_application>(this);
+            broker.subscribe_to<closing_project_event>(this);
         }
 
         public void notify(saved_changes_event message)
@@ -46,6 +48,11 @@ namespace MoMoney.Presentation.Presenters.Shell
         public void notify(closing_the_application message)
         {
             view.display(ApplicationIcons.Empty, "Good Bye!");
+        }
+
+        public void notify(closing_project_event message)
+        {
+            view.display(ApplicationIcons.ApplicationReady, "Ready");
         }
     }
 }

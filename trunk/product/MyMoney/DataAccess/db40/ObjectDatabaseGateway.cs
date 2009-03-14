@@ -10,11 +10,11 @@ namespace MoMoney.DataAccess.db40
 {
     public class ObjectDatabaseGateway : IDatabaseGateway
     {
-        readonly ISessionFactory factory;
+        readonly ISessionProvider provider;
 
-        public ObjectDatabaseGateway(ISessionFactory factory)
+        public ObjectDatabaseGateway(ISessionProvider provider)
         {
-            this.factory = factory;
+            this.provider = provider;
         }
 
         public IEnumerable<T> all<T>() where T : IEntity
@@ -38,7 +38,7 @@ namespace MoMoney.DataAccess.db40
 
         IObjectContainer open_session_with_database()
         {
-            return factory.create();
+            return provider.get_session();
         }
     }
 }

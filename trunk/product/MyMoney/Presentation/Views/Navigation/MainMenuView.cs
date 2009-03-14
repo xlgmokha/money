@@ -30,7 +30,7 @@ namespace MoMoney.Presentation.Views.Navigation
 
         public void display()
         {
-            shell.add(this);
+            shell.region<DockPanel>(x => add_to(x));
         }
     }
 }

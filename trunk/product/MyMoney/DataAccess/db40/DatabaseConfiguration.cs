@@ -1,4 +1,3 @@
-using System.IO;
 using Castle.Core;
 using MoMoney.Presentation.Model.Projects;
 
@@ -15,11 +14,6 @@ namespace MoMoney.DataAccess.db40
     {
         ApplicationFile the_path_to_the_database_file;
 
-        public DatabaseConfiguration()
-        {
-            the_path_to_the_database_file = Path.GetTempFileName();
-        }
-
         public IFile path_to_the_database()
         {
             return the_path_to_the_database_file;
@@ -27,8 +21,9 @@ namespace MoMoney.DataAccess.db40
 
         public void change_path_to(IFile file)
         {
-            the_path_to_the_database_file = Path.GetTempFileName();
-            file.copy_to(the_path_to_the_database_file);
+            //the_path_to_the_database_file = Path.GetTempFileName();
+            //file.copy_to(the_path_to_the_database_file);
+            the_path_to_the_database_file = file.path;
         }
     }
 }
