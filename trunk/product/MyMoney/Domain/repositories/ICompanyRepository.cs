@@ -1,0 +1,11 @@
+using System.Collections.Generic;
+using MoMoney.Domain.accounting.billing;
+
+namespace MoMoney.Domain.repositories
+{
+    public interface ICompanyRepository
+    {
+        IEnumerable<ICompany> all();
+        ICompany find_company_named(string name);
+    }
+}

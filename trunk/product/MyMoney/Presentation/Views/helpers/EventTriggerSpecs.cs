@@ -6,7 +6,7 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Views.helpers
 {
-    public class when_invoking_a_call_on_a_target_via_reflection : concerns_for
+    public class when_invoking_a_call_on_a_target_via_reflection : concerns
     {
         it should_correctly_call_that_method =
             () =>
@@ -24,7 +24,7 @@ namespace MoMoney.Presentation.Views.helpers
         static TestControl control;
     }
 
-    public class when_invoking_a_call_on_a_target_by_passing_in_a_parameter : concerns_for
+    public class when_invoking_a_call_on_a_target_by_passing_in_a_parameter : concerns
     {
         it should_make_the_call_correctly = () => control.key_press_arguments.should_be_equal_to(args);
 

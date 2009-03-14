@@ -154,11 +154,12 @@
   <ItemGroup>
     <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
     <Compile Include="DataAccess\db40\DatabaseConfiguration.cs" />
-    <Compile Include="DataAccess\db40\ObjectRepository.cs" />
-    <Compile Include="DataAccess\db40\ObjectRepositorySpecs.cs" />
+    <Compile Include="DataAccess\db40\ObjectDatabaseGateway.cs" />
+    <Compile Include="DataAccess\db40\ObjectDatabaseGatewaySpecs.cs" />
     <Compile Include="DataAccess\db40\spiking\db40_spike_specs.cs" />
+    <Compile Include="DataAccess\repositories\BillRepository.cs" />
     <Compile Include="DataAccess\repositories\bill_repository_specs.cs" />
-    <Compile Include="DataAccess\sqlcompact\sql_compant_repository_specs.cs" />
+    <Compile Include="DataAccess\repositories\CompanyRepository.cs" />
     <Compile Include="Domain\accounting\billing\IEmployee.cs" />
     <Compile Include="Domain\accounting\financial_growth\income.cs" />
     <Compile Include="Domain\accounting\financial_growth\income_extensions.cs" />
@@ -169,7 +170,7 @@
     <Compile Include="Domain\Core\day.cs" />
     <Compile Include="Domain\Core\Entity.cs" />
     <Compile Include="Domain\Core\date.cs" />
-    <Compile Include="Domain\Core\IRepository.cs" />
+    <Compile Include="DataAccess\core\IDatabaseGateway.cs" />
     <Compile Include="DataAccess\db40\SessionFactory.cs" />
     <Compile Include="DataAccess\db40\SessionFactorySpecs.cs" />
     <Compile Include="Domain\accounting\billing\billing_extensions.cs" />
@@ -179,12 +180,13 @@
     <Compile Include="Domain\accounting\AccountHolderSpecs.cs" />
     <Compile Include="Domain\accounting\billing\total_payments_calculator.cs" />
     <Compile Include="Domain\Core\IYear.cs" />
-    <Compile Include="Domain\Core\money_extensions.cs" />
-    <Compile Include="Domain\Core\money_extensions_specs.cs" />
+    <Compile Include="Domain\Core\MoneyExtensions.cs" />
+    <Compile Include="Domain\Core\MoneyExtensionsSpecs.cs" />
     <Compile Include="Domain\Core\MoneySpecs.cs" />
     <Compile Include="Domain\Core\range.cs" />
     <Compile Include="Domain\Core\range_specs.cs" />
-    <Compile Include="Domain\repositories\company_repository_extensions.cs" />
+    <Compile Include="Domain\repositories\IBillRepository.cs" />
+    <Compile Include="Domain\repositories\ICompanyRepository.cs" />
     <Compile Include="Infrastructure\caching\IdentityMapSpecs.cs" />
     <Compile Include="Infrastructure\caching\IIdentityMap.cs" />
     <Compile Include="Infrastructure\cloning\BinarySerializer.cs" />
@@ -518,7 +520,7 @@
     <Compile Include="Tasks\infrastructure\LogFileTasks.cs" />
     <Compile Include="Tasks\infrastructure\UpdateTasks.cs" />
     <Compile Include="Testing\MetaData\IntegrationAttribute.cs" />
-    <Compile Include="Testing\spechelpers\contexts\concerns_for.cs" />
+    <Compile Include="Testing\spechelpers\contexts\concerns.cs" />
     <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
     <Compile Include="Testing\spechelpers\core\empty_fixture.cs" />
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
@@ -745,6 +747,7 @@
     <Compile Include="windows.ui\wire_up_the_views_in_to_the.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DataAccess\sqlcompact\" />
     <Folder Include="Presentation\module\" />
     <Folder Include="Tasks\domain\" />
     <Folder Include="Tasks\Stubs\" />

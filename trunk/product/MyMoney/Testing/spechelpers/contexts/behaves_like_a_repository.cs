@@ -1,6 +1,6 @@
 using developwithpassion.bdd.contexts;
 using MbUnit.Framework;
-using MoMoney.Domain.Core;
+using MoMoney.DataAccess.core;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Testing.MetaData;
@@ -8,13 +8,13 @@ using MoMoney.Testing.MetaData;
 namespace MoMoney.Testing.spechelpers.contexts
 {
     //[run_in_real_container]
-    [Concern(typeof (IRepository))]
+    [Concern(typeof (IDatabaseGateway))]
     [Ignore]
-    public abstract class behaves_like_a_repository : concerns_for<IRepository>
+    public abstract class behaves_like_a_repository : concerns_for<IDatabaseGateway>
     {
-        public override IRepository create_sut()
+        public override IDatabaseGateway create_sut()
         {
-            return resolve.dependency_for<IRepository>();
+            return resolve.dependency_for<IDatabaseGateway>();
         }
 
         before_all_observations all = () => resolve.initialize_with(new WindsorDependencyRegistry());

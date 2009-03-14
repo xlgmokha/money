@@ -1,4 +1,5 @@
 using developwithpassion.bdd.contexts;
+using MoMoney.DataAccess.core;
 using MoMoney.Domain.Core;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
@@ -16,11 +17,11 @@ namespace MoMoney.Infrastructure.transactions
 
         context c = () =>
                         {
-                            repository = the_dependency<IRepository>();
+                            repository = the_dependency<IDatabaseGateway>();
                             factory = the_dependency<IUnitOfWorkRegistrationFactory<IEntity>>();
                         };
 
-        protected static IRepository repository;
+        protected static IDatabaseGateway repository;
         protected static IUnitOfWorkRegistrationFactory<IEntity> factory;
     }
 

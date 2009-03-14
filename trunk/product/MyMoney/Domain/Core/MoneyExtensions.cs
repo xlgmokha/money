@@ -2,7 +2,7 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Domain.Core
 {
-    public static class money_extensions
+    public static class MoneyExtensions
     {
         public static IMoney as_money(this double amount)
         {

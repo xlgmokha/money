@@ -10,7 +10,7 @@ using MoMoney.Utility.Extensions;
 namespace MoMoney.DataAccess.db40.spiking
 {
     [Concern(typeof (Db4oFactory))]
-    public class when_opening_an_existing_database_ : concerns_for
+    public class when_opening_an_existing_database_ : concerns
     {
         before_each_observation be = () => { };
 

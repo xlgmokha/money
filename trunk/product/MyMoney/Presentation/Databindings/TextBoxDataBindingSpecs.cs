@@ -8,7 +8,7 @@ using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 namespace MoMoney.Presentation.Databindings
 {
     [Concern(typeof (Create))]
-    public class when_binding_a_property_on_an_object_to_a_textbox : concerns_for
+    public class when_binding_a_property_on_an_object_to_a_textbox : concerns
     {
         it should_initialize_the_text_of_the_textbox_to_the_value_of_the_property =
             () => text_box.Text.should_be_equal_to(first_name);
@@ -31,7 +31,7 @@ namespace MoMoney.Presentation.Databindings
     }
 
     [Concern(typeof (Create))]
-    public class when_updating_the_text_of_a_bound_text_box : concerns_for
+    public class when_updating_the_text_of_a_bound_text_box : concerns
     {
         it should_update_the_value_of_the_property_that_the_textbox_is_bound_to =
             () => thing_to_bind_to.FirstName.should_be_equal_to(expected_name);

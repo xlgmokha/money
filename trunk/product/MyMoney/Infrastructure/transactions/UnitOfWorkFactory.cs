@@ -1,3 +1,4 @@
+using MoMoney.DataAccess.core;
 using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.Container;
 
@@ -10,10 +11,10 @@ namespace MoMoney.Infrastructure.transactions
 
     public class UnitOfWorkFactory : IUnitOfWorkFactory
     {
-        readonly IRepository repository;
+        readonly IDatabaseGateway repository;
         readonly IDependencyRegistry registry;
 
-        public UnitOfWorkFactory(IRepository repository, IDependencyRegistry registry)
+        public UnitOfWorkFactory(IDatabaseGateway repository, IDependencyRegistry registry)
         {
             this.repository = repository;
             this.registry = registry;

@@ -8,7 +8,7 @@ using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 namespace MoMoney.Utility.Extensions
 {
     [Concern(typeof (mapping_extensions))]
-    public class when_transforming_type_A_to_type_B_then_C : concerns_for
+    public class when_transforming_type_A_to_type_B_then_C : concerns
     {
         it should_return_the_correct_result = () => result.should_be_equal_to(1);
 

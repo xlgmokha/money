@@ -3,12 +3,11 @@ using MoMoney.Infrastructure.Container;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
-using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MoMoney.Infrastructure.interceptors
 {
     [Concern(typeof (Lazy))]
-    public abstract class behaves_like_a_lazy_loaded_object : concerns_for
+    public abstract class behaves_like_a_lazy_loaded_object : concerns
     {
         context c = () =>
                         {

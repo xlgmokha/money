@@ -8,7 +8,7 @@ using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 namespace MoMoney.Presentation.Databindings
 {
     [Concern(typeof (Create))]
-    public class when_binding_a_property_from_an_object_to_a_combo_box : concerns_for
+    public class when_binding_a_property_from_an_object_to_a_combo_box : concerns
     {
         it should_initialize_the_combo_box_with_the_current_value_of_the_property =
             () => combo_box.SelectedItem.should_be_equal_to(baby_girl);
@@ -38,7 +38,7 @@ namespace MoMoney.Presentation.Databindings
     }
 
     [Concern(typeof (Create))]
-    public class when_changing_the_selected_item_on_a_combo_box_that_is_bound_to_a_property : concerns_for
+    public class when_changing_the_selected_item_on_a_combo_box_that_is_bound_to_a_property : concerns
     {
         it should_change_the_value_of_the_property_that_the_combo_box_is_bound_to =
             () => thing_to_bind_to.Child.should_be_equal_to(baby_boy);

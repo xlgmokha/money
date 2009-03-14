@@ -8,7 +8,7 @@ using MoMoney.Testing.spechelpers.core;
 namespace MoMoney.Presentation.Databindings
 {
     [Concern(typeof (Create))]
-    public class when_a_new_date_is_selected_by_a_date_time_picker_that_is_bound_to_a_property : concerns_for
+    public class when_a_new_date_is_selected_by_a_date_time_picker_that_is_bound_to_a_property : concerns
     {
         it should_update_the_value_of_the_property =
             () => thing_to_bind_to.birth_day.should_be_equal_to(november_nineteenth);

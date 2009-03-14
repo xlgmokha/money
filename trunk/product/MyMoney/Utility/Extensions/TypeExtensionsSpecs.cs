@@ -4,7 +4,7 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Utility.Extensions
 {
-    public class when_getting_the_last_interface_for_a_type : concerns_for
+    public class when_getting_the_last_interface_for_a_type : concerns
     {
         it should_return_the_correct_one = () => typeof (TestType).last_interface().should_be_equal_to(typeof (ITestType));
     }

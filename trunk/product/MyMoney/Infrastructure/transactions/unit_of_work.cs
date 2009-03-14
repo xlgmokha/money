@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using MoMoney.DataAccess.core;
 using MoMoney.Domain.Core;
 using MoMoney.Utility.Extensions;
 
@@ -19,11 +20,11 @@ namespace MoMoney.Infrastructure.transactions
 
     public class unit_of_work<T> : IUnitOfWork<T> where T : IEntity
     {
-        readonly IRepository repository;
+        readonly IDatabaseGateway repository;
         readonly IUnitOfWorkRegistrationFactory<T> factory;
         readonly IList<IUnitOfWorkRegistration<T>> registered_items;
 
-        public unit_of_work(IRepository repository, IUnitOfWorkRegistrationFactory<T> factory)
+        public unit_of_work(IDatabaseGateway repository, IUnitOfWorkRegistrationFactory<T> factory)
         {
             this.repository = repository;
             this.factory = factory;

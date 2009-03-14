@@ -24,7 +24,7 @@ namespace MoMoney.Testing.spechelpers.contexts
         }
     }
 
-    public abstract class concerns_for : observations_for_a_static_sut, IHideObjectMembers
+    public abstract class concerns : observations_for_a_static_sut, IHideObjectMembers
     {
         static protected T dependency<T>() where T : class
         {

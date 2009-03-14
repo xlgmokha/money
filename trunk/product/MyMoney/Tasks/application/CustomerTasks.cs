@@ -1,7 +1,7 @@
 using System.Linq;
 using Castle.Core;
+using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting;
-using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.interceptors;
 
 namespace MoMoney.Tasks.application
@@ -14,9 +14,9 @@ namespace MoMoney.Tasks.application
     [Interceptor(typeof (IUnitOfWorkInterceptor))]
     public class CustomerTasks : ICustomerTasks
     {
-        private readonly IRepository repository;
+        private readonly IDatabaseGateway repository;
 
-        public CustomerTasks(IRepository repository)
+        public CustomerTasks(IDatabaseGateway repository)
         {
             this.repository = repository;
         }

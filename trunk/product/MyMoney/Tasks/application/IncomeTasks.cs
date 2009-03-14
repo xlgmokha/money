@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Castle.Core;
+using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.accounting.financial_growth;
 using MoMoney.Domain.Core;
@@ -18,10 +19,10 @@ namespace MoMoney.Tasks.application
     [Interceptor(typeof (IUnitOfWorkInterceptor))]
     public class IncomeTasks : IIncomeTasks
     {
-        private readonly IRepository repository;
+        private readonly IDatabaseGateway repository;
         private readonly ICustomerTasks tasks;
 
-        public IncomeTasks(IRepository repository, ICustomerTasks tasks)
+        public IncomeTasks(IDatabaseGateway repository, ICustomerTasks tasks)
         {
             this.repository = repository;
             this.tasks = tasks;

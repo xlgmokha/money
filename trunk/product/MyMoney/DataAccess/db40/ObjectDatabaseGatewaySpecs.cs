@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Db4objects.Db4o;
 using developwithpassion.bdd.contexts;
+using MoMoney.DataAccess.core;
 using MoMoney.Domain.Core;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
@@ -8,17 +9,12 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.DataAccess.db40
 {
-    [Concern(typeof (ObjectRepository))]
-    public abstract class behaves_like_a_object_repository : concerns_for<IRepository, ObjectRepository>
+    [Concern(typeof (ObjectDatabaseGateway))]
+    public abstract class behaves_like_a_object_repository : concerns_for<IDatabaseGateway, ObjectDatabaseGateway>
     {
-        //public override IRepository create_sut()
-        //{
-        //    return new ObjectRepository(factory);
-        //}
-
         context c = () => { factory = the_dependency<ISessionFactory>(); };
 
-        static protected ISessionFactory factory;
+        protected static ISessionFactory factory;
     }
 
     public class when_loading_all_the_items_from_the_database : behaves_like_a_object_repository

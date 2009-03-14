@@ -3,26 +3,25 @@ using MoMoney.Infrastructure.Container;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
-using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MoMoney.Infrastructure.Logging
 {
     [Concern(typeof (Log))]
-    public class when_creating_a_logger_for_a_particular_type_ : concerns_for
+    public class when_creating_a_logger_for_a_particular_type_ : concerns
     {
         it should_return_the_logger_created_for_that_type = () => result.should_be_equal_to(logger);
 
-        context c = () =>
-                        {
-                            var factory = an<ILogFactory>();
-                            var registry = an<IDependencyRegistry>();
-                            logger = an<ILogger>();
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(registry, x => x.get_a<ILogFactory>()), factory);
+        context c =
+            () =>
+                {
+                    var factory = an<ILogFactory>();
+                    var registry = an<IDependencyRegistry>();
+                    logger = an<ILogger>();
+                    registry.is_told_to(x => x.get_a<ILogFactory>()).it_will_return(factory);
+                    factory.is_told_to(x => x.create_for(typeof (string))).it_will_return(logger);
 
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(factory, x => x.create_for(typeof (string))), logger);
-
-                            resolve.initialize_with(registry);
-                        };
+                    resolve.initialize_with(registry);
+                };
 
         because b = () => { result = Log.For("mo"); };
 

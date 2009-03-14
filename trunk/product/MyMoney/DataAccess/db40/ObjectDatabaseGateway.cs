@@ -1,17 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using Db4objects.Db4o;
+using MoMoney.DataAccess.core;
 using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.Extensions;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.DataAccess.db40
 {
-    public class ObjectRepository : IRepository
+    public class ObjectDatabaseGateway : IDatabaseGateway
     {
         readonly ISessionFactory factory;
 
-        public ObjectRepository(ISessionFactory factory)
+        public ObjectDatabaseGateway(ISessionFactory factory)
         {
             this.factory = factory;
         }
