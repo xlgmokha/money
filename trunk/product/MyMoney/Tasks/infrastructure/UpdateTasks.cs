@@ -1,4 +1,5 @@
 using System.Deployment.Application;
+using MoMoney.Domain.Core;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Utility.Core;
 
@@ -7,7 +8,7 @@ namespace MoMoney.Tasks.infrastructure
     public interface IUpdateTasks
     {
         ApplicationVersion current_application_version();
-        void grab_the_latest_version(ICallback callback);
+        void grab_the_latest_version(ICallback<Percent> callback);
         void stop_updating();
     }
 
@@ -45,9 +46,10 @@ namespace MoMoney.Tasks.infrastructure
                        };
         }
 
-        public void grab_the_latest_version(ICallback callback)
+        public void grab_the_latest_version(ICallback<Percent> callback)
         {
-            deployment.UpdateCompleted += (sender, args) => callback.complete();
+            deployment.UpdateProgressChanged += (o, e) => callback.complete(new Percent(e.BytesCompleted/e.BytesTotal));
+            deployment.UpdateCompleted += (sender, args) => callback.complete(new Percent(100));
             deployment.UpdateAsync();
         }
 

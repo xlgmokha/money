@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Windows.Forms;
+using MoMoney.Domain.Core;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.updates;
 using MoMoney.Presentation.Resources;
@@ -47,9 +48,12 @@ namespace MoMoney.Presentation.Views.updates
             ShowDialog();
         }
 
+        public void downloaded(Percent percentage_complete)
+        {
+        }
+
         public void update_complete()
         {
-            //execute(()=> MessageBox.Show("update complete, the application will now restart.", "Complete", MessageBoxButtons.OK));
             MessageBox.Show("update complete, the application will now restart.", "Complete", MessageBoxButtons.OK);
             the_presenter.restart();
         }

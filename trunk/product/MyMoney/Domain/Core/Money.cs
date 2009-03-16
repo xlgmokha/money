@@ -14,13 +14,15 @@ namespace MoMoney.Domain.Core
     internal class Money : IMoney
     {
         public Money(long dollars) : this(dollars, 0)
-        {}
+        {
+        }
 
         public Money(long dollars, int cents)
         {
             this.dollars = dollars;
             this.cents = cents;
-            if (this.cents >= 100) {
+            if (this.cents >= 100)
+            {
                 this.dollars += (this.cents/100).to_long();
                 this.cents = this.cents%100;
             }
@@ -32,7 +34,8 @@ namespace MoMoney.Domain.Core
         public IMoney add(IMoney other)
         {
             var new_dollars = dollars + other.dollars;
-            if (other.cents + cents > 100) {
+            if (other.cents + cents > 100)
+            {
                 ++new_dollars;
                 var pennies = cents + other.cents - 100;
                 return new Money(new_dollars, pennies);
@@ -51,7 +54,8 @@ namespace MoMoney.Domain.Core
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (typeof (IMoney).IsAssignableFrom(obj.GetType())) {
+            if (typeof (IMoney).IsAssignableFrom(obj.GetType()))
+            {
                 return Equals((IMoney) obj);
             }
             return false;
@@ -59,7 +63,8 @@ namespace MoMoney.Domain.Core
 
         public override int GetHashCode()
         {
-            unchecked {
+            unchecked
+            {
                 return (dollars.GetHashCode()*397) ^ cents;
             }
         }

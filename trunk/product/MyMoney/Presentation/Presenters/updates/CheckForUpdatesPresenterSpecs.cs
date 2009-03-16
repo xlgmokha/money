@@ -10,13 +10,9 @@ using MoMoney.Testing.spechelpers.core;
 namespace MoMoney.Presentation.Presenters.updates
 {
     [Concern(typeof (CheckForUpdatesPresenter))]
-    public abstract class behaves_like_check_for_updates_presenter : concerns_for<ICheckForUpdatesPresenter, CheckForUpdatesPresenter>
+    public abstract class behaves_like_check_for_updates_presenter :
+        concerns_for<ICheckForUpdatesPresenter, CheckForUpdatesPresenter>
     {
-        //public override ICheckForUpdatesPresenter create_sut()
-        //{
-        //    return new CheckForUpdatesPresenter(view, tasks, command);
-        //}
-
         context c = () =>
                         {
                             view = the_dependency<ICheckForUpdatesView>();
@@ -24,9 +20,9 @@ namespace MoMoney.Presentation.Presenters.updates
                             command = the_dependency<IRestartCommand>();
                         };
 
-        protected static ICheckForUpdatesView view;
-        protected static IUpdateTasks tasks;
-        protected static IRestartCommand command;
+        static protected ICheckForUpdatesView view;
+        static protected IUpdateTasks tasks;
+        static protected IRestartCommand command;
     }
 
     public class when_attempting_to_check_for_updates : behaves_like_check_for_updates_presenter
@@ -55,11 +51,18 @@ namespace MoMoney.Presentation.Presenters.updates
         because b = () => sut.begin_update();
     }
 
+    public class when_downloading_an_update : behaves_like_check_for_updates_presenter
+    {
+        it should_notify_you_of_the_progress_of_the_update = () => view.was_told_to(x => x.downloaded(50));
+
+        because b = () => sut.complete(50);
+    }
+
     public class when_an_update_is_completed : behaves_like_check_for_updates_presenter
     {
         it should_notify_the_view_that_the_update_is_complete = () => view.was_told_to(x => x.update_complete());
 
-        because b = () => sut.complete();
+        because b = () => sut.complete(100);
     }
 
     public class when_an_update_is_cancelled : behaves_like_check_for_updates_presenter

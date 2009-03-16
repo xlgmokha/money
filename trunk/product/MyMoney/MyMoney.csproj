@@ -189,6 +189,7 @@
     <Compile Include="Domain\Core\MoneyExtensions.cs" />
     <Compile Include="Domain\Core\MoneyExtensionsSpecs.cs" />
     <Compile Include="Domain\Core\MoneySpecs.cs" />
+    <Compile Include="Domain\Core\Percent.cs" />
     <Compile Include="Domain\Core\range.cs" />
     <Compile Include="Domain\Core\range_specs.cs" />
     <Compile Include="Domain\repositories\IBillRepository.cs" />

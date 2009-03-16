@@ -1,3 +1,4 @@
+using MoMoney.Domain.Core;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.updates;
@@ -6,7 +7,7 @@ using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Presenters.updates
 {
-    public interface ICheckForUpdatesPresenter : IPresenter, ICallback
+    public interface ICheckForUpdatesPresenter : IPresenter, ICallback<Percent>
     {
         void begin_update();
         void cancel_update();
@@ -53,9 +54,12 @@ namespace MoMoney.Presentation.Presenters.updates
             view.close();
         }
 
-        public void complete()
+        public void complete(Percent completed)
         {
-            view.update_complete();
+            if (completed.Equals(new Percent(100)))
+                view.update_complete();
+            else
+                view.downloaded(completed);
         }
     }
 }
