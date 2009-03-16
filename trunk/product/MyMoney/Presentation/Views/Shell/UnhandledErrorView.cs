@@ -21,8 +21,11 @@ namespace MoMoney.Presentation.Views.Shell
 
         public void attach_to(IUnhandledErrorPresenter presenter)
         {
-            close_button.Click += (sender, args) => Close();
-            restart_button.Click += (sender, args) => presenter.restart_application();
+            on_ui_thread(() =>
+                             {
+                                 close_button.Click += (sender, args) => Close();
+                                 restart_button.Click += (sender, args) => presenter.restart_application();
+                             });
         }
 
         public void display(Exception exception)

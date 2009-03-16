@@ -32,11 +32,11 @@ namespace MoMoney.Presentation.Model.Projects
             return file.path;
         }
 
-        public bool Equals(ApplicationFile obj)
+        public bool Equals(ApplicationFile other)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return Equals(obj.path, path);
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return Equals(other.path, path);
         }
 
         public override bool Equals(object obj)

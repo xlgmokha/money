@@ -21,7 +21,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         public void run()
         {
-            current_project.save_to(view.tell_me_the_path_to_the_file());
+            current_project.save_project_to(view.tell_me_the_path_to_the_file());
         }
     }
 }

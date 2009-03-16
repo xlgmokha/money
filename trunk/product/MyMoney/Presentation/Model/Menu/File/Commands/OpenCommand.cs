@@ -42,7 +42,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         void open_project()
         {
-            project.open(view.tell_me_the_path_to_the_file());
+            project.open_project_from(view.tell_me_the_path_to_the_file());
         }
     }
 }

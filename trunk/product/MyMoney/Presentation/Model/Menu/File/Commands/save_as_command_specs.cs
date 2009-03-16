@@ -10,7 +10,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     [Concern(typeof (save_as_command))]
     public class when_saving_the_current_project_to_a_new_file_path : concerns_for<ISaveAsCommand, save_as_command>
     {
-        it should_save_the_current_project_to_the_new_path = () => current_project.was_told_to(x => x.save_to(new_path));
+        it should_save_the_current_project_to_the_new_path = () => current_project.was_told_to(x => x.save_project_to(new_path));
 
         context c = () =>
                         {

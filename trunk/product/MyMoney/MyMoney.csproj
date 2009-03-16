@@ -99,6 +99,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\tools\mbunit\MbUnit.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="ObjectListView, Version=2.1.0.26964, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\object.list.view\ObjectListView.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -154,6 +158,7 @@
   <ItemGroup>
     <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
     <Compile Include="DataAccess\db40\DatabaseConfiguration.cs" />
+    <Compile Include="DataAccess\db40\EmptySession.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGateway.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGatewaySpecs.cs" />
     <Compile Include="DataAccess\db40\Session.cs" />
@@ -172,8 +177,8 @@
     <Compile Include="Domain\Core\Entity.cs" />
     <Compile Include="Domain\Core\date.cs" />
     <Compile Include="DataAccess\core\IDatabaseGateway.cs" />
-    <Compile Include="DataAccess\db40\SessionProvider.cs" />
-    <Compile Include="DataAccess\db40\SessionProviderSpecs.cs" />
+    <Compile Include="DataAccess\db40\SessionContext.cs" />
+    <Compile Include="DataAccess\db40\SessionContextSpecs.cs" />
     <Compile Include="Domain\accounting\billing\billing_extensions.cs" />
     <Compile Include="Domain\accounting\billing\Company.cs" />
     <Compile Include="Domain\accounting\billing\company_specs.cs" />
@@ -218,7 +223,6 @@
     <Compile Include="Infrastructure\interceptors\RaiseEventInterceptor.cs" />
     <Compile Include="Infrastructure\interceptors\SynchronizedInterceptor.cs" />
     <Compile Include="Infrastructure\interceptors\UnitOfWorkInterceptor.cs" />
-    <Compile Include="Infrastructure\interceptors\UnitOfWorkInterceptorSpecs.cs" />
     <Compile Include="Infrastructure\Logging\ILoggable.cs" />
     <Compile Include="Infrastructure\proxies\IConstraintSelector.cs" />
     <Compile Include="Infrastructure\proxies\IInterceptorConstraint.cs" />
@@ -279,7 +283,7 @@
     <Compile Include="Presentation\Model\keyboard\ShortcutKey.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\CloseProjectCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\close_window_command.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\new_command_specs.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\NewCommandSpecs.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\SaveChangesCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\save_as_command_specs.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\save_command_specs.cs" />

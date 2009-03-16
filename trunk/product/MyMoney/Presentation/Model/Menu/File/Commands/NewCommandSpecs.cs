@@ -32,14 +32,14 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
     public class when_starting_a_new_project_after_saving_a_previous_one : behaves_like_new_command
     {
-        it should_start_a_new_project = () => current_project.was_told_to(x => x.start_a_new_project());
+        it should_start_a_new_project = () => current_project.was_told_to(x => x.start_new_project());
 
         because b = () => sut.saved();
     }
 
     public class when_starting_a_new_project_after_declining_to_save_a_previous_one : behaves_like_new_command
     {
-        it should_start_a_new_project = () => current_project.was_told_to(x => x.start_a_new_project());
+        it should_start_a_new_project = () => current_project.was_told_to(x => x.start_new_project());
 
         because b = () => sut.not_saved();
     }
@@ -48,7 +48,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         behaves_like_new_command
     {
         it should_not_start_a_new_project =
-            () => current_project.should_not_have_been_asked_to(x => x.start_a_new_project());
+            () => current_project.should_not_have_been_asked_to(x => x.start_new_project());
 
         because b = () => sut.cancelled();
     }

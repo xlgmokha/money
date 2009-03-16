@@ -1,4 +1,5 @@
 using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Commands;
@@ -37,6 +38,7 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void restart_application()
         {
+            this.log().debug("restart the application");
             restart.run();
         }
     }

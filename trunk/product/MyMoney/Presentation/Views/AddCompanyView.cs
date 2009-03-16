@@ -1,9 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MoMoney.Domain.accounting.billing;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Databindings;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters;
@@ -41,13 +41,15 @@ namespace MoMoney.Presentation.Views
             listView2.View = View.Details;
             listView2.Columns.Add("Name");
             ux_company_search_textbox.TextChanged += (sender, args) =>
-            {
-                var foundItem = listView2.FindItemWithText(ux_company_search_textbox.Text, false, 0, true);
-                if (foundItem != null)
-                {
-                    listView2.TopItem = foundItem;
-                }
-            };
+                                                         {
+                                                             var foundItem =
+                                                                 listView2.FindItemWithText(
+                                                                     ux_company_search_textbox.Text, false, 0, true);
+                                                             if (foundItem != null)
+                                                             {
+                                                                 listView2.TopItem = foundItem;
+                                                             }
+                                                         };
         }
 
         public void attach_to(IAddCompanyPresenter presenter)
@@ -59,13 +61,24 @@ namespace MoMoney.Presentation.Views
 
         public void display(IEnumerable<ICompany> companies)
         {
+            this.log().debug("companys to display {0}", companies.Count());
+            if (companies.Count() > 0)
+            {
+                //this.log().debug("companys 1 display {0}", companies.ElementAt(0));
+                //this.log().debug("companys 2 display {0}", companies.ElementAt(1));
+                companies.each(x => this.log().debug("company {0}", x));
+            }
             ux_companys_listing.DataSource = companies.databind();
 
             listView1.Items.Clear();
-            listView1.Items.AddRange(companies.Select(x => new ListViewItem(x.name, 0)).ToArray());
+            listView1.Items.AddRange(companies.Select(x => new ListViewItem(x.name, 2)).ToArray());
 
             listView2.Items.Clear();
             listView2.Items.AddRange(companies.Select(x => new ListViewItem(x.name)).ToArray());
+
+            //var tlist = new TypedObjectListView<ICompany>(objectListView1);
+            //tlist.GetColumn(0).AspectGetter = (ICompany x) => x.name;
+            objectListView1.SetObjects(companies.ToList());
         }
 
         public void notify(params notification_message[] messages)

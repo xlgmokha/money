@@ -25,12 +25,12 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         public void saved()
         {
-            current_project.start_a_new_project();
+            current_project.start_new_project();
         }
 
         public void not_saved()
         {
-            current_project.start_a_new_project();
+            current_project.start_new_project();
         }
 
         public void cancelled()

@@ -22,14 +22,11 @@ namespace MoMoney.Infrastructure.interceptors
 
         public void Intercept(IInvocation invocation)
         {
-            using (registry)
+            invocation.Proceed();
+            if (registry.has_changes_to_commit())
             {
-                invocation.Proceed();
-                if (registry.has_changes_to_commit())
-                {
-                    registry.commit_all();
-                    broker.publish<unsaved_changes_event>();
-                }
+                registry.commit_all();
+                broker.publish<unsaved_changes_event>();
             }
         }
     }

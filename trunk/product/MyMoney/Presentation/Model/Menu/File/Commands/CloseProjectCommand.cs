@@ -26,12 +26,12 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         public void saved()
         {
-            project.close();
+            project.close_project();
         }
 
         public void not_saved()
         {
-            project.close();
+            project.close_project();
         }
 
         public void cancelled()

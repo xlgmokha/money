@@ -1,8 +1,9 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using MoMoney.DataAccess.core;
 using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.transactions
@@ -20,25 +21,27 @@ namespace MoMoney.Infrastructure.transactions
 
     public class unit_of_work<T> : IUnitOfWork<T> where T : IEntity
     {
-        readonly IDatabaseGateway repository;
+        readonly IDatabaseGateway gateway;
         readonly IUnitOfWorkRegistrationFactory<T> factory;
         readonly IList<IUnitOfWorkRegistration<T>> registered_items;
 
         public unit_of_work(IDatabaseGateway repository, IUnitOfWorkRegistrationFactory<T> factory)
         {
-            this.repository = repository;
+            gateway = repository;
             this.factory = factory;
             registered_items = new List<IUnitOfWorkRegistration<T>>();
         }
 
         public void register(T entity)
         {
+            this.log().debug("registering: {0}", entity);
             registered_items.Add(factory.map_from(entity));
         }
 
         public void commit()
         {
-            registered_items.each(x => repository.save(x.current));
+            this.log().debug("commiting: {0}", typeof(T));
+            registered_items.each(x => { if (x.contains_changes()) gateway.save(x.current); });
         }
 
         public bool is_dirty()
@@ -51,5 +54,4 @@ namespace MoMoney.Infrastructure.transactions
             registered_items.Clear();
         }
     }
-
 }

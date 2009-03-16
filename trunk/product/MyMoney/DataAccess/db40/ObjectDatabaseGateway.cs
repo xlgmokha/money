@@ -1,42 +1,33 @@
 using System.Collections.Generic;
-using System.Linq;
 using MoMoney.DataAccess.core;
 using MoMoney.Domain.Core;
-using MoMoney.Infrastructure.Extensions;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.DataAccess.db40
 {
     public class ObjectDatabaseGateway : IDatabaseGateway
     {
-        readonly ISessionProvider provider;
+        readonly ISessionContext context;
 
-        public ObjectDatabaseGateway(ISessionProvider provider)
+        public ObjectDatabaseGateway(ISessionContext context)
         {
-            this.provider = provider;
+            this.context = context;
         }
 
         public IEnumerable<T> all<T>() where T : IEntity
         {
-            using (var container = open_session_with_database())
-            {
-                container.Query<T>().each(x => this.log().debug("found item: {0}", x));
-                return container.Query<T>().ToList();
-            }
+            return open_session_with_database().query<T>();
         }
 
         public void save<T>(T item) where T : IEntity
         {
-            using (var container = open_session_with_database())
-            {
-                container.Store(item);
-                container.Commit();
-            }
+            var session = open_session_with_database();
+            session.save(item);
+            //session.commit();
         }
 
         ISession open_session_with_database()
         {
-            return provider.get_session();
+            return context.current_session();
         }
     }
 }

@@ -41,6 +41,7 @@ namespace MoMoney.Presentation.Views
             this.listView1 = new System.Windows.Forms.ListView();
             this.ux_company_search_textbox = new System.Windows.Forms.TextBox();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
@@ -58,6 +59,7 @@ namespace MoMoney.Presentation.Views
             this.kryptonSplitContainer2.Panel2.SuspendLayout();
             this.kryptonSplitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ux_companys_listing)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonHeaderGroup1
@@ -90,6 +92,7 @@ namespace MoMoney.Presentation.Views
             // 
             // kryptonSplitContainer1.Panel1
             // 
+            this.kryptonSplitContainer1.Panel1.Controls.Add(this.objectListView1);
             this.kryptonSplitContainer1.Panel1.Controls.Add(this.listView2);
             this.kryptonSplitContainer1.Panel1.Controls.Add(this.ux_company_search_textbox);
             this.kryptonSplitContainer1.Panel1.Controls.Add(this.listView1);
@@ -219,9 +222,19 @@ namespace MoMoney.Presentation.Views
             // 
             this.listView2.Location = new System.Drawing.Point(28, 417);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(706, 249);
+            this.listView2.Size = new System.Drawing.Size(706, 80);
             this.listView2.TabIndex = 23;
             this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // objectListView1
+            // 
+            this.objectListView1.ItemRenderer = null;
+            this.objectListView1.Location = new System.Drawing.Point(28, 514);
+            this.objectListView1.Name = "objectListView1";
+            this.objectListView1.Size = new System.Drawing.Size(706, 203);
+            this.objectListView1.TabIndex = 24;
+            this.objectListView1.UseCompatibleStateImageBehavior = false;
+            this.objectListView1.View = System.Windows.Forms.View.Details;
             // 
             // AddCompanyView
             // 
@@ -254,6 +267,7 @@ namespace MoMoney.Presentation.Views
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSplitContainer2)).EndInit();
             this.kryptonSplitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ux_companys_listing)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,6 +286,7 @@ namespace MoMoney.Presentation.Views
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox ux_company_search_textbox;
         private System.Windows.Forms.ListView listView2;
+        private BrightIdeasSoftware.ObjectListView objectListView1;
 
     }
 }

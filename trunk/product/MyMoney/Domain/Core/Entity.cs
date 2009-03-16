@@ -1,5 +1,6 @@
 using System;
 using MoMoney.Infrastructure.transactions;
+using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Domain.Core
 {
@@ -37,6 +38,11 @@ namespace MoMoney.Domain.Core
         public override int GetHashCode()
         {
             return Id.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return "{0} id: {1}".formatted_using(base.ToString(), Id);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace MoMoney.Presentation.Model.Projects
 
         because b = () =>
                         {
-                            sut.open(file_to_update);
+                            sut.open_project_from(file_to_update);
                             sut.save_changes();
                         };
 
@@ -70,8 +70,8 @@ namespace MoMoney.Presentation.Model.Projects
 
         because b = () =>
                         {
-                            sut.open(original_file);
-                            sut.save_to(new_file);
+                            sut.open_project_from(original_file);
+                            sut.save_project_to(new_file);
                         };
 
         static IFile original_file;
@@ -91,7 +91,7 @@ namespace MoMoney.Presentation.Model.Projects
 
         because b = () =>
                         {
-                            sut.open(invalid_file);
+                            sut.open_project_from(invalid_file);
                             result = sut.has_been_saved_at_least_once();
                         };
 
@@ -112,7 +112,7 @@ namespace MoMoney.Presentation.Model.Projects
 
         because b = () =>
                         {
-                            sut.save_to(invalid_file);
+                            sut.save_project_to(invalid_file);
                             result = sut.has_been_saved_at_least_once();
                         };
 
@@ -128,7 +128,7 @@ namespace MoMoney.Presentation.Model.Projects
                             when_the(file).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
                         };
 
-        because b = () => sut.open(file);
+        because b = () => sut.open_project_from(file);
 
         static IFile file;
     }
@@ -154,9 +154,9 @@ namespace MoMoney.Presentation.Model.Projects
 
         because b = () =>
                         {
-                            sut.start_a_new_project();
-                            sut.save_to(file);
-                            sut.notify(message);
+                            sut.start_new_project();
+                            sut.save_project_to(file);
+                            //sut.notify(message);
                             result = sut.has_unsaved_changes();
                         };
 
@@ -171,8 +171,8 @@ namespace MoMoney.Presentation.Model.Projects
 
         because b = () =>
                         {
-                            sut.start_a_new_project();
-                            sut.start_a_new_project();
+                            sut.start_new_project();
+                            sut.start_new_project();
                         };
     }
 
@@ -188,8 +188,8 @@ namespace MoMoney.Presentation.Model.Projects
 
         because b = () =>
                         {
-                            sut.open(file);
-                            sut.start_a_new_project();
+                            sut.open_project_from(file);
+                            sut.start_new_project();
                         };
 
         static IFile file;

@@ -45,7 +45,7 @@ namespace MoMoney.Presentation.Presenters
 
         private bool company_has_already_been_registered(register_new_company dto)
         {
-            return tasks.all_companys().Count(x => x.name.Equals(dto.company_name)) > 0;
+            return tasks.all_companys().Count(x => x.name.is_equal_to_ignoring_case(dto.company_name)) > 0;
         }
 
         private string create_error_message_from(register_new_company dto)

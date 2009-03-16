@@ -1,38 +1,38 @@
 using Castle.Core;
 using MoMoney.DataAccess.db40;
 using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.transactions;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Model.Projects
 {
-    public interface IProject : IEventSubscriber<unsaved_changes_event>
+    public interface IProject // : IEventSubscriber<unsaved_changes_event>
     {
         string name();
-        void start_a_new_project();
-        void open(IFile file);
-        void save_to(IFile new_file);
-        bool has_been_saved_at_least_once();
+        void start_new_project();
+        void open_project_from(IFile file);
         void save_changes();
+        void save_project_to(IFile new_file);
+        void close_project();
+        bool has_been_saved_at_least_once();
         bool has_unsaved_changes();
-        bool is_open();
-        void close();
     }
 
     [Singleton]
     public class CurrentProject : IProject
     {
-        readonly IDatabaseConfiguration configuration;
         readonly IEventAggregator broker;
+        readonly IUnitOfWorkRegistry registry;
+        readonly ISessionContext context;
         IFile current_file;
         bool is_project_open = false;
-        bool changes_to_save = false;
 
-        public CurrentProject(IDatabaseConfiguration configuration, IEventAggregator broker)
+        public CurrentProject(IEventAggregator broker, IUnitOfWorkRegistry registry, ISessionContext _context)
         {
             this.broker = broker;
-            this.configuration = configuration;
-            broker.subscribe_to(this);
+            this.registry = registry;
+            this.context = _context;
         }
 
         public string name()
@@ -40,42 +40,49 @@ namespace MoMoney.Presentation.Model.Projects
             return has_been_saved_at_least_once() ? current_file.path : "untitled.mo";
         }
 
-        public void open(IFile file)
+        public void start_new_project()
         {
-            if (!file.does_the_file_exist()) return;
-            if (is_open())
-            {
-                close();
-            }
-
-            current_file = file;
-            is_project_open = true;
-            configuration.change_path_to(file);
-            changes_to_save = false;
-            broker.publish(new new_project_opened(name()));
-        }
-
-        public void start_a_new_project()
-        {
-            if (is_open())
-            {
-                close();
-            }
+            close_project();
             is_project_open = true;
             current_file = null;
-            changes_to_save = false;
             broker.publish(new new_project_opened(name()));
         }
 
-        public void save_to(IFile new_file)
+        public void open_project_from(IFile file)
         {
-            if (new_file.path.is_blank())
-            {
-                return;
-            }
+            if (!file.does_the_file_exist()) return;
+            close_project();
+            current_file = file;
+            is_project_open = true;
+            context.start_session_for(current_file);
+            broker.publish(new new_project_opened(name()));
+        }
+
+        public void save_changes()
+        {
+            ensure_that_a_path_to_save_to_has_been_specified();
+            registry.commit_all();
+            registry.Dispose();
+            context.current_session().commit();
+            broker.publish<saved_changes_event>();
+        }
+
+        public void save_project_to(IFile new_file)
+        {
+            if (new_file.path.is_blank()) return;
+
+            context.start_session_for(new_file);
             current_file = new_file;
-            configuration.change_path_to(new_file);
             save_changes();
+        }
+
+        public void close_project()
+        {
+            if (!is_project_open) return;
+            registry.Dispose();
+            context.close_session_to(current_file);
+            is_project_open = false;
+            broker.publish<closing_project_event>();
         }
 
         public bool has_been_saved_at_least_once()
@@ -83,28 +90,9 @@ namespace MoMoney.Presentation.Model.Projects
             return current_file != null;
         }
 
-        public void save_changes()
-        {
-            ensure_that_a_path_to_save_to_has_been_specified();
-            changes_to_save = false;
-            broker.publish<saved_changes_event>();
-        }
-
         public bool has_unsaved_changes()
         {
-            return changes_to_save;
-        }
-
-        public bool is_open()
-        {
-            return is_project_open;
-        }
-
-        public void close()
-        {
-            is_project_open = false;
-            changes_to_save = false;
-            broker.publish<closing_project_event>();
+            return registry.has_changes_to_commit();
         }
 
         void ensure_that_a_path_to_save_to_has_been_specified()
@@ -113,11 +101,6 @@ namespace MoMoney.Presentation.Model.Projects
             {
                 throw new file_not_specified_exception();
             }
-        }
-
-        public void notify(unsaved_changes_event message)
-        {
-            changes_to_save = true;
         }
     }
 }
