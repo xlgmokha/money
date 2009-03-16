@@ -32,7 +32,7 @@ namespace MoMoney.Presentation.Views.core
             return this;
         }
 
-        public void on_ui_thread(Action action)
+        protected void on_ui_thread(Action action)
         {
             if (InvokeRequired)
             {

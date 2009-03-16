@@ -28,11 +28,11 @@ namespace MoMoney.Presentation.Model.Projects
         IFile current_file;
         bool is_project_open = false;
 
-        public CurrentProject(IEventAggregator broker, IUnitOfWorkRegistry registry, ISessionContext _context)
+        public CurrentProject(IEventAggregator broker, IUnitOfWorkRegistry registry, ISessionContext context)
         {
             this.broker = broker;
             this.registry = registry;
-            this.context = _context;
+            this.context = context;
         }
 
         public string name()
@@ -63,7 +63,7 @@ namespace MoMoney.Presentation.Model.Projects
             ensure_that_a_path_to_save_to_has_been_specified();
             registry.commit_all();
             registry.Dispose();
-            context.current_session().commit();
+            context.commit_current_session();
             broker.publish<saved_changes_event>();
         }
 

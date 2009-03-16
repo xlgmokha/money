@@ -10,6 +10,7 @@ namespace MoMoney.DataAccess.db40
         void start_session_for(IFile file);
         ISession current_session();
         void close_session_to(IFile file);
+        void commit_current_session();
     }
 
     [Singleton]
@@ -44,6 +45,11 @@ namespace MoMoney.DataAccess.db40
             if (!sessions.ContainsKey(file)) return;
             sessions[file].Dispose();
             sessions.Remove(file);
+        }
+
+        public void commit_current_session()
+        {
+            current_session().commit();
         }
     }
 }

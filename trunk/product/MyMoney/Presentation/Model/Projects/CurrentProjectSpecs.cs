@@ -2,6 +2,7 @@ using System;
 using developwithpassion.bdd.contexts;
 using MoMoney.DataAccess.db40;
 using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.transactions;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Testing;
 using MoMoney.Testing.MetaData;
@@ -15,12 +16,14 @@ namespace MoMoney.Presentation.Model.Projects
     {
         context c = () =>
                         {
-                            configuration = the_dependency<IDatabaseConfiguration>();
                             broker = the_dependency<IEventAggregator>();
+                            registry = the_dependency<IUnitOfWorkRegistry>();
+                            context = the_dependency<ISessionContext>();
                         };
 
-        protected static IDatabaseConfiguration configuration;
-        protected static IEventAggregator broker;
+        static protected IEventAggregator broker;
+        static protected IUnitOfWorkRegistry registry;
+        static protected ISessionContext context;
     }
 
     public class when_saving_the_current_project : behaves_like_a_project
@@ -31,9 +34,7 @@ namespace MoMoney.Presentation.Model.Projects
                         {
                             file_to_update = an<IFile>();
                             current_file = an<IFile>();
-
-                            when_the(configuration).is_told_to(x => x.path_to_the_database()). it_will_return(current_file);
-                            when_the(file_to_update).is_told_to(x => x.does_the_file_exist()). it_will_return(true);
+                            when_the(file_to_update).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
                         };
 
         because b = () =>
@@ -58,7 +59,7 @@ namespace MoMoney.Presentation.Model.Projects
 
     public class when_specifying_a_new_path_to_save_an_opened_project_to : behaves_like_a_project
     {
-        it should_save_the_current_database_to_the_new_path = () => configuration.was_told_to(x => x.change_path_to(new_file));
+        //it should_save_the_current_database_to_the_new_path = () => configuration.was_told_to(x => x.change_path_to(new_file));
 
         context c = () =>
                         {
@@ -149,13 +150,13 @@ namespace MoMoney.Presentation.Model.Projects
         context c = () =>
                         {
                             file = an<IFile>();
-                            message = new unsaved_changes_event();
+                            registry.is_told_to(x => x.has_changes_to_commit()).it_will_return(true);
                         };
 
         because b = () =>
                         {
-                            sut.start_new_project();
-                            sut.save_project_to(file);
+                            //sut.start_new_project();
+                            //sut.save_project_to(file);
                             //sut.notify(message);
                             result = sut.has_unsaved_changes();
                         };
