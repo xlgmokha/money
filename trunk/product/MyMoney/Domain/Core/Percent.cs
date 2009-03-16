@@ -1,30 +1,34 @@
+using System;
+using System.Globalization;
+
 namespace MoMoney.Domain.Core
 {
     public class Percent
     {
-        readonly long whole;
-        readonly long fraction;
+        readonly double percentage;
 
-        public Percent(long whole) : this(whole, 0)
+        public Percent(double percentage)
         {
+            this.percentage = percentage;
         }
 
-        public Percent(long whole, int fraction)
+        public Percent(double portion_of_total, double total)
         {
-            this.whole = whole;
-            this.fraction = fraction;
+            percentage = portion_of_total/total;
+            percentage *= 100;
+            percentage = Math.Round(percentage, 1);
         }
 
-        static public implicit operator Percent(int whole)
+        static public implicit operator Percent(double percentage)
         {
-            return new Percent(whole);
+            return new Percent(percentage);
         }
 
         public bool Equals(Percent other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return other.whole == whole && other.fraction == fraction;
+            return other.percentage == percentage;
         }
 
         public override bool Equals(object obj)
@@ -37,10 +41,12 @@ namespace MoMoney.Domain.Core
 
         public override int GetHashCode()
         {
-            unchecked
-            {
-                return (whole.GetHashCode()*397) ^ fraction.GetHashCode();
-            }
+            return percentage.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return percentage.ToString(CultureInfo.InvariantCulture);
         }
     }
 }

@@ -48,7 +48,7 @@ namespace MoMoney.Tasks.infrastructure
 
         public void grab_the_latest_version(ICallback<Percent> callback)
         {
-            deployment.UpdateProgressChanged += (o, e) => callback.complete(new Percent(e.BytesCompleted/e.BytesTotal));
+            deployment.UpdateProgressChanged += (o, e) => callback.complete(new Percent(e.BytesCompleted, e.BytesTotal));
             deployment.UpdateCompleted += (sender, args) => callback.complete(new Percent(100));
             deployment.UpdateAsync();
         }
