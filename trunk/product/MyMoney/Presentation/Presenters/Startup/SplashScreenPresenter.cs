@@ -1,18 +1,19 @@
 using MoMoney.Infrastructure.Threading;
+using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Views.Startup;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Presenters.Startup
 {
-    public interface ISplashScreenPresenter : IDisposableCommand, ITimerClient
+    public interface ISplashScreenPresenter : IDisposableCommand, ITimerClient, ICallback<notification_message>
     {
     }
 
     public class SplashScreenPresenter : ISplashScreenPresenter
     {
-        private readonly ITimer timer;
-        private readonly ISplashScreenView view;
-        private ISplashScreenState current_state;
+        readonly ITimer timer;
+        readonly ISplashScreenView view;
+        ISplashScreenState current_state;
 
         public SplashScreenPresenter(ITimer timer, ISplashScreenView view)
         {
@@ -34,6 +35,11 @@ namespace MoMoney.Presentation.Presenters.Startup
         public void notify()
         {
             current_state.update();
+        }
+
+        public void complete(notification_message item)
+        {
+            view.update_progress(item);
         }
     }
 }

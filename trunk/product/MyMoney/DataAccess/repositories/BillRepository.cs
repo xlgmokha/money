@@ -7,7 +7,7 @@ namespace MoMoney.DataAccess.repositories
 {
     public class BillRepository : IBillRepository
     {
-        IDatabaseGateway gateway;
+        readonly IDatabaseGateway gateway;
 
         public BillRepository(IDatabaseGateway gateway)
         {

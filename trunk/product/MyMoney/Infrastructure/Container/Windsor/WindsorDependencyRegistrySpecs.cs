@@ -4,6 +4,7 @@ using developwithpassion.bdd.contexts;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
+using MoMoney.windows.ui;
 
 namespace MoMoney.Infrastructure.Container.Windsor
 {
@@ -17,33 +18,21 @@ namespace MoMoney.Infrastructure.Container.Windsor
 
         public override IDependencyRegistry create_sut()
         {
-            return new WindsorDependencyRegistry();
-        }
-
-        because b = () => { result = sut.get_a<IBird>(); };
-
-        static IBird result;
-    }
-
-    [Concern(typeof (WindsorDependencyRegistry))]
-    public class when_creating_the_windsor_resolver_ : concerns_for<IDependencyRegistry>
-    {
-        it should_leverage_the_factory_to_create_the_underlying_container = () => factory.was_told_to(f => f.create());
-
-        public override IDependencyRegistry create_sut()
-        {
-            return new WindsorDependencyRegistry(factory);
+            return get_the.registry(null);
+            //return new WindsorDependencyRegistry(new WindsorContainerFactory().create());
         }
 
         context c = () =>
                         {
-                            var container = an<IWindsorContainer>();
-                            factory = an<IWindsorContainerFactory>();
-                            factory.is_told_to(f => f.create()).it_will_return(container);
+                            var container = the_dependency<IWindsorContainer>();
+                            var bird = new BlueBird();
+                            container.is_told_to(x => x.Resolve<IBird>()).it_will_return(bird);
                         };
 
+        because b = () => { result = sut.get_a<IBird>(); };
 
-        static IWindsorContainerFactory factory;
+
+        static IBird result;
     }
 
     [Singleton]

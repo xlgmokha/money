@@ -2,28 +2,30 @@ using System;
 
 namespace MoMoney.Infrastructure.Container
 {
-    public static class resolve
+    static public class resolve
     {
-        private static IDependencyRegistry underlying_registry;
-        private static bool initialized;
+        static IDependencyRegistry underlying_registry;
+        static bool initialized;
 
-        public static void initialize_with(IDependencyRegistry registry)
+        static public void initialize_with(IDependencyRegistry registry)
         {
             underlying_registry = registry;
             initialized = registry != null;
         }
 
-        public static DependencyToResolve dependency_for<DependencyToResolve>()
+        static public DependencyToResolve dependency_for<DependencyToResolve>()
         {
-            try {
+            try
+            {
                 return underlying_registry.get_a<DependencyToResolve>();
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 throw new dependency_resolution_exception<DependencyToResolve>(e);
             }
         }
 
-        public static bool is_initialized()
+        static public bool is_initialized()
         {
             return initialized;
         }

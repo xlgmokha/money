@@ -50,6 +50,11 @@ namespace MoMoney.Presentation.Views.updates
 
         public void downloaded(Percent percentage_complete)
         {
+            //var bar = new ProgressBar {Visible = true, Minimum = 1, Value = 1};
+            //while (true)
+            //{
+            //    if (bar.Value.Equals(percentage_complete)) { }
+            //}
         }
 
         public void update_complete()

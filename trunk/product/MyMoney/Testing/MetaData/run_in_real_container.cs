@@ -3,6 +3,7 @@ using MbUnit.Core.Framework;
 using MbUnit.Core.Invokers;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.windows.ui;
 
 namespace MoMoney.Testing.MetaData
 {
@@ -24,7 +25,8 @@ namespace MoMoney.Testing.MetaData
         {
             try
             {
-                resolve.initialize_with(new WindsorDependencyRegistry());
+                //resolve.initialize_with(new WindsorDependencyRegistry());
+                get_the.registry(null);
                 return Invoker.Execute(o, args);
             }
             finally
