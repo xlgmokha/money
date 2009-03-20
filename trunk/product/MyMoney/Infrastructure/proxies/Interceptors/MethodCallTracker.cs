@@ -38,7 +38,12 @@ namespace MoMoney.Infrastructure.proxies.Interceptors
         {
             var return_type = invocation.Method.ReturnType;
             if (return_type == typeof (void)) return;
-            invocation.ReturnValue = (return_type.IsValueType ? Activator.CreateInstance(return_type) : null);
+            invocation.ReturnValue = get_default_value_for(return_type);
+        }
+
+        static object get_default_value_for(Type return_type)
+        {
+            return (return_type.IsValueType ? Activator.CreateInstance(return_type) : null);
         }
     }
 }

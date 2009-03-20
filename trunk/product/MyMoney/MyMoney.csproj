@@ -39,6 +39,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\active.reports\ActiveReports3.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac, Version=0.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\autofac\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
@@ -203,6 +207,7 @@
     <Compile Include="Infrastructure\cloning\ISerializer.cs" />
     <Compile Include="Infrastructure\cloning\Prototype.cs" />
     <Compile Include="Infrastructure\cloning\Serializer.cs" />
+    <Compile Include="Infrastructure\Container\Autofac\AutofacDependencyRegistry.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ApplyLoggingInterceptor.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecification.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecificationSpecs.cs" />
