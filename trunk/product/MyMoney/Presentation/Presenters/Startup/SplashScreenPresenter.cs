@@ -1,4 +1,3 @@
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Views.Startup;
 using MoMoney.Utility.Core;
@@ -34,7 +33,6 @@ namespace MoMoney.Presentation.Presenters.Startup
 
         public void notify()
         {
-            this.log().debug("update the presenter");
             current_state.update();
         }
     }

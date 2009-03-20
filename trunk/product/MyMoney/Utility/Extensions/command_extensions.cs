@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Utility.Core;
@@ -14,6 +15,11 @@ namespace MoMoney.Utility.Extensions
         public static ICommand then(this ICommand left, ICommand right)
         {
             return new chained_command(left, right);
+        }
+
+        public static ICommand then(this ICommand left, Action right)
+        {
+            return new chained_command(left, new ActionCommand(right));
         }
 
         public static ICommand as_command_chain(this IEnumerable<ICommand> commands)

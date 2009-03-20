@@ -1,5 +1,4 @@
 using System;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Views.Startup;
 
@@ -23,13 +22,11 @@ namespace MoMoney.Presentation.Presenters.Startup
         {
             if (view.current_opacity() == 0)
             {
-                this.log().debug("stop notifying");
                 timer.stop_notifying(presenter);
                 view.close_the_screen();
             }
             else
             {
-                this.log().debug("decrement");
                 view.decrement_the_opacity();
             }
         }

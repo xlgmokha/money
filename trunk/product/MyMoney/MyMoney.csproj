@@ -537,6 +537,7 @@
     <Compile Include="Presentation\Views\helpers\EventTrigger.cs" />
     <Compile Include="Presentation\Views\helpers\IEventTarget.cs" />
     <Compile Include="Presentation\Views\helpers\EventTriggerSpecs.cs" />
+    <Compile Include="Utility\Core\ActionCommand.cs" />
     <Compile Include="Utility\Core\ChainedConfiguration.cs" />
     <Compile Include="Utility\Core\chained_mapper.cs" />
     <Compile Include="Utility\Core\and_specification.cs" />
