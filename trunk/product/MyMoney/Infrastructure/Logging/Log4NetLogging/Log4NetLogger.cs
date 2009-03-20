@@ -1,13 +1,15 @@
 using System;
+using System.Threading;
 using log4net;
+using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Logging.Log4NetLogging
 {
-    public class log4net_logger : ILogger
+    public class Log4NetLogger : ILogger
     {
-        private readonly ILog log;
+        readonly ILog log;
 
-        public log4net_logger(ILog log)
+        public Log4NetLogger(ILog log)
         {
             this.log = log;
         }
@@ -17,9 +19,9 @@ namespace MoMoney.Infrastructure.Logging.Log4NetLogging
             log.InfoFormat(formattedString, arguments);
         }
 
-        public void debug(string formattedString, params object[] arguments)
+        public void debug(string formatted_string, params object[] arguments)
         {
-            log.DebugFormat(formattedString, arguments);
+            log.DebugFormat("Thread: {0}, {1}", Thread.CurrentThread.ManagedThreadId, formatted_string.formatted_using(arguments));
         }
 
         public void error(Exception e)

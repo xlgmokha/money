@@ -553,7 +553,7 @@
     <Compile Include="Utility\Core\IVisitor.cs" />
     <Compile Include="Infrastructure\Extensions\environment_extensions.cs" />
     <Compile Include="Infrastructure\Extensions\logging_extensions.cs" />
-    <Compile Include="Infrastructure\Logging\ConsoleLogging\console_logger.cs" />
+    <Compile Include="Infrastructure\Logging\ConsoleLogging\ConsoleLogger.cs" />
     <Compile Include="Infrastructure\Threading\BackgroundThreadSpecs.cs" />
     <Compile Include="Infrastructure\Threading\CommandProcessor.cs" />
     <Compile Include="Infrastructure\Threading\CommandProcessorSpecs.cs" />
@@ -596,8 +596,8 @@
     <Compile Include="Infrastructure\Logging\ILogFactory.cs" />
     <Compile Include="Infrastructure\Logging\ILogger.cs" />
     <Compile Include="Infrastructure\Logging\Log.cs" />
-    <Compile Include="Infrastructure\Logging\Log4NetLogging\log4net_logger.cs" />
-    <Compile Include="Infrastructure\Logging\Log4NetLogging\log4net_log_factory.cs" />
+    <Compile Include="Infrastructure\Logging\Log4NetLogging\Log4NetLogger.cs" />
+    <Compile Include="Infrastructure\Logging\Log4NetLogging\Log4NetLogFactory.cs" />
     <Compile Include="Infrastructure\Logging\LogSpecs.cs" />
     <Compile Include="Presentation\Presenters\Menu\Help\about_the_application_presenter_specs.cs" />
     <Compile Include="Presentation\Presenters\Shell\NotificationIconPresenter.cs" />
@@ -637,7 +637,6 @@
     <Compile Include="Utility\Extensions\TypeExtensionsSpecs.cs" />
     <Compile Include="Utility\Extensions\visitor_extensions.cs" />
     <Compile Include="windows.ui\check_for_updates.cs" />
-    <Compile Include="windows.ui\get_the.cs" />
     <Compile Include="windows.ui\hookup.cs" />
     <Compile Include="Presentation\Model\Menu\ISubMenu.cs" />
     <Compile Include="Utility\Core\IRegistry.cs" />
@@ -749,7 +748,7 @@
     <Compile Include="windows.ui\start_the_application.cs" />
     <Compile Include="windows.ui\wire_up_the_container.cs" />
     <Compile Include="windows.ui\global_error_handling.cs" />
-    <Compile Include="windows.ui\wire_up_the_core_services_into_the.cs" />
+    <Compile Include="windows.ui\wire_up_the_essential_services_into_the.cs" />
     <Compile Include="windows.ui\wire_up_the_mappers_in_to_the.cs" />
     <Compile Include="windows.ui\wire_up_the_reports_in_to_the.cs" />
     <Compile Include="windows.ui\wire_up_the_views_in_to_the.cs" />

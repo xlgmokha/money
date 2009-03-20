@@ -8,6 +8,8 @@ namespace MoMoney.Presentation.Views.core
     {
         IApplicationWindow titled(string title);
         IApplicationWindow create_tool_tip_for(string title, string caption, Control control);
+        IApplicationWindow try_to_reduce_flickering();
+        IApplicationWindow top_most();
     }
 
     public partial class ApplicationWindow : Form, IApplicationWindow
@@ -16,13 +18,24 @@ namespace MoMoney.Presentation.Views.core
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
-            base.DoubleBuffered = true;
-            SetStyle(ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
         }
 
         public IApplicationWindow create_tool_tip_for(string title, string caption, Control control)
         {
             new ToolTip {IsBalloon = true, ToolTipTitle = title}.SetToolTip(control, caption);
+            return this;
+        }
+
+        public IApplicationWindow try_to_reduce_flickering()
+        {
+            base.DoubleBuffered = true;
+            SetStyle(ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
+            return this;
+        }
+
+        public IApplicationWindow top_most()
+        {
+            TopMost = true;
             return this;
         }
 

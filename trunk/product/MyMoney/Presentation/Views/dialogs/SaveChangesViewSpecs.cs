@@ -2,11 +2,14 @@ using System;
 using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Views.helpers;
+using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Views.dialogs
 {
+    [Concern(typeof(SaveChangesView))]
+    [Integration]
     public class when_prompted_to_save_changes_to_the_project : concerns_for<SaveChangesView>
     {
         context c = () => { presenter = an<ISaveChangesPresenter>(); };

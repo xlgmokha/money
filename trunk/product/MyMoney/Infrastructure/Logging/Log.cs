@@ -19,7 +19,7 @@ namespace MoMoney.Infrastructure.Logging
             }
             catch
             {
-                return new console_logger();
+                return new ConsoleLogger();
             }
         }
     }

@@ -1,5 +1,6 @@
+using System;
 using System.Windows.Forms;
-using MoMoney.Presentation.Model.interaction;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 
@@ -7,31 +8,20 @@ namespace MoMoney.Presentation.Views.Startup
 {
     public partial class SplashScreenView : ApplicationWindow, ISplashScreenView
     {
-        readonly TextBox progress_textbox;
-
         public SplashScreenView()
         {
             InitializeComponent();
-            ApplyWindowStyles();
-
-            progress_textbox = new TextBox();
-            Controls.Add(progress_textbox);
+            this.log().debug("created splash screen");
         }
 
-        void ApplyWindowStyles()
+        protected override void OnLoad(EventArgs e)
         {
-            on_ui_thread(() =>
-                             {
-                                 BackgroundImage = ApplicationImages.Splash;
-                                 FormBorderStyle = FormBorderStyle.None;
-                                 StartPosition = FormStartPosition.CenterScreen;
-                                 if (null != BackgroundImage)
-                                 {
-                                     ClientSize = BackgroundImage.Size;
-                                 }
-                                 TopMost = true;
-                                 Opacity = 0;
-                             });
+            Opacity = 0;
+            BackgroundImage = ApplicationImages.Splash;
+            ClientSize = BackgroundImage.Size;
+            FormBorderStyle = FormBorderStyle.None;
+            StartPosition = FormStartPosition.CenterScreen;
+            top_most();
         }
 
         public void increment_the_opacity()
@@ -56,11 +46,6 @@ namespace MoMoney.Presentation.Views.Startup
                                  Close();
                                  Dispose();
                              });
-        }
-
-        public void update_progress(notification_message message)
-        {
-            on_ui_thread(() => { progress_textbox.Text = message; });
         }
 
         public void display()

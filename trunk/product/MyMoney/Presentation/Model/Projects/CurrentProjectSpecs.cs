@@ -21,9 +21,9 @@ namespace MoMoney.Presentation.Model.Projects
                             context = the_dependency<ISessionContext>();
                         };
 
-        static protected IEventAggregator broker;
-        static protected IUnitOfWorkRegistry registry;
-        static protected ISessionContext context;
+        protected static IEventAggregator broker;
+        protected static IUnitOfWorkRegistry registry;
+        protected static ISessionContext context;
     }
 
     public class when_saving_the_current_project : behaves_like_a_project
@@ -149,21 +149,13 @@ namespace MoMoney.Presentation.Model.Projects
 
         context c = () =>
                         {
-                            file = an<IFile>();
+                            an<IFile>();
                             registry.is_told_to(x => x.has_changes_to_commit()).it_will_return(true);
                         };
 
-        because b = () =>
-                        {
-                            //sut.start_new_project();
-                            //sut.save_project_to(file);
-                            //sut.notify(message);
-                            result = sut.has_unsaved_changes();
-                        };
+        because b = () => { result = sut.has_unsaved_changes(); };
 
         static bool result;
-        static IFile file;
-        static unsaved_changes_event message;
     }
 
     public class when_starting_a_new_project_and_a_project_was_already_open : behaves_like_a_project

@@ -27,6 +27,14 @@ namespace MoMoney.Presentation.Views.Shell
                           };
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            try_to_reduce_flickering();
+            TopMost = true;
+            Focus();
+            BringToFront();
+        }
+
         public void add(IDockedContentView view)
         {
             on_ui_thread(() => view.add_to(ux_dock_panel));

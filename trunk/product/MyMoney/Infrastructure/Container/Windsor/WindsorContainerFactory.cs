@@ -17,6 +17,11 @@ namespace MoMoney.Infrastructure.Container.Windsor
         readonly IComponentExclusionSpecification criteria_to_satisfy;
         readonly IRegistrationConfiguration configuration;
 
+        public WindsorContainerFactory()
+            : this(new ComponentExclusionSpecification(), new ComponentRegistrationConfiguration())
+        {
+        }
+
         public WindsorContainerFactory(IComponentExclusionSpecification criteria_to_satisfy,
                                        IRegistrationConfiguration configuration)
         {
@@ -56,9 +61,9 @@ namespace MoMoney.Infrastructure.Container.Windsor
         }
     }
 
-    static public class e
+    public static class e
     {
-        static public BasedOnDescriptor LastInterface(this ServiceDescriptor descriptor)
+        public static BasedOnDescriptor LastInterface(this ServiceDescriptor descriptor)
         {
             return descriptor.Select(delegate(Type type, Type baseType)
                                          {

@@ -4,7 +4,6 @@ using developwithpassion.bdd.contexts;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
-using MoMoney.windows.ui;
 
 namespace MoMoney.Infrastructure.Container.Windsor
 {
@@ -18,8 +17,7 @@ namespace MoMoney.Infrastructure.Container.Windsor
 
         public override IDependencyRegistry create_sut()
         {
-            return get_the.registry(null);
-            //return new WindsorDependencyRegistry(new WindsorContainerFactory().create());
+            return new WindsorDependencyRegistry();
         }
 
         context c = () =>

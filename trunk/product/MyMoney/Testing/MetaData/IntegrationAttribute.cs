@@ -1,8 +1,11 @@
-using System.ComponentModel;
+using MbUnit.Framework;
 
 namespace MoMoney.Testing.MetaData
 {
-    public class IntegrationAttribute : CategoryAttribute
+    public class IntegrationAttribute : FixtureCategoryAttribute
     {
+        public IntegrationAttribute() : base("Integration")
+        {
+        }
     }
 }

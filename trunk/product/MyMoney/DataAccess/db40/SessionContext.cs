@@ -42,7 +42,7 @@ namespace MoMoney.DataAccess.db40
 
         public void close_session_to(IFile file)
         {
-            if (!sessions.ContainsKey(file)) return;
+            if (null == file || !sessions.ContainsKey(file)) return;
             sessions[file].Dispose();
             sessions.Remove(file);
         }

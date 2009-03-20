@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Infrastructure.Threading
 {
@@ -12,9 +13,9 @@ namespace MoMoney.Infrastructure.Threading
 
     public class WorkerThread : Component, IWorkerThread
     {
-        private static readonly object do_work_key = new object();
-        private bool is_running;
-        private readonly Action background_thread;
+        static readonly object do_work_key = new object();
+        bool is_running;
+        readonly Action background_thread;
 
         public WorkerThread()
         {
@@ -29,22 +30,28 @@ namespace MoMoney.Infrastructure.Threading
 
         public void Begin()
         {
-            if (is_running) {
+            if (is_running)
+            {
                 throw new InvalidOperationException("Worker Thread Is Already Running");
             }
             is_running = true;
             background_thread.BeginInvoke(null, null);
         }
 
-        private void worker_thread_start()
+        void worker_thread_start()
         {
-            try {
+            try
+            {
                 var handler = (DoWorkEventHandler) Events[do_work_key];
-                if (handler != null) {
+                if (handler != null)
+                {
                     handler(this, new DoWorkEventArgs(null));
                 }
             }
-            catch (Exception) {}
+            catch (Exception e)
+            {
+                this.log().error(e);
+            }
         }
     }
 }

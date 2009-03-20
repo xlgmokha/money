@@ -6,9 +6,9 @@ namespace MoMoney.Presentation.Presenters.Startup
 {
     public class display_the_splash_screen : ISplashScreenState
     {
-        private readonly ITimer timer;
-        private readonly ISplashScreenView view;
-        private readonly ISplashScreenPresenter presenter;
+        readonly ITimer timer;
+        readonly ISplashScreenView view;
+        readonly ISplashScreenPresenter presenter;
 
         public display_the_splash_screen(ITimer timer, ISplashScreenView view, ISplashScreenPresenter presenter)
         {
@@ -20,10 +20,12 @@ namespace MoMoney.Presentation.Presenters.Startup
 
         public void update()
         {
-            if (view.current_opacity() < 1) {
+            if (view.current_opacity() < 1)
+            {
                 view.increment_the_opacity();
             }
-            else {
+            else
+            {
                 timer.stop_notifying(presenter);
             }
         }

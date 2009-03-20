@@ -1,4 +1,5 @@
 using System;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Views.Startup;
 
@@ -6,9 +7,9 @@ namespace MoMoney.Presentation.Presenters.Startup
 {
     public class hide_the_splash_screen : ISplashScreenState
     {
-        private readonly ITimer timer;
-        private readonly ISplashScreenView view;
-        private readonly ISplashScreenPresenter presenter;
+        readonly ITimer timer;
+        readonly ISplashScreenView view;
+        readonly ISplashScreenPresenter presenter;
 
         public hide_the_splash_screen(ITimer timer, ISplashScreenView view, ISplashScreenPresenter presenter)
         {
@@ -20,11 +21,15 @@ namespace MoMoney.Presentation.Presenters.Startup
 
         public void update()
         {
-            if (view.current_opacity() == 0) {
-                view.close_the_screen();
+            if (view.current_opacity() == 0)
+            {
+                this.log().debug("stop notifying");
                 timer.stop_notifying(presenter);
+                view.close_the_screen();
             }
-            else {
+            else
+            {
+                this.log().debug("decrement");
                 view.decrement_the_opacity();
             }
         }

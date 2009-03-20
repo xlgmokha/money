@@ -12,9 +12,13 @@ namespace MoMoney.Infrastructure.Container.Windsor
     {
         readonly IWindsorContainer underlying_container;
 
-        public WindsorDependencyRegistry(IWindsorContainer container)
+        public WindsorDependencyRegistry():this(new WindsorContainerFactory())
         {
-            underlying_container = container;
+        }
+
+        public WindsorDependencyRegistry(IWindsorContainerFactory factory)
+        {
+            underlying_container = factory.create();
         }
 
         public Interface get_a<Interface>()

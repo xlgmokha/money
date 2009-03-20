@@ -6,16 +6,16 @@ using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Infrastructure.Logging.Log4NetLogging
 {
-    public class log4net_log_factory : ILogFactory
+    public class Log4NetLogFactory : ILogFactory
     {
-        public log4net_log_factory()
+        public Log4NetLogFactory()
         {
             XmlConfigurator.Configure(PathToConfigFile());
         }
 
         public ILogger create_for(Type typeToCreateLoggerFor)
         {
-            return new log4net_logger(LogManager.GetLogger(typeToCreateLoggerFor));
+            return new Log4NetLogger(LogManager.GetLogger(typeToCreateLoggerFor));
         }
 
         private FileInfo PathToConfigFile()
