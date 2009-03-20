@@ -156,6 +156,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="boot\container\tear_down_the_container.cs" />
     <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
     <Compile Include="DataAccess\db40\DatabaseConfiguration.cs" />
     <Compile Include="DataAccess\db40\EmptySession.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Infrastructure\Container\Windsor\configuration\NoInterfaces.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\RegisterComponentContract.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\SubclassesForm.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\IContainerBuilder.cs" />
     <Compile Include="Infrastructure\Container\Windsor\WindsorContainerFactory.cs" />
     <Compile Include="Infrastructure\debugging\Launch.cs" />
     <Compile Include="Infrastructure\eventing\EventAggregator.cs" />
@@ -637,8 +639,8 @@
     <Compile Include="Utility\Extensions\TypeExtensions.cs" />
     <Compile Include="Utility\Extensions\TypeExtensionsSpecs.cs" />
     <Compile Include="Utility\Extensions\visitor_extensions.cs" />
-    <Compile Include="windows.ui\check_for_updates.cs" />
-    <Compile Include="windows.ui\hookup.cs" />
+    <Compile Include="boot\check_for_updates.cs" />
+    <Compile Include="boot\hookup.cs" />
     <Compile Include="Presentation\Model\Menu\ISubMenu.cs" />
     <Compile Include="Utility\Core\IRegistry.cs" />
     <Compile Include="Infrastructure\Container\dependency_resolution_exception.cs" />
@@ -657,7 +659,7 @@
     <Compile Include="Presentation\Presenters\Menu\MainMenuPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Commands\LoadPresentationModulesCommand.cs" />
     <Compile Include="Presentation\Views\Menu\ApplicationMenuHostSpecs.cs" />
-    <Compile Include="windows.ui\bootstrap.cs" />
+    <Compile Include="boot\bootstrap.cs" />
     <EmbeddedResource Include="Presentation\Views\AddCompanyView.resx">
       <DependentUpon>AddCompanyView.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -746,13 +748,14 @@
     <Compile Include="Testing\spechelpers\core\assertions.cs" />
     <Compile Include="Testing\spechelpers\core\mocking_extensions.cs" />
     <Compile Include="Testing\MetaData\ConcernAttribute.cs" />
-    <Compile Include="windows.ui\start_the_application.cs" />
-    <Compile Include="windows.ui\wire_up_the_container.cs" />
-    <Compile Include="windows.ui\global_error_handling.cs" />
-    <Compile Include="windows.ui\wire_up_the_essential_services_into_the.cs" />
-    <Compile Include="windows.ui\wire_up_the_mappers_in_to_the.cs" />
-    <Compile Include="windows.ui\wire_up_the_reports_in_to_the.cs" />
-    <Compile Include="windows.ui\wire_up_the_views_in_to_the.cs" />
+    <Compile Include="boot\start_the_application.cs" />
+    <Compile Include="boot\container\wire_up_the_container.cs" />
+    <Compile Include="boot\global_error_handling.cs" />
+    <Compile Include="boot\container\run_mass_component_registration_in_to_the.cs" />
+    <Compile Include="boot\container\wire_up_the_essential_services_into_the.cs" />
+    <Compile Include="boot\container\wire_up_the_mappers_in_to_the.cs" />
+    <Compile Include="boot\container\wire_up_the_reports_in_to_the.cs" />
+    <Compile Include="boot\container\wire_up_the_views_in_to_the.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\sqlcompact\" />

@@ -4,7 +4,7 @@ using MoMoney.Infrastructure.Logging;
 using MoMoney.Infrastructure.Logging.Log4NetLogging;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.windows.ui
+namespace MoMoney.boot.container
 {
     internal class wire_up_the_essential_services_into_the : ICommand
     {
@@ -18,6 +18,7 @@ namespace MoMoney.windows.ui
         public void run()
         {
             resolve.initialize_with(registry);
+            registry.singleton<IDependencyRegistry>(registry);
             registry.singleton<ILogFactory, Log4NetLogFactory>();
         }
     }

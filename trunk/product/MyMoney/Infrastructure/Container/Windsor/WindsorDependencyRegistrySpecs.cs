@@ -8,6 +8,7 @@ using MoMoney.Testing.spechelpers.core;
 namespace MoMoney.Infrastructure.Container.Windsor
 {
     [Concern(typeof (WindsorDependencyRegistry))]
+    [run_in_real_container]
     public class when_registering_a_singleton_component_with_the_windsor_container : concerns_for<IDependencyRegistry>
     {
         it should_return_the_same_instance_each_time_its_resolved =
@@ -17,7 +18,7 @@ namespace MoMoney.Infrastructure.Container.Windsor
 
         public override IDependencyRegistry create_sut()
         {
-            return new WindsorDependencyRegistry();
+            return resolve.dependency_for<IDependencyRegistry>();
         }
 
         context c = () =>

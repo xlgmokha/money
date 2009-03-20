@@ -1,8 +1,7 @@
 using System.Collections;
 using MbUnit.Core.Framework;
 using MbUnit.Core.Invokers;
-using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.boot.container;
 
 namespace MoMoney.Testing.MetaData
 {
@@ -24,12 +23,12 @@ namespace MoMoney.Testing.MetaData
         {
             try
             {
-                resolve.initialize_with(new WindsorDependencyRegistry());
+                new wire_up_the_container().run();
                 return Invoker.Execute(o, args);
             }
             finally
             {
-                resolve.initialize_with(null);
+                new tear_down_the_container().run();
             }
         }
     }

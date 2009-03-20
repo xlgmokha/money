@@ -5,9 +5,9 @@ namespace MoMoney.windows.ui
 {
     internal class wire_up_the_mappers_in_to_the : ICommand
     {
-        private readonly WindsorDependencyRegistry registry;
+        private readonly IContainerBuilder registry;
 
-        public wire_up_the_mappers_in_to_the(WindsorDependencyRegistry registry)
+        public wire_up_the_mappers_in_to_the(IContainerBuilder registry)
         {
             this.registry = registry;
         }

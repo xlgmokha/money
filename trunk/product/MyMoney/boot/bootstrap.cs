@@ -1,9 +1,11 @@
 using System;
+using MoMoney.boot.container;
 using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Utility.Extensions;
+using MoMoney.windows.ui;
 
-namespace MoMoney.windows.ui
+namespace MoMoney.boot
 {
     internal static class bootstrap
     {
