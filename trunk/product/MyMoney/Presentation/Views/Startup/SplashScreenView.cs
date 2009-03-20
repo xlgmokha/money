@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using MoMoney.Infrastructure.Extensions;
+using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 
@@ -51,6 +52,18 @@ namespace MoMoney.Presentation.Views.Startup
         public void display()
         {
             on_ui_thread(Show);
+        }
+
+        public void notify(notification_message message)
+        {
+            this.log().debug("notifying the view");
+            on_ui_thread(() =>
+                             {
+                                 this.log().debug(message);
+                                 progress_textbox.Text = message;
+                                 progress_bar.PerformStep();
+                                 progress_bar.Text = message;
+                             });
         }
     }
 }

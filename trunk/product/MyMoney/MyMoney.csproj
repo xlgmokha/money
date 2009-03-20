@@ -544,6 +544,7 @@
     <Compile Include="Utility\Core\chained_mapper.cs" />
     <Compile Include="Utility\Core\and_specification.cs" />
     <Compile Include="Utility\Core\DisposableCommand.cs" />
+    <Compile Include="Utility\Core\EmptyCallback.cs" />
     <Compile Include="Utility\Core\empty_command.cs" />
     <Compile Include="Utility\Core\IBuilder.cs" />
     <Compile Include="Utility\Core\ICallback.cs" />

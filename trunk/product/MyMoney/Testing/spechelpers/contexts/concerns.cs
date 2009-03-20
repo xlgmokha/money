@@ -7,18 +7,22 @@ namespace MoMoney.Testing.spechelpers.contexts
     public abstract class concerns_for<Contract> : observations_for_a_sut_without_a_contract<Contract>,
                                                    IHideObjectMembers
     {
+        protected static T when_the<T>(T item)
+        {
+            return item;
+        }
     }
 
     public abstract class concerns_for<Contract, Implementation> :
         observations_for_a_sut_with_a_contract<Contract, Implementation>, IHideObjectMembers
         where Implementation : Contract
     {
-        static protected T when_the<T>(T item)
+        protected static T when_the<T>(T item)
         {
             return item;
         }
 
-        static protected T dependency<T>() where T : class
+        protected static T dependency<T>() where T : class
         {
             return MockRepository.GenerateMock<T>();
         }
@@ -26,12 +30,12 @@ namespace MoMoney.Testing.spechelpers.contexts
 
     public abstract class concerns : observations_for_a_static_sut, IHideObjectMembers
     {
-        static protected T dependency<T>() where T : class
+        protected static T dependency<T>() where T : class
         {
             return MockRepository.GenerateMock<T>();
         }
 
-        static public T when_the<T>(T item)
+        public static T when_the<T>(T item)
         {
             return item;
         }

@@ -9,12 +9,12 @@ using MoMoney.Testing.spechelpers.core;
 namespace MoMoney.Presentation.Presenters.Startup
 {
     [Concern(typeof (SplashScreenPresenter))]
-    public abstract class behaves_like_splash_screen_presenter : concerns_for<ISplashScreenPresenter, SplashScreenPresenter>
+    public abstract class behaves_like_splash_screen_presenter : concerns_for<ISplashScreenPresenter>
     {
-        //public override ISplashScreenPresenter create_sut()
-        //{
-        //    return new splash_screen_presenter(timer, view);
-        //}
+        public override ISplashScreenPresenter create_sut()
+        {
+            return new SplashScreenPresenter(timer, view);
+        }
 
         context c = () =>
                         {

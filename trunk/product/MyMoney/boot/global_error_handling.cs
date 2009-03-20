@@ -9,7 +9,7 @@ using MoMoney.Presentation.Model.messages;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
-namespace MoMoney.windows.ui
+namespace MoMoney.boot
 {
     internal class global_error_handling : ICommand
     {
