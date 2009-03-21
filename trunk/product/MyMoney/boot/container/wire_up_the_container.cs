@@ -4,7 +4,6 @@ using System.Reflection;
 using MoMoney.boot.container.registration;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
-using MoMoney.Infrastructure.Logging;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
@@ -15,8 +14,8 @@ namespace MoMoney.boot.container
         public void run()
         {
             var container = new WindsorContainerFactory().create();
-
             var registry = new WindsorDependencyRegistry(container);
+            //var registry = new AutofacDependencyRegistry();
             var specification = new ComponentExclusionSpecification();
             var configuration = new ComponentRegistrationConfiguration();
 
@@ -58,11 +57,11 @@ namespace MoMoney.boot.container
         {
             if (type.GetInterfaces().Length > 0)
             {
-                if (typeof(ILoggable).IsAssignableFrom(type))
+                //if (typeof(ILoggable).IsAssignableFrom(type))
                 {
                     //builder.proxy(h
                 }
-                else
+                //else
                 {
                     builder.transient(type.last_interface(), type);
                 }

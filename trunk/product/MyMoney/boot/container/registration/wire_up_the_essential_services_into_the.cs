@@ -8,9 +8,9 @@ namespace MoMoney.boot.container.registration
 {
     internal class wire_up_the_essential_services_into_the : ICommand
     {
-        readonly WindsorDependencyRegistry registry;
+        readonly IContainerBuilder registry;
 
-        public wire_up_the_essential_services_into_the(WindsorDependencyRegistry registry)
+        public wire_up_the_essential_services_into_the(IContainerBuilder registry)
         {
             this.registry = registry;
         }

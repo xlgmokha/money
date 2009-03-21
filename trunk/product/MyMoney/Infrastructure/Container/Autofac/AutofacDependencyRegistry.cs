@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using Autofac;
 using Autofac.Builder;
+using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.proxies;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container.Autofac
 {
-    internal class AutofacDependencyRegistry : IDependencyRegistry
+    internal class AutofacDependencyRegistry : IDependencyRegistry, IContainerBuilder
     {
         ContainerBuilder builder;
         Func<IContainer> container;

@@ -4,7 +4,7 @@ using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.Container.Windsor
 {
-    public interface IContainerBuilder
+    public interface IContainerBuilder : IDependencyRegistry
     {
         void singleton<Contract, Implementation>() where Implementation : Contract;
         void singleton<Contract>(Contract instance_of_the_contract);
