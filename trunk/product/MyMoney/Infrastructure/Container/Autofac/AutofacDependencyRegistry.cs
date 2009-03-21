@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Autofac;
 
@@ -20,14 +19,7 @@ namespace MoMoney.Infrastructure.Container.Autofac
 
         public IEnumerable<Interface> all_the<Interface>()
         {
-            foreach (var x in container.ComponentRegistrations)
-            {
-                foreach (var service in x.Descriptor.Services)
-                {
-                }
-            }
-            throw new NotImplementedException();
-            //return container.Resolve<Interface>();
+            return container.Resolve<IEnumerable<Interface>>();
         }
     }
 }

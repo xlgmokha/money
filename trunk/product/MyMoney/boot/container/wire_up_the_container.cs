@@ -2,7 +2,6 @@ using System;
 using Castle.Windsor;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
@@ -25,8 +24,6 @@ namespace MoMoney.boot.container
 
         public void run()
         {
-            this.log().debug("initializing container");
-
             Func<IWindsorContainer> container = () => new WindsorContainerFactory().create();
             container = container.memorize();
 
@@ -40,7 +37,6 @@ namespace MoMoney.boot.container
                 .then(new wire_up_the_reports_in_to_the(registry))
                 .then(new run_mass_component_registration_in_to_the(container, specification, configuration))
                 .run();
-            this.log().debug("finished initializing container");
         }
     }
 }
