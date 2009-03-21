@@ -1,4 +1,3 @@
-using System;
 using Castle.Windsor;
 using MoMoney.boot.container.registration;
 using MoMoney.Infrastructure.Container.Windsor;
@@ -13,8 +12,7 @@ namespace MoMoney.boot.container
     {
         public void run()
         {
-            Func<IWindsorContainer> container = () => new WindsorContainerFactory().create();
-            container = container.memorize();
+            var container = new WindsorContainerFactory().create();
 
             var registry = new WindsorDependencyRegistry(container);
             var specification = new ComponentExclusionSpecification();

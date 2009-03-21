@@ -4,7 +4,7 @@ using MoMoney.Infrastructure.Logging;
 using MoMoney.Infrastructure.Logging.Log4NetLogging;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.boot.container
+namespace MoMoney.boot.container.registration
 {
     internal class wire_up_the_essential_services_into_the : ICommand
     {

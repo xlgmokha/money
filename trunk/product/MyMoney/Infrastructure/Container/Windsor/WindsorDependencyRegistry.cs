@@ -8,36 +8,36 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container.Windsor
 {
-    internal class WindsorDependencyRegistry : IDependencyRegistry, IContainerBuilder
+    internal class WindsorDependencyRegistry : IContainerBuilder
     {
-        readonly Func<IWindsorContainer> underlying_container;
+        readonly IWindsorContainer underlying_container;
 
-        public WindsorDependencyRegistry(Func<IWindsorContainer> container)
+        public WindsorDependencyRegistry(IWindsorContainer container)
         {
             underlying_container = container;
         }
 
         public Interface get_a<Interface>()
         {
-            return underlying_container().Kernel.Resolve<Interface>();
+            return underlying_container.Kernel.Resolve<Interface>();
         }
 
         public IEnumerable<Interface> all_the<Interface>()
         {
-            return underlying_container().ResolveAll<Interface>();
+            return underlying_container.ResolveAll<Interface>();
         }
 
         public void singleton<Interface, Implementation>() where Implementation : Interface
         {
             var interface_type = typeof (Interface);
             var implementation_type = typeof (Implementation);
-            underlying_container().AddComponent(create_a_key_using(interface_type, implementation_type), interface_type,
-                                                implementation_type);
+            underlying_container.AddComponent(create_a_key_using(interface_type, implementation_type), interface_type,
+                                              implementation_type);
         }
 
         public void singleton<Interface>(Interface instanceOfTheInterface)
         {
-            underlying_container().Kernel.AddComponentInstance<Interface>(instanceOfTheInterface);
+            underlying_container.Kernel.AddComponentInstance<Interface>(instanceOfTheInterface);
         }
 
         public void transient<Interface, Implementation>() where Implementation : Interface
@@ -47,7 +47,7 @@ namespace MoMoney.Infrastructure.Container.Windsor
 
         public void transient(Type contract, Type implementation)
         {
-            underlying_container().AddComponentLifeStyle(
+            underlying_container.AddComponentLifeStyle(
                 create_a_key_using(contract, implementation),
                 contract, implementation, LifestyleType.Transient);
         }

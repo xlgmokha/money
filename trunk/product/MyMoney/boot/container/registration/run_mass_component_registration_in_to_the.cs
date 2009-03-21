@@ -1,4 +1,3 @@
-using System;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using MoMoney.Infrastructure.Container.Windsor;
@@ -9,11 +8,11 @@ namespace MoMoney.boot.container.registration
 {
     internal class run_mass_component_registration_in_to_the : ICommand
     {
-        readonly Func<IWindsorContainer> container;
+        readonly IWindsorContainer container;
         readonly IComponentExclusionSpecification criteria_to_satisfy;
         readonly IRegistrationConfiguration configuration;
 
-        public run_mass_component_registration_in_to_the(Func<IWindsorContainer> container,
+        public run_mass_component_registration_in_to_the(IWindsorContainer container,
                                                          IComponentExclusionSpecification criteria_to_satisfy,
                                                          IRegistrationConfiguration configuration)
         {
@@ -24,7 +23,7 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            container().Register(
+            container.Register(
                 AllTypes
                     .Pick()
                     .FromAssembly(GetType().Assembly)
