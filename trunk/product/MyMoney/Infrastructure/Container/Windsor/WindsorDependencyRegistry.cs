@@ -8,7 +8,7 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container.Windsor
 {
-    internal class WindsorDependencyRegistry : IContainerBuilder
+    internal class WindsorDependencyRegistry : IContainerBuilder, IDependencyRegistry
     {
         readonly IWindsorContainer underlying_container;
 

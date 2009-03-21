@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Castle.Core.Interceptor;
-using Ec.AuditTool.Infrastructure.Proxies;
 using developwithpassion.bdd.contexts;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
@@ -42,7 +40,7 @@ namespace MoMoney.Infrastructure.proxies
                         {
                             sut.add_interceptor<SomeInterceptor>();
                             sut.add_interceptor<AnotherInterceptor>();
-                            var proxy = sut.create_proxy_for(an_implementation_of_the_interface);
+                            var proxy = sut.create_proxy_for(() => an_implementation_of_the_interface);
                             proxy.OneMethod();
                             proxy.SecondMethod();
                         };
@@ -73,7 +71,7 @@ namespace MoMoney.Infrastructure.proxies
                             var constraint = sut.add_interceptor<SomeInterceptor>();
                             constraint.InterceptOn.OneMethod();
 
-                            var proxy = sut.create_proxy_for(an_implementation);
+                            var proxy = sut.create_proxy_for(() => an_implementation);
                             proxy.OneMethod();
                             proxy.SecondMethod();
                         };

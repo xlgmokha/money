@@ -3,7 +3,7 @@ using MoMoney.Presentation.Views.billing;
 using MoMoney.Presentation.Views.reporting;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.windows.ui
+namespace MoMoney.boot.container.registration
 {
     internal class wire_up_the_reports_in_to_the : ICommand
     {
