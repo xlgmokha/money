@@ -161,8 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="boot\container\tear_down_the_container.cs" />
+    <Compile Include="boot\container\registration\wire_up_the_data_access_components_into_the.cs" />
     <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
-    <Compile Include="DataAccess\db40\DatabaseConfiguration.cs" />
     <Compile Include="DataAccess\db40\EmptySession.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGateway.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGatewaySpecs.cs" />
@@ -758,11 +758,11 @@
     <Compile Include="boot\start_the_application.cs" />
     <Compile Include="boot\container\wire_up_the_container.cs" />
     <Compile Include="boot\global_error_handling.cs" />
-    <Compile Include="boot\container\run_mass_component_registration_in_to_the.cs" />
-    <Compile Include="boot\container\wire_up_the_essential_services_into_the.cs" />
-    <Compile Include="boot\container\wire_up_the_mappers_in_to_the.cs" />
-    <Compile Include="boot\container\wire_up_the_reports_in_to_the.cs" />
-    <Compile Include="boot\container\wire_up_the_views_in_to_the.cs" />
+    <Compile Include="boot\container\registration\run_mass_component_registration_in_to_the.cs" />
+    <Compile Include="boot\container\registration\wire_up_the_essential_services_into_the.cs" />
+    <Compile Include="boot\container\registration\wire_up_the_mappers_in_to_the.cs" />
+    <Compile Include="boot\container\registration\wire_up_the_reports_in_to_the.cs" />
+    <Compile Include="boot\container\registration\wire_up_the_views_in_to_the.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\sqlcompact\" />

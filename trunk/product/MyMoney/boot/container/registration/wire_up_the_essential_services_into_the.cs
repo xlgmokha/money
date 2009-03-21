@@ -19,6 +19,7 @@ namespace MoMoney.boot.container
         {
             resolve.initialize_with(registry);
             registry.singleton<IDependencyRegistry>(registry);
+            registry.singleton<IContainerBuilder>(registry);
             registry.singleton<ILogFactory, Log4NetLogFactory>();
         }
     }

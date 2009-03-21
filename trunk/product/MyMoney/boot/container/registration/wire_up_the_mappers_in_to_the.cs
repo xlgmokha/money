@@ -1,7 +1,7 @@
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.windows.ui
+namespace MoMoney.boot.container
 {
     internal class wire_up_the_mappers_in_to_the : ICommand
     {

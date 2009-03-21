@@ -1,5 +1,6 @@
 using System;
 using Castle.Windsor;
+using MoMoney.boot.container.registration;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
 using MoMoney.Utility.Core;
@@ -20,6 +21,7 @@ namespace MoMoney.boot.container
             var configuration = new ComponentRegistrationConfiguration();
 
             new wire_up_the_essential_services_into_the(registry)
+                .then(new wire_up_the_data_access_components_into_the(registry))
                 .then(new wire_up_the_mappers_in_to_the(registry))
                 .then(new wire_up_the_views_in_to_the(registry))
                 .then(new wire_up_the_reports_in_to_the(registry))
