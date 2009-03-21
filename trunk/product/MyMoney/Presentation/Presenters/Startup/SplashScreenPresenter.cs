@@ -15,6 +15,10 @@ namespace MoMoney.Presentation.Presenters.Startup
         readonly ISplashScreenView view;
         ISplashScreenState current_state;
 
+        public SplashScreenPresenter():this(new IntervalTimer(new TimerFactory()), new SplashScreenView())
+        {
+        }
+
         public SplashScreenPresenter(ITimer timer, ISplashScreenView view)
         {
             this.timer = timer;
