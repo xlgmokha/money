@@ -13,7 +13,6 @@ namespace MoMoney.DataAccess.db40
         void commit_current_session();
     }
 
-    [Singleton]
     public class SessionContext : ISessionContext
     {
         readonly IConnectionFactory connection_factory;

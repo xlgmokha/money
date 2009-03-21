@@ -1,4 +1,3 @@
-using Castle.Core;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
@@ -13,7 +12,6 @@ namespace MoMoney.Presentation.Presenters.Shell
     {
     }
 
-    [Singleton]
     public class NotificationIconPresenter : INotificationIconPresenter
     {
         readonly INotificationIconView view;

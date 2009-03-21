@@ -7,8 +7,7 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
     {
         public bool is_satisfied_by(Type item)
         {
-            return typeof(Form).IsAssignableFrom(item);
-            //return item.IsSubclassOf(typeof (Form));
+            return typeof (Form).IsAssignableFrom(item);
         }
     }
 }

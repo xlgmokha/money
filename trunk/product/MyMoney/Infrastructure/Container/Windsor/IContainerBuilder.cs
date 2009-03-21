@@ -6,9 +6,10 @@ namespace MoMoney.Infrastructure.Container.Windsor
 {
     public interface IContainerBuilder
     {
-        void singleton<Interface, Implementation>() where Implementation : Interface;
-        void singleton<Interface>(Interface instanceOfTheInterface);
-        void transient<Interface, Implementation>() where Implementation : Interface;
+        void singleton<Contract, Implementation>() where Implementation : Contract;
+        void singleton<Contract>(Contract instance_of_the_contract);
+        void transient<Contract, Implementation>() where Implementation : Contract;
+        void transient(Type contract, Type implementation);
         void proxy<T>(IConfiguration<IProxyBuilder<T>> configuration, Func<T> target);
     }
 }

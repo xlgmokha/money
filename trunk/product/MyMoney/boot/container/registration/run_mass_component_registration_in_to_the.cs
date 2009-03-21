@@ -5,7 +5,7 @@ using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.boot.container
+namespace MoMoney.boot.container.registration
 {
     internal class run_mass_component_registration_in_to_the : ICommand
     {

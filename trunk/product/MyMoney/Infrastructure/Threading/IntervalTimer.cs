@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Timers;
-using Castle.Core;
 
 namespace MoMoney.Infrastructure.Threading
 {
@@ -11,11 +10,10 @@ namespace MoMoney.Infrastructure.Threading
         void stop_notifying(ITimerClient client_to_stop_notifying);
     }
 
-    [Singleton]
     public class IntervalTimer : ITimer
     {
-        private readonly ITimerFactory factory;
-        private readonly IDictionary<ITimerClient, Timer> timers;
+        readonly ITimerFactory factory;
+        readonly IDictionary<ITimerClient, Timer> timers;
 
         public IntervalTimer(ITimerFactory factory)
         {

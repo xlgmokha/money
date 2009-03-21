@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Castle.Core;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.eventing
@@ -13,7 +11,6 @@ namespace MoMoney.Infrastructure.eventing
         void publish<Event>() where Event : IEvent, new();
     }
 
-    [Singleton]
     public class EventAggregator : IEventAggregator
     {
         readonly IDictionary<string, HashSet<object>> subscribers;
@@ -35,7 +32,6 @@ namespace MoMoney.Infrastructure.eventing
         {
             get_list_for<Event>()
                 .Select(x => x.downcast_to<IEventSubscriber<Event>>())
-                //.Select(x => log_and_return(x))
                 .each(x => x.notify(the_event_to_broadcast));
         }
 
@@ -51,12 +47,6 @@ namespace MoMoney.Infrastructure.eventing
                 subscribers.Add(typeof (Event).FullName, new HashSet<object>());
             }
             return subscribers[typeof (Event).FullName];
-        }
-
-        IEventSubscriber<Event> log_and_return<Event>(IEventSubscriber<Event> x) where Event : IEvent
-        {
-            this.log().debug("publishing event {0} to {1}", typeof (Event).Name, x.GetType().FullName);
-            return x;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace MoMoney.Testing.spechelpers.core
             return new method_call_occurance<T>(mocked_item, actionToPerform);
         }
 
-        public static void should_not_have_been_asked_to<T>(this T mocked_item, Action<T> action_to_perform)
+        public static void was_not_told_to<T>(this T mocked_item, Action<T> action_to_perform)
         {
             mocked_item.AssertWasNotCalled(action_to_perform);
         }

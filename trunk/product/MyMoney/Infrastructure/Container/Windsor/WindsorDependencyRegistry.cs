@@ -32,7 +32,7 @@ namespace MoMoney.Infrastructure.Container.Windsor
             var interface_type = typeof (Interface);
             var implementation_type = typeof (Implementation);
             underlying_container().AddComponent(create_a_key_using(interface_type, implementation_type), interface_type,
-                                              implementation_type);
+                                                implementation_type);
         }
 
         public void singleton<Interface>(Interface instanceOfTheInterface)
@@ -42,9 +42,14 @@ namespace MoMoney.Infrastructure.Container.Windsor
 
         public void transient<Interface, Implementation>() where Implementation : Interface
         {
+            transient(typeof (Interface), typeof (Implementation));
+        }
+
+        public void transient(Type contract, Type implementation)
+        {
             underlying_container().AddComponentLifeStyle(
-                create_a_key_using(typeof (Interface), typeof (Implementation)),
-                typeof (Interface), typeof (Implementation), LifestyleType.Transient);
+                create_a_key_using(contract, implementation),
+                contract, implementation, LifestyleType.Transient);
         }
 
         string create_a_key_using(Type interface_type, Type implementation_type)

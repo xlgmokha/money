@@ -22,8 +22,10 @@ namespace MoMoney.boot.container
 
             new wire_up_the_essential_services_into_the(registry)
                 .then(new wire_up_the_data_access_components_into_the(registry))
+                .then(new wire_up_the_infrastructure_in_to_the(registry))
                 .then(new wire_up_the_mappers_in_to_the(registry))
                 .then(new wire_up_the_views_in_to_the(registry))
+                //.then(new wire_up_the_presentation_modules(registry))
                 .then(new wire_up_the_reports_in_to_the(registry))
                 .then(new run_mass_component_registration_in_to_the(container, specification, configuration))
                 .run();

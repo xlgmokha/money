@@ -1,4 +1,3 @@
-using Castle.Core;
 using MoMoney.DataAccess.db40;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.transactions;
@@ -7,7 +6,7 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Model.Projects
 {
-    public interface IProject // : IEventSubscriber<unsaved_changes_event>
+    public interface IProject
     {
         string name();
         void start_new_project();
@@ -19,7 +18,6 @@ namespace MoMoney.Presentation.Model.Projects
         bool has_unsaved_changes();
     }
 
-    [Singleton]
     public class CurrentProject : IProject
     {
         readonly IEventAggregator broker;

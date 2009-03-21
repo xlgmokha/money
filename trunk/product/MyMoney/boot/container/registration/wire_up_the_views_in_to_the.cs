@@ -14,7 +14,7 @@ using MoMoney.Presentation.Views.Startup;
 using MoMoney.Presentation.Views.updates;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.windows.ui
+namespace MoMoney.boot.container.registration
 {
     internal class wire_up_the_views_in_to_the : ICommand
     {
@@ -34,7 +34,7 @@ namespace MoMoney.windows.ui
             register.transient<ISplashScreenView, SplashScreenView>();
             register.transient<INavigationView, NavigationView>();
             register.transient<IAddCompanyView, AddCompanyView>();
-            register.transient<IViewAllBills, view_all_bills>();
+            register.transient<IViewAllBills, ViewAllBills>();
             register.transient<IAddBillPaymentView, add_bill_payment>();
             register.transient<IMainMenuView, MainMenuView>();
             register.transient<IAddNewIncomeView, AddNewIncomeView>();

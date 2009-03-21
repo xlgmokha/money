@@ -1,4 +1,3 @@
-using System;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.Shell
@@ -8,7 +7,7 @@ namespace MoMoney.Presentation.Views.Shell
         void display(string message, params object[] arguments);
     }
 
-    public class TaskTrayMessage : ITaskTrayMessageView, IDisposable
+    public class TaskTrayMessage : ITaskTrayMessageView
     {
         readonly INotificationIconView view;
 
@@ -20,10 +19,6 @@ namespace MoMoney.Presentation.Views.Shell
         public void display(string message, params object[] arguments)
         {
             view.show_popup_message(message.formatted_using(arguments));
-        }
-
-        public void Dispose()
-        {
         }
     }
 }

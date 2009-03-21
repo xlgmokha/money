@@ -160,8 +160,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="boot\container\registration\wire_up_the_infrastructure_in_to_the.cs" />
     <Compile Include="boot\container\tear_down_the_container.cs" />
     <Compile Include="boot\container\registration\wire_up_the_data_access_components_into_the.cs" />
+    <Compile Include="boot\container\registration\wire_up_the_presentation_modules.cs" />
     <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
     <Compile Include="DataAccess\db40\EmptySession.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGateway.cs" />
@@ -223,6 +225,7 @@
     <Compile Include="Infrastructure\Container\Windsor\WindsorContainerFactory.cs" />
     <Compile Include="Infrastructure\debugging\Launch.cs" />
     <Compile Include="Infrastructure\eventing\EventAggregator.cs" />
+    <Compile Include="Infrastructure\eventing\EventAggregatorSpecs.cs" />
     <Compile Include="Infrastructure\eventing\IEvent.cs" />
     <Compile Include="Infrastructure\eventing\IEventSubscriber.cs" />
     <Compile Include="Infrastructure\Extensions\threading_extensions.cs" />
@@ -437,11 +440,11 @@
     <Compile Include="Presentation\Views\helpers\EventTriggerExtensions.cs" />
     <Compile Include="Presentation\Views\IAddCompanyView.cs" />
     <Compile Include="Presentation\Views\billing\IViewAllBills.cs" />
-    <Compile Include="Presentation\Views\billing\view_all_bills.cs">
+    <Compile Include="Presentation\Views\billing\ViewAllBills.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Views\billing\view_all_bills.Designer.cs">
-      <DependentUpon>view_all_bills.cs</DependentUpon>
+    <Compile Include="Presentation\Views\billing\ViewAllBills.Designer.cs">
+      <DependentUpon>ViewAllBills.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\core\IDockedContentView.cs" />
     <Compile Include="Presentation\Views\core\IView.cs" />
@@ -530,7 +533,6 @@
     <Compile Include="Presentation\Views\updates\ICheckForUpdatesView.cs" />
     <Compile Include="Tasks\application\BillingTasks.cs" />
     <Compile Include="Tasks\application\CustomerTasks.cs" />
-    <Compile Include="Tasks\infrastructure\FileSystemTasks.cs" />
     <Compile Include="Tasks\application\IncomeTasks.cs" />
     <Compile Include="Tasks\infrastructure\LogFileTasks.cs" />
     <Compile Include="Tasks\infrastructure\UpdateTasks.cs" />
@@ -558,6 +560,8 @@
     <Compile Include="Utility\Core\IDisposableCommand.cs" />
     <Compile Include="Utility\Core\IFactory.cs" />
     <Compile Include="Utility\Core\IParameterizedCommand.cs" />
+    <Compile Include="Utility\Core\IState.cs" />
+    <Compile Include="Utility\Core\IStateContext.cs" />
     <Compile Include="Utility\Core\IValueReturningVisitor.cs" />
     <Compile Include="Utility\Core\IVisitable.cs" />
     <Compile Include="Utility\Core\IVisitor.cs" />
@@ -675,8 +679,8 @@
       <DependentUpon>add_bill_payment.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Views\billing\view_all_bills.resx">
-      <DependentUpon>view_all_bills.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Views\billing\ViewAllBills.resx">
+      <DependentUpon>ViewAllBills.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\core\ApplicationWindow.resx">

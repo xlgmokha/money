@@ -48,7 +48,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         behaves_like_new_command
     {
         it should_not_start_a_new_project =
-            () => current_project.should_not_have_been_asked_to(x => x.start_new_project());
+            () => current_project.was_not_told_to(x => x.start_new_project());
 
         because b = () => sut.cancelled();
     }

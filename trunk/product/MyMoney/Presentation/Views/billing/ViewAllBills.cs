@@ -5,9 +5,9 @@ using MoMoney.Presentation.Views.core;
 
 namespace MoMoney.Presentation.Views.billing
 {
-    public partial class view_all_bills : ApplicationDockedWindow, IViewAllBills
+    public partial class ViewAllBills : ApplicationDockedWindow, IViewAllBills
     {
-        public view_all_bills()
+        public ViewAllBills()
         {
             InitializeComponent();
             titled("View Bills");

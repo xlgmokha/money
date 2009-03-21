@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Windows.Forms;
-using Castle.Core;
 using MoMoney.Presentation.Views.core;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.Shell
 {
     [Export(typeof (IShell))]
-    [Singleton]
     public partial class ApplicationShell : ApplicationWindow, IShell
     {
         readonly IDictionary<string, Control> regions;

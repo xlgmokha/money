@@ -1,4 +1,3 @@
-using Castle.Core;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
@@ -14,7 +13,6 @@ namespace MoMoney.Presentation.Presenters.Shell
     {
     }
 
-    [Singleton]
     public class TitleBarPresenter : ITitleBarPresenter
     {
         readonly ITitleBar view;
@@ -30,10 +28,10 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void run()
         {
+            view.display(project.name());
             broker.subscribe_to<unsaved_changes_event>(this);
             broker.subscribe_to<saved_changes_event>(this);
             broker.subscribe_to<new_project_opened>(this);
-            view.display(project.name());
         }
 
         public void notify(unsaved_changes_event dto)

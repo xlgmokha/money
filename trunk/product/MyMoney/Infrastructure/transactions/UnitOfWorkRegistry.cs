@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Castle.Core;
 using MoMoney.Domain.Core;
 using MoMoney.Utility.Extensions;
 
@@ -14,7 +13,6 @@ namespace MoMoney.Infrastructure.transactions
         bool has_changes_to_commit();
     }
 
-    [Singleton]
     public class UnitOfWorkRegistry : IUnitOfWorkRegistry
     {
         readonly IUnitOfWorkFactory factory;
