@@ -1,6 +1,6 @@
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
-using bdddoc.domain;
-using developwithpassion.bdd.concerns;
 using developwithpassion.bdd.contexts;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
@@ -16,7 +16,7 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
     {
         it should_be_excluded = () => result.should_be_true();
 
-        because b = () => { result = sut.is_satisfied_by(typeof (Form)); };
+        because b = () => { result = sut.is_satisfied_by(typeof (FakeForm)); };
 
         static bool result;
     }
@@ -26,10 +26,20 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
     {
         it should_be_excluded = () => result.should_be_true();
 
-        because b = () => { result = sut.is_satisfied_by(typeof (IDependencyRegistry)); };
+        because b = () => { result = sut.is_satisfied_by(typeof (FakeDependencyRegistry)); };
 
         static bool result;
     }
+
+    public class when_checking_if_a_status_class_should_be_excluded : behaves_like_component_exclusion_specification
+    {
+        it should_be_excluded = () => { result.should_be_true(); };
+        
+        because b = () => { result = sut.is_satisfied_by(typeof (FakeStaticClass)); };
+
+        static bool result;
+    }
+
 
     //public class when_checking_if_a_set_of_observations_should_be_excluded : behaves_like_component_exclusion_specification
     //{
@@ -39,4 +49,24 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
 
     //    static bool result;
     //}
+    public class FakeForm : Form
+    {
+    }
+
+    public class FakeDependencyRegistry : IDependencyRegistry
+    {
+        public Interface get_a<Interface>()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Interface> all_the<Interface>()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public static class FakeStaticClass
+    {
+    }
 }

@@ -43,6 +43,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\auto.fac\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="AutofacContrib.DynamicProxy2, Version=1.3.3.24, Culture=neutral, PublicKeyToken=8e6b048fde719d37, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\auto.fac.contrib\AutofacContrib.DynamicProxy2.dll</HintPath>
+    </Reference>
     <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
@@ -160,10 +164,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="boot\container\registration\auto_wire_components_in_to_the.cs" />
+    <Compile Include="boot\container\registration\auto_wire_components_in_to_the_specs.cs" />
     <Compile Include="boot\container\registration\wire_up_the_infrastructure_in_to_the.cs" />
     <Compile Include="boot\container\tear_down_the_container.cs" />
     <Compile Include="boot\container\registration\wire_up_the_data_access_components_into_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_presentation_modules.cs" />
+    <Compile Include="boot\container\registration\wire_up_the_services_in_to_the.cs" />
     <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
     <Compile Include="DataAccess\db40\EmptySession.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGateway.cs" />
@@ -213,7 +220,9 @@
     <Compile Include="Infrastructure\Container\Autofac\AutofacSpecs.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ApplyLoggingInterceptor.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecification.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecificationSpecs.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecificationSpecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Infrastructure\Container\Windsor\configuration\ConfigureComponentLifestyle.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\IComponentExclusionSpecification.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ImplementationOfDependencyRegistry.cs" />
@@ -221,7 +230,7 @@
     <Compile Include="Infrastructure\Container\Windsor\configuration\NoInterfaces.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\RegisterComponentContract.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\SubclassesForm.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\IContainerBuilder.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\IDependencyRegistration.cs" />
     <Compile Include="Infrastructure\Container\Windsor\WindsorContainerFactory.cs" />
     <Compile Include="Infrastructure\debugging\Launch.cs" />
     <Compile Include="Infrastructure\eventing\EventAggregator.cs" />
@@ -254,6 +263,8 @@
     <Compile Include="Infrastructure\proxies\ProxyBuilderSpecs.cs" />
     <Compile Include="Infrastructure\proxies\ProxyFactory.cs" />
     <Compile Include="Infrastructure\proxies\ProxyFactorySpecs.cs" />
+    <Compile Include="Infrastructure\reflection\ApplicationAssembly.cs" />
+    <Compile Include="Infrastructure\reflection\IAssembly.cs" />
     <Compile Include="Infrastructure\registries\DefaultRegistry.cs" />
     <Compile Include="Infrastructure\registries\DefaultRegistrySpecs.cs" />
     <Compile Include="Domain\accounting\billing\Bill.cs" />
@@ -550,7 +561,7 @@
     <Compile Include="Utility\Core\ActionCommand.cs" />
     <Compile Include="Utility\Core\ChainedConfiguration.cs" />
     <Compile Include="Utility\Core\chained_mapper.cs" />
-    <Compile Include="Utility\Core\and_specification.cs" />
+    <Compile Include="Utility\Core\AndSpecification.cs" />
     <Compile Include="Utility\Core\DisposableCommand.cs" />
     <Compile Include="Utility\Core\EmptyCallback.cs" />
     <Compile Include="Utility\Core\empty_command.cs" />
@@ -591,12 +602,15 @@
     <Compile Include="Presentation\Databindings\text_property_binding.cs" />
     <Compile Include="Presentation\Presenters\Commands\display_the_splash_screen.cs" />
     <Compile Include="Presentation\Core\IPresentationModule.cs" />
+    <Compile Include="Utility\Core\OrSpecificationSpecs.cs" />
+    <Compile Include="Utility\Core\PredicateSpecification.cs" />
+    <Compile Include="Utility\Core\PredicateSpecificationSpecs.cs" />
     <Compile Include="Utility\Extensions\RegistryExtensions.cs" />
     <Compile Include="Presentation\Model\Menu\File\FileMenu.cs" />
     <Compile Include="Presentation\Model\Menu\Help\HelpMenu.cs" />
     <Compile Include="Utility\Core\ISpecification.cs" />
     <Compile Include="Utility\Core\Map.cs" />
-    <Compile Include="Utility\Core\or_specification.cs" />
+    <Compile Include="Utility\Core\OrSpecification.cs" />
     <Compile Include="Utility\Extensions\configuration_extensions.cs" />
     <Compile Include="Utility\Extensions\conversion_extensions.cs" />
     <Compile Include="Utility\Extensions\enumerable_extensions.cs" />
@@ -606,6 +620,7 @@
     <Compile Include="Utility\Extensions\numeric_conversions.cs" />
     <Compile Include="Utility\Extensions\numeric_conversions_specs.cs" />
     <Compile Include="Utility\Extensions\querying_extensions.cs" />
+    <Compile Include="Utility\Extensions\SpecificationExtensionsSpecs.cs" />
     <Compile Include="Utility\Extensions\specification_extensions.cs" />
     <Compile Include="Infrastructure\Logging\ILogFactory.cs" />
     <Compile Include="Infrastructure\Logging\ILogger.cs" />

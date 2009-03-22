@@ -7,9 +7,9 @@ namespace MoMoney.boot.container.registration
 {
     internal class wire_up_the_reports_in_to_the : ICommand
     {
-        private readonly IContainerBuilder registry;
+        private readonly IDependencyRegistration registry;
 
-        public wire_up_the_reports_in_to_the(IContainerBuilder registry)
+        public wire_up_the_reports_in_to_the(IDependencyRegistration registry)
         {
             this.registry = registry;
         }

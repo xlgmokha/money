@@ -6,9 +6,9 @@ namespace MoMoney.boot.container.registration
 {
     internal class wire_up_the_data_access_components_into_the : ICommand
     {
-        readonly IContainerBuilder register;
+        readonly IDependencyRegistration register;
 
-        public wire_up_the_data_access_components_into_the(IContainerBuilder registry)
+        public wire_up_the_data_access_components_into_the(IDependencyRegistration registry)
         {
             register = registry;
         }

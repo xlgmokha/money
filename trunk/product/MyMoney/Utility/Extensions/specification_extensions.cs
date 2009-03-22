@@ -17,12 +17,12 @@ namespace MoMoney.Utility.Extensions
 
         public static ISpecification<T> and<T>(this ISpecification<T> left, ISpecification<T> right)
         {
-            return new and_specification<T>(left, right);
+            return new AndSpecification<T>(left, right);
         }
 
         public static ISpecification<T> or<T>(this ISpecification<T> left, ISpecification<T> right)
         {
-            return new or_specification<T>(left, right);
+            return new OrSpecification<T>(left, right);
         }
     }
 }

@@ -18,9 +18,9 @@ namespace MoMoney.boot.container.registration
 {
     internal class wire_up_the_views_in_to_the : ICommand
     {
-        readonly IContainerBuilder register;
+        readonly IDependencyRegistration register;
 
-        public wire_up_the_views_in_to_the(IContainerBuilder registry)
+        public wire_up_the_views_in_to_the(IDependencyRegistration registry)
         {
             register = registry;
         }

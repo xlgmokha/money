@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using Autofac;
 using Autofac.Builder;
+using Autofac.Modules;
+using AutofacContrib.DynamicProxy2;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.proxies;
 using MoMoney.Utility.Core;
@@ -9,20 +11,39 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container.Autofac
 {
-    internal class AutofacDependencyRegistry : IDependencyRegistry, IContainerBuilder
+    internal class AutofacDependencyRegistry : IDependencyRegistry
     {
-        ContainerBuilder builder;
-        Func<IContainer> container;
+        readonly IContainer container;
 
-        public AutofacDependencyRegistry() : this(new ContainerBuilder())
+        public AutofacDependencyRegistry(IContainer container)
+        {
+            this.container = container;
+        }
+
+        public Interface get_a<Interface>()
+        {
+            return container.Resolve<Interface>();
+        }
+
+        public IEnumerable<Interface> all_the<Interface>()
+        {
+            return container.Resolve<IEnumerable<Interface>>();
+        }
+    }
+
+    internal class AutofacDependencyRegistryBuilder : IDependencyRegistration, IBuilder<IContainer>
+    {
+        readonly ContainerBuilder builder;
+
+        public AutofacDependencyRegistryBuilder() : this(new ContainerBuilder())
         {
         }
 
-        public AutofacDependencyRegistry(ContainerBuilder builder)
+        public AutofacDependencyRegistryBuilder(ContainerBuilder builder)
         {
             this.builder = builder;
-            container = () => builder.Build();
-            container = container.memorize();
+            builder.RegisterModule(new ImplicitCollectionSupportModule());
+            builder.RegisterModule(new StandardInterceptionModule());
         }
 
         public void singleton<Contract, Implementation>() where Implementation : Contract
@@ -42,7 +63,14 @@ namespace MoMoney.Infrastructure.Container.Autofac
 
         public void transient(Type contract, Type implementation)
         {
-            builder.Register(implementation).As(contract).FactoryScoped();
+            if (contract.is_a_generic_type())
+            {
+                builder.RegisterGeneric(implementation).As(contract).FactoryScoped();
+            }
+            else
+            {
+                builder.Register(implementation).As(contract).FactoryScoped();
+            }
         }
 
         public void proxy<T>(IConfiguration<IProxyBuilder<T>> configuration, Func<T> target)
@@ -52,14 +80,9 @@ namespace MoMoney.Infrastructure.Container.Autofac
             builder.Register(x => proxy_builder.create_proxy_for(target)).As<T>().FactoryScoped();
         }
 
-        public Interface get_a<Interface>()
+        public IContainer build()
         {
-            return container().Resolve<Interface>();
-        }
-
-        public IEnumerable<Interface> all_the<Interface>()
-        {
-            return container().Resolve<IEnumerable<Interface>>();
+            return builder.Build();
         }
     }
 }

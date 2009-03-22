@@ -1,4 +1,3 @@
-using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.Logging;
 using MoMoney.Infrastructure.Logging.Log4NetLogging;
@@ -8,19 +7,17 @@ namespace MoMoney.boot.container.registration
 {
     internal class wire_up_the_essential_services_into_the : ICommand
     {
-        readonly IContainerBuilder registry;
+        readonly IDependencyRegistration registration;
 
-        public wire_up_the_essential_services_into_the(IContainerBuilder registry)
+        public wire_up_the_essential_services_into_the(IDependencyRegistration registration)
         {
-            this.registry = registry;
+            this.registration = registration;
         }
 
         public void run()
         {
-            resolve.initialize_with(registry);
-            registry.singleton<IDependencyRegistry>(registry);
-            registry.singleton<IContainerBuilder>(registry);
-            registry.singleton<ILogFactory, Log4NetLogFactory>();
+            registration.singleton<IDependencyRegistration>(registration);
+            registration.singleton<ILogFactory, Log4NetLogFactory>();
         }
     }
 }

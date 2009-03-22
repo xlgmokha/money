@@ -10,9 +10,9 @@ namespace MoMoney.boot.container.registration
 {
     internal class wire_up_the_presentation_modules : ICommand
     {
-        readonly IContainerBuilder registry;
+        readonly IDependencyRegistration registry;
 
-        public wire_up_the_presentation_modules(IContainerBuilder registry)
+        public wire_up_the_presentation_modules(IDependencyRegistration registry)
         {
             this.registry = registry;
         }
