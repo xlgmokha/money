@@ -10,6 +10,7 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
             return new NoInterfaces()
                 .or(new SubclassesForm())
                 .or(new ImplementationOfDependencyRegistry())
+                .or(new IsAnEntity())
                 .is_satisfied_by(type);
         }
     }

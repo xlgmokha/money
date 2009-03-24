@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
+using MoMoney.Domain.Core;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
 
@@ -31,11 +32,20 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
         static bool result;
     }
 
-    public class when_checking_if_a_status_class_should_be_excluded : behaves_like_component_exclusion_specification
+    public class when_checking_if_a_static_class_should_be_excluded : behaves_like_component_exclusion_specification
     {
-        it should_be_excluded = () => { result.should_be_true(); };
-        
+        it should_be_excluded = () => result.should_be_true();
+
         because b = () => { result = sut.is_satisfied_by(typeof (FakeStaticClass)); };
+
+        static bool result;
+    }
+
+    public class when_checking_if_an_domain_entity_should_be_excluded : behaves_like_component_exclusion_specification
+    {
+        it should_be_excluded = () => result.should_be_true();
+
+        because b = () => { result = sut.is_satisfied_by(typeof (FakeEntity)); };
 
         static bool result;
     }
@@ -66,7 +76,15 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
         }
     }
 
-    public static class FakeStaticClass
+    static public class FakeStaticClass
     {
+    }
+
+    public class FakeEntity : IEntity
+    {
+        public Guid Id
+        {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

@@ -178,7 +178,7 @@
     <Compile Include="DataAccess\db40\Session.cs" />
     <Compile Include="DataAccess\db40\spiking\db40_spike_specs.cs" />
     <Compile Include="DataAccess\repositories\BillRepository.cs" />
-    <Compile Include="DataAccess\repositories\bill_repository_specs.cs" />
+    <Compile Include="DataAccess\repositories\BillRepositorySpecs.cs" />
     <Compile Include="DataAccess\repositories\CompanyRepository.cs" />
     <Compile Include="Domain\accounting\billing\IEmployee.cs" />
     <Compile Include="Domain\accounting\financial_growth\income.cs" />
@@ -226,6 +226,7 @@
     <Compile Include="Infrastructure\Container\Windsor\configuration\ConfigureComponentLifestyle.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\IComponentExclusionSpecification.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ImplementationOfDependencyRegistry.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\IsAnEntity.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\LogComponent.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\NoInterfaces.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\RegisterComponentContract.cs" />
@@ -282,6 +283,8 @@
     <Compile Include="Infrastructure\Threading\BackgroundThread.cs">
     </Compile>
     <Compile Include="Infrastructure\Threading\IntervalTimer.cs" />
+    <Compile Include="Infrastructure\Threading\Juval\Synchronizer.cs" />
+    <Compile Include="Infrastructure\Threading\Juval\WorkItem.cs" />
     <Compile Include="Infrastructure\Threading\TimerFactory.cs" />
     <Compile Include="Infrastructure\Threading\WorkerThread.cs">
       <SubType>Component</SubType>
