@@ -5,8 +5,8 @@ using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {
-    public interface IApplicationShellPresenter : IPresentationModule, IEventSubscriber<new_project_opened>,
-                                                  IEventSubscriber<closing_project_event>
+    public interface IApplicationShellPresenter : IPresentationModule, IEventSubscriber<NewProjectOpened>,
+                                                  IEventSubscriber<ClosingProjectEvent>
     {
     }
 
@@ -23,17 +23,17 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void run()
         {
-            broker.subscribe_to<new_project_opened>(this);
-            broker.subscribe_to<closing_project_event>(this);
+            broker.subscribe_to<NewProjectOpened>(this);
+            broker.subscribe_to<ClosingProjectEvent>(this);
         }
 
-        public void notify(new_project_opened message)
+        public void notify(NewProjectOpened message)
         {
             //shell.clear_menu_items();
             //shell.close_all_windows();
         }
 
-        public void notify(closing_project_event message)
+        public void notify(ClosingProjectEvent message)
         {
             shell.close_all_windows();
         }

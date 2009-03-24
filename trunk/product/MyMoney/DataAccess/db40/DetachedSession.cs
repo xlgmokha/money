@@ -7,12 +7,12 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.DataAccess.db40
 {
-    public class EmptySession : ISession
+    public class DetachedSession : ISession
     {
         readonly HashSet<object> items;
-        Guid session_id;
+        readonly Guid session_id;
 
-        public EmptySession()
+        public DetachedSession()
         {
             items = new HashSet<object>();
             session_id = Guid.NewGuid();

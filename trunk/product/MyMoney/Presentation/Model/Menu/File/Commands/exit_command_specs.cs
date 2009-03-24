@@ -32,7 +32,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     {
         it should_ask_the_application_environment_to_shut_down = () => application.was_told_to(x => x.shut_down());
 
-        it should_publish_the_shut_down_event = () => broker.was_told_to(x => x.publish<closing_the_application>());
+        it should_publish_the_shut_down_event = () => broker.was_told_to(x => x.publish<ClosingTheApplication>());
 
         because b = () => sut.saved();
     }
@@ -41,7 +41,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     {
         it should_ask_the_application_environment_to_shut_down = () => application.was_told_to(x => x.shut_down());
 
-        it should_publish_the_shut_down_event = () => broker.was_told_to(x => x.publish<closing_the_application>());
+        it should_publish_the_shut_down_event = () => broker.was_told_to(x => x.publish<ClosingTheApplication>());
 
         because b = () => sut.not_saved();
     }
@@ -51,7 +51,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     {
         it should_not_ask_the_application_environment_to_shut_down = () => application.was_told_to(x => x.shut_down());
 
-        it should_not_publish_the_shut_down_event = () => broker.was_told_to(x => x.publish<closing_the_application>());
+        it should_not_publish_the_shut_down_event = () => broker.was_told_to(x => x.publish<ClosingTheApplication>());
 
         because b = () => sut.not_saved();
     }

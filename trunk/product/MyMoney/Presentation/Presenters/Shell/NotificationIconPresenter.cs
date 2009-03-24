@@ -7,8 +7,8 @@ using MoMoney.Presentation.Views.Shell;
 namespace MoMoney.Presentation.Presenters.Shell
 {
     public interface INotificationIconPresenter : IPresentationModule,
-                                                  IEventSubscriber<closing_the_application>,
-                                                  IEventSubscriber<new_project_opened>
+                                                  IEventSubscriber<ClosingTheApplication>,
+                                                  IEventSubscriber<NewProjectOpened>
     {
     }
 
@@ -25,17 +25,17 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void run()
         {
-            broker.subscribe_to<closing_the_application>(this);
-            broker.subscribe_to<new_project_opened>(this);
+            broker.subscribe_to<ClosingTheApplication>(this);
+            broker.subscribe_to<NewProjectOpened>(this);
             view.display(ApplicationIcons.Application, "mokhan.ca");
         }
 
-        public void notify(closing_the_application message)
+        public void notify(ClosingTheApplication message)
         {
             view.Dispose();
         }
 
-        public void notify(new_project_opened message)
+        public void notify(NewProjectOpened message)
         {
             view.opened_new_project();
         }

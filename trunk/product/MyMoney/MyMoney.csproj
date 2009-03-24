@@ -172,10 +172,10 @@
     <Compile Include="boot\container\registration\wire_up_the_presentation_modules.cs" />
     <Compile Include="boot\container\registration\wire_up_the_services_in_to_the.cs" />
     <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
-    <Compile Include="DataAccess\db40\EmptySession.cs" />
+    <Compile Include="DataAccess\db40\DetachedSession.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGateway.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGatewaySpecs.cs" />
-    <Compile Include="DataAccess\db40\Session.cs" />
+    <Compile Include="DataAccess\db40\AttachedSession.cs" />
     <Compile Include="DataAccess\db40\spiking\db40_spike_specs.cs" />
     <Compile Include="DataAccess\repositories\BillRepository.cs" />
     <Compile Include="DataAccess\repositories\BillRepositorySpecs.cs" />
@@ -613,7 +613,7 @@
     <Compile Include="Utility\Core\OrSpecification.cs" />
     <Compile Include="Utility\Extensions\configuration_extensions.cs" />
     <Compile Include="Utility\Extensions\conversion_extensions.cs" />
-    <Compile Include="Utility\Extensions\enumerable_extensions.cs" />
+    <Compile Include="Utility\Extensions\EnumerableExtensions.cs" />
     <Compile Include="Utility\Extensions\func_extensions.cs" />
     <Compile Include="Utility\Extensions\mapping_extensions.cs" />
     <Compile Include="Utility\Extensions\mapping_extensions_specs.cs" />

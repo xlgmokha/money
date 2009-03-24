@@ -7,9 +7,10 @@ using MoMoney.Presentation.Views.Shell;
 namespace MoMoney.Presentation.Presenters.Shell
 {
     public interface ITitleBarPresenter : IPresentationModule,
-                                          IEventSubscriber<unsaved_changes_event>,
-                                          IEventSubscriber<saved_changes_event>,
-                                          IEventSubscriber<new_project_opened>
+                                          IEventSubscriber<UnsavedChangesEvent>,
+                                          IEventSubscriber<SavedChangesEvent>,
+                                          IEventSubscriber<NewProjectOpened>,
+                                          IEventSubscriber<ClosingProjectEvent>
     {
     }
 
@@ -29,23 +30,29 @@ namespace MoMoney.Presentation.Presenters.Shell
         public void run()
         {
             view.display(project.name());
-            broker.subscribe_to<unsaved_changes_event>(this);
-            broker.subscribe_to<saved_changes_event>(this);
-            broker.subscribe_to<new_project_opened>(this);
+            broker.subscribe_to<UnsavedChangesEvent>(this);
+            broker.subscribe_to<SavedChangesEvent>(this);
+            broker.subscribe_to<NewProjectOpened>(this);
+            broker.subscribe_to<ClosingProjectEvent>(this);
         }
 
-        public void notify(unsaved_changes_event dto)
+        public void notify(UnsavedChangesEvent dto)
         {
             view.append_asterik();
         }
 
-        public void notify(saved_changes_event message)
+        public void notify(SavedChangesEvent message)
         {
             view.display(project.name());
             view.remove_asterik();
         }
 
-        public void notify(new_project_opened message)
+        public void notify(NewProjectOpened message)
+        {
+            view.display(project.name());
+        }
+
+        public void notify(ClosingProjectEvent message)
         {
             view.display(project.name());
         }

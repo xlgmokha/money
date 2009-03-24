@@ -41,9 +41,10 @@ namespace MoMoney.Presentation.Model.Projects
         public void start_new_project()
         {
             close_project();
+            context.close_session_to(current_file);
             is_project_open = true;
             current_file = null;
-            broker.publish(new new_project_opened(name()));
+            broker.publish(new NewProjectOpened(name()));
         }
 
         public void open_project_from(IFile file)
@@ -53,7 +54,7 @@ namespace MoMoney.Presentation.Model.Projects
             current_file = file;
             is_project_open = true;
             context.start_session_for(current_file);
-            broker.publish(new new_project_opened(name()));
+            broker.publish(new NewProjectOpened(name()));
         }
 
         public void save_changes()
@@ -62,7 +63,7 @@ namespace MoMoney.Presentation.Model.Projects
             registry.commit_all();
             registry.Dispose();
             context.commit_current_session();
-            broker.publish<saved_changes_event>();
+            broker.publish<SavedChangesEvent>();
         }
 
         public void save_project_to(IFile new_file)
@@ -80,7 +81,8 @@ namespace MoMoney.Presentation.Model.Projects
             registry.Dispose();
             context.close_session_to(current_file);
             is_project_open = false;
-            broker.publish<closing_project_event>();
+            current_file = null;
+            broker.publish<ClosingProjectEvent>();
         }
 
         public bool has_been_saved_at_least_once()
@@ -97,7 +99,7 @@ namespace MoMoney.Presentation.Model.Projects
         {
             if (!has_been_saved_at_least_once())
             {
-                throw new file_not_specified_exception();
+                throw new FileNotSpecifiedException();
             }
         }
     }

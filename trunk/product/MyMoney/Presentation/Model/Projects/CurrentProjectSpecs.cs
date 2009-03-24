@@ -28,7 +28,7 @@ namespace MoMoney.Presentation.Model.Projects
 
     public class when_saving_the_current_project : behaves_like_a_project
     {
-        it should_notify_the_rest_of_the_application = () => broker.was_told_to(x => x.publish<saved_changes_event>());
+        it should_notify_the_rest_of_the_application = () => broker.was_told_to(x => x.publish<SavedChangesEvent>());
 
         context c = () =>
                         {
@@ -50,7 +50,7 @@ namespace MoMoney.Presentation.Model.Projects
     public class when_attempting_to_save_the_changes_to_a_project_and_a_file_to_save_to_has_not_been_specified :
         behaves_like_a_project
     {
-        it should_inform_the_user_of_an_error = () => the_call.should_have_thrown<file_not_specified_exception>();
+        it should_inform_the_user_of_an_error = () => the_call.should_have_thrown<FileNotSpecifiedException>();
 
         because b = () => { the_call = call.to(() => sut.save_changes()); };
 
@@ -160,7 +160,7 @@ namespace MoMoney.Presentation.Model.Projects
 
     public class when_starting_a_new_project_and_a_project_was_already_open : behaves_like_a_project
     {
-        it should_close_the_previous_project = () => broker.was_told_to(x => x.publish<closing_project_event>());
+        it should_close_the_previous_project = () => broker.was_told_to(x => x.publish<ClosingProjectEvent>());
 
         because b = () =>
                         {
@@ -171,7 +171,7 @@ namespace MoMoney.Presentation.Model.Projects
 
     public class when_opening_an_existing_project_and_a_project_was_already_open : behaves_like_a_project
     {
-        it should_close_the_previous_project = () => broker.was_told_to(x => x.publish<closing_project_event>());
+        it should_close_the_previous_project = () => broker.was_told_to(x => x.publish<ClosingProjectEvent>());
 
         context c = () =>
                         {

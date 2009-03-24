@@ -5,7 +5,7 @@ using MoMoney.Presentation.Presenters.Commands;
 
 namespace MoMoney.Presentation.Presenters.Navigation
 {
-    public interface IMainMenuModule : IPresentationModule, IEventSubscriber<new_project_opened>
+    public interface IMainMenuModule : IPresentationModule, IEventSubscriber<NewProjectOpened>
     {
     }
 
@@ -25,7 +25,7 @@ namespace MoMoney.Presentation.Presenters.Navigation
             broker.subscribe_to(this);
         }
 
-        public void notify(new_project_opened message)
+        public void notify(NewProjectOpened message)
         {
             command.run<IMainMenuPresenter>();
         }

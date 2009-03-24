@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MoMoney.Utility.Extensions
 {
-    public static class enumerable_extensions
+    public static class EnumerableExtensions
     {
         public static IList<T> databind<T>(this IEnumerable<T> items_to_bind_to)
         {
@@ -12,21 +12,21 @@ namespace MoMoney.Utility.Extensions
         }
 
         public static IEnumerable<T> that_satisfy<T>(this IEnumerable<T> items_to_peek_in_to,
-                                                     Predicate<T> criteriaToSatisfy)
+                                                     Predicate<T> criteria_to_satisfy)
         {
             foreach (var item in items_to_peek_in_to ?? new List<T>())
             {
-                if (item.satisfies(criteriaToSatisfy))
+                if (item.satisfies(criteria_to_satisfy))
                 {
                     yield return item;
                 }
             }
         }
 
-        public static IEnumerable<T> sorted_using<T>(this IEnumerable<T> itemsToSort, IComparer<T> sortingAlgorithm)
+        public static IEnumerable<T> sorted_using<T>(this IEnumerable<T> items_to_sort, IComparer<T> sorting_algorithm)
         {
-            var sorted_items = new List<T>(itemsToSort);
-            sorted_items.Sort(sortingAlgorithm);
+            var sorted_items = new List<T>(items_to_sort);
+            sorted_items.Sort(sorting_algorithm);
             return sorted_items;
         }
 

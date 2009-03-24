@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Castle.Core;
 using Db4objects.Db4o;
 using MoMoney.Presentation.Model.Projects;
 
@@ -22,7 +21,7 @@ namespace MoMoney.DataAccess.db40
         public SessionContext(IConnectionFactory connection_factory)
         {
             this.connection_factory = connection_factory;
-            session = new EmptySession();
+            session = new DetachedSession();
             sessions = new Dictionary<IFile, IObjectContainer>();
         }
 
@@ -30,12 +29,12 @@ namespace MoMoney.DataAccess.db40
         {
             var container = connection_factory.open_connection_to(file);
             sessions.Add(file, container);
-            session = new Session(container);
+            session = new AttachedSession(container);
         }
 
         public ISession current_session()
         {
-            if (null == session) session = new EmptySession();
+            if (null == session) session = new DetachedSession();
             return session;
         }
 

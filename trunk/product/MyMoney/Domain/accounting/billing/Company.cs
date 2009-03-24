@@ -33,7 +33,7 @@ namespace MoMoney.Domain.accounting.billing
 
         public override string ToString()
         {
-            return base.ToString() + " " + name;
+            return name;
         }
     }
 }

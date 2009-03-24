@@ -9,10 +9,10 @@ using MoMoney.Utility.Extensions;
 namespace MoMoney.Presentation.Presenters.Shell
 {
     public interface IStatusBarPresenter : IPresentationModule,
-                                           IEventSubscriber<saved_changes_event>,
-                                           IEventSubscriber<new_project_opened>,
-                                           IEventSubscriber<closing_the_application>,
-                                           IEventSubscriber<closing_project_event>
+                                           IEventSubscriber<SavedChangesEvent>,
+                                           IEventSubscriber<NewProjectOpened>,
+                                           IEventSubscriber<ClosingTheApplication>,
+                                           IEventSubscriber<ClosingProjectEvent>
     {
     }
 
@@ -29,28 +29,28 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void run()
         {
-            broker.subscribe_to<saved_changes_event>(this);
-            broker.subscribe_to<new_project_opened>(this);
-            broker.subscribe_to<closing_the_application>(this);
-            broker.subscribe_to<closing_project_event>(this);
+            broker.subscribe_to<SavedChangesEvent>(this);
+            broker.subscribe_to<NewProjectOpened>(this);
+            broker.subscribe_to<ClosingTheApplication>(this);
+            broker.subscribe_to<ClosingProjectEvent>(this);
         }
 
-        public void notify(saved_changes_event message)
+        public void notify(SavedChangesEvent message)
         {
             view.display(ApplicationIcons.ApplicationReady, "Last Saved: {0}".formatted_using(Clock.now()));
         }
 
-        public void notify(new_project_opened message)
+        public void notify(NewProjectOpened message)
         {
             view.display(ApplicationIcons.ApplicationReady, "Ready");
         }
 
-        public void notify(closing_the_application message)
+        public void notify(ClosingTheApplication message)
         {
             view.display(ApplicationIcons.Empty, "Good Bye!");
         }
 
-        public void notify(closing_project_event message)
+        public void notify(ClosingProjectEvent message)
         {
             view.display(ApplicationIcons.ApplicationReady, "Ready");
         }

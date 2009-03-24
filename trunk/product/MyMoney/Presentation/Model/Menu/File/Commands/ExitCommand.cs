@@ -43,7 +43,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         void shut_down()
         {
-            broker.publish<closing_the_application>();
+            broker.publish<ClosingTheApplication>();
             application.shut_down();
         }
     }

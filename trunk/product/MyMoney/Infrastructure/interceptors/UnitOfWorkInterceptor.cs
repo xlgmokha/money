@@ -26,7 +26,7 @@ namespace MoMoney.Infrastructure.interceptors
             if (registry.has_changes_to_commit())
             {
                 registry.commit_all();
-                broker.publish<unsaved_changes_event>();
+                broker.publish<UnsavedChangesEvent>();
             }
         }
     }

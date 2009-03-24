@@ -24,6 +24,7 @@ namespace MoMoney.boot.container.registration
             registry.singleton<IUnitOfWorkRegistry, UnitOfWorkRegistry>();
             registry.singleton<IProject, CurrentProject>();
             registry.transient(typeof (IRegistry<>), typeof (DefaultRegistry<>));
+            registry.transient(typeof (IUnitOfWorkRegistrationFactory<>), typeof (UnitOfWorkRegistrationFactory<>));
         }
     }
 }

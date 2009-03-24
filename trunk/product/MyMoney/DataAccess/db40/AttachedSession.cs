@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using Db4objects.Db4o;
 using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.Extensions;
@@ -15,12 +14,12 @@ namespace MoMoney.DataAccess.db40
         void commit();
     }
 
-    public class Session : ISession
+    public class AttachedSession : ISession
     {
         readonly IObjectContainer connection;
-        Guid session_id;
+        readonly Guid session_id;
 
-        public Session(IObjectContainer connection)
+        public AttachedSession(IObjectContainer connection)
         {
             this.connection = connection;
             session_id = Guid.NewGuid();
@@ -37,7 +36,7 @@ namespace MoMoney.DataAccess.db40
             {
                 this.log().debug("already added: {0}, from {1}", item, session_id);
             }
-            this.log().debug("adding item: {0}, {1} {2}", item, session_id, Thread.CurrentThread.ManagedThreadId);
+            this.log().debug("adding item: {0}, {1}", item, session_id);
             connection.Store(item);
         }
 

@@ -21,7 +21,7 @@ namespace MoMoney.Presentation.Presenters.Shell
                             broker = the_dependency<IEventAggregator>();
                         };
 
-        because b = () => sut.notify(new new_project_opened(""));
+        because b = () => sut.notify(new NewProjectOpened(""));
 
         //public override IStatusBarPresenter create_sut()
         //{

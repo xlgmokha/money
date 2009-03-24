@@ -6,8 +6,8 @@ using MoMoney.Presentation.Views.Shell;
 namespace MoMoney.Presentation.Presenters.Shell
 {
     public interface ITaskTrayPresenter : IPresentationModule,
-                                          IEventSubscriber<saved_changes_event>,
-                                          IEventSubscriber<new_project_opened>
+                                          IEventSubscriber<SavedChangesEvent>,
+                                          IEventSubscriber<NewProjectOpened>
     {
     }
 
@@ -26,16 +26,16 @@ namespace MoMoney.Presentation.Presenters.Shell
         {
             view.display("Welcome!");
             view.display("Visit http://mokhan.ca for more information!");
-            broker.subscribe_to<saved_changes_event>(this);
-            broker.subscribe_to<new_project_opened>(this);
+            broker.subscribe_to<SavedChangesEvent>(this);
+            broker.subscribe_to<NewProjectOpened>(this);
         }
 
-        public void notify(saved_changes_event message)
+        public void notify(SavedChangesEvent message)
         {
             view.display("successfully saved changes");
         }
 
-        public void notify(new_project_opened message)
+        public void notify(NewProjectOpened message)
         {
             view.display("opened {0}", message.path);
         }

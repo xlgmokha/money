@@ -22,7 +22,7 @@ namespace MoMoney.Presentation.Presenters.Commands
 
         public void run()
         {
-            broker.publish<closing_the_application>();
+            broker.publish<ClosingTheApplication>();
             application.restart();
         }
     }
