@@ -1,4 +1,3 @@
-using System;
 using System.Reflection;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Presentation.Core;
@@ -21,15 +20,16 @@ namespace MoMoney.boot.container.registration
             Assembly
                 .GetExecutingAssembly()
                 .GetTypes()
-                //.Where(x => typeof (IPresentationModule).IsAssignableFrom(x))
                 .where(x => typeof (IPresenter).IsAssignableFrom(x))
                 .where(x => !x.IsInterface)
-                .each(register);
-        }
+                .each(type => registry.transient(typeof (IPresenter), type));
 
-        void register(Type type)
-        {
-            registry.transient(typeof (IPresenter), type);
+            Assembly
+                .GetExecutingAssembly()
+                .GetTypes()
+                .where(x => typeof (IPresentationModule).IsAssignableFrom(x))
+                .where(x => !x.IsInterface)
+                .each(type => registry.transient(typeof (IPresentationModule), type));
         }
     }
 }

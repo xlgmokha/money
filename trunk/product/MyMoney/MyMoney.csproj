@@ -669,7 +669,7 @@
     <Compile Include="boot\hookup.cs" />
     <Compile Include="Presentation\Model\Menu\ISubMenu.cs" />
     <Compile Include="Utility\Core\IRegistry.cs" />
-    <Compile Include="Infrastructure\Container\dependency_resolution_exception.cs" />
+    <Compile Include="Infrastructure\Container\DependencyResolutionException.cs" />
     <Compile Include="Infrastructure\Container\Resolve.cs" />
     <Compile Include="Infrastructure\Container\ResolveSpecs.cs" />
     <Compile Include="Infrastructure\Container\Windsor\WindsorDependencyRegistry.cs" />

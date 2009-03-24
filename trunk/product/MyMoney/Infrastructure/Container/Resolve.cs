@@ -21,7 +21,7 @@ namespace MoMoney.Infrastructure.Container
             }
             catch (Exception e)
             {
-                throw new dependency_resolution_exception<DependencyToResolve>(e);
+                throw new DependencyResolutionException<DependencyToResolve>(e);
             }
         }
 

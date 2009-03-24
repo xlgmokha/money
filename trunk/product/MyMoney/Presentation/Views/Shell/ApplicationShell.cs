@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Windows.Forms;
 using MoMoney.Presentation.Views.core;
@@ -10,20 +11,29 @@ namespace MoMoney.Presentation.Views.Shell
     [Export(typeof (IShell))]
     public partial class ApplicationShell : ApplicationWindow, IShell
     {
-        readonly IDictionary<string, Control> regions;
+        readonly IDictionary<string, IComponent> regions;
+        readonly NotifyIcon ux_notification_icon;
 
         public ApplicationShell()
         {
             InitializeComponent();
-            regions = new Dictionary<string, Control>
+            ux_notification_icon = new NotifyIcon
+                                       {
+                                           BalloonTipIcon = ToolTipIcon.Info,
+                                           BalloonTipText = "Thanks for trying out this sample application",
+                                           Visible = true,
+                                       };
+            regions = new Dictionary<string, IComponent>
                           {
                               {GetType().FullName, this},
                               {ux_main_menu_strip.GetType().FullName, ux_main_menu_strip},
                               {ux_dock_panel.GetType().FullName, ux_dock_panel},
                               {ux_tool_bar_strip.GetType().FullName, ux_tool_bar_strip},
                               {ux_status_bar.GetType().FullName, ux_status_bar},
+                              {ux_notification_icon.GetType().FullName, ux_notification_icon},
                           };
         }
+
 
         protected override void OnLoad(EventArgs e)
         {
@@ -38,7 +48,7 @@ namespace MoMoney.Presentation.Views.Shell
             on_ui_thread(() => view.add_to(ux_dock_panel));
         }
 
-        public void region<Region>(Action<Region> action) where Region : Control
+        public void region<Region>(Action<Region> action) where Region : IComponent
         {
             ensure_that_the_region_exists<Region>();
             on_ui_thread(() => action(regions[typeof (Region).FullName].downcast_to<Region>()));

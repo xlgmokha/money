@@ -9,7 +9,7 @@ namespace MoMoney.Presentation.Views.Shell
     {
         string Text { get; set; }
         void add(IDockedContentView view);
-        void region<T>(Action<T> action) where T : Control;
+        void region<T>(Action<T> action) where T : IComponent;
         void close_the_active_window();
         void close_all_windows();
     }

@@ -3,10 +3,11 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container
 {
-    public class dependency_resolution_exception<T> : Exception
+    public class DependencyResolutionException<T> : Exception
     {
-        public dependency_resolution_exception(Exception innerException)
+        public DependencyResolutionException(Exception innerException)
             : base("Could not resolve {0}".formatted_using(typeof (T).FullName), innerException)
-        {}
+        {
+        }
     }
 }

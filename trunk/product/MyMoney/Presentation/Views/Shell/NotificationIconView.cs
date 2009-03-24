@@ -11,14 +11,15 @@ namespace MoMoney.Presentation.Views.Shell
 {
     public class NotificationIconView : INotificationIconView
     {
-        NotifyIcon ux_notification_icon;
         readonly IFileMenu file_menu;
         readonly IWindowMenu window_menu;
         readonly IHelpMenu help_menu;
+        readonly IShell shell;
 
-        public NotificationIconView(IFileMenu file_menu, IWindowMenu window_menu, IHelpMenu help_menu)
+        public NotificationIconView(IFileMenu file_menu, IWindowMenu window_menu, IHelpMenu help_menu, IShell shell)
         {
             this.file_menu = file_menu;
+            this.shell = shell;
             this.window_menu = window_menu;
             this.help_menu = help_menu;
             Application.ApplicationExit += (sender, e) => Dispose();
@@ -26,24 +27,20 @@ namespace MoMoney.Presentation.Views.Shell
 
         public void display(ApplicationIcon icon_to_display, string text_to_display)
         {
-            ux_notification_icon =
-                new NotifyIcon
-                    {
-                        BalloonTipIcon = ToolTipIcon.Info,
-                        BalloonTipText = "Thanks for trying out this sample application",
-                        Icon = icon_to_display,
-                        Text = text_to_display,
-                        Visible = true,
-                        ContextMenu = new ContextMenu
-                                          {
-                                              MenuItems =
-                                                  {
-                                                      map_from(file_menu),
-                                                      map_from(window_menu),
-                                                      map_from(help_menu)
-                                                  }
-                                          }
-                    };
+            shell.region<NotifyIcon>(x =>
+                                         {
+                                             x.Icon = icon_to_display;
+                                             x.Text = text_to_display;
+                                             x.ContextMenu = new ContextMenu
+                                                                 {
+                                                                     MenuItems =
+                                                                         {
+                                                                             map_from(file_menu),
+                                                                             map_from(window_menu),
+                                                                             map_from(help_menu)
+                                                                         }
+                                                                 };
+                                         });
         }
 
         public void opened_new_project()
@@ -53,7 +50,7 @@ namespace MoMoney.Presentation.Views.Shell
 
         public void show_popup_message(string message)
         {
-            ux_notification_icon.ShowBalloonTip(100, message, message, ToolTipIcon.Info);
+            shell.region<NotifyIcon>(x => x.ShowBalloonTip(100, message, message, ToolTipIcon.Info));
         }
 
         MenuItem map_from(ISubMenu item)
@@ -65,12 +62,14 @@ namespace MoMoney.Presentation.Views.Shell
 
         public void Dispose()
         {
-            if (ux_notification_icon != null)
-            {
-                ux_notification_icon.Visible = false;
-                ux_notification_icon.Dispose();
-                ux_notification_icon = null;
-            }
+            shell.region<NotifyIcon>(x =>
+                                         {
+                                             if (x != null)
+                                             {
+                                                 x.Visible = false;
+                                                 x.Dispose();
+                                             }
+                                         });
         }
     }
 }

@@ -7,7 +7,7 @@ using MoMoney.Presentation.Context;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.windows.ui
+namespace MoMoney.boot
 {
     internal class start_the_application : ICommand
     {

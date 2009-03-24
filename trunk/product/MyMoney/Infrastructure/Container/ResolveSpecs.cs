@@ -51,7 +51,7 @@ namespace MoMoney.Infrastructure.Container
         after_each_observation a = () => resolve.initialize_with(null);
 
         it should_throw_a_dependency_resolution_exception =
-            () => the_call.should_have_thrown<dependency_resolution_exception<IPresenter>>();
+            () => the_call.should_have_thrown<DependencyResolutionException<IPresenter>>();
 
         static IDependencyRegistry registry;
         static Action the_call;
