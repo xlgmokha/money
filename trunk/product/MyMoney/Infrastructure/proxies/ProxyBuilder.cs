@@ -8,6 +8,9 @@ namespace MoMoney.Infrastructure.proxies
 {
     public interface IProxyBuilder<TypeToProxy>
     {
+        IConstraintSelector<TypeToProxy> add_interceptor<Interceptor>(Interceptor interceptor)
+            where Interceptor : IInterceptor;
+
         IConstraintSelector<TypeToProxy> add_interceptor<Interceptor>() where Interceptor : IInterceptor, new();
         TypeToProxy create_proxy_for(TypeToProxy target);
         TypeToProxy create_proxy_for(Func<TypeToProxy> target);
@@ -30,12 +33,17 @@ namespace MoMoney.Infrastructure.proxies
             constraints = new Dictionary<IInterceptor, IInterceptorConstraint<TypeToProxy>>();
         }
 
+        public IConstraintSelector<TypeToProxy> add_interceptor<Interceptor>(Interceptor interceptor)
+            where Interceptor : IInterceptor
+        {
+            var constraint = constraint_factory.CreateFor<TypeToProxy>();
+            constraints.Add(interceptor, constraint);
+            return constraint;
+        }
 
         public IConstraintSelector<TypeToProxy> add_interceptor<Interceptor>() where Interceptor : IInterceptor, new()
         {
-            var constraint = constraint_factory.CreateFor<TypeToProxy>();
-            constraints.Add(new Interceptor(), constraint);
-            return constraint;
+            return add_interceptor(new Interceptor());
         }
 
         public TypeToProxy create_proxy_for(TypeToProxy target)

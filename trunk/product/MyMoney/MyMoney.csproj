@@ -357,7 +357,7 @@
     <Compile Include="Presentation\Presenters\billing\ViewAllBillsPresenter.cs" />
     <Compile Include="Presentation\Presenters\Commands\RestartCommand.cs" />
     <Compile Include="Presentation\Presenters\Commands\RunPresenterCommand.cs" />
-    <Compile Include="Presentation\Presenters\Commands\run_the.cs" />
+    <Compile Include="Presentation\Presenters\Commands\RunThe.cs" />
     <Compile Include="Presentation\Presenters\Commands\run_the_specs.cs" />
     <Compile Include="Presentation\Presenters\excel\Cell.cs" />
     <Compile Include="Presentation\Presenters\excel\excel_usage.cs" />

@@ -6,9 +6,9 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Presenters.Commands
 {
-    [Concern(typeof (run_the<>))]
+    [Concern(typeof (RunThe<>))]
     public class when_initializing_different_regions_of_the_user_interface :
-        concerns_for<IRunThe<IPresenter>, run_the<IPresenter>>
+        concerns_for<IRunThe<IPresenter>, RunThe<IPresenter>>
     {
         it should_initialize_the_presenter_that_controls_that_region =
             () => application_controller.was_told_to(x => x.run<IPresenter>());

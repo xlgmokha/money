@@ -1,6 +1,7 @@
 using System.Reflection;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
@@ -17,6 +18,7 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
+            registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
             Assembly
                 .GetExecutingAssembly()
                 .GetTypes()

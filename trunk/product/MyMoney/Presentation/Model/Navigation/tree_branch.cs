@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using MoMoney.Presentation.Resources;
@@ -9,12 +10,13 @@ namespace MoMoney.Presentation.Model.Navigation
     {
         void accept(IVisitor<ITreeBranch> visitor);
         ITreeBranch add_child(string name, ApplicationIcon icon, ICommand command);
+        ITreeBranch add_child(string name, ApplicationIcon icon, Action command);
     }
 
     public class tree_branch : ITreeBranch
     {
-        private readonly TreeNode node;
-        private readonly ICommand the_command;
+        readonly TreeNode node;
+        readonly ICommand the_command;
 
         public tree_branch(TreeNode node, ICommand the_command)
         {
@@ -30,22 +32,30 @@ namespace MoMoney.Presentation.Model.Navigation
 
         public ITreeBranch add_child(string name, ApplicationIcon icon, ICommand command)
         {
-            var new_node = new TreeNode(name) {
-                                                  ImageKey = icon.name_of_the_icon,
-                                                  SelectedImageKey = icon.name_of_the_icon
-                                              };
+            var new_node = new TreeNode(name)
+                               {
+                                   ImageKey = icon.name_of_the_icon,
+                                   SelectedImageKey = icon.name_of_the_icon
+                               };
             node.Nodes.Add(new_node);
             return new tree_branch(new_node, command);
         }
 
-        private void Click()
+        public ITreeBranch add_child(string name, ApplicationIcon icon, Action command)
         {
-            if (node.Equals(node.TreeView.SelectedNode)) {
+            return add_child(name, icon, new ActionCommand(command));
+        }
+
+        void Click()
+        {
+            if (node.Equals(node.TreeView.SelectedNode))
+            {
                 node.Expand();
                 the_command.run();
                 node.BackColor = Color.HotPink;
             }
-            else {
+            else
+            {
                 node.BackColor = Color.Empty;
             }
         }

@@ -6,16 +6,16 @@ namespace MoMoney.Presentation.Model.Navigation.branches
 {
     public class add_new_bill_branch : IBranchVisitor
     {
-        private readonly IRunThe<IAddCompanyPresenter> command;
+        readonly IRunPresenterCommand command;
 
-        public add_new_bill_branch(IRunThe<IAddCompanyPresenter> command)
+        public add_new_bill_branch(IRunPresenterCommand command)
         {
             this.command = command;
         }
 
         public void visit(ITreeBranch item_to_visit)
         {
-            item_to_visit.add_child("Add Bills", ApplicationIcons.AddIncome, command);
+            item_to_visit.add_child("Add Bills", ApplicationIcons.AddIncome, () => command.run<IAddCompanyPresenter>());
         }
     }
 }

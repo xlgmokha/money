@@ -4,7 +4,7 @@ namespace MoMoney.Utility.Core
 {
     public class ActionCommand : ICommand
     {
-        Action action;
+        readonly Action action;
 
         public ActionCommand(Action action)
         {
