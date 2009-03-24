@@ -13,21 +13,21 @@ namespace MoMoney.Infrastructure.Container.Autofac
 {
     internal class AutofacDependencyRegistry : IDependencyRegistry
     {
-        readonly IContainer container;
+        readonly Func<IContainer> container;
 
-        public AutofacDependencyRegistry(IContainer container)
+        public AutofacDependencyRegistry(Func<IContainer> container)
         {
             this.container = container;
         }
 
         public Interface get_a<Interface>()
         {
-            return container.Resolve<Interface>();
+            return container().Resolve<Interface>();
         }
 
         public IEnumerable<Interface> all_the<Interface>()
         {
-            return container.Resolve<IEnumerable<Interface>>();
+            return container().Resolve<IEnumerable<Interface>>();
         }
     }
 

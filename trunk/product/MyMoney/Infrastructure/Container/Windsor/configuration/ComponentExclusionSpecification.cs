@@ -7,10 +7,11 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
     {
         public bool is_satisfied_by(Type type)
         {
-            return new NoInterfaces()
-                .or(new SubclassesForm())
-                .or(new ImplementationOfDependencyRegistry())
-                .or(new IsAnEntity())
+            return type.has_no_interfaces()
+                .or(type.subclasses_form())
+                .or(type.is_an_implementation_of_dependency_registry())
+                .or(type.is_an_entity())
+                .or(type.is_an_interface())
                 .is_satisfied_by(type);
         }
     }

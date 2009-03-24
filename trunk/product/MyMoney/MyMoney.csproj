@@ -225,12 +225,9 @@
     </Compile>
     <Compile Include="Infrastructure\Container\Windsor\configuration\ConfigureComponentLifestyle.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\IComponentExclusionSpecification.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\ImplementationOfDependencyRegistry.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\IsAnEntity.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\LogComponent.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\NoInterfaces.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\RegisterComponentContract.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\SubclassesForm.cs" />
+    <Compile Include="Infrastructure\Container\Windsor\configuration\type_extensions.cs" />
     <Compile Include="Infrastructure\Container\Windsor\IDependencyRegistration.cs" />
     <Compile Include="Infrastructure\Container\Windsor\WindsorContainerFactory.cs" />
     <Compile Include="Infrastructure\debugging\Launch.cs" />

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
 using MoMoney.Domain.Core;
@@ -46,6 +47,15 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
         it should_be_excluded = () => result.should_be_true();
 
         because b = () => { result = sut.is_satisfied_by(typeof (FakeEntity)); };
+
+        static bool result;
+    }
+
+    public class when_checking_if_an_interface_should_be_excluded : behaves_like_component_exclusion_specification
+    {
+        it should_be_excluded = () => result.should_be_true();
+
+        because b = () => { result = sut.is_satisfied_by(typeof (IDbConnection)); };
 
         static bool result;
     }

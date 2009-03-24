@@ -1,3 +1,5 @@
+using System;
+using Autofac;
 using MoMoney.boot.container.registration;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Container.Autofac;
@@ -29,7 +31,8 @@ namespace MoMoney.boot.container
                 .then(new auto_wire_components_in_to_the(registry, specification))
                 .run();
 
-            var dependency_registry = new AutofacDependencyRegistry(registry.build());
+            Func<IContainer> func = registry.build;
+            var dependency_registry = new AutofacDependencyRegistry(func.memorize());
             registry.singleton<IDependencyRegistry>(dependency_registry);
             resolve.initialize_with(dependency_registry);
         }
