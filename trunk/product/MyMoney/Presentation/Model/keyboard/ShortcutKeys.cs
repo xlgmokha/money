@@ -2,7 +2,7 @@ using System.Windows.Forms;
 
 namespace MoMoney.Presentation.Model.keyboard
 {
-    public static class shortcut_keys
+    public static class ShortcutKeys
     {
         public static readonly ShortcutKey control = new ShortcutKey(Keys.Control);
         public static readonly ShortcutKey alt = new ShortcutKey(Keys.Alt);

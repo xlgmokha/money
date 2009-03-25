@@ -2,7 +2,6 @@ using System.ComponentModel;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.proxies;
-using MoMoney.Presentation.Context;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.billing;
 using MoMoney.Presentation.Views.dialogs;
@@ -27,9 +26,10 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            register.singleton<IShell, ApplicationShell>();
+            var shell = new ApplicationShell();
+            register.singleton<IShell>(shell);
+            register.singleton(shell);
             //register.proxy(new SynchronizedViewProxyConfiguration<IShell>(), () => new ApplicationShell());
-            register.singleton<the_application_context, the_application_context>();
             register.transient<IAboutApplicationView, AboutTheApplicationView>();
             register.transient<ISplashScreenView, SplashScreenView>();
             register.transient<INavigationView, NavigationView>();

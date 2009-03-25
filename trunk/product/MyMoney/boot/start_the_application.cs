@@ -3,19 +3,33 @@ using System.Windows.Forms;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.Extensions;
-using MoMoney.Presentation.Context;
+using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Model.messages;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Views.Shell;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.boot
 {
     internal class start_the_application : ICommand
     {
+        ILoadPresentationModulesCommand command;
+
+        public start_the_application() : this(Lazy.load<ILoadPresentationModulesCommand>())
+        {
+        }
+
+        public start_the_application(ILoadPresentationModulesCommand command)
+        {
+            this.command = command;
+        }
+
         public void run()
         {
             try
             {
-                Application.Run(resolve.dependency_for<the_application_context>());
+                command.run();
+                Application.Run(resolve.dependency_for<ApplicationShell>());
             }
             catch (Exception e)
             {

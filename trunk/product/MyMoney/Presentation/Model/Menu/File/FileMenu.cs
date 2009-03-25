@@ -3,6 +3,7 @@ using MoMoney.Presentation.Model.keyboard;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.Menu.Mappers;
 
 namespace MoMoney.Presentation.Model.Menu.File
 {
@@ -10,23 +11,28 @@ namespace MoMoney.Presentation.Model.Menu.File
     {
     }
 
-    public class FileMenu : IFileMenu
+    public class FileMenu : SubMenu, IFileMenu
     {
         readonly IProject project;
 
-        public FileMenu(IProject project)
+        public FileMenu(IProject project, ISubMenuToToolStripMenuItemMapper mapper) : base(mapper)
         {
             this.project = project;
         }
 
-        public IEnumerable<IMenuItem> all_menu_items()
+        public override string name
+        {
+            get { return "&File"; }
+        }
+
+        public override IEnumerable<IMenuItem> all_menu_items()
         {
             yield return Create
                 .a_menu_item()
                 .named("&New")
                 .that_executes<INewCommand>()
                 .represented_by(ApplicationIcons.NewProject)
-                .can_be_accessed_with(shortcut_keys.control.and(shortcut_keys.N))
+                .can_be_accessed_with(ShortcutKeys.control.and(ShortcutKeys.N))
                 .build();
 
             yield return Create
@@ -34,7 +40,7 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .named("&Open")
                 .that_executes<IOpenCommand>()
                 .represented_by(ApplicationIcons.OpenProject)
-                .can_be_accessed_with(shortcut_keys.control.and(shortcut_keys.O))
+                .can_be_accessed_with(ShortcutKeys.control.and(ShortcutKeys.O))
                 .build();
 
             yield return Create
@@ -43,7 +49,7 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .that_executes<ISaveCommand>()
                 .represented_by(ApplicationIcons.SaveProject)
                 //.can_be_clicked_when(() => project.has_unsaved_changes())
-                .can_be_accessed_with(shortcut_keys.control.and(shortcut_keys.S))
+                .can_be_accessed_with(ShortcutKeys.control.and(ShortcutKeys.S))
                 .build();
 
             yield return Create
@@ -69,11 +75,6 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .that_executes<IExitCommand>()
                 .represented_by(ApplicationIcons.ExitApplication)
                 .build();
-        }
-
-        public string name
-        {
-            get { return "&File"; }
         }
     }
 }

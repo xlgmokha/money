@@ -19,7 +19,7 @@ namespace MoMoney.boot
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.ThreadException += (sender, e) => handle_error(e.Exception);
-            AppDomain.CurrentDomain.UnhandledException += ((sender, e) => handle_error(e.ExceptionObject.downcast_to<Exception>()));
+            AppDomain.CurrentDomain.UnhandledException += (sender, e) => handle_error(e.ExceptionObject.downcast_to<Exception>());
         }
 
         static void handle_error(Exception e)

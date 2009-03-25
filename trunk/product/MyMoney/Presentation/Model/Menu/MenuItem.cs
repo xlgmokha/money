@@ -1,6 +1,6 @@
 using System;
 using System.Windows.Forms;
-using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.keyboard;
 using MoMoney.Presentation.Resources;
 
@@ -14,7 +14,8 @@ namespace MoMoney.Presentation.Model.Menu
 
     public class MenuItem : IMenuItem
     {
-        public MenuItem(string name, Action command, HybridIcon underlying_icon, ShortcutKey key, Func<bool> can_be_clicked)
+        public MenuItem(string name, Action command, HybridIcon underlying_icon, ShortcutKey key,
+                        Func<bool> can_be_clicked)
         {
             this.name = name;
             this.command = command;
@@ -23,31 +24,30 @@ namespace MoMoney.Presentation.Model.Menu
             this.can_be_clicked = can_be_clicked;
         }
 
-        public string name { get; private set; }
+        string name { get; set; }
         Action command { get; set; }
         HybridIcon underlying_icon { get; set; }
         ShortcutKey key { get; set; }
         readonly Func<bool> can_be_clicked;
-        ToolStripMenuItem tool_strip_menu_item;
-        System.Windows.Forms.MenuItem menu_item;
 
         public ToolStripItem build()
         {
-            tool_strip_menu_item = new ToolStripMenuItem(name);
-            tool_strip_menu_item.Click += ((o, e) => command());
-            tool_strip_menu_item.Image = underlying_icon;
-            tool_strip_menu_item.ShortcutKeys = key;
-            tool_strip_menu_item.Enabled = can_be_clicked();
-            return tool_strip_menu_item;
+            var item = new ToolStripMenuItem(name)
+                           {
+                               Image = underlying_icon,
+                               ShortcutKeys = key,
+                               Enabled = can_be_clicked()
+                           };
+            item.Click += (o, e) => command();
+            return item;
         }
 
         public System.Windows.Forms.MenuItem build_menu_item()
         {
-            menu_item = new System.Windows.Forms.MenuItem(name);
-            menu_item.Click += ((sender, e) => command());
-            menu_item.ShowShortcut = true;
-            menu_item.Enabled = can_be_clicked();
-            return menu_item;
+            var item = new System.Windows.Forms.MenuItem(name) {ShowShortcut = true, Enabled = can_be_clicked()};
+            item.Click += (sender, e) => command();
+            this.log().debug("{0} can be clicked? {1}", name, can_be_clicked());
+            return item;
         }
     }
 }

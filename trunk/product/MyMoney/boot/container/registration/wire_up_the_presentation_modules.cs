@@ -1,6 +1,9 @@
 using System.Reflection;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Model.Menu.File;
+using MoMoney.Presentation.Model.Menu.Help;
+using MoMoney.Presentation.Model.Menu.window;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
@@ -19,6 +22,10 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
+            registry.transient<IFileMenu, FileMenu>();
+            registry.transient<IWindowMenu, WindowMenu>();
+            registry.transient<IHelpMenu, HelpMenu>();
+
             Assembly
                 .GetExecutingAssembly()
                 .GetTypes()

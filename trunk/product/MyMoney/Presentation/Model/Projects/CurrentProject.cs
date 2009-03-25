@@ -16,6 +16,7 @@ namespace MoMoney.Presentation.Model.Projects
         void close_project();
         bool has_been_saved_at_least_once();
         bool has_unsaved_changes();
+        bool is_open();
     }
 
     public class CurrentProject : IProject
@@ -93,6 +94,11 @@ namespace MoMoney.Presentation.Model.Projects
         public bool has_unsaved_changes()
         {
             return registry.has_changes_to_commit();
+        }
+
+        public bool is_open()
+        {
+            return is_project_open;
         }
 
         void ensure_that_a_path_to_save_to_has_been_specified()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
-using System.Windows.Forms;
+using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Views.core;
 using MoMoney.Utility.Extensions;
 
@@ -12,17 +12,10 @@ namespace MoMoney.Presentation.Views.Shell
     public partial class ApplicationShell : ApplicationWindow, IShell
     {
         readonly IDictionary<string, IComponent> regions;
-        readonly NotifyIcon ux_notification_icon;
 
         public ApplicationShell()
         {
             InitializeComponent();
-            ux_notification_icon = new NotifyIcon
-                                       {
-                                           BalloonTipIcon = ToolTipIcon.Info,
-                                           BalloonTipText = "Thanks for trying out this sample application",
-                                           Visible = true,
-                                       };
             regions = new Dictionary<string, IComponent>
                           {
                               {GetType().FullName, this},
@@ -30,7 +23,7 @@ namespace MoMoney.Presentation.Views.Shell
                               {ux_dock_panel.GetType().FullName, ux_dock_panel},
                               {ux_tool_bar_strip.GetType().FullName, ux_tool_bar_strip},
                               {ux_status_bar.GetType().FullName, ux_status_bar},
-                              {ux_notification_icon.GetType().FullName, ux_notification_icon},
+                              {notification_icon.GetType().FullName, notification_icon},
                           };
         }
 
@@ -41,6 +34,11 @@ namespace MoMoney.Presentation.Views.Shell
             TopMost = true;
             Focus();
             BringToFront();
+        }
+
+        public void attach_to(IApplicationShellPresenter presenter)
+        {
+            Closed += (sender, args) => presenter.shut_down(); 
         }
 
         public void add(IDockedContentView view)

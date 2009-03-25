@@ -4,7 +4,6 @@ using MoMoney.Domain.repositories;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.proxies;
-using MoMoney.Presentation.Context;
 using MoMoney.Tasks.application;
 using MoMoney.Utility.Core;
 
@@ -21,7 +20,6 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            registry.singleton<the_application_context, the_application_context>();
             registry.proxy(new ServiceLayerConfiguration<IBillingTasks>(
                                x =>
                                    {

@@ -303,7 +303,7 @@
     <Compile Include="Presentation\Model\file_system\folder.cs" />
     <Compile Include="Presentation\Model\interaction\INotification.cs" />
     <Compile Include="Presentation\Model\interaction\notification_message.cs" />
-    <Compile Include="Presentation\Model\keyboard\shortcut_keys.cs" />
+    <Compile Include="Presentation\Model\keyboard\ShortcutKeys.cs" />
     <Compile Include="Presentation\Model\keyboard\ShortcutKey.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\CloseProjectCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\close_window_command.cs" />
@@ -311,6 +311,7 @@
     <Compile Include="Presentation\Model\Menu\File\Commands\SaveChangesCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\save_as_command_specs.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\save_command_specs.cs" />
+    <Compile Include="Presentation\Model\Menu\File\SubMenu.cs" />
     <Compile Include="Presentation\Model\Menu\IToolbarButton.cs" />
     <Compile Include="Presentation\Model\Menu\IToolbarItemBuilder.cs" />
     <Compile Include="Presentation\Model\Menu\MenuItemSeparator.cs" />
@@ -377,7 +378,8 @@
     <Compile Include="Presentation\Presenters\income\dto\monthly_summary_dto.cs" />
     <Compile Include="Presentation\Presenters\income\ViewIncomeHistoryPresenter.cs" />
     <Compile Include="Presentation\Presenters\Menu\Help\about_the_application_presenter.cs" />
-    <Compile Include="Presentation\Presenters\Menu\MainMenuPresenter.cs" />
+    <Compile Include="Presentation\Presenters\Menu\ApplicationMenuModule.cs" />
+    <Compile Include="Presentation\Presenters\Menu\ApplicationMenuPresenter.cs" />
     <Compile Include="Presentation\Model\messages\new_project_opened.cs" />
     <Compile Include="Presentation\Model\messages\saved_changes_event.cs" />
     <Compile Include="Presentation\Model\messages\unsaved_changes_event.cs" />
@@ -479,7 +481,6 @@
       <DependentUpon>ViewAllIncome.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Databindings\listbox_extensions.cs" />
-    <Compile Include="Presentation\Views\Menu\ApplicationMenuHost.cs" />
     <Compile Include="Presentation\Views\Navigation\IMainMenuView.cs" />
     <Compile Include="Presentation\Views\Navigation\MainMenuView.cs">
       <SubType>Form</SubType>
@@ -654,8 +655,6 @@
       <DependentUpon>ApplicationShell.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\Menu\Mappers\SubMenuToToolStripMenuItemMapper.cs" />
-    <Compile Include="Presentation\Context\the_application_context_specs.cs" />
-    <Compile Include="Presentation\Context\the_application_context.cs" />
     <Compile Include="Presentation\Views\Startup\ISplashScreenView.cs" />
     <Compile Include="Presentation\Views\Startup\SplashScreenView.cs">
       <SubType>Form</SubType>
@@ -685,9 +684,7 @@
     <Compile Include="Presentation\Core\ApplicationController.cs" />
     <Compile Include="Presentation\Core\IPresenter.cs" />
     <Compile Include="Infrastructure\Container\IDependencyRegistry.cs" />
-    <Compile Include="Presentation\Presenters\Menu\MainMenuPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Commands\LoadPresentationModulesCommand.cs" />
-    <Compile Include="Presentation\Views\Menu\ApplicationMenuHostSpecs.cs" />
     <Compile Include="boot\bootstrap.cs" />
     <EmbeddedResource Include="Presentation\Views\AddCompanyView.resx">
       <DependentUpon>AddCompanyView.cs</DependentUpon>

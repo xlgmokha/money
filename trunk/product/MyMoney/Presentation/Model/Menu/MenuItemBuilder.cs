@@ -27,7 +27,7 @@ namespace MoMoney.Presentation.Model.Menu
             command_to_execute = () => { };
             this.registry = registry;
             icon = ApplicationIcons.Empty;
-            key = shortcut_keys.none;
+            key = ShortcutKeys.none;
         }
 
         public string name_of_the_menu { get; private set; }
