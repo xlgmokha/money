@@ -48,7 +48,7 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .named("&Save")
                 .that_executes<ISaveCommand>()
                 .represented_by(ApplicationIcons.SaveProject)
-                //.can_be_clicked_when(() => project.has_unsaved_changes())
+                .can_be_clicked_when(() => project.has_unsaved_changes())
                 .can_be_accessed_with(ShortcutKeys.control.and(ShortcutKeys.S))
                 .build();
 
@@ -56,14 +56,14 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .a_menu_item()
                 .named("Save &As...")
                 .that_executes<ISaveAsCommand>()
-                //.can_be_clicked_when(() => project.has_unsaved_changes())
+                .can_be_clicked_when(() => project.has_unsaved_changes())
                 .represented_by(ApplicationIcons.SaveProjectAs)
                 .build();
 
             yield return Create
                 .a_menu_item()
                 .named("&Close")
-                //.can_be_clicked_when(() => project.is_open())
+                .can_be_clicked_when(() => project.is_open())
                 .that_executes<ICloseCommand>()
                 .build();
 
