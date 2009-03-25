@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using System.Drawing;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Resources
 {
     public static class ApplicationIcons
     {
-        private static readonly IList<ApplicationIcon> all_icons = new List<ApplicationIcon>();
+        static readonly IList<ApplicationIcon> all_icons = new List<ApplicationIcon>();
 
         public static readonly ApplicationIcon Application = new ApplicationIcon("mokhan.ico");
         public static readonly ApplicationIcon FileExplorer = new ApplicationIcon("search4files.ico");

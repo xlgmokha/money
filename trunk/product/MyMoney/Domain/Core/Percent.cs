@@ -19,7 +19,17 @@ namespace MoMoney.Domain.Core
             percentage = Math.Round(percentage, 1);
         }
 
-        static public implicit operator Percent(double percentage)
+        public bool represents(Percent other_percent)
+        {
+            return Equals(other_percent);
+        }
+
+        public bool is_less_than(Percent other_percent)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static implicit operator Percent(double percentage)
         {
             return new Percent(percentage);
         }

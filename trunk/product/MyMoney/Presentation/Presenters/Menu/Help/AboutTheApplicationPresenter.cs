@@ -7,11 +7,11 @@ namespace MoMoney.Presentation.Presenters.Menu.Help
     {
     }
 
-    public class about_the_application_presenter : IAboutApplicationPresenter
+    public class AboutTheApplicationPresenter : IAboutApplicationPresenter
     {
         private readonly IAboutApplicationView view;
 
-        public about_the_application_presenter(IAboutApplicationView view)
+        public AboutTheApplicationPresenter(IAboutApplicationView view)
         {
             this.view = view;
         }

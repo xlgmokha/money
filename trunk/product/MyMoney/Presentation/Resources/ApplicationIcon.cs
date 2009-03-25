@@ -7,12 +7,13 @@ namespace MoMoney.Presentation.Resources
 {
     public class ApplicationIcon : IDisposable
     {
-        private readonly Icon underlying_icon;
+        readonly Icon underlying_icon;
 
         public ApplicationIcon(string name_of_the_icon)
         {
             this.name_of_the_icon = name_of_the_icon;
-            if (icon_can_be_found()) {
+            if (icon_can_be_found())
+            {
                 ApplicationIcons.add(this);
                 underlying_icon = new Icon(find_full_path_to(this));
             }
@@ -37,8 +38,7 @@ namespace MoMoney.Presentation.Resources
 
         protected bool icon_can_be_found()
         {
-            var path_to_the_icon = find_full_path_to(this);
-            return File.Exists(path_to_the_icon);
+            return File.Exists(find_full_path_to(this));
         }
     }
 }

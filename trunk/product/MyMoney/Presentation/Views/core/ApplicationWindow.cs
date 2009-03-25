@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Resources;
 
 namespace MoMoney.Presentation.Views.core
@@ -18,6 +19,7 @@ namespace MoMoney.Presentation.Views.core
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
+            this.log().debug("created {0}", GetType());
         }
 
         public IApplicationWindow create_tool_tip_for(string title, string caption, Control control)

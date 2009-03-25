@@ -55,6 +55,8 @@ namespace MoMoney.Tasks.infrastructure
 
         public void stop_updating()
         {
+            if (null == deployment) return;
+
             deployment.UpdateAsyncCancel();
         }
     }

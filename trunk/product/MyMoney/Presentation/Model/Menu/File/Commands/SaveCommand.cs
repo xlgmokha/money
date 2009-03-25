@@ -7,12 +7,12 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     {
     }
 
-    public class save_command : ISaveCommand
+    public class SaveCommand : ISaveCommand
     {
         readonly IProject the_current_project;
         readonly ISaveAsCommand save_as_command;
 
-        public save_command(IProject current_project, ISaveAsCommand save_as_command)
+        public SaveCommand(IProject current_project, ISaveAsCommand save_as_command)
         {
             the_current_project = current_project;
             this.save_as_command = save_as_command;

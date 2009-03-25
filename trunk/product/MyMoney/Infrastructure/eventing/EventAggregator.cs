@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.eventing
@@ -33,11 +32,6 @@ namespace MoMoney.Infrastructure.eventing
         {
             get_list_for<Event>()
                 .Select(x => x.downcast_to<IEventSubscriber<Event>>())
-                .Select(x =>
-                            {
-                                this.log().debug("publishing: {0} to {1}", typeof (Event), x);
-                                return x;
-                            })
                 .each(x => x.notify(the_event_to_broadcast));
         }
 

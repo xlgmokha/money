@@ -58,21 +58,20 @@ namespace MoMoney.Presentation.Views.Shell {
             // ux_dock_panel
             // 
             this.ux_dock_panel.ActiveAutoHideContent = null;
-            this.ux_dock_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.ux_dock_panel.BackColor = System.Drawing.Color.Transparent;
+            this.ux_dock_panel.CausesValidation = false;
+            this.ux_dock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ux_dock_panel.DockBackColor = System.Drawing.Color.Transparent;
             this.ux_dock_panel.DockBottomPortion = 150;
             this.ux_dock_panel.DockLeftPortion = 200;
             this.ux_dock_panel.DockRightPortion = 200;
             this.ux_dock_panel.DockTopPortion = 150;
             this.ux_dock_panel.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.ux_dock_panel.Location = new System.Drawing.Point(0, 64);
-            this.ux_dock_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ux_dock_panel.Location = new System.Drawing.Point(0, 24);
+            this.ux_dock_panel.Margin = new System.Windows.Forms.Padding(4);
             this.ux_dock_panel.Name = "ux_dock_panel";
             this.ux_dock_panel.RightToLeftLayout = true;
-            this.ux_dock_panel.Size = new System.Drawing.Size(1008, 533);
+            this.ux_dock_panel.Size = new System.Drawing.Size(1008, 578);
             this.ux_dock_panel.TabIndex = 3;
             // 
             // ux_tool_bar_strip
@@ -103,7 +102,7 @@ namespace MoMoney.Presentation.Views.Shell {
             this.Controls.Add(this.ux_main_menu_strip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.ux_main_menu_strip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ApplicationShell";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MoMoney";

@@ -1,5 +1,3 @@
-using MoMoney.Infrastructure.Extensions;
-
 namespace MoMoney.Presentation.Views.Shell
 {
     public interface ITitleBar
@@ -25,7 +23,6 @@ namespace MoMoney.Presentation.Views.Shell
                 shell.Text = shell.Text.Remove(shell.Text.IndexOf("-") - 1);
             }
             shell.Text = shell.Text + " - " + title;
-            this.log().debug("displaying title: {0}", title);
         }
 
         public void append_asterik()

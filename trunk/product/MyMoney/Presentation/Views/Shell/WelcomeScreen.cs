@@ -10,8 +10,6 @@ namespace MoMoney.Presentation.Views.Shell
         {
             InitializeComponent();
             titled("Getting Started");
-            //base.BackgroundImage = ApplicationImages.Welcome;
-            //base.BackgroundImageLayout = ImageLayout.Center;
         }
 
         public void display()

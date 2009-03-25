@@ -306,11 +306,11 @@
     <Compile Include="Presentation\Model\keyboard\ShortcutKeys.cs" />
     <Compile Include="Presentation\Model\keyboard\ShortcutKey.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\CloseProjectCommand.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\close_window_command.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\CloseWindowCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\NewCommandSpecs.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\SaveChangesCommand.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\save_as_command_specs.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\save_command_specs.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\SaveAsCommandSpecs.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\SaveCommandSpecs.cs" />
     <Compile Include="Presentation\Model\Menu\File\SubMenu.cs" />
     <Compile Include="Presentation\Model\Menu\IToolbarButton.cs" />
     <Compile Include="Presentation\Model\Menu\IToolbarItemBuilder.cs" />
@@ -331,8 +331,8 @@
     <Compile Include="Presentation\Model\Menu\File\Commands\NewCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\OpenCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\OpenCommandSpecs.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\save_as_command.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\save_command.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\SaveAsCommand.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\SaveCommand.cs" />
     <Compile Include="Presentation\Model\Menu\Help\commands\display_information_about_the_application.cs" />
     <Compile Include="Presentation\Model\Menu\MenuItem.cs" />
     <Compile Include="Presentation\Model\Menu\MenuItemBuilder.cs" />
@@ -377,7 +377,7 @@
     <Compile Include="Presentation\Presenters\income\dto\income_submission_dto.cs" />
     <Compile Include="Presentation\Presenters\income\dto\monthly_summary_dto.cs" />
     <Compile Include="Presentation\Presenters\income\ViewIncomeHistoryPresenter.cs" />
-    <Compile Include="Presentation\Presenters\Menu\Help\about_the_application_presenter.cs" />
+    <Compile Include="Presentation\Presenters\Menu\Help\AboutTheApplicationPresenter.cs" />
     <Compile Include="Presentation\Presenters\Menu\ApplicationMenuModule.cs" />
     <Compile Include="Presentation\Presenters\Menu\ApplicationMenuPresenter.cs" />
     <Compile Include="Presentation\Model\messages\new_project_opened.cs" />
@@ -679,7 +679,7 @@
     <Compile Include="Utility\Core\ICommand.cs" />
     <Compile Include="Utility\Core\IMapper.cs" />
     <Compile Include="Utility\Extensions\string_extensions.cs" />
-    <Compile Include="Presentation\Model\Menu\File\Commands\exit_command_specs.cs" />
+    <Compile Include="Presentation\Model\Menu\File\Commands\ExitCommandSpecs.cs" />
     <Compile Include="Presentation\Core\ApplicationControllerSpecs.cs" />
     <Compile Include="Presentation\Core\ApplicationController.cs" />
     <Compile Include="Presentation\Core\IPresenter.cs" />

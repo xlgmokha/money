@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.keyboard;
 using MoMoney.Presentation.Resources;
 
@@ -46,7 +45,6 @@ namespace MoMoney.Presentation.Model.Menu
         {
             var item = new System.Windows.Forms.MenuItem(name) {ShowShortcut = true, Enabled = can_be_clicked()};
             item.Click += (sender, e) => command();
-            this.log().debug("{0} can be clicked? {1}", name, can_be_clicked());
             return item;
         }
     }

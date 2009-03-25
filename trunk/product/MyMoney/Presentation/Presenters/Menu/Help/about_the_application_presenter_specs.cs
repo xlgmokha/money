@@ -6,18 +6,13 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Presenters.Menu.Help
 {
-    [Concern(typeof (about_the_application_presenter))]
+    [Concern(typeof (AboutTheApplicationPresenter))]
     public abstract class behaves_like_the_application_information_presenter :
-        concerns_for<IAboutApplicationPresenter, about_the_application_presenter>
+        concerns_for<IAboutApplicationPresenter, AboutTheApplicationPresenter>
     {
-        //public override IAboutApplicationPresenter create_sut()
-        //{
-        //    return new about_the_application_presenter(view);
-        //}
-
         context c = () => { view = the_dependency<IAboutApplicationView>(); };
 
-        static protected IAboutApplicationView view;
+        protected static IAboutApplicationView view;
     }
 
     public class when_initializing_the_application_information_presenter :

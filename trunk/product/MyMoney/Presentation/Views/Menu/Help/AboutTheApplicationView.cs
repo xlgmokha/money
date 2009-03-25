@@ -1,7 +1,6 @@
+using System;
 using System.Linq;
 using System.Reflection;
-using Castle.Core;
-using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 using MoMoney.Utility.Extensions;
@@ -13,17 +12,24 @@ namespace MoMoney.Presentation.Views.Menu.Help
         public AboutTheApplicationView()
         {
             InitializeComponent();
-            labelProductName.Text = get_attribute<AssemblyProductAttribute>().Product;
-            labelVersion.Text = string.Format("Version {0} {0}", AssemblyVersion);
-            uxCopyright.Text = get_attribute<AssemblyCopyrightAttribute>().Copyright;
-            uxCompanyName.Text = get_attribute<AssemblyCompanyAttribute>().Company;
-            uxDescription.Text = get_attribute<AssemblyDescriptionAttribute>().Description;
-            ux_logo.Image = ApplicationImages.Splash;
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            on_ui_thread(() =>
+                             {
+                                 labelProductName.Text = get_attribute<AssemblyProductAttribute>().Product;
+                                 labelVersion.Text = string.Format("Version {0} {0}", AssemblyVersion);
+                                 uxCopyright.Text = get_attribute<AssemblyCopyrightAttribute>().Copyright;
+                                 uxCompanyName.Text = get_attribute<AssemblyCompanyAttribute>().Company;
+                                 uxDescription.Text = get_attribute<AssemblyDescriptionAttribute>().Description;
+                                 ux_logo.Image = ApplicationImages.Splash;
+                             });
         }
 
         public void display()
         {
-            ShowDialog();
+            on_ui_thread(() => ShowDialog());
         }
 
         string AssemblyVersion

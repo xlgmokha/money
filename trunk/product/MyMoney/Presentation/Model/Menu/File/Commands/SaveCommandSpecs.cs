@@ -6,12 +6,12 @@ using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Model.Menu.File.Commands
 {
-    [Concern(typeof (save_command))]
-    public abstract class behaves_like_the_save_command : concerns_for<ISaveCommand, save_command>
+    [Concern(typeof (SaveCommand))]
+    public abstract class behaves_like_the_save_command : concerns_for<ISaveCommand, SaveCommand>
     {
         public override ISaveCommand create_sut()
         {
-            return new save_command(current_project, save_as_command);
+            return new SaveCommand(current_project, save_as_command);
         }
 
         context c = () =>
@@ -35,11 +35,11 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         public override ISaveCommand create_sut()
         {
-            return new save_command(current_project, save_as_command);
+            return new SaveCommand(current_project, save_as_command);
         }
     }
 
-    [Concern(typeof (save_command))]
+    [Concern(typeof (SaveCommand))]
     public class when_saving_the_current_project_that_has_been_saved_before : behaves_like_the_save_command
     {
         it should_save_the_current_project_to_the_same_path = () => current_project.was_told_to(x => x.save_changes());
@@ -52,7 +52,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         public override ISaveCommand create_sut()
         {
-            return new save_command(current_project, save_as_command);
+            return new SaveCommand(current_project, save_as_command);
         }
 
     }

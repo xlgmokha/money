@@ -8,12 +8,12 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     {
     }
 
-    public class save_as_command : ISaveAsCommand
+    public class SaveAsCommand : ISaveAsCommand
     {
         readonly IProject current_project;
         readonly ISelectFileToSaveToDialog view;
 
-        public save_as_command(ISelectFileToSaveToDialog view, IProject current_project)
+        public SaveAsCommand(ISelectFileToSaveToDialog view, IProject current_project)
         {
             this.view = view;
             this.current_project = current_project;
