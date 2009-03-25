@@ -85,6 +85,37 @@ namespace MoMoney.Infrastructure.proxies
         static IAnInterface an_implementation;
     }
 
+    public class when_proxying_all_calls_on_a_target : behaves_like_proxy_builder
+    {
+        it should_intercept_each_call =
+            () =>
+                {
+                    SomeInterceptor.MethodsCalled.Count().should_be_equal_to(2);
+                    SomeInterceptor.MethodsCalled.First().Name.should_be_equal_to("OneMethod");
+                    SomeInterceptor.MethodsCalled.Skip(1).First().Name.should_be_equal_to( "SecondMethod");
+                };
+
+        context c = () => { an_implementation = an<IAnInterface>(); };
+
+        because b = () =>
+                        {
+                            var constraint = sut.add_interceptor<SomeInterceptor>();
+                            constraint.InterceptAll();
+
+                            var proxy = sut.create_proxy_for(() => an_implementation);
+                            proxy.OneMethod();
+                            proxy.SecondMethod();
+                        };
+
+        after_each_observation ae = () =>
+                                        {
+                                            SomeInterceptor.Cleanup();
+                                            AnotherInterceptor.Cleanup();
+                                        };
+
+        static IAnInterface an_implementation;
+    }
+
     public interface IAnInterface
     {
         string GetterAndSetterProperty { get; set; }
@@ -96,8 +127,8 @@ namespace MoMoney.Infrastructure.proxies
 
     public class SomeInterceptor : IInterceptor
     {
-        public static bool WasCalled;
-        public static IList<MethodInfo> MethodsCalled;
+        static public bool WasCalled;
+        static public IList<MethodInfo> MethodsCalled;
 
         static SomeInterceptor()
         {
@@ -111,7 +142,7 @@ namespace MoMoney.Infrastructure.proxies
             invocation.Proceed();
         }
 
-        public static void Cleanup()
+        static public void Cleanup()
         {
             WasCalled = false;
             MethodsCalled.Clear();
@@ -120,8 +151,8 @@ namespace MoMoney.Infrastructure.proxies
 
     public class AnotherInterceptor : IInterceptor
     {
-        public static bool WasCalled;
-        public static IList<MethodInfo> MethodsCalled;
+        static public bool WasCalled;
+        static public IList<MethodInfo> MethodsCalled;
 
         static AnotherInterceptor()
         {
@@ -135,7 +166,7 @@ namespace MoMoney.Infrastructure.proxies
             invocation.Proceed();
         }
 
-        public static void Cleanup()
+        static public void Cleanup()
         {
             WasCalled = false;
             MethodsCalled.Clear();

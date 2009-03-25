@@ -1,5 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.proxies.Interceptors;
+using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.proxies
 {
@@ -10,7 +14,7 @@ namespace MoMoney.Infrastructure.proxies
 
     public class InterceptorConstraint<TypeToPutConstraintOn> : IInterceptorConstraint<TypeToPutConstraintOn>
     {
-        private readonly IMethodCallTracker<TypeToPutConstraintOn> call_tracker;
+        readonly IMethodCallTracker<TypeToPutConstraintOn> call_tracker;
 
         public InterceptorConstraint(IMethodCallTracker<TypeToPutConstraintOn> call_tracker)
         {
@@ -20,6 +24,24 @@ namespace MoMoney.Infrastructure.proxies
         public TypeToPutConstraintOn InterceptOn
         {
             get { return call_tracker.target; }
+        }
+
+        public void InterceptAll()
+        {
+            var methods = typeof (TypeToPutConstraintOn).GetMethods(BindingFlags.Public | BindingFlags.Instance);
+            foreach (var method in methods)
+            {
+                method.Invoke(InterceptOn, get_stub_parameters_for(method).ToArray());
+            }
+        }
+
+        IEnumerable<object> get_stub_parameters_for(MethodInfo method)
+        {
+            foreach (var parameter in method.GetParameters())
+            {
+                this.log().debug("method: {0}, param: {1}", method, parameter);
+                yield return parameter.ParameterType.default_value();
+            }
         }
 
         public IEnumerable<string> methods_to_intercept()

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Castle.Core.Interceptor;
+using MoMoney.Infrastructure.Extensions;
+using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.proxies.Interceptors
 {
@@ -21,6 +23,7 @@ namespace MoMoney.Infrastructure.proxies.Interceptors
 
         public void Intercept(IInvocation invocation)
         {
+            this.log().debug("recording: {0}", invocation.Method);
             set_return_value_for(invocation);
             if (the_name_of_each_method_to_intercept.Contains(invocation.Method.Name))
             {
@@ -38,12 +41,12 @@ namespace MoMoney.Infrastructure.proxies.Interceptors
         {
             var return_type = invocation.Method.ReturnType;
             if (return_type == typeof (void)) return;
-            invocation.ReturnValue = get_default_value_for(return_type);
+            invocation.ReturnValue = return_type.default_value();
         }
 
-        static object get_default_value_for(Type return_type)
-        {
-            return (return_type.IsValueType ? Activator.CreateInstance(return_type) : null);
-        }
+        //static object get_default_value_for(Type return_type)
+        //{
+        //    return (return_type.IsValueType ? Activator.CreateInstance(return_type) : null);
+        //}
     }
 }
