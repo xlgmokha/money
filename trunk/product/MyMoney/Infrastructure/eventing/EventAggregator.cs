@@ -14,11 +14,11 @@ namespace MoMoney.Infrastructure.eventing
 
     public class EventAggregator : IEventAggregator
     {
-        readonly IDictionary<string, HashSet<object>> subscribers;
+        readonly IDictionary<string, List<object>> subscribers;
 
         public EventAggregator()
         {
-            subscribers = new Dictionary<string, HashSet<object>>();
+            subscribers = new Dictionary<string, List<object>>();
         }
 
         public void subscribe_to<Event>(IEventSubscriber<Event> subscriber) where Event : IEvent
@@ -46,11 +46,11 @@ namespace MoMoney.Infrastructure.eventing
             publish(new Event());
         }
 
-        HashSet<object> get_list_for<Event>()
+        List<object> get_list_for<Event>()
         {
             if (!subscribers.ContainsKey(typeof (Event).FullName))
             {
-                subscribers.Add(typeof (Event).FullName, new HashSet<object>());
+                subscribers.Add(typeof (Event).FullName, new List<object>());
             }
             return subscribers[typeof (Event).FullName];
         }

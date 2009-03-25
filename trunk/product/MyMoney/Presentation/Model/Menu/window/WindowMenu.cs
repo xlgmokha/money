@@ -7,7 +7,7 @@ namespace MoMoney.Presentation.Model.Menu.window
     {
     }
 
-    public class window_menu : IWindowMenu
+    public class WindowMenu : IWindowMenu
     {
         public string name
         {
@@ -16,7 +16,7 @@ namespace MoMoney.Presentation.Model.Menu.window
 
         public IEnumerable<IMenuItem> all_menu_items()
         {
-            yield return create
+            yield return Create
                 .a_menu_item()
                 .named("&Close Window")
                 .that_executes<ICloseWindowCommand>()

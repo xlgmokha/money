@@ -1,8 +1,9 @@
 namespace MoMoney.Utility.Core
 {
-    internal class empty_command : ICommand
+    internal class EmptyCommand : ICommand
     {
         public void run()
-        {}
+        {
+        }
     }
 }

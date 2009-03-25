@@ -1,13 +1,12 @@
 using System;
 using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Model.keyboard;
 using MoMoney.Presentation.Resources;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Model.Menu
 {
-    public interface IMenuItemBuilder
+    public interface IMenuItemBuilder : IBuilder<IMenuItem>
     {
         IMenuItemBuilder named(string name);
         IMenuItemBuilder that_executes<TheCommand>() where TheCommand : ICommand;
@@ -15,21 +14,18 @@ namespace MoMoney.Presentation.Model.Menu
         IMenuItemBuilder represented_by(HybridIcon project);
         IMenuItemBuilder can_be_accessed_with(ShortcutKey hot_key);
         IMenuItemBuilder can_be_clicked_when(Func<bool> predicate);
-        IMenuItem build();
     }
 
     public class MenuItemBuilder : IMenuItemBuilder
     {
         readonly IDependencyRegistry registry;
         Func<bool> can_be_clicked = () => true;
-        readonly IEventAggregator broker;
 
-        public MenuItemBuilder(IDependencyRegistry registry, IEventAggregator broker)
+        public MenuItemBuilder(IDependencyRegistry registry)
         {
             name_of_the_menu = "Unknown";
             command_to_execute = () => { };
             this.registry = registry;
-            this.broker = broker;
             icon = ApplicationIcons.Empty;
             key = shortcut_keys.none;
         }

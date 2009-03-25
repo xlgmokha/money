@@ -21,7 +21,7 @@ namespace MoMoney.Presentation.Model.Menu.File
 
         public IEnumerable<IMenuItem> all_menu_items()
         {
-            yield return create
+            yield return Create
                 .a_menu_item()
                 .named("&New")
                 .that_executes<INewCommand>()
@@ -29,7 +29,7 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .can_be_accessed_with(shortcut_keys.control.and(shortcut_keys.N))
                 .build();
 
-            yield return create
+            yield return Create
                 .a_menu_item()
                 .named("&Open")
                 .that_executes<IOpenCommand>()
@@ -37,7 +37,7 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .can_be_accessed_with(shortcut_keys.control.and(shortcut_keys.O))
                 .build();
 
-            yield return create
+            yield return Create
                 .a_menu_item()
                 .named("&Save")
                 .that_executes<ISaveCommand>()
@@ -46,7 +46,7 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .can_be_accessed_with(shortcut_keys.control.and(shortcut_keys.S))
                 .build();
 
-            yield return create
+            yield return Create
                 .a_menu_item()
                 .named("Save &As...")
                 .that_executes<ISaveAsCommand>()
@@ -54,16 +54,16 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .represented_by(ApplicationIcons.SaveProjectAs)
                 .build();
 
-            yield return create
+            yield return Create
                 .a_menu_item()
                 .named("&Close")
                 //.can_be_clicked_when(() => project.is_open())
                 .that_executes<ICloseCommand>()
                 .build();
 
-            yield return create.a_menu_item_separator();
+            yield return Create.a_menu_item_separator();
 
-            yield return create
+            yield return Create
                 .a_menu_item()
                 .named("E&xit")
                 .that_executes<IExitCommand>()

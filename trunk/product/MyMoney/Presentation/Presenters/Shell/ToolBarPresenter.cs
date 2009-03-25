@@ -3,51 +3,58 @@ using System.Windows.Forms;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.Shell;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {
-    public interface IToolbarPresenter : IPresentationModule
+    public interface IToolbarPresenter : IPresenter
     {
     }
 
     public class ToolBarPresenter : IToolbarPresenter
     {
         readonly IShell shell;
+        readonly IProject project;
 
-        public ToolBarPresenter(IShell shell)
+        public ToolBarPresenter(IShell shell, IProject project)
         {
             this.shell = shell;
+            this.project = project;
         }
 
         public void run()
         {
-            shell.region<ToolStrip>(x => all_tool_bar_buttons().each(y => x.Items.Add(y)));
-            //all_tool_bar_buttons().each(x => shell.add_to_tool_bar(x));
+            shell.region<ToolStrip>(x =>
+                                        {
+                                            x.Items.Clear();
+                                            buttons().each(y => y.add_to(x));
+                                        });
         }
 
-        static IEnumerable<ToolStripItem> all_tool_bar_buttons()
+        IEnumerable<IToolbarButton> buttons()
         {
-            yield return create
+            yield return Create
                 .a_tool_bar_item()
                 .with_tool_tip_text_as("New")
                 .when_clicked_executes<INewCommand>()
                 .displays_icon(ApplicationIcons.NewProject)
-                .build();
-            yield return create
+                .button();
+            yield return Create
                 .a_tool_bar_item()
                 .with_tool_tip_text_as("Open")
                 .when_clicked_executes<IOpenCommand>()
                 .displays_icon(ApplicationIcons.OpenProject)
-                .build();
-            yield return create
+                .button();
+            yield return Create
                 .a_tool_bar_item()
                 .with_tool_tip_text_as("Save")
                 .when_clicked_executes<ISaveCommand>()
+                .can_be_clicked_when(() => project.has_unsaved_changes())
                 .displays_icon(ApplicationIcons.SaveProject)
-                .build();
+                .button();
         }
     }
 }

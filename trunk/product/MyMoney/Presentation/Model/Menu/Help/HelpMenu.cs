@@ -22,22 +22,22 @@ namespace MoMoney.Presentation.Model.Menu.Help
 
         public IEnumerable<IMenuItem> all_menu_items()
         {
-            yield return create
+            yield return Create
                 .a_menu_item()
                 .named("&About")
                 .that_executes<IDisplayInformationAboutTheApplication>()
                 .represented_by(ApplicationIcons.About)
                 .build();
 
-            yield return create
+            yield return Create
                 .a_menu_item()
                 .named("Check For Updates...")
                 .that_executes(() => command.run<ICheckForUpdatesPresenter>())
                 .build();
 
-            yield return create.a_menu_item_separator();
+            yield return Create.a_menu_item_separator();
 
-            yield return create
+            yield return Create
                 .a_menu_item()
                 .named("View Log File")
                 .that_executes(() => command.run<ILogFilePresenter>())

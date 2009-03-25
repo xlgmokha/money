@@ -8,8 +8,8 @@ using Rhino.Mocks;
 
 namespace MoMoney.Presentation.Model.Navigation
 {
-    [Concern(typeof (tree_branch))]
-    public abstract class behaves_like_a_tree_branch : concerns_for<ITreeBranch, tree_branch>
+    [Concern(typeof (TreeBranch))]
+    public abstract class behaves_like_a_tree_branch : concerns_for<ITreeBranch, TreeBranch>
     {
         context c = () =>
                         {
@@ -19,7 +19,7 @@ namespace MoMoney.Presentation.Model.Navigation
 
         public override ITreeBranch create_sut()
         {
-            return new tree_branch(tree_node, command);
+            return new TreeBranch(tree_node, command);
         }
 
         protected static TreeNode tree_node;
