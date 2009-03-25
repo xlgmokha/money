@@ -27,18 +27,15 @@ namespace MoMoney.Presentation.Views.Shell
                           };
         }
 
-
         protected override void OnLoad(EventArgs e)
         {
             try_to_reduce_flickering();
-            TopMost = true;
-            Focus();
-            BringToFront();
+                //.top_most();
         }
 
         public void attach_to(IApplicationShellPresenter presenter)
         {
-            Closed += (sender, args) => presenter.shut_down(); 
+            Closed += (sender, args) => presenter.shut_down();
         }
 
         public void add(IDockedContentView view)
