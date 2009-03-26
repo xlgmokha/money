@@ -1,3 +1,6 @@
+using System;
+using System.Data;
+using System.Threading;
 using developwithpassion.bdd.contexts;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
@@ -7,6 +10,10 @@ namespace MoMoney.Infrastructure.eventing
 {
     public class behaves_like_event_aggregator : concerns_for<IEventAggregator, EventAggregator>
     {
+        public override IEventAggregator create_sut()
+        {
+            return new EventAggregator(new SynchronizationContext());
+        }
     }
 
     public class when_a_event_is_raised_in_the_system : behaves_like_event_aggregator
@@ -39,6 +46,27 @@ namespace MoMoney.Infrastructure.eventing
         static IEventSubscriber<TestEvent> first_subscriber;
         static IEventSubscriber<TestEvent> second_subscriber;
         static IEventSubscriber<AnotherEvent> incorrect_subscriber;
+    }
+
+    public class when_publishing_a_call_to_all_subscribers : behaves_like_event_aggregator
+    {
+        it should_make_the_call_on_each_subscriber = () => connection.was_told_to(x => x.ChangeDatabase("localhost"));
+
+        context c = () =>
+                        {
+                            connection = an<IDbConnection>();
+                            command = an<IDbCommand>();
+                        };
+
+        because b = () =>
+                        {
+                            sut.subscribe(connection);
+                            sut.subscribe(command);
+                            sut.publish<IDbConnection>(x => x.ChangeDatabase("localhost"));
+                        };
+
+        static IDbConnection connection;
+        static IDbCommand command;
     }
 
     public class TestEvent : IEvent
