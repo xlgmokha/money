@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using MoMoney.Infrastructure.Extensions;
@@ -31,7 +32,16 @@ namespace MoMoney.Infrastructure.proxies
             var methods = typeof (TypeToPutConstraintOn).GetMethods(BindingFlags.Public | BindingFlags.Instance);
             foreach (var method in methods)
             {
-                method.Invoke(InterceptOn, get_stub_parameters_for(method).ToArray());
+                if (method.ContainsGenericParameters)
+                {
+                    method
+                        .MakeGenericMethod(typeof(Component))
+                        .Invoke(InterceptOn, get_stub_parameters_for(method).ToArray());
+                }
+                else
+                {
+                    method.Invoke(InterceptOn, get_stub_parameters_for(method).ToArray());
+                }
             }
         }
 

@@ -9,7 +9,6 @@ namespace MoMoney.Presentation.Views.Shell
     public interface IShell : IWin32Window, ISynchronizeInvoke, IContainerControl, IBindableComponent, IDropTarget
     {
         void attach_to(IApplicationShellPresenter presenter);
-        string Text { get; set; }
         void add(IDockedContentView view);
         void region<T>(Action<T> action) where T : IComponent;
         void close_the_active_window();

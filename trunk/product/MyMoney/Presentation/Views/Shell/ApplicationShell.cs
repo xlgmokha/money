@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
+using System.Windows.Forms;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Views.core;
 using MoMoney.Utility.Extensions;
@@ -19,6 +20,7 @@ namespace MoMoney.Presentation.Views.Shell
             regions = new Dictionary<string, IComponent>
                           {
                               {GetType().FullName, this},
+                              {typeof(Form).FullName, this},
                               {ux_main_menu_strip.GetType().FullName, ux_main_menu_strip},
                               {ux_dock_panel.GetType().FullName, ux_dock_panel},
                               {ux_tool_bar_strip.GetType().FullName, ux_tool_bar_strip},

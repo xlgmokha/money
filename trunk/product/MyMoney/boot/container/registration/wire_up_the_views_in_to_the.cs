@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Threading;
 using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.proxies;
@@ -28,8 +29,9 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             var shell = new ApplicationShell();
-            register.singleton<IShell>(shell);
-            //register.proxy<IShell>(new SynchronizedConfiguration<IShell>(), () => shell);
+            register.singleton<ISynchronizationContext>(new SynchronizedContext(SynchronizationContext.Current));
+            //register.singleton<IShell>(shell);
+            register.proxy(new SynchronizedConfiguration<IShell>(), () => shell);
             register.singleton(shell);
             //register.proxy(new SynchronizedViewProxyConfiguration<IShell>(), () => new ApplicationShell());
             register.transient<IAboutApplicationView, AboutTheApplicationView>();
@@ -63,7 +65,10 @@ namespace MoMoney.boot.container.registration
     {
         public void configure(IProxyBuilder<T> item)
         {
-            item.add_interceptor<IThreadSafeInterceptor>( new ThreadSafeInterceptor(Lazy.load<ISynchronizationContextFactory>())).InterceptAll();
+            item
+                .add_interceptor<IThreadSafeInterceptor>(
+                new ThreadSafeInterceptor(Lazy.load<ISynchronizationContextFactory>()))
+                .InterceptAll();
         }
     }
 }

@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace MoMoney.Presentation.Views.Shell
 {
     public interface ITitleBar
@@ -18,25 +20,34 @@ namespace MoMoney.Presentation.Views.Shell
 
         public void display(string title)
         {
-            if (shell.Text.Contains("-"))
+            shell.region<Form>(x =>
             {
-                shell.Text = shell.Text.Remove(shell.Text.IndexOf("-") - 1);
-            }
-            shell.Text = shell.Text + " - " + title;
+                if (x.Text.Contains("-"))
+                {
+                   x.Text =x.Text.Remove(x.Text.IndexOf("-") - 1);
+                }
+               x.Text =x.Text + " - " + title;
+            });
         }
 
         public void append_asterik()
         {
-            if (shell.Text.Contains("*"))
+            shell.region<Form>(x =>
             {
-                return;
-            }
-            shell.Text = shell.Text + "*";
+                if (x.Text.Contains("*"))
+                {
+                    return;
+                }
+                x.Text = x.Text + "*";
+            });
         }
 
         public void remove_asterik()
         {
-            shell.Text = shell.Text.Replace("*", "");
+            shell.region<Form>(x =>
+            {
+                x.Text = x.Text.Replace("*", "");
+            });
         }
     }
 }

@@ -1,3 +1,4 @@
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Views.Menu.Help;
 
@@ -9,7 +10,7 @@ namespace MoMoney.Presentation.Presenters.Menu.Help
 
     public class AboutTheApplicationPresenter : IAboutApplicationPresenter
     {
-        private readonly IAboutApplicationView view;
+        readonly IAboutApplicationView view;
 
         public AboutTheApplicationPresenter(IAboutApplicationView view)
         {
@@ -18,6 +19,7 @@ namespace MoMoney.Presentation.Presenters.Menu.Help
 
         public void run()
         {
+            this.log().debug("about app");
             view.display();
         }
     }

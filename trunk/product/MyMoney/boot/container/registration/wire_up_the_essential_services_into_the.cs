@@ -20,7 +20,6 @@ namespace MoMoney.boot.container.registration
         {
             registration.singleton<IDependencyRegistration>(registration);
             registration.singleton<ILogFactory, Log4NetLogFactory>();
-            registration.singleton<ISynchronizationContext>(new SynchronizedContext(SynchronizationContext.Current));
         }
     }
 }

@@ -19,8 +19,8 @@ namespace MoMoney.boot.container
             var specification = new ComponentExclusionSpecification();
             var configuration = new ComponentRegistrationConfiguration();
 
-            new wire_up_the_essential_services_into_the(registry)
-                .then(new auto_wire_components_in_to_the(registry, specification))
+            new auto_wire_components_in_to_the(registry, specification)
+                .then(new wire_up_the_essential_services_into_the(registry))
                 .then(new wire_up_the_data_access_components_into_the(registry))
                 .then(new wire_up_the_infrastructure_in_to_the(registry))
                 .then(new wire_up_the_mappers_in_to_the(registry))

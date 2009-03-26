@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -90,9 +91,10 @@ namespace MoMoney.Infrastructure.proxies
         it should_intercept_each_call =
             () =>
                 {
-                    SomeInterceptor.MethodsCalled.Count().should_be_equal_to(2);
+                    SomeInterceptor.MethodsCalled.Count().should_be_equal_to(3 );
                     SomeInterceptor.MethodsCalled.First().Name.should_be_equal_to("OneMethod");
-                    SomeInterceptor.MethodsCalled.Skip(1).First().Name.should_be_equal_to( "SecondMethod");
+                    SomeInterceptor.MethodsCalled.Skip(1).First().Name.should_be_equal_to("SecondMethod");
+                    SomeInterceptor.MethodsCalled.Skip(2).First().Name.should_be_equal_to("region");
                 };
 
         context c = () => { an_implementation = an<IAnInterface>(); };
@@ -105,6 +107,7 @@ namespace MoMoney.Infrastructure.proxies
                             var proxy = sut.create_proxy_for(() => an_implementation);
                             proxy.OneMethod();
                             proxy.SecondMethod();
+                            proxy.region(() => "mo");
                         };
 
         after_each_observation ae = () =>
@@ -123,12 +126,13 @@ namespace MoMoney.Infrastructure.proxies
         void SecondMethod();
         int FirstValueReturningMethod();
         int ValueReturningMethodWithAnArgument(int number);
+        void region<T>(Func<T> call);
     }
 
     public class SomeInterceptor : IInterceptor
     {
-        static public bool WasCalled;
-        static public IList<MethodInfo> MethodsCalled;
+        public static bool WasCalled;
+        public static IList<MethodInfo> MethodsCalled;
 
         static SomeInterceptor()
         {
@@ -142,7 +146,7 @@ namespace MoMoney.Infrastructure.proxies
             invocation.Proceed();
         }
 
-        static public void Cleanup()
+        public static void Cleanup()
         {
             WasCalled = false;
             MethodsCalled.Clear();
@@ -151,8 +155,8 @@ namespace MoMoney.Infrastructure.proxies
 
     public class AnotherInterceptor : IInterceptor
     {
-        static public bool WasCalled;
-        static public IList<MethodInfo> MethodsCalled;
+        public static bool WasCalled;
+        public static IList<MethodInfo> MethodsCalled;
 
         static AnotherInterceptor()
         {
@@ -166,7 +170,7 @@ namespace MoMoney.Infrastructure.proxies
             invocation.Proceed();
         }
 
-        static public void Cleanup()
+        public static void Cleanup()
         {
             WasCalled = false;
             MethodsCalled.Clear();
@@ -193,6 +197,10 @@ namespace MoMoney.Infrastructure.proxies
         public int ValueReturningMethodWithAnArgument(int number)
         {
             return number + 1;
+        }
+
+        public void region<T>(Func<T> call)
+        {
         }
     }
 }

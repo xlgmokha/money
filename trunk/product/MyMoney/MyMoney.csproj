@@ -217,6 +217,7 @@
     <Compile Include="Infrastructure\cloning\Prototype.cs" />
     <Compile Include="Infrastructure\cloning\Serializer.cs" />
     <Compile Include="Infrastructure\Container\Autofac\AutofacDependencyRegistry.cs" />
+    <Compile Include="Infrastructure\Container\Autofac\AutofacDependencyRegistryBuilder.cs" />
     <Compile Include="Infrastructure\Container\Autofac\AutofacSpecs.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ApplyLoggingInterceptor.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecification.cs" />
@@ -280,10 +281,11 @@
     <Compile Include="Infrastructure\Threading\BackgroundThread.cs">
     </Compile>
     <Compile Include="Infrastructure\Threading\IntervalTimer.cs" />
+    <Compile Include="Infrastructure\Threading\ISynchronizationContext.cs" />
     <Compile Include="Infrastructure\Threading\Juval\Synchronizer.cs" />
     <Compile Include="Infrastructure\Threading\Juval\WorkItem.cs" />
-    <Compile Include="Infrastructure\Threading\SynchronizationContext.cs" />
     <Compile Include="Infrastructure\Threading\SynchronizationContextFactory.cs" />
+    <Compile Include="Infrastructure\Threading\SynchronizedContext.cs" />
     <Compile Include="Infrastructure\Threading\ThreadSafeInterceptor.cs" />
     <Compile Include="Infrastructure\Threading\TimerFactory.cs" />
     <Compile Include="Infrastructure\Threading\WorkerThread.cs">
