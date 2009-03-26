@@ -621,7 +621,7 @@
     <Compile Include="Utility\Core\Map.cs" />
     <Compile Include="Utility\Core\OrSpecification.cs" />
     <Compile Include="Utility\Extensions\configuration_extensions.cs" />
-    <Compile Include="Utility\Extensions\conversion_extensions.cs" />
+    <Compile Include="Utility\Extensions\ConversionExtensions.cs" />
     <Compile Include="Utility\Extensions\EnumerableExtensions.cs" />
     <Compile Include="Utility\Extensions\func_extensions.cs" />
     <Compile Include="Utility\Extensions\mapping_extensions.cs" />

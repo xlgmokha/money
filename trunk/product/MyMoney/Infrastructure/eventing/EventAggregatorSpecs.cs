@@ -31,7 +31,7 @@ namespace MoMoney.Infrastructure.eventing
         because b = () =>
                         {
                             sut.subscribe_to(first_subscriber);
-                            sut.subscribe_to(second_subscriber);
+                            sut.subscribe(second_subscriber);
                             sut.publish(message);
                         };
 
