@@ -44,7 +44,7 @@ namespace MoMoney.boot.container.registration
             {
                 registrar.transient(type, type);
             }
-            this.log().debug("registered: {0}", type);
+            //this.log().debug("registered: {0}", type);
         }
     }
 }

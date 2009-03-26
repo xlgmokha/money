@@ -1,4 +1,5 @@
 using Castle.Core.Interceptor;
+using MoMoney.Infrastructure.interceptors;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.Threading
@@ -10,6 +11,10 @@ namespace MoMoney.Infrastructure.Threading
     public class ThreadSafeInterceptor : IThreadSafeInterceptor
     {
         readonly ISynchronizationContextFactory factory;
+
+        public ThreadSafeInterceptor() : this(Lazy.load<ISynchronizationContextFactory>())
+        {
+        }
 
         public ThreadSafeInterceptor(ISynchronizationContextFactory factory)
         {

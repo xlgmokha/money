@@ -11,14 +11,23 @@ namespace MoMoney.boot.container
 {
     internal class wire_up_the_container : ICommand
     {
+        AutofacDependencyRegistryBuilder registry;
+        IComponentExclusionSpecification specification;
+
+        public wire_up_the_container()
+            : this(new AutofacDependencyRegistryBuilder(), new ComponentExclusionSpecification())
+        {
+        }
+
+        public wire_up_the_container(AutofacDependencyRegistryBuilder registry,
+                                     IComponentExclusionSpecification specification)
+        {
+            this.registry = registry;
+            this.specification = specification;
+        }
+
         public void run()
         {
-            //var container = new WindsorContainerFactory().create();
-            //var registry = new WindsorDependencyRegistry(container);
-            var registry = new AutofacDependencyRegistryBuilder();
-            var specification = new ComponentExclusionSpecification();
-            var configuration = new ComponentRegistrationConfiguration();
-
             new auto_wire_components_in_to_the(registry, specification)
                 .then(new wire_up_the_essential_services_into_the(registry))
                 .then(new wire_up_the_data_access_components_into_the(registry))
@@ -28,7 +37,6 @@ namespace MoMoney.boot.container
                 .then(new wire_up_the_presentation_modules(registry))
                 .then(new wire_up_the_views_in_to_the(registry))
                 .then(new wire_up_the_reports_in_to_the(registry))
-                //.then(new run_mass_component_registration_in_to_the(container, specification, configuration))
                 .run();
 
             Func<IContainer> func = registry.build;

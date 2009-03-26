@@ -1,12 +1,10 @@
 namespace MoMoney.Utility.Core
 {
-    public interface ICallback
+    public interface ICallback : ICommand
     {
-        void complete();
     }
 
-    public interface ICallback<T>
+    public interface ICallback<T> : IParameterizedCommand<T>
     {
-        void complete(T item);
     }
 }

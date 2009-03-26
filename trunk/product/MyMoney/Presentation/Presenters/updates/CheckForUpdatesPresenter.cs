@@ -54,7 +54,7 @@ namespace MoMoney.Presentation.Presenters.updates
             view.close();
         }
 
-        public void complete(Percent completed)
+        public void run(Percent completed)
         {
             if (completed.Equals(new Percent(100)))
                 view.update_complete();

@@ -41,7 +41,7 @@ namespace MoMoney.Presentation.Presenters.Startup
             current_state.update();
         }
 
-        public void complete(notification_message item)
+        public void run(notification_message item)
         {
             view.notify(item);
         }

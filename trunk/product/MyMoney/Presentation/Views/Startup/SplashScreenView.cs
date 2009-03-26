@@ -56,7 +56,6 @@ namespace MoMoney.Presentation.Views.Startup
 
         public void notify(notification_message message)
         {
-            on_ui_thread(() => { this.log().debug(message); });
         }
     }
 }

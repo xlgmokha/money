@@ -58,8 +58,9 @@ namespace MoMoney.Presentation.Views.core
 
         protected void on_ui_thread(Action action)
         {
-            //context.Post(x => action(), new object());
-            operation.Post(x => action(), new object());
+            context.Post(x => action(), new object());
+            //action();
+            //operation.Post(x => action(), new object());
             //if (InvokeRequired)
             //{
             //    BeginInvoke(action);

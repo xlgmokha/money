@@ -55,14 +55,14 @@ namespace MoMoney.Presentation.Presenters.updates
     {
         it should_notify_you_of_the_progress_of_the_update = () => view.was_told_to(x => x.downloaded(50));
 
-        because b = () => sut.complete(50);
+        because b = () => sut.run(50);
     }
 
     public class when_an_update_is_completed : behaves_like_check_for_updates_presenter
     {
         it should_notify_the_view_that_the_update_is_complete = () => view.was_told_to(x => x.update_complete());
 
-        because b = () => sut.complete(100);
+        because b = () => sut.run(100);
     }
 
     public class when_an_update_is_cancelled : behaves_like_check_for_updates_presenter
