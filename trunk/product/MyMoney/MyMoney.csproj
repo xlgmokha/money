@@ -236,7 +236,7 @@
     <Compile Include="Infrastructure\eventing\EventAggregatorSpecs.cs" />
     <Compile Include="Infrastructure\eventing\IEvent.cs" />
     <Compile Include="Infrastructure\eventing\IEventSubscriber.cs" />
-    <Compile Include="Infrastructure\Extensions\threading_extensions.cs" />
+    <Compile Include="Infrastructure\Extensions\ThreadingExtensions.cs" />
     <Compile Include="Infrastructure\interceptors\Lazy.cs" />
     <Compile Include="Infrastructure\interceptors\LazySpecs.cs" />
     <Compile Include="Infrastructure\interceptors\LazyLoadedInterceptor.cs" />

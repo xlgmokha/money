@@ -20,7 +20,6 @@ namespace MoMoney.Presentation.Presenters.Commands
 
         public void Dispose()
         {
-            presenter().run("Complete");
             presenter().Dispose();
         }
     }

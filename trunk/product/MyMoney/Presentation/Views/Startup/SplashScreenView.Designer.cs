@@ -27,22 +27,13 @@ namespace MoMoney.Presentation.Views.Startup {
         /// </summary>
         private void InitializeComponent()
         {
-            this.progress_bar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
-            // 
-            // progress_bar
-            // 
-            this.progress_bar.Location = new System.Drawing.Point(8, 225);
-            this.progress_bar.Name = "progress_bar";
-            this.progress_bar.Size = new System.Drawing.Size(272, 26);
-            this.progress_bar.TabIndex = 0;
             // 
             // SplashScreenView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 255);
-            this.Controls.Add(this.progress_bar);
             this.Name = "SplashScreenView";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -53,7 +44,6 @@ namespace MoMoney.Presentation.Views.Startup {
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progress_bar;
 
     }
 }

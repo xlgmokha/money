@@ -15,6 +15,10 @@ namespace MoMoney.Infrastructure.Threading
         readonly ITimerFactory factory;
         readonly IDictionary<ITimerClient, Timer> timers;
 
+        public IntervalTimer() : this(new TimerFactory())
+        {
+        }
+
         public IntervalTimer(ITimerFactory factory)
         {
             this.factory = factory;
@@ -26,7 +30,7 @@ namespace MoMoney.Infrastructure.Threading
             stop_notifying(client_to_be_notified);
 
             var timer = factory.create_for(span);
-            timer.Elapsed += ((sender, args) => client_to_be_notified.notify());
+            timer.Elapsed += (sender, args) => client_to_be_notified.notify();
             timer.Start();
             timers[client_to_be_notified] = timer;
         }

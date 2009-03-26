@@ -14,7 +14,8 @@ namespace MoMoney.Infrastructure.Threading
 
         public void run(ICommand item)
         {
-            context.Post(x => item.run(), new object());
+            //context.Post(x => item.run(), new object());
+            context.Send(x => item.run(), new object());
         }
     }
 }
