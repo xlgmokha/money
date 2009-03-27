@@ -669,8 +669,8 @@
     <Compile Include="Presentation\Views\Startup\SplashScreenView.Designer.cs">
       <DependentUpon>SplashScreenView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utility\Core\chained_command.cs" />
-    <Compile Include="Utility\Extensions\command_extensions.cs" />
+    <Compile Include="Utility\Core\ChainedCommand.cs" />
+    <Compile Include="Utility\Extensions\CommandExtensions.cs" />
     <Compile Include="Utility\Extensions\TypeExtensions.cs" />
     <Compile Include="Utility\Extensions\TypeExtensionsSpecs.cs" />
     <Compile Include="Utility\Extensions\visitor_extensions.cs" />

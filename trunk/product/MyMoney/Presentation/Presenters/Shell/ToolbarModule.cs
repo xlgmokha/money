@@ -27,10 +27,8 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void run()
         {
-            broker.subscribe_to<NewProjectOpened>(this);
-            broker.subscribe_to<ClosingProjectEvent>(this);
-            broker.subscribe_to<SavedChangesEvent>(this);
-            broker.subscribe_to<UnsavedChangesEvent>(this);
+            broker.subscribe(this);
+            command.run<IToolbarPresenter>();
         }
 
         public void notify(NewProjectOpened message)

@@ -17,8 +17,7 @@ namespace MoMoney.boot.container
         {
         }
 
-        public wire_up_the_container(IDependencyRegistration registry,
-                                     IComponentExclusionSpecification specification)
+        public wire_up_the_container(IDependencyRegistration registry, IComponentExclusionSpecification specification)
         {
             this.registry = registry;
             this.specification = specification;

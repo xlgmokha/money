@@ -5,7 +5,7 @@ using MoMoney.Utility.Core;
 
 namespace MoMoney.Utility.Extensions
 {
-    public static class command_extensions
+    public static class CommandExtensions
     {
         public static ICommand then<Command>(this ICommand left) where Command : ICommand, new()
         {
@@ -14,17 +14,17 @@ namespace MoMoney.Utility.Extensions
 
         public static ICommand then(this ICommand left, ICommand right)
         {
-            return new chained_command(left, right);
+            return new ChainedCommand(left, right);
         }
 
         public static ICommand then(this ICommand left, Action right)
         {
-            return new chained_command(left, new ActionCommand(right));
+            return new ChainedCommand(left, new ActionCommand(right));
         }
 
         public static ICommand as_command_chain(this IEnumerable<ICommand> commands)
         {
-            var processor = new CommandProcessor();
+            var processor = new AsynchronousCommandProcessor();
             commands.each(processor.add);
             return processor;
         }
