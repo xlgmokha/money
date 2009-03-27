@@ -229,7 +229,7 @@
     <Compile Include="Infrastructure\Container\Windsor\configuration\LogComponent.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\RegisterComponentContract.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\type_extensions.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\IDependencyRegistration.cs" />
+    <Compile Include="Infrastructure\Container\IDependencyRegistration.cs" />
     <Compile Include="Infrastructure\Container\Windsor\WindsorContainerFactory.cs" />
     <Compile Include="Infrastructure\debugging\Launch.cs" />
     <Compile Include="Infrastructure\eventing\EventAggregator.cs" />

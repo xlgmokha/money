@@ -1,4 +1,4 @@
-using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Infrastructure.Container;
 using MoMoney.Presentation.Views.billing;
 using MoMoney.Presentation.Views.reporting;
 using MoMoney.Utility.Core;

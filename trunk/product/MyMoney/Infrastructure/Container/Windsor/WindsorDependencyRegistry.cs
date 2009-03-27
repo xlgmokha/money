@@ -40,6 +40,11 @@ namespace MoMoney.Infrastructure.Container.Windsor
             underlying_container.Kernel.AddComponentInstance<Interface>(instanceOfTheInterface);
         }
 
+        public void singleton<Contract>(Func<Contract> instance_of_the_contract)
+        {
+            underlying_container.Kernel.AddComponentInstance<Contract>(instance_of_the_contract());
+        }
+
         public void transient<Interface, Implementation>() where Implementation : Interface
         {
             transient(typeof (Interface), typeof (Implementation));

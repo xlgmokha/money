@@ -1,5 +1,6 @@
 using System.Threading;
-using MoMoney.Infrastructure.Container.Windsor;
+using System.Windows.Forms;
+using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.proxies;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Views;
@@ -27,11 +28,18 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             var shell = new ApplicationShell();
-            register.singleton<ISynchronizationContext>(new SynchronizedContext(SynchronizationContext.Current));
-            register.singleton<IShell>(shell);
+            register.singleton(
+                () =>
+                    {
+                        if (SynchronizationContext.Current == null)
+                        {
+                            SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
+                        }
+                        return SynchronizationContext.Current;
+                    });
+            register.singleton<IShell>(() => shell);
             //register.proxy(new SynchronizedConfiguration<IShell>(), () => shell);
-            register.singleton(shell);
-
+            register.singleton(() => shell);
             register.transient<IAboutApplicationView, AboutTheApplicationView>();
             register.transient<ISplashScreenView, SplashScreenView>();
             register.transient<INavigationView, NavigationView>();

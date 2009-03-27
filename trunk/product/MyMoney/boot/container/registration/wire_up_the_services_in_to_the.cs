@@ -1,7 +1,7 @@
 using System;
 using MoMoney.DataAccess.core;
 using MoMoney.Domain.repositories;
-using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.proxies;
 using MoMoney.Tasks.application;

@@ -1,7 +1,7 @@
 using System;
 using developwithpassion.bdd.contexts;
 using MbUnit.Framework;
-using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
 using MoMoney.Infrastructure.reflection;
 using MoMoney.Testing.spechelpers.contexts;

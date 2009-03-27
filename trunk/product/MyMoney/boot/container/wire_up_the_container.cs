@@ -41,7 +41,7 @@ namespace MoMoney.boot.container
 
             Func<IContainer> func = registry.build;
             var dependency_registry = new AutofacDependencyRegistry(func.memorize());
-            registry.singleton<IDependencyRegistry>(dependency_registry);
+            registry.singleton<IDependencyRegistry>(() => dependency_registry);
             resolve.initialize_with(dependency_registry);
         }
     }

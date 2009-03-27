@@ -3,7 +3,6 @@ using Autofac;
 using Autofac.Builder;
 using Autofac.Modules;
 using AutofacContrib.DynamicProxy2;
-using MoMoney.Infrastructure.Container.Windsor;
 using MoMoney.Infrastructure.proxies;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
@@ -30,9 +29,9 @@ namespace MoMoney.Infrastructure.Container.Autofac
             builder.Register<Implementation>().As<Contract>().SingletonScoped();
         }
 
-        public void singleton<Contract>(Contract instance_of_the_contract)
+        public void singleton<Contract>(Func<Contract> instance_of_the_contract)
         {
-            builder.Register(instance_of_the_contract).As<Contract>().SingletonScoped();
+            builder.Register(x => instance_of_the_contract()).As<Contract>().SingletonScoped();
         }
 
         public void transient<Contract, Implementation>() where Implementation : Contract

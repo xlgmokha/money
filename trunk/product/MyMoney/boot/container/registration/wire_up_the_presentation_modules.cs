@@ -1,5 +1,5 @@
 using System.Reflection;
-using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Infrastructure.Container;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;

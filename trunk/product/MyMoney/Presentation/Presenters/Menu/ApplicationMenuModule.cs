@@ -26,10 +26,11 @@ namespace MoMoney.Presentation.Presenters.Menu
 
         public void run()
         {
-            broker.subscribe_to<NewProjectOpened>(this);
-            broker.subscribe_to<ClosingProjectEvent>(this);
-            broker.subscribe_to<SavedChangesEvent>(this);
-            broker.subscribe_to<UnsavedChangesEvent>(this);
+            //broker.subscribe_to<newprojectopened>(this);
+            //broker.subscribe_to<ClosingProjectEvent>(this);
+            //broker.subscribe_to<SavedChangesEvent>(this);
+            //broker.subscribe_to<UnsavedChangesEvent>(this);
+            broker.subscribe(this);
             command.run<IApplicationMenuPresenter>();
         }
 

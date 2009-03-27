@@ -1,6 +1,6 @@
 using System;
 using System.Reflection;
-using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
 using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.reflection;

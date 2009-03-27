@@ -1,5 +1,5 @@
 using MoMoney.DataAccess.db40;
-using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Infrastructure.Container;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.boot.container.registration

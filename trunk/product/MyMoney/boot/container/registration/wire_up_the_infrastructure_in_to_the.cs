@@ -1,4 +1,4 @@
-using MoMoney.Infrastructure.Container.Windsor;
+using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.registries;
 using MoMoney.Infrastructure.Threading;
