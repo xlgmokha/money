@@ -1,5 +1,3 @@
-using System;
-using Autofac;
 using MoMoney.boot.container.registration;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Container.Autofac;
@@ -11,7 +9,7 @@ namespace MoMoney.boot.container
 {
     internal class wire_up_the_container : ICommand
     {
-        AutofacDependencyRegistryBuilder registry;
+        IDependencyRegistration registry;
         IComponentExclusionSpecification specification;
 
         public wire_up_the_container()
@@ -19,7 +17,7 @@ namespace MoMoney.boot.container
         {
         }
 
-        public wire_up_the_container(AutofacDependencyRegistryBuilder registry,
+        public wire_up_the_container(IDependencyRegistration registry,
                                      IComponentExclusionSpecification specification)
         {
             this.registry = registry;
@@ -39,10 +37,7 @@ namespace MoMoney.boot.container
                 .then(new wire_up_the_reports_in_to_the(registry))
                 .run();
 
-            Func<IContainer> func = registry.build;
-            var dependency_registry = new AutofacDependencyRegistry(func.memorize());
-            registry.singleton<IDependencyRegistry>(() => dependency_registry);
-            resolve.initialize_with(dependency_registry);
+            resolve.initialize_with(registry.build());
         }
     }
 }

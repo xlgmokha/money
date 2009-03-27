@@ -68,5 +68,10 @@ namespace MoMoney.Infrastructure.Container.Windsor
             configuration.configure(builder);
             singleton(builder.create_proxy_for(target));
         }
+
+        public IDependencyRegistry build()
+        {
+            return this;
+        }
     }
 }

@@ -9,9 +9,10 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container.Autofac
 {
-    internal class AutofacDependencyRegistryBuilder : IDependencyRegistration, IBuilder<IContainer>
+    internal class AutofacDependencyRegistryBuilder : IDependencyRegistration //, IBuilder<IContainer>
     {
         readonly ContainerBuilder builder;
+        readonly Func<IContainer> container;
 
         public AutofacDependencyRegistryBuilder() : this(new ContainerBuilder())
         {
@@ -22,6 +23,8 @@ namespace MoMoney.Infrastructure.Container.Autofac
             this.builder = builder;
             builder.RegisterModule(new ImplicitCollectionSupportModule());
             builder.RegisterModule(new StandardInterceptionModule());
+            container = () => builder.Build();
+            container = container.memorize();
         }
 
         public void singleton<Contract, Implementation>() where Implementation : Contract
@@ -58,9 +61,9 @@ namespace MoMoney.Infrastructure.Container.Autofac
             builder.Register(x => proxy_builder.create_proxy_for(target)).As<T>().FactoryScoped();
         }
 
-        public IContainer build()
+        public IDependencyRegistry build()
         {
-            return builder.Build();
+            return new AutofacDependencyRegistry(container);
         }
     }
 }

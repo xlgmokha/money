@@ -18,6 +18,7 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             registration.singleton<IDependencyRegistration>(() => registration);
+            registration.singleton<IDependencyRegistry>(() => registration.build());
             registration.singleton<ILogFactory, Log4NetLogFactory>();
             registration.singleton<ICommandProcessor, AsynchronousCommandProcessor>();
         }
