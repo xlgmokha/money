@@ -3,14 +3,9 @@ using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.Threading
 {
-    public interface ICommandProcessor : ICommand
-    {
-        void add(ICommand command_to_add_to_queue);
-    }
-
     public class CommandProcessor : ICommandProcessor
     {
-        private readonly Queue<ICommand> queued_commands;
+        readonly Queue<ICommand> queued_commands;
 
         public CommandProcessor()
         {
@@ -24,7 +19,8 @@ namespace MoMoney.Infrastructure.Threading
 
         public void run()
         {
-            while (queued_commands.Count > 0) {
+            while (queued_commands.Count > 0)
+            {
                 queued_commands.Dequeue().run();
             }
         }

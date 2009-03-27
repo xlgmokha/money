@@ -277,9 +277,11 @@
     <Compile Include="Domain\Core\Months.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentRegistrationConfiguration.cs" />
     <Compile Include="Infrastructure\System\application_environment.cs" />
+    <Compile Include="Infrastructure\Threading\AsynchronousCommandProcessor.cs" />
     <Compile Include="Infrastructure\Threading\BackgroundThreadFactory.cs" />
     <Compile Include="Infrastructure\Threading\BackgroundThread.cs">
     </Compile>
+    <Compile Include="Infrastructure\Threading\ICommandProcessor.cs" />
     <Compile Include="Infrastructure\Threading\IntervalTimer.cs" />
     <Compile Include="Infrastructure\Threading\ISynchronizationContext.cs" />
     <Compile Include="Infrastructure\Threading\Juval\Synchronizer.cs" />
