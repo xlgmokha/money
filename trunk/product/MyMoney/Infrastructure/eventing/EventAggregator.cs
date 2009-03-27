@@ -54,10 +54,7 @@ namespace MoMoney.Infrastructure.eventing
 
         void within_lock(Action action)
         {
-            lock (mutex)
-            {
-                action();
-            }
+            lock (mutex) action();
         }
 
         void process(Action action)

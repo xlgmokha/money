@@ -15,11 +15,11 @@ namespace MoMoney.Infrastructure.Threading
             manual_reset = new ManualResetEvent(false);
         }
 
-        public void add(ICommand command_to_add_to_queue)
+        public void add(ICommand command_to_process)
         {
             lock (queued_commands)
             {
-                queued_commands.Enqueue(command_to_add_to_queue);
+                queued_commands.Enqueue(command_to_process);
                 reset_thread();
             }
         }
@@ -54,14 +54,8 @@ namespace MoMoney.Infrastructure.Threading
         {
             lock (queued_commands)
             {
-                if (queued_commands.Count > 0)
-                {
-                    manual_reset.Set();
-                }
-                else
-                {
-                    manual_reset.Reset();
-                }
+                if (queued_commands.Count > 0) manual_reset.Set();
+                else manual_reset.Reset();
             }
         }
     }

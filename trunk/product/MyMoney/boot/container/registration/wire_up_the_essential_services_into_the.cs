@@ -1,6 +1,7 @@
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Logging;
 using MoMoney.Infrastructure.Logging.Log4NetLogging;
+using MoMoney.Infrastructure.Threading;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.boot.container.registration
@@ -18,6 +19,7 @@ namespace MoMoney.boot.container.registration
         {
             registration.singleton<IDependencyRegistration>(() => registration);
             registration.singleton<ILogFactory, Log4NetLogFactory>();
+            registration.singleton<ICommandProcessor, AsynchronousCommandProcessor>();
         }
     }
 }

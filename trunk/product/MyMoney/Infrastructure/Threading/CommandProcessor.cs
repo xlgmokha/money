@@ -12,9 +12,9 @@ namespace MoMoney.Infrastructure.Threading
             queued_commands = new Queue<ICommand>();
         }
 
-        public void add(ICommand command_to_add_to_queue)
+        public void add(ICommand command_to_process)
         {
-            queued_commands.Enqueue(command_to_add_to_queue);
+            queued_commands.Enqueue(command_to_process);
         }
 
         public void run()
