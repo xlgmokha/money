@@ -1,19 +1,15 @@
+using MoMoney.Presentation.Presenters.Navigation;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Presentation.Views.Shell;
 using WeifenLuo.WinFormsUI.Docking;
-using XPExplorerBar;
 
 namespace MoMoney.Presentation.Views.Navigation
 {
     public partial class MainMenuView : ApplicationDockedWindow, IMainMenuView
     {
-        readonly IShell shell;
-
-        public MainMenuView(IShell shell)
+        public MainMenuView()
         {
             InitializeComponent();
-            this.shell = shell;
 
             titled("Main Menu")
                 .icon(ApplicationIcons.FileExplorer)
@@ -23,14 +19,14 @@ namespace MoMoney.Presentation.Views.Navigation
             ux_system_task_pane.UseClassicTheme();
         }
 
-        public void add(Expando expando)
+        public void add(IActionTaskPaneFactory factory)
         {
-            on_ui_thread(() => ux_system_task_pane.Expandos.Add(expando));
-        }
-
-        public void display()
-        {
-            shell.region<DockPanel>(x => add_to(x));
+            on_ui_thread(() =>
+                             {
+                                 ux_system_task_pane.SuspendLayout();
+                                 ux_system_task_pane.Expandos.Add(factory.create());
+                                 ux_system_task_pane.ResumeLayout();
+                             });
         }
     }
 }

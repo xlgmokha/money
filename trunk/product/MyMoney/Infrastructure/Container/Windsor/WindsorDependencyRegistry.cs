@@ -69,6 +69,12 @@ namespace MoMoney.Infrastructure.Container.Windsor
             singleton(builder.create_proxy_for(target));
         }
 
+        public void proxy<T, Configuration>(Func<T> target)
+            where Configuration : IConfiguration<IProxyBuilder<T>>, new()
+        {
+            proxy(new Configuration(), target);
+        }
+
         public IDependencyRegistry build()
         {
             return this;

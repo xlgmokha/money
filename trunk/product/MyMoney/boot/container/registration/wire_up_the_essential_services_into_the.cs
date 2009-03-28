@@ -1,3 +1,5 @@
+using System.Threading;
+using System.Windows.Forms;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Logging;
 using MoMoney.Infrastructure.Logging.Log4NetLogging;
@@ -21,6 +23,15 @@ namespace MoMoney.boot.container.registration
             registration.singleton<IDependencyRegistry>(() => registration.build());
             registration.singleton<ILogFactory, Log4NetLogFactory>();
             registration.singleton<ICommandProcessor, AsynchronousCommandProcessor>();
+            registration.singleton(
+                () =>
+                    {
+                        if (SynchronizationContext.Current == null)
+                        {
+                            SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
+                        }
+                        return SynchronizationContext.Current;
+                    });
         }
     }
 }

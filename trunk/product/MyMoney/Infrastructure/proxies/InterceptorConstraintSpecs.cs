@@ -48,7 +48,7 @@ namespace MoMoney.Infrastructure.proxies
                             method_call_tracker.is_told_to(t => t.target).it_will_return(target_of_interception);
                         };
 
-        because b = () => { result = sut.InterceptOn; };
+        because b = () => { result = sut.intercept_on; };
 
         it should_return_the_target_of_the_method_call_tracker =
             () => result.should_be_equal_to(target_of_interception);

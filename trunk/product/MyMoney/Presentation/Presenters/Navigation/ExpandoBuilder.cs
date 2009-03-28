@@ -15,7 +15,7 @@ namespace MoMoney.Presentation.Presenters.Navigation
 
     public class ExpandoBuilder : IExpandoBuilder
     {
-        readonly IList<IExpandoItemBuilder> builders = new List<IExpandoItemBuilder>();
+        readonly List<IExpandoItemBuilder> builders = new List<IExpandoItemBuilder>();
         string the_name = "";
 
         public IExpandoBuilder named(string name)
@@ -40,7 +40,6 @@ namespace MoMoney.Presentation.Presenters.Navigation
             pane.Animate = true;
             pane.AutoLayout = true;
             pane.Items.AddRange(create_items());
-            //pane.Margin = new Padding(4);
             pane.Name = "ux_" + the_name;
             pane.SpecialGroup = true;
             pane.Text = the_name;

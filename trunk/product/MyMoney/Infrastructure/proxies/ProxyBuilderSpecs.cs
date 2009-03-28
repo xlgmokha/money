@@ -70,7 +70,7 @@ namespace MoMoney.Infrastructure.proxies
         because b = () =>
                         {
                             var constraint = sut.add_interceptor<SomeInterceptor>();
-                            constraint.InterceptOn.OneMethod();
+                            constraint.intercept_on.OneMethod();
 
                             var proxy = sut.create_proxy_for(() => an_implementation);
                             proxy.OneMethod();
@@ -102,7 +102,7 @@ namespace MoMoney.Infrastructure.proxies
         because b = () =>
                         {
                             var constraint = sut.add_interceptor<SomeInterceptor>();
-                            constraint.InterceptAll();
+                            constraint.intercept_all();
 
                             var proxy = sut.create_proxy_for(() => an_implementation);
                             proxy.OneMethod();

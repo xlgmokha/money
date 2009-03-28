@@ -1,10 +1,7 @@
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.proxies.Interceptors;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.proxies
 {
@@ -16,47 +13,36 @@ namespace MoMoney.Infrastructure.proxies
     public class InterceptorConstraint<TypeToPutConstraintOn> : IInterceptorConstraint<TypeToPutConstraintOn>
     {
         readonly IMethodCallTracker<TypeToPutConstraintOn> call_tracker;
+        bool intercept_all_calls;
 
         public InterceptorConstraint(IMethodCallTracker<TypeToPutConstraintOn> call_tracker)
         {
             this.call_tracker = call_tracker;
         }
 
-        public TypeToPutConstraintOn InterceptOn
+        public TypeToPutConstraintOn intercept_on
         {
             get { return call_tracker.target; }
         }
 
-        public void InterceptAll()
+        public void intercept_all()
         {
-            var methods = typeof (TypeToPutConstraintOn).GetMethods(BindingFlags.Public | BindingFlags.Instance);
-            foreach (var method in methods)
-            {
-                if (method.ContainsGenericParameters)
-                {
-                    method
-                        .MakeGenericMethod(typeof(Component))
-                        .Invoke(InterceptOn, get_stub_parameters_for(method).ToArray());
-                }
-                else
-                {
-                    method.Invoke(InterceptOn, get_stub_parameters_for(method).ToArray());
-                }
-            }
-        }
-
-        IEnumerable<object> get_stub_parameters_for(MethodInfo method)
-        {
-            foreach (var parameter in method.GetParameters())
-            {
-                this.log().debug("method: {0}, param: {1}", method, parameter);
-                yield return parameter.ParameterType.default_value();
-            }
+            intercept_all_calls = true;
         }
 
         public IEnumerable<string> methods_to_intercept()
         {
-            return call_tracker.methods_to_intercept();
+            return intercept_all_calls ? gell_all_methods() : call_tracker.methods_to_intercept();
+        }
+
+        IEnumerable<string> gell_all_methods()
+        {
+            return all_methods().Select(x => x.Name);
+        }
+
+        IEnumerable<MethodInfo> all_methods()
+        {
+            return typeof (TypeToPutConstraintOn).GetMethods(BindingFlags.Public | BindingFlags.Instance);
         }
     }
 }

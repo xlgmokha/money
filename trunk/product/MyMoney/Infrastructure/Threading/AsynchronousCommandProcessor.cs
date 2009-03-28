@@ -46,8 +46,6 @@ namespace MoMoney.Infrastructure.Threading
         {
             keep_working = false;
             manual_reset.Set();
-            worker_thread.Abort();
-            worker_thread = null;
         }
 
         [STAThread]

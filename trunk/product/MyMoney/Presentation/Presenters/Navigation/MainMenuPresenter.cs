@@ -23,7 +23,7 @@ namespace MoMoney.Presentation.Presenters.Navigation
 
         public void run()
         {
-            registry.all().each(x => view.add(x.create()));
+            registry.all().each(x => view.add(x));
         }
 
         IDockedContentView IContentPresenter.View

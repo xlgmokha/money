@@ -61,6 +61,12 @@ namespace MoMoney.Infrastructure.Container.Autofac
             builder.Register(x => proxy_builder.create_proxy_for(target)).As<T>().FactoryScoped();
         }
 
+        public void proxy<T, Configuration>(Func<T> target)
+            where Configuration : IConfiguration<IProxyBuilder<T>>, new()
+        {
+            proxy(new Configuration(), target);
+        }
+
         public IDependencyRegistry build()
         {
             return new AutofacDependencyRegistry(container);

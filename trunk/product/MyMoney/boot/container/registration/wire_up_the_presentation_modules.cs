@@ -6,6 +6,7 @@ using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
 using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Views.Shell;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
@@ -27,6 +28,9 @@ namespace MoMoney.boot.container.registration
 
         public void run(IAssembly item)
         {
+            registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(
+                () =>
+                new ApplicationController(resolve.dependency_for<IPresenterRegistry>(), resolve.dependency_for<IShell>()));
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
             registry.transient<IFileMenu, FileMenu>();
             registry.transient<IWindowMenu, WindowMenu>();

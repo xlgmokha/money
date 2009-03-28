@@ -52,7 +52,7 @@ namespace MoMoney.boot.container.registration
 
         public void configure(IProxyBuilder<T> item)
         {
-            configure_it(item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>()).InterceptOn);
+            configure_it(item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>()).intercept_on);
         }
     }
 }

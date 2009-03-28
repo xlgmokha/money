@@ -1,8 +1,6 @@
 using System.Threading;
 using System.Windows.Forms;
 using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.proxies;
-using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.billing;
 using MoMoney.Presentation.Views.dialogs;
@@ -28,17 +26,8 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             var shell = new ApplicationShell();
-            register.singleton(
-                () =>
-                    {
-                        if (SynchronizationContext.Current == null)
-                        {
-                            SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
-                        }
-                        return SynchronizationContext.Current;
-                    });
             register.singleton<IShell>(() => shell);
-            //register.proxy(new SynchronizedConfiguration<IShell>(), () => shell);
+            //register.proxy<IShell, SynchronizedConfiguration<IShell>>(() => shell);
             register.singleton(() => shell);
             register.transient<IAboutApplicationView, AboutTheApplicationView>();
             register.transient<ISplashScreenView, SplashScreenView>();
@@ -56,14 +45,6 @@ namespace MoMoney.boot.container.registration
             register.transient<IUnhandledErrorView, UnhandledErrorView>();
             register.transient<IGettingStartedView, WelcomeScreen>();
             register.transient<ILogFileView, LogFileView>();
-        }
-    }
-
-    internal class SynchronizedConfiguration<T> : IConfiguration<IProxyBuilder<T>>
-    {
-        public void configure(IProxyBuilder<T> item)
-        {
-            item.add_interceptor<ThreadSafeInterceptor>().InterceptAll();
         }
     }
 }

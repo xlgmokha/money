@@ -11,5 +11,6 @@ namespace MoMoney.Infrastructure.Container
         void transient<Contract, Implementation>() where Implementation : Contract;
         void transient(Type contract, Type implementation);
         void proxy<T>(IConfiguration<IProxyBuilder<T>> configuration, Func<T> target);
+        void proxy<T, Configuration>(Func<T> target) where Configuration : IConfiguration<IProxyBuilder<T>>, new();
     }
 }
