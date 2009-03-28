@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Resources;
 using MoMoney.Utility.Core;
 
@@ -10,12 +11,14 @@ namespace MoMoney.Presentation.Model.Menu
     public class ToolBarItemBuilder : IToolbarItemBuilder, IToolbarButton
     {
         readonly IDependencyRegistry registry;
-        Func<bool> the_condition;
         readonly ToolStripButton item;
+        readonly ICommandProcessor processor;
+        Func<bool> the_condition;
 
-        public ToolBarItemBuilder(IDependencyRegistry registry, IEventAggregator aggregator)
+        public ToolBarItemBuilder(IDependencyRegistry registry, IEventAggregator aggregator, ICommandProcessor processor)
         {
             this.registry = registry;
+            this.processor = processor;
             aggregator.subscribe(this);
             the_condition = () => true;
             item = new ToolStripButton {};
@@ -29,7 +32,7 @@ namespace MoMoney.Presentation.Model.Menu
 
         public IToolbarItemBuilder when_clicked_executes<Command>() where Command : ICommand
         {
-            item.Click += (sender, args) => registry.get_a<Command>();
+            item.Click += (sender, args) => processor.add(registry.get_a<Command>());
             return this;
         }
 

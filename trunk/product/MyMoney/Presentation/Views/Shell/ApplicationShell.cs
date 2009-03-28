@@ -32,8 +32,8 @@ namespace MoMoney.Presentation.Views.Shell
 
         protected override void OnLoad(EventArgs e)
         {
+            base.OnLoad(e);
             try_to_reduce_flickering();
-            //.top_most();
         }
 
         public void attach_to(IApplicationShellPresenter presenter)

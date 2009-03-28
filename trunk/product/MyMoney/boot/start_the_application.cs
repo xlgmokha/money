@@ -15,21 +15,24 @@ namespace MoMoney.boot
     internal class start_the_application : ICommand
     {
         ILoadPresentationModulesCommand command;
+        ICommandProcessor processor;
 
-        public start_the_application() : this(Lazy.load<ILoadPresentationModulesCommand>())
+        public start_the_application()
+            : this(Lazy.load<ILoadPresentationModulesCommand>(), Lazy.load<ICommandProcessor>())
         {
         }
 
-        public start_the_application(ILoadPresentationModulesCommand command)
+        public start_the_application(ILoadPresentationModulesCommand command, ICommandProcessor processor)
         {
             this.command = command;
+            this.processor = processor;
         }
 
         public void run()
         {
             try
             {
-                resolve.dependency_for<ICommandProcessor>().run();
+                processor.run();
                 command.run();
                 Application.Run(resolve.dependency_for<ApplicationShell>());
             }
