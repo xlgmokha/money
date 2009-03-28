@@ -1,5 +1,6 @@
 using System.Reflection;
 using MoMoney.Infrastructure.Container;
+using MoMoney.Infrastructure.reflection;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
@@ -10,7 +11,7 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.boot.container.registration
 {
-    internal class wire_up_the_presentation_modules : ICommand
+    internal class wire_up_the_presentation_modules : ICommand, IParameterizedCommand<IAssembly>
     {
         readonly IDependencyRegistration registry;
 
@@ -21,21 +22,24 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
+            run(new ApplicationAssembly(Assembly.GetExecutingAssembly()));
+        }
+
+        public void run(IAssembly item)
+        {
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
             registry.transient<IFileMenu, FileMenu>();
             registry.transient<IWindowMenu, WindowMenu>();
             registry.transient<IHelpMenu, HelpMenu>();
 
-            Assembly
-                .GetExecutingAssembly()
-                .GetTypes()
+            item
+                .all_types()
                 .where(x => typeof (IPresenter).IsAssignableFrom(x))
                 .where(x => !x.IsInterface)
                 .each(type => registry.transient(typeof (IPresenter), type));
 
-            Assembly
-                .GetExecutingAssembly()
-                .GetTypes()
+            item
+                .all_types()
                 .where(x => typeof (IPresentationModule).IsAssignableFrom(x))
                 .where(x => !x.IsInterface)
                 .each(type => registry.transient(typeof (IPresentationModule), type));

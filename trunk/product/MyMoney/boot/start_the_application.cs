@@ -4,6 +4,7 @@ using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.interceptors;
+using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.Shell;
@@ -28,6 +29,7 @@ namespace MoMoney.boot
         {
             try
             {
+                resolve.dependency_for<ICommandProcessor>().run();
                 command.run();
                 Application.Run(resolve.dependency_for<ApplicationShell>());
             }

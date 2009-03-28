@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Windows.Forms;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 using XPExplorerBar;
-using Padding=System.Windows.Forms.Padding;
 
 namespace MoMoney.Presentation.Presenters.Navigation
 {

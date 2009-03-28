@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using MoMoney.Utility.Core;
@@ -8,6 +9,8 @@ namespace MoMoney.Infrastructure.Threading
     {
         readonly Queue<ICommand> queued_commands;
         readonly EventWaitHandle manual_reset;
+        Thread worker_thread;
+        bool keep_working;
 
         public AsynchronousCommandProcessor()
         {
@@ -15,10 +18,16 @@ namespace MoMoney.Infrastructure.Threading
             manual_reset = new ManualResetEvent(false);
         }
 
+        public void add(Action action_to_process)
+        {
+            add(new ActionCommand(action_to_process));
+        }
+
         public void add(ICommand command_to_process)
         {
             lock (queued_commands)
             {
+                if (queued_commands.Contains(command_to_process)) return;
                 queued_commands.Enqueue(command_to_process);
                 reset_thread();
             }
@@ -27,27 +36,44 @@ namespace MoMoney.Infrastructure.Threading
         public void run()
         {
             reset_thread();
-            new Thread(execute_commands).Start();
+            keep_working = true;
+            worker_thread = new Thread(run_commands);
+            worker_thread.SetApartmentState(ApartmentState.STA);
+            worker_thread.Start();
         }
 
-        void execute_commands()
+        public void stop()
         {
-            manual_reset.WaitOne();
-            next_command().run();
-            reset_thread();
+            keep_working = false;
+            manual_reset.Set();
+            worker_thread.Abort();
+            worker_thread = null;
         }
 
-        ICommand next_command()
+        [STAThread]
+        void run_commands()
         {
+            while (keep_working)
+            {
+                manual_reset.WaitOne();
+                run_next_command();
+            }
+        }
+
+        void run_next_command()
+        {
+            ICommand command;
             lock (queued_commands)
             {
                 if (queued_commands.Count == 0)
                 {
                     manual_reset.Reset();
-                    return new EmptyCommand();
+                    return;
                 }
-                return queued_commands.Dequeue();
+                command = queued_commands.Dequeue();
             }
+            command.run();
+            reset_thread();
         }
 
         void reset_thread()

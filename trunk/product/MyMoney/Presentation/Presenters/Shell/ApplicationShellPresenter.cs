@@ -6,9 +6,7 @@ using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {
-    public interface IApplicationShellPresenter : IPresentationModule,
-                                                  IEventSubscriber<NewProjectOpened>,
-                                                  IEventSubscriber<ClosingProjectEvent>
+    public interface IApplicationShellPresenter : IPresentationModule, IEventSubscriber<ClosingProjectEvent>
     {
         void shut_down();
     }
@@ -28,15 +26,8 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void run()
         {
-            broker.subscribe_to<NewProjectOpened>(this);
-            broker.subscribe_to<ClosingProjectEvent>(this);
+            broker.subscribe(this);
             shell.attach_to(this);
-        }
-
-        public void notify(NewProjectOpened message)
-        {
-            //shell.clear_menu_items();
-            //shell.close_all_windows();
         }
 
         public void notify(ClosingProjectEvent message)

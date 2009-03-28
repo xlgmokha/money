@@ -1,3 +1,4 @@
+using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Core;
 
 namespace MoMoney.Presentation.Presenters.Commands
@@ -9,16 +10,18 @@ namespace MoMoney.Presentation.Presenters.Commands
 
     public class RunPresenterCommand : IRunPresenterCommand
     {
-        private readonly IApplicationController application_controller;
+        readonly IApplicationController application_controller;
+        readonly ICommandProcessor processor;
 
-        public RunPresenterCommand(IApplicationController application_controller)
+        public RunPresenterCommand(IApplicationController application_controller, ICommandProcessor processor)
         {
             this.application_controller = application_controller;
+            this.processor = processor;
         }
 
         public void run<Presenter>() where Presenter : IPresenter
         {
-            application_controller.run<Presenter>();
+            processor.add(() => application_controller.run<Presenter>());
         }
     }
 }

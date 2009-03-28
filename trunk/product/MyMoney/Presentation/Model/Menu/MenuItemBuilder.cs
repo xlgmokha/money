@@ -1,5 +1,6 @@
 using System;
 using MoMoney.Infrastructure.Container;
+using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Model.keyboard;
 using MoMoney.Presentation.Resources;
 using MoMoney.Utility.Core;
@@ -20,12 +21,14 @@ namespace MoMoney.Presentation.Model.Menu
     {
         readonly IDependencyRegistry registry;
         Func<bool> can_be_clicked = () => true;
+        IEventAggregator aggregator;
 
-        public MenuItemBuilder(IDependencyRegistry registry)
+        public MenuItemBuilder(IDependencyRegistry registry, IEventAggregator aggregator)
         {
             name_of_the_menu = "Unknown";
             command_to_execute = () => { };
             this.registry = registry;
+            this.aggregator = aggregator;
             icon = ApplicationIcons.Empty;
             key = ShortcutKeys.none;
         }
@@ -73,7 +76,9 @@ namespace MoMoney.Presentation.Model.Menu
 
         public IMenuItem build()
         {
-            return new MenuItem(name_of_the_menu, command_to_execute, icon, key, can_be_clicked);
+            var item = new MenuItem(name_of_the_menu, command_to_execute, icon, key, can_be_clicked);
+            aggregator.subscribe(item);
+            return item;
         }
     }
 }

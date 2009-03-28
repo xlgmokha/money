@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using MoMoney.Utility.Extensions;
 
-namespace MoMoney.Presentation.Model.Menu.File
+namespace MoMoney.Presentation.Model.Menu
 {
     public abstract class SubMenu : ISubMenu
     {

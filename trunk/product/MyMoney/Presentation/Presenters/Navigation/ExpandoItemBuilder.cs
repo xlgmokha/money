@@ -45,12 +45,8 @@ namespace MoMoney.Presentation.Presenters.Navigation
                                Anchor = ((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right),
                                BackColor = Color.Transparent,
                                Image = the_image,
-                               //Location = new Point(12, 33),
                                Name = "ux" + the_name,
-                               //Size = new Size(266, 19),
-                               //TabIndex = 0,
                                Text = the_name,
-                               //TextAlign = ContentAlignment.TopLeft,
                                UseVisualStyleBackColor = false,
                            };
             item.Click += (sender, e) => the_action();

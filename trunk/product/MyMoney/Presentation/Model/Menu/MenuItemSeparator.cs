@@ -13,5 +13,9 @@ namespace MoMoney.Presentation.Model.Menu
         {
             return new System.Windows.Forms.MenuItem("----------");
         }
+
+        public void refresh()
+        {
+        }
     }
 }

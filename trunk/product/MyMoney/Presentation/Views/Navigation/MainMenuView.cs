@@ -25,7 +25,7 @@ namespace MoMoney.Presentation.Views.Navigation
 
         public void add(Expando expando)
         {
-            ux_system_task_pane.Expandos.Add(expando);
+            on_ui_thread(() => ux_system_task_pane.Expandos.Add(expando));
         }
 
         public void display()

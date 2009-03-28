@@ -62,16 +62,15 @@ namespace MoMoney.Presentation.Views.core
         {
             //context.Post(x => action(), new object());
             //context.Send(x => action(), new object());
-            action();
             //operation.Post(x => action(), new object());
-            //if (InvokeRequired)
-            //{
-            //    BeginInvoke(action);
-            //}
-            //else
-            //{
-            //    action();
-            //}
+            if (InvokeRequired)
+            {
+                BeginInvoke(action);
+            }
+            else
+            {
+                action();
+            }
         }
     }
 }

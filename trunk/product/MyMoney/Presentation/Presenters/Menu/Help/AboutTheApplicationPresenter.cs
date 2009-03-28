@@ -1,10 +1,10 @@
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.Menu.Help;
 
 namespace MoMoney.Presentation.Presenters.Menu.Help
 {
-    public interface IAboutApplicationPresenter : IPresenter
+    public interface IAboutApplicationPresenter : IContentPresenter
     {
     }
 
@@ -19,8 +19,12 @@ namespace MoMoney.Presentation.Presenters.Menu.Help
 
         public void run()
         {
-            this.log().debug("about app");
             view.display();
+        }
+
+        IDockedContentView IContentPresenter.View
+        {
+            get { return view; }
         }
     }
 }

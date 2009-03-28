@@ -1,28 +1,40 @@
 using System;
+using System.Linq;
+using System.Reflection;
 
 namespace MoMoney.Utility.Extensions
 {
-    static public class TypeExtensions
+    public static class TypeExtensions
     {
-        static public Type last_interface(this Type type)
+        public static Type last_interface(this Type type)
         {
             return type.GetInterfaces()[type.GetInterfaces().Length - 1];
         }
 
-        static public Type first_interface(this Type type)
+        public static Type first_interface(this Type type)
         {
             return type.GetInterfaces()[0];
         }
 
-        static public bool is_a_generic_type(this Type type)
+        public static bool is_a_generic_type(this Type type)
         {
             //return type.IsGenericType;
             return type.IsGenericTypeDefinition;
         }
 
-        static public object default_value(this Type type)
+        public static object default_value(this Type type)
         {
             return (type.IsValueType ? Activator.CreateInstance(type) : null);
+        }
+
+        public static Attribute get_attribute<Attribute>(this ICustomAttributeProvider provider)
+            where Attribute : System.Attribute
+        {
+            return
+                provider
+                    .GetCustomAttributes(typeof (Attribute), false)
+                    .Select(x => x.downcast_to<Attribute>())
+                    .First();
         }
     }
 }

@@ -7,7 +7,7 @@ namespace MoMoney.Presentation.Model.Menu
     {
         public static IMenuItemBuilder a_menu_item()
         {
-            return new MenuItemBuilder(resolve.dependency_for<IDependencyRegistry>());
+            return new MenuItemBuilder(resolve.dependency_for<IDependencyRegistry>(),resolve.dependency_for<IEventAggregator>());
         }
 
         public static IMenuItem a_menu_item_separator()

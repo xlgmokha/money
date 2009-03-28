@@ -9,45 +9,45 @@ namespace MoMoney.Presentation.Model.Menu
     {
         ToolStripItem build();
         System.Windows.Forms.MenuItem build_menu_item();
+        void refresh();
     }
 
     public class MenuItem : IMenuItem
     {
-        public MenuItem(string name, Action command, HybridIcon icon, ShortcutKey key,
-                        Func<bool> can_be_clicked)
-        {
-            this.name = name;
-            this.command = command;
-            this.icon = icon;
-            this.key = key;
-            this.can_be_clicked = can_be_clicked;
-        }
-
-        string name { get; set; }
-        Action command { get; set; }
-        HybridIcon icon { get; set; }
-        ShortcutKey key { get; set; }
         readonly Func<bool> can_be_clicked;
+        readonly ToolStripMenuItem item;
+        readonly System.Windows.Forms.MenuItem task_tray_item;
+
+        public MenuItem(string name, Action command, HybridIcon icon, ShortcutKey key, Func<bool> can_be_clicked)
+        {
+            this.can_be_clicked = can_be_clicked;
+
+            item = new ToolStripMenuItem(name)
+                       {
+                           Image = icon,
+                           ShortcutKeys = key,
+                           Enabled = can_be_clicked()
+                       };
+            item.Click += (o, e) => command();
+
+            task_tray_item = new System.Windows.Forms.MenuItem(name) {ShowShortcut = true, Enabled = can_be_clicked()};
+            task_tray_item.Click += (o, e) => command();
+        }
 
         public ToolStripItem build()
         {
-            var item = new ToolStripMenuItem(name)
-                           {
-                               Image = icon,
-                               ShortcutKeys = key,
-                               Enabled = can_be_clicked()
-                           };
-            item.Click += (o, e) => command();
             return item;
         }
 
         public System.Windows.Forms.MenuItem build_menu_item()
         {
-            var item = new System.Windows.Forms.MenuItem(name) {ShowShortcut = true, Enabled = can_be_clicked()};
-            item.Click += (sender, e) => command();
-            //item.Popup += (o,e)=> {}
-            item.DrawItem += (sender, args) => item.Enabled = can_be_clicked();
-            return item;
+            return task_tray_item;
+        }
+
+        public void refresh()
+        {
+            item.Enabled = can_be_clicked();
+            task_tray_item.Enabled = can_be_clicked();
         }
     }
 }

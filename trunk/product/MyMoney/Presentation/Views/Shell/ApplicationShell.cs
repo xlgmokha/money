@@ -5,6 +5,7 @@ using System.ComponentModel.Composition;
 using System.Windows.Forms;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.helpers;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.Shell
@@ -20,7 +21,7 @@ namespace MoMoney.Presentation.Views.Shell
             regions = new Dictionary<string, IComponent>
                           {
                               {GetType().FullName, this},
-                              {typeof(Form).FullName, this},
+                              {typeof (Form).FullName, this},
                               {ux_main_menu_strip.GetType().FullName, ux_main_menu_strip},
                               {ux_dock_panel.GetType().FullName, ux_dock_panel},
                               {ux_tool_bar_strip.GetType().FullName, ux_tool_bar_strip},
@@ -32,7 +33,7 @@ namespace MoMoney.Presentation.Views.Shell
         protected override void OnLoad(EventArgs e)
         {
             try_to_reduce_flickering();
-                //.top_most();
+            //.top_most();
         }
 
         public void attach_to(IApplicationShellPresenter presenter)
@@ -60,9 +61,12 @@ namespace MoMoney.Presentation.Views.Shell
         {
             on_ui_thread(() =>
                              {
-                                 while (ux_dock_panel.Contents.Count > 0)
+                                 using (new SuspendLayout(ux_dock_panel))
                                  {
-                                     ux_dock_panel.Contents[0].DockHandler.Close();
+                                     while (ux_dock_panel.Contents.Count > 0)
+                                     {
+                                         ux_dock_panel.Contents[0].DockHandler.Close();
+                                     }
                                  }
                              });
         }

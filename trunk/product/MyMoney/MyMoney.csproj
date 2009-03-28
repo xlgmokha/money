@@ -276,7 +276,7 @@
     <Compile Include="Domain\Core\Month.cs" />
     <Compile Include="Domain\Core\Months.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentRegistrationConfiguration.cs" />
-    <Compile Include="Infrastructure\System\application_environment.cs" />
+    <Compile Include="Infrastructure\System\ApplicationEnvironment.cs" />
     <Compile Include="Infrastructure\Threading\AsynchronousCommandProcessor.cs" />
     <Compile Include="Infrastructure\Threading\BackgroundThreadFactory.cs" />
     <Compile Include="Infrastructure\Threading\BackgroundThread.cs">
@@ -287,6 +287,7 @@
     <Compile Include="Infrastructure\Threading\Juval\Synchronizer.cs" />
     <Compile Include="Infrastructure\Threading\Juval\WorkItem.cs" />
     <Compile Include="Infrastructure\Threading\SynchronizationContextFactory.cs" />
+    <Compile Include="Infrastructure\Threading\SynchronizedCommand.cs" />
     <Compile Include="Infrastructure\Threading\SynchronizedContext.cs" />
     <Compile Include="Infrastructure\Threading\ThreadSafeInterceptor.cs" />
     <Compile Include="Infrastructure\Threading\TimerFactory.cs" />
@@ -318,7 +319,7 @@
     <Compile Include="Presentation\Model\Menu\File\Commands\SaveChangesCommand.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\SaveAsCommandSpecs.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\SaveCommandSpecs.cs" />
-    <Compile Include="Presentation\Model\Menu\File\SubMenu.cs" />
+    <Compile Include="Presentation\Model\Menu\SubMenu.cs" />
     <Compile Include="Presentation\Model\Menu\IToolbarButton.cs" />
     <Compile Include="Presentation\Model\Menu\IToolbarItemBuilder.cs" />
     <Compile Include="Presentation\Model\Menu\MenuItemSeparator.cs" />
@@ -461,6 +462,7 @@
     </Compile>
     <Compile Include="Presentation\Views\dialogs\SaveChangesViewSpecs.cs" />
     <Compile Include="Presentation\Views\helpers\EventTriggerExtensions.cs" />
+    <Compile Include="Presentation\Views\helpers\SuspendLayout.cs" />
     <Compile Include="Presentation\Views\IAddCompanyView.cs" />
     <Compile Include="Presentation\Views\billing\IViewAllBills.cs" />
     <Compile Include="Presentation\Views\billing\ViewAllBills.cs">
@@ -570,6 +572,7 @@
     <Compile Include="Presentation\Views\helpers\IEventTarget.cs" />
     <Compile Include="Presentation\Views\helpers\EventTriggerSpecs.cs" />
     <Compile Include="Utility\Core\ActionCommand.cs" />
+    <Compile Include="Utility\Core\AnonymousDisposable.cs" />
     <Compile Include="Utility\Core\ChainedConfiguration.cs" />
     <Compile Include="Utility\Core\chained_mapper.cs" />
     <Compile Include="Utility\Core\AndSpecification.cs" />
@@ -661,7 +664,6 @@
     <Compile Include="Presentation\Views\Shell\ApplicationShell.Designer.cs">
       <DependentUpon>ApplicationShell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Views\Menu\Mappers\SubMenuToToolStripMenuItemMapper.cs" />
     <Compile Include="Presentation\Views\Startup\ISplashScreenView.cs" />
     <Compile Include="Presentation\Views\Startup\SplashScreenView.cs">
       <SubType>Form</SubType>
@@ -793,6 +795,7 @@
   <ItemGroup>
     <Folder Include="DataAccess\sqlcompact\" />
     <Folder Include="Presentation\module\" />
+    <Folder Include="Presentation\Views\Menu\Mappers\" />
     <Folder Include="Tasks\domain\" />
     <Folder Include="Tasks\Stubs\" />
     <Folder Include="Testing\spechelpers\concerns\" />

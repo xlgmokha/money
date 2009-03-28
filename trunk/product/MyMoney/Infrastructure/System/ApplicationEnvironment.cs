@@ -1,4 +1,5 @@
 using System.Windows.Forms;
+using MoMoney.Infrastructure.Threading;
 
 namespace MoMoney.Infrastructure.System
 {
@@ -8,16 +9,25 @@ namespace MoMoney.Infrastructure.System
         void restart();
     }
 
-    public class application_environment : IApplicationEnvironment
+    public class ApplicationEnvironment : IApplicationEnvironment
     {
+        readonly ICommandProcessor processor;
+
+        public ApplicationEnvironment(ICommandProcessor processor)
+        {
+            this.processor = processor;
+        }
+
         public void shut_down()
         {
+            processor.stop();
             Application.Exit();
             //Environment.Exit(Environment.ExitCode);
         }
 
         public void restart()
         {
+            processor.stop();
             Application.Restart();
         }
     }

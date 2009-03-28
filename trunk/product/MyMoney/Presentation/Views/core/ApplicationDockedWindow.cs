@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.helpers;
 using MoMoney.Utility.Extensions;
 using WeifenLuo.WinFormsUI.Docking;
 
@@ -60,19 +62,22 @@ namespace MoMoney.Presentation.Views.core
 
         public void add_to(DockPanel panel)
         {
-            if (window_is_already_contained_in(panel))
+            using (new SuspendLayout(panel))
             {
-                remove_from(panel);
+                if (window_is_already_contained_in(panel)) remove_from(panel);
+                Show(panel);
+                DockState = dock_state;
             }
-            Show(panel);
-            DockState = dock_state;
         }
 
         public void remove_from(DockPanel panel)
         {
-            var panel_to_remove = get_window_from(panel);
-            panel_to_remove.DockHandler.Close();
-            panel_to_remove.DockHandler.Dispose();
+            using (new SuspendLayout(panel))
+            {
+                var panel_to_remove = get_window_from(panel);
+                panel_to_remove.DockHandler.Close();
+                panel_to_remove.DockHandler.Dispose();
+            }
         }
 
         IDockContent get_window_from(DockPanel panel)
@@ -88,6 +93,18 @@ namespace MoMoney.Presentation.Views.core
         bool matches(IDockContent x)
         {
             return x.DockHandler.TabText.Equals(TabText);
+        }
+
+        protected void on_ui_thread(Action action)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(action);
+            }
+            else
+            {
+                action();
+            }
         }
     }
 }

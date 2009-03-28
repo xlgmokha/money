@@ -23,11 +23,7 @@ namespace MoMoney.Presentation.Presenters.Menu
 
         public void run()
         {
-            shell.region<MenuStrip>(x =>
-                                        {
-                                            x.Items.Clear();
-                                            registry.all().each(y => y.add_to(x));
-                                        });
+            shell.region<MenuStrip>(x => registry.all().each(y => y.add_to(x)));
         }
     }
 }

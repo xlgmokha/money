@@ -24,7 +24,7 @@ namespace MoMoney.Utility.Extensions
 
         public static ICommand as_command_chain(this IEnumerable<ICommand> commands)
         {
-            var processor = new AsynchronousCommandProcessor();
+            var processor = new CommandProcessor();
             commands.each(processor.add);
             return processor;
         }

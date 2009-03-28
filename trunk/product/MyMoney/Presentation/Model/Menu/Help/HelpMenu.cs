@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help.commands;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Presenters.Shell;
