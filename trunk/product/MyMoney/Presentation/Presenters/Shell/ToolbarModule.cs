@@ -1,5 +1,6 @@
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Commands;
 
@@ -10,7 +11,6 @@ namespace MoMoney.Presentation.Presenters.Shell
                                       IEventSubscriber<ClosingProjectEvent>,
                                       IEventSubscriber<SavedChangesEvent>,
                                       IEventSubscriber<UnsavedChangesEvent>
-
     {
     }
 
@@ -33,22 +33,22 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void notify(NewProjectOpened message)
         {
-            command.run<IToolbarPresenter>();
+            broker.publish<IToolbarButton>(x => x.refresh());
         }
 
         public void notify(ClosingProjectEvent message)
         {
-            command.run<IToolbarPresenter>();
+            broker.publish<IToolbarButton>(x => x.refresh());
         }
 
         public void notify(SavedChangesEvent message)
         {
-            command.run<IToolbarPresenter>();
+            broker.publish<IToolbarButton>(x => x.refresh());
         }
 
         public void notify(UnsavedChangesEvent message)
         {
-            command.run<IToolbarPresenter>();
+            broker.publish<IToolbarButton>(x => x.refresh());
         }
     }
 }

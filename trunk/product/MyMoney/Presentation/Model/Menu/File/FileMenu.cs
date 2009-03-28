@@ -3,7 +3,6 @@ using MoMoney.Presentation.Model.keyboard;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.Menu.Mappers;
 
 namespace MoMoney.Presentation.Model.Menu.File
 {
@@ -15,7 +14,7 @@ namespace MoMoney.Presentation.Model.Menu.File
     {
         readonly IProject project;
 
-        public FileMenu(IProject project, ISubMenuToToolStripMenuItemMapper mapper) : base(mapper)
+        public FileMenu(IProject project)
         {
             this.project = project;
         }

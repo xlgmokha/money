@@ -5,7 +5,6 @@ using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Presenters.updates;
 using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.Menu.Mappers;
 
 namespace MoMoney.Presentation.Model.Menu.Help
 {
@@ -17,7 +16,7 @@ namespace MoMoney.Presentation.Model.Menu.Help
     {
         readonly IRunPresenterCommand command;
 
-        public HelpMenu(IRunPresenterCommand command, ISubMenuToToolStripMenuItemMapper mapper) : base(mapper)
+        public HelpMenu(IRunPresenterCommand command)
         {
             this.command = command;
         }

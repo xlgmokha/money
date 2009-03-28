@@ -13,19 +13,19 @@ namespace MoMoney.Presentation.Model.Menu
 
     public class MenuItem : IMenuItem
     {
-        public MenuItem(string name, Action command, HybridIcon underlying_icon, ShortcutKey key,
+        public MenuItem(string name, Action command, HybridIcon icon, ShortcutKey key,
                         Func<bool> can_be_clicked)
         {
             this.name = name;
             this.command = command;
-            this.underlying_icon = underlying_icon;
+            this.icon = icon;
             this.key = key;
             this.can_be_clicked = can_be_clicked;
         }
 
         string name { get; set; }
         Action command { get; set; }
-        HybridIcon underlying_icon { get; set; }
+        HybridIcon icon { get; set; }
         ShortcutKey key { get; set; }
         readonly Func<bool> can_be_clicked;
 
@@ -33,7 +33,7 @@ namespace MoMoney.Presentation.Model.Menu
         {
             var item = new ToolStripMenuItem(name)
                            {
-                               Image = underlying_icon,
+                               Image = icon,
                                ShortcutKeys = key,
                                Enabled = can_be_clicked()
                            };
@@ -45,6 +45,8 @@ namespace MoMoney.Presentation.Model.Menu
         {
             var item = new System.Windows.Forms.MenuItem(name) {ShowShortcut = true, Enabled = can_be_clicked()};
             item.Click += (sender, e) => command();
+            //item.Popup += (o,e)=> {}
+            item.DrawItem += (sender, args) => item.Enabled = can_be_clicked();
             return item;
         }
     }

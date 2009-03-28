@@ -11,9 +11,9 @@ namespace MoMoney.Presentation.Presenters.Commands
     {
         private readonly IApplicationController application_controller;
 
-        public RunPresenterCommand(IApplicationController applicationController)
+        public RunPresenterCommand(IApplicationController application_controller)
         {
-            application_controller = applicationController;
+            this.application_controller = application_controller;
         }
 
         public void run<Presenter>() where Presenter : IPresenter

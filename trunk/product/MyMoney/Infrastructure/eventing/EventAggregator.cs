@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.eventing
@@ -10,19 +12,19 @@ namespace MoMoney.Infrastructure.eventing
         void subscribe_to<Event>(IEventSubscriber<Event> subscriber) where Event : IEvent;
         void subscribe<Listener>(Listener subscriber) where Listener : class;
         void publish<Event>(Event the_event_to_broadcast) where Event : IEvent;
-        void publish<T>(Action<T> call) where T : class;
+        void publish<T>(Expression<Action<T>> call) where T : class;
         void publish<Event>() where Event : IEvent, new();
     }
 
     public class EventAggregator : IEventAggregator
     {
         readonly SynchronizationContext context;
-        readonly HashSet<object> subscribers;
+        readonly List<object> subscribers;
         readonly object mutex;
 
         public EventAggregator(SynchronizationContext context)
         {
-            subscribers = new HashSet<object>();
+            subscribers = new List<object>();
             mutex = new object();
             this.context = context;
         }
@@ -42,9 +44,10 @@ namespace MoMoney.Infrastructure.eventing
             process(() => subscribers.call_on_each<IEventSubscriber<Event>>(x => x.notify(the_event_to_broadcast)));
         }
 
-        public void publish<T>(Action<T> call) where T : class
+        public void publish<T>(Expression<Action<T>> call) where T : class
         {
-            process(() => subscribers.each(x => x.call_on(call)));
+            this.log().debug("publishing: {0}", call);
+            process(() => subscribers.each(x => x.call_on(call.Compile())));
         }
 
         public void publish<Event>() where Event : IEvent, new()
@@ -59,7 +62,7 @@ namespace MoMoney.Infrastructure.eventing
 
         void process(Action action)
         {
-            context.Send(x => action(), null);
+            context.Send(x => action(), new object());
         }
     }
 }

@@ -26,18 +26,12 @@ namespace MoMoney.Utility.Extensions
 
         public static void call_on<T>(this object target, Action<T> action) where T : class
         {
-            if (target as T != null)
-            {
-                action(target as T);
-            }
+            if (target as T != null) action(target as T);
         }
 
         public static void call_on_each<T>(this IEnumerable items, Action<T> action) where T : class
         {
-            foreach (var item in items)
-            {
-                item.call_on(action);
-            }
+            foreach (var item in items) item.call_on(action);
         }
     }
 }

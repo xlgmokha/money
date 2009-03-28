@@ -1,4 +1,5 @@
 using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Commands;
@@ -26,32 +27,29 @@ namespace MoMoney.Presentation.Presenters.Menu
 
         public void run()
         {
-            //broker.subscribe_to<newprojectopened>(this);
-            //broker.subscribe_to<ClosingProjectEvent>(this);
-            //broker.subscribe_to<SavedChangesEvent>(this);
-            //broker.subscribe_to<UnsavedChangesEvent>(this);
+            this.log().debug("hooking up the main menu");
             broker.subscribe(this);
             command.run<IApplicationMenuPresenter>();
         }
 
         public void notify(NewProjectOpened message)
         {
-            command.run<IApplicationMenuPresenter>();
+            //command.run<IApplicationMenuPresenter>();
         }
 
         public void notify(ClosingProjectEvent message)
         {
-            command.run<IApplicationMenuPresenter>();
+            //command.run<IApplicationMenuPresenter>();
         }
 
         public void notify(SavedChangesEvent message)
         {
-            command.run<IApplicationMenuPresenter>();
+            //command.run<IApplicationMenuPresenter>();
         }
 
         public void notify(UnsavedChangesEvent message)
         {
-            command.run<IApplicationMenuPresenter>();
+            //command.run<IApplicationMenuPresenter>();
         }
     }
 }

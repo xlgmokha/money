@@ -1,4 +1,5 @@
 using MoMoney.Infrastructure.Container;
+using MoMoney.Infrastructure.eventing;
 
 namespace MoMoney.Presentation.Model.Menu
 {
@@ -16,7 +17,7 @@ namespace MoMoney.Presentation.Model.Menu
 
         public static IToolbarItemBuilder a_tool_bar_item()
         {
-            return new ToolBarItemBuilder(resolve.dependency_for<IDependencyRegistry>());
+            return new ToolBarItemBuilder(resolve.dependency_for<IDependencyRegistry>(),resolve.dependency_for<IEventAggregator>());
         }
     }
 }
