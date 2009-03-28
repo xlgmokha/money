@@ -586,6 +586,7 @@
     <Compile Include="Utility\Core\IDisposableCommand.cs" />
     <Compile Include="Utility\Core\IFactory.cs" />
     <Compile Include="Utility\Core\IParameterizedCommand.cs" />
+    <Compile Include="Utility\Core\IQuery.cs" />
     <Compile Include="Utility\Core\IState.cs" />
     <Compile Include="Utility\Core\IStateContext.cs" />
     <Compile Include="Utility\Core\IValueReturningVisitor.cs" />

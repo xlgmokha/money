@@ -30,7 +30,7 @@ namespace MoMoney.Presentation.Presenters.updates
         it should_tell_the_view_to_attach_itself_to_the_presenter = () => view.was_told_to(x => x.attach_to(sut));
 
         it should_tell_the_view_to_display_the_information_on_the_current_version_of_the_application =
-            () => view.was_told_to(x => x.display(version));
+            () => view.was_told_to(x => x.display());
 
         context c = () =>
                         {

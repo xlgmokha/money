@@ -1,4 +1,5 @@
 using System.Deployment.Application;
+using System.Threading;
 using MoMoney.Domain.Core;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Utility.Core;
@@ -28,6 +29,7 @@ namespace MoMoney.Tasks.infrastructure
         {
             if (null == deployment)
             {
+                Thread.Sleep(5000);
                 return new ApplicationVersion {updates_available = false,};
             }
 

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Windows.Forms;
 using MoMoney.Domain.Core;
 using MoMoney.Presentation.Model.updates;
@@ -27,37 +26,45 @@ namespace MoMoney.Presentation.Views.updates
 
         public void attach_to(ICheckForUpdatesPresenter presenter)
         {
-            ux_update_button.Click += (sender, e) => presenter.begin_update();
-            ux_dont_update_button.Click += (sender, e) => presenter.do_not_update();
-            ux_cancel_button.Click += (sender, e) => presenter.cancel_update();
-            the_presenter = presenter;
+            on_ui_thread(() =>
+                             {
+                                 ux_update_button.Click += (sender, e) =>
+                                                               {
+                                                                   ux_update_button.Enabled = false;
+                                                                   ux_dont_update_button.Enabled = false;
+                                                                   ux_cancel_button.Enabled = true;
+                                                                   presenter.begin_update();
+                                                               };
+                                 ux_dont_update_button.Click += (sender, e) => presenter.do_not_update();
+                                 ux_cancel_button.Click += (sender, e) => presenter.cancel_update();
+                                 the_presenter = presenter;
+                             });
         }
 
-        public void display(ApplicationVersion information)
+        public void display()
         {
-            if (information.updates_available)
-            {
-                ux_update_button.Enabled = information.updates_available;
-                ux_current_version.Text = "Current: " + information.current;
-                ux_new_version.Text = "New: " + information.available_version;
-            }
-            else
-            {
-                ux_current_version.Text = "Current: " + Assembly.GetExecutingAssembly().GetName().Version;
-                ux_new_version.Text = "New: " + Assembly.GetExecutingAssembly().GetName().Version;
-            }
-            ShowDialog();
+            on_ui_thread(() =>
+                             {
+                                 ux_update_button.Enabled = false;
+                                 ux_dont_update_button.Enabled = false;
+                                 ux_cancel_button.Enabled = false;
+                                 Show();
+                                 //ShowDialog();
+                             });
         }
 
         public void downloaded(Percent percentage_complete)
         {
-            while (percentage_complete.is_less_than(progress_bar.Value))
-            {
-                if (percentage_complete.represents(progress_bar.Value))
-                    break;
+            on_ui_thread(() =>
+                             {
+                                 while (percentage_complete.is_less_than(progress_bar.Value))
+                                 {
+                                     if (percentage_complete.represents(progress_bar.Value))
+                                         break;
 
-                progress_bar.PerformStep();
-            }
+                                     progress_bar.PerformStep();
+                                 }
+                             });
         }
 
         public void update_complete()
@@ -67,7 +74,33 @@ namespace MoMoney.Presentation.Views.updates
 
         public void close()
         {
-            Close();
+            on_ui_thread(() => { Close(); });
+        }
+
+        public void run(ApplicationVersion information)
+        {
+            on_ui_thread(
+                () =>
+                    {
+                        if (information.updates_available)
+                        {
+                            ux_update_button.Enabled = true;
+                            ux_dont_update_button.Enabled = true;
+                            ux_cancel_button.Enabled = true;
+                            ux_update_button.Enabled = information.updates_available;
+                            ux_current_version.Text = "Current: " + information.current;
+                            ux_new_version.Text = "New: " + information.available_version;
+                        }
+                        else
+                        {
+                            ux_update_button.Enabled = false;
+                            ux_dont_update_button.Enabled = true;
+                            ux_cancel_button.Enabled = false;
+                            ux_current_version.Text = "Current: " +
+                                                      Assembly.GetExecutingAssembly().GetName().Version;
+                            ux_new_version.Text = "New: " + Assembly.GetExecutingAssembly().GetName().Version;
+                        }
+                    });
         }
     }
 }
