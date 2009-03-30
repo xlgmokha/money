@@ -1,5 +1,4 @@
 using developwithpassion.bdd.contexts;
-using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.updates;
 using MoMoney.Tasks.infrastructure.updating;
@@ -16,13 +15,17 @@ namespace MoMoney.Presentation.Presenters.updates
         context c = () =>
                         {
                             view = the_dependency<ICheckForUpdatesView>();
-                            tasks = the_dependency<IUpdateTasks>();
                             command = the_dependency<IRestartCommand>();
+                            download_the_latest = the_dependency<IDownloadTheLatestVersion>();
+                            next_version = the_dependency<IDisplayNextAvailableVersion>();
+                            cancel_update = the_dependency<ICancelUpdate>();
                         };
 
-        static protected ICheckForUpdatesView view;
-        static protected IUpdateTasks tasks;
-        static protected IRestartCommand command;
+        protected static ICheckForUpdatesView view;
+        protected static IRestartCommand command;
+        protected static IDownloadTheLatestVersion download_the_latest;
+        protected static IDisplayNextAvailableVersion next_version;
+        protected static ICancelUpdate cancel_update;
     }
 
     public class when_attempting_to_check_for_updates : behaves_like_check_for_updates_presenter
@@ -32,21 +35,15 @@ namespace MoMoney.Presentation.Presenters.updates
         it should_tell_the_view_to_display_the_information_on_the_current_version_of_the_application =
             () => view.was_told_to(x => x.display());
 
-        context c = () =>
-                        {
-                            version = an<ApplicationVersion>();
-                            when_the(tasks).is_told_to(x => x.current_application_version()).it_will_return(version);
-                        };
+        it should_go_and_find_out_what_the_latest_version_is = () => next_version.was_told_to(x => x.run(view));
 
         because b = () => sut.run();
-
-        static ApplicationVersion version;
     }
 
     public class when_initiating_an_update_and_one_is_available : behaves_like_check_for_updates_presenter
     {
         it should_start_downloading_the_latest_version_of_the_application =
-            () => tasks.was_told_to(x => x.grab_the_latest_version(sut));
+            () => download_the_latest.was_told_to(x => x.run(sut));
 
         because b = () => sut.begin_update();
     }
@@ -67,7 +64,7 @@ namespace MoMoney.Presentation.Presenters.updates
 
     public class when_an_update_is_cancelled : behaves_like_check_for_updates_presenter
     {
-        it should_stop_downloading_the_latest_update = () => tasks.was_told_to(x => x.stop_updating());
+        it should_stop_downloading_the_latest_update = () => cancel_update.was_told_to(x => x.run());
 
         because b = () => sut.cancel_update();
     }

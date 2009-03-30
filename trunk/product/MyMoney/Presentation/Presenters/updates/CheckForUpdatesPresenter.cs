@@ -18,16 +18,21 @@ namespace MoMoney.Presentation.Presenters.updates
     public class CheckForUpdatesPresenter : ICheckForUpdatesPresenter
     {
         readonly ICheckForUpdatesView view;
-        readonly IUpdateTasks tasks;
         readonly IRestartCommand command;
         readonly IDisplayNextAvailableVersion display_version_command;
+        readonly IDownloadTheLatestVersion download_the_latest;
+        readonly ICancelUpdate cancel_requested_update;
 
-        public CheckForUpdatesPresenter(ICheckForUpdatesView view, IUpdateTasks tasks, IRestartCommand command,
-                                        IDisplayNextAvailableVersion display_version_command)
+        public CheckForUpdatesPresenter(ICheckForUpdatesView view,
+                                        IRestartCommand command,
+                                        IDisplayNextAvailableVersion display_version_command,
+                                        IDownloadTheLatestVersion download_the_latest,
+                                        ICancelUpdate cancel_requested_update)
         {
             this.view = view;
+            this.cancel_requested_update = cancel_requested_update;
+            this.download_the_latest = download_the_latest;
             this.display_version_command = display_version_command;
-            this.tasks = tasks;
             this.command = command;
         }
 
@@ -40,12 +45,12 @@ namespace MoMoney.Presentation.Presenters.updates
 
         public void begin_update()
         {
-            tasks.grab_the_latest_version(this);
+            download_the_latest.run(this);
         }
 
         public void cancel_update()
         {
-            tasks.stop_updating();
+            cancel_requested_update.run();
             view.close();
         }
 

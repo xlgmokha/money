@@ -1,6 +1,6 @@
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Tasks.infrastructure.updating
+namespace MoMoney.Tasks.infrastructure.core
 {
     public interface IProcessQueryCommand<T> : IParameterizedCommand<ICallback<T>>
     {
@@ -15,9 +15,9 @@ namespace MoMoney.Tasks.infrastructure.updating
             this.query = query;
         }
 
-        public void run(ICallback<T> item)
+        public void run(ICallback<T> callback)
         {
-            item.run(query.fetch());
+            callback.run(query.fetch());
         }
     }
 }

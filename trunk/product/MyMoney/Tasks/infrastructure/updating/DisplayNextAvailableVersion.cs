@@ -1,10 +1,11 @@
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Model.updates;
+using MoMoney.Tasks.infrastructure.core;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Tasks.infrastructure.updating
 {
-    public interface IDisplayNextAvailableVersion : IParameterizedCommand<ICallback<ApplicationVersion>>
+    public interface IDisplayNextAvailableVersion : ICallbackCommand<ApplicationVersion>
     {
     }
 
@@ -14,7 +15,8 @@ namespace MoMoney.Tasks.infrastructure.updating
         readonly ICommandProcessor processor;
         readonly ICommandFactory factory;
 
-        public DisplayNextAvailableVersion(IWhatIsTheAvailableVersion query, ICommandProcessor processor, ICommandFactory factory)
+        public DisplayNextAvailableVersion(IWhatIsTheAvailableVersion query, ICommandProcessor processor,
+                                           ICommandFactory factory)
         {
             this.query = query;
             this.factory = factory;

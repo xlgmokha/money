@@ -1,6 +1,6 @@
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Tasks.infrastructure.updating
+namespace MoMoney.Tasks.infrastructure.core
 {
     public interface IRunQueryCommand<T> : ICommand
     {

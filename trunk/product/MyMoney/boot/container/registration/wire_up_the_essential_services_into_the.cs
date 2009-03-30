@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Deployment.Application;
 using System.Threading;
 using System.Windows.Forms;
 using MoMoney.Infrastructure.Container;
@@ -34,6 +35,7 @@ namespace MoMoney.boot.container.registration
                         return SynchronizationContext.Current;
                     });
             registration.singleton<AsyncOperation>(() => AsyncOperationManager.CreateOperation(null));
+            registration.singleton<ApplicationDeployment>( () => ApplicationDeployment.IsNetworkDeployed ? ApplicationDeployment.CurrentDeployment : null);
         }
     }
 }
