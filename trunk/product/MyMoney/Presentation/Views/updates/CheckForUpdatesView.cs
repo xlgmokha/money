@@ -49,7 +49,6 @@ namespace MoMoney.Presentation.Views.updates
                                  ux_dont_update_button.Enabled = false;
                                  ux_cancel_button.Enabled = false;
                                  Show();
-                                 //ShowDialog();
                              });
         }
 

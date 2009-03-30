@@ -12,16 +12,18 @@ namespace MoMoney.Tasks.infrastructure.updating
     {
         readonly IWhatIsTheAvailableVersion query;
         readonly ICommandProcessor processor;
+        readonly ICommandFactory factory;
 
-        public DisplayNextAvailableVersion(IWhatIsTheAvailableVersion query, ICommandProcessor processor)
+        public DisplayNextAvailableVersion(IWhatIsTheAvailableVersion query, ICommandProcessor processor, ICommandFactory factory)
         {
             this.query = query;
+            this.factory = factory;
             this.processor = processor;
         }
 
         public void run(ICallback<ApplicationVersion> item)
         {
-            processor.add(new RunQueryCommand<ApplicationVersion>(item, new ProcessQueryCommand<ApplicationVersion>(query)));
+            processor.add(factory.create_for(item, query));
         }
     }
 }

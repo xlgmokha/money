@@ -560,6 +560,7 @@
     <Compile Include="Tasks\application\CustomerTasks.cs" />
     <Compile Include="Tasks\application\IncomeTasks.cs" />
     <Compile Include="Tasks\infrastructure\LogFileTasks.cs" />
+    <Compile Include="Tasks\infrastructure\updating\CommandFactory.cs" />
     <Compile Include="Tasks\infrastructure\updating\DisplayNextAvailableVersion.cs" />
     <Compile Include="Tasks\infrastructure\updating\ProcessQueryCommand.cs" />
     <Compile Include="Tasks\infrastructure\updating\RunQueryCommand.cs" />
