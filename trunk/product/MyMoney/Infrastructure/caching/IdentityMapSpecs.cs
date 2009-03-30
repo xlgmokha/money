@@ -20,8 +20,8 @@ namespace MoMoney.Infrastructure.caching
 
         because b = () =>
                         {
-                            sut.Add(1, "1");
-                            result = sut.ItemThatBelongsTo(1);
+                            sut.add(1, "1");
+                            result = sut.item_that_belongs_to(1);
                         };
 
         static string result;
@@ -31,7 +31,7 @@ namespace MoMoney.Infrastructure.caching
     {
         it should_return_the_default_value_for_that_type = () => result.should_be_equal_to(null);
 
-        because b = () => { result = sut.ItemThatBelongsTo(2); };
+        because b = () => { result = sut.item_that_belongs_to(2); };
 
         static string result;
     }
@@ -43,8 +43,8 @@ namespace MoMoney.Infrastructure.caching
 
         because b = () =>
                         {
-                            sut.Add(10, "10");
-                            result = sut.ContainsAnItemFor(10);
+                            sut.add(10, "10");
+                            result = sut.contains_an_item_for(10);
                         };
 
         static bool result;
@@ -55,7 +55,7 @@ namespace MoMoney.Infrastructure.caching
     {
         it should_return_false = () => result.should_be_false();
 
-        because b = () => { result = sut.ContainsAnItemFor(9); };
+        because b = () => { result = sut.contains_an_item_for(9); };
 
         static bool result;
     }
@@ -67,9 +67,9 @@ namespace MoMoney.Infrastructure.caching
 
         because b = () =>
                         {
-                            sut.Add(6, "6");
-                            sut.UpdateTheItemFor(6, "7");
-                            result = sut.ItemThatBelongsTo(6);
+                            sut.add(6, "6");
+                            sut.update_the_item_for(6, "7");
+                            result = sut.item_that_belongs_to(6);
                         };
 
         static string result;
@@ -82,8 +82,8 @@ namespace MoMoney.Infrastructure.caching
 
         because b = () =>
                         {
-                            sut.UpdateTheItemFor(3, "3");
-                            result = sut.ItemThatBelongsTo(3);
+                            sut.update_the_item_for(3, "3");
+                            result = sut.item_that_belongs_to(3);
                         };
 
         static string result;
