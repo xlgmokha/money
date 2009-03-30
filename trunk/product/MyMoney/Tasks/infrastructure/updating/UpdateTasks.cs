@@ -4,7 +4,7 @@ using MoMoney.Domain.Core;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Tasks.infrastructure
+namespace MoMoney.Tasks.infrastructure.updating
 {
     public interface IUpdateTasks
     {

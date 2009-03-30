@@ -1,7 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Threading;
 using System.Windows.Forms;
 using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Resources;
@@ -18,17 +15,11 @@ namespace MoMoney.Presentation.Views.core
 
     public partial class ApplicationWindow : Form, IApplicationWindow
     {
-        protected readonly SynchronizationContext context;
-        AsyncOperation operation;
-
         public ApplicationWindow()
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
             this.log().debug("created {0}", GetType());
-            context = SynchronizationContext.Current;
-            operation = AsyncOperationManager.CreateOperation(null);
-            Debug.Assert(null != context, "The Synchronization Context is not there");
         }
 
         public IApplicationWindow create_tool_tip_for(string title, string caption, Control control)
@@ -60,17 +51,8 @@ namespace MoMoney.Presentation.Views.core
 
         protected void on_ui_thread(Action action)
         {
-            //context.Post(x => action(), new object());
-            //context.Send(x => action(), new object());
-            //operation.Post(x => action(), new object());
-            if (InvokeRequired)
-            {
-                BeginInvoke(action);
-            }
-            else
-            {
-                action();
-            }
+            if (InvokeRequired) BeginInvoke(action);
+            else action();
         }
     }
 }

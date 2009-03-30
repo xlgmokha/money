@@ -9,12 +9,13 @@ namespace MoMoney.Infrastructure.Threading
     {
         readonly Queue<ICommand> queued_commands;
         readonly EventWaitHandle manual_reset;
-        Thread worker_thread;
+        readonly IList<Thread> worker_threads;
         bool keep_working;
 
         public AsynchronousCommandProcessor()
         {
             queued_commands = new Queue<ICommand>();
+            worker_threads = new List<Thread>();
             manual_reset = new ManualResetEvent(false);
         }
 
@@ -37,8 +38,9 @@ namespace MoMoney.Infrastructure.Threading
         {
             reset_thread();
             keep_working = true;
-            worker_thread = new Thread(run_commands);
+            var worker_thread = new Thread(run_commands);
             worker_thread.SetApartmentState(ApartmentState.STA);
+            worker_threads.Add(worker_thread);
             worker_thread.Start();
         }
 

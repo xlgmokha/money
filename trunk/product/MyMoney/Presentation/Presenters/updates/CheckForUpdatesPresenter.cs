@@ -1,10 +1,8 @@
 using MoMoney.Domain.Core;
-using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.updates;
-using MoMoney.Tasks.infrastructure;
+using MoMoney.Tasks.infrastructure.updating;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Presenters.updates
@@ -22,13 +20,13 @@ namespace MoMoney.Presentation.Presenters.updates
         readonly ICheckForUpdatesView view;
         readonly IUpdateTasks tasks;
         readonly IRestartCommand command;
-        readonly ICommandProcessor processor;
+        readonly IDisplayNextAvailableVersion display_version_command;
 
         public CheckForUpdatesPresenter(ICheckForUpdatesView view, IUpdateTasks tasks, IRestartCommand command,
-                                        ICommandProcessor processor)
+                                        IDisplayNextAvailableVersion display_version_command)
         {
             this.view = view;
-            this.processor = processor;
+            this.display_version_command = display_version_command;
             this.tasks = tasks;
             this.command = command;
         }
@@ -36,11 +34,7 @@ namespace MoMoney.Presentation.Presenters.updates
         public void run()
         {
             view.attach_to(this);
-            processor.add(
-                new RunQueryCommand<ApplicationVersion>(
-                    view,
-                    new ProcessQueryCommand<ApplicationVersion>(new WhatIsTheAvailableVersion(tasks)))
-                );
+            display_version_command.run(view);
             view.display();
         }
 
@@ -69,61 +63,6 @@ namespace MoMoney.Presentation.Presenters.updates
         {
             if (completed.Equals(new Percent(100))) view.update_complete();
             else view.downloaded(completed);
-        }
-    }
-
-    public interface IProcessQueryCommand<T> : IParameterizedCommand<ICallback<T>>
-    {
-    }
-
-    public class ProcessQueryCommand<T> : IProcessQueryCommand<T>
-    {
-        readonly IQuery<T> query;
-
-        public ProcessQueryCommand(IQuery<T> query)
-        {
-            this.query = query;
-        }
-
-        public void run(ICallback<T> item)
-        {
-            item.run(query.fetch());
-        }
-    }
-
-    public interface IRunQueryCommand<T> : ICommand
-    {
-    }
-
-    public class RunQueryCommand<T> : IRunQueryCommand<T>
-    {
-        readonly ICallback<T> callback;
-        readonly IProcessQueryCommand<T> command;
-
-        public RunQueryCommand(ICallback<T> callback, IProcessQueryCommand<T> command)
-        {
-            this.callback = callback;
-            this.command = command;
-        }
-
-        public void run()
-        {
-            command.run(callback);
-        }
-    }
-
-    public class WhatIsTheAvailableVersion : IQuery<ApplicationVersion>
-    {
-        readonly IUpdateTasks tasks;
-
-        public WhatIsTheAvailableVersion(IUpdateTasks tasks)
-        {
-            this.tasks = tasks;
-        }
-
-        public ApplicationVersion fetch()
-        {
-            return tasks.current_application_version();
         }
     }
 }

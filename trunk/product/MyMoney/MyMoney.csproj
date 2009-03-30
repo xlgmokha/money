@@ -560,7 +560,11 @@
     <Compile Include="Tasks\application\CustomerTasks.cs" />
     <Compile Include="Tasks\application\IncomeTasks.cs" />
     <Compile Include="Tasks\infrastructure\LogFileTasks.cs" />
-    <Compile Include="Tasks\infrastructure\UpdateTasks.cs" />
+    <Compile Include="Tasks\infrastructure\updating\DisplayNextAvailableVersion.cs" />
+    <Compile Include="Tasks\infrastructure\updating\ProcessQueryCommand.cs" />
+    <Compile Include="Tasks\infrastructure\updating\RunQueryCommand.cs" />
+    <Compile Include="Tasks\infrastructure\updating\UpdateTasks.cs" />
+    <Compile Include="Tasks\infrastructure\updating\WhatIsTheAvailableVersion.cs" />
     <Compile Include="Testing\MetaData\IntegrationAttribute.cs" />
     <Compile Include="Testing\spechelpers\contexts\concerns.cs" />
     <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
