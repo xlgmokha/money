@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
+using System.Drawing;
 using System.Windows.Forms;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Views.core;
@@ -28,6 +29,7 @@ namespace MoMoney.Presentation.Views.Shell
                               {ux_status_bar.GetType().FullName, ux_status_bar},
                               {notification_icon.GetType().FullName, notification_icon},
                           };
+            base.BackColor = Color.FromArgb(229, 238, 226);
         }
 
         protected override void OnLoad(EventArgs e)

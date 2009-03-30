@@ -48,6 +48,7 @@ namespace MoMoney.Presentation.Presenters.Navigation
                                Name = "ux" + the_name,
                                Text = the_name,
                                UseVisualStyleBackColor = false,
+                               ShowFocusCues = true,
                            };
             item.Click += (sender, e) => the_action();
             return item;

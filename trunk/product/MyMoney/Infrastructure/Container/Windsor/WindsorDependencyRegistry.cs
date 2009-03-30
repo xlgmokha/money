@@ -35,11 +35,6 @@ namespace MoMoney.Infrastructure.Container.Windsor
                                               implementation_type);
         }
 
-        public void singleton<Interface>(Interface instanceOfTheInterface)
-        {
-            underlying_container.Kernel.AddComponentInstance<Interface>(instanceOfTheInterface);
-        }
-
         public void singleton<Contract>(Func<Contract> instance_of_the_contract)
         {
             underlying_container.Kernel.AddComponentInstance<Contract>(instance_of_the_contract());
@@ -66,7 +61,7 @@ namespace MoMoney.Infrastructure.Container.Windsor
         {
             var builder = new ProxyBuilder<T>();
             configuration.configure(builder);
-            singleton(builder.create_proxy_for(target));
+            singleton(() => builder.create_proxy_for(target));
         }
 
         public void proxy<T, Configuration>(Func<T> target)

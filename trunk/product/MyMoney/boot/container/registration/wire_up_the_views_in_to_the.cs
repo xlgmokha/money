@@ -1,5 +1,3 @@
-using System.Threading;
-using System.Windows.Forms;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.billing;

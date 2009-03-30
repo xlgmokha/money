@@ -15,13 +15,14 @@ namespace MoMoney.Presentation.Views.Menu.Help
 
         protected override void OnLoad(EventArgs e)
         {
+            var assembly = GetType() .Assembly;
             on_ui_thread(() =>
                              {
-                                 labelProductName.Text = get_attribute<AssemblyProductAttribute>().Product;
-                                 labelVersion.Text = string.Format("Version {0} {0}", AssemblyVersion);
-                                 uxCopyright.Text = get_attribute<AssemblyCopyrightAttribute>().Copyright;
-                                 uxCompanyName.Text = get_attribute<AssemblyCompanyAttribute>().Company;
-                                 uxDescription.Text = get_attribute<AssemblyDescriptionAttribute>().Description;
+                                 labelProductName.Text = assembly.get_attribute<AssemblyProductAttribute>().Product;
+                                 labelVersion.Text = string.Format("Version {0} {0}", assembly_version);
+                                 uxCopyright.Text = assembly.get_attribute<AssemblyCopyrightAttribute>().Copyright;
+                                 uxCompanyName.Text = assembly.get_attribute<AssemblyCompanyAttribute>().Company;
+                                 uxDescription.Text = assembly.get_attribute<AssemblyDescriptionAttribute>().Description;
                                  ux_logo.Image = ApplicationImages.Splash;
                              });
         }
@@ -31,7 +32,7 @@ namespace MoMoney.Presentation.Views.Menu.Help
             //on_ui_thread(() => ShowDialog());
         }
 
-        string AssemblyVersion
+        string assembly_version
         {
             get { return GetType().Assembly.GetName().Version.ToString(); }
         }
