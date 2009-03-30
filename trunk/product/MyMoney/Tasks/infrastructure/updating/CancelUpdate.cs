@@ -1,4 +1,3 @@
-using System.Deployment.Application;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Tasks.infrastructure.updating
@@ -9,9 +8,9 @@ namespace MoMoney.Tasks.infrastructure.updating
 
     public class CancelUpdate : ICancelUpdate
     {
-        readonly ApplicationDeployment deployment;
+        readonly IDeployment deployment;
 
-        public CancelUpdate(ApplicationDeployment deployment)
+        public CancelUpdate(IDeployment deployment)
         {
             this.deployment = deployment;
         }

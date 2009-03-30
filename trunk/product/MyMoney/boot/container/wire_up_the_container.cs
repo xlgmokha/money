@@ -9,8 +9,8 @@ namespace MoMoney.boot.container
 {
     internal class wire_up_the_container : ICommand
     {
-        IDependencyRegistration registry;
-        IComponentExclusionSpecification specification;
+        readonly IDependencyRegistration registry;
+        readonly IComponentExclusionSpecification specification;
 
         public wire_up_the_container()
             : this(new AutofacDependencyRegistryBuilder(), new ComponentExclusionSpecification())

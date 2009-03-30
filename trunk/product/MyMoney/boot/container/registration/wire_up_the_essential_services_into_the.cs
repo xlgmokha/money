@@ -6,6 +6,7 @@ using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Logging;
 using MoMoney.Infrastructure.Logging.Log4NetLogging;
 using MoMoney.Infrastructure.Threading;
+using MoMoney.Tasks.infrastructure.updating;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.boot.container.registration
@@ -35,7 +36,8 @@ namespace MoMoney.boot.container.registration
                         return SynchronizationContext.Current;
                     });
             registration.singleton<AsyncOperation>(() => AsyncOperationManager.CreateOperation(null));
-            registration.singleton<ApplicationDeployment>( () => ApplicationDeployment.IsNetworkDeployed ? ApplicationDeployment.CurrentDeployment : null);
+            registration.singleton<ApplicationDeployment>(() => ApplicationDeployment.IsNetworkDeployed ? ApplicationDeployment.CurrentDeployment : null);
+            registration.singleton<IDeployment>(() => ApplicationDeployment.IsNetworkDeployed ? (IDeployment)new CurrentDeployment() : (IDeployment)new NullDeployment());
         }
     }
 }

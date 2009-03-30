@@ -1,5 +1,3 @@
-using System.Deployment.Application;
-using System.Threading;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Utility.Core;
 
@@ -11,22 +9,20 @@ namespace MoMoney.Tasks.infrastructure.updating
 
     public class WhatIsTheAvailableVersion : IWhatIsTheAvailableVersion
     {
-        readonly ApplicationDeployment deployment;
+        readonly IDeployment deployment;
 
-        public WhatIsTheAvailableVersion(ApplicationDeployment deployment)
+        public WhatIsTheAvailableVersion(IDeployment deployment)
         {
             this.deployment = deployment;
         }
 
         public ApplicationVersion fetch()
         {
-            if (null == deployment)
+            var update = deployment.CheckForDetailedUpdate();
+            if (null == update)
             {
-                Thread.Sleep(5000);
                 return new ApplicationVersion {updates_available = false,};
             }
-
-            var update = deployment.CheckForDetailedUpdate();
             return new ApplicationVersion
                        {
                            activation_url = deployment.ActivationUri,

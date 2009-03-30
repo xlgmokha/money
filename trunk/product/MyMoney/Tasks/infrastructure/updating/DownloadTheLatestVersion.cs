@@ -1,4 +1,3 @@
-using System.Deployment.Application;
 using MoMoney.Domain.Core;
 using MoMoney.Tasks.infrastructure.core;
 using MoMoney.Utility.Core;
@@ -11,9 +10,9 @@ namespace MoMoney.Tasks.infrastructure.updating
 
     public class DownloadTheLatestVersion : IDownloadTheLatestVersion
     {
-        readonly ApplicationDeployment deployment;
+        readonly IDeployment deployment;
 
-        public DownloadTheLatestVersion(ApplicationDeployment deployment)
+        public DownloadTheLatestVersion(IDeployment deployment)
         {
             this.deployment = deployment;
         }

@@ -564,10 +564,13 @@
     <Compile Include="Tasks\infrastructure\core\CommandFactory.cs" />
     <Compile Include="Tasks\infrastructure\updating\CancelUpdate.cs" />
     <Compile Include="Tasks\infrastructure\updating\CancelUpdateSpecs.cs" />
+    <Compile Include="Tasks\infrastructure\updating\CurrentDeployment.cs" />
     <Compile Include="Tasks\infrastructure\updating\DisplayNextAvailableVersion.cs" />
     <Compile Include="Tasks\infrastructure\core\ProcessQueryCommand.cs" />
     <Compile Include="Tasks\infrastructure\core\RunQueryCommand.cs" />
     <Compile Include="Tasks\infrastructure\updating\DownloadTheLatestVersion.cs" />
+    <Compile Include="Tasks\infrastructure\updating\IDeployment.cs" />
+    <Compile Include="Tasks\infrastructure\updating\NullDeployment.cs" />
     <Compile Include="Tasks\infrastructure\updating\WhatIsTheAvailableVersion.cs" />
     <Compile Include="Testing\MetaData\IntegrationAttribute.cs" />
     <Compile Include="Testing\spechelpers\contexts\concerns.cs" />
@@ -686,7 +689,6 @@
     <Compile Include="Utility\Extensions\TypeExtensions.cs" />
     <Compile Include="Utility\Extensions\TypeExtensionsSpecs.cs" />
     <Compile Include="Utility\Extensions\visitor_extensions.cs" />
-    <Compile Include="boot\check_for_updates.cs" />
     <Compile Include="boot\hookup.cs" />
     <Compile Include="Presentation\Model\Menu\ISubMenu.cs" />
     <Compile Include="Utility\Core\IRegistry.cs" />
