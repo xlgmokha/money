@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.caching;
+using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -16,13 +17,13 @@ namespace MoMoney.Infrastructure.transactions2
     {
         readonly IIdentityMapFactory factory;
         ITransaction transaction;
-        readonly IDictionary<Type, object> maps;
+        readonly IDictionary<Type, object> identity_maps;
 
         public Session(IIdentityMapFactory factory, ITransaction transaction)
         {
             this.factory = factory;
             this.transaction = transaction;
-            maps = new Dictionary<Type, object>();
+            identity_maps = new Dictionary<Type, object>();
         }
 
         public IEnumerable<T> all<T>()
@@ -49,19 +50,17 @@ namespace MoMoney.Infrastructure.transactions2
 
         IIdentityMap<Guid, T> get_identity_map_for<T>()
         {
-            if (maps.ContainsKey(typeof (T)))
-            {
-                return (IIdentityMap<Guid, T>) maps[typeof (T)];
-            }
-            return create_map_for<T>();
+            var type = typeof (T);
+            return identity_maps.ContainsKey(type)
+                       ? identity_maps[type].downcast_to<IIdentityMap<Guid, T>>()
+                       : create_map_for<T>();
         }
 
         IIdentityMap<Guid, T> create_map_for<T>()
         {
-            var map = factory.create_for<T>();
-            maps.Add(typeof (T), map);
-            return map;
+            var identity_map = factory.create_for<T>();
+            identity_maps.Add(typeof (T), identity_map);
+            return identity_map;
         }
-
     }
 }
