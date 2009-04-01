@@ -297,6 +297,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Infrastructure\transactions2\IIdentityMapFactory.cs" />
+    <Compile Include="Infrastructure\transactions2\ITransaction.cs" />
     <Compile Include="Infrastructure\transactions2\Session.cs" />
     <Compile Include="Infrastructure\transactions2\SessionSpecs.cs" />
     <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistrationFactory.cs" />

@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 
 namespace MoMoney.Infrastructure.caching
 {
     public interface IIdentityMap<TKey, TValue>
     {
+        IEnumerable<TValue> all();
         void add(TKey key, TValue value);
         void update_the_item_for(TKey key, TValue new_value);
         bool contains_an_item_for(TKey key);
@@ -21,6 +23,11 @@ namespace MoMoney.Infrastructure.caching
         public IdentityMap(IDictionary<TKey, TValue> items_in_map)
         {
             this.items_in_map = items_in_map;
+        }
+
+        public IEnumerable<TValue> all()
+        {
+            throw new NotImplementedException();
         }
 
         public void add(TKey key, TValue value)
