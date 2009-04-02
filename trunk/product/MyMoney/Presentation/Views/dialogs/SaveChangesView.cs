@@ -1,13 +1,11 @@
 using System;
 using System.Windows.Forms;
-using JetBrains.Annotations;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 
 namespace MoMoney.Presentation.Views.dialogs
 {
-    [UsedImplicitly]
     public partial class SaveChangesView : ApplicationWindow, ISaveChangesView
     {
         bool can_be_closed;
@@ -23,7 +21,6 @@ namespace MoMoney.Presentation.Views.dialogs
                 .create_tool_tip_for("Don't Save", "Discard any unsaved changes.", do_not_save_button)
                 .create_tool_tip_for("Cancel", "Go back.", cancel_button);
         }
-
 
         public void attach_to(ISaveChangesPresenter presenter)
         {

@@ -6,6 +6,11 @@ namespace MoMoney.Utility.Extensions
 {
     public static class EnumerableExtensions
     {
+        public static IEnumerable<T> where<T>(this IEnumerable<T> items, Func<T, bool> condition_is_met)
+        {
+            return null == items ? new List<T>() : items.Where(condition_is_met);
+        }
+
         public static IList<T> databind<T>(this IEnumerable<T> items_to_bind_to)
         {
             return items_to_bind_to.ToList();
@@ -15,12 +20,7 @@ namespace MoMoney.Utility.Extensions
                                                      Predicate<T> criteria_to_satisfy)
         {
             foreach (var item in items_to_peek_in_to ?? new List<T>())
-            {
-                if (item.satisfies(criteria_to_satisfy))
-                {
-                    yield return item;
-                }
-            }
+                if (item.satisfies(criteria_to_satisfy)) yield return item;
         }
 
         public static IEnumerable<T> sorted_using<T>(this IEnumerable<T> items_to_sort, IComparer<T> sorting_algorithm)

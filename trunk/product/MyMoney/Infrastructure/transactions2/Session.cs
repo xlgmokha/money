@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.caching;
 using MoMoney.Utility.Extensions;
@@ -8,7 +9,8 @@ namespace MoMoney.Infrastructure.transactions2
 {
     public interface ISession : IDisposable
     {
-        IEnumerable<T> all<T>();
+        IEntity find<T>(Guid guid) where T : IEntity;
+        IEnumerable<T> all<T>() where T : IEntity;
         void save<T>(T entity) where T : IEntity;
         void update<T>(T entity) where T : IEntity;
         void flush();
@@ -18,7 +20,7 @@ namespace MoMoney.Infrastructure.transactions2
     {
         readonly IIdentityMapFactory factory;
         ITransaction transaction;
-        IDatabase database;
+        readonly IDatabase database;
         readonly IDictionary<Type, object> identity_maps;
 
         public Session(IIdentityMapFactory factory, ITransaction transaction, IDatabase database)
@@ -29,9 +31,26 @@ namespace MoMoney.Infrastructure.transactions2
             identity_maps = new Dictionary<Type, object>();
         }
 
-        public IEnumerable<T> all<T>()
+        public IEntity find<T>(Guid id) where T : IEntity
         {
-            return get_identity_map_for<T>().all().join_with(database.fetch_all<T>());
+            var identity_map = get_identity_map_for<T>();
+            if (identity_map.contains_an_item_for(id))
+            {
+                return identity_map.item_that_belongs_to(id);
+            }
+            var entity = database.fetch_all<T>().Single(x => x.Id.Equals(id));
+            identity_map.add(id, entity);
+            return entity;
+        }
+
+        public IEnumerable<T> all<T>() where T : IEntity
+        {
+            var identity_map = get_identity_map_for<T>();
+            var uncached_items = database
+                .fetch_all<T>()
+                .where(x => !identity_map.contains_an_item_for(x.Id));
+            uncached_items.each(x => identity_map.add(x.Id, x));
+            return uncached_items.join_with(identity_map.all());
         }
 
         public void save<T>(T entity) where T : IEntity
@@ -43,6 +62,7 @@ namespace MoMoney.Infrastructure.transactions2
         public void update<T>(T entity) where T : IEntity
         {
             get_identity_map_for<T>().update_the_item_for(entity.Id, entity);
+            transaction.add_dirty(entity);
         }
 
         public void flush()

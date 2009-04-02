@@ -654,7 +654,6 @@
     <Compile Include="Utility\Extensions\mapping_extensions_specs.cs" />
     <Compile Include="Utility\Extensions\numeric_conversions.cs" />
     <Compile Include="Utility\Extensions\numeric_conversions_specs.cs" />
-    <Compile Include="Utility\Extensions\querying_extensions.cs" />
     <Compile Include="Utility\Extensions\SpecificationExtensionsSpecs.cs" />
     <Compile Include="Utility\Extensions\specification_extensions.cs" />
     <Compile Include="Infrastructure\Logging\ILogFactory.cs" />
