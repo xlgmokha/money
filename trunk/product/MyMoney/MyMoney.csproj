@@ -296,6 +296,7 @@
     <Compile Include="Infrastructure\Threading\WorkerThread.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Infrastructure\transactions2\IDatabase.cs" />
     <Compile Include="Infrastructure\transactions2\IIdentityMapFactory.cs" />
     <Compile Include="Infrastructure\transactions2\ITransaction.cs" />
     <Compile Include="Infrastructure\transactions2\Session.cs" />
@@ -638,6 +639,7 @@
     <Compile Include="Utility\Core\OrSpecificationSpecs.cs" />
     <Compile Include="Utility\Core\PredicateSpecification.cs" />
     <Compile Include="Utility\Core\PredicateSpecificationSpecs.cs" />
+    <Compile Include="Utility\Extensions\EnumerableExtensionsSpecs.cs" />
     <Compile Include="Utility\Extensions\RegistryExtensions.cs" />
     <Compile Include="Presentation\Model\Menu\File\FileMenu.cs" />
     <Compile Include="Presentation\Model\Menu\Help\HelpMenu.cs" />

@@ -10,6 +10,7 @@ namespace MoMoney.Infrastructure.transactions2
     {
         IEnumerable<T> all<T>();
         void save<T>(T entity) where T : IEntity;
+        void update<T>(T entity) where T : IEntity;
         void flush();
     }
 
@@ -17,24 +18,31 @@ namespace MoMoney.Infrastructure.transactions2
     {
         readonly IIdentityMapFactory factory;
         ITransaction transaction;
+        IDatabase database;
         readonly IDictionary<Type, object> identity_maps;
 
-        public Session(IIdentityMapFactory factory, ITransaction transaction)
+        public Session(IIdentityMapFactory factory, ITransaction transaction, IDatabase database)
         {
             this.factory = factory;
+            this.database = database;
             this.transaction = transaction;
             identity_maps = new Dictionary<Type, object>();
         }
 
         public IEnumerable<T> all<T>()
         {
-            return get_identity_map_for<T>().all();
+            return get_identity_map_for<T>().all().join_with(database.fetch_all<T>());
         }
 
         public void save<T>(T entity) where T : IEntity
         {
             create_map_for<T>().add(entity.Id, entity);
             transaction.add_transient(entity);
+        }
+
+        public void update<T>(T entity) where T : IEntity
+        {
+            get_identity_map_for<T>().update_the_item_for(entity.Id, entity);
         }
 
         public void flush()

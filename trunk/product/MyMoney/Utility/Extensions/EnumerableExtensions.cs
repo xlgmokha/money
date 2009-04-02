@@ -39,5 +39,15 @@ namespace MoMoney.Utility.Extensions
         {
             foreach (var item in items ?? new List<T>()) action(item);
         }
+
+        public static IEnumerable<T> join_with<T>(this IEnumerable<T> left, IEnumerable<T> right)
+        {
+            if (null == right) return left;
+
+            var list = new List<T>();
+            list.AddRange(left);
+            list.AddRange(right);
+            return list;
+        }
     }
 }

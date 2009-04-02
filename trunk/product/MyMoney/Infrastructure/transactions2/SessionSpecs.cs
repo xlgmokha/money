@@ -18,10 +18,12 @@ namespace MoMoney.Infrastructure.transactions2
                         {
                             factory = the_dependency<IIdentityMapFactory>();
                             transaction = the_dependency<ITransaction>();
+                            database = the_dependency<IDatabase>();
                         };
 
         protected static IIdentityMapFactory factory;
         protected static ITransaction transaction;
+        protected static IDatabase database;
     }
 
     public class when_saving_a_transient_item_to_a_session : behaves_like_session
@@ -80,7 +82,8 @@ namespace MoMoney.Infrastructure.transactions2
                                                                  ///?how
                                                              };
 
-        context c = () => {
+        context c = () =>
+                        {
                             guid = Guid.NewGuid();
                             entity = an<ITestEntity>();
                             map = an<IIdentityMap<Guid, ITestEntity>>();
@@ -88,7 +91,7 @@ namespace MoMoney.Infrastructure.transactions2
                             when_the(entity).is_told_to(x => x.Id).it_will_return(guid);
                             when_the(factory).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(map);
                             when_the(map).is_told_to(x => x.all()).it_will_return(entity);
-        };
+                        };
 
         because b = () =>
                         {
@@ -99,6 +102,36 @@ namespace MoMoney.Infrastructure.transactions2
         static IEnumerable<ITestEntity> results;
         static ITestEntity entity;
         static Guid guid;
+        static IIdentityMap<Guid, ITestEntity> map;
+    }
+
+    public class when_updating_a_persistent_entity : behaves_like_session
+    {
+        it should_update_the_item_in_the_map = () => map.was_told_to(x => x.update_the_item_for(guid,modified));
+
+        context c = () =>
+                        {
+                            guid = Guid.NewGuid();
+                            original = an<ITestEntity>();
+                            modified = an<ITestEntity>();
+
+                            map = an<IIdentityMap<Guid, ITestEntity>>();
+                            when_the(original).is_told_to(x => x.Id).it_will_return(guid);
+                            when_the(modified).is_told_to(x => x.Id).it_will_return(guid);
+                            when_the(factory).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(map);
+                            when_the(database).is_told_to(x => x.fetch_all<ITestEntity>()).it_will_return(original);
+                            when_the(map).is_told_to(x => x.all()).it_will_return_nothing();
+                        };
+
+        because b = () =>
+                        {
+                            sut.all<ITestEntity>();
+                            sut.update(modified);
+                        };
+
+        static Guid guid;
+        static ITestEntity original;
+        static ITestEntity modified;
         static IIdentityMap<Guid, ITestEntity> map;
     }
 
