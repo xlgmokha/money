@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
 using MoMoney.Domain.Core;
-using MoMoney.Infrastructure.caching;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
 
@@ -16,12 +15,10 @@ namespace MoMoney.Infrastructure.transactions2
     {
         context c = () =>
                         {
-                            factory = the_dependency<IIdentityMapFactory>();
                             transaction = the_dependency<ITransaction>();
                             database = the_dependency<IDatabase>();
                         };
 
-        protected static IIdentityMapFactory factory;
         protected static ITransaction transaction;
         protected static IDatabase database;
     }
@@ -39,7 +36,7 @@ namespace MoMoney.Infrastructure.transactions2
                             map = an<IIdentityMap<Guid, ITestEntity>>();
 
                             when_the(entity).is_told_to(x => x.Id).it_will_return(guid);
-                            when_the(factory).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(map);
+                            when_the(transaction).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(map);
                         };
 
         because b = () => sut.save(entity);
@@ -89,7 +86,7 @@ namespace MoMoney.Infrastructure.transactions2
                             map = an<IIdentityMap<Guid, ITestEntity>>();
                             when_the(original).is_told_to(x => x.Id).it_will_return(guid);
                             when_the(modified).is_told_to(x => x.Id).it_will_return(guid);
-                            when_the(factory).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(map);
+                            when_the(transaction).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(map);
                             when_the(database).is_told_to(x => x.fetch_all<ITestEntity>()).it_will_return(original);
                             when_the(map).is_told_to(x => x.all()).it_will_return_nothing();
                         };
@@ -127,7 +124,8 @@ namespace MoMoney.Infrastructure.transactions2
                             when_the(cached_item).is_told_to(x => x.Id).it_will_return(id);
                             when_the(database_item).is_told_to(x => x.Id).it_will_return(id);
                             when_the(uncached_item).is_told_to(x => x.Id).it_will_return(id_of_the_uncached_item);
-                            when_the(factory).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(identity_map);
+                            when_the(transaction).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(
+                                identity_map);
                             when_the(identity_map).is_told_to(x => x.contains_an_item_for(id)).it_will_return(true);
                             when_the(identity_map).is_told_to(x => x.all()).it_will_return(cached_item);
                             when_the(database).is_told_to(x => x.fetch_all<ITestEntity>())
@@ -167,7 +165,7 @@ namespace MoMoney.Infrastructure.transactions2
                             when_the(database)
                                 .is_told_to(x => x.fetch_all<ITestEntity>())
                                 .it_will_return(wrong_item, correct_item);
-                            when_the(factory).is_told_to(x => x.create_for<ITestEntity>())
+                            when_the(transaction).is_told_to(x => x.create_for<ITestEntity>())
                                 .it_will_return(map);
                         };
 
@@ -178,6 +176,35 @@ namespace MoMoney.Infrastructure.transactions2
         static ITestEntity correct_item;
         static ITestEntity wrong_item;
         static IIdentityMap<Guid, ITestEntity> map;
+    }
+
+    public class when_deleting_an_item_from_the_database : behaves_like_session
+    {
+        it should_remove_that_item_from_the_cache = () => map.was_told_to(x => x.remove(id));
+
+        it should_mark_the_item_for_deletion_when_the_transaction_is_committed =
+            () => transaction.was_told_to(x => x.mark_for_deletion(entity));
+
+        context c = () =>
+                        {
+                            id = Guid.NewGuid();
+                            entity = an<ITestEntity>();
+                            map = an<IIdentityMap<Guid, ITestEntity>>();
+
+                            when_the(entity).is_told_to(x => x.Id).it_will_return(id);
+                            when_the(transaction).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(map);
+                            when_the(database).is_told_to(x => x.fetch_all<ITestEntity>()).it_will_return(entity);
+                        };
+
+        because b = () =>
+                        {
+                            sut.find<ITestEntity>(id);
+                            sut.delete(entity);
+                        };
+
+        static Guid id;
+        static IIdentityMap<Guid, ITestEntity> map;
+        static ITestEntity entity;
     }
 
     public interface ITestEntity : IEntity

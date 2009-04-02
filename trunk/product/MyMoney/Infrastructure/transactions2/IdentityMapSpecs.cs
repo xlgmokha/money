@@ -3,7 +3,7 @@ using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
 
-namespace MoMoney.Infrastructure.caching
+namespace MoMoney.Infrastructure.transactions2
 {
     [Concern(typeof (IdentityMap<,>))]
     public class behaves_like_identity_map : concerns_for<IIdentityMap<int, string>, IdentityMap<int, string>>

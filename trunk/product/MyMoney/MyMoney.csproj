@@ -211,8 +211,8 @@
     <Compile Include="Domain\Core\range_specs.cs" />
     <Compile Include="Domain\repositories\IBillRepository.cs" />
     <Compile Include="Domain\repositories\ICompanyRepository.cs" />
-    <Compile Include="Infrastructure\caching\IdentityMapSpecs.cs" />
-    <Compile Include="Infrastructure\caching\IIdentityMap.cs" />
+    <Compile Include="Infrastructure\transactions2\IdentityMapSpecs.cs" />
+    <Compile Include="Infrastructure\transactions2\IIdentityMap.cs" />
     <Compile Include="Infrastructure\cloning\BinarySerializer.cs" />
     <Compile Include="Infrastructure\cloning\BinarySerializerSpecs.cs" />
     <Compile Include="Infrastructure\cloning\ISerializer.cs" />
@@ -297,10 +297,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Infrastructure\transactions2\IDatabase.cs" />
-    <Compile Include="Infrastructure\transactions2\IIdentityMapFactory.cs" />
-    <Compile Include="Infrastructure\transactions2\ITransaction.cs" />
+    <Compile Include="Infrastructure\transactions2\IStatement.cs" />
+    <Compile Include="Infrastructure\transactions2\IStatementRegistry.cs" />
     <Compile Include="Infrastructure\transactions2\Session.cs" />
     <Compile Include="Infrastructure\transactions2\SessionSpecs.cs" />
+    <Compile Include="Infrastructure\transactions2\Transaction.cs" />
+    <Compile Include="Infrastructure\transactions2\TransactionSpecs.cs" />
     <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistrationFactory.cs" />
     <Compile Include="Infrastructure\transactions\NullUnitOfWork.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWork.cs" />
@@ -813,6 +815,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\sqlcompact\" />
+    <Folder Include="Infrastructure\caching\" />
     <Folder Include="Presentation\module\" />
     <Folder Include="Presentation\Views\Menu\Mappers\" />
     <Folder Include="Tasks\domain\" />
