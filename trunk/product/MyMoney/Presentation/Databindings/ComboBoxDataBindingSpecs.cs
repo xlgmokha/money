@@ -3,7 +3,6 @@ using developwithpassion.bdd.contexts;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
-using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MoMoney.Presentation.Databindings
 {
@@ -23,7 +22,7 @@ namespace MoMoney.Presentation.Databindings
                             combo_box.Items.Add(baby_boy);
                             combo_box.Items.Add(baby_girl);
 
-                            mocking_extensions.it_will_return(mocking_extensions.is_asked_for(when_the(thing_to_bind_to), t => t.Child), baby_girl);
+                            MockingExtensions.it_will_return(MockingExtensions.is_asked_for(when_the(thing_to_bind_to), t => t.Child), baby_girl);
                         };
 
         because b = () => Create

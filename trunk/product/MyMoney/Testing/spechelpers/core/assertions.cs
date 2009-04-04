@@ -21,6 +21,12 @@ namespace MoMoney.Testing.spechelpers.core
         }
 
         [AssertionMethod]
+        public static void should_be_null<T>(this T item)
+        {
+            Assert.IsNull(item);
+        }
+
+        [AssertionMethod]
         public static void should_not_be_null<T>(this T item) where T : class
         {
             Assert.IsNotNull(item);

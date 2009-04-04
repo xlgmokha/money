@@ -11,11 +11,11 @@ namespace MoMoney.Infrastructure.cloning
             this.formatter = formatter;
         }
 
-        public void serialize(T toSerialize)
+        public void serialize(T to_serialize)
         {
             using (var stream = new FileStream(file_path, FileMode.Create, FileAccess.Write))
             {
-                formatter.Serialize(stream, toSerialize);
+                formatter.Serialize(stream, to_serialize);
             }
         }
 

@@ -6,13 +6,12 @@ using MoMoney.Infrastructure.Container.Windsor.configuration;
 using MoMoney.Infrastructure.reflection;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.boot.container.registration
 {
-    [Ignore]
+    [Ignore("I am not sure why but line 19 throws a BadImageFormatException")]
     public class behaves_like_auto_registering_components_into_container :
-        concerns_for<IParameterizedCommand<IAssembly>, auto_wire_components_in_to_the>
+        concerns_for<IStartupCommand, auto_wire_components_in_to_the>
     {
         context c = () =>
                         {

@@ -29,11 +29,12 @@ namespace MoMoney.boot.container.registration
             registration.singleton(
                 () =>
                     {
-                        if (SynchronizationContext.Current == null)
-                        {
-                            SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
-                        }
-                        return SynchronizationContext.Current;
+                        return AsyncOperationManager.SynchronizationContext;
+                        //if (SynchronizationContext.Current == null)
+                        //{
+                        //    SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
+                        //}
+                        //return SynchronizationContext.Current;
                     });
             registration.singleton<AsyncOperation>(() => AsyncOperationManager.CreateOperation(null));
             registration.singleton<ApplicationDeployment>(() => ApplicationDeployment.IsNetworkDeployed ? ApplicationDeployment.CurrentDeployment : null);

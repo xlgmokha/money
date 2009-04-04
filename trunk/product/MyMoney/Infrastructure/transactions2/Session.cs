@@ -79,14 +79,14 @@ namespace MoMoney.Infrastructure.transactions2
             if (null != transaction) transaction.rollback_changes();
         }
 
-        IIdentityMap<Guid, T> get_identity_map_for<T>()
+        IIdentityMap<Guid, T> get_identity_map_for<T>() where T : IEntity
         {
             return identity_maps.ContainsKey(typeof (T))
                        ? identity_maps[typeof (T)].downcast_to<IIdentityMap<Guid, T>>()
                        : create_map_for<T>();
         }
 
-        IIdentityMap<Guid, T> create_map_for<T>()
+        IIdentityMap<Guid, T> create_map_for<T>() where T : IEntity
         {
             var identity_map = transaction.create_for<T>();
             identity_maps.Add(typeof (T), identity_map);

@@ -3,7 +3,6 @@ using developwithpassion.bdd.contexts;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
-using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MoMoney.Presentation.Databindings
 {
@@ -17,7 +16,7 @@ namespace MoMoney.Presentation.Databindings
                         {
                             thing_to_bind_to = an<IAnInterface>();
                             text_box = new TextBox();
-                            mocking_extensions.it_will_return(mocking_extensions.is_asked_for(thing_to_bind_to, t => t.FirstName), first_name);
+                            MockingExtensions.it_will_return(MockingExtensions.is_asked_for(thing_to_bind_to, t => t.FirstName), first_name);
                         };
 
         because b = () => Create

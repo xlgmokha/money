@@ -4,7 +4,6 @@ using developwithpassion.bdd.contexts;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
-using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MoMoney.Presentation.Databindings
 {
@@ -15,7 +14,7 @@ namespace MoMoney.Presentation.Databindings
             () => result.property.Name.should_be_equal_to("FirstName");
 
         it should_inspect_the_expression_for_the_property_information =
-            () => mocking_extensions.was_told_to(inspector, i => i.inspect(expression_to_parse));
+            () => MockingExtensions.was_told_to(inspector, i => i.inspect(expression_to_parse));
 
         context c = () =>
                         {
@@ -23,9 +22,9 @@ namespace MoMoney.Presentation.Databindings
                             factory = an<IPropertyInspectorFactory>();
                             inspector = an<IPropertyInspector<IAnInterface, string>>();
 
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(factory, f => f.create<IAnInterface, string>()), inspector);
+                            MockingExtensions.it_will_return(MockingExtensions.is_told_to(factory, f => f.create<IAnInterface, string>()), inspector);
 
-                            mocking_extensions.it_will_return(mocking_extensions.is_told_to(inspector, i => i.inspect(null))
+                            MockingExtensions.it_will_return(MockingExtensions.is_told_to(inspector, i => i.inspect(null))
                                                     .IgnoreArguments(), typeof (IAnInterface).GetProperty("FirstName"));
                         };
 

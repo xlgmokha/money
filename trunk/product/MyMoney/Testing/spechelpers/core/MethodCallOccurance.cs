@@ -1,14 +1,14 @@
 using System;
 using Rhino.Mocks;
 
-namespace MoMoney.Testing.Extensions
+namespace MoMoney.Testing.spechelpers.core
 {
-    public class method_call_occurance<T> : IHideObjectMembers
+    public class MethodCallOccurance<T> : IHideObjectMembers
     {
         readonly Action<T> action;
         readonly T mock;
 
-        public method_call_occurance(T mock, Action<T> action)
+        public MethodCallOccurance(T mock, Action<T> action)
         {
             this.action = action;
             this.mock = mock;

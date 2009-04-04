@@ -1,17 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MoMoney.Testing.Extensions;
 using Rhino.Mocks;
 using Rhino.Mocks.Interfaces;
 
 namespace MoMoney.Testing.spechelpers.core
 {
-    public static class mocking_extensions
+    public static class MockingExtensions
     {
-        public static method_call_occurance<T> was_told_to<T>(this T mocked_item, Action<T> actionToPerform)
+        public static MethodCallOccurance<T> was_told_to<T>(this T mocked_item, Action<T> action_to_perform)
         {
-            return new method_call_occurance<T>(mocked_item, actionToPerform);
+            return new MethodCallOccurance<T>(mocked_item, action_to_perform);
         }
 
         public static void was_not_told_to<T>(this T mocked_item, Action<T> action_to_perform)

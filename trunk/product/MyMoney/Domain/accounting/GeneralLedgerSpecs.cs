@@ -6,7 +6,6 @@ using MoMoney.Domain.Core;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
-using mocking_extensions=MoMoney.Testing.spechelpers.core.mocking_extensions;
 
 namespace MoMoney.Domain.accounting
 {

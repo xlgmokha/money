@@ -2,14 +2,17 @@ using System;
 using System.Reflection;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.reflection;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.boot.container.registration
 {
-    public class auto_wire_components_in_to_the : ICommand, IParameterizedCommand<IAssembly>
+    public interface IStartupCommand : ICommand, IParameterizedCommand<IAssembly>
+    {
+    }
+
+    public class auto_wire_components_in_to_the : IStartupCommand
     {
         readonly IDependencyRegistration registrar;
         readonly IComponentExclusionSpecification exclusion_policy;
@@ -36,15 +39,8 @@ namespace MoMoney.boot.container.registration
 
         void add_registration_for(Type type)
         {
-            if (type.GetInterfaces().Length > 0)
-            {
-                registrar.transient(type.first_interface(), type);
-            }
-            else
-            {
-                registrar.transient(type, type);
-            }
-            //this.log().debug("registered: {0}", type);
+            if (type.GetInterfaces().Length > 0) registrar.transient(type.first_interface(), type);
+            else registrar.transient(type, type);
         }
     }
 }

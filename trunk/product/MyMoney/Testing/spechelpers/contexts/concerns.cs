@@ -1,5 +1,5 @@
 using developwithpassion.bdd.mbunit.standard.observations;
-using MoMoney.Testing.Extensions;
+using MoMoney.Testing.spechelpers.core;
 using Rhino.Mocks;
 
 namespace MoMoney.Testing.spechelpers.contexts
