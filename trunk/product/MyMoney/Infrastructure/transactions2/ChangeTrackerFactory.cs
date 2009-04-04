@@ -1,3 +1,4 @@
+using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.Container;
 
 namespace MoMoney.Infrastructure.transactions2
@@ -13,7 +14,7 @@ namespace MoMoney.Infrastructure.transactions2
             this.registry = registry;
         }
 
-        public IChangeTracker<T> create_for<T>()
+        public IChangeTracker<T> create_for<T>() where T : IEntity
         {
             return new ChangeTracker<T>(registry.get_a<ITrackerEntryMapper<T>>(), statement_registry);
         }

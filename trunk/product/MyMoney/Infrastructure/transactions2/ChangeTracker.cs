@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+using MoMoney.Domain.Core;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.transactions2
 {
-    public class ChangeTracker<T> : IChangeTracker<T>
+    public class ChangeTracker<T> : IChangeTracker<T> where T : IEntity
     {
         readonly ITrackerEntryMapper<T> mapper;
         readonly IStatementRegistry registry;
@@ -37,7 +38,7 @@ namespace MoMoney.Infrastructure.transactions2
 
         public bool is_dirty()
         {
-            return items.Count(x => x.contains_changes()) > 0 || to_be_deleted.Count > 0;
+            return items.Count(x => x.has_changes()) > 0 || to_be_deleted.Count > 0;
         }
 
         public void Dispose()
@@ -47,7 +48,7 @@ namespace MoMoney.Infrastructure.transactions2
 
         void commit(ITrackerEntry<T> entry, IDatabase database)
         {
-            if (entry.contains_changes()) database.apply(registry.prepare_command_for(entry.current));
+            if (entry.has_changes()) database.apply(registry.prepare_command_for(entry.current));
         }
     }
 }

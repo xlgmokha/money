@@ -35,7 +35,7 @@ namespace MoMoney.Infrastructure.transactions2
                             var entry = an<ITrackerEntry<IEntity>>();
 
                             when_the(mapper).is_told_to(x => x.map_from(item)).it_will_return(entry);
-                            when_the(entry).is_told_to(x => x.contains_changes()).it_will_return(true);
+                            when_the(entry).is_told_to(x => x.has_changes()).it_will_return(true);
                             when_the(entry).is_told_to(x => x.current).it_will_return(item);
                             when_the(registry).is_told_to(x => x.prepare_command_for(item)).it_will_return(statement);
                         };
@@ -61,7 +61,7 @@ namespace MoMoney.Infrastructure.transactions2
                             var registration = an<ITrackerEntry<IEntity>>();
 
                             when_the(mapper).is_told_to(x => x.map_from(item)).it_will_return(registration);
-                            when_the(registration).is_told_to(x => x.contains_changes()).it_will_return(true);
+                            when_the(registration).is_told_to(x => x.has_changes()).it_will_return(true);
                             when_the(registration).is_told_to(x => x.current).it_will_return(item);
                         };
 
@@ -85,7 +85,7 @@ namespace MoMoney.Infrastructure.transactions2
                             var entry = an<ITrackerEntry<IEntity>>();
 
                             when_the(mapper).is_told_to(x => x.map_from(item)).it_will_return(entry);
-                            when_the(entry).is_told_to(x => x.contains_changes()).it_will_return(false);
+                            when_the(entry).is_told_to(x => x.has_changes()).it_will_return(false);
                         };
 
         because b = () =>

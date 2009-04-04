@@ -215,7 +215,10 @@
     <Compile Include="Infrastructure\transactions2\ChangeTrackerFactory.cs" />
     <Compile Include="Infrastructure\transactions2\ChangeTrackerFactorySpecs.cs" />
     <Compile Include="Infrastructure\transactions2\ChangeTrackerSpecs.cs" />
+    <Compile Include="Infrastructure\transactions2\ConfigureDatabaseStep.cs" />
+    <Compile Include="Infrastructure\transactions2\ConnectionFactory.cs" />
     <Compile Include="Infrastructure\transactions2\Database.cs" />
+    <Compile Include="Infrastructure\transactions2\DatabaseConfiguration.cs" />
     <Compile Include="Infrastructure\transactions2\IChangeTracker.cs" />
     <Compile Include="Infrastructure\transactions2\IChangeTrackerFactory.cs" />
     <Compile Include="Infrastructure\transactions2\IdentityMapProxy.cs" />
