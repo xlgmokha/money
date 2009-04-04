@@ -1,7 +1,5 @@
 using System;
-using System.Threading;
 using log4net;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Logging.Log4NetLogging
 {
@@ -14,14 +12,14 @@ namespace MoMoney.Infrastructure.Logging.Log4NetLogging
             this.log = log;
         }
 
-        public void informational(string formattedString, params object[] arguments)
+        public void informational(string formatted_string, params object[] arguments)
         {
-            log.InfoFormat(formattedString, arguments);
+            log.InfoFormat(formatted_string, arguments);
         }
 
         public void debug(string formatted_string, params object[] arguments)
         {
-            log.DebugFormat("Thread: {0}, {1}", Thread.CurrentThread.ManagedThreadId, formatted_string.formatted_using(arguments));
+            log.DebugFormat(formatted_string, arguments);
         }
 
         public void error(Exception e)

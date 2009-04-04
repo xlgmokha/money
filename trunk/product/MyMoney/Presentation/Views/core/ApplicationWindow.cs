@@ -51,8 +51,9 @@ namespace MoMoney.Presentation.Views.core
 
         protected void on_ui_thread(Action action)
         {
-            if (InvokeRequired) BeginInvoke(action);
-            else action();
+            //if (InvokeRequired) BeginInvoke(action);
+            //else action();
+             action();
         }
     }
 }

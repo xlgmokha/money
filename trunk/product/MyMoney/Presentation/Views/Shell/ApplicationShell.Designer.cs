@@ -30,9 +30,12 @@ namespace MoMoney.Presentation.Views.Shell {
             this.components = new System.ComponentModel.Container();
             this.ux_main_menu_strip = new System.Windows.Forms.MenuStrip();
             this.ux_status_bar = new System.Windows.Forms.StatusStrip();
+            this.status_bar_label = new System.Windows.Forms.ToolStripStatusLabel();
+            this.status_bar_progress_bar = new System.Windows.Forms.ToolStripProgressBar();
             this.ux_dock_panel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.ux_tool_bar_strip = new System.Windows.Forms.ToolStrip();
             this.notification_icon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ux_status_bar.SuspendLayout();
             this.SuspendLayout();
             // 
             // ux_main_menu_strip
@@ -47,18 +50,32 @@ namespace MoMoney.Presentation.Views.Shell {
             // 
             // ux_status_bar
             // 
-            this.ux_status_bar.Location = new System.Drawing.Point(0, 602);
+            this.ux_status_bar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.status_bar_label,
+            this.status_bar_progress_bar});
+            this.ux_status_bar.Location = new System.Drawing.Point(0, 599);
             this.ux_status_bar.Name = "ux_status_bar";
             this.ux_status_bar.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
             this.ux_status_bar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.ux_status_bar.Size = new System.Drawing.Size(1008, 22);
+            this.ux_status_bar.Size = new System.Drawing.Size(1008, 25);
             this.ux_status_bar.TabIndex = 2;
             this.ux_status_bar.Text = "statusStrip1";
+            // 
+            // status_bar_label
+            // 
+            this.status_bar_label.Name = "status_bar_label";
+            this.status_bar_label.Size = new System.Drawing.Size(18, 20);
+            this.status_bar_label.Text = "...";
+            // 
+            // status_bar_progress_bar
+            // 
+            this.status_bar_progress_bar.Name = "status_bar_progress_bar";
+            this.status_bar_progress_bar.Size = new System.Drawing.Size(100, 19);
             // 
             // ux_dock_panel
             // 
             this.ux_dock_panel.ActiveAutoHideContent = null;
-            this.ux_dock_panel.BackColor = System.Drawing.Color.Transparent;
+            this.ux_dock_panel.BackColor = System.Drawing.Color.White;
             this.ux_dock_panel.CausesValidation = false;
             this.ux_dock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ux_dock_panel.DockBackColor = System.Drawing.Color.Transparent;
@@ -71,7 +88,7 @@ namespace MoMoney.Presentation.Views.Shell {
             this.ux_dock_panel.Margin = new System.Windows.Forms.Padding(4);
             this.ux_dock_panel.Name = "ux_dock_panel";
             this.ux_dock_panel.RightToLeftLayout = true;
-            this.ux_dock_panel.Size = new System.Drawing.Size(1008, 578);
+            this.ux_dock_panel.Size = new System.Drawing.Size(1008, 575);
             this.ux_dock_panel.TabIndex = 3;
             // 
             // ux_tool_bar_strip
@@ -107,6 +124,8 @@ namespace MoMoney.Presentation.Views.Shell {
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MoMoney";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.ux_status_bar.ResumeLayout(false);
+            this.ux_status_bar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +138,7 @@ namespace MoMoney.Presentation.Views.Shell {
         private WeifenLuo.WinFormsUI.Docking.DockPanel ux_dock_panel;
         private System.Windows.Forms.ToolStrip ux_tool_bar_strip;
         private System.Windows.Forms.NotifyIcon notification_icon;
+        private System.Windows.Forms.ToolStripStatusLabel status_bar_label;
+        private System.Windows.Forms.ToolStripProgressBar status_bar_progress_bar;
     }
 }

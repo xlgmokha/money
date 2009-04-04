@@ -6,7 +6,7 @@ using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Views.Shell
 {
-    public static class button_extensions
+    public static class ButtonExtensions
     {
         public static Button will_be_shown_as(this Button button, Bitmap image)
         {

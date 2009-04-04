@@ -28,8 +28,9 @@ namespace MoMoney.Presentation.Views.Shell
                               {ux_tool_bar_strip.GetType().FullName, ux_tool_bar_strip},
                               {ux_status_bar.GetType().FullName, ux_status_bar},
                               {notification_icon.GetType().FullName, notification_icon},
+                              {status_bar_label.GetType().FullName, status_bar_label},
+                              {status_bar_progress_bar.GetType().FullName, status_bar_progress_bar}
                           };
-            base.BackColor = Color.FromArgb(229, 238, 226);
         }
 
         protected override void OnLoad(EventArgs e)
