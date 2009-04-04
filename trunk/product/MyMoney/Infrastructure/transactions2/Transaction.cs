@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using MoMoney.Domain.Core;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.transactions2
@@ -25,7 +23,7 @@ namespace MoMoney.Infrastructure.transactions2
         readonly List<IEntity> transients;
         readonly List<IEntity> dirty;
         readonly List<IEntity> to_be_deleted;
-        IDictionary<Type, IChangeTracker> change_trackers;
+        readonly IDictionary<Type, IChangeTracker> change_trackers;
 
         public Transaction(IStatementRegistry registry, IDatabase database, IChangeTrackerFactory factory)
         {
@@ -76,12 +74,7 @@ namespace MoMoney.Infrastructure.transactions2
 
         IChangeTracker<T> get_change_tracker_for<T>() where T : IEntity
         {
-            if (!change_trackers.ContainsKey(typeof(T)))
-            {
-                var tracker = factory.create_for<T>();
-                this.log().debug("tracker: {0}", tracker);
-                change_trackers.Add(typeof(T), tracker);
-            }
+            if (!change_trackers.ContainsKey(typeof (T))) change_trackers.Add(typeof (T), factory.create_for<T>());
             return change_trackers[typeof (T)].downcast_to<IChangeTracker<T>>();
         }
     }

@@ -211,6 +211,11 @@
     <Compile Include="Domain\Core\range_specs.cs" />
     <Compile Include="Domain\repositories\IBillRepository.cs" />
     <Compile Include="Domain\repositories\ICompanyRepository.cs" />
+    <Compile Include="Infrastructure\transactions2\ChangeTracker.cs" />
+    <Compile Include="Infrastructure\transactions2\ChangeTrackerFactory.cs" />
+    <Compile Include="Infrastructure\transactions2\ChangeTrackerFactorySpecs.cs" />
+    <Compile Include="Infrastructure\transactions2\ChangeTrackerSpecs.cs" />
+    <Compile Include="Infrastructure\transactions2\Database.cs" />
     <Compile Include="Infrastructure\transactions2\IChangeTracker.cs" />
     <Compile Include="Infrastructure\transactions2\IChangeTrackerFactory.cs" />
     <Compile Include="Infrastructure\transactions2\IdentityMapProxy.cs" />
@@ -302,8 +307,13 @@
     <Compile Include="Infrastructure\transactions2\IDatabase.cs" />
     <Compile Include="Infrastructure\transactions2\IStatement.cs" />
     <Compile Include="Infrastructure\transactions2\IStatementRegistry.cs" />
+    <Compile Include="Infrastructure\transactions2\ITrackerEntry.cs" />
+    <Compile Include="Infrastructure\transactions2\ITrackerEntryMapper.cs" />
     <Compile Include="Infrastructure\transactions2\Session.cs" />
+    <Compile Include="Infrastructure\transactions2\SessionFactory.cs" />
+    <Compile Include="Infrastructure\transactions2\SessionFactorySpecs.cs" />
     <Compile Include="Infrastructure\transactions2\SessionSpecs.cs" />
+    <Compile Include="Infrastructure\transactions2\StatementRegistry.cs" />
     <Compile Include="Infrastructure\transactions2\Transaction.cs" />
     <Compile Include="Infrastructure\transactions2\TransactionSpecs.cs" />
     <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistrationFactory.cs" />

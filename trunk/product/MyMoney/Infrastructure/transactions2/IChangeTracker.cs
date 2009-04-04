@@ -1,3 +1,5 @@
+using System;
+
 namespace MoMoney.Infrastructure.transactions2
 {
     public interface IChangeTracker
@@ -6,7 +8,7 @@ namespace MoMoney.Infrastructure.transactions2
         void commit_to(IDatabase database);
     }
 
-    public interface IChangeTracker<T> : IChangeTracker
+    public interface IChangeTracker<T> : IChangeTracker, IDisposable
     {
         void register(T value);
     }

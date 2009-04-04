@@ -77,14 +77,12 @@ namespace MoMoney.Infrastructure.transactions2
                     entity = an<IEntity>();
                     update_statement = an<IStatement>();
 
-                    Log.For(entity).debug("context");
                     when_the(registry).is_told_to(x => x.prepare_update_statement_for(entity)).it_will_return( update_statement).Repeat.Any();
                 };
 
         because b =
             () =>
                 {
-                    Log.For(entity).debug("because");
                     sut.add_dirty(entity);
                     sut.commit_changes();
                 };
