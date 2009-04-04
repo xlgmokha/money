@@ -21,7 +21,7 @@ namespace MoMoney.Infrastructure.transactions2
 
         public ISession create()
         {
-            return new Session(new Transaction(registry, database, factory), database);
+            return new Session(new Transaction(database, factory), database);
         }
     }
 }

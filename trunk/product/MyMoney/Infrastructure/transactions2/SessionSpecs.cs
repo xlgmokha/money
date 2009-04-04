@@ -27,7 +27,7 @@ namespace MoMoney.Infrastructure.transactions2
     {
         it should_add_the_entity_to_the_identity_map = () => map.was_told_to(x => x.add(guid, entity));
 
-        it should_add_the_item_to_the_current_transaction = () => transaction.was_told_to(x => x.add_transient(entity));
+        //it should_add_the_item_to_the_current_transaction = () => transaction.was_told_to(x => x.add_transient(entity));
 
         context c = () =>
                         {
@@ -67,40 +67,6 @@ namespace MoMoney.Infrastructure.transactions2
             () => transaction.was_told_to(x => x.rollback_changes());
 
         because b = () => sut.Dispose();
-    }
-
-
-    public class when_updating_a_persistent_entity : behaves_like_session
-    {
-        it should_update_the_item_in_the_map = () => map.was_told_to(x => x.update_the_item_for(guid, modified));
-
-        it should_mark_the_item_as_changed_with_the_transaction =
-            () => transaction.was_told_to(x => x.add_dirty(modified));
-
-        context c = () =>
-                        {
-                            guid = Guid.NewGuid();
-                            original = an<ITestEntity>();
-                            modified = an<ITestEntity>();
-
-                            map = an<IIdentityMap<Guid, ITestEntity>>();
-                            when_the(original).is_told_to(x => x.Id).it_will_return(guid);
-                            when_the(modified).is_told_to(x => x.Id).it_will_return(guid);
-                            when_the(transaction).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(map);
-                            when_the(database).is_told_to(x => x.fetch_all<ITestEntity>()).it_will_return(original);
-                            when_the(map).is_told_to(x => x.all()).it_will_return_nothing();
-                        };
-
-        because b = () =>
-                        {
-                            sut.all<ITestEntity>();
-                            sut.update(modified);
-                        };
-
-        static Guid guid;
-        static ITestEntity original;
-        static ITestEntity modified;
-        static IIdentityMap<Guid, ITestEntity> map;
     }
 
     public class when_loading_all_instances_of_a_certain_type_and_some_have_already_been_loaded : behaves_like_session
@@ -180,10 +146,9 @@ namespace MoMoney.Infrastructure.transactions2
 
     public class when_deleting_an_item_from_the_database : behaves_like_session
     {
-        it should_remove_that_item_from_the_cache = () => map.was_told_to(x => x.remove(id));
+        it should_remove_that_item_from_the_cache = () => map.was_told_to(x => x.evict(id));
 
-        it should_mark_the_item_for_deletion_when_the_transaction_is_committed =
-            () => transaction.was_told_to(x => x.mark_for_deletion(entity));
+        //it should_mark_the_item_for_deletion_when_the_transaction_is_committed = () => transaction.was_told_to(x => x.mark_for_deletion(entity));
 
         context c = () =>
                         {

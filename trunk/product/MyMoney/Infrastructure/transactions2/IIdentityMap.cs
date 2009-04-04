@@ -10,7 +10,7 @@ namespace MoMoney.Infrastructure.transactions2
         void update_the_item_for(TKey key, TValue new_value);
         bool contains_an_item_for(TKey key);
         TValue item_that_belongs_to(TKey key);
-        void remove(TKey key);
+        void evict(TKey key);
     }
 
     public class IdentityMap<TKey, TValue> : IIdentityMap<TKey, TValue>
@@ -52,9 +52,9 @@ namespace MoMoney.Infrastructure.transactions2
             return contains_an_item_for(key) ? items_in_map[key] : default(TValue);
         }
 
-        public void remove(TKey key)
+        public void evict(TKey key)
         {
-            throw new NotImplementedException();
+            if (contains_an_item_for(key)) items_in_map.Remove(key);
         }
     }
 }

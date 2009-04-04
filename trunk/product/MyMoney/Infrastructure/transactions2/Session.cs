@@ -11,7 +11,6 @@ namespace MoMoney.Infrastructure.transactions2
         IEntity find<T>(Guid guid) where T : IEntity;
         IEnumerable<T> all<T>() where T : IEntity;
         void save<T>(T entity) where T : IEntity;
-        void update<T>(T entity) where T : IEntity;
         void delete<T>(T entity) where T : IEntity;
         void flush();
     }
@@ -53,19 +52,11 @@ namespace MoMoney.Infrastructure.transactions2
         public void save<T>(T entity) where T : IEntity
         {
             get_identity_map_for<T>().add(entity.Id, entity);
-            transaction.add_transient(entity);
-        }
-
-        public void update<T>(T entity) where T : IEntity
-        {
-            get_identity_map_for<T>().update_the_item_for(entity.Id, entity);
-            transaction.add_dirty(entity);
         }
 
         public void delete<T>(T entity) where T : IEntity
         {
-            transaction.mark_for_deletion(entity);
-            get_identity_map_for<T>().remove(entity.Id);
+            get_identity_map_for<T>().evict(entity.Id);
         }
 
         public void flush()

@@ -40,9 +40,10 @@ namespace MoMoney.Infrastructure.transactions2
             return real_map.item_that_belongs_to(key);
         }
 
-        public void remove(Key key)
+        public void evict(Key key)
         {
-            real_map.remove(key);
+            change_tracker.delete(real_map.item_that_belongs_to(key));
+            real_map.evict(key);
         }
     }
 }

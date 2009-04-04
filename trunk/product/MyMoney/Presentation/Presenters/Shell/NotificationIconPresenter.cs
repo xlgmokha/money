@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
@@ -27,6 +28,7 @@ namespace MoMoney.Presentation.Presenters.Shell
         {
             broker.subscribe_to<ClosingTheApplication>(this);
             broker.subscribe_to<NewProjectOpened>(this);
+            NetworkChange.NetworkAvailabilityChanged += (sender, args) => view.display(ApplicationIcons.Application, args.IsAvailable ? "Connected To A Network" : "Disconnected From Network");
             view.display(ApplicationIcons.Application, "mokhan.ca");
         }
 
