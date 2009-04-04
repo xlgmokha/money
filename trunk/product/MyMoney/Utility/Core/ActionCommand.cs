@@ -1,10 +1,16 @@
 using System;
+using System.Linq.Expressions;
 
 namespace MoMoney.Utility.Core
 {
     public class ActionCommand : ICommand
     {
         readonly Action action;
+
+        public ActionCommand(Expression<Action> action) : this(action.Compile())
+        {
+
+        }
 
         public ActionCommand(Action action)
         {

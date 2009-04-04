@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
-using System.Drawing;
 using System.Windows.Forms;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Views.core;
@@ -46,32 +45,25 @@ namespace MoMoney.Presentation.Views.Shell
 
         public void add(IDockedContentView view)
         {
-            on_ui_thread(() => view.add_to(ux_dock_panel));
+            view.add_to(ux_dock_panel);
         }
 
         public void region<Region>(Action<Region> action) where Region : IComponent
         {
             ensure_that_the_region_exists<Region>();
-            on_ui_thread(() => action(regions[typeof (Region).FullName].downcast_to<Region>()));
+            action(regions[typeof (Region).FullName].downcast_to<Region>());
         }
 
         public void close_the_active_window()
         {
-            on_ui_thread(() => ux_dock_panel.ActiveDocument.DockHandler.Close());
+            ux_dock_panel.ActiveDocument.DockHandler.Close();
         }
 
         public void close_all_windows()
         {
-            on_ui_thread(() =>
-                             {
-                                 using (new SuspendLayout(ux_dock_panel))
-                                 {
-                                     while (ux_dock_panel.Contents.Count > 0)
-                                     {
-                                         ux_dock_panel.Contents[0].DockHandler.Close();
-                                     }
-                                 }
-                             });
+            using (new SuspendLayout(ux_dock_panel))
+                while (ux_dock_panel.Contents.Count > 0)
+                    ux_dock_panel.Contents[0].DockHandler.Close();
         }
 
         void ensure_that_the_region_exists<T>()

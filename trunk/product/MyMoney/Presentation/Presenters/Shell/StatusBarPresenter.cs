@@ -29,10 +29,7 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void run()
         {
-            broker.subscribe_to<SavedChangesEvent>(this);
-            broker.subscribe_to<NewProjectOpened>(this);
-            broker.subscribe_to<ClosingTheApplication>(this);
-            broker.subscribe_to<ClosingProjectEvent>(this);
+            broker.subscribe(this);
         }
 
         public void notify(SavedChangesEvent message)

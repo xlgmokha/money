@@ -19,12 +19,12 @@ namespace MoMoney.Infrastructure.eventing
     public class EventAggregator : IEventAggregator
     {
         readonly SynchronizationContext context;
-        readonly List<object> subscribers;
+        readonly HashSet<object> subscribers;
         readonly object mutex;
 
         public EventAggregator(SynchronizationContext context)
         {
-            subscribers = new List<object>();
+            subscribers = new HashSet<object>();
             mutex = new object();
             this.context = context;
         }

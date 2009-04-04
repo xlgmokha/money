@@ -21,9 +21,14 @@ namespace MoMoney.Presentation.Model.Menu
     public class MenuItemBuilder : IMenuItemBuilder
     {
         readonly IDependencyRegistry registry;
-        Func<bool> can_be_clicked = () => true;
         readonly IEventAggregator aggregator;
         readonly ICommandProcessor processor;
+
+        string name_of_the_menu { get; set; }
+        Action command_to_execute { get; set; }
+        HybridIcon icon { get; set; }
+        ShortcutKey key { get; set; }
+        Func<bool> can_be_clicked = () => true;
 
         public MenuItemBuilder(IDependencyRegistry registry, IEventAggregator aggregator, ICommandProcessor processor)
         {
@@ -35,11 +40,6 @@ namespace MoMoney.Presentation.Model.Menu
             icon = ApplicationIcons.Empty;
             key = ShortcutKeys.none;
         }
-
-        public string name_of_the_menu { get; private set; }
-        public Action command_to_execute { get; private set; }
-        public HybridIcon icon { get; private set; }
-        public ShortcutKey key { get; private set; }
 
         public IMenuItemBuilder named(string name)
         {

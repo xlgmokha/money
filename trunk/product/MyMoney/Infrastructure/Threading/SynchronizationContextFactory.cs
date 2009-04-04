@@ -1,3 +1,5 @@
+using System.Threading;
+using MoMoney.Infrastructure.Container;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.Threading
@@ -8,16 +10,16 @@ namespace MoMoney.Infrastructure.Threading
 
     public class SynchronizationContextFactory : ISynchronizationContextFactory
     {
-        readonly ISynchronizationContext context;
+        readonly IDependencyRegistry registry;
 
-        public SynchronizationContextFactory(ISynchronizationContext context)
+        public SynchronizationContextFactory(IDependencyRegistry registry)
         {
-            this.context = context;
+            this.registry = registry;
         }
 
         public ISynchronizationContext create()
         {
-            return context;
+            return new SynchronizedContext(registry.get_a<SynchronizationContext>());
         }
     }
 }

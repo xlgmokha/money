@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading;
 using MoMoney.Utility.Core;
 
@@ -19,7 +20,7 @@ namespace MoMoney.Infrastructure.Threading
             manual_reset = new ManualResetEvent(false);
         }
 
-        public void add(Action action_to_process)
+        public void add(Expression<Action> action_to_process)
         {
             add(new ActionCommand(action_to_process));
         }

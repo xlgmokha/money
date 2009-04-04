@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.Threading
@@ -13,7 +14,7 @@ namespace MoMoney.Infrastructure.Threading
             queued_commands = new Queue<ICommand>();
         }
 
-        public void add(Action action_to_process)
+        public void add(Expression<Action> action_to_process)
         {
             add(new ActionCommand(action_to_process));
         }
@@ -25,10 +26,7 @@ namespace MoMoney.Infrastructure.Threading
 
         public void run()
         {
-            while (queued_commands.Count > 0)
-            {
-                queued_commands.Dequeue().run();
-            }
+            while (queued_commands.Count > 0) queued_commands.Dequeue().run();
         }
 
         public void stop()
