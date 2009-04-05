@@ -9,13 +9,11 @@ namespace MoMoney.Infrastructure.transactions2
     public class SessionFactory : ISessionFactory
     {
         readonly IDatabase database;
-        readonly IStatementRegistry registry;
         readonly IChangeTrackerFactory factory;
 
-        public SessionFactory(IDatabase database, IStatementRegistry registry, IChangeTrackerFactory factory)
+        public SessionFactory(IDatabase database, IChangeTrackerFactory factory)
         {
             this.database = database;
-            this.registry = registry;
             this.factory = factory;
         }
 

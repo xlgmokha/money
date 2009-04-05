@@ -1,5 +1,6 @@
 using MoMoney.DataAccess.db40;
 using MoMoney.Infrastructure.Container;
+using MoMoney.Infrastructure.transactions2;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.boot.container.registration
@@ -16,6 +17,7 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             register.singleton<ISessionContext, SessionContext>();
+            register.singleton<IDatabaseConfiguration, DatabaseConfiguration>();
         }
     }
 }

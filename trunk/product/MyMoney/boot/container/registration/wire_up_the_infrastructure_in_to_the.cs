@@ -3,6 +3,7 @@ using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.registries;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Infrastructure.transactions;
+using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Utility.Core;
 
@@ -25,6 +26,8 @@ namespace MoMoney.boot.container.registration
             registry.singleton<IProject, CurrentProject>();
             registry.transient(typeof (IRegistry<>), typeof (DefaultRegistry<>));
             registry.transient(typeof (IUnitOfWorkRegistrationFactory<>), typeof (UnitOfWorkRegistrationFactory<>));
+
+            registry.transient(typeof (ITrackerEntryMapper<>), typeof (TrackerEntryMapper<>));
         }
     }
 }

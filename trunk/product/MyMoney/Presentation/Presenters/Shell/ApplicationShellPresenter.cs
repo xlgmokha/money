@@ -6,7 +6,7 @@ using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {
-    public interface IApplicationShellPresenter : IPresentationModule, IEventSubscriber<ClosingProjectEvent>
+    public interface IApplicationShellPresenter : IPresenter, IEventSubscriber<ClosingProjectEvent>
     {
         void shut_down();
     }

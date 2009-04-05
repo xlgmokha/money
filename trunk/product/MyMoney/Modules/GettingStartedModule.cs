@@ -1,11 +1,12 @@
 using MoMoney.Infrastructure.eventing;
-using MoMoney.Presentation.Core;
+using MoMoney.Modules.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters.Shell;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Modules
 {
-    public interface IGettingStartedModule : IPresentationModule,
+    public interface IGettingStartedModule : IModule,
                                              IEventSubscriber<NewProjectOpened>,
                                              IEventSubscriber<ClosingProjectEvent>
     {

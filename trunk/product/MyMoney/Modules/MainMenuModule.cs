@@ -1,11 +1,12 @@
 using MoMoney.Infrastructure.eventing;
-using MoMoney.Presentation.Core;
+using MoMoney.Modules.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters.Navigation;
 
-namespace MoMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Modules
 {
-    public interface IMainMenuModule : IPresentationModule, IEventSubscriber<NewProjectOpened>
+    public interface IMainMenuModule : IModule, IEventSubscriber<NewProjectOpened>
     {
     }
 

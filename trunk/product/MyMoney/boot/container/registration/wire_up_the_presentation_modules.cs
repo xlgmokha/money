@@ -1,6 +1,7 @@
 using System.Reflection;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.reflection;
+using MoMoney.Modules.Core;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
@@ -44,9 +45,9 @@ namespace MoMoney.boot.container.registration
 
             item
                 .all_types()
-                .where(x => typeof (IPresentationModule).IsAssignableFrom(x))
+                .where(x => typeof (IModule).IsAssignableFrom(x))
                 .where(x => !x.IsInterface)
-                .each(type => registry.transient(typeof (IPresentationModule), type));
+                .each(type => registry.transient(typeof (IModule), type));
         }
     }
 }

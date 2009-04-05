@@ -5,7 +5,7 @@ using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Modules
 {
     public class GettingStartedModuleSpecs
     {

@@ -1,12 +1,12 @@
 using MoMoney.Infrastructure.eventing;
-using MoMoney.Presentation.Core;
+using MoMoney.Modules.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {
-    public interface ITitleBarPresenter : IPresentationModule,
+    public interface ITitleBarPresenter : IModule,
                                           IEventSubscriber<UnsavedChangesEvent>,
                                           IEventSubscriber<SavedChangesEvent>,
                                           IEventSubscriber<NewProjectOpened>,

@@ -310,15 +310,17 @@
     <Compile Include="Infrastructure\transactions2\IDatabase.cs" />
     <Compile Include="Infrastructure\transactions2\IStatement.cs" />
     <Compile Include="Infrastructure\transactions2\IStatementRegistry.cs" />
-    <Compile Include="Infrastructure\transactions2\ITrackerEntry.cs" />
-    <Compile Include="Infrastructure\transactions2\ITrackerEntryMapper.cs" />
     <Compile Include="Infrastructure\transactions2\Session.cs" />
     <Compile Include="Infrastructure\transactions2\SessionFactory.cs" />
     <Compile Include="Infrastructure\transactions2\SessionFactorySpecs.cs" />
     <Compile Include="Infrastructure\transactions2\SessionSpecs.cs" />
     <Compile Include="Infrastructure\transactions2\StatementRegistry.cs" />
+    <Compile Include="Infrastructure\transactions2\TrackerEntry.cs" />
+    <Compile Include="Infrastructure\transactions2\TrackerEntryMapper.cs" />
+    <Compile Include="Infrastructure\transactions2\TrackerEntrySpecs.cs" />
     <Compile Include="Infrastructure\transactions2\Transaction.cs" />
     <Compile Include="Infrastructure\transactions2\TransactionSpecs.cs" />
+    <Compile Include="Infrastructure\transactions2\UnitOfWorkInterceptor.cs" />
     <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistrationFactory.cs" />
     <Compile Include="Infrastructure\transactions\NullUnitOfWork.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWork.cs" />
@@ -330,6 +332,8 @@
     <Compile Include="Infrastructure\transactions\UnitOfWorkRegistry.cs" />
     <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrySpecs.cs" />
     <Compile Include="Infrastructure\transactions\unit_of_work_specs.cs" />
+    <Compile Include="Modules\ApplicationShellModule.cs" />
+    <Compile Include="Modules\DatabaseModule.cs" />
     <Compile Include="Presentation\Core\IContentPresenter.cs" />
     <Compile Include="Presentation\Databindings\date_time_picker_property_binding.cs" />
     <Compile Include="Presentation\Databindings\date_time_property_binding_specs.cs" />
@@ -411,7 +415,7 @@
     <Compile Include="Presentation\Presenters\income\dto\monthly_summary_dto.cs" />
     <Compile Include="Presentation\Presenters\income\ViewIncomeHistoryPresenter.cs" />
     <Compile Include="Presentation\Presenters\Menu\Help\AboutTheApplicationPresenter.cs" />
-    <Compile Include="Presentation\Presenters\Menu\ApplicationMenuModule.cs" />
+    <Compile Include="Modules\ApplicationMenuModule.cs" />
     <Compile Include="Presentation\Presenters\Menu\ApplicationMenuPresenter.cs" />
     <Compile Include="Presentation\Model\messages\new_project_opened.cs" />
     <Compile Include="Presentation\Model\messages\saved_changes_event.cs" />
@@ -424,22 +428,22 @@
     <Compile Include="Presentation\Presenters\Navigation\ExpandoBuilder.cs" />
     <Compile Include="Presentation\Presenters\Navigation\ExpandoItemBuilder.cs" />
     <Compile Include="Presentation\Presenters\Navigation\IActionTaskPaneFactory.cs" />
-    <Compile Include="Presentation\Presenters\Navigation\MainMenuModule.cs" />
-    <Compile Include="Presentation\Presenters\Navigation\NavigationModule.cs" />
+    <Compile Include="Modules\MainMenuModule.cs" />
+    <Compile Include="Modules\NavigationModule.cs" />
     <Compile Include="Presentation\Presenters\Shell\ApplicationShellPresenter.cs" />
-    <Compile Include="Presentation\Presenters\Shell\GettingStartedModule.cs" />
-    <Compile Include="Presentation\Presenters\Shell\GettingStartedModuleSpecs.cs" />
+    <Compile Include="Modules\GettingStartedModule.cs" />
+    <Compile Include="Modules\GettingStartedModuleSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\GettingStartedPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\GettingStartedPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\LogFilePresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\LogFileViewPresenterSpecs.cs" />
-    <Compile Include="Presentation\Presenters\Shell\ToolbarModule.cs" />
+    <Compile Include="Modules\ToolbarModule.cs" />
     <Compile Include="Presentation\Presenters\Shell\ToolBarPresenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\MainMenuPresenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\NavigationPresenter.cs" />
     <Compile Include="Presentation\Presenters\Navigation\NavigationPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\reporting\ReportPresenter.cs" />
-    <Compile Include="Presentation\Presenters\Commands\LoadPresentationModulesCommandSpecs.cs" />
+    <Compile Include="Modules\Core\LoadPresentationModulesCommandSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\NotificationIconPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\TaskTrayPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\TitleBarPresenter.cs" />
@@ -653,7 +657,7 @@
     <Compile Include="Presentation\Databindings\TextBoxDataBindingSpecs.cs" />
     <Compile Include="Presentation\Databindings\text_property_binding.cs" />
     <Compile Include="Presentation\Presenters\Commands\display_the_splash_screen.cs" />
-    <Compile Include="Presentation\Core\IPresentationModule.cs" />
+    <Compile Include="Modules\Core\IModule.cs" />
     <Compile Include="Utility\Core\OrSpecificationSpecs.cs" />
     <Compile Include="Utility\Core\PredicateSpecification.cs" />
     <Compile Include="Utility\Core\PredicateSpecificationSpecs.cs" />
@@ -680,7 +684,7 @@
     <Compile Include="Infrastructure\Logging\Log4NetLogging\Log4NetLogger.cs" />
     <Compile Include="Infrastructure\Logging\Log4NetLogging\Log4NetLogFactory.cs" />
     <Compile Include="Infrastructure\Logging\LogSpecs.cs" />
-    <Compile Include="Presentation\Presenters\Menu\Help\about_the_application_presenter_specs.cs" />
+    <Compile Include="Presentation\Presenters\Menu\Help\AboutTheApplicationPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\NotificationIconPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\StatusBarPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\StatusBarPresenterSpecs.cs" />
@@ -730,7 +734,7 @@
     <Compile Include="Presentation\Core\ApplicationController.cs" />
     <Compile Include="Presentation\Core\IPresenter.cs" />
     <Compile Include="Infrastructure\Container\IDependencyRegistry.cs" />
-    <Compile Include="Presentation\Presenters\Commands\LoadPresentationModulesCommand.cs" />
+    <Compile Include="Modules\Core\LoadPresentationModulesCommand.cs" />
     <Compile Include="boot\bootstrap.cs" />
     <EmbeddedResource Include="Presentation\Views\AddCompanyView.resx">
       <DependentUpon>AddCompanyView.cs</DependentUpon>
@@ -832,7 +836,6 @@
   <ItemGroup>
     <Folder Include="DataAccess\sqlcompact\" />
     <Folder Include="Infrastructure\caching\" />
-    <Folder Include="Presentation\module\" />
     <Folder Include="Presentation\Views\Menu\Mappers\" />
     <Folder Include="Tasks\domain\" />
     <Folder Include="Tasks\Stubs\" />

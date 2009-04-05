@@ -1,13 +1,13 @@
 using System.Net.NetworkInformation;
 using MoMoney.Infrastructure.eventing;
-using MoMoney.Presentation.Core;
+using MoMoney.Modules.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {
-    public interface INotificationIconPresenter : IPresentationModule,
+    public interface INotificationIconPresenter : IModule,
                                                   IEventSubscriber<ClosingTheApplication>,
                                                   IEventSubscriber<NewProjectOpened>
     {

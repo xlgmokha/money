@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using MoMoney.Domain.Core;
 using MoMoney.Utility.Extensions;
@@ -8,9 +9,9 @@ namespace MoMoney.Infrastructure.transactions2
     public interface ITransaction
     {
         IIdentityMap<Guid, T> create_for<T>() where T : IEntity;
-        //void mark_for_deletion<T>(T entity) where T : IEntity;
         void commit_changes();
         void rollback_changes();
+        bool is_dirty();
     }
 
     public class Transaction : ITransaction
@@ -38,7 +39,13 @@ namespace MoMoney.Infrastructure.transactions2
 
         public void rollback_changes()
         {
-            throw new NotImplementedException();
+            change_trackers.each(x => x.Value.Dispose());
+            change_trackers.Clear();
+        }
+
+        public bool is_dirty()
+        {
+            return change_trackers.Values.Count(x => x.is_dirty()) > 0;
         }
 
         IChangeTracker<T> get_change_tracker_for<T>() where T : IEntity

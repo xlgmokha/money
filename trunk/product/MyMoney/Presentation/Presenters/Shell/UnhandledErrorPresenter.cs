@@ -1,4 +1,5 @@
 using MoMoney.Infrastructure.eventing;
+using MoMoney.Modules.Core;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Commands;
@@ -6,7 +7,7 @@ using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {
-    public interface IUnhandledErrorPresenter : IPresentationModule, IPresenter,
+    public interface IUnhandledErrorPresenter : IModule, IPresenter,
                                                 IEventSubscriber<unhandled_error_occurred>
     {
         void restart_application();

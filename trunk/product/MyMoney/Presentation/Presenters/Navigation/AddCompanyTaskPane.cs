@@ -20,7 +20,7 @@ namespace MoMoney.Presentation.Presenters.Navigation
                 .with_item(
                 Build.task_pane_item()
                     .named("Add Company")
-                    .represented_by_image(ApplicationImages.ReadingABill)
+                    .represented_by_image(ApplicationImages.CompanyDetails)
                     .when_clicked_execute(() => command.run<IAddCompanyPresenter>()))
                 .build();
         }

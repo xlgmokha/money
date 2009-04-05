@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Model.messages;
@@ -13,6 +14,7 @@ namespace MoMoney.Infrastructure.transactions2
     public class DatabaseConfiguration : IDatabaseConfiguration, IEventSubscriber<NewProjectOpened>
     {
         IFile path;
+        readonly object mutex = new object();
 
         public DatabaseConfiguration()
         {
@@ -21,12 +23,17 @@ namespace MoMoney.Infrastructure.transactions2
 
         public IFile path_to_database()
         {
-            return path;
+            lock (mutex) return path;
         }
 
         public void notify(NewProjectOpened message)
         {
-            path = new ApplicationFile(Path.GetTempFileName());
+            within_lock(() => path = new ApplicationFile(Path.GetTempFileName()));
+        }
+
+        void within_lock(Action action)
+        {
+            lock (mutex) action();
         }
     }
 }

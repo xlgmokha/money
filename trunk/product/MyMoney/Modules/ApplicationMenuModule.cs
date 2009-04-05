@@ -1,12 +1,13 @@
 using MoMoney.Infrastructure.eventing;
-using MoMoney.Presentation.Core;
+using MoMoney.Modules.Core;
 using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters.Menu;
 
-namespace MoMoney.Presentation.Presenters.Menu
+namespace MoMoney.Modules
 {
-    public interface IApplicationMenuModule : IPresentationModule,
+    public interface IApplicationMenuModule : IModule,
                                               IEventSubscriber<NewProjectOpened>,
                                               IEventSubscriber<ClosingProjectEvent>,
                                               IEventSubscriber<SavedChangesEvent>,

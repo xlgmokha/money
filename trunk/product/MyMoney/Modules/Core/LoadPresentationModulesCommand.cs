@@ -1,9 +1,8 @@
 using MoMoney.Infrastructure.Threading;
-using MoMoney.Presentation.Core;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
-namespace MoMoney.Presentation.Presenters.Commands
+namespace MoMoney.Modules.Core
 {
     public interface ILoadPresentationModulesCommand : ICommand
     {
@@ -11,10 +10,10 @@ namespace MoMoney.Presentation.Presenters.Commands
 
     public class LoadPresentationModulesCommand : ILoadPresentationModulesCommand
     {
-        readonly IRegistry<IPresentationModule> registry;
+        readonly IRegistry<IModule> registry;
         readonly ICommandProcessor processor;
 
-        public LoadPresentationModulesCommand(IRegistry<IPresentationModule> registry, ICommandProcessor processor)
+        public LoadPresentationModulesCommand(IRegistry<IModule> registry, ICommandProcessor processor)
         {
             this.registry = registry;
             this.processor = processor;

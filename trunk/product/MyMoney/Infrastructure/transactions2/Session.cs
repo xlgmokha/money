@@ -13,6 +13,7 @@ namespace MoMoney.Infrastructure.transactions2
         void save<T>(T entity) where T : IEntity;
         void delete<T>(T entity) where T : IEntity;
         void flush();
+        bool is_dirty();
     }
 
     public class Session : ISession
@@ -63,6 +64,11 @@ namespace MoMoney.Infrastructure.transactions2
         {
             transaction.commit_changes();
             transaction = null;
+        }
+
+        public bool is_dirty()
+        {
+            return null != transaction && transaction.is_dirty();
         }
 
         public void Dispose()

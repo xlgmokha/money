@@ -5,8 +5,8 @@ using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.Threading;
+using MoMoney.Modules.Core;
 using MoMoney.Presentation.Model.messages;
-using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.Shell;
 using MoMoney.Utility.Core;
 

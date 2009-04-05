@@ -1,12 +1,11 @@
 using developwithpassion.bdd.contexts;
 using MoMoney.Infrastructure.Threading;
-using MoMoney.Presentation.Core;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Presentation.Presenters.Commands
+namespace MoMoney.Modules.Core
 {
     [Concern(typeof (LoadPresentationModulesCommand))]
     public class when_loading_the_application_shell : concerns_for<ILoadPresentationModulesCommand, LoadPresentationModulesCommand>
@@ -15,16 +14,16 @@ namespace MoMoney.Presentation.Presenters.Commands
 
         context c = () =>
                         {
-                            registry = the_dependency<IRegistry<IPresentationModule>>();
+                            registry = the_dependency<IRegistry<IModule>>();
                             processor = the_dependency<ICommandProcessor>();
-                            module = an<IPresentationModule>();
+                            module = an<IModule>();
                             when_the(registry).is_told_to(r => r.all()).it_will_return(module);
                         };
 
         because b = () => sut.run();
 
-        static IRegistry<IPresentationModule> registry;
-        static IPresentationModule module;
+        static IRegistry<IModule> registry;
+        static IModule module;
         static ICommandProcessor processor;
     }
 }
