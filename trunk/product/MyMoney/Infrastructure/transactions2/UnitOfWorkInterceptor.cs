@@ -11,9 +11,9 @@ namespace MoMoney.Infrastructure.transactions2
     public class UnitOfWorkInterceptor : IUnitOfWorkInterceptor
     {
         readonly IEventAggregator broker;
-        readonly ISessionFactory factory;
+        readonly IUnitOfWorkFactory factory;
 
-        public UnitOfWorkInterceptor(IEventAggregator broker, ISessionFactory factory)
+        public UnitOfWorkInterceptor(IEventAggregator broker, IUnitOfWorkFactory factory)
         {
             this.broker = broker;
             this.factory = factory;
@@ -21,12 +21,12 @@ namespace MoMoney.Infrastructure.transactions2
 
         public void Intercept(IInvocation invocation)
         {
-            using (var session = factory.create())
+            using (var unit_of_work = factory.create())
             {
                 invocation.Proceed();
-                if (session.is_dirty())
+                if (unit_of_work.is_dirty())
                 {
-                    session.flush();
+                    unit_of_work.commit();
                     broker.publish<UnsavedChangesEvent>();
                 }
             }

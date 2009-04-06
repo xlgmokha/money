@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using Castle.Core;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
-using MoMoney.Infrastructure.interceptors;
 using MoMoney.Presentation.Presenters.billing.dto;
 
 namespace MoMoney.Tasks.application
@@ -12,11 +10,9 @@ namespace MoMoney.Tasks.application
     {
         void save_a_new_bill_using(add_new_bill_dto dto);
         IEnumerable<IBill> all_bills();
-        void register_new_company(register_new_company dto);
         IEnumerable<ICompany> all_companys();
     }
 
-    [Interceptor(typeof (IUnitOfWorkInterceptor))]
     public class BillingTasks : IBillingTasks
     {
         readonly IBillRepository bills;
@@ -40,11 +36,6 @@ namespace MoMoney.Tasks.application
         public IEnumerable<IBill> all_bills()
         {
             return bills.all();
-        }
-
-        public void register_new_company(register_new_company dto)
-        {
-            new Company(dto.company_name);
         }
 
         public IEnumerable<ICompany> all_companys()

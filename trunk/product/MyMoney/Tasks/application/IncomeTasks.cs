@@ -1,37 +1,36 @@
 using System.Collections.Generic;
-using Castle.Core;
-using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.accounting.financial_growth;
 using MoMoney.Domain.Core;
-using MoMoney.Infrastructure.interceptors;
+using MoMoney.Domain.repositories;
 using MoMoney.Presentation.Presenters.income.dto;
 
 namespace MoMoney.Tasks.application
 {
     public interface IIncomeTasks
     {
-        void add_new(income_submission_dto income);
+        void add_new(IncomeSubmissionDto income);
         IEnumerable<ICompany> all_companys();
         IEnumerable<IIncome> retrive_all_income();
     }
 
-    [Interceptor(typeof (IUnitOfWorkInterceptor))]
     public class IncomeTasks : IIncomeTasks
     {
-        private readonly IDatabaseGateway repository;
-        private readonly ICustomerTasks tasks;
+        readonly ICustomerTasks tasks;
+        readonly ICompanyRepository companys;
+        readonly IIncomeRepository incomes;
 
-        public IncomeTasks(IDatabaseGateway repository, ICustomerTasks tasks)
+        public IncomeTasks(ICustomerTasks tasks, ICompanyRepository companys, IIncomeRepository incomes)
         {
-            this.repository = repository;
+            this.incomes = incomes;
+            this.companys = companys;
             this.tasks = tasks;
         }
 
-        public void add_new(income_submission_dto income)
+        public void add_new(IncomeSubmissionDto income)
         {
-            income
-                .company.pay(
+            var company = companys.find_company_by(income.company_id);
+            company.pay(
                 tasks.get_the_current_customer(),
                 income.amount.as_money(),
                 income.recieved_date.as_a_date()
@@ -40,12 +39,12 @@ namespace MoMoney.Tasks.application
 
         public IEnumerable<ICompany> all_companys()
         {
-            return repository.all<ICompany>();
+            return companys.all();
         }
 
         public IEnumerable<IIncome> retrive_all_income()
         {
-            return repository.all<IIncome>();
+            return incomes.all();
         }
     }
 }

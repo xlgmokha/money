@@ -12,7 +12,7 @@ namespace MoMoney.Presentation.Presenters.income
 {
     public interface IAddNewIncomePresenter : IContentPresenter
     {
-        void submit_new(income_submission_dto income);
+        void submit_new(IncomeSubmissionDto income);
     }
 
     public class AddNewIncomePresenter : IAddNewIncomePresenter
@@ -33,7 +33,7 @@ namespace MoMoney.Presentation.Presenters.income
             view.display(tasks.retrive_all_income().map_all_using(x => map_from(x)));
         }
 
-        public void submit_new(income_submission_dto income)
+        public void submit_new(IncomeSubmissionDto income)
         {
             if (similar_income_has_been_submitted(income))
             {
@@ -43,13 +43,13 @@ namespace MoMoney.Presentation.Presenters.income
             view.display(tasks.retrive_all_income().map_all_using(x => map_from(x)));
         }
 
-        private bool similar_income_has_been_submitted(income_submission_dto income)
+        private bool similar_income_has_been_submitted(IncomeSubmissionDto income)
         {
             if (tasks.retrive_all_income().Count() == 0) return false;
             return tasks
                 .retrive_all_income()
                 .where(x => x.amount_tendered.Equals(income.amount.as_money()))
-                .where(x => x.company.Equals(income.company))
+                .where(x => x.company.id.Equals(income.company_id))
                 .where(x => x.date_of_issue.Equals(income.recieved_date.as_a_date()))
                 .Count() > 0 ;
         }

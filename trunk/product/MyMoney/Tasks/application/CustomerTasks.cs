@@ -1,8 +1,6 @@
 using System.Linq;
-using Castle.Core;
 using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting;
-using MoMoney.Infrastructure.interceptors;
 
 namespace MoMoney.Tasks.application
 {
@@ -11,10 +9,9 @@ namespace MoMoney.Tasks.application
         IAccountHolder get_the_current_customer();
     }
 
-    [Interceptor(typeof (IUnitOfWorkInterceptor))]
     public class CustomerTasks : ICustomerTasks
     {
-        private readonly IDatabaseGateway repository;
+        readonly IDatabaseGateway repository;
 
         public CustomerTasks(IDatabaseGateway repository)
         {
@@ -25,8 +22,11 @@ namespace MoMoney.Tasks.application
         {
             var c = repository.all<IAccountHolder>().SingleOrDefault();
 
-            if (null == c) {
-                return new AccountHolder();
+            if (null == c)
+            {
+                var customer = new AccountHolder();
+                repository.save(customer);
+                return customer;
             }
 
             return c;

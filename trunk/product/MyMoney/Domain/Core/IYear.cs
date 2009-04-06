@@ -7,16 +7,16 @@ namespace MoMoney.Domain.Core
         bool represents(DateTime time);
     }
 
-    internal class year : IYear
+    public class Year : IYear
     {
         private readonly int the_underlying_year;
 
-        public year(DateTime date)
+        public Year(DateTime date)
         {
             the_underlying_year = date.Year;
         }
 
-        public bool Equals(year obj)
+        public bool Equals(Year obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
@@ -27,8 +27,8 @@ namespace MoMoney.Domain.Core
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (year)) return false;
-            return Equals((year) obj);
+            if (obj.GetType() != typeof (Year)) return false;
+            return Equals((Year) obj);
         }
 
         public override int GetHashCode()

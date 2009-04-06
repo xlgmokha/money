@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
@@ -12,7 +11,6 @@ namespace MoMoney.Presentation.Views.Startup
         public SplashScreenView()
         {
             InitializeComponent();
-            this.log().debug("created splash screen");
         }
 
         protected override void OnLoad(EventArgs e)

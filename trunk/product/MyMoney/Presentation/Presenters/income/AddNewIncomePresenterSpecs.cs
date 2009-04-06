@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
 using MoMoney.Domain.accounting.billing;
@@ -31,13 +32,13 @@ namespace MoMoney.Presentation.Presenters.income
 
         context c = () =>
                         {
-                            income = new income_submission_dto {};
+                            income = new IncomeSubmissionDto {};
                             when_the(tasks).is_told_to(x => x.retrive_all_income()).it_will_return_nothing();
                         };
 
         because b = () => sut.submit_new(income);
 
-        static income_submission_dto income;
+        static IncomeSubmissionDto income;
     }
 
     public class when_loading_the_add_new_income_screen : behaves_like_add_new_income_presenter
@@ -68,22 +69,24 @@ namespace MoMoney.Presentation.Presenters.income
                             var a_company = an<ICompany>();
                             var matching_income = an<IIncome>();
                             var today = new Date(2008, 12, 26);
+                            var id = Guid.NewGuid();
 
-                            income = new income_submission_dto
+                            income = new IncomeSubmissionDto
                                          {
                                              amount = 100.00,
-                                             company = a_company,
+                                             company_id = id,
                                              recieved_date = today,
                                          };
 
                             when_the(matching_income).is_asked_for(x => x.amount_tendered).it_will_return(100.as_money());
                             when_the(matching_income).is_asked_for(x => x.company).it_will_return(a_company);
                             when_the(matching_income).is_asked_for(x => x.date_of_issue).it_will_return(today);
+                            when_the(a_company).is_asked_for(x => x.id).it_will_return(id);
                             when_the(tasks).is_told_to(x => x.retrive_all_income()).it_will_return(matching_income);
                         };
 
         because b = () => sut.submit_new(income);
 
-        static income_submission_dto income;
+        static IncomeSubmissionDto income;
     }
 }

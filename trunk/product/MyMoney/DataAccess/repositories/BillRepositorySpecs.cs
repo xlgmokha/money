@@ -10,7 +10,7 @@ namespace MoMoney.DataAccess.repositories
 {
     public class when_loading_all_the_bills_from_the_repository : behaves_like_a_repository
     {
-        public it should_return_all_the_bills_in_the_database = () => results.should_contain(first_bill);
+        it should_return_all_the_bills_in_the_database = () => results.should_contain(first_bill);
 
         context c = () => { first_bill = new Bill(new Company("mokhan.ca"), new Money(1, 00), DateTime.Now); };
 

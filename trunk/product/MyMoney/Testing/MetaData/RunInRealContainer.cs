@@ -5,17 +5,17 @@ using MoMoney.boot.container;
 
 namespace MoMoney.Testing.MetaData
 {
-    public class run_in_real_container : DecoratorPatternAttribute
+    public class RunInRealContainer : DecoratorPatternAttribute
     {
         public override IRunInvoker GetInvoker(IRunInvoker wrapper)
         {
-            return new run_in_real_container_interceptor(wrapper);
+            return new RunInRealContainerInterceptor(wrapper);
         }
     }
 
-    public class run_in_real_container_interceptor : DecoratorRunInvoker
+    public class RunInRealContainerInterceptor : DecoratorRunInvoker
     {
-        public run_in_real_container_interceptor(IRunInvoker wrapper) : base(wrapper)
+        public RunInRealContainerInterceptor(IRunInvoker wrapper) : base(wrapper)
         {
         }
 

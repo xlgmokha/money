@@ -16,13 +16,13 @@ namespace MoMoney.Presentation.Views
 {
     public partial class AddCompanyView : ApplicationDockedWindow, IAddCompanyView
     {
-        readonly register_new_company dto;
+        readonly RegisterNewCompany dto;
 
         public AddCompanyView()
         {
             InitializeComponent();
             titled("Add A Company");
-            dto = new register_new_company();
+            dto = new RegisterNewCompany();
 
             initialize1();
             initialize2();
@@ -61,13 +61,6 @@ namespace MoMoney.Presentation.Views
 
         public void display(IEnumerable<ICompany> companies)
         {
-            this.log().debug("companys to display {0}", companies.Count());
-            if (companies.Count() > 0)
-            {
-                //this.log().debug("companys 1 display {0}", companies.ElementAt(0));
-                //this.log().debug("companys 2 display {0}", companies.ElementAt(1));
-                companies.each(x => this.log().debug("company {0}", x));
-            }
             ux_companys_listing.DataSource = companies.databind();
 
             listView1.Items.Clear();
@@ -76,8 +69,6 @@ namespace MoMoney.Presentation.Views
             listView2.Items.Clear();
             listView2.Items.AddRange(companies.Select(x => new ListViewItem(x.name)).ToArray());
 
-            //var tlist = new TypedObjectListView<ICompany>(objectListView1);
-            //tlist.GetColumn(0).AspectGetter = (ICompany x) => x.name;
             objectListView1.SetObjects(companies.ToList());
         }
 

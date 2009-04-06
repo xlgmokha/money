@@ -28,6 +28,8 @@ namespace MoMoney.boot.container.registration
             registry.transient(typeof (IUnitOfWorkRegistrationFactory<>), typeof (UnitOfWorkRegistrationFactory<>));
 
             registry.transient(typeof (ITrackerEntryMapper<>), typeof (TrackerEntryMapper<>));
+            registry.transient(typeof (IKey<>), typeof (TypedKey<>));
+            registry.singleton<IContext, Context>();
         }
     }
 }

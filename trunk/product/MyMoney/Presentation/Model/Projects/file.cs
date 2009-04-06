@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 
 namespace MoMoney.Presentation.Model.Projects
@@ -50,6 +51,11 @@ namespace MoMoney.Presentation.Model.Projects
         public override int GetHashCode()
         {
             return (path != null ? path.GetHashCode() : 0);
+        }
+
+        public override string ToString()
+        {
+            return path;
         }
     }
 }

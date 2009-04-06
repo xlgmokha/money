@@ -49,7 +49,7 @@ namespace MoMoney.Infrastructure.transactions2
 
         because b = () =>
                         {
-                            sut.create_for<IMovie>().add(movie.Id, movie);
+                            sut.create_for<IMovie>().add(movie.id, movie);
                             movie.change_name_to("Austin Powers");
                             sut.commit_changes();
                         };
@@ -76,8 +76,8 @@ namespace MoMoney.Infrastructure.transactions2
         because b = () =>
                         {
                             var map = sut.create_for<IMovie>();
-                            map.add(movie.Id, movie);
-                            map.evict(movie.Id);
+                            map.add(movie.id, movie);
+                            map.evict(movie.id);
                             sut.commit_changes();
                         };
 
@@ -95,7 +95,7 @@ namespace MoMoney.Infrastructure.transactions2
     {
         public Movie(string name)
         {
-            Id = Guid.NewGuid();
+            id = Guid.NewGuid();
             this.name = name;
         }
 
@@ -106,6 +106,6 @@ namespace MoMoney.Infrastructure.transactions2
             name = new_name;
         }
 
-        public Guid Id { get; set; }
+        public Guid id { get; set; }
     }
 }

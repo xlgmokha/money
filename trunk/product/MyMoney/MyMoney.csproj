@@ -182,12 +182,13 @@
     <Compile Include="DataAccess\repositories\BillRepository.cs" />
     <Compile Include="DataAccess\repositories\BillRepositorySpecs.cs" />
     <Compile Include="DataAccess\repositories\CompanyRepository.cs" />
+    <Compile Include="DataAccess\repositories\IncomeRepository.cs" />
     <Compile Include="Domain\accounting\billing\IEmployee.cs" />
     <Compile Include="Domain\accounting\financial_growth\income.cs" />
     <Compile Include="Domain\accounting\financial_growth\income_extensions.cs" />
     <Compile Include="Domain\accounting\IInvoice.cs" />
     <Compile Include="Domain\Core\Clock.cs" />
-    <Compile Include="Domain\Core\date_extensions.cs" />
+    <Compile Include="Domain\Core\DateExtensions.cs" />
     <Compile Include="Domain\Core\date_specs.cs" />
     <Compile Include="Domain\Core\day.cs" />
     <Compile Include="Domain\Core\Entity.cs" />
@@ -197,7 +198,7 @@
     <Compile Include="DataAccess\db40\SessionContextSpecs.cs" />
     <Compile Include="Domain\accounting\billing\billing_extensions.cs" />
     <Compile Include="Domain\accounting\billing\Company.cs" />
-    <Compile Include="Domain\accounting\billing\company_specs.cs" />
+    <Compile Include="Domain\accounting\billing\CompanySpecs.cs" />
     <Compile Include="Domain\accounting\AccountHolder.cs" />
     <Compile Include="Domain\accounting\AccountHolderSpecs.cs" />
     <Compile Include="Domain\accounting\billing\total_payments_calculator.cs" />
@@ -211,14 +212,17 @@
     <Compile Include="Domain\Core\range_specs.cs" />
     <Compile Include="Domain\repositories\IBillRepository.cs" />
     <Compile Include="Domain\repositories\ICompanyRepository.cs" />
+    <Compile Include="Domain\repositories\IIncomeRepository.cs" />
     <Compile Include="Infrastructure\transactions2\ChangeTracker.cs" />
     <Compile Include="Infrastructure\transactions2\ChangeTrackerFactory.cs" />
     <Compile Include="Infrastructure\transactions2\ChangeTrackerFactorySpecs.cs" />
     <Compile Include="Infrastructure\transactions2\ChangeTrackerSpecs.cs" />
     <Compile Include="Infrastructure\transactions2\ConfigureDatabaseStep.cs" />
     <Compile Include="Infrastructure\transactions2\ConnectionFactory.cs" />
+    <Compile Include="Infrastructure\transactions2\Context.cs" />
     <Compile Include="Infrastructure\transactions2\Database.cs" />
     <Compile Include="Infrastructure\transactions2\DatabaseConfiguration.cs" />
+    <Compile Include="Infrastructure\transactions2\EmptyUnitOfWork.cs" />
     <Compile Include="Infrastructure\transactions2\IChangeTracker.cs" />
     <Compile Include="Infrastructure\transactions2\IChangeTrackerFactory.cs" />
     <Compile Include="Infrastructure\transactions2\IdentityMapProxy.cs" />
@@ -313,6 +317,8 @@
     <Compile Include="Infrastructure\transactions2\Session.cs" />
     <Compile Include="Infrastructure\transactions2\SessionFactory.cs" />
     <Compile Include="Infrastructure\transactions2\SessionFactorySpecs.cs" />
+    <Compile Include="Infrastructure\transactions2\SessionNotStartedException.cs" />
+    <Compile Include="Infrastructure\transactions2\SessionProvider.cs" />
     <Compile Include="Infrastructure\transactions2\SessionSpecs.cs" />
     <Compile Include="Infrastructure\transactions2\StatementRegistry.cs" />
     <Compile Include="Infrastructure\transactions2\TrackerEntry.cs" />
@@ -320,6 +326,9 @@
     <Compile Include="Infrastructure\transactions2\TrackerEntrySpecs.cs" />
     <Compile Include="Infrastructure\transactions2\Transaction.cs" />
     <Compile Include="Infrastructure\transactions2\TransactionSpecs.cs" />
+    <Compile Include="Infrastructure\transactions2\TypedKey.cs" />
+    <Compile Include="Infrastructure\transactions2\UnitOfWork.cs" />
+    <Compile Include="Infrastructure\transactions2\UnitOfWorkFactory.cs" />
     <Compile Include="Infrastructure\transactions2\UnitOfWorkInterceptor.cs" />
     <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistrationFactory.cs" />
     <Compile Include="Infrastructure\transactions\NullUnitOfWork.cs" />
@@ -393,7 +402,7 @@
     <Compile Include="Presentation\Presenters\AddCompanyPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\billing\dto\add_new_bill_dto.cs" />
     <Compile Include="Presentation\Presenters\billing\dto\bill_information_dto.cs" />
-    <Compile Include="Presentation\Presenters\billing\dto\register_new_company.cs" />
+    <Compile Include="Presentation\Presenters\billing\dto\RegisterNewCompany.cs" />
     <Compile Include="Presentation\Presenters\billing\ViewAllBillsPresenter.cs" />
     <Compile Include="Presentation\Presenters\Commands\RestartCommand.cs" />
     <Compile Include="Presentation\Presenters\Commands\RunPresenterCommand.cs" />
@@ -411,7 +420,7 @@
     <Compile Include="Presentation\Presenters\income\AddNewIncomePresenter.cs" />
     <Compile Include="Presentation\Presenters\income\AddNewIncomePresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\income\dto\income_information_dto.cs" />
-    <Compile Include="Presentation\Presenters\income\dto\income_submission_dto.cs" />
+    <Compile Include="Presentation\Presenters\income\dto\IncomeSubmissionDto.cs" />
     <Compile Include="Presentation\Presenters\income\dto\monthly_summary_dto.cs" />
     <Compile Include="Presentation\Presenters\income\ViewIncomeHistoryPresenter.cs" />
     <Compile Include="Presentation\Presenters\Menu\Help\AboutTheApplicationPresenter.cs" />
@@ -588,6 +597,8 @@
     <Compile Include="Tasks\application\BillingTasks.cs" />
     <Compile Include="Tasks\application\CustomerTasks.cs" />
     <Compile Include="Tasks\application\IncomeTasks.cs" />
+    <Compile Include="Tasks\application\RegisterNewCompanyCommand.cs" />
+    <Compile Include="Tasks\infrastructure\core\CommandPump.cs" />
     <Compile Include="Tasks\infrastructure\core\ICallbackCommand.cs" />
     <Compile Include="Tasks\infrastructure\LogFileTasks.cs" />
     <Compile Include="Tasks\infrastructure\core\CommandFactory.cs" />
@@ -607,7 +618,7 @@
     <Compile Include="Testing\spechelpers\core\empty_fixture.cs" />
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
     <Compile Include="Testing\spechelpers\core\MethodCallOccurance.cs" />
-    <Compile Include="Testing\MetaData\run_in_real_container.cs" />
+    <Compile Include="Testing\MetaData\RunInRealContainer.cs" />
     <Compile Include="Presentation\Views\helpers\Events.cs" />
     <Compile Include="Presentation\Views\helpers\EventTrigger.cs" />
     <Compile Include="Presentation\Views\helpers\IEventTarget.cs" />

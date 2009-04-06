@@ -6,6 +6,7 @@ using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.proxies;
 using MoMoney.Tasks.application;
 using MoMoney.Utility.Core;
+using IUnitOfWorkInterceptor=MoMoney.Infrastructure.transactions2.IUnitOfWorkInterceptor;
 
 namespace MoMoney.boot.container.registration
 {
@@ -23,7 +24,7 @@ namespace MoMoney.boot.container.registration
             registry.proxy(new ServiceLayerConfiguration<IBillingTasks>(
                                x =>
                                    {
-                                       x.register_new_company(null);
+                                       //x.register_new_company(null);
                                        x.save_a_new_bill_using(null);
                                    }
                                ),
@@ -37,7 +38,9 @@ namespace MoMoney.boot.container.registration
 
             registry.proxy(
                 new ServiceLayerConfiguration<IIncomeTasks>(x => x.add_new(null)),
-                () => new IncomeTasks(Lazy.load<IDatabaseGateway>(), Lazy.load<ICustomerTasks>()));
+                () => new IncomeTasks(Lazy.load<ICustomerTasks>(),
+                                      Lazy.load<ICompanyRepository>(),
+                                      Lazy.load<IIncomeRepository>()));
         }
     }
 
@@ -52,7 +55,9 @@ namespace MoMoney.boot.container.registration
 
         public void configure(IProxyBuilder<T> item)
         {
-            configure_it(item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>()).intercept_on);
+            var selector = item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>());
+            selector.intercept_all();
+            //configure_it(selector.intercept_on);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace MoMoney.Presentation.Views.core
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
-            this.log().debug("created {0}", GetType());
+            //this.log().debug("created {0}", GetType());
         }
 
         public IApplicationWindow create_tool_tip_for(string title, string caption, Control control)

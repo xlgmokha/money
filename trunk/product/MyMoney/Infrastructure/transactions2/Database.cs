@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using MoMoney.Domain.Core;
 
 namespace MoMoney.Infrastructure.transactions2
@@ -18,7 +19,7 @@ namespace MoMoney.Infrastructure.transactions2
         {
             using (var connection = factory.open_connection_to(configuration.path_to_database()))
             {
-                return connection.Query<T>();
+                return connection.Query<T>().ToList();
             }
         }
 

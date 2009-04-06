@@ -28,7 +28,7 @@ namespace MoMoney.Infrastructure.transactions2
 
         public void prepare(IObjectContainer connection)
         {
-            var query = connection.Query<T>(x => x.Id.Equals(entity.Id));
+            var query = connection.Query<T>(x => x.id.Equals(entity.id));
             query.each(x => connection.Delete(x));
             connection.Store(entity);
         }

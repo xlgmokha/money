@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace MoMoney.Infrastructure.transactions2
@@ -28,7 +27,7 @@ namespace MoMoney.Infrastructure.transactions2
 
         public IEnumerable<TValue> all()
         {
-            throw new NotImplementedException();
+            return items_in_map.Values;
         }
 
         public void add(TKey key, TValue value)

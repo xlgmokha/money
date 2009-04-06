@@ -36,28 +36,28 @@ namespace MoMoney.Infrastructure.transactions2
                 return get_identity_map_for<T>().item_that_belongs_to(id);
             }
 
-            var entity = database.fetch_all<T>().Single(x => x.Id.Equals(id));
+            var entity = database.fetch_all<T>().Single(x => x.id.Equals(id));
             get_identity_map_for<T>().add(id, entity);
             return entity;
         }
 
         public IEnumerable<T> all<T>() where T : IEntity
         {
-            var uncached_items = database
+            database
                 .fetch_all<T>()
-                .where(x => !get_identity_map_for<T>().contains_an_item_for(x.Id));
-            uncached_items.each(x => get_identity_map_for<T>().add(x.Id, x));
+                .where(x => !get_identity_map_for<T>().contains_an_item_for(x.id))
+                .each(x => get_identity_map_for<T>().add(x.id, x));
             return get_identity_map_for<T>().all();
         }
 
         public void save<T>(T entity) where T : IEntity
         {
-            get_identity_map_for<T>().add(entity.Id, entity);
+            get_identity_map_for<T>().add(entity.id, entity);
         }
 
         public void delete<T>(T entity) where T : IEntity
         {
-            get_identity_map_for<T>().evict(entity.Id);
+            get_identity_map_for<T>().evict(entity.id);
         }
 
         public void flush()

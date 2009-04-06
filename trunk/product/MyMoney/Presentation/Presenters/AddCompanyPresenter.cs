@@ -4,23 +4,26 @@ using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.core;
 using MoMoney.Tasks.application;
+using MoMoney.Tasks.infrastructure.core;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Presenters
 {
     public interface IAddCompanyPresenter : IContentPresenter
     {
-        void submit(register_new_company dto);
+        void submit(RegisterNewCompany dto);
     }
 
     public class AddCompanyPresenter : IAddCompanyPresenter
     {
-        private readonly IAddCompanyView view;
-        private readonly IBillingTasks tasks;
+        readonly IAddCompanyView view;
+        readonly IBillingTasks tasks;
+        readonly ICommandPump pump;
 
-        public AddCompanyPresenter(IAddCompanyView view, IBillingTasks tasks)
+        public AddCompanyPresenter(IAddCompanyView view, IBillingTasks tasks, ICommandPump pump)
         {
             this.view = view;
+            this.pump = pump;
             this.tasks = tasks;
         }
 
@@ -30,7 +33,7 @@ namespace MoMoney.Presentation.Presenters
             view.display(tasks.all_companys());
         }
 
-        public void submit(register_new_company dto)
+        public void submit(RegisterNewCompany dto)
         {
             if (company_has_already_been_registered(dto))
             {
@@ -38,17 +41,18 @@ namespace MoMoney.Presentation.Presenters
             }
             else
             {
-                tasks.register_new_company(dto);
+                pump.run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto);
+                //tasks.register_new_company(dto);
                 view.display(tasks.all_companys());
             }
         }
 
-        private bool company_has_already_been_registered(register_new_company dto)
+        bool company_has_already_been_registered(RegisterNewCompany dto)
         {
             return tasks.all_companys().Count(x => x.name.is_equal_to_ignoring_case(dto.company_name)) > 0;
         }
 
-        private string create_error_message_from(register_new_company dto)
+        string create_error_message_from(RegisterNewCompany dto)
         {
             return "A Company named {0}, has already been submitted!".formatted_using(dto.company_name);
         }

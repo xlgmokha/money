@@ -2,7 +2,7 @@ using System;
 
 namespace MoMoney.Domain.Core
 {
-    public static class date_extensions
+    public static class DateExtensions
     {
         public static IDate as_a_date(this DateTime date)
         {
@@ -11,7 +11,7 @@ namespace MoMoney.Domain.Core
 
         public static IYear as_a_year(this int year)
         {
-            return new year(new DateTime(year, 01, 01));
+            return new Year(new DateTime(year, 01, 01));
         }
     }
 }

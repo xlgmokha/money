@@ -92,7 +92,7 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
 
     public class FakeEntity : IEntity
     {
-        public Guid Id
+        public Guid id
         {
             get { throw new NotImplementedException(); }
         }

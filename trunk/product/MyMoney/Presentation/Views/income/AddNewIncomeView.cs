@@ -41,11 +41,11 @@ namespace MoMoney.Presentation.Views.income
             MessageBox.Show(builder.ToString(), "Ooops...", MessageBoxButtons.OK);
         }
 
-        income_submission_dto create_income()
+        IncomeSubmissionDto create_income()
         {
-            return new income_submission_dto
+            return new IncomeSubmissionDto
                        {
-                           company = ux_companys.SelectedItem.downcast_to<ICompany>(),
+                           company_id = ux_companys.SelectedItem.downcast_to<ICompany>().id,
                            amount = ux_amount.Text.to_double(),
                            recieved_date = ux_date_received.Value
                        };

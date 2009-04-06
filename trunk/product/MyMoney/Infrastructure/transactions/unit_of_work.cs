@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using MoMoney.DataAccess.core;
 using MoMoney.Domain.Core;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.transactions
@@ -34,13 +33,11 @@ namespace MoMoney.Infrastructure.transactions
 
         public void register(T entity)
         {
-            this.log().debug("registering: {0}", entity);
             registered_items.Add(factory.map_from(entity));
         }
 
         public void commit()
         {
-            this.log().debug("commiting: {0}", typeof(T));
             registered_items.each(x => { if (x.contains_changes()) gateway.save(x.current); });
         }
 

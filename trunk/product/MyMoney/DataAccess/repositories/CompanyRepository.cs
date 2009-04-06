@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MoMoney.DataAccess.core;
@@ -9,7 +10,7 @@ namespace MoMoney.DataAccess.repositories
 {
     public class CompanyRepository : ICompanyRepository
     {
-        IDatabaseGateway gateway;
+        readonly IDatabaseGateway gateway;
 
         public CompanyRepository(IDatabaseGateway gateway)
         {
@@ -26,6 +27,16 @@ namespace MoMoney.DataAccess.repositories
             return gateway
                 .all<ICompany>()
                 .SingleOrDefault(x => x.name.is_equal_to_ignoring_case(name));
+        }
+
+        public ICompany find_company_by(Guid id)
+        {
+            return gateway.all<ICompany>().SingleOrDefault(x => x.id.Equals(id));
+        }
+
+        public void save(ICompany company)
+        {
+            gateway.save(company);
         }
     }
 }

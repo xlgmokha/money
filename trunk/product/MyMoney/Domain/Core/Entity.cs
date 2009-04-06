@@ -1,12 +1,11 @@
 using System;
-using MoMoney.Infrastructure.transactions;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Domain.Core
 {
     public interface IEntity
     {
-        Guid Id { get; }
+        Guid id { get; }
     }
 
     [Serializable]
@@ -14,17 +13,17 @@ namespace MoMoney.Domain.Core
     {
         protected Entity()
         {
-            Id = Guid.NewGuid();
-            UnitOfWork.For<T>().register(this as T);
+            id = Guid.NewGuid();
+            //UnitOfWork.For<T>().register(this as T);
         }
 
-        public Guid Id { get; private set; }
+        public Guid id { get; private set; }
 
         public bool Equals(Entity<T> obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.Id.Equals(Id);
+            return obj.id.Equals(id);
         }
 
         public override bool Equals(object obj)
@@ -37,12 +36,12 @@ namespace MoMoney.Domain.Core
 
         public override int GetHashCode()
         {
-            return Id.GetHashCode();
+            return id.GetHashCode();
         }
 
         public override string ToString()
         {
-            return "{0} id: {1}".formatted_using(base.ToString(), Id);
+            return "{0} id: {1}".formatted_using(base.ToString(), id);
         }
     }
 }

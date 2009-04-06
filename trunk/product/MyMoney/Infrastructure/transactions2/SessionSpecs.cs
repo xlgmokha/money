@@ -35,7 +35,7 @@ namespace MoMoney.Infrastructure.transactions2
                             entity = an<ITestEntity>();
                             map = an<IIdentityMap<Guid, ITestEntity>>();
 
-                            when_the(entity).is_told_to(x => x.Id).it_will_return(guid);
+                            when_the(entity).is_told_to(x => x.id).it_will_return(guid);
                             when_the(transaction).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(map);
                         };
 
@@ -87,9 +87,9 @@ namespace MoMoney.Infrastructure.transactions2
                             database_item = an<ITestEntity>();
                             uncached_item = an<ITestEntity>();
 
-                            when_the(cached_item).is_told_to(x => x.Id).it_will_return(id);
-                            when_the(database_item).is_told_to(x => x.Id).it_will_return(id);
-                            when_the(uncached_item).is_told_to(x => x.Id).it_will_return(id_of_the_uncached_item);
+                            when_the(cached_item).is_told_to(x => x.id).it_will_return(id);
+                            when_the(database_item).is_told_to(x => x.id).it_will_return(id);
+                            when_the(uncached_item).is_told_to(x => x.id).it_will_return(id_of_the_uncached_item);
                             when_the(transaction).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(
                                 identity_map);
                             when_the(identity_map).is_told_to(x => x.contains_an_item_for(id)).it_will_return(true);
@@ -126,8 +126,8 @@ namespace MoMoney.Infrastructure.transactions2
                             wrong_item = an<ITestEntity>();
                             correct_item = an<ITestEntity>();
                             map = an<IIdentityMap<Guid, ITestEntity>>();
-                            when_the(wrong_item).is_told_to(x => x.Id).it_will_return(Guid.NewGuid());
-                            when_the(correct_item).is_told_to(x => x.Id).it_will_return(id);
+                            when_the(wrong_item).is_told_to(x => x.id).it_will_return(Guid.NewGuid());
+                            when_the(correct_item).is_told_to(x => x.id).it_will_return(id);
                             when_the(database)
                                 .is_told_to(x => x.fetch_all<ITestEntity>())
                                 .it_will_return(wrong_item, correct_item);
@@ -156,7 +156,7 @@ namespace MoMoney.Infrastructure.transactions2
                             entity = an<ITestEntity>();
                             map = an<IIdentityMap<Guid, ITestEntity>>();
 
-                            when_the(entity).is_told_to(x => x.Id).it_will_return(id);
+                            when_the(entity).is_told_to(x => x.id).it_will_return(id);
                             when_the(transaction).is_told_to(x => x.create_for<ITestEntity>()).it_will_return(map);
                             when_the(database).is_told_to(x => x.fetch_all<ITestEntity>()).it_will_return(entity);
                         };
