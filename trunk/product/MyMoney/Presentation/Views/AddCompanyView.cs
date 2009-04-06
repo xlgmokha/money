@@ -59,7 +59,7 @@ namespace MoMoney.Presentation.Views
             ux_cancel_button.Click += (x, y) => Dispose();
         }
 
-        public void display(IEnumerable<ICompany> companies)
+        public void run(IEnumerable<ICompany> companies)
         {
             ux_companys_listing.DataSource = companies.databind();
 

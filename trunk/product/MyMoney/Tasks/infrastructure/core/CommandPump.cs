@@ -10,6 +10,7 @@ namespace MoMoney.Tasks.infrastructure.core
         void run<Command>(Command command) where Command : ICommand;
         void run<Command, T>(T input) where Command : IParameterizedCommand<T>;
         void run<T>(ICallback<T> item, IQuery<T> query);
+        void run<Output, Query>(ICallback<Output> item) where Query : IQuery<Output>;
     }
 
     public class CommandPump : ICommandPump
@@ -43,6 +44,11 @@ namespace MoMoney.Tasks.infrastructure.core
         public void run<T>(ICallback<T> item, IQuery<T> query)
         {
             run(factory.create_for(item, query));
+        }
+
+        public void run<Output, Query>(ICallback<Output> item) where Query : IQuery<Output>
+        {
+            run(factory.create_for(item, registry.get_a<Query>()));
         }
     }
 }

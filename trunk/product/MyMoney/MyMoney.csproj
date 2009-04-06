@@ -597,6 +597,7 @@
     <Compile Include="Presentation\Views\updates\ICheckForUpdatesView.cs" />
     <Compile Include="Tasks\application\BillingTasks.cs" />
     <Compile Include="Tasks\application\CustomerTasks.cs" />
+    <Compile Include="Tasks\application\GetAllCompanysQuery.cs" />
     <Compile Include="Tasks\application\IncomeTasks.cs" />
     <Compile Include="Tasks\application\RegisterNewCompanyCommand.cs" />
     <Compile Include="Tasks\infrastructure\core\CommandPump.cs" />
@@ -741,7 +742,7 @@
     <Compile Include="Infrastructure\Container\Windsor\WindsorDependencyRegistrySpecs.cs" />
     <Compile Include="Utility\Core\ICommand.cs" />
     <Compile Include="Utility\Core\IMapper.cs" />
-    <Compile Include="Utility\Extensions\string_extensions.cs" />
+    <Compile Include="Utility\Extensions\StringExtensions.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\ExitCommandSpecs.cs" />
     <Compile Include="Presentation\Core\ApplicationControllerSpecs.cs" />
     <Compile Include="Presentation\Core\ApplicationController.cs" />

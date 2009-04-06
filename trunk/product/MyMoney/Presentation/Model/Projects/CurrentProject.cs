@@ -1,6 +1,5 @@
-using MoMoney.DataAccess.db40;
 using MoMoney.Infrastructure.eventing;
-using MoMoney.Infrastructure.transactions;
+using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Utility.Extensions;
 
@@ -19,19 +18,19 @@ namespace MoMoney.Presentation.Model.Projects
         bool is_open();
     }
 
-    public class CurrentProject : IProject
+    public class CurrentProject : IProject, IEventSubscriber<UnsavedChangesEvent>
     {
         readonly IEventAggregator broker;
-        readonly IUnitOfWorkRegistry registry;
-        readonly ISessionContext context;
+        IDatabaseConfiguration configuration;
         IFile current_file;
         bool is_project_open = false;
+        bool unsaved_changes = false;
 
-        public CurrentProject(IEventAggregator broker, IUnitOfWorkRegistry registry, ISessionContext context)
+        public CurrentProject(IEventAggregator broker, IDatabaseConfiguration configuration)
         {
             this.broker = broker;
-            this.registry = registry;
-            this.context = context;
+            this.configuration = configuration;
+            broker.subscribe(this);
         }
 
         public string name()
@@ -42,7 +41,6 @@ namespace MoMoney.Presentation.Model.Projects
         public void start_new_project()
         {
             close_project();
-            context.close_session_to(current_file);
             is_project_open = true;
             current_file = null;
             broker.publish(new NewProjectOpened(name()));
@@ -52,26 +50,23 @@ namespace MoMoney.Presentation.Model.Projects
         {
             if (!file.does_the_file_exist()) return;
             close_project();
+            configuration.change_path_to(file);
             current_file = file;
             is_project_open = true;
-            context.start_session_for(current_file);
             broker.publish(new NewProjectOpened(name()));
         }
 
         public void save_changes()
         {
             ensure_that_a_path_to_save_to_has_been_specified();
-            registry.commit_all();
-            registry.Dispose();
-            context.commit_current_session();
+            configuration.path_to_database().copy_to(current_file.path);
+            unsaved_changes = false;
             broker.publish<SavedChangesEvent>();
         }
 
         public void save_project_to(IFile new_file)
         {
             if (new_file.path.is_blank()) return;
-
-            context.start_session_for(new_file);
             current_file = new_file;
             save_changes();
         }
@@ -79,8 +74,6 @@ namespace MoMoney.Presentation.Model.Projects
         public void close_project()
         {
             if (!is_project_open) return;
-            registry.Dispose();
-            context.close_session_to(current_file);
             is_project_open = false;
             current_file = null;
             broker.publish<ClosingProjectEvent>();
@@ -93,7 +86,7 @@ namespace MoMoney.Presentation.Model.Projects
 
         public bool has_unsaved_changes()
         {
-            return registry.has_changes_to_commit();
+            return unsaved_changes;
         }
 
         public bool is_open()
@@ -107,6 +100,11 @@ namespace MoMoney.Presentation.Model.Projects
             {
                 throw new FileNotSpecifiedException();
             }
+        }
+
+        public void notify(UnsavedChangesEvent message)
+        {
+            unsaved_changes = true;
         }
     }
 }

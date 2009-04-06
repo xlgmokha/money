@@ -9,6 +9,7 @@ namespace MoMoney.Infrastructure.transactions2
     public interface IDatabaseConfiguration
     {
         IFile path_to_database();
+        void change_path_to(IFile file);
     }
 
     public class DatabaseConfiguration : IDatabaseConfiguration, IEventSubscriber<NewProjectOpened>
@@ -24,6 +25,12 @@ namespace MoMoney.Infrastructure.transactions2
         public IFile path_to_database()
         {
             lock (mutex) return path;
+        }
+
+        public void change_path_to(IFile file)
+        {
+            path = new ApplicationFile(Path.GetTempFileName());
+            file.copy_to(path.path);
         }
 
         public void notify(NewProjectOpened message)

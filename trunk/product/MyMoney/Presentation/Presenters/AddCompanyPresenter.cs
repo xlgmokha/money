@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Linq;
+using MoMoney.Domain.accounting.billing;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views;
@@ -30,7 +32,8 @@ namespace MoMoney.Presentation.Presenters
         public void run()
         {
             view.attach_to(this);
-            view.display(tasks.all_companys());
+            view.run(tasks.all_companys());
+            //pump.run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view);
         }
 
         public void submit(RegisterNewCompany dto)
@@ -42,8 +45,8 @@ namespace MoMoney.Presentation.Presenters
             else
             {
                 pump.run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto);
-                //tasks.register_new_company(dto);
-                view.display(tasks.all_companys());
+                //pump.run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view);
+                view.run(tasks.all_companys());
             }
         }
 

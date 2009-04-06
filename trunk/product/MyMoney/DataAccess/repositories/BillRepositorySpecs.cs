@@ -12,7 +12,7 @@ namespace MoMoney.DataAccess.repositories
     {
         it should_return_all_the_bills_in_the_database = () => results.should_contain(first_bill);
 
-        context c = () => { first_bill = new Bill(new Company("mokhan.ca"), new Money(1, 00), DateTime.Now); };
+        context c = () => { first_bill = new Bill(new Company(), new Money(1, 00), DateTime.Now); };
 
         because b = () =>
                         {

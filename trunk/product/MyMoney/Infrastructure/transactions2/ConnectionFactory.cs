@@ -1,4 +1,6 @@
 using Db4objects.Db4o;
+using Db4objects.Db4o.Config;
+using Db4objects.Db4o.Events;
 using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.Projects;
 
@@ -23,7 +25,19 @@ namespace MoMoney.Infrastructure.transactions2
             this.log().debug("opening connection to: {0}", the_path_to_the_database_file);
             var configuration = Db4oFactory.NewConfiguration();
             setup.configure(configuration);
-            return Db4oFactory.OpenFile(configuration, the_path_to_the_database_file.path);
+
+            return get_container(the_path_to_the_database_file, configuration);
+        }
+
+        IObjectContainer get_container(IFile the_path_to_the_database_file, IConfiguration configuration)
+        {
+            var container = Db4oFactory.OpenFile(configuration, the_path_to_the_database_file.path);
+            var registry = EventRegistryFactory.ForObjectContainer(container);
+
+            registry.ClassRegistered += (sender, args) => this.log().debug("class registered: {0}", args);
+            registry.Instantiated += (sender, args) => this.log().debug("class instantiated: {0}", args.Object);
+
+            return container;
         }
     }
 }

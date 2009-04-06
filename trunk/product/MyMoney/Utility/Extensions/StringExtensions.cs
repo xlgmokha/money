@@ -1,10 +1,10 @@
 namespace MoMoney.Utility.Extensions
 {
-    public static class string_extensions
+    public static class StringExtensions
     {
-        public static string formatted_using(this string formattedString, params object[] arguments)
+        public static string formatted_using(this string formatted_string, params object[] arguments)
         {
-            return string.Format(formattedString, arguments);
+            return string.Format(formatted_string, arguments);
         }
 
         public static bool is_equal_to_ignoring_case(this string left, string right)

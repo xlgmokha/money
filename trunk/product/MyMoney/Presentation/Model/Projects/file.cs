@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 
 namespace MoMoney.Presentation.Model.Projects
@@ -7,6 +6,7 @@ namespace MoMoney.Presentation.Model.Projects
     {
         string path { get; }
         bool does_the_file_exist();
+        void copy_to(string path);
     }
 
     internal class ApplicationFile : IFile
@@ -21,6 +21,11 @@ namespace MoMoney.Presentation.Model.Projects
         public virtual bool does_the_file_exist()
         {
             return !string.IsNullOrEmpty(path) && File.Exists(path);
+        }
+
+        public void copy_to(string other_path)
+        {
+            File.Copy(path, other_path, true);
         }
 
         public static implicit operator ApplicationFile(string file_path)
