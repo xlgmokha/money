@@ -183,6 +183,7 @@
     <Compile Include="DataAccess\repositories\BillRepositorySpecs.cs" />
     <Compile Include="DataAccess\repositories\CompanyRepository.cs" />
     <Compile Include="DataAccess\repositories\IncomeRepository.cs" />
+    <Compile Include="Domain\accounting\billing\CompanyFactory.cs" />
     <Compile Include="Domain\accounting\billing\IEmployee.cs" />
     <Compile Include="Domain\accounting\financial_growth\income.cs" />
     <Compile Include="Domain\accounting\financial_growth\income_extensions.cs" />
@@ -196,7 +197,7 @@
     <Compile Include="DataAccess\core\IDatabaseGateway.cs" />
     <Compile Include="DataAccess\db40\SessionContext.cs" />
     <Compile Include="DataAccess\db40\SessionContextSpecs.cs" />
-    <Compile Include="Domain\accounting\billing\billing_extensions.cs" />
+    <Compile Include="Domain\accounting\billing\BillingExtensions.cs" />
     <Compile Include="Domain\accounting\billing\Company.cs" />
     <Compile Include="Domain\accounting\billing\CompanySpecs.cs" />
     <Compile Include="Domain\accounting\AccountHolder.cs" />
@@ -631,6 +632,7 @@
     <Compile Include="Utility\Core\DisposableCommand.cs" />
     <Compile Include="Utility\Core\EmptyCallback.cs" />
     <Compile Include="Utility\Core\EmptyCommand.cs" />
+    <Compile Include="Utility\Core\Factory.cs" />
     <Compile Include="Utility\Core\IBuilder.cs" />
     <Compile Include="Utility\Core\ICallback.cs" />
     <Compile Include="Utility\Core\IConfiguration.cs" />

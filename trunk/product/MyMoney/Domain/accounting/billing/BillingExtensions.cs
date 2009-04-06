@@ -1,6 +1,6 @@
 namespace MoMoney.Domain.accounting.billing
 {
-    public static class billing_extensions
+    public static class BillingExtensions
     {
         public static bool is_not_paid(this IBill bill)
         {

@@ -1,5 +1,4 @@
 using MoMoney.Domain.accounting.billing;
-using MoMoney.Domain.repositories;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Utility.Core;
 
@@ -11,16 +10,18 @@ namespace MoMoney.Tasks.application
 
     public class RegisterNewCompanyCommand : IRegisterNewCompanyCommand
     {
-        readonly ICompanyRepository companys;
+        readonly ICompanyFactory factory;
 
-        public RegisterNewCompanyCommand(ICompanyRepository companys)
+        public RegisterNewCompanyCommand(ICompanyFactory factory)
         {
-            this.companys = companys;
+            this.factory = factory;
         }
 
         public void run(RegisterNewCompany item)
         {
-            companys.save(new Company(item.company_name));
+            factory
+                .create()
+                .change_name_to(item.company_name);
         }
     }
 }
