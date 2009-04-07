@@ -8,7 +8,7 @@ using display_the_splash_screen=MoMoney.Presentation.Presenters.Commands.display
 
 namespace MoMoney.boot
 {
-    internal static class bootstrap
+    static internal class bootstrap
     {
         [STAThread]
         static void Main()

@@ -1,4 +1,6 @@
 using System;
+using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Windows.Forms;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.eventing;
@@ -14,8 +16,8 @@ namespace MoMoney.boot
 {
     internal class start_the_application : ICommand
     {
-        ILoadPresentationModulesCommand command;
-        ICommandProcessor processor;
+        readonly ILoadPresentationModulesCommand command;
+        readonly ICommandProcessor processor;
 
         public start_the_application()
             : this(Lazy.load<ILoadPresentationModulesCommand>(), Lazy.load<ICommandProcessor>())
@@ -41,6 +43,25 @@ namespace MoMoney.boot
                 this.log().error(e);
                 resolve.dependency_for<IEventAggregator>().publish(new unhandled_error_occurred(e));
             }
+        }
+    }
+
+    public class ApplicationContainer : Container
+    {
+        readonly IServiceContainer container;
+
+        public ApplicationContainer() : this(new ServiceContainer())
+        {
+        }
+
+        public ApplicationContainer(IServiceContainer container)
+        {
+            this.container = container;
+        }
+
+        protected override object GetService(Type service)
+        {
+            return container.GetService(service) ?? base.GetService(service);
         }
     }
 }

@@ -48,7 +48,7 @@ namespace MoMoney.Tasks.infrastructure.core
 
         public void run<Output, Query>(ICallback<Output> item) where Query : IQuery<Output>
         {
-            run(factory.create_for(item, registry.get_a<Query>()));
+            run(item, registry.get_a<Query>());
         }
     }
 }

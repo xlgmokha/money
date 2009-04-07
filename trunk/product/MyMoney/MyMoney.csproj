@@ -199,7 +199,6 @@
     <Compile Include="DataAccess\db40\SessionContextSpecs.cs" />
     <Compile Include="Domain\accounting\billing\BillingExtensions.cs" />
     <Compile Include="Domain\accounting\billing\Company.cs" />
-    <Compile Include="Domain\accounting\billing\CompanySpecs.cs" />
     <Compile Include="Domain\accounting\AccountHolder.cs" />
     <Compile Include="Domain\accounting\AccountHolderSpecs.cs" />
     <Compile Include="Domain\accounting\billing\total_payments_calculator.cs" />
@@ -492,6 +491,7 @@
     <Compile Include="Presentation\Views\core\ApplicationWindow.Designer.cs">
       <DependentUpon>ApplicationWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Views\core\ICommandDialog.cs" />
     <Compile Include="Presentation\Views\dialogs\ISaveChangesView.cs" />
     <Compile Include="Presentation\Views\dialogs\SaveChangesView.cs">
       <SubType>Form</SubType>

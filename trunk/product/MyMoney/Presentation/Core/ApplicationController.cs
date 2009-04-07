@@ -27,11 +27,11 @@ namespace MoMoney.Presentation.Core
 
         public void run(IPresenter presenter)
         {
+            presenter.run();
             if (presenter.is_an_implementation_of<IContentPresenter>())
             {
                 shell.add(presenter.downcast_to<IContentPresenter>().View);
             }
-            presenter.run();
         }
     }
 }
