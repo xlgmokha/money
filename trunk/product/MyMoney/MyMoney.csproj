@@ -173,6 +173,8 @@
     <Compile Include="boot\container\registration\wire_up_the_data_access_components_into_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_presentation_modules.cs" />
     <Compile Include="boot\container\registration\wire_up_the_services_in_to_the.cs" />
+    <Compile Include="boot\global_error_handling.cs" />
+    <Compile Include="boot\WindowsFormsApplication.cs" />
     <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
     <Compile Include="DataAccess\db40\DetachedSession.cs" />
     <Compile Include="DataAccess\db40\ObjectDatabaseGateway.cs" />
@@ -840,7 +842,6 @@
     <Compile Include="Testing\MetaData\ConcernAttribute.cs" />
     <Compile Include="boot\start_the_application.cs" />
     <Compile Include="boot\container\wire_up_the_container.cs" />
-    <Compile Include="boot\global_error_handling.cs" />
     <Compile Include="boot\container\registration\run_mass_component_registration_in_to_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_essential_services_into_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_mappers_in_to_the.cs" />

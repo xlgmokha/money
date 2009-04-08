@@ -31,7 +31,9 @@ namespace MoMoney.Presentation.Views.core
 
         public IApplicationDockedWindow create_tool_tip_for(string title, string caption, Control control)
         {
-            new ToolTip {IsBalloon = true, ToolTipTitle = title}.SetToolTip(control, caption);
+            var tip = new ToolTip {IsBalloon = true, ToolTipTitle = title};
+            tip.SetToolTip(control, caption);
+            control.Controls.Add(adapt(tip));
             return this;
         }
 
@@ -99,8 +101,29 @@ namespace MoMoney.Presentation.Views.core
         {
             //if (InvokeRequired) BeginInvoke(action);
             //else action();
-            
+
             action();
+        }
+
+        Control adapt(ToolTip item)
+        {
+            return new ControlAdapter(item);
+        }
+
+        internal class ControlAdapter : Control
+        {
+            readonly IDisposable item;
+
+            public ControlAdapter(IDisposable item)
+            {
+                this.item = item;
+            }
+
+            protected override void Dispose(bool disposing)
+            {
+                if (disposing) item.Dispose();
+                base.Dispose(disposing);
+            }
         }
     }
 }

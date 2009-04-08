@@ -5,14 +5,16 @@ using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.updates;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Views.updates
 {
     public partial class CheckForUpdatesView : ApplicationWindow, ICheckForUpdatesView
     {
         ICheckForUpdatesPresenter the_presenter;
+        IShell shell;
 
-        public CheckForUpdatesView()
+        public CheckForUpdatesView(IShell shell)
         {
             InitializeComponent();
             ux_image.Image = ApplicationImages.Splash;
@@ -22,6 +24,7 @@ namespace MoMoney.Presentation.Views.updates
                 .create_tool_tip_for("Update", "Update the application, and then re-start it.", ux_update_button)
                 .create_tool_tip_for("Don't Update", "Discard the latest version.", ux_dont_update_button)
                 .create_tool_tip_for("Cancel", "Go back.", ux_cancel_button);
+            this.shell = shell;
         }
 
         public void attach_to(ICheckForUpdatesPresenter presenter)
@@ -48,7 +51,7 @@ namespace MoMoney.Presentation.Views.updates
                                  ux_update_button.Enabled = false;
                                  ux_dont_update_button.Enabled = false;
                                  ux_cancel_button.Enabled = false;
-                                 Show();
+                                 Show(shell);
                              });
         }
 

@@ -1,15 +1,9 @@
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using System.Windows.Forms;
-using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.eventing;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Modules.Core;
-using MoMoney.Presentation.Model.messages;
-using MoMoney.Presentation.Views.Shell;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.boot
@@ -32,17 +26,8 @@ namespace MoMoney.boot
 
         public void run()
         {
-            try
-            {
-                processor.run();
-                command.run();
-                Application.Run(resolve.dependency_for<ApplicationShell>());
-            }
-            catch (Exception e)
-            {
-                this.log().error(e);
-                resolve.dependency_for<IEventAggregator>().publish(new unhandled_error_occurred(e));
-            }
+            processor.run();
+            command.run();
         }
     }
 
