@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MoMoney.Domain.Core;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.transactions2
@@ -32,6 +33,7 @@ namespace MoMoney.Infrastructure.transactions2
 
         public void commit_to(IDatabase database)
         {
+            items.each(x => this.log().debug("committing: {0}", x.current));
             items.each(x => commit(x, database));
             to_be_deleted.each(x => database.apply(registry.prepare_command_for(x)));
         }

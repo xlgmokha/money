@@ -19,7 +19,7 @@ namespace MoMoney.Infrastructure.transactions2
         {
             using (var connection = factory.open_connection_to(configuration.path_to_database()))
             {
-                return connection.Query<T>().ToList();
+                return connection.query<T>().ToList();
             }
         }
 
@@ -28,7 +28,7 @@ namespace MoMoney.Infrastructure.transactions2
             using (var connection = factory.open_connection_to(configuration.path_to_database()))
             {
                 statement.prepare(connection);
-                connection.Commit();
+                connection.commit();
             }
         }
     }

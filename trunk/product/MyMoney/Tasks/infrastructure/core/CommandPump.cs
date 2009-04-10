@@ -6,11 +6,11 @@ namespace MoMoney.Tasks.infrastructure.core
 {
     public interface ICommandPump
     {
-        void run<Command>() where Command : ICommand;
-        void run<Command>(Command command) where Command : ICommand;
-        void run<Command, T>(T input) where Command : IParameterizedCommand<T>;
-        void run<T>(ICallback<T> item, IQuery<T> query);
-        void run<Output, Query>(ICallback<Output> item) where Query : IQuery<Output>;
+        ICommandPump run<Command>() where Command : ICommand;
+        ICommandPump run<Command>(Command command) where Command : ICommand;
+        ICommandPump run<Command, T>(T input) where Command : IParameterizedCommand<T>;
+        ICommandPump run<T>(ICallback<T> item, IQuery<T> query);
+        ICommandPump run<Output, Query>(ICallback<Output> item) where Query : IQuery<Output>;
     }
 
     public class CommandPump : ICommandPump
@@ -26,29 +26,31 @@ namespace MoMoney.Tasks.infrastructure.core
             this.registry = registry;
         }
 
-        public void run<Command>() where Command : ICommand
+        public ICommandPump run<Command>() where Command : ICommand
         {
-            run(registry.get_a<Command>());
+            return run(registry.get_a<Command>());
         }
 
-        public void run<Command>(Command command) where Command : ICommand
+        public ICommandPump run<Command>(Command command) where Command : ICommand
         {
             processor.add(command);
+            return this;
         }
 
-        public void run<Command, T>(T input) where Command : IParameterizedCommand<T>
+        public ICommandPump run<Command, T>(T input) where Command : IParameterizedCommand<T>
         {
             processor.add(() => registry.get_a<Command>().run(input));
+            return this;
         }
 
-        public void run<T>(ICallback<T> item, IQuery<T> query)
+        public ICommandPump run<T>(ICallback<T> item, IQuery<T> query)
         {
-            run(factory.create_for(item, query));
+            return run(factory.create_for(item, query));
         }
 
-        public void run<Output, Query>(ICallback<Output> item) where Query : IQuery<Output>
+        public ICommandPump run<Output, Query>(ICallback<Output> item) where Query : IQuery<Output>
         {
-            run(item, registry.get_a<Query>());
+            return run(item, registry.get_a<Query>());
         }
     }
 }

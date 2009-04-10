@@ -20,7 +20,7 @@ namespace MoMoney.Presentation.Presenters.Shell
 
     public class when_displaying_the_log_file : behaves_like_log_file_presenter
     {
-        it should_display_the_contents_of_the_log_file = () => view.was_told_to(x => x.display(log_file_path, log_file_contents));
+        it should_display_the_contents_of_the_log_file = () => view.was_told_to(x => x.display(log_file_path));
 
         context c = () =>
                         {

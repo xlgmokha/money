@@ -1,6 +1,5 @@
-using Db4objects.Db4o;
 using MoMoney.Domain.Core;
-using MoMoney.Utility.Extensions;
+using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -26,11 +25,10 @@ namespace MoMoney.Infrastructure.transactions2
             this.entity = entity;
         }
 
-        public void prepare(IObjectContainer connection)
+        public void prepare(IDatabaseConnection connection)
         {
-            var query = connection.Query<T>(x => x.id.Equals(entity.id));
-            query.each(x => connection.Delete(x));
-            connection.Store(entity);
+            connection.store(entity);
+            this.log().debug("saving: {0}", entity);
         }
     }
 
@@ -43,9 +41,9 @@ namespace MoMoney.Infrastructure.transactions2
             this.entity = entity;
         }
 
-        public void prepare(IObjectContainer connection)
+        public void prepare(IDatabaseConnection connection)
         {
-            connection.Delete(entity);
+            connection.delete(entity);
         }
     }
 }

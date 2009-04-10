@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using MoMoney.Domain.Core;
-using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -23,7 +22,6 @@ namespace MoMoney.Infrastructure.transactions2
         public void add(Key key, Value value)
         {
             change_tracker.register(value);
-            this.log().debug("registered: {0},{1}", key, value);
             real_map.add(key, value);
         }
 

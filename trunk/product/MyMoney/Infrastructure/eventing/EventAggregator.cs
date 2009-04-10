@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.eventing
@@ -46,7 +45,6 @@ namespace MoMoney.Infrastructure.eventing
 
         public void publish<T>(Expression<Action<T>> call) where T : class
         {
-            this.log().debug("publishing: {0}", call);
             process(() => subscribers.each(x => x.call_on(call.Compile())));
         }
 

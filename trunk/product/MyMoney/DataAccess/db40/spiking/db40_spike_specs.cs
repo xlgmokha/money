@@ -18,7 +18,9 @@ namespace MoMoney.DataAccess.db40.spiking
                         {
                             original = new TestObject(88, "mo");
                             the_database_file = Path.GetTempFileName();
-                            database = Db4oFactory.OpenFile(the_database_file);
+                            var configuration = Db4oFactory.NewConfiguration();
+                            configuration.LockDatabaseFile(false);
+                            database = Db4oFactory.OpenFile(configuration, the_database_file);
                         };
 
         because b = () =>

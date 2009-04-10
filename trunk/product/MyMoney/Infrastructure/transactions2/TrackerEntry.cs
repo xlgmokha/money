@@ -1,5 +1,4 @@
 using System.Reflection;
-using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -30,16 +29,13 @@ namespace MoMoney.Infrastructure.transactions2
                 var current_value = field.GetValue(current);
                 if (original_value == null && current_value != null)
                 {
-                    this.log().debug("has changes: {0}", original);
                     return true;
                 }
                 if (original_value != null && !original_value.Equals(current_value))
                 {
-                    this.log().debug("has changes: {0}", original);
                     return true;
                 }
             }
-            this.log().debug("does not have changes: {0}", original);
             return false;
         }
     }

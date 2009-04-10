@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Resources;
 
 namespace MoMoney.Presentation.Views.core
@@ -19,12 +18,14 @@ namespace MoMoney.Presentation.Views.core
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
-            this.log().debug("created {0}", GetType());
+            //this.log().debug("created {0}", GetType());
         }
 
         public IApplicationWindow create_tool_tip_for(string title, string caption, Control control)
         {
-            new ToolTip {IsBalloon = true, ToolTipTitle = title}.SetToolTip(control, caption);
+            var tip = new ToolTip {IsBalloon = true, ToolTipTitle = title};
+            tip.SetToolTip(control, caption);
+            control.Controls.Add(adapt(tip));
             return this;
         }
 
@@ -53,7 +54,28 @@ namespace MoMoney.Presentation.Views.core
         {
             //if (InvokeRequired) BeginInvoke(action);
             //else action();
-             action();
+            action();
+        }
+
+        Control adapt(ToolTip item)
+        {
+            return new ControlAdapter(item);
+        }
+
+        internal class ControlAdapter : Control
+        {
+            readonly IDisposable item;
+
+            public ControlAdapter(IDisposable item)
+            {
+                this.item = item;
+            }
+
+            protected override void Dispose(bool disposing)
+            {
+                if (disposing) item.Dispose();
+                base.Dispose(disposing);
+            }
         }
     }
 }

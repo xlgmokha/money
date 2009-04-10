@@ -8,7 +8,7 @@ namespace MoMoney.Infrastructure.transactions2
 {
     public interface IConnectionFactory
     {
-        IObjectContainer open_connection_to(IFile the_path_to_the_database_file);
+        IDatabaseConnection open_connection_to(IFile the_path_to_the_database_file);
     }
 
     public class ConnectionFactory : IConnectionFactory
@@ -20,23 +20,23 @@ namespace MoMoney.Infrastructure.transactions2
             this.setup = setup;
         }
 
-        public IObjectContainer open_connection_to(IFile the_path_to_the_database_file)
+        public IDatabaseConnection open_connection_to(IFile the_path_to_the_database_file)
         {
-            this.log().debug("opening connection to: {0}", the_path_to_the_database_file);
             var configuration = Db4oFactory.NewConfiguration();
             setup.configure(configuration);
-
-            return get_container(the_path_to_the_database_file, configuration);
+            return new DatabaseConnection(get_container(the_path_to_the_database_file, configuration));
         }
 
         IObjectContainer get_container(IFile the_path_to_the_database_file, IConfiguration configuration)
         {
             var container = Db4oFactory.OpenFile(configuration, the_path_to_the_database_file.path);
             var registry = EventRegistryFactory.ForObjectContainer(container);
-
-            registry.ClassRegistered += (sender, args) => this.log().debug("class registered: {0}", args);
-            registry.Instantiated += (sender, args) => this.log().debug("class instantiated: {0}", args.Object);
-
+            registry.ClassRegistered +=
+                (sender, args) => this.log().debug("class registered: {0}", args.ClassMetadata());
+            registry.Instantiated += (sender, args) => this.log().debug("class instantiated: {0}", args.Object.GetType().Name);
+            registry.Committed +=
+                (sender, args) =>
+                this.log().debug("added: {0}, updated: {1}, deleted: {2}", args.Added, args.Updated, args.Deleted);
             return container;
         }
     }

@@ -1,5 +1,6 @@
 using System;
 using MoMoney.DataAccess.core;
+using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.repositories;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.interceptors;
@@ -21,43 +22,43 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            registry.proxy(new ServiceLayerConfiguration<IBillingTasks>(
-                               x =>
-                                   {
-                                       //x.register_new_company(null);
-                                       x.save_a_new_bill_using(null);
-                                   }
-                               ),
-                           () =>
-                           new BillingTasks(Lazy.load<IBillRepository>(), Lazy.load<ICompanyRepository>(),
-                                            Lazy.load<ICustomerTasks>()));
+            registry.proxy<IBillingTasks, ServiceLayerConfiguration<IBillingTasks>>(
+                () => new BillingTasks(Lazy.load<IBillRepository>(),
+                                       Lazy.load<ICompanyRepository>(),
+                                       Lazy.load<ICustomerTasks>()));
 
-            registry.proxy(
-                new ServiceLayerConfiguration<ICustomerTasks>(x => x.get_the_current_customer()),
+            registry.proxy<ICustomerTasks, ServiceLayerConfiguration<ICustomerTasks>>(
                 () => new CustomerTasks(Lazy.load<IDatabaseGateway>()));
 
-            registry.proxy(
-                new ServiceLayerConfiguration<IIncomeTasks>(x => x.add_new(null)),
+            registry.proxy<IIncomeTasks, ServiceLayerConfiguration<IIncomeTasks>>(
                 () => new IncomeTasks(Lazy.load<ICustomerTasks>(),
                                       Lazy.load<ICompanyRepository>(),
                                       Lazy.load<IIncomeRepository>()));
+
+
+            wire_up_queries();
+            wire_up_the_commands();
+
+        }
+
+        void wire_up_queries()
+        {
+            registry.proxy<IGetAllCompanysQuery, ServiceLayerConfiguration<IGetAllCompanysQuery>>(
+                () => new GetAllCompanysQuery(Lazy.load<ICompanyRepository>()));
+        }
+
+        void wire_up_the_commands()
+        {
+            registry.proxy<IRegisterNewCompanyCommand, ServiceLayerConfiguration<IRegisterNewCompanyCommand>>(
+                () => new RegisterNewCompanyCommand(Lazy.load<ICompanyFactory>()));
         }
     }
 
     internal class ServiceLayerConfiguration<T> : IConfiguration<IProxyBuilder<T>>
     {
-        readonly Action<T> configure_it;
-
-        public ServiceLayerConfiguration(Action<T> configure_it)
-        {
-            this.configure_it = configure_it;
-        }
-
         public void configure(IProxyBuilder<T> item)
         {
-            var selector = item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>());
-            selector.intercept_all();
-            //configure_it(selector.intercept_on);
+            item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>()).intercept_all();
         }
     }
 }

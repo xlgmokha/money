@@ -34,15 +34,17 @@ namespace MoMoney.Presentation.Presenters
 
     public class when_registering_a_new_company : behaves_like_the_add_company_presenter
     {
-        context c = () => when_the(tasks).is_asked_for(x => x.all_companys()).it_will_return_nothing();
-
-        because b = () =>
+        context c = () =>
                         {
                             dto = new RegisterNewCompany {company_name = "Microsoft"};
-                            sut.submit(dto);
+                            when_the(tasks).is_asked_for(x => x.all_companys()).it_will_return_nothing();
+                            when_the(pump)
+                                .is_told_to(x => x.run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto))
+                                .it_will_return(pump);
                         };
 
-        //it should_add_the_new_company = () => tasks.was_told_to(x => x.register_new_company(dto));
+        because b = () => { sut.submit(dto); };
+
         it should_add_the_new_company =
             () => pump.was_told_to(x => x.run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto));
 

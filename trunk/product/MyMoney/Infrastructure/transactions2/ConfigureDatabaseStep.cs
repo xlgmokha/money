@@ -12,9 +12,9 @@ namespace MoMoney.Infrastructure.transactions2
         public void configure(IConfiguration item)
         {
             item.LockDatabaseFile(false);
-            item.UpdateDepth(10);
-            item.WeakReferences(true);
-            item.AutomaticShutDown(true);
+            //item.UpdateDepth(10);
+            //item.WeakReferences(true);
+            //item.AutomaticShutDown(true);
         }
     }
 }

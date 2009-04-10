@@ -1,4 +1,7 @@
 using System;
+using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.Globalization;
 using System.Security.Principal;
 using System.Threading;
@@ -27,6 +30,8 @@ namespace MoMoney.boot
 
         public void run()
         {
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
             Func<ISplashScreenPresenter> presenter = () => new SplashScreenPresenter();
             presenter = presenter.memorize();
 
@@ -41,10 +46,12 @@ namespace MoMoney.boot
                 .then<start_the_application>()
                 .run();
 
+            stopwatch.Stop();
+            this.log().debug("application startup took: {0}", stopwatch.Elapsed);
             start();
         }
 
-        protected void start()
+        void start()
         {
             try
             {
@@ -55,6 +62,25 @@ namespace MoMoney.boot
                 this.log().error(e);
                 resolve.dependency_for<IEventAggregator>().publish(new unhandled_error_occurred(e));
             }
+        }
+    }
+
+    public class ApplicationContainer : Container
+    {
+        readonly IServiceContainer container;
+
+        public ApplicationContainer() : this(new ServiceContainer())
+        {
+        }
+
+        public ApplicationContainer(IServiceContainer container)
+        {
+            this.container = container;
+        }
+
+        protected override object GetService(Type service)
+        {
+            return container.GetService(service) ?? base.GetService(service);
         }
     }
 }

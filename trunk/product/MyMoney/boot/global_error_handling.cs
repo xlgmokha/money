@@ -13,9 +13,6 @@ namespace MoMoney.boot
     {
         public void run()
         {
-            //Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
             Application.ThreadException += (sender, e) => handle(e.Exception);
             AppDomain.CurrentDomain.UnhandledException += (o, e) => handle(e.ExceptionObject.downcast_to<Exception>());
         }

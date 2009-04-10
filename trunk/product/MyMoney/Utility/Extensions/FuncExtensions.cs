@@ -2,7 +2,7 @@ using System;
 
 namespace MoMoney.Utility.Extensions
 {
-    public static class func_extensions
+    public static class FuncExtensions
     {
         public static Func<T> memorize<T>(this Func<T> item) where T : class
         {
@@ -11,7 +11,7 @@ namespace MoMoney.Utility.Extensions
                        {
                            if (null == the_implementation)
                            {
-                               lock (typeof (func_extensions))
+                               lock (typeof (FuncExtensions))
                                {
                                    if (null == the_implementation)
                                    {

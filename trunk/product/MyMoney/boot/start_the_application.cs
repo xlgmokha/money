@@ -1,6 +1,3 @@
-using System;
-using System.ComponentModel;
-using System.ComponentModel.Design;
 using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Modules.Core;
@@ -28,25 +25,6 @@ namespace MoMoney.boot
         {
             processor.run();
             command.run();
-        }
-    }
-
-    public class ApplicationContainer : Container
-    {
-        readonly IServiceContainer container;
-
-        public ApplicationContainer() : this(new ServiceContainer())
-        {
-        }
-
-        public ApplicationContainer(IServiceContainer container)
-        {
-            this.container = container;
-        }
-
-        protected override object GetService(Type service)
-        {
-            return container.GetService(service) ?? base.GetService(service);
         }
     }
 }

@@ -32,22 +32,17 @@ namespace MoMoney.Presentation.Presenters
         public void run()
         {
             view.attach_to(this);
-            view.run(tasks.all_companys());
-            //pump.run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view);
+            pump.run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view);
         }
 
         public void submit(RegisterNewCompany dto)
         {
             if (company_has_already_been_registered(dto))
-            {
                 view.notify(create_error_message_from(dto));
-            }
             else
-            {
-                pump.run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto);
-                //pump.run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view);
-                view.run(tasks.all_companys());
-            }
+                pump
+                    .run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto)
+                    .run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view);
         }
 
         bool company_has_already_been_registered(RegisterNewCompany dto)

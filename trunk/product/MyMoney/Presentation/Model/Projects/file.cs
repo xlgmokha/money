@@ -1,4 +1,5 @@
 using System.IO;
+using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Presentation.Model.Projects
 {
@@ -25,6 +26,7 @@ namespace MoMoney.Presentation.Model.Projects
 
         public void copy_to(string other_path)
         {
+            this.log().debug("copying {0} to {1}", path, other_path);
             File.Copy(path, other_path, true);
         }
 
