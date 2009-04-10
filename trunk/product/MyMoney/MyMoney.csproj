@@ -373,7 +373,7 @@
     <Compile Include="Presentation\Model\Navigation\branches\AddNewIncomeBranch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\view_all_bills_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\view_all_bills_report_branch.cs" />
-    <Compile Include="Presentation\Model\Projects\CurrentProject.cs" />
+    <Compile Include="Presentation\Model\Projects\ProjectController.cs" />
     <Compile Include="Presentation\Core\PresenterRegistry.cs" />
     <Compile Include="Presentation\Model\Menu\create.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\ExitCommand.cs" />
@@ -393,7 +393,7 @@
     <Compile Include="Presentation\Model\Navigation\TreeBranch.cs" />
     <Compile Include="Presentation\Model\Navigation\tree_branch_specs.cs" />
     <Compile Include="Presentation\Model\Navigation\TreeViewToRootNodeMapper.cs" />
-    <Compile Include="Presentation\Model\Projects\CurrentProjectSpecs.cs" />
+    <Compile Include="Presentation\Model\Projects\ProjectControllerSpecs.cs" />
     <Compile Include="Presentation\Model\Projects\file.cs" />
     <Compile Include="Presentation\Model\Projects\file_not_specified_exception.cs" />
     <Compile Include="Presentation\Model\reporting\IReport.cs" />
@@ -517,7 +517,7 @@
     <Compile Include="Presentation\Views\core\IDockedContentView.cs" />
     <Compile Include="Presentation\Views\core\IView.cs" />
     <Compile Include="Presentation\Views\dialogs\select_file_to_open_dialog.cs" />
-    <Compile Include="Presentation\Views\dialogs\select_file_to_save_to_dialog.cs" />
+    <Compile Include="Presentation\Views\dialogs\SelectFileToSaveToDialog.cs" />
     <Compile Include="Presentation\Views\income\AddNewIncomeView.cs">
       <SubType>Form</SubType>
     </Compile>

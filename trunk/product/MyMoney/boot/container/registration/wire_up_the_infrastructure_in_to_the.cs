@@ -23,7 +23,7 @@ namespace MoMoney.boot.container.registration
             registry.singleton<IEventAggregator, EventAggregator>();
             registry.singleton<ITimer, IntervalTimer>();
             registry.singleton<IUnitOfWorkRegistry, UnitOfWorkRegistry>();
-            registry.singleton<IProject, CurrentProject>();
+            registry.singleton<IProjectController, ProjectController>();
             registry.transient(typeof (IRegistry<>), typeof (DefaultRegistry<>));
             registry.transient(typeof (IUnitOfWorkRegistrationFactory<>), typeof (UnitOfWorkRegistrationFactory<>));
 

@@ -14,14 +14,14 @@ namespace MoMoney.Presentation.Presenters.Shell
     {
         context c = () =>
                         {
-                            project = the_dependency<IProject>();
+                            project = the_dependency<IProjectController>();
                             view = the_dependency<ITitleBar>();
                             broker = the_dependency<IEventAggregator>();
                         };
 
         protected static ITitleBar view;
         protected static IEventAggregator broker;
-        protected static IProject project;
+        protected static IProjectController project;
     }
 
     public class when_initializing_the_title_bar_for_the_first_time : behaves_like_a_title_bar_presenter

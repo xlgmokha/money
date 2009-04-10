@@ -16,11 +16,11 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         context c = () =>
                         {
-                            current_project = an<IProject>();
+                            current_project = an<IProjectController>();
                             save_as_command = an<ISaveAsCommand>();
                         };
         protected static ISaveAsCommand save_as_command;
-        protected static IProject current_project;
+        protected static IProjectController current_project;
     }
 
     public class when_saving_the_current_project_that_has_not_been_saved_yet : behaves_like_the_save_command

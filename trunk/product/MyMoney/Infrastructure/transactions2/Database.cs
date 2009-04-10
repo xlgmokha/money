@@ -1,23 +1,25 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using MoMoney.Domain.Core;
+using MoMoney.Presentation.Model.Projects;
 
 namespace MoMoney.Infrastructure.transactions2
 {
-    public class Database : IDatabase
+    public class Database : IDatabase, IDatabaseConfiguration
     {
-        readonly IDatabaseConfiguration configuration;
         readonly IConnectionFactory factory;
+        IFile path;
 
-        public Database(IDatabaseConfiguration configuration, IConnectionFactory factory)
+        public Database(IConnectionFactory factory)
         {
-            this.configuration = configuration;
             this.factory = factory;
+            path = new ApplicationFile(Path.GetTempFileName());
         }
 
         public IEnumerable<T> fetch_all<T>() where T : IEntity
         {
-            using (var connection = factory.open_connection_to(configuration.path_to_database()))
+            using (var connection = factory.open_connection_to(path_to_database()))
             {
                 return connection.query<T>().ToList();
             }
@@ -25,11 +27,27 @@ namespace MoMoney.Infrastructure.transactions2
 
         public void apply(IStatement statement)
         {
-            using (var connection = factory.open_connection_to(configuration.path_to_database()))
+            using (var connection = factory.open_connection_to(path_to_database()))
             {
                 statement.prepare(connection);
                 connection.commit();
             }
+        }
+
+        public IFile path_to_database()
+        {
+            return path;
+        }
+
+        public void open(IFile file)
+        {
+            path = new ApplicationFile(Path.GetTempFileName());
+            file.copy_to(path.path);
+        }
+
+        public void copy_to(string new_path)
+        {
+            path.copy_to(new_path);
         }
     }
 }

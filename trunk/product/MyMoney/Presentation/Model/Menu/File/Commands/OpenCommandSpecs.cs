@@ -13,11 +13,11 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         context c = () =>
                         {
                             view = the_dependency<ISelectFileToOpenDialog>();
-                            project = the_dependency<IProject>();
+                            project = the_dependency<IProjectController>();
                             save_changes_command = the_dependency<ISaveChangesCommand>();
                         };
 
-        protected static IProject project;
+        protected static IProjectController project;
         protected static ISelectFileToOpenDialog view;
         protected static ISaveChangesCommand save_changes_command;
     }

@@ -12,9 +12,9 @@ namespace MoMoney.Presentation.Model.Menu.File
 
     public class FileMenu : SubMenu, IFileMenu
     {
-        readonly IProject project;
+        readonly IProjectController project;
 
-        public FileMenu(IProject project)
+        public FileMenu(IProjectController project)
         {
             this.project = project;
         }

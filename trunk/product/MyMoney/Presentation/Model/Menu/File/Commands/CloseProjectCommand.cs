@@ -10,10 +10,10 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
     public class CloseProjectCommand : ICloseCommand
     {
-        readonly IProject project;
+        readonly IProjectController project;
         readonly ISaveChangesCommand command;
 
-        public CloseProjectCommand(IProject project, ISaveChangesCommand command)
+        public CloseProjectCommand(IProjectController project, ISaveChangesCommand command)
         {
             this.command = command;
             this.project = project;

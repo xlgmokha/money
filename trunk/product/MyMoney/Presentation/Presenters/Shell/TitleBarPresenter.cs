@@ -17,10 +17,10 @@ namespace MoMoney.Presentation.Presenters.Shell
     public class TitleBarPresenter : ITitleBarPresenter
     {
         readonly ITitleBar view;
-        readonly IProject project;
+        readonly IProjectController project;
         readonly IEventAggregator broker;
 
-        public TitleBarPresenter(ITitleBar view, IProject project, IEventAggregator broker)
+        public TitleBarPresenter(ITitleBar view, IProjectController project, IEventAggregator broker)
         {
             this.view = view;
             this.project = project;

@@ -12,12 +12,12 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     {
         context c = () =>
                         {
-                            current_project = the_dependency<IProject>();
+                            current_project = the_dependency<IProjectController>();
                             command = the_dependency<ILoadPresentationModulesCommand>();
                             save_changes_command = the_dependency<ISaveChangesCommand>();
                         };
 
-        protected static IProject current_project;
+        protected static IProjectController current_project;
         protected static ILoadPresentationModulesCommand command;
         protected static ISaveChangesCommand save_changes_command;
     }

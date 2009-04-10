@@ -5,7 +5,7 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Model.Projects
 {
-    public interface IProject
+    public interface IProjectController
     {
         string name();
         void start_new_project();
@@ -18,15 +18,15 @@ namespace MoMoney.Presentation.Model.Projects
         bool is_open();
     }
 
-    public class CurrentProject : IProject, IEventSubscriber<UnsavedChangesEvent>
+    public class ProjectController : IProjectController, IEventSubscriber<UnsavedChangesEvent>
     {
         readonly IEventAggregator broker;
-        IDatabaseConfiguration configuration;
+        readonly IDatabaseConfiguration configuration;
         IFile current_file;
         bool is_project_open = false;
         bool unsaved_changes = false;
 
-        public CurrentProject(IEventAggregator broker, IDatabaseConfiguration configuration)
+        public ProjectController(IEventAggregator broker, IDatabaseConfiguration configuration)
         {
             this.broker = broker;
             this.configuration = configuration;
@@ -50,7 +50,7 @@ namespace MoMoney.Presentation.Model.Projects
         {
             if (!file.does_the_file_exist()) return;
             close_project();
-            configuration.change_path_to(file);
+            configuration.open(file);
             current_file = file;
             is_project_open = true;
             broker.publish(new NewProjectOpened(name()));
@@ -59,7 +59,7 @@ namespace MoMoney.Presentation.Model.Projects
         public void save_changes()
         {
             ensure_that_a_path_to_save_to_has_been_specified();
-            configuration.path_to_database().copy_to(current_file.path);
+            configuration.copy_to(current_file.path);
             unsaved_changes = false;
             broker.publish<SavedChangesEvent>();
         }

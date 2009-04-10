@@ -14,7 +14,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         context c = () =>
                         {
-                            current_project = an<IProject>();
+                            current_project = an<IProjectController>();
                             view = an<ISelectFileToSaveToDialog>();
                             new_path = "blah_blah";
 
@@ -28,7 +28,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
             return new SaveAsCommand(view, current_project);
         }
 
-        static IProject current_project;
+        static IProjectController current_project;
         static Projects.ApplicationFile new_path;
         static ISelectFileToSaveToDialog view;
     }

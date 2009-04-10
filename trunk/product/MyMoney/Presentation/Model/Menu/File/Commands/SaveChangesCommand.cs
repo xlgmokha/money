@@ -26,12 +26,12 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
     public class SaveChangesCommand : ISaveChangesCommand, ISaveChangesPresenter
     {
-        readonly IProject current_project;
+        readonly IProjectController current_project;
         readonly ISaveChangesView view;
         readonly ISaveAsCommand save_as_command;
         ISaveChangesCallback callback;
 
-        public SaveChangesCommand(IProject current_project, ISaveChangesView view, ISaveAsCommand save_as_command)
+        public SaveChangesCommand(IProjectController current_project, ISaveChangesView view, ISaveAsCommand save_as_command)
         {
             this.current_project = current_project;
             this.save_as_command = save_as_command;

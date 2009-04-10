@@ -1,29 +1,31 @@
 using System;
 using developwithpassion.bdd.contexts;
-using MoMoney.DataAccess.db40;
 using MoMoney.Infrastructure.eventing;
-using MoMoney.Infrastructure.transactions;
+using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Testing;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
 using MoMoney.Testing.spechelpers.core;
+using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Model.Projects
 {
-    [Concern(typeof (CurrentProject))]
-    public abstract class behaves_like_a_project : concerns_for<IProject, CurrentProject>
+    public class ProjectControllerSpecs
+    {
+    }
+
+    [Concern(typeof (ProjectController))]
+    public abstract class behaves_like_a_project : concerns_for<IProjectController, ProjectController>
     {
         context c = () =>
                         {
                             broker = the_dependency<IEventAggregator>();
-                            registry = the_dependency<IUnitOfWorkRegistry>();
-                            context = the_dependency<ISessionContext>();
+                            configuration = the_dependency<IDatabaseConfiguration>();
                         };
 
         protected static IEventAggregator broker;
-        protected static IUnitOfWorkRegistry registry;
-        protected static ISessionContext context;
+        protected static IDatabaseConfiguration configuration;
     }
 
     public class when_saving_the_current_project : behaves_like_a_project
@@ -59,13 +61,12 @@ namespace MoMoney.Presentation.Model.Projects
 
     public class when_specifying_a_new_path_to_save_an_opened_project_to : behaves_like_a_project
     {
-        //it should_save_the_current_database_to_the_new_path = () => configuration.was_told_to(x => x.change_path_to(new_file));
+        it should_save_the_current_database_to_the_new_path = () => configuration.was_told_to(x => x.copy_to("blah"));
 
         context c = () =>
                         {
                             original_file = an<IFile>();
                             new_file = an<IFile>();
-                            database_file = an<IFile>();
                             when_the(new_file).is_told_to(x => x.path).it_will_return("blah");
                         };
 
@@ -76,7 +77,6 @@ namespace MoMoney.Presentation.Model.Projects
                         };
 
         static IFile original_file;
-        static IFile database_file;
         static IFile new_file;
     }
 
@@ -147,13 +147,13 @@ namespace MoMoney.Presentation.Model.Projects
     {
         it should_return_true = () => result.should_be_true();
 
-        context c = () =>
-                        {
-                            an<IFile>();
-                            registry.is_told_to(x => x.has_changes_to_commit()).it_will_return(true);
-                        };
+        context c = () => { };
 
-        because b = () => { result = sut.has_unsaved_changes(); };
+        because b = () =>
+                        {
+                            sut.downcast_to<ProjectController>().notify(new UnsavedChangesEvent());
+                            result = sut.has_unsaved_changes();
+                        };
 
         static bool result;
     }

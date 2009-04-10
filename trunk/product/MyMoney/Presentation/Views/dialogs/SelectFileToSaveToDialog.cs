@@ -8,11 +8,11 @@ namespace MoMoney.Presentation.Views.dialogs
         IFile tell_me_the_path_to_the_file();
     }
 
-    public class select_file_to_save_to_dialog : ISelectFileToSaveToDialog
+    public class SelectFileToSaveToDialog : ISelectFileToSaveToDialog
     {
         private readonly FileDialog dialog;
 
-        public select_file_to_save_to_dialog()
+        public SelectFileToSaveToDialog()
         {
             dialog = new SaveFileDialog {Filter = "My Money Files (*.mo)|*.mo"};
         }

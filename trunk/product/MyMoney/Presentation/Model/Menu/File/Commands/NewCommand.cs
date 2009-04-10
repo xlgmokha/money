@@ -9,10 +9,10 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
     public class NewCommand : INewCommand
     {
-        readonly IProject current_project;
+        readonly IProjectController current_project;
         readonly ISaveChangesCommand save_changes_command;
 
-        public NewCommand(IProject current_project, ISaveChangesCommand save_changes_command)
+        public NewCommand(IProjectController current_project, ISaveChangesCommand save_changes_command)
         {
             this.current_project = current_project;
             this.save_changes_command = save_changes_command;

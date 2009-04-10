@@ -11,10 +11,10 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
     public class OpenCommand : IOpenCommand
     {
         readonly ISelectFileToOpenDialog view;
-        readonly IProject project;
+        readonly IProjectController project;
         readonly ISaveChangesCommand save_changes_command;
 
-        public OpenCommand(ISelectFileToOpenDialog view, IProject project, ISaveChangesCommand save_changes_command)
+        public OpenCommand(ISelectFileToOpenDialog view, IProjectController project, ISaveChangesCommand save_changes_command)
         {
             this.view = view;
             this.save_changes_command = save_changes_command;
