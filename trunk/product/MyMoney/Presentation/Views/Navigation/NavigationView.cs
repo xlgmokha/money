@@ -1,3 +1,4 @@
+using System;
 using System.Windows.Forms;
 using MoMoney.Presentation.Model.Navigation;
 using MoMoney.Presentation.Resources;
@@ -16,14 +17,12 @@ namespace MoMoney.Presentation.Views.Navigation
         {
             InitializeComponent();
             this.shell = shell;
-            initialize_the_ui();
         }
 
-        void initialize_the_ui()
+        protected override void OnLoad(EventArgs e)
         {
             icon(ApplicationIcons.FileExplorer)
-                .cannot_be_closed()
-                .docked_to(DockState.DockLeft);
+                .docked_to(DockState.DockRightAutoHide);
 
             uxNavigationTreeView.ImageList = new ImageList();
             ApplicationIcons.all().each(x => uxNavigationTreeView.ImageList.Images.Add(x.name_of_the_icon, x));

@@ -27,7 +27,7 @@ namespace MoMoney.Tasks.infrastructure
 
         public string get_the_path_to_the_log_file()
         {
-            return Path.Combine(this.startup_directory(), "logs/log.txt");
+            return Path.Combine(this.startup_directory(), @"logs\log.txt");
         }
 
         //public void notify(ICallback<string> view)

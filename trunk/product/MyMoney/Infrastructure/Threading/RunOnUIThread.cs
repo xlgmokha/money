@@ -4,19 +4,15 @@ using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.Threading
 {
-    public interface IThreadSafeInterceptor : IInterceptor
-    {
-    }
-
-    public class ThreadSafeInterceptor : IThreadSafeInterceptor
+    public class RunOnUIThread : IInterceptor
     {
         readonly ISynchronizationContextFactory factory;
 
-        public ThreadSafeInterceptor() : this(Lazy.load<ISynchronizationContextFactory>())
+        public RunOnUIThread() : this(Lazy.load<ISynchronizationContextFactory>())
         {
         }
 
-        public ThreadSafeInterceptor(ISynchronizationContextFactory factory)
+        public RunOnUIThread(ISynchronizationContextFactory factory)
         {
             this.factory = factory;
         }

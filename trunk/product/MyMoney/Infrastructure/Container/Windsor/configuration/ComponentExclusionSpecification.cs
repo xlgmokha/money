@@ -12,6 +12,7 @@ namespace MoMoney.Infrastructure.Container.Windsor.configuration
                 .or(type.is_an_implementation_of_dependency_registry())
                 .or(type.is_an_entity())
                 .or(type.is_an_interface())
+                .or(type.is_abstract())
                 .is_satisfied_by(type);
         }
     }

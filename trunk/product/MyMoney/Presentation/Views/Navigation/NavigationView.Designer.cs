@@ -35,19 +35,21 @@ namespace MoMoney.Presentation.Views.Navigation
             // 
             this.uxNavigationTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uxNavigationTreeView.Location = new System.Drawing.Point(0, 0);
+            this.uxNavigationTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uxNavigationTreeView.Name = "uxNavigationTreeView";
-            this.uxNavigationTreeView.Size = new System.Drawing.Size(292, 273);
+            this.uxNavigationTreeView.Size = new System.Drawing.Size(389, 336);
             this.uxNavigationTreeView.TabIndex = 0;
             // 
             // NavigationView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.ClientSize = new System.Drawing.Size(389, 336);
             this.Controls.Add(this.uxNavigationTreeView);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NavigationView";
             this.TabText = "Action Items";
-            this.Text = "Action Items";
+            this.Text = "Alternate Menu";
             this.ResumeLayout(false);
 
         }

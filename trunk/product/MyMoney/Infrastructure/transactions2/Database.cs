@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -43,6 +44,13 @@ namespace MoMoney.Infrastructure.transactions2
         public void copy_to(string new_path)
         {
             path.copy_to(new_path);
+        }
+
+        public void close(string name)
+        {
+            path.delete();
+            path = new ApplicationFile(Path.GetTempFileName());
+            
         }
 
         IFile path_to_database()

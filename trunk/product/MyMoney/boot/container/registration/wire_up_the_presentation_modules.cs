@@ -1,5 +1,6 @@
 using System.Reflection;
 using MoMoney.Infrastructure.Container;
+using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.reflection;
 using MoMoney.Modules.Core;
 using MoMoney.Presentation.Core;
@@ -30,8 +31,7 @@ namespace MoMoney.boot.container.registration
         public void run(IAssembly item)
         {
             registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(
-                () =>
-                new ApplicationController(resolve.dependency_for<IPresenterRegistry>(), resolve.dependency_for<IShell>()));
+                () => new ApplicationController(Lazy.load<IPresenterRegistry>(), Lazy.load<IShell>()));
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
             registry.transient<IFileMenu, FileMenu>();
             registry.transient<IWindowMenu, WindowMenu>();
@@ -41,12 +41,14 @@ namespace MoMoney.boot.container.registration
                 .all_types()
                 .where(x => typeof (IPresenter).IsAssignableFrom(x))
                 .where(x => !x.IsInterface)
+                .where(x => !x.IsAbstract)
                 .each(type => registry.transient(typeof (IPresenter), type));
 
             item
                 .all_types()
                 .where(x => typeof (IModule).IsAssignableFrom(x))
                 .where(x => !x.IsInterface)
+                .where(x => !x.IsAbstract)
                 .each(type => registry.transient(typeof (IModule), type));
         }
     }

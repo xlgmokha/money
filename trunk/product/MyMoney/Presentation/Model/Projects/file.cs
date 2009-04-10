@@ -8,6 +8,7 @@ namespace MoMoney.Presentation.Model.Projects
         string path { get; }
         bool does_the_file_exist();
         void copy_to(string path);
+        void delete();
     }
 
     internal class ApplicationFile : IFile
@@ -28,6 +29,11 @@ namespace MoMoney.Presentation.Model.Projects
         {
             this.log().debug("copying {0} to {1}", path, other_path);
             File.Copy(path, other_path, true);
+        }
+
+        public void delete()
+        {
+            File.Delete(path);
         }
 
         public static implicit operator ApplicationFile(string file_path)

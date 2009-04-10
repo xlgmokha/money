@@ -107,10 +107,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\tools\mbunit\MbUnit.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="ObjectListView, Version=2.1.0.26964, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\object.list.view\ObjectListView.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -309,7 +305,7 @@
     <Compile Include="Infrastructure\Threading\SynchronizationContextFactory.cs" />
     <Compile Include="Infrastructure\Threading\SynchronizedCommand.cs" />
     <Compile Include="Infrastructure\Threading\SynchronizedContext.cs" />
-    <Compile Include="Infrastructure\Threading\ThreadSafeInterceptor.cs" />
+    <Compile Include="Infrastructure\Threading\RunOnUIThread.cs" />
     <Compile Include="Infrastructure\Threading\TimerFactory.cs" />
     <Compile Include="Infrastructure\Threading\WorkerThread.cs">
       <SubType>Component</SubType>
@@ -346,6 +342,7 @@
     <Compile Include="Infrastructure\transactions\unit_of_work_specs.cs" />
     <Compile Include="Modules\ApplicationShellModule.cs" />
     <Compile Include="Modules\DatabaseModule.cs" />
+    <Compile Include="Presentation\Core\ContentPresenter.cs" />
     <Compile Include="Presentation\Core\IContentPresenter.cs" />
     <Compile Include="Presentation\Databindings\date_time_picker_property_binding.cs" />
     <Compile Include="Presentation\Databindings\date_time_property_binding_specs.cs" />

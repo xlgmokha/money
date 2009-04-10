@@ -59,6 +59,7 @@ namespace MoMoney.Presentation.Model.Projects
         public void close_project()
         {
             if (!project.is_open()) return;
+            configuration.close(project.name());
             project = new EmptyProject();
             broker.publish<ClosingProjectEvent>();
         }
