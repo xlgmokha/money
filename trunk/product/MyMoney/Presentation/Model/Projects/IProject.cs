@@ -1,6 +1,8 @@
+using MoMoney.Utility.Core;
+
 namespace MoMoney.Presentation.Model.Projects
 {
-    public interface IProject
+    public interface IProject : IState
     {
         string name();
         bool is_file_specified();

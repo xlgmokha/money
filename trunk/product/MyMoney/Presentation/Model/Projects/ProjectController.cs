@@ -1,4 +1,3 @@
-using System;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.messages;

@@ -28,11 +28,11 @@ namespace MoMoney.Tasks.infrastructure.updating
         Uri ActivationUri { get; }
         string DataDirectory { get; }
         bool IsFirstRun { get; }
-        event DeploymentProgressChangedEventHandler CheckForUpdateProgressChanged;
-        event CheckForUpdateCompletedEventHandler CheckForUpdateCompleted;
+        //event DeploymentProgressChangedEventHandler CheckForUpdateProgressChanged;
+        //event CheckForUpdateCompletedEventHandler CheckForUpdateCompleted;
         event DeploymentProgressChangedEventHandler UpdateProgressChanged;
         event AsyncCompletedEventHandler UpdateCompleted;
-        event DeploymentProgressChangedEventHandler DownloadFileGroupProgressChanged;
-        event DownloadFileGroupCompletedEventHandler DownloadFileGroupCompleted;
+        //event DeploymentProgressChangedEventHandler DownloadFileGroupProgressChanged;
+        //event DownloadFileGroupCompletedEventHandler DownloadFileGroupCompleted;
     }
 }

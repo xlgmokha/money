@@ -110,11 +110,11 @@ namespace MoMoney.Tasks.infrastructure.updating
             get { throw new NotImplementedException(); }
         }
 
-        public event DeploymentProgressChangedEventHandler CheckForUpdateProgressChanged;
-        public event CheckForUpdateCompletedEventHandler CheckForUpdateCompleted;
+        //public event DeploymentProgressChangedEventHandler CheckForUpdateProgressChanged;
+        //public event CheckForUpdateCompletedEventHandler CheckForUpdateCompleted;
         public event DeploymentProgressChangedEventHandler UpdateProgressChanged;
         public event AsyncCompletedEventHandler UpdateCompleted;
-        public event DeploymentProgressChangedEventHandler DownloadFileGroupProgressChanged;
-        public event DownloadFileGroupCompletedEventHandler DownloadFileGroupCompleted;
+        //public event DeploymentProgressChangedEventHandler DownloadFileGroupProgressChanged;
+        //public event DownloadFileGroupCompletedEventHandler DownloadFileGroupCompleted;
     }
 }
