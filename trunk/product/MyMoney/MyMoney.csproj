@@ -223,11 +223,11 @@
     <Compile Include="Infrastructure\transactions2\ConnectionFactory.cs" />
     <Compile Include="Infrastructure\transactions2\Context.cs" />
     <Compile Include="Infrastructure\transactions2\Database.cs" />
-    <Compile Include="Infrastructure\transactions2\DatabaseConfiguration.cs" />
     <Compile Include="Infrastructure\transactions2\DatabaseConnection.cs" />
     <Compile Include="Infrastructure\transactions2\EmptyUnitOfWork.cs" />
     <Compile Include="Infrastructure\transactions2\IChangeTracker.cs" />
     <Compile Include="Infrastructure\transactions2\IChangeTrackerFactory.cs" />
+    <Compile Include="Infrastructure\transactions2\IDatabaseConfiguration.cs" />
     <Compile Include="Infrastructure\transactions2\IdentityMapProxy.cs" />
     <Compile Include="Infrastructure\transactions2\IdentityMapSpecs.cs" />
     <Compile Include="Infrastructure\transactions2\IIdentityMap.cs" />
@@ -373,6 +373,8 @@
     <Compile Include="Presentation\Model\Navigation\branches\AddNewIncomeBranch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\view_all_bills_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\view_all_bills_report_branch.cs" />
+    <Compile Include="Presentation\Model\Projects\IProject.cs" />
+    <Compile Include="Presentation\Model\Projects\IProjectController.cs" />
     <Compile Include="Presentation\Model\Projects\ProjectController.cs" />
     <Compile Include="Presentation\Core\PresenterRegistry.cs" />
     <Compile Include="Presentation\Model\Menu\create.cs" />

@@ -34,11 +34,6 @@ namespace MoMoney.Infrastructure.transactions2
             }
         }
 
-        public IFile path_to_database()
-        {
-            return path;
-        }
-
         public void open(IFile file)
         {
             path = new ApplicationFile(Path.GetTempFileName());
@@ -48,6 +43,11 @@ namespace MoMoney.Infrastructure.transactions2
         public void copy_to(string new_path)
         {
             path.copy_to(new_path);
+        }
+
+        IFile path_to_database()
+        {
+            return path;
         }
     }
 }

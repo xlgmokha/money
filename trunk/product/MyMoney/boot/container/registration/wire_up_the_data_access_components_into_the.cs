@@ -18,7 +18,6 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             register.singleton<ISessionContext, SessionContext>();
-            //register.singleton<IDatabaseConfiguration, DatabaseConfiguration>();
             register.singleton<IDatabase, Database>();
             register.singleton(() => resolve.dependency_for<IDatabase>().downcast_to<IDatabaseConfiguration>());
         }

@@ -1,3 +1,4 @@
+using System;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.messages;
@@ -5,25 +6,11 @@ using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Model.Projects
 {
-    public interface IProjectController
-    {
-        string name();
-        void start_new_project();
-        void open_project_from(IFile file);
-        void save_changes();
-        void save_project_to(IFile new_file);
-        void close_project();
-        bool has_been_saved_at_least_once();
-        bool has_unsaved_changes();
-        bool is_open();
-    }
-
     public class ProjectController : IProjectController, IEventSubscriber<UnsavedChangesEvent>
     {
         readonly IEventAggregator broker;
         readonly IDatabaseConfiguration configuration;
-        IFile current_file;
-        bool is_project_open = false;
+        IProject project;
         bool unsaved_changes = false;
 
         public ProjectController(IEventAggregator broker, IDatabaseConfiguration configuration)
@@ -31,18 +18,18 @@ namespace MoMoney.Presentation.Model.Projects
             this.broker = broker;
             this.configuration = configuration;
             broker.subscribe(this);
+            project = new EmptyProject();
         }
 
         public string name()
         {
-            return has_been_saved_at_least_once() ? current_file.path : "untitled.mo";
+            return project.name();
         }
 
         public void start_new_project()
         {
             close_project();
-            is_project_open = true;
-            current_file = null;
+            project = new Project(null);
             broker.publish(new NewProjectOpened(name()));
         }
 
@@ -51,15 +38,14 @@ namespace MoMoney.Presentation.Model.Projects
             if (!file.does_the_file_exist()) return;
             close_project();
             configuration.open(file);
-            current_file = file;
-            is_project_open = true;
+            project = new Project(file);
             broker.publish(new NewProjectOpened(name()));
         }
 
         public void save_changes()
         {
             ensure_that_a_path_to_save_to_has_been_specified();
-            configuration.copy_to(current_file.path);
+            configuration.copy_to(project.name());
             unsaved_changes = false;
             broker.publish<SavedChangesEvent>();
         }
@@ -67,21 +53,20 @@ namespace MoMoney.Presentation.Model.Projects
         public void save_project_to(IFile new_file)
         {
             if (new_file.path.is_blank()) return;
-            current_file = new_file;
+            project = new Project(new_file);
             save_changes();
         }
 
         public void close_project()
         {
-            if (!is_project_open) return;
-            is_project_open = false;
-            current_file = null;
+            if (!project.is_open()) return;
+            project = new EmptyProject();
             broker.publish<ClosingProjectEvent>();
         }
 
         public bool has_been_saved_at_least_once()
         {
-            return current_file != null;
+            return project.is_file_specified();
         }
 
         public bool has_unsaved_changes()
@@ -91,20 +76,60 @@ namespace MoMoney.Presentation.Model.Projects
 
         public bool is_open()
         {
-            return is_project_open;
+            return project.is_open();
         }
 
         void ensure_that_a_path_to_save_to_has_been_specified()
         {
-            if (!has_been_saved_at_least_once())
-            {
-                throw new FileNotSpecifiedException();
-            }
+            if (!has_been_saved_at_least_once()) throw new FileNotSpecifiedException();
         }
 
         public void notify(UnsavedChangesEvent message)
         {
             unsaved_changes = true;
+        }
+    }
+
+    public class EmptyProject : IProject
+    {
+        public string name()
+        {
+            return "untitled.mo";
+        }
+
+        public bool is_file_specified()
+        {
+            return false;
+        }
+
+        public bool is_open()
+        {
+            return false;
+        }
+    }
+
+    public class Project : IProject
+    {
+        readonly IFile file;
+
+        public Project(IFile file)
+        {
+            this.file = file;
+        }
+
+        public string name()
+        {
+            return is_file_specified() ? file.path : "untitled.mo";
+        }
+
+        public bool is_file_specified()
+        {
+            return file != null;
+        }
+
+        public bool is_open()
+        {
+            return true;
         }
     }
 }
