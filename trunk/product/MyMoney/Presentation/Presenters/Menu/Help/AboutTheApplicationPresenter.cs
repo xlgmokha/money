@@ -1,5 +1,4 @@
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.Menu.Help;
 
 namespace MoMoney.Presentation.Presenters.Menu.Help
@@ -8,23 +7,14 @@ namespace MoMoney.Presentation.Presenters.Menu.Help
     {
     }
 
-    public class AboutTheApplicationPresenter : IAboutApplicationPresenter
+    public class AboutTheApplicationPresenter : ContentPresenter<IAboutApplicationView>, IAboutApplicationPresenter
     {
-        readonly IAboutApplicationView view;
-
-        public AboutTheApplicationPresenter(IAboutApplicationView view)
+        public AboutTheApplicationPresenter(IAboutApplicationView view) : base(view)
         {
-            this.view = view;
         }
 
-        public void run()
+        public override void run()
         {
-            view.display();
-        }
-
-        IDockedContentView IContentPresenter.View
-        {
-            get { return view; }
         }
     }
 }

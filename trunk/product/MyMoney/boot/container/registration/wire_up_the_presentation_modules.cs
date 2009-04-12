@@ -36,6 +36,7 @@ namespace MoMoney.boot.container.registration
             registry.transient<IFileMenu, FileMenu>();
             registry.transient<IWindowMenu, WindowMenu>();
             registry.transient<IHelpMenu, HelpMenu>();
+            
 
             item
                 .all_types()

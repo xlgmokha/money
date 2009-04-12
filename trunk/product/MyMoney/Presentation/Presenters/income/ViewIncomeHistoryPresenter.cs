@@ -1,8 +1,6 @@
-using System.Linq;
 using MoMoney.Domain.accounting.financial_growth;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.income.dto;
-using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.income;
 using MoMoney.Tasks.application;
 using MoMoney.Utility.Extensions;
@@ -13,23 +11,21 @@ namespace MoMoney.Presentation.Presenters.income
     {
     }
 
-    public class ViewIncomeHistoryPresenter : IViewIncomeHistoryPresenter
+    public class ViewIncomeHistoryPresenter : ContentPresenter<IViewIncomeHistory>, IViewIncomeHistoryPresenter
     {
-        private readonly IViewIncomeHistory view;
-        private readonly IIncomeTasks tasks;
+        readonly IIncomeTasks tasks;
 
-        public ViewIncomeHistoryPresenter(IViewIncomeHistory view, IIncomeTasks tasks)
+        public ViewIncomeHistoryPresenter(IViewIncomeHistory view, IIncomeTasks tasks) : base(view)
         {
-            this.view = view;
             this.tasks = tasks;
         }
 
-        public void run()
+        public override void run()
         {
             view.display(tasks.retrive_all_income().map_all_using(x => map_from(x)));
         }
 
-        private income_information_dto map_from(IIncome x)
+        income_information_dto map_from(IIncome x)
         {
             return new income_information_dto
                        {
@@ -37,11 +33,6 @@ namespace MoMoney.Presentation.Presenters.income
                            company = x.company.ToString(),
                            recieved_date = x.date_of_issue.ToString(),
                        };
-        }
-
-        IDockedContentView IContentPresenter.View
-        {
-            get { return view; }
         }
     }
 }

@@ -1,7 +1,6 @@
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.billing;
-using MoMoney.Presentation.Views.core;
 using MoMoney.Tasks.application;
 using MoMoney.Utility.Extensions;
 
@@ -11,18 +10,16 @@ namespace MoMoney.Presentation.Presenters.billing
     {
     }
 
-    public class ViewAllBillsPresenter : IViewAllBillsPresenter
+    public class ViewAllBillsPresenter : ContentPresenter<IViewAllBills>, IViewAllBillsPresenter
     {
-        readonly IViewAllBills view;
         readonly IBillingTasks tasks;
 
-        public ViewAllBillsPresenter(IViewAllBills view, IBillingTasks tasks)
+        public ViewAllBillsPresenter(IViewAllBills view, IBillingTasks tasks) : base(view)
         {
-            this.view = view;
             this.tasks = tasks;
         }
 
-        public void run()
+        public override void run()
         {
             view.display(
                 tasks
@@ -34,11 +31,6 @@ namespace MoMoney.Presentation.Presenters.billing
                                  the_amount_owed = x.the_amount_owed.ToString(),
                                  due_date = x.due_date.to_date_time(),
                              }));
-        }
-
-        IDockedContentView IContentPresenter.View
-        {
-            get { return view; }
         }
     }
 }

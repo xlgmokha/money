@@ -21,12 +21,9 @@ namespace MoMoney.Presentation.Views.Navigation
 
         public void add(IActionTaskPaneFactory factory)
         {
-            on_ui_thread(() =>
-                             {
-                                 ux_system_task_pane.SuspendLayout();
-                                 ux_system_task_pane.Expandos.Add(factory.create());
-                                 ux_system_task_pane.ResumeLayout();
-                             });
+            ux_system_task_pane.SuspendLayout();
+            ux_system_task_pane.Expandos.Add(factory.create());
+            ux_system_task_pane.ResumeLayout();
         }
     }
 }

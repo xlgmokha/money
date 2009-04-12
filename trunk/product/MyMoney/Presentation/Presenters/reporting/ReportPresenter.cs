@@ -2,7 +2,6 @@ using MoMoney.Domain.accounting.billing;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.billing;
-using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.reporting;
 using MoMoney.Tasks.application;
 using MoMoney.Utility.Extensions;
@@ -13,20 +12,18 @@ namespace MoMoney.Presentation.Presenters.reporting
     {
     }
 
-    public class ReportPresenter : IViewAllBillsReportPresenter
+    public class ReportPresenter : ContentPresenter<IReportViewer>, IViewAllBillsReportPresenter
     {
-        readonly IReportViewer view;
         readonly IViewAllBillsReport report;
         readonly IBillingTasks tasks;
 
-        public ReportPresenter(IReportViewer view, IViewAllBillsReport report, IBillingTasks tasks)
+        public ReportPresenter(IReportViewer view, IViewAllBillsReport report, IBillingTasks tasks) : base(view)
         {
-            this.view = view;
             this.tasks = tasks;
             this.report = report;
         }
 
-        public void run()
+        public override void run()
         {
             report.bind_to(tasks.all_bills().map_all_using(x => map_from(x)));
             view.display(report);
@@ -40,11 +37,6 @@ namespace MoMoney.Presentation.Presenters.reporting
                            due_date = x.due_date.to_date_time(),
                            the_amount_owed = x.the_amount_owed.to_string()
                        };
-        }
-
-        IDockedContentView IContentPresenter.View
-        {
-            get { return view; }
         }
     }
 }

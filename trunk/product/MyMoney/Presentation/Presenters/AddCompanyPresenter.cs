@@ -4,7 +4,6 @@ using MoMoney.Domain.accounting.billing;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Views.core;
 using MoMoney.Tasks.application;
 using MoMoney.Tasks.infrastructure.core;
 using MoMoney.Utility.Extensions;
@@ -16,20 +15,18 @@ namespace MoMoney.Presentation.Presenters
         void submit(RegisterNewCompany dto);
     }
 
-    public class AddCompanyPresenter : IAddCompanyPresenter
+    public class AddCompanyPresenter : ContentPresenter<IAddCompanyView>, IAddCompanyPresenter
     {
-        readonly IAddCompanyView view;
         readonly IBillingTasks tasks;
         readonly ICommandPump pump;
 
-        public AddCompanyPresenter(IAddCompanyView view, IBillingTasks tasks, ICommandPump pump)
+        public AddCompanyPresenter(IAddCompanyView view, IBillingTasks tasks, ICommandPump pump) : base(view)
         {
-            this.view = view;
             this.pump = pump;
             this.tasks = tasks;
         }
 
-        public void run()
+        public override void run()
         {
             view.attach_to(this);
             pump.run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view);
@@ -53,11 +50,6 @@ namespace MoMoney.Presentation.Presenters
         string create_error_message_from(RegisterNewCompany dto)
         {
             return "A Company named {0}, has already been submitted!".formatted_using(dto.company_name);
-        }
-
-        IDockedContentView IContentPresenter.View
-        {
-            get { return view; }
         }
     }
 }

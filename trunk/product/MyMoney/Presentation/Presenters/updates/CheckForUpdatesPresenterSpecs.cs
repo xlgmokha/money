@@ -1,6 +1,8 @@
 using developwithpassion.bdd.contexts;
+using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.updates;
+using MoMoney.Tasks.infrastructure.core;
 using MoMoney.Tasks.infrastructure.updating;
 using MoMoney.Testing.MetaData;
 using MoMoney.Testing.spechelpers.contexts;
@@ -17,15 +19,15 @@ namespace MoMoney.Presentation.Presenters.updates
                             view = the_dependency<ICheckForUpdatesView>();
                             command = the_dependency<IRestartCommand>();
                             download_the_latest = the_dependency<IDownloadTheLatestVersion>();
-                            next_version = the_dependency<IDisplayNextAvailableVersion>();
+                            pump = the_dependency<ICommandPump>();
                             cancel_update = the_dependency<ICancelUpdate>();
                         };
 
         protected static ICheckForUpdatesView view;
         protected static IRestartCommand command;
         protected static IDownloadTheLatestVersion download_the_latest;
-        protected static IDisplayNextAvailableVersion next_version;
         protected static ICancelUpdate cancel_update;
+       protected static ICommandPump pump;
     }
 
     public class when_attempting_to_check_for_updates : behaves_like_check_for_updates_presenter
@@ -35,7 +37,7 @@ namespace MoMoney.Presentation.Presenters.updates
         it should_tell_the_view_to_display_the_information_on_the_current_version_of_the_application =
             () => view.was_told_to(x => x.display());
 
-        it should_go_and_find_out_what_the_latest_version_is = () => next_version.was_told_to(x => x.run(view));
+        it should_go_and_find_out_what_the_latest_version_is = () => pump.was_told_to(x => x.run<ApplicationVersion, IWhatIsTheAvailableVersion>(view));
 
         because b = () => sut.run();
     }

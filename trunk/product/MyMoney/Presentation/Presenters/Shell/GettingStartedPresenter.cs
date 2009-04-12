@@ -1,5 +1,4 @@
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Presenters.Shell
@@ -8,23 +7,15 @@ namespace MoMoney.Presentation.Presenters.Shell
     {
     }
 
-    public class GettingStartedPresenter : IGettingStartedPresenter
+    public class GettingStartedPresenter : ContentPresenter<IGettingStartedView>, IGettingStartedPresenter
     {
-        readonly IGettingStartedView view;
-
-        public GettingStartedPresenter(IGettingStartedView view)
+        public GettingStartedPresenter(IGettingStartedView view) : base(view)
         {
-            this.view = view;
         }
 
-        public void run()
+        public override void run()
         {
             view.display();
-        }
-
-        public IDockedContentView View
-        {
-            get { return view; }
         }
     }
 }

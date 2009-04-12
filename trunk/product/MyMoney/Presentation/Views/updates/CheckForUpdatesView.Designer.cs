@@ -37,7 +37,6 @@ namespace MoMoney.Presentation.Views.updates
             this.ux_update_button = new System.Windows.Forms.Button();
             this.ux_new_version = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.progress_bar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.ux_image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,20 +134,11 @@ namespace MoMoney.Presentation.Views.updates
             this.label5.TabIndex = 17;
             this.label5.Text = "to";
             // 
-            // progress_bar
-            // 
-            this.progress_bar.Location = new System.Drawing.Point(174, 87);
-            this.progress_bar.Name = "progress_bar";
-            this.progress_bar.Size = new System.Drawing.Size(195, 23);
-            this.progress_bar.TabIndex = 18;
-            this.progress_bar.Visible = false;
-            // 
             // CheckForUpdatesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 403);
-            this.Controls.Add(this.progress_bar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ux_new_version);
             this.Controls.Add(this.label3);
@@ -178,7 +168,6 @@ namespace MoMoney.Presentation.Views.updates
         private System.Windows.Forms.Button ux_update_button;
         private System.Windows.Forms.Label ux_new_version;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ProgressBar progress_bar;
 
     }
 }

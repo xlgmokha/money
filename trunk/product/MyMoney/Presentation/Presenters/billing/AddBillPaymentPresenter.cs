@@ -2,7 +2,6 @@ using MoMoney.Domain.accounting.billing;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.billing;
-using MoMoney.Presentation.Views.core;
 using MoMoney.Tasks.application;
 using MoMoney.Utility.Extensions;
 
@@ -13,18 +12,16 @@ namespace MoMoney.Presentation.Presenters.billing
         void submit_bill_payment(add_new_bill_dto dto);
     }
 
-    public class AddBillPaymentPresenter : IAddBillPaymentPresenter
+    public class AddBillPaymentPresenter : ContentPresenter<IAddBillPaymentView>, IAddBillPaymentPresenter
     {
-        private readonly IAddBillPaymentView view;
-        private readonly IBillingTasks tasks;
+        readonly IBillingTasks tasks;
 
-        public AddBillPaymentPresenter(IAddBillPaymentView view, IBillingTasks tasks)
+        public AddBillPaymentPresenter(IAddBillPaymentView view, IBillingTasks tasks) : base(view)
         {
-            this.view = view;
             this.tasks = tasks;
         }
 
-        public void run()
+        public override void run()
         {
             view.attach_to(this);
             view.display(tasks.all_companys());
@@ -37,7 +34,7 @@ namespace MoMoney.Presentation.Presenters.billing
             view.display(tasks.all_bills().map_all_using(x => map_from(x)));
         }
 
-        private bill_information_dto map_from(IBill bill)
+        bill_information_dto map_from(IBill bill)
         {
             return new bill_information_dto
                        {
@@ -45,11 +42,6 @@ namespace MoMoney.Presentation.Presenters.billing
                            the_amount_owed = bill.the_amount_owed.ToString(),
                            due_date = bill.due_date.to_date_time(),
                        };
-        }
-
-        IDockedContentView IContentPresenter.View
-        {
-            get { return view; }
         }
     }
 }

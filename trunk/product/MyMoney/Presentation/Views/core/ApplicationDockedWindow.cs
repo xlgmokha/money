@@ -97,13 +97,13 @@ namespace MoMoney.Presentation.Views.core
             return x.DockHandler.TabText.Equals(TabText);
         }
 
-        protected void on_ui_thread(Action action)
-        {
-            //if (InvokeRequired) BeginInvoke(action);
-            //else action();
+        //protected void on_ui_thread(Action action)
+        //{
+        //    //if (InvokeRequired) BeginInvoke(action);
+        //    //else action();
 
-            action();
-        }
+        //    action();
+        //}
 
         Control adapt(ToolTip item)
         {

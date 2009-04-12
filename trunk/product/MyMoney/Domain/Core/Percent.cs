@@ -26,7 +26,8 @@ namespace MoMoney.Domain.Core
 
         public bool is_less_than(Percent other_percent)
         {
-            throw new NotImplementedException();
+            //return other_percent.percentage.CompareTo(percentage) > 0;
+            return percentage.CompareTo(other_percent.percentage) < 0;
         }
 
         public static implicit operator Percent(double percentage)

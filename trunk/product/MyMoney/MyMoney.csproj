@@ -609,7 +609,6 @@
     <Compile Include="Tasks\infrastructure\updating\CancelUpdate.cs" />
     <Compile Include="Tasks\infrastructure\updating\CancelUpdateSpecs.cs" />
     <Compile Include="Tasks\infrastructure\updating\CurrentDeployment.cs" />
-    <Compile Include="Tasks\infrastructure\updating\DisplayNextAvailableVersion.cs" />
     <Compile Include="Tasks\infrastructure\core\ProcessQueryCommand.cs" />
     <Compile Include="Tasks\infrastructure\core\RunQueryCommand.cs" />
     <Compile Include="Tasks\infrastructure\updating\DownloadTheLatestVersion.cs" />
@@ -700,7 +699,6 @@
     <Compile Include="Infrastructure\Logging\Log4NetLogging\Log4NetLogger.cs" />
     <Compile Include="Infrastructure\Logging\Log4NetLogging\Log4NetLogFactory.cs" />
     <Compile Include="Infrastructure\Logging\LogSpecs.cs" />
-    <Compile Include="Presentation\Presenters\Menu\Help\AboutTheApplicationPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\NotificationIconPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\StatusBarPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\StatusBarPresenterSpecs.cs" />

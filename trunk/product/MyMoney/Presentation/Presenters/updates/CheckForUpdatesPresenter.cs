@@ -1,7 +1,9 @@
 using MoMoney.Domain.Core;
 using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.updates;
+using MoMoney.Tasks.infrastructure.core;
 using MoMoney.Tasks.infrastructure.updating;
 using MoMoney.Utility.Core;
 
@@ -19,27 +21,27 @@ namespace MoMoney.Presentation.Presenters.updates
     {
         readonly ICheckForUpdatesView view;
         readonly IRestartCommand command;
-        readonly IDisplayNextAvailableVersion display_version_command;
         readonly IDownloadTheLatestVersion download_the_latest;
         readonly ICancelUpdate cancel_requested_update;
+        readonly ICommandPump pump;
 
         public CheckForUpdatesPresenter(ICheckForUpdatesView view,
+                                        ICommandPump pump,
                                         IRestartCommand command,
-                                        IDisplayNextAvailableVersion display_version_command,
                                         IDownloadTheLatestVersion download_the_latest,
                                         ICancelUpdate cancel_requested_update)
         {
+            this.pump = pump;
             this.view = view;
             this.cancel_requested_update = cancel_requested_update;
             this.download_the_latest = download_the_latest;
-            this.display_version_command = display_version_command;
             this.command = command;
         }
 
         public void run()
         {
+            pump.run<ApplicationVersion, IWhatIsTheAvailableVersion>(view);
             view.attach_to(this);
-            display_version_command.run(view);
             view.display();
         }
 

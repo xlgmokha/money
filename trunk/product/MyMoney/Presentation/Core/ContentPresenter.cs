@@ -4,12 +4,18 @@ namespace MoMoney.Presentation.Core
 {
     public abstract class ContentPresenter<T> : IContentPresenter where T : IDockedContentView
     {
+        protected readonly T view;
+
         protected ContentPresenter(T view)
         {
-            View = view;
+            this.view = view;
         }
 
         public abstract void run();
-        public IDockedContentView View { get; set; }
+
+        IDockedContentView IContentPresenter.View
+        {
+            get { return view; }
+        }
     }
 }
