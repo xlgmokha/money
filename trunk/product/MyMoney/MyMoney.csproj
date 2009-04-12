@@ -596,6 +596,7 @@
     <Compile Include="Presentation\Views\updates\CheckForUpdatesView.Designer.cs">
       <DependentUpon>CheckForUpdatesView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Views\updates\ControlAction.cs" />
     <Compile Include="Presentation\Views\updates\ICheckForUpdatesView.cs" />
     <Compile Include="Tasks\application\BillingTasks.cs" />
     <Compile Include="Tasks\application\CustomerTasks.cs" />

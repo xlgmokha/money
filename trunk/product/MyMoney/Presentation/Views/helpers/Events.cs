@@ -9,23 +9,18 @@ namespace MoMoney.Presentation.Views.helpers
         public interface ControlEvents : IEventTarget
         {
             void OnEnter(EventArgs args);
-
             void OnKeyPress(KeyPressEventArgs args);
             void OnKeyUp(KeyEventArgs args);
             void OnKeyDown(KeyEventArgs args);
-
             void OnClick(EventArgs args);
             void OnDoubleClick(EventArgs args);
             void OnDragDrop(DragEventArgs args);
             void OnDragEnter(DragEventArgs args);
             void OnDragLeave(EventArgs args);
             void OnDragOver(DragEventArgs args);
-
             void OnMouseWheel(MouseEventArgs args);
-
             void OnValidated(EventArgs args);
             void OnValidating(CancelEventArgs args);
-
         }
 
         public interface FormEvents : ControlEvents

@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using System.Windows.Forms;
 using MoMoney.Domain.Core;
 using MoMoney.Presentation.Model.updates;
@@ -11,12 +12,16 @@ namespace MoMoney.Presentation.Views.updates
 {
     public partial class CheckForUpdatesView : ApplicationWindow, ICheckForUpdatesView
     {
-        ICheckForUpdatesPresenter the_presenter;
         readonly IShell shell;
+        ControlAction<EventArgs> update_button;
+        ControlAction<EventArgs> dont_update_button;
+        ControlAction<EventArgs> cancel_button;
 
         public CheckForUpdatesView(IShell shell)
         {
             InitializeComponent();
+
+            this.shell = shell;
             ux_image.Image = ApplicationImages.Splash;
             ux_image.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -24,21 +29,23 @@ namespace MoMoney.Presentation.Views.updates
                 .create_tool_tip_for("Update", "Update the application, and then re-start it.", ux_update_button)
                 .create_tool_tip_for("Don't Update", "Discard the latest version.", ux_dont_update_button)
                 .create_tool_tip_for("Cancel", "Go back.", ux_cancel_button);
-            this.shell = shell;
+
+            ux_update_button.Click += (o, e) => update_button(e);
+            ux_dont_update_button.Click += (o, e) => dont_update_button(e);
+            ux_cancel_button.Click += (o, e) => cancel_button(e);
         }
 
         public void attach_to(ICheckForUpdatesPresenter presenter)
         {
-            ux_update_button.Click += (o, e) =>
-                                          {
-                                              ux_update_button.Enabled = false;
-                                              ux_dont_update_button.Enabled = false;
-                                              ux_cancel_button.Enabled = true;
-                                              presenter.begin_update();
-                                          };
-            ux_dont_update_button.Click += (o, e) => presenter.do_not_update();
-            ux_cancel_button.Click += (o, e) => presenter.cancel_update();
-            the_presenter = presenter;
+            update_button = x =>
+                                {
+                                    ux_update_button.Enabled = false;
+                                    ux_dont_update_button.Enabled = false;
+                                    ux_cancel_button.Enabled = true;
+                                    presenter.begin_update();
+                                };
+            dont_update_button = x => presenter.do_not_update();
+            cancel_button = x => presenter.cancel_update();
         }
 
         public void display()
@@ -51,24 +58,25 @@ namespace MoMoney.Presentation.Views.updates
 
         public void downloaded(Percent percentage_complete)
         {
-            shell.region<ToolStripProgressBar>(x =>
-                                                   {
-                                                       while (percentage_complete.is_less_than(x.Value))
-                                                       {
-                                                           if (percentage_complete.represents(x.Value)) break;
-                                                           x.PerformStep();
-                                                       }
-                                                   });
+            shell.region<ToolStripProgressBar>(
+                x =>
+                    {
+                        while (percentage_complete.is_less_than(x.Value))
+                        {
+                            if (percentage_complete.represents(x.Value)) break;
+                            x.PerformStep();
+                        }
+                    });
         }
 
         public void update_complete()
         {
-            the_presenter.restart();
+            downloaded(100);
         }
 
         public void close()
         {
-            on_ui_thread(() => { Close(); });
+            Close();
         }
 
         public void run(ApplicationVersion information)
