@@ -1,6 +1,6 @@
 ﻿namespace MoMoney.Presentation.Views.billing
 {
-    partial class add_bill_payment
+    partial class AddBillPaymentView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(add_bill_payment));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBillPaymentView));
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.kryptonSplitContainer1 = new ComponentFactory.Krypton.Toolkit.KryptonSplitContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();

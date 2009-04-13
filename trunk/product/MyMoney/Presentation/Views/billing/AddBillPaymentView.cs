@@ -1,39 +1,44 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Presentation.Databindings;
 using MoMoney.Presentation.Presenters.billing;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.updates;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.billing
 {
-    public partial class add_bill_payment : ApplicationDockedWindow, IAddBillPaymentView
+    public partial class AddBillPaymentView : ApplicationDockedWindow, IAddBillPaymentView
     {
-        public add_bill_payment()
+        ControlAction<EventArgs> submit_clicked = x => { };
+
+        public AddBillPaymentView()
         {
             InitializeComponent();
             titled("Add Bill Payment");
+            ux_submit_button.Click += (sender, e) => submit_clicked(e);
         }
 
         public void attach_to(IAddBillPaymentPresenter presenter)
         {
-            ux_submit_button.Click += (sender, e) => presenter.submit_bill_payment(create_dto());
+            submit_clicked = x => presenter.submit_bill_payment(create_dto());
         }
 
-        public void display(IEnumerable<ICompany> companys)
+        public void run(IEnumerable<ICompany> companys)
         {
             ux_company_names.bind_to(companys);
         }
 
-        public void display(IEnumerable<bill_information_dto> bills)
+        public void run(IEnumerable<bill_information_dto> bills)
         {
             ux_bil_payments_grid.DataSource = bills.databind();
         }
 
-        add_new_bill_dto create_dto()
+        AddNewBillDTO create_dto()
         {
-            return new add_new_bill_dto
+            return new AddNewBillDTO
                        {
                            company_name = ux_company_names.SelectedItem.to_string(),
                            due_date = ux_due_date.Value,

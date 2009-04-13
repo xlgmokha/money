@@ -8,7 +8,7 @@ namespace MoMoney.Tasks.application
 {
     public interface IBillingTasks
     {
-        void save_a_new_bill_using(add_new_bill_dto dto);
+        void save_a_new_bill_using(AddNewBillDTO dto);
         IEnumerable<IBill> all_bills();
         IEnumerable<ICompany> all_companys();
     }
@@ -26,7 +26,7 @@ namespace MoMoney.Tasks.application
             this.tasks = tasks;
         }
 
-        public void save_a_new_bill_using(add_new_bill_dto dto)
+        public void save_a_new_bill_using(AddNewBillDTO dto)
         {
             var company = companys.find_company_named(dto.company_name);
             var customer = tasks.get_the_current_customer();

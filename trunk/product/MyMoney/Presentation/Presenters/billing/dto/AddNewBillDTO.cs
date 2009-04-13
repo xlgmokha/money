@@ -2,7 +2,7 @@ using System;
 
 namespace MoMoney.Presentation.Presenters.billing.dto
 {
-    public class add_new_bill_dto
+    public class AddNewBillDTO
     {
         public string company_name { get; set; }
         public DateTime due_date { get; set; }

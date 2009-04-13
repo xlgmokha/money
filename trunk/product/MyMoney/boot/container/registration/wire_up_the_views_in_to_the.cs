@@ -32,7 +32,7 @@ namespace MoMoney.boot.container.registration
             register.transient<INavigationView, NavigationView>();
             register.transient<IAddCompanyView, AddCompanyView>();
             register.transient<IViewAllBills, ViewAllBills>();
-            register.transient<IAddBillPaymentView, add_bill_payment>();
+            register.transient<IAddBillPaymentView, AddBillPaymentView>();
             register.transient<IMainMenuView, MainMenuView>();
             register.transient<IAddNewIncomeView, AddNewIncomeView>();
             register.transient<IViewIncomeHistory, ViewAllIncome>();
