@@ -1,3 +1,4 @@
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Views.core;
 
 namespace MoMoney.Presentation.Core
@@ -11,11 +12,26 @@ namespace MoMoney.Presentation.Core
             this.view = view;
         }
 
-        public abstract void run();
-
         IDockedContentView IContentPresenter.View
         {
             get { return view; }
+        }
+
+        public abstract void run();
+
+        public virtual void activate()
+        {
+            this.log().debug("activated: {0}", this);
+        }
+
+        public virtual void deactivate()
+        {
+            this.log().debug("deactivated: {0}", this);
+        }
+
+        public virtual bool can_close()
+        {
+            return true;
         }
     }
 }

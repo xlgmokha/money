@@ -3,9 +3,9 @@ using MoMoney.Infrastructure.eventing;
 
 namespace MoMoney.Presentation.Model.messages
 {
-    public class unhandled_error_occurred : IEvent
+    public class UnhandledErrorOccurred : IEvent
     {
-        public unhandled_error_occurred(Exception error)
+        public UnhandledErrorOccurred(Exception error)
         {
             this.error = error;
         }

@@ -8,7 +8,7 @@ using MoMoney.Presentation.Views.Shell;
 namespace MoMoney.Presentation.Presenters.Shell
 {
     public interface IUnhandledErrorPresenter : IModule, IPresenter,
-                                                IEventSubscriber<unhandled_error_occurred>
+                                                IEventSubscriber<UnhandledErrorOccurred>
     {
         void restart_application();
     }
@@ -32,7 +32,7 @@ namespace MoMoney.Presentation.Presenters.Shell
             broker.subscribe_to(this);
         }
 
-        public void notify(unhandled_error_occurred message)
+        public void notify(UnhandledErrorOccurred message)
         {
             view.display(message.error);
         }

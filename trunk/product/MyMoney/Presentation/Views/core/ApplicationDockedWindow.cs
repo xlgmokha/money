@@ -1,14 +1,16 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.helpers;
+using MoMoney.Presentation.Views.updates;
 using MoMoney.Utility.Extensions;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MoMoney.Presentation.Views.core
 {
-    public interface IApplicationDockedWindow : IDockedContentView
+    public interface IApplicationDockedWindow : IWindowEvents, IDockedContentView
     {
         IApplicationDockedWindow create_tool_tip_for(string title, string caption, Control control);
         IApplicationDockedWindow titled(string title, params object[] arguments);
@@ -27,7 +29,41 @@ namespace MoMoney.Presentation.Views.core
             Icon = ApplicationIcons.Application;
             dock_state = DockState.Document;
             HideOnClose = true;
+
+            on_activated = x => { };
+            on_deactivate = x => { };
+            on_closed = x => { };
+            on_closing = x => { };
         }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+            on_activated(e);
+        }
+
+        protected override void OnDeactivate(EventArgs e)
+        {
+            base.OnDeactivate(e);
+            on_deactivate(e);
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            on_closing(e);
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            on_closed(e);
+        }
+
+        public ControlAction<EventArgs> on_activated { get; set; }
+        public ControlAction<EventArgs> on_deactivate { get; set; }
+        public ControlAction<EventArgs> on_closed { get; set; }
+        public ControlAction<CancelEventArgs> on_closing { get; set; }
 
         public IApplicationDockedWindow create_tool_tip_for(string title, string caption, Control control)
         {

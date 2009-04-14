@@ -1,6 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views.updates;
 
 namespace MoMoney.Presentation.Views.core
 {
@@ -19,7 +22,17 @@ namespace MoMoney.Presentation.Views.core
             InitializeComponent();
             Icon = ApplicationIcons.Application;
             //this.log().debug("created {0}", GetType());
+
+            on_activated = x => { };
+            on_deactivate = x => { };
+            on_closed = x => { };
+            on_closing = x => { };
         }
+
+        public ControlAction<EventArgs> on_activated { get; set; }
+        public ControlAction<EventArgs> on_deactivate { get; set; }
+        public ControlAction<EventArgs> on_closed { get; set; }
+        public ControlAction<CancelEventArgs> on_closing { get; set; }
 
         public IApplicationWindow create_tool_tip_for(string title, string caption, Control control)
         {
@@ -48,6 +61,34 @@ namespace MoMoney.Presentation.Views.core
         {
             base.Text = "MoMoney - " + title;
             return this;
+        }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+            this.log().debug("activated: {0}", this);
+            on_activated(e);
+        }
+
+        protected override void OnDeactivate(EventArgs e)
+        {
+            base.OnDeactivate(e);
+            this.log().debug("deactivated: {0}", this);
+            on_deactivate(e);
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            this.log().debug("closing: {0}", this);
+            on_closing(e);
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            this.log().debug("closed: {0}", this);
+            on_closed(e);
         }
 
         Control adapt(IDisposable item)

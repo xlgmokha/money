@@ -4,7 +4,7 @@ using MoMoney.Presentation.Core;
 
 namespace MoMoney.Presentation.Views.core
 {
-    public interface IView : ISynchronizeInvoke, IDisposable
+    public interface IView : IWindowEvents, ISynchronizeInvoke, IDisposable
     {
     }
 

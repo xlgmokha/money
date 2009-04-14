@@ -11,8 +11,9 @@ namespace MoMoney.Presentation.Views.Shell
     {
         ControlAction<EventArgs> close_action = x => { };
         ControlAction<EventArgs> restart_action = x => { };
+        readonly IWin32Window window;
 
-        public UnhandledErrorView()
+        public UnhandledErrorView(IWin32Window window)
         {
             InitializeComponent();
             ux_image.Image = ApplicationImages.Splash;
@@ -24,6 +25,7 @@ namespace MoMoney.Presentation.Views.Shell
 
             close_button.Click += (sender, args) => close_action(args);
             restart_button.Click += (sender, args) => restart_action(args);
+            this.window = window;
         }
 
         public void attach_to(IUnhandledErrorPresenter presenter)
@@ -35,7 +37,7 @@ namespace MoMoney.Presentation.Views.Shell
         public void display(Exception exception)
         {
             ux_message.Text = exception.ToString();
-            ShowDialog();
+            ShowDialog(window);
         }
     }
 }

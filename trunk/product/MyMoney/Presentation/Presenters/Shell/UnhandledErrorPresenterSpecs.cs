@@ -37,7 +37,7 @@ namespace MoMoney.Presentation.Presenters.Shell
     {
         it should_display_the_error = () => view.was_told_to(x => x.display(error));
 
-        because b = () => sut.notify(new unhandled_error_occurred(error));
+        because b = () => sut.notify(new UnhandledErrorOccurred(error));
 
         static readonly Exception error = new Exception();
     }

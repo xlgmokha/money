@@ -17,6 +17,7 @@ namespace MoMoney.Presentation.Core
         readonly IPresenterRegistry registered_presenters;
         readonly IShell shell;
         //readonly IDictionary<Type, IPresenter> open_presenters;
+        //readonly object mutex = new object();
 
         public ApplicationController(IPresenterRegistry registered_presenters, IShell shell)
         {
@@ -27,25 +28,54 @@ namespace MoMoney.Presentation.Core
 
         public void run<Presenter>() where Presenter : IPresenter
         {
-            //if (open_presenters.ContainsKey(typeof(Presenter)))
+            //if (open_presenters.ContainsKey(typeof (Presenter)))
             //{
-            //    this.log().debug("from cached presenter: {0}", typeof(Presenter));
-            //    run(open_presenters[typeof(Presenter)]);
+            //    this.log().debug("from cached presenter: {0}", typeof (Presenter));
+            //    run(open_presenters[typeof (Presenter)]);
             //}
             //else
             //{
-                //this.log().debug("adding presenter to cache: {0}", typeof (Presenter));
-                var presenter = registered_presenters.find_an_implementation_of<IPresenter, Presenter>();
-                //open_presenters.Add(typeof (Presenter), presenter);
-                run(presenter);
+            //    if (typeof (IContentPresenter).IsAssignableFrom(typeof (Presenter)))
+            //    {
+            //        this.log().debug("adding presenter to cache: {0}", typeof (Presenter));
+            //        var presenter = registered_presenters.find_an_implementation_of<IPresenter, Presenter>();
+            //        within_lock(() => open_presenters.Add(typeof (Presenter), presenter));
+            //        run(presenter);
+            //    }
+            //    else
+            //    {
+            //        this.log().debug("running uncached presenter: {0}", typeof (Presenter));
+            run(registered_presenters.find_an_implementation_of<IPresenter, Presenter>());
+            //}
             //}
         }
+
+        //void within_lock(Action action)
+        //{
+        //    lock (mutex) action();
+        //}
 
         public void run(IPresenter presenter)
         {
             presenter.run();
             if (presenter.is_an_implementation_of<IContentPresenter>())
-                shell.add(presenter.downcast_to<IContentPresenter>().View);
+            {
+                var content_presenter = presenter.downcast_to<IContentPresenter>();
+                var view = content_presenter.View;
+
+                view.on_activated = x => content_presenter.activate();
+                view.on_deactivate = x => content_presenter.deactivate();
+                view.on_closing = x => x.Cancel = !content_presenter.can_close();
+                //view.on_closed = x => remove(presenter);
+
+                shell.add(view);
+            }
         }
+
+        //void remove<Presenter>(Presenter presenter) where Presenter : IPresenter
+        //{
+        //    this.log().debug("removing {0}", presenter);
+        //    within_lock(() => open_presenters.Remove(typeof (Presenter)));
+        //}
     }
 }

@@ -59,7 +59,7 @@ namespace MoMoney.boot
             catch (Exception e)
             {
                 this.log().error(e);
-                resolve.dependency_for<IEventAggregator>().publish(new unhandled_error_occurred(e));
+                resolve.dependency_for<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
             }
         }
     }

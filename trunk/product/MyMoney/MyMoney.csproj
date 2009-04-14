@@ -365,7 +365,7 @@
     <Compile Include="Presentation\Model\Menu\window\WindowMenu.cs" />
     <Compile Include="Presentation\Model\messages\closing_project_event.cs" />
     <Compile Include="Presentation\Model\messages\closing_the_application.cs" />
-    <Compile Include="Presentation\Model\messages\unhandled_error_occurred.cs" />
+    <Compile Include="Presentation\Model\messages\UnhandledErrorOccurred.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\add_bill_payment_branch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\AddNewIncomeBranch.cs" />
     <Compile Include="Presentation\Model\Navigation\branches\view_all_bills_branch.cs" />
@@ -494,6 +494,7 @@
       <DependentUpon>ApplicationWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\core\ICommandDialog.cs" />
+    <Compile Include="Presentation\Views\core\IWindowEvents.cs" />
     <Compile Include="Presentation\Views\dialogs\ISaveChangesView.cs" />
     <Compile Include="Presentation\Views\dialogs\SaveChangesView.cs">
       <SubType>Form</SubType>

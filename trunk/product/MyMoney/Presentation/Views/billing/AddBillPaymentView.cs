@@ -14,11 +14,14 @@ namespace MoMoney.Presentation.Views.billing
     {
         ControlAction<EventArgs> submit_clicked = x => { };
 
+         ControlAction<EventArgs> activated = x => { };
+
         public AddBillPaymentView()
         {
             InitializeComponent();
             titled("Add Bill Payment");
             ux_submit_button.Click += (sender, e) => submit_clicked(e);
+            Activated += (sender, args) => activated(args);
         }
 
         public void attach_to(IAddBillPaymentPresenter presenter)

@@ -19,9 +19,7 @@ namespace MoMoney.Tasks.application
 
         public void run(RegisterNewCompany item)
         {
-            factory
-                .create()
-                .change_name_to(item.company_name);
+            factory.create().change_name_to(item.company_name);
         }
     }
 }
