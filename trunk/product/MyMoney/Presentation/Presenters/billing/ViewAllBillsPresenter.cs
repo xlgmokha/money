@@ -25,7 +25,7 @@ namespace MoMoney.Presentation.Presenters.billing
                 tasks
                     .all_bills()
                     .map_all_using(
-                    x => new bill_information_dto
+                    x => new BillInformationDTO
                              {
                                  company_name = x.company_to_pay.name,
                                  the_amount_owed = x.the_amount_owed.ToString(),

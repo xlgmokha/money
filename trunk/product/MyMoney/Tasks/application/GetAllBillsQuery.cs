@@ -1,32 +1,33 @@
 using System.Collections.Generic;
 using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.repositories;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Utility.Core;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Tasks.application
 {
-    public interface IGetAllBillsQuery : IQuery<IEnumerable<bill_information_dto>>
+    public interface IGetAllBillsQuery : IQuery<IEnumerable<BillInformationDTO>>
     {
     }
 
     public class GetAllBillsQuery : IGetAllBillsQuery
     {
-        readonly IBillingTasks tasks;
+        readonly IBillRepository bills;
 
-        public GetAllBillsQuery(IBillingTasks tasks)
+        public GetAllBillsQuery(IBillRepository bills)
         {
-            this.tasks = tasks;
+            this.bills = bills;
         }
 
-        public IEnumerable<bill_information_dto> fetch()
+        public IEnumerable<BillInformationDTO> fetch()
         {
-            return tasks.all_bills().map_all_using(x => map_from(x));
+            return bills.all().map_all_using(x => map_from(x));
         }
 
-        bill_information_dto map_from(IBill bill)
+        BillInformationDTO map_from(IBill bill)
         {
-            return new bill_information_dto
+            return new BillInformationDTO
                        {
                            company_name = bill.company_to_pay.name,
                            the_amount_owed = bill.the_amount_owed.ToString(),

@@ -3,11 +3,15 @@ using System.Windows.Forms;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.updates;
 
 namespace MoMoney.Presentation.Views.Shell
 {
     public partial class UnhandledErrorView : ApplicationWindow, IUnhandledErrorView
     {
+        ControlAction<EventArgs> close_action = x => { };
+        ControlAction<EventArgs> restart_action = x => { };
+
         public UnhandledErrorView()
         {
             InitializeComponent();
@@ -17,24 +21,21 @@ namespace MoMoney.Presentation.Views.Shell
                 .create_tool_tip_for("Ignore", "Ignore the error and continue working.", close_button)
                 .create_tool_tip_for("Restart", "Discard any unsaved changes and restart the application.",
                                      restart_button);
+
+            close_button.Click += (sender, args) => close_action(args);
+            restart_button.Click += (sender, args) => restart_action(args);
         }
 
         public void attach_to(IUnhandledErrorPresenter presenter)
         {
-            on_ui_thread(() =>
-                             {
-                                 close_button.Click += (sender, args) => Close();
-                                 restart_button.Click += (sender, args) => presenter.restart_application();
-                             });
+            close_action = x => Close();
+            restart_action = x => presenter.restart_application();
         }
 
         public void display(Exception exception)
         {
-            on_ui_thread(() =>
-                             {
-                                 ux_message.Text = exception.ToString();
-                                 ShowDialog();
-                             });
+            ux_message.Text = exception.ToString();
+            ShowDialog();
         }
     }
 }

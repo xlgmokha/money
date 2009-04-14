@@ -10,7 +10,7 @@ namespace MoMoney.Presentation.Views.billing
     public interface IAddBillPaymentView : IDockedContentView,
                                            IView<IAddBillPaymentPresenter>,
                                            ICallback<IEnumerable<ICompany>>,
-                                           ICallback<IEnumerable<bill_information_dto>>
+                                           ICallback<IEnumerable<BillInformationDTO>>
     {
     }
 }

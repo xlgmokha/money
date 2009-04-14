@@ -1,11 +1,10 @@
 using MoMoney.Infrastructure.Threading;
-using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Views.Startup;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Presenters.Startup
 {
-    public interface ISplashScreenPresenter : IDisposableCommand, ITimerClient, ICallback<notification_message>
+    public interface ISplashScreenPresenter : IDisposableCommand, ITimerClient
     {
     }
 
@@ -39,11 +38,6 @@ namespace MoMoney.Presentation.Presenters.Startup
         public void notify()
         {
             current_state.update();
-        }
-
-        public void run(notification_message item)
-        {
-            view.notify(item);
         }
     }
 }

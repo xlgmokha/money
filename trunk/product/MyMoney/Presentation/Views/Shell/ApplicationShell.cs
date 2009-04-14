@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.helpers;
+using MoMoney.Presentation.Views.updates;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.Shell
@@ -14,6 +15,7 @@ namespace MoMoney.Presentation.Views.Shell
     public partial class ApplicationShell : ApplicationWindow, IShell
     {
         readonly IDictionary<string, IComponent> regions;
+        ControlAction<EventArgs> closed_action;
 
         public ApplicationShell()
         {
@@ -30,17 +32,18 @@ namespace MoMoney.Presentation.Views.Shell
                               {status_bar_label.GetType().FullName, status_bar_label},
                               {status_bar_progress_bar.GetType().FullName, status_bar_progress_bar}
                           };
+            Closed += (o, e) => closed_action(e);
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            try_to_reduce_flickering();
+            try_to_reduce_flickering().top_most();
         }
 
         public void attach_to(IApplicationShellPresenter presenter)
         {
-            Closed += (sender, args) => presenter.shut_down();
+            closed_action = x => presenter.shut_down();
         }
 
         public void add(IDockedContentView view)
@@ -69,9 +72,7 @@ namespace MoMoney.Presentation.Views.Shell
         void ensure_that_the_region_exists<T>()
         {
             if (!regions.ContainsKey(typeof (T).FullName))
-            {
                 throw new Exception("Could not find region: {0}".formatted_using(typeof (T)));
-            }
         }
     }
 }

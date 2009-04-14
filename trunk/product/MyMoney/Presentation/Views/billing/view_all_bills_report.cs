@@ -9,7 +9,7 @@ namespace MoMoney.Presentation.Views.billing
 {
     public interface IViewAllBillsReport : IReport
     {
-        void bind_to(IEnumerable<bill_information_dto> bills);
+        void bind_to(IEnumerable<BillInformationDTO> bills);
     }
 
     public partial class view_all_bills_report : ActiveReport3, IViewAllBillsReport
@@ -22,11 +22,11 @@ namespace MoMoney.Presentation.Views.billing
 
         public string name { get; private set; }
 
-        public void bind_to(IEnumerable<bill_information_dto> bills)
+        public void bind_to(IEnumerable<BillInformationDTO> bills)
         {
-            ux_company_name.bind_to<bill_information_dto, string>(x => x.company_name);
-            ux_amount.bind_to<bill_information_dto, string>(x => x.the_amount_owed);
-            ux_due_date.bind_to<bill_information_dto, DateTime>(x => x.due_date);
+            ux_company_name.bind_to<BillInformationDTO, string>(x => x.company_name);
+            ux_amount.bind_to<BillInformationDTO, string>(x => x.the_amount_owed);
+            ux_due_date.bind_to<BillInformationDTO, DateTime>(x => x.due_date);
             DataSource = bills.databind();
         }
     }

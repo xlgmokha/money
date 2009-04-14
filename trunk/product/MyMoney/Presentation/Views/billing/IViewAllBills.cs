@@ -6,6 +6,6 @@ namespace MoMoney.Presentation.Views.billing
 {
     public interface IViewAllBills : IDockedContentView
     {
-        void display(IEnumerable<bill_information_dto> bills);
+        void display(IEnumerable<BillInformationDTO> bills);
     }
 }

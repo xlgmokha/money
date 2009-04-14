@@ -1,4 +1,3 @@
-using System;
 using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.repositories;
@@ -23,9 +22,7 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             registry.proxy<IBillingTasks, ServiceLayerConfiguration<IBillingTasks>>(
-                () => new BillingTasks(Lazy.load<IBillRepository>(),
-                                       Lazy.load<ICompanyRepository>(),
-                                       Lazy.load<ICustomerTasks>()));
+                () => new BillingTasks(Lazy.load<IBillRepository>(), Lazy.load<ICompanyRepository>()));
 
             registry.proxy<ICustomerTasks, ServiceLayerConfiguration<ICustomerTasks>>(
                 () => new CustomerTasks(Lazy.load<IDatabaseGateway>()));
@@ -35,22 +32,24 @@ namespace MoMoney.boot.container.registration
                                       Lazy.load<ICompanyRepository>(),
                                       Lazy.load<IIncomeRepository>()));
 
-
             wire_up_queries();
             wire_up_the_commands();
-
         }
 
         void wire_up_queries()
         {
             registry.proxy<IGetAllCompanysQuery, ServiceLayerConfiguration<IGetAllCompanysQuery>>(
                 () => new GetAllCompanysQuery(Lazy.load<ICompanyRepository>()));
+            registry.proxy<IGetAllBillsQuery, ServiceLayerConfiguration<IGetAllBillsQuery>>(
+                () => new GetAllBillsQuery(Lazy.load<IBillRepository>()));
         }
 
         void wire_up_the_commands()
         {
             registry.proxy<IRegisterNewCompanyCommand, ServiceLayerConfiguration<IRegisterNewCompanyCommand>>(
                 () => new RegisterNewCompanyCommand(Lazy.load<ICompanyFactory>()));
+            registry.proxy<ISaveNewBillCommand, ServiceLayerConfiguration<ISaveNewBillCommand>>(
+                () => new SaveNewBillCommand(Lazy.load<ICompanyRepository>(), Lazy.load<ICustomerTasks>()));
         }
     }
 

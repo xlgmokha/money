@@ -50,19 +50,12 @@ namespace MoMoney.Presentation.Views.core
             return this;
         }
 
-        protected void on_ui_thread(Action action)
-        {
-            //if (InvokeRequired) BeginInvoke(action);
-            //else action();
-            action();
-        }
-
-        Control adapt(ToolTip item)
+        Control adapt(IDisposable item)
         {
             return new ControlAdapter(item);
         }
 
-        internal class ControlAdapter : Control
+        class ControlAdapter : Control
         {
             readonly IDisposable item;
 

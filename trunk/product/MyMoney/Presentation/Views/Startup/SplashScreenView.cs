@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 
@@ -25,7 +24,7 @@ namespace MoMoney.Presentation.Views.Startup
 
         public void increment_the_opacity()
         {
-            on_ui_thread(() => { Opacity += 0.2; });
+            Opacity += 0.2;
         }
 
         public double current_opacity()
@@ -35,25 +34,18 @@ namespace MoMoney.Presentation.Views.Startup
 
         public void decrement_the_opacity()
         {
-            on_ui_thread(() => { Opacity -= .1; });
+            Opacity -= .1;
         }
 
         public void close_the_screen()
         {
-            on_ui_thread(() =>
-                             {
-                                 Close();
-                                 Dispose();
-                             });
+            Close();
+            Dispose();
         }
 
         public void display()
         {
-            on_ui_thread(Show);
-        }
-
-        public void notify(notification_message message)
-        {
+            Show();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace MoMoney.Presentation.Views.billing
             titled("View Bills");
         }
 
-        public void display(IEnumerable<bill_information_dto> bills)
+        public void display(IEnumerable<BillInformationDTO> bills)
         {
             ux_bills.DataSource = bills.ToList();
         }

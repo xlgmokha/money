@@ -42,8 +42,7 @@ namespace MoMoney.boot
                 .the<global_error_handling>()
                 .then(startup_screen)
                 .then<wire_up_the_container>()
-                .then(startup_screen.Dispose)
-                .then<start_the_application>()
+                .then(new start_the_application(startup_screen))
                 .run();
 
             stopwatch.Stop();

@@ -117,6 +117,7 @@ namespace MoMoney.Presentation.Views.Shell {
             this.Controls.Add(this.ux_dock_panel);
             this.Controls.Add(this.ux_status_bar);
             this.Controls.Add(this.ux_main_menu_strip);
+            this.HelpButton = true;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.ux_main_menu_strip;
             this.Margin = new System.Windows.Forms.Padding(4);

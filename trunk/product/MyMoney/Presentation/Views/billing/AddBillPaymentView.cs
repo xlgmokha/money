@@ -31,7 +31,7 @@ namespace MoMoney.Presentation.Views.billing
             ux_company_names.bind_to(companys);
         }
 
-        public void run(IEnumerable<bill_information_dto> bills)
+        public void run(IEnumerable<BillInformationDTO> bills)
         {
             ux_bil_payments_grid.DataSource = bills.databind();
         }

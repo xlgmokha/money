@@ -67,16 +67,20 @@ namespace MoMoney.Presentation.Views.core
             using (new SuspendLayout(panel))
             {
                 if (window_is_already_contained_in(panel)) remove_from(panel);
-                Show(panel);
-                DockState = dock_state;
+                //else
+                {
+                    Show(panel);
+                    DockState = dock_state;
+                }
             }
         }
 
-        public void remove_from(DockPanel panel)
+        void remove_from(DockPanel panel)
         {
             using (new SuspendLayout(panel))
             {
                 var panel_to_remove = get_window_from(panel);
+                //panel_to_remove.DockHandler.Activate();
                 panel_to_remove.DockHandler.Close();
                 panel_to_remove.DockHandler.Dispose();
             }
@@ -97,20 +101,12 @@ namespace MoMoney.Presentation.Views.core
             return x.DockHandler.TabText.Equals(TabText);
         }
 
-        //protected void on_ui_thread(Action action)
-        //{
-        //    //if (InvokeRequired) BeginInvoke(action);
-        //    //else action();
-
-        //    action();
-        //}
-
-        Control adapt(ToolTip item)
+        Control adapt(IDisposable item)
         {
             return new ControlAdapter(item);
         }
 
-        internal class ControlAdapter : Control
+        class ControlAdapter : Control
         {
             readonly IDisposable item;
 

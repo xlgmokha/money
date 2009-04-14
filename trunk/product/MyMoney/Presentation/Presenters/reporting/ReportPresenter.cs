@@ -29,9 +29,9 @@ namespace MoMoney.Presentation.Presenters.reporting
             view.display(report);
         }
 
-        bill_information_dto map_from(IBill x)
+        BillInformationDTO map_from(IBill x)
         {
-            return new bill_information_dto
+            return new BillInformationDTO
                        {
                            company_name = x.company_to_pay.name,
                            due_date = x.due_date.to_date_time(),

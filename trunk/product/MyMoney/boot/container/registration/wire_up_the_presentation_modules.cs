@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.interceptors;
@@ -30,8 +31,8 @@ namespace MoMoney.boot.container.registration
 
         public void run(IAssembly item)
         {
-            registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(
-                () => new ApplicationController(Lazy.load<IPresenterRegistry>(), Lazy.load<IShell>()));
+            Func<IApplicationController> target = () => new ApplicationController(Lazy.load<IPresenterRegistry>(), Lazy.load<IShell>());
+            registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>( target.memorize());
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
             registry.transient<IFileMenu, FileMenu>();
             registry.transient<IWindowMenu, WindowMenu>();

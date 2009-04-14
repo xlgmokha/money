@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
@@ -7,21 +8,25 @@ using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters.income;
 using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.updates;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.income
 {
     public partial class AddNewIncomeView : ApplicationDockedWindow, IAddNewIncomeView
     {
+        ControlAction<EventArgs> submit_button = x => { };
+
         public AddNewIncomeView()
         {
             InitializeComponent();
             titled("Add Income");
+            ux_submit_button.Click += (sender, e) => submit_button(e);
         }
 
         public void attach_to(IAddNewIncomePresenter presenter)
         {
-            ux_submit_button.Click += (sender, e) => presenter.submit_new(create_income());
+            submit_button = x => presenter.submit_new(create_income());
         }
 
         public void display(IEnumerable<ICompany> companies)

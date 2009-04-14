@@ -27,27 +27,16 @@ namespace MoMoney.Presentation.Presenters.billing
         public override void run()
         {
             view.attach_to(this);
-            pump.run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view);
-            pump.run<IEnumerable<bill_information_dto>, IGetAllBillsQuery>(view);
-            //view.run(tasks.all_companys());
-            //view.run(tasks.all_bills().map_all_using(x => map_from(x)));
+            pump
+                .run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view)
+                .run<IEnumerable<BillInformationDTO>, IGetAllBillsQuery>(view);
         }
 
         public void submit_bill_payment(AddNewBillDTO dto)
         {
-            tasks.save_a_new_bill_using(dto);
-            //view.run(tasks.all_bills().map_all_using(x => map_from(x)));
-            pump.run<IEnumerable<bill_information_dto>, IGetAllBillsQuery>(view);
+            pump
+                .run<ISaveNewBillCommand, AddNewBillDTO>(dto)
+                .run<IEnumerable<BillInformationDTO>, IGetAllBillsQuery>(view);
         }
-
-        //bill_information_dto map_from(IBill bill)
-        //{
-        //    return new bill_information_dto
-        //               {
-        //                   company_name = bill.company_to_pay.name,
-        //                   the_amount_owed = bill.the_amount_owed.ToString(),
-        //                   due_date = bill.due_date.to_date_time(),
-        //               };
-        //}
     }
 }

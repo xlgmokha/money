@@ -403,7 +403,7 @@
     <Compile Include="Presentation\Presenters\AddCompanyPresenter.cs" />
     <Compile Include="Presentation\Presenters\AddCompanyPresenterSpecs.cs" />
     <Compile Include="Presentation\Presenters\billing\dto\AddNewBillDTO.cs" />
-    <Compile Include="Presentation\Presenters\billing\dto\bill_information_dto.cs" />
+    <Compile Include="Presentation\Presenters\billing\dto\BillInformationDto.cs" />
     <Compile Include="Presentation\Presenters\billing\dto\RegisterNewCompany.cs" />
     <Compile Include="Presentation\Presenters\billing\ViewAllBillsPresenter.cs" />
     <Compile Include="Presentation\Presenters\Commands\RestartCommand.cs" />
@@ -515,7 +515,7 @@
     </Compile>
     <Compile Include="Presentation\Views\core\IDockedContentView.cs" />
     <Compile Include="Presentation\Views\core\IView.cs" />
-    <Compile Include="Presentation\Views\dialogs\select_file_to_open_dialog.cs" />
+    <Compile Include="Presentation\Views\dialogs\SelectFileToOpenDialog.cs" />
     <Compile Include="Presentation\Views\dialogs\SelectFileToSaveToDialog.cs" />
     <Compile Include="Presentation\Views\income\AddNewIncomeView.cs">
       <SubType>Form</SubType>
@@ -531,7 +531,7 @@
     <Compile Include="Presentation\Views\income\ViewAllIncome.Designer.cs">
       <DependentUpon>ViewAllIncome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Databindings\listbox_extensions.cs" />
+    <Compile Include="Presentation\Databindings\ListboxExtensions.cs" />
     <Compile Include="Presentation\Views\Navigation\IMainMenuView.cs" />
     <Compile Include="Presentation\Views\Navigation\MainMenuView.cs">
       <SubType>Form</SubType>
@@ -604,6 +604,7 @@
     <Compile Include="Tasks\application\GetAllCompanysQuery.cs" />
     <Compile Include="Tasks\application\IncomeTasks.cs" />
     <Compile Include="Tasks\application\RegisterNewCompanyCommand.cs" />
+    <Compile Include="Tasks\application\SaveNewBillCommand.cs" />
     <Compile Include="Tasks\infrastructure\core\CommandPump.cs" />
     <Compile Include="Tasks\infrastructure\core\ICallbackCommand.cs" />
     <Compile Include="Tasks\infrastructure\LogFileTasks.cs" />
