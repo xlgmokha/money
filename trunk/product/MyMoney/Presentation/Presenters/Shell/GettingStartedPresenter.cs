@@ -15,7 +15,7 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public override void run()
         {
-            view.display();
+            view.attach_to(this);
         }
     }
 }

@@ -43,8 +43,7 @@ namespace MoMoney.Presentation.Views.Shell {
             this.ux_main_menu_strip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ux_main_menu_strip.Location = new System.Drawing.Point(0, 0);
             this.ux_main_menu_strip.Name = "ux_main_menu_strip";
-            this.ux_main_menu_strip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.ux_main_menu_strip.Size = new System.Drawing.Size(1008, 24);
+            this.ux_main_menu_strip.Size = new System.Drawing.Size(756, 24);
             this.ux_main_menu_strip.TabIndex = 0;
             this.ux_main_menu_strip.Text = "menuStrip1";
             // 
@@ -53,42 +52,42 @@ namespace MoMoney.Presentation.Views.Shell {
             this.ux_status_bar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.status_bar_label,
             this.status_bar_progress_bar});
-            this.ux_status_bar.Location = new System.Drawing.Point(0, 599);
+            this.ux_status_bar.Location = new System.Drawing.Point(0, 485);
             this.ux_status_bar.Name = "ux_status_bar";
-            this.ux_status_bar.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
             this.ux_status_bar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.ux_status_bar.Size = new System.Drawing.Size(1008, 25);
+            this.ux_status_bar.Size = new System.Drawing.Size(756, 22);
             this.ux_status_bar.TabIndex = 2;
             this.ux_status_bar.Text = "statusStrip1";
             // 
             // status_bar_label
             // 
             this.status_bar_label.Name = "status_bar_label";
-            this.status_bar_label.Size = new System.Drawing.Size(18, 20);
+            this.status_bar_label.Size = new System.Drawing.Size(19, 17);
             this.status_bar_label.Text = "...";
             // 
             // status_bar_progress_bar
             // 
             this.status_bar_progress_bar.Name = "status_bar_progress_bar";
-            this.status_bar_progress_bar.Size = new System.Drawing.Size(100, 19);
+            this.status_bar_progress_bar.Size = new System.Drawing.Size(75, 16);
             // 
             // ux_dock_panel
             // 
             this.ux_dock_panel.ActiveAutoHideContent = null;
+            this.ux_dock_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.ux_dock_panel.BackColor = System.Drawing.Color.White;
             this.ux_dock_panel.CausesValidation = false;
-            this.ux_dock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ux_dock_panel.DockBackColor = System.Drawing.Color.Transparent;
             this.ux_dock_panel.DockBottomPortion = 150;
             this.ux_dock_panel.DockLeftPortion = 200;
             this.ux_dock_panel.DockRightPortion = 200;
             this.ux_dock_panel.DockTopPortion = 150;
             this.ux_dock_panel.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.ux_dock_panel.Location = new System.Drawing.Point(0, 24);
-            this.ux_dock_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.ux_dock_panel.Location = new System.Drawing.Point(0, 52);
             this.ux_dock_panel.Name = "ux_dock_panel";
             this.ux_dock_panel.RightToLeftLayout = true;
-            this.ux_dock_panel.Size = new System.Drawing.Size(1008, 575);
+            this.ux_dock_panel.Size = new System.Drawing.Size(756, 435);
             this.ux_dock_panel.TabIndex = 3;
             // 
             // ux_tool_bar_strip
@@ -96,7 +95,7 @@ namespace MoMoney.Presentation.Views.Shell {
             this.ux_tool_bar_strip.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ux_tool_bar_strip.Location = new System.Drawing.Point(0, 24);
             this.ux_tool_bar_strip.Name = "ux_tool_bar_strip";
-            this.ux_tool_bar_strip.Size = new System.Drawing.Size(1008, 25);
+            this.ux_tool_bar_strip.Size = new System.Drawing.Size(756, 25);
             this.ux_tool_bar_strip.TabIndex = 6;
             this.ux_tool_bar_strip.Text = "toolStrip1";
             // 
@@ -110,9 +109,9 @@ namespace MoMoney.Presentation.Views.Shell {
             // 
             // ApplicationShell
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 624);
+            this.ClientSize = new System.Drawing.Size(756, 507);
             this.Controls.Add(this.ux_tool_bar_strip);
             this.Controls.Add(this.ux_dock_panel);
             this.Controls.Add(this.ux_status_bar);
@@ -120,7 +119,7 @@ namespace MoMoney.Presentation.Views.Shell {
             this.HelpButton = true;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.ux_main_menu_strip;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Name = "ApplicationShell";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MoMoney";

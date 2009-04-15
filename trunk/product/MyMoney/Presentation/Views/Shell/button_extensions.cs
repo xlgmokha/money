@@ -31,16 +31,39 @@ namespace MoMoney.Presentation.Views.Shell
 
         public static Control with_tool_tip(this Control control, string title, string caption)
         {
-            new ToolTip
-                {
-                    IsBalloon = true,
-                    ToolTipTitle = title,
-                    ToolTipIcon = ToolTipIcon.Info,
-                    UseAnimation = true,
-                    UseFading = true,
-                    AutoPopDelay = 10000,
-                }.SetToolTip(control, caption);
+            var tip = new ToolTip
+                          {
+                              IsBalloon = true,
+                              ToolTipTitle = title,
+                              ToolTipIcon = ToolTipIcon.Info,
+                              UseAnimation = true,
+                              UseFading = true,
+                              AutoPopDelay = 10000,
+                          };
+            tip.SetToolTip(control, caption);
+            control.Controls.Add(adapt(tip));
             return control;
+        }
+
+        static Control adapt(IDisposable item)
+        {
+            return new ControlAdapter(item);
+        }
+
+        class ControlAdapter : Control
+        {
+            readonly IDisposable item;
+
+            public ControlAdapter(IDisposable item)
+            {
+                this.item = item;
+            }
+
+            protected override void Dispose(bool disposing)
+            {
+                if (disposing) item.Dispose();
+                base.Dispose(disposing);
+            }
         }
     }
 }

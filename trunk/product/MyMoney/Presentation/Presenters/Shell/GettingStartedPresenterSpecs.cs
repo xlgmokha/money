@@ -17,13 +17,13 @@ namespace MoMoney.Presentation.Presenters.Shell
                                 broker = the_dependency<IEventAggregator>();
                             };
 
-            protected static IEventAggregator broker;
-            protected static IGettingStartedView view;
+            static protected IEventAggregator broker;
+            static protected IGettingStartedView view;
         }
 
         public class when_a_new_project_is_opened : behaves_like_the_getting_started_presenter
         {
-            it should_display_the_getting_started_screen = () => view.was_told_to(x => x.display());
+            it should_display_the_getting_started_screen = () => view.was_told_to(x => x.attach_to(sut));
 
             because b = () => sut.run();
         }

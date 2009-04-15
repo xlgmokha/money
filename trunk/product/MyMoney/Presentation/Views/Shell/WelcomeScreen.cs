@@ -1,4 +1,5 @@
 using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 
@@ -10,10 +11,7 @@ namespace MoMoney.Presentation.Views.Shell
         {
             InitializeComponent();
             titled("Getting Started");
-        }
 
-        public void display()
-        {
             ux_open_existing_file_button.will_be_shown_as(ApplicationImages.OpenExistingFile)
                 .when_hovered_over_will_show(ApplicationImages.OpenExistingFileSelected)
                 .will_execute<IOpenCommand>(() => true)
@@ -23,6 +21,10 @@ namespace MoMoney.Presentation.Views.Shell
                 .when_hovered_over_will_show(ApplicationImages.CreateNewFileSelected)
                 .will_execute<INewCommand>(() => true)
                 .with_tool_tip("Create New File", "Create a new project.");
+        }
+
+        public void attach_to(IGettingStartedPresenter presenter)
+        {
         }
     }
 }
