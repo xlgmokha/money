@@ -11,13 +11,13 @@ namespace MoMoney.Infrastructure.transactions2
     public class UnitOfWork : IUnitOfWork
     {
         readonly ISession session;
-        readonly IContext request;
+        readonly IContext context;
         readonly IKey<ISession> key;
 
-        public UnitOfWork(ISession session, IContext request, IKey<ISession> key)
+        public UnitOfWork(ISession session, IContext context, IKey<ISession> key)
         {
             this.session = session;
-            this.request = request;
+            this.context = context;
             this.key = key;
         }
 
@@ -33,7 +33,7 @@ namespace MoMoney.Infrastructure.transactions2
 
         public void Dispose()
         {
-            request.remove(key);
+            context.remove(key);
             session.Dispose();
         }
     }

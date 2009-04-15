@@ -25,8 +25,7 @@ namespace MoMoney.Modules
 
         public void run()
         {
-            broker.subscribe_to<NewProjectOpened>(this);
-            broker.subscribe_to<ClosingProjectEvent>(this);
+            broker.subscribe(this);
             command.run<IGettingStartedPresenter>();
         }
 

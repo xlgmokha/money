@@ -12,9 +12,9 @@ namespace MoMoney.Infrastructure.transactions2
         readonly ISessionFactory factory;
         readonly IKey<ISession> key;
 
-        public UnitOfWorkFactory(IContext current_request, ISessionFactory factory, IKey<ISession> key)
+        public UnitOfWorkFactory(IContext context, ISessionFactory factory, IKey<ISession> key)
         {
-            context = current_request;
+            this.context = context;
             this.key = key;
             this.factory = factory;
         }

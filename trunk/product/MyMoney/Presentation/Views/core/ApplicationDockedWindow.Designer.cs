@@ -1,4 +1,6 @@
-﻿namespace MoMoney.Presentation.Views.core
+﻿using MoMoney.Infrastructure.Extensions;
+
+namespace MoMoney.Presentation.Views.core
 {
     partial class ApplicationDockedWindow
     {
@@ -13,6 +15,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            this.log().debug("disposing: {0}", this);
             if (disposing && (components != null))
             {
                 components.Dispose();
