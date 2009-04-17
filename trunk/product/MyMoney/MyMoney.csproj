@@ -607,37 +607,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataAccess\core\" />
-    <Folder Include="DataAccess\db40\spiking\" />
-    <Folder Include="DataAccess\repositories\" />
-    <Folder Include="DataAccess\sqlcompact\" />
-    <Folder Include="Infrastructure\caching\" />
-    <Folder Include="Infrastructure\cloning\" />
-    <Folder Include="Infrastructure\Container\Autofac\" />
-    <Folder Include="Infrastructure\Container\Windsor\configuration\" />
-    <Folder Include="Infrastructure\debugging\" />
-    <Folder Include="Infrastructure\eventing\" />
-    <Folder Include="Infrastructure\Extensions\" />
-    <Folder Include="Infrastructure\interceptors\" />
-    <Folder Include="Infrastructure\Logging\ConsoleLogging\" />
-    <Folder Include="Infrastructure\Logging\Log4NetLogging\" />
-    <Folder Include="Infrastructure\proxies\Interceptors\" />
-    <Folder Include="Infrastructure\reflection\" />
-    <Folder Include="Infrastructure\registries\" />
-    <Folder Include="Infrastructure\System\" />
-    <Folder Include="Infrastructure\Threading\Juval\" />
-    <Folder Include="Infrastructure\transactions2\" />
-    <Folder Include="Infrastructure\transactions\" />
     <Folder Include="Presentation\Model\updates\" />
     <Folder Include="Presentation\Presenters\billing\dto\" />
     <Folder Include="Presentation\Presenters\income\dto\" />
     <Folder Include="Presentation\Views\Menu\Mappers\" />
-    <Folder Include="Tasks\application\" />
-    <Folder Include="Tasks\domain\" />
-    <Folder Include="Tasks\infrastructure\core\" />
-    <Folder Include="Tasks\infrastructure\updating\" />
-    <Folder Include="Tasks\Stubs\" />
-    <Folder Include="Testing\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
