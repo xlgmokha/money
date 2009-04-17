@@ -3,13 +3,13 @@ using MoMoney.Infrastructure.Threading;
 
 namespace MoMoney.Infrastructure.System
 {
-    public interface IApplicationEnvironment
+    public interface IApplication
     {
         void shut_down();
         void restart();
     }
 
-    public class ApplicationEnvironment : IApplicationEnvironment
+    public class ApplicationEnvironment : IApplication
     {
         readonly ICommandProcessor processor;
 

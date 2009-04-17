@@ -11,10 +11,10 @@ namespace MoMoney.Presentation.Presenters.Commands
 
     public class RestartCommand : IRestartCommand
     {
-        readonly IApplicationEnvironment application;
+        readonly IApplication application;
         readonly IEventAggregator broker;
 
-        public RestartCommand(IApplicationEnvironment application, IEventAggregator broker)
+        public RestartCommand(IApplication application, IEventAggregator broker)
         {
             this.application = application;
             this.broker = broker;

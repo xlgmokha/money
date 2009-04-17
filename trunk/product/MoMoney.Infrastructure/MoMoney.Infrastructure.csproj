@@ -59,14 +59,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\castle\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="Db4objects.Db4o, Version=7.5.57.11498, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.dll</HintPath>
-    </Reference>
-    <Reference Include="Db4objects.Db4o.Linq, Version=7.5.57.11498, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.Linq.dll</HintPath>
-    </Reference>
     <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
@@ -87,7 +79,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -112,16 +103,11 @@
     <Compile Include="Container\Resolve.cs" />
     <Compile Include="Container\ResolveSpecs.cs" />
     <Compile Include="Container\Windsor\Configuration\ApplyLoggingInterceptor.cs" />
-    <Compile Include="Container\Windsor\Configuration\ComponentExclusionSpecification.cs" />
-    <Compile Include="Container\Windsor\Configuration\ComponentExclusionSpecificationSpecs.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Container\Windsor\Configuration\ComponentRegistrationConfiguration.cs" />
     <Compile Include="Container\Windsor\Configuration\ConfigureComponentLifestyle.cs" />
     <Compile Include="Container\Windsor\Configuration\IComponentExclusionSpecification.cs" />
     <Compile Include="Container\Windsor\Configuration\LogComponent.cs" />
     <Compile Include="Container\Windsor\Configuration\RegisterComponentContract.cs" />
-    <Compile Include="Container\Windsor\Configuration\type_extensions.cs" />
     <Compile Include="Container\Windsor\WindsorContainerFactory.cs" />
     <Compile Include="Container\Windsor\WindsorDependencyRegistry.cs" />
     <Compile Include="Container\Windsor\WindsorDependencyRegistrySpecs.cs" />
@@ -169,7 +155,6 @@
     <Compile Include="Reflection\IAssembly.cs" />
     <Compile Include="Registries\DefaultRegistry.cs" />
     <Compile Include="Registries\DefaultRegistrySpecs.cs" />
-    <Compile Include="System\ApplicationEnvironment.cs" />
     <Compile Include="Threading\AsynchronousCommandProcessor.cs" />
     <Compile Include="Threading\BackgroundThread.cs" />
     <Compile Include="Threading\BackgroundThreadFactory.cs" />
@@ -197,13 +182,12 @@
     <Compile Include="Transactions2\ChangeTrackerFactory.cs" />
     <Compile Include="Transactions2\ChangeTrackerFactorySpecs.cs" />
     <Compile Include="Transactions2\ChangeTrackerSpecs.cs" />
-    <Compile Include="Transactions2\ConfigureDatabaseStep.cs" />
     <Compile Include="Transactions2\Context.cs" />
-    <Compile Include="Transactions2\DatabaseConnection.cs" />
     <Compile Include="Transactions2\EmptyUnitOfWork.cs" />
     <Compile Include="Transactions2\IChangeTracker.cs" />
     <Compile Include="Transactions2\IChangeTrackerFactory.cs" />
     <Compile Include="Transactions2\IDatabase.cs" />
+    <Compile Include="Transactions2\IDatabaseConnection.cs" />
     <Compile Include="Transactions2\IdentityMapProxy.cs" />
     <Compile Include="Transactions2\IdentityMapSpecs.cs" />
     <Compile Include="Transactions2\IIdentityMap.cs" />

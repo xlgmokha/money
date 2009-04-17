@@ -16,12 +16,12 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
 
         context c = () =>
                         {
-                            application = the_dependency<IApplicationEnvironment>();
+                            application = the_dependency<IApplication>();
                             broker = the_dependency<IEventAggregator>();
                             save_changes_command = the_dependency<ISaveChangesCommand>();
                         };
 
-        protected static IApplicationEnvironment application;
+        protected static IApplication application;
         protected static IEventAggregator broker;
         protected static ISaveChangesCommand save_changes_command;
     }

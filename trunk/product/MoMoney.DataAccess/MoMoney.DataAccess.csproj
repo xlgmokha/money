@@ -85,8 +85,10 @@
     <Compile Include="Repositories\IncomeRepository.cs" />
     <Compile Include="Testing\behaves_like_a_repository.cs" />
     <Compile Include="Testing\RunInRealContainer.cs" />
+    <Compile Include="Transactions2\ConfigureDatabaseStep.cs" />
     <Compile Include="Transactions2\ConnectionFactory.cs" />
     <Compile Include="Transactions2\Database.cs" />
+    <Compile Include="Transactions2\DatabaseConnection.cs" />
     <Compile Include="Transactions2\IDatabaseConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>

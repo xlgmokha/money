@@ -160,6 +160,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="boot\container\ComponentExclusionSpecification.cs" />
+    <Compile Include="boot\container\ComponentExclusionSpecificationSpecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="boot\container\registration\auto_wire_components_in_to_the.cs" />
     <Compile Include="boot\container\registration\auto_wire_components_in_to_the_specs.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\SynchronizedConfiguration.cs" />
@@ -169,10 +173,12 @@
     <Compile Include="boot\container\registration\wire_up_the_data_access_components_into_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_presentation_modules.cs" />
     <Compile Include="boot\container\registration\wire_up_the_services_in_to_the.cs" />
+    <Compile Include="boot\container\type_extensions.cs" />
     <Compile Include="boot\global_error_handling.cs" />
     <Compile Include="boot\WindowsFormsApplication.cs" />
     <Compile Include="Modules\ApplicationShellModule.cs" />
     <Compile Include="Modules\DatabaseModule.cs" />
+    <Compile Include="Presentation\Core\ApplicationEnvironment.cs" />
     <Compile Include="Presentation\Core\ContentPresenter.cs" />
     <Compile Include="Presentation\Core\IContentPresenter.cs" />
     <Compile Include="Presentation\Databindings\date_time_picker_property_binding.cs" />
