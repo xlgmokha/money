@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddNewBillDTO.cs" />
+    <Compile Include="ApplicationVersion.cs" />
     <Compile Include="BillInformationDto.cs" />
     <Compile Include="IncomeSubmissionDto.cs" />
     <Compile Include="income_information_dto.cs" />

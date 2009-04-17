@@ -1,5 +1,6 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
+using MoMoney.DataAccess;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Views.dialogs;
 

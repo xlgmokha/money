@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using MoMoney.DataAccess;
 using MoMoney.Domain.Core;
 using MoMoney.Presentation.Model.Projects;
 

@@ -1,7 +1,8 @@
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Model.updates;
+using MoMoney.Tasks.infrastructure.updating;
 
-namespace MoMoney.Tasks.infrastructure.updating
+namespace MoMoney.Service.Infrastructure.Updating
 {
     public interface IWhatIsTheAvailableVersion : IQuery<ApplicationVersion>
     {

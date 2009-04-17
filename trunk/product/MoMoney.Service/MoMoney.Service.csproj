@@ -31,10 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -67,6 +72,10 @@
     <Compile Include="Infrastructure\Updating\WhatIsTheAvailableVersion.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
+      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
+      <Name>Gorilla.Commons.Testing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>Gorilla.Commons.Utility</Name>

@@ -4,6 +4,7 @@ using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.updates;
+using MoMoney.Service.Infrastructure.Updating;
 using MoMoney.Tasks.infrastructure.core;
 using MoMoney.Tasks.infrastructure.updating;
 

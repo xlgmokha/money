@@ -1,16 +1,9 @@
 using System.IO;
 using MoMoney.Infrastructure.Extensions;
+using MoMoney.Presentation.Model.Projects;
 
-namespace MoMoney.Presentation.Model.Projects
+namespace MoMoney.DataAccess
 {
-    public interface IFile
-    {
-        string path { get; }
-        bool does_the_file_exist();
-        void copy_to(string path);
-        void delete();
-    }
-
     public class ApplicationFile : IFile
     {
         public ApplicationFile(string path)

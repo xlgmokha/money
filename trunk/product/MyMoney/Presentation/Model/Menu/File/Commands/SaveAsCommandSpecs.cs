@@ -1,5 +1,6 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
+using MoMoney.DataAccess;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Views.dialogs;
 
@@ -27,7 +28,7 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         }
 
         static IProjectController current_project;
-        static Projects.ApplicationFile new_path;
+        static ApplicationFile new_path;
         static ISelectFileToSaveToDialog view;
     }
 }

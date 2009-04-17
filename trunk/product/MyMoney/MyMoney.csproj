@@ -228,7 +228,6 @@
     <Compile Include="Presentation\Model\reporting\IReport.cs" />
     <Compile Include="Presentation\Model\reporting\report_binding_extensions.cs" />
     <Compile Include="Presentation\Model\reporting\report_binding_extensions_specs.cs" />
-    <Compile Include="Presentation\Model\updates\ApplicationVersion.cs" />
     <Compile Include="Presentation\Presenters\billing\AddBillPaymentPresenter.cs" />
     <Compile Include="Presentation\Presenters\AddCompanyPresenter.cs" />
     <Compile Include="Presentation\Presenters\AddCompanyPresenterSpecs.cs" />
@@ -629,6 +628,7 @@
     <Folder Include="Infrastructure\Threading\Juval\" />
     <Folder Include="Infrastructure\transactions2\" />
     <Folder Include="Infrastructure\transactions\" />
+    <Folder Include="Presentation\Model\updates\" />
     <Folder Include="Presentation\Presenters\billing\dto\" />
     <Folder Include="Presentation\Presenters\income\dto\" />
     <Folder Include="Presentation\Views\Menu\Mappers\" />

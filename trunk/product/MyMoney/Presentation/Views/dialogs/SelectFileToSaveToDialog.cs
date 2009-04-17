@@ -1,4 +1,5 @@
 using System.Windows.Forms;
+using MoMoney.DataAccess;
 using MoMoney.Presentation.Model.Projects;
 
 namespace MoMoney.Presentation.Views.dialogs
