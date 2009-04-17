@@ -62,7 +62,7 @@
     <Compile Include="Core\AnonymousDisposable.cs" />
     <Compile Include="Core\ChainedCommand.cs" />
     <Compile Include="Core\ChainedConfiguration.cs" />
-    <Compile Include="Core\chained_mapper.cs" />
+    <Compile Include="Core\ChainedMapper.cs" />
     <Compile Include="Core\DisposableCommand.cs" />
     <Compile Include="Core\EmptyCallback.cs" />
     <Compile Include="Core\EmptyCommand.cs" />
@@ -89,22 +89,22 @@
     <Compile Include="Core\PredicateSpecification.cs" />
     <Compile Include="Core\PredicateSpecificationSpecs.cs" />
     <Compile Include="Extensions\CommandExtensions.cs" />
-    <Compile Include="Extensions\configuration_extensions.cs" />
+    <Compile Include="Extensions\ConfigurationExtensions.cs" />
     <Compile Include="Extensions\ConversionExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensionsSpecs.cs" />
     <Compile Include="Extensions\FuncExtensions.cs" />
-    <Compile Include="Extensions\mapping_extensions.cs" />
+    <Compile Include="Extensions\MappingExtensions.cs" />
     <Compile Include="Extensions\mapping_extensions_specs.cs" />
-    <Compile Include="Extensions\numeric_conversions.cs" />
+    <Compile Include="Extensions\NumericConversions.cs" />
     <Compile Include="Extensions\numeric_conversions_specs.cs" />
     <Compile Include="Extensions\RegistryExtensions.cs" />
     <Compile Include="Extensions\SpecificationExtensionsSpecs.cs" />
-    <Compile Include="Extensions\specification_extensions.cs" />
+    <Compile Include="Extensions\SpecificationExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Extensions\TypeExtensionsSpecs.cs" />
-    <Compile Include="Extensions\visitor_extensions.cs" />
+    <Compile Include="Extensions\VisitorExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">

@@ -1,6 +1,6 @@
 using System;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Infrastructure.proxies;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.Container
 {

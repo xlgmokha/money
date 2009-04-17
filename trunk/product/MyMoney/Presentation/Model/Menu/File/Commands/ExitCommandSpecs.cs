@@ -1,10 +1,8 @@
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.System;
 using MoMoney.Presentation.Model.messages;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Model.Menu.File.Commands
 {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Castle.Core.Interceptor;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.proxies.Interceptors
 {

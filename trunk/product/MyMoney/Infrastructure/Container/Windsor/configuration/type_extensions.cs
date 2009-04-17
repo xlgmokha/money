@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {

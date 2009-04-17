@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DataAccess.core;
 using MoMoney.Domain.Core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.transactions
 {

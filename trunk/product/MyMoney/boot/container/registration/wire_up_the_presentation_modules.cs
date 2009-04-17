@@ -1,5 +1,7 @@
 using System;
 using System.Reflection;
+using Gorilla.Commons.Utility.Core;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.reflection;
@@ -10,8 +12,6 @@ using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.Shell;
-using MoMoney.Utility.Core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.boot.container.registration
 {

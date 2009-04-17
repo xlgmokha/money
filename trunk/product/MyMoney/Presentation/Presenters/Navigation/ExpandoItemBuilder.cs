@@ -1,8 +1,8 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Resources;
-using MoMoney.Utility.Core;
 using XPExplorerBar;
 
 namespace MoMoney.Presentation.Presenters.Navigation

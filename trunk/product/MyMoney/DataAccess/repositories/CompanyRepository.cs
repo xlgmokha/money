@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.repositories;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.DataAccess.repositories
 {

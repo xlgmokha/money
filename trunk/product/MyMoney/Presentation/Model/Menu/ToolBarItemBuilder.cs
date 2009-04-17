@@ -1,10 +1,10 @@
 using System;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Resources;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Model.Menu
 {

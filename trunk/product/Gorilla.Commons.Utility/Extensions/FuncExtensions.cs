@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
     public static class FuncExtensions
     {

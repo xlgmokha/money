@@ -6,14 +6,14 @@ using System.Globalization;
 using System.Security.Principal;
 using System.Threading;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Core;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.boot.container;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Startup;
-using MoMoney.Utility.Core;
-using MoMoney.Utility.Extensions;
 using MoMoney.windows.ui;
 using display_the_splash_screen=MoMoney.Presentation.Presenters.Commands.display_the_splash_screen;
 

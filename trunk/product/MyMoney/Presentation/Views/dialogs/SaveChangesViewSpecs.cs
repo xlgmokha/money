@@ -1,10 +1,8 @@
 using System;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Views.helpers;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Views.dialogs
 {

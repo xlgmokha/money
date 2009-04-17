@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using DataDynamics.ActiveReports;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.reporting;
 using MoMoney.Presentation.Presenters.billing.dto;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.billing
 {

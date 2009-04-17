@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.helpers
 {

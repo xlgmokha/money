@@ -1,30 +1,23 @@
 using System;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
-    public static class CommandExtensions
+    static public class CommandExtensions
     {
-        public static ICommand then<Command>(this ICommand left) where Command : ICommand, new()
+        static public ICommand then<Command>(this ICommand left) where Command : ICommand, new()
         {
             return then(left, new Command());
         }
 
-        public static ICommand then(this ICommand left, ICommand right)
+        static public ICommand then(this ICommand left, ICommand right)
         {
             return new ChainedCommand(left, right);
         }
 
-        public static ICommand then(this ICommand left, Action right)
+        static public ICommand then(this ICommand left, Action right)
         {
             return new ChainedCommand(left, new ActionCommand(right));
         }
-
-        //public static ICommand as_command_chain(this IEnumerable<ICommand> commands)
-        //{
-        //    var processor = new CommandProcessor();
-        //    commands.each(processor.add);
-        //    return processor;
-        //}
     }
 }

@@ -1,12 +1,11 @@
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Core;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Utility.Extensions
 {
-    [Concern(typeof (mapping_extensions))]
+    [Concern(typeof (MappingExtensions))]
     public class when_transforming_type_A_to_type_B_then_C : concerns
     {
         it should_return_the_correct_result = () => result.should_be_equal_to(1);

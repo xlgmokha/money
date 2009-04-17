@@ -1,8 +1,8 @@
 using System;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
-    public static class numeric_conversions
+    public static class NumericConversions
     {
         public static int to_int<T>(this T item) where T : IConvertible
         {

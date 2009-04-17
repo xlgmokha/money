@@ -1,9 +1,7 @@
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
 using MoMoney.Infrastructure.Threading;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.proxies.Interceptors

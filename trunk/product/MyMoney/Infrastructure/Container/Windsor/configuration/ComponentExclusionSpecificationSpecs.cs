@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
 using MoMoney.Domain.Core;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {

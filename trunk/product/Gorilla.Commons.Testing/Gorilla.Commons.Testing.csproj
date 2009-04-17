@@ -66,14 +66,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Call.cs" />
-    <Compile Include="MetaData\ConcernAttribute.cs" />
-    <Compile Include="MetaData\IntegrationAttribute.cs" />
-    <Compile Include="SpecHelpers\Contexts\concerns.cs" />
-    <Compile Include="SpecHelpers\Core\assertions.cs" />
-    <Compile Include="SpecHelpers\Core\empty_fixture.cs" />
-    <Compile Include="SpecHelpers\Core\IHideObjectMembers.cs" />
-    <Compile Include="SpecHelpers\Core\MethodCallOccurance.cs" />
-    <Compile Include="SpecHelpers\Core\mocking_extensions.cs" />
+    <Compile Include="ConcernAttribute.cs" />
+    <Compile Include="IntegrationAttribute.cs" />
+    <Compile Include="concerns.cs" />
+    <Compile Include="assertions.cs" />
+    <Compile Include="EmptyFixture.cs" />
+    <Compile Include="IHideObjectMembers.cs" />
+    <Compile Include="MethodCallOccurance.cs" />
+    <Compile Include="MockingExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

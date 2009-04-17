@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.billing;
@@ -10,7 +11,6 @@ using MoMoney.Presentation.Views.Navigation;
 using MoMoney.Presentation.Views.Shell;
 using MoMoney.Presentation.Views.Startup;
 using MoMoney.Presentation.Views.updates;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.boot.container.registration
 {

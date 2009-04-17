@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 using DataDynamics.ActiveReports;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Presentation.Model.reporting
 {

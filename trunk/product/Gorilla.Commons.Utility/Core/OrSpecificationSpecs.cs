@@ -1,8 +1,7 @@
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
+using Gorilla.Commons.Testing;
 
-namespace MoMoney.Utility.Core
+namespace Gorilla.Commons.Utility.Core
 {
     public abstract class when_checking_if_one_of_two_conditions_are_met :
         concerns_for<ISpecification<int>, OrSpecification<int>>

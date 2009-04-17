@@ -1,6 +1,6 @@
 using Castle.Core.Interceptor;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Infrastructure.interceptors;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.Threading
 {

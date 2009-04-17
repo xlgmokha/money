@@ -1,9 +1,8 @@
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
     public class when_evaluating_two_conditions : concerns
     {
@@ -13,8 +12,8 @@ namespace MoMoney.Utility.Extensions
                             right = an<ISpecification<int>>();
                         };
 
-        protected static ISpecification<int> left;
-        protected static ISpecification<int> right;
+        static protected ISpecification<int> left;
+        static protected ISpecification<int> right;
     }
 
     public class when_checking_if_two_conditions_are_met_and_they_are : when_evaluating_two_conditions
@@ -47,7 +46,8 @@ namespace MoMoney.Utility.Extensions
         static bool result;
     }
 
-    public class when_checking_if_one_of_two_conditions_are_met_and_the_right_one_is_not : when_evaluating_two_conditions
+    public class when_checking_if_one_of_two_conditions_are_met_and_the_right_one_is_not :
+        when_evaluating_two_conditions
     {
         it should_return_true = () => result.should_be_true();
 

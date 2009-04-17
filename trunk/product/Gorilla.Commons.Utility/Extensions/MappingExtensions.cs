@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
-    public static class mapping_extensions
+    public static class MappingExtensions
     {
         public static Output map_using<Input, Output>(this Input item, Converter<Input, Output> conversion)
         {
@@ -27,7 +27,7 @@ namespace MoMoney.Utility.Extensions
         public static IMapper<Left, Right> then<Left, Middle, Right>(this IMapper<Left, Middle> left,
                                                                      IMapper<Middle, Right> right)
         {
-            return new chained_mapper<Left, Middle, Right>(left, right);
+            return new ChainedMapper<Left, Middle, Right>(left, right);
         }
     }
 }

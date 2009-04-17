@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Utility.Core
+namespace Gorilla.Commons.Utility.Core
 {
     public class PredicateSpecification<T> : ISpecification<T>
     {

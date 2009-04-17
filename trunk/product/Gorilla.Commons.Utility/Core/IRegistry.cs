@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MoMoney.Utility.Core
+namespace Gorilla.Commons.Utility.Core
 {
     public interface IRegistry<T>
     {

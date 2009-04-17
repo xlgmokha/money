@@ -1,9 +1,8 @@
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
     public class when_getting_the_last_interface_for_a_type : concerns
     {
@@ -19,8 +18,8 @@ namespace MoMoney.Utility.Extensions
     public class when_checking_if_a_type_represents_a_generic_type_definition : concerns
     {
         it should_tell_the_truth = () => { 
-            typeof (IRegistry<>).is_a_generic_type().should_be_true();
-            typeof (IRegistry<int>).is_a_generic_type().should_be_false();
+                                             typeof (IRegistry<>).is_a_generic_type().should_be_true();
+                                             typeof (IRegistry<int>).is_a_generic_type().should_be_false();
         };
     }
 

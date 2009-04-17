@@ -1,6 +1,6 @@
 using System;
 using System.Linq.Expressions;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.Threading
 {

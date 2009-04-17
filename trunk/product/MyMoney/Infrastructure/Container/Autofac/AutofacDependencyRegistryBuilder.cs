@@ -3,9 +3,9 @@ using Autofac;
 using Autofac.Builder;
 using Autofac.Modules;
 using AutofacContrib.DynamicProxy2;
+using Gorilla.Commons.Utility.Core;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.proxies;
-using MoMoney.Utility.Core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container.Autofac
 {

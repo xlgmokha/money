@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.helpers;
-using MoMoney.Utility.Extensions;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MoMoney.Presentation.Views.core

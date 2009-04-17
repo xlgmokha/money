@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Presentation.Databindings;
 using MoMoney.Presentation.Model.interaction;
@@ -10,7 +11,6 @@ using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views
 {

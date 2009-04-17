@@ -1,5 +1,5 @@
 using System.Windows.Forms;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Presentation.Model.Navigation
 {

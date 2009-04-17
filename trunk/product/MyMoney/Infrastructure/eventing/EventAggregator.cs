@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.eventing
 {

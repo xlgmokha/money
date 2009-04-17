@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Presentation.Core
 {

@@ -1,8 +1,8 @@
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
-    public static class configuration_extensions
+    public static class ConfigurationExtensions
     {
         public static IConfiguration<T> then<T>(this IConfiguration<T> first, IConfiguration<T> second)
         {

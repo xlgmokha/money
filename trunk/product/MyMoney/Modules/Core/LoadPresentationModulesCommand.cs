@@ -1,6 +1,6 @@
+using Gorilla.Commons.Utility.Core;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.Threading;
-using MoMoney.Utility.Core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Modules.Core
 {

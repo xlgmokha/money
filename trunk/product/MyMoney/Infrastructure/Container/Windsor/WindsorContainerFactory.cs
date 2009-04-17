@@ -1,7 +1,7 @@
 using System;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.Container.Windsor
 {

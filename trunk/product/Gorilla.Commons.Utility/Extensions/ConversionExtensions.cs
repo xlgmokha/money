@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
     public static class ConversionExtensions
     {

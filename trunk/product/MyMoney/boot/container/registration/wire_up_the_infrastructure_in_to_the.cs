@@ -1,3 +1,4 @@
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.registries;
@@ -5,7 +6,6 @@ using MoMoney.Infrastructure.Threading;
 using MoMoney.Infrastructure.transactions;
 using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.boot.container.registration
 {

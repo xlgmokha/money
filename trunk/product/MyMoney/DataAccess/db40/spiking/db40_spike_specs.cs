@@ -2,10 +2,8 @@ using System.Collections.Generic;
 using System.IO;
 using Db4objects.Db4o;
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.DataAccess.db40.spiking
 {

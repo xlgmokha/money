@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Presentation.Databindings;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters.income;
 using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.income
 {

@@ -1,9 +1,7 @@
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Core;
 using Rhino.Mocks;
 
 namespace MoMoney.Presentation.Model.Navigation

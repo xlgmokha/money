@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using System.Threading;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Logging.ConsoleLogging
 {

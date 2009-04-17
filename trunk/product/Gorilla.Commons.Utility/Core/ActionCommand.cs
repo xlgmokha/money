@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace MoMoney.Utility.Core
+namespace Gorilla.Commons.Utility.Core
 {
     public class ActionCommand : ICommand
     {

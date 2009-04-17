@@ -1,7 +1,7 @@
 using System.Collections.Generic;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.income
 {

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
-    public static class visitor_extensions
+    public static class VisitorExtensions
     {
         public static Result return_value_from_visiting_all_items_with<Result, T>(this IEnumerable<T> items,
                                                                                   IValueReturningVisitor<Result, T>

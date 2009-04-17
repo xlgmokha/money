@@ -1,9 +1,7 @@
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
+using Gorilla.Commons.Testing;
 
-namespace MoMoney.Utility.Core
+namespace Gorilla.Commons.Utility.Core
 {
     [Concern(typeof (PredicateSpecification<>))]
     public class when_checking_if_a_criteria_is_met_and_it_is : concerns

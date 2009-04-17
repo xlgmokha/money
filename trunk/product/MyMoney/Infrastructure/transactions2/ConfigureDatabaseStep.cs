@@ -1,5 +1,5 @@
 using Db4objects.Db4o.Config;
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {

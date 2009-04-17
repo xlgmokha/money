@@ -1,11 +1,9 @@
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Views.Shell;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {

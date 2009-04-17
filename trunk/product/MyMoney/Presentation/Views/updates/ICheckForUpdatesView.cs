@@ -1,8 +1,8 @@
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.updates;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Views.updates
 {

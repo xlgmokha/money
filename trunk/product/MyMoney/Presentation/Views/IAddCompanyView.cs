@@ -1,9 +1,9 @@
 using System.Collections.Generic;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Views
 {

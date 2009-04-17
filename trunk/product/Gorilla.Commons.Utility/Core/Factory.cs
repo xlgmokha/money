@@ -1,4 +1,4 @@
-namespace MoMoney.Utility.Core
+namespace Gorilla.Commons.Utility.Core
 {
     public interface IComponentFactory<T> : IFactory<T> where T : new()
     {

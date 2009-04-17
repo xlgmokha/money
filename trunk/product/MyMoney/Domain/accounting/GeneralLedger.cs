@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.Core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Domain.accounting
 {

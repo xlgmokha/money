@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.Core;
 using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.DataAccess.repositories
 {

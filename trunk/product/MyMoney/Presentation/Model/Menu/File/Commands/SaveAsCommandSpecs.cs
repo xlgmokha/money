@@ -1,9 +1,7 @@
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Views.dialogs;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Presentation.Model.Menu.File.Commands
 {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Presenters.excel.formatting;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Presenters.excel
 {

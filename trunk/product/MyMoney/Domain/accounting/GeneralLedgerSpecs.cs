@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.Core;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Domain.accounting
 {
@@ -38,7 +36,7 @@ namespace MoMoney.Domain.accounting
                                                                      };
 
         it should_not_return_any_entries_that_were_not_posted_for_that_month =
-            () => assertions.should_not_contain(result, april_first);
+            () => Assertions.should_not_contain(result, april_first);
 
         context c = () =>
                         {

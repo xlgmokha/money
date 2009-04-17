@@ -1,8 +1,8 @@
 using System;
 using Castle.Core.Interceptor;
 using Castle.DynamicProxy;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.Container;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.interceptors
 {

@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 using Castle.Core.Interceptor;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.interceptors
 {

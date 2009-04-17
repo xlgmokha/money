@@ -1,8 +1,6 @@
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
+using Gorilla.Commons.Testing;
 
 namespace MoMoney.Presentation.Databindings
 {

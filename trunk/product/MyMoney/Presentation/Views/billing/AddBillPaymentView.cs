@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Presentation.Databindings;
 using MoMoney.Presentation.Presenters.billing;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.billing
 {

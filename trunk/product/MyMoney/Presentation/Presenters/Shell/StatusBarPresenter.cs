@@ -1,10 +1,10 @@
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Modules.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.Shell;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {

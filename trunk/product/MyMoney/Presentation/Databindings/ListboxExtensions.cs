@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Presentation.Databindings
 {

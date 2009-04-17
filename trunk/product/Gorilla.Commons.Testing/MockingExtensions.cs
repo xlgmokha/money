@@ -4,7 +4,7 @@ using System.Linq;
 using Rhino.Mocks;
 using Rhino.Mocks.Interfaces;
 
-namespace MoMoney.Testing.spechelpers.core
+namespace Gorilla.Commons.Testing
 {
     public static class MockingExtensions
     {

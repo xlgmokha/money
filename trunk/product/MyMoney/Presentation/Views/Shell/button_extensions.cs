@@ -1,8 +1,8 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Infrastructure.Container;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Views.Shell
 {

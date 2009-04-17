@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 using System.Reflection;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Presentation.Databindings
 {

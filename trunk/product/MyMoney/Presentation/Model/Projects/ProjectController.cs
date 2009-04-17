@@ -1,7 +1,7 @@
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.messages;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Model.Projects
 {

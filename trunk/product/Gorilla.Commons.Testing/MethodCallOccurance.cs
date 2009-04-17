@@ -1,7 +1,7 @@
 using System;
 using Rhino.Mocks;
 
-namespace MoMoney.Testing.spechelpers.core
+namespace Gorilla.Commons.Testing
 {
     public class MethodCallOccurance<T> : IHideObjectMembers
     {

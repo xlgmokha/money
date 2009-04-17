@@ -1,6 +1,6 @@
 using System;
 using System.Globalization;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Domain.Core
 {

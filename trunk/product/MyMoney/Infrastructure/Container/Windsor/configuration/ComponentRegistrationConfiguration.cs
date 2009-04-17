@@ -1,6 +1,6 @@
 using Castle.MicroKernel.Registration;
-using MoMoney.Utility.Core;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Core;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {

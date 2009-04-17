@@ -1,8 +1,7 @@
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Presenters.Commands;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
 
 namespace MoMoney.Modules
 {

@@ -1,11 +1,11 @@
-namespace MoMoney.Utility.Core
+namespace Gorilla.Commons.Utility.Core
 {
-    public class chained_mapper<Left, Middle, Right> : IMapper<Left, Right>
+    public class ChainedMapper<Left, Middle, Right> : IMapper<Left, Right>
     {
         private readonly IMapper<Left, Middle> left;
         private readonly IMapper<Middle, Right> right;
 
-        public chained_mapper(IMapper<Left, Middle> left, IMapper<Middle, Right> right)
+        public ChainedMapper(IMapper<Left, Middle> left, IMapper<Middle, Right> right)
         {
             this.left = left;
             this.right = right;

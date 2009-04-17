@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
+using Gorilla.Commons.Testing;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
     public class EnumerableExtensionsSpecs
     {

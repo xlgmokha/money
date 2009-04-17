@@ -1,8 +1,7 @@
 using System.Data;
 using System.Threading;
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
+using Gorilla.Commons.Testing;
 using Rhino.Mocks;
 
 namespace MoMoney.Infrastructure.eventing

@@ -1,6 +1,6 @@
 using MbUnit.Framework;
 
-namespace MoMoney.Testing.MetaData
+namespace Gorilla.Commons.Testing
 {
     public class IntegrationAttribute : FixtureCategoryAttribute
     {

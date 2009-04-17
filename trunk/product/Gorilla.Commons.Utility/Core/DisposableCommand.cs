@@ -1,6 +1,7 @@
 using System;
+using MoMoney.Utility.Core;
 
-namespace MoMoney.Utility.Core
+namespace Gorilla.Commons.Utility.Core
 {
     public class DisposableCommand : IDisposableCommand
     {

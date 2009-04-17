@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Infrastructure.Container;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.registries
 {

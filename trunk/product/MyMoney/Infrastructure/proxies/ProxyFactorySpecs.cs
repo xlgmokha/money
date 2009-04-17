@@ -1,11 +1,9 @@
 using System;
 using System.Data;
 using Castle.Core.Interceptor;
-using developwithpassion.bdd;
 using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
+using Gorilla.Commons.Testing;
 
 namespace MoMoney.Infrastructure.proxies
 {
@@ -24,12 +22,12 @@ namespace MoMoney.Infrastructure.proxies
 
         it should_return_a_proxy_to_the_target = () =>
                                                      {
-                                                         result.should_not_be_null();
+                                                         AssertionExtensions.should_not_be_null(result);
                                                          result.GetType().should_not_be_equal_to(target.GetType());
                                                      };
 
         it should_allow_the_interceptors_to_intercept_all_calls =
-            () => interceptor.recieved_call.should_be_true();
+            () => AssertionExtensions.should_be_true(interceptor.recieved_call);
 
         context c = () => { target = the_dependency<IDbConnection>(); };
 
@@ -48,7 +46,7 @@ namespace MoMoney.Infrastructure.proxies
     public class when_creating_a_proxy_of_a_target_but_a_call_has_not_been_made_to_the_proxy_yet :
         behaves_like_proxy_factory
     {
-        it should_not_create_an_instance_of_the_target = () => TestClass.was_created.should_be_false();
+        it should_not_create_an_instance_of_the_target = () => AssertionExtensions.should_be_false(TestClass.was_created);
 
         context c = TestClass.reset;
 
@@ -61,7 +59,7 @@ namespace MoMoney.Infrastructure.proxies
 
     public class when_creating_a_proxy_of_a_component_that_does_not_implement_an_interface : behaves_like_proxy_factory
     {
-        it should_return_a_proxy = () => result.should_not_be_null();
+        it should_return_a_proxy = () => AssertionExtensions.should_not_be_null(result);
 
         because b = () => { result = sut.create_proxy_for(() => new ClassWithNoInterface()); };
 

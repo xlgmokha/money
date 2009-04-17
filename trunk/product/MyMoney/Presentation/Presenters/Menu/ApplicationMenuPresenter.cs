@@ -1,8 +1,8 @@
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Views.Shell;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Presenters.Menu
 {

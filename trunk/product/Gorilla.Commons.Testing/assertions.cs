@@ -4,9 +4,9 @@ using System.Linq;
 using JetBrains.Annotations;
 using MbUnit.Framework;
 
-namespace MoMoney.Testing.spechelpers.core
+namespace Gorilla.Commons.Testing
 {
-    public static class assertions
+    public static class Assertions
     {
         [AssertionMethod]
         public static void should_be_equal_to<T>(this T item_to_validate, T expected_value)

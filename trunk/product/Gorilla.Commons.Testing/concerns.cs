@@ -1,8 +1,7 @@
 using developwithpassion.bdd.mbunit.standard.observations;
-using MoMoney.Testing.spechelpers.core;
 using Rhino.Mocks;
 
-namespace MoMoney.Testing.spechelpers.contexts
+namespace Gorilla.Commons.Testing
 {
     public abstract class concerns_for<Contract> : observations_for_a_sut_without_a_contract<Contract>,
                                                    IHideObjectMembers
@@ -35,7 +34,7 @@ namespace MoMoney.Testing.spechelpers.contexts
             return MockRepository.GenerateMock<T>();
         }
 
-        public static T when_the<T>(T item)
+        static protected T when_the<T>(T item)
         {
             return item;
         }

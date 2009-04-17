@@ -1,11 +1,11 @@
 using System.Linq;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.accounting.financial_growth;
 using MoMoney.Domain.Core;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Presentation.Views.income;
 using MoMoney.Tasks.application;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Presenters.income
 {

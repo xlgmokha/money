@@ -1,6 +1,6 @@
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
+using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Utility.Extensions
 {

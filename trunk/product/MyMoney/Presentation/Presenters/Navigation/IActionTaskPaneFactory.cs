@@ -1,4 +1,4 @@
-using MoMoney.Utility.Core;
+using Gorilla.Commons.Utility.Core;
 using XPExplorerBar;
 
 namespace MoMoney.Presentation.Presenters.Navigation

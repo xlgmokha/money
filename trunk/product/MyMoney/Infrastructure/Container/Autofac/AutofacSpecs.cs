@@ -4,8 +4,7 @@ using Autofac;
 using Autofac.Builder;
 using Autofac.Modules;
 using developwithpassion.bdd.contexts;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
+using Gorilla.Commons.Testing;
 
 namespace MoMoney.Infrastructure.Container.Autofac
 {

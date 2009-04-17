@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.helpers;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.Shell
 {

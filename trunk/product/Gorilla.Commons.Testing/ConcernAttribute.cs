@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Testing.MetaData
+namespace Gorilla.Commons.Testing
 {
     public class ConcernAttribute : bdddoc.core.ConcernAttribute
     {

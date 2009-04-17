@@ -1,9 +1,9 @@
+using Gorilla.Commons.Utility.Core;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.boot.container.registration;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Container.Autofac;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
-using MoMoney.Utility.Core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.boot.container
 {

@@ -1,4 +1,4 @@
-namespace MoMoney.Utility.Core
+namespace Gorilla.Commons.Utility.Core
 {
     public class EmptyCommand : ICommand
     {

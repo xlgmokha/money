@@ -1,13 +1,10 @@
 using System;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.messages;
-using MoMoney.Testing;
-using MoMoney.Testing.MetaData;
-using MoMoney.Testing.spechelpers.contexts;
-using MoMoney.Testing.spechelpers.core;
-using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Model.Projects
 {

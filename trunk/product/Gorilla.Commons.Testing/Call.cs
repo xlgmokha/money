@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Testing
+namespace Gorilla.Commons.Testing
 {
     public class call
     {

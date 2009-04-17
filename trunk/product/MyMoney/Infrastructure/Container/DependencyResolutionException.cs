@@ -1,5 +1,5 @@
 using System;
-using MoMoney.Utility.Extensions;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container
 {

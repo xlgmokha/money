@@ -1,6 +1,6 @@
 using System.Threading;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Infrastructure.Container;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.Threading
 {
