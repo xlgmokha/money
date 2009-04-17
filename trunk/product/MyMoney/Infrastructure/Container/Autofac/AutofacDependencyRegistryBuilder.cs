@@ -45,13 +45,9 @@ namespace MoMoney.Infrastructure.Container.Autofac
         public void transient(Type contract, Type implementation)
         {
             if (contract.is_a_generic_type())
-            {
                 builder.RegisterGeneric(implementation).As(contract).FactoryScoped();
-            }
             else
-            {
                 builder.Register(implementation).As(contract).FactoryScoped();
-            }
         }
 
         public void proxy<T>(IConfiguration<IProxyBuilder<T>> configuration, Func<T> target)

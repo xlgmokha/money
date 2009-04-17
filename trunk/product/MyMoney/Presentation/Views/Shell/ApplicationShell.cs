@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.helpers;
-using MoMoney.Presentation.Views.updates;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.Shell
@@ -38,7 +37,7 @@ namespace MoMoney.Presentation.Views.Shell
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            try_to_reduce_flickering().top_most();
+            try_to_reduce_flickering();
         }
 
         public void attach_to(IApplicationShellPresenter presenter)
@@ -66,7 +65,9 @@ namespace MoMoney.Presentation.Views.Shell
         {
             using (new SuspendLayout(ux_dock_panel))
                 while (ux_dock_panel.Contents.Count > 0)
+                {
                     ux_dock_panel.Contents[0].DockHandler.Close();
+                }
         }
 
         void ensure_that_the_region_exists<T>()

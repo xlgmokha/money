@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Forms;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.helpers;
-using MoMoney.Presentation.Views.updates;
 using MoMoney.Utility.Extensions;
 using WeifenLuo.WinFormsUI.Docking;
 
@@ -69,7 +68,7 @@ namespace MoMoney.Presentation.Views.core
         {
             var tip = new ToolTip {IsBalloon = true, ToolTipTitle = title};
             tip.SetToolTip(control, caption);
-            control.Controls.Add(adapt(tip));
+            control.Controls.Add(new ControlAdapter(tip));
             return this;
         }
 
@@ -105,8 +104,7 @@ namespace MoMoney.Presentation.Views.core
                 if (window_is_already_contained_in(panel)) remove_from(panel);
                 //else
                 {
-                    Show(panel);
-                    DockState = dock_state;
+                    Show(panel, dock_state);
                 }
             }
         }
@@ -116,7 +114,6 @@ namespace MoMoney.Presentation.Views.core
             using (new SuspendLayout(panel))
             {
                 var panel_to_remove = get_window_from(panel);
-                //panel_to_remove.DockHandler.Activate();
                 panel_to_remove.DockHandler.Close();
                 panel_to_remove.DockHandler.Dispose();
             }
@@ -135,27 +132,6 @@ namespace MoMoney.Presentation.Views.core
         bool matches(IDockContent x)
         {
             return x.DockHandler.TabText.Equals(TabText);
-        }
-
-        Control adapt(IDisposable item)
-        {
-            return new ControlAdapter(item);
-        }
-
-        class ControlAdapter : Control
-        {
-            readonly IDisposable item;
-
-            public ControlAdapter(IDisposable item)
-            {
-                this.item = item;
-            }
-
-            protected override void Dispose(bool disposing)
-            {
-                if (disposing) item.Dispose();
-                base.Dispose(disposing);
-            }
         }
     }
 }

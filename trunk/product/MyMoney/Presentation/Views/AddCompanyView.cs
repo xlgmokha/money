@@ -10,7 +10,6 @@ using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Presentation.Views.updates;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views

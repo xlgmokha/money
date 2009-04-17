@@ -504,6 +504,9 @@
     </Compile>
     <Compile Include="Presentation\Views\dialogs\SaveChangesViewSpecs.cs" />
     <Compile Include="Presentation\Views\helpers\BindableListFactory.cs" />
+    <Compile Include="Presentation\Views\helpers\ControlAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Presentation\Views\helpers\EventTriggerExtensions.cs" />
     <Compile Include="Presentation\Views\helpers\SuspendLayout.cs" />
     <Compile Include="Presentation\Views\IAddCompanyView.cs" />
@@ -597,7 +600,7 @@
     <Compile Include="Presentation\Views\updates\CheckForUpdatesView.Designer.cs">
       <DependentUpon>CheckForUpdatesView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Views\updates\ControlAction.cs" />
+    <Compile Include="Presentation\Views\core\ControlAction.cs" />
     <Compile Include="Presentation\Views\updates\ICheckForUpdatesView.cs" />
     <Compile Include="Tasks\application\BillingTasks.cs" />
     <Compile Include="Tasks\application\CustomerTasks.cs" />
@@ -626,7 +629,8 @@
     <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
     <Compile Include="Testing\spechelpers\core\MethodCallOccurance.cs" />
     <Compile Include="Testing\MetaData\RunInRealContainer.cs" />
-    <Compile Include="Presentation\Views\helpers\Events.cs" />
+    <Compile Include="Presentation\Views\helpers\Events.cs">
+    </Compile>
     <Compile Include="Presentation\Views\helpers\EventTrigger.cs" />
     <Compile Include="Presentation\Views\helpers\IEventTarget.cs" />
     <Compile Include="Presentation\Views\helpers\EventTriggerSpecs.cs" />
@@ -719,6 +723,7 @@
     </Compile>
     <Compile Include="Presentation\Views\Menu\Help\IAboutApplicationView.cs" />
     <Compile Include="Presentation\Views\Shell\ApplicationShell.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\Views\Shell\ApplicationShell.Designer.cs">
       <DependentUpon>ApplicationShell.cs</DependentUpon>

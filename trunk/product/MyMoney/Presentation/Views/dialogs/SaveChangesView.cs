@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Presentation.Views.updates;
 
 namespace MoMoney.Presentation.Views.dialogs
 {

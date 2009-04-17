@@ -15,13 +15,11 @@ namespace MoMoney.Presentation.Presenters.billing
 
     public class AddBillPaymentPresenter : ContentPresenter<IAddBillPaymentView>, IAddBillPaymentPresenter
     {
-        readonly IBillingTasks tasks;
         readonly ICommandPump pump;
 
-        public AddBillPaymentPresenter(IAddBillPaymentView view, ICommandPump pump, IBillingTasks tasks) : base(view)
+        public AddBillPaymentPresenter(IAddBillPaymentView view, ICommandPump pump) : base(view)
         {
             this.pump = pump;
-            this.tasks = tasks;
         }
 
         public override void run()

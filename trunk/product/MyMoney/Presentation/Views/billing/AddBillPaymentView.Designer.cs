@@ -41,7 +41,7 @@
             this.ux_company_names = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonSplitContainer2 = new ComponentFactory.Krypton.Toolkit.KryptonSplitContainer();
             this.kryptonHeader1 = new ComponentFactory.Krypton.Toolkit.KryptonHeader();
-            this.ux_bil_payments_grid = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.ux_bill_payments_grid = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
@@ -59,7 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSplitContainer2.Panel2)).BeginInit();
             this.kryptonSplitContainer2.Panel2.SuspendLayout();
             this.kryptonSplitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ux_bil_payments_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ux_bill_payments_grid)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonHeaderGroup1
@@ -202,7 +202,7 @@
             // 
             // kryptonSplitContainer2.Panel2
             // 
-            this.kryptonSplitContainer2.Panel2.Controls.Add(this.ux_bil_payments_grid);
+            this.kryptonSplitContainer2.Panel2.Controls.Add(this.ux_bill_payments_grid);
             this.kryptonSplitContainer2.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile;
             this.kryptonSplitContainer2.Size = new System.Drawing.Size(435, 788);
             this.kryptonSplitContainer2.SplitterDistance = 38;
@@ -221,16 +221,16 @@
             // 
             // ux_bil_payments_grid
             // 
-            this.ux_bil_payments_grid.AllowUserToAddRows = false;
-            this.ux_bil_payments_grid.AllowUserToDeleteRows = false;
-            this.ux_bil_payments_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ux_bil_payments_grid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ux_bil_payments_grid.Location = new System.Drawing.Point(0, 0);
-            this.ux_bil_payments_grid.Name = "ux_bil_payments_grid";
-            this.ux_bil_payments_grid.ReadOnly = true;
-            this.ux_bil_payments_grid.Size = new System.Drawing.Size(435, 745);
-            this.ux_bil_payments_grid.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.ux_bil_payments_grid.TabIndex = 0;
+            this.ux_bill_payments_grid.AllowUserToAddRows = false;
+            this.ux_bill_payments_grid.AllowUserToDeleteRows = false;
+            this.ux_bill_payments_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ux_bill_payments_grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ux_bill_payments_grid.Location = new System.Drawing.Point(0, 0);
+            this.ux_bill_payments_grid.Name = "ux_bill_payments_grid";
+            this.ux_bill_payments_grid.ReadOnly = true;
+            this.ux_bill_payments_grid.Size = new System.Drawing.Size(435, 745);
+            this.ux_bill_payments_grid.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.ux_bill_payments_grid.TabIndex = 0;
             // 
             // add_bill_payment
             // 
@@ -260,7 +260,7 @@
             this.kryptonSplitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSplitContainer2)).EndInit();
             this.kryptonSplitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ux_bil_payments_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ux_bill_payments_grid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,6 +279,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox ux_company_names;
         private ComponentFactory.Krypton.Toolkit.KryptonSplitContainer kryptonSplitContainer2;
         private ComponentFactory.Krypton.Toolkit.KryptonHeader kryptonHeader1;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView ux_bil_payments_grid;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView ux_bill_payments_grid;
     }
 }

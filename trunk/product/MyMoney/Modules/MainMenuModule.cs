@@ -12,8 +12,8 @@ namespace MoMoney.Modules
 
     public class MainMenuModule : IMainMenuModule
     {
-        readonly IRunPresenterCommand command;
         readonly IEventAggregator broker;
+        readonly IRunPresenterCommand command;
 
         public MainMenuModule(IEventAggregator broker, IRunPresenterCommand command)
         {

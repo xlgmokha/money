@@ -5,7 +5,6 @@ using MoMoney.Presentation.Databindings;
 using MoMoney.Presentation.Presenters.billing;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Presentation.Views.updates;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.billing
@@ -14,14 +13,11 @@ namespace MoMoney.Presentation.Views.billing
     {
         ControlAction<EventArgs> submit_clicked = x => { };
 
-         ControlAction<EventArgs> activated = x => { };
-
         public AddBillPaymentView()
         {
             InitializeComponent();
             titled("Add Bill Payment");
             ux_submit_button.Click += (sender, e) => submit_clicked(e);
-            Activated += (sender, args) => activated(args);
         }
 
         public void attach_to(IAddBillPaymentPresenter presenter)
@@ -36,7 +32,7 @@ namespace MoMoney.Presentation.Views.billing
 
         public void run(IEnumerable<BillInformationDTO> bills)
         {
-            ux_bil_payments_grid.DataSource = bills.databind();
+            ux_bill_payments_grid.DataSource = bills.databind();
         }
 
         AddNewBillDTO create_dto()

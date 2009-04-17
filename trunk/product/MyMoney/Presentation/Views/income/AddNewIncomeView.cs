@@ -8,7 +8,6 @@ using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters.income;
 using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Presentation.Views.updates;
 using MoMoney.Utility.Extensions;
 
 namespace MoMoney.Presentation.Views.income

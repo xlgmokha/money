@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.updates;
+using MoMoney.Presentation.Views.helpers;
 
 namespace MoMoney.Presentation.Views.core
 {
@@ -21,7 +21,7 @@ namespace MoMoney.Presentation.Views.core
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
-            //this.log().debug("created {0}", GetType());
+            this.log().debug("created {0}", GetType());
 
             on_activated = x => { };
             on_deactivate = x => { };
@@ -38,7 +38,7 @@ namespace MoMoney.Presentation.Views.core
         {
             var tip = new ToolTip {IsBalloon = true, ToolTipTitle = title};
             tip.SetToolTip(control, caption);
-            control.Controls.Add(adapt(tip));
+            control.Controls.Add(new ControlAdapter(tip));
             return this;
         }
 
@@ -66,50 +66,25 @@ namespace MoMoney.Presentation.Views.core
         protected override void OnActivated(EventArgs e)
         {
             base.OnActivated(e);
-            this.log().debug("activated: {0}", this);
             on_activated(e);
         }
 
         protected override void OnDeactivate(EventArgs e)
         {
             base.OnDeactivate(e);
-            this.log().debug("deactivated: {0}", this);
             on_deactivate(e);
         }
 
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
-            this.log().debug("closing: {0}", this);
             on_closing(e);
         }
 
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
-            this.log().debug("closed: {0}", this);
             on_closed(e);
-        }
-
-        Control adapt(IDisposable item)
-        {
-            return new ControlAdapter(item);
-        }
-
-        class ControlAdapter : Control
-        {
-            readonly IDisposable item;
-
-            public ControlAdapter(IDisposable item)
-            {
-                this.item = item;
-            }
-
-            protected override void Dispose(bool disposing)
-            {
-                if (disposing) item.Dispose();
-                base.Dispose(disposing);
-            }
         }
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel;
-using MoMoney.Presentation.Views.updates;
 
 namespace MoMoney.Presentation.Views.core
 {

@@ -38,7 +38,6 @@ namespace MoMoney.boot.container.registration
             registry.transient<IWindowMenu, WindowMenu>();
             registry.transient<IHelpMenu, HelpMenu>();
             
-
             item
                 .all_types()
                 .where(x => typeof (IPresenter).IsAssignableFrom(x))
