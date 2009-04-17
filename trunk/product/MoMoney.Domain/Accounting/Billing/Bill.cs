@@ -15,7 +15,7 @@ namespace MoMoney.Domain.accounting.billing
     }
 
     [Serializable]
-    internal class Bill : Entity<IBill>, IBill
+    public class Bill : Entity<IBill>, IBill
     {
         public Bill(ICompany company_to_pay, IMoney the_amount_owed, DateTime due_date)
         {

@@ -11,7 +11,7 @@ namespace MoMoney.Domain.Core
     }
 
     [Serializable]
-    internal class Money : IMoney
+    public class Money : IMoney
     {
         public Money(long dollars) : this(dollars, 0)
         {

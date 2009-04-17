@@ -181,36 +181,9 @@
     <Compile Include="DataAccess\repositories\BillRepositorySpecs.cs" />
     <Compile Include="DataAccess\repositories\CompanyRepository.cs" />
     <Compile Include="DataAccess\repositories\IncomeRepository.cs" />
-    <Compile Include="Domain\accounting\billing\CompanyFactory.cs" />
-    <Compile Include="Domain\accounting\billing\IEmployee.cs" />
-    <Compile Include="Domain\accounting\financial_growth\income.cs" />
-    <Compile Include="Domain\accounting\financial_growth\income_extensions.cs" />
-    <Compile Include="Domain\accounting\IInvoice.cs" />
-    <Compile Include="Domain\Core\Clock.cs" />
-    <Compile Include="Domain\Core\DateExtensions.cs" />
-    <Compile Include="Domain\Core\date_specs.cs" />
-    <Compile Include="Domain\Core\day.cs" />
-    <Compile Include="Domain\Core\Entity.cs" />
-    <Compile Include="Domain\Core\date.cs" />
     <Compile Include="DataAccess\core\IDatabaseGateway.cs" />
     <Compile Include="DataAccess\db40\SessionContext.cs" />
     <Compile Include="DataAccess\db40\SessionContextSpecs.cs" />
-    <Compile Include="Domain\accounting\billing\BillingExtensions.cs" />
-    <Compile Include="Domain\accounting\billing\Company.cs" />
-    <Compile Include="Domain\accounting\AccountHolder.cs" />
-    <Compile Include="Domain\accounting\AccountHolderSpecs.cs" />
-    <Compile Include="Domain\accounting\billing\total_payments_calculator.cs" />
-    <Compile Include="Domain\Core\IYear.cs" />
-    <Compile Include="Domain\Core\MoneyExtensions.cs" />
-    <Compile Include="Domain\Core\MoneyExtensionsSpecs.cs" />
-    <Compile Include="Domain\Core\MoneySpecs.cs" />
-    <Compile Include="Domain\Core\Percent.cs" />
-    <Compile Include="Domain\Core\PercentSpecs.cs" />
-    <Compile Include="Domain\Core\range.cs" />
-    <Compile Include="Domain\Core\range_specs.cs" />
-    <Compile Include="Domain\repositories\IBillRepository.cs" />
-    <Compile Include="Domain\repositories\ICompanyRepository.cs" />
-    <Compile Include="Domain\repositories\IIncomeRepository.cs" />
     <Compile Include="Infrastructure\transactions2\ChangeTracker.cs" />
     <Compile Include="Infrastructure\transactions2\ChangeTrackerFactory.cs" />
     <Compile Include="Infrastructure\transactions2\ChangeTrackerFactorySpecs.cs" />
@@ -282,15 +255,6 @@
     <Compile Include="Infrastructure\reflection\IAssembly.cs" />
     <Compile Include="Infrastructure\registries\DefaultRegistry.cs" />
     <Compile Include="Infrastructure\registries\DefaultRegistrySpecs.cs" />
-    <Compile Include="Domain\accounting\billing\Bill.cs" />
-    <Compile Include="Domain\accounting\billing\BillSpecs.cs" />
-    <Compile Include="Domain\accounting\GeneralLedger.cs" />
-    <Compile Include="Domain\accounting\GeneralLedgerSpecs.cs" />
-    <Compile Include="Domain\accounting\billing\ILedgerEntry.cs" />
-    <Compile Include="Domain\accounting\billing\Payment.cs" />
-    <Compile Include="Domain\Core\Money.cs" />
-    <Compile Include="Domain\Core\Month.cs" />
-    <Compile Include="Domain\Core\Months.cs" />
     <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentRegistrationConfiguration.cs" />
     <Compile Include="Infrastructure\System\ApplicationEnvironment.cs" />
     <Compile Include="Infrastructure\Threading\AsynchronousCommandProcessor.cs" />
@@ -794,8 +758,8 @@
     <Compile Include="boot\container\registration\wire_up_the_mappers_in_to_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_reports_in_to_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_views_in_to_the.cs" />
-    <Compile Include="Testing\MetaData\RunInRealContainer.cs" />
-    <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
+    <Compile Include="Testing\RunInRealContainer.cs" />
+    <Compile Include="Testing\behaves_like_a_repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
@@ -806,17 +770,21 @@
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>Gorilla.Commons.Utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MoMoney.Domain\MoMoney.Domain.csproj">
+      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
+      <Name>MoMoney.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\sqlcompact\" />
+    <Folder Include="Domain\accounting\billing\" />
+    <Folder Include="Domain\accounting\financial_growth\" />
+    <Folder Include="Domain\Core\" />
+    <Folder Include="Domain\repositories\" />
     <Folder Include="Infrastructure\caching\" />
     <Folder Include="Presentation\Views\Menu\Mappers\" />
     <Folder Include="Tasks\domain\" />
     <Folder Include="Tasks\Stubs\" />
-    <Folder Include="Testing\spechelpers\concerns\" />
-    <Folder Include="Testing\spechelpers\core\" />
-    <Folder Include="Utility\Core\" />
-    <Folder Include="Utility\Extensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

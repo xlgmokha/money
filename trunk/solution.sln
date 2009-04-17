@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Utility", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Testing", "product\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj", "{44E65096-9657-4716-90F8-4535BABE8039}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.Domain", "product\MoMoney.Domain\MoMoney.Domain.csproj", "{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{44E65096-9657-4716-90F8-4535BABE8039}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44E65096-9657-4716-90F8-4535BABE8039}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44E65096-9657-4716-90F8-4535BABE8039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

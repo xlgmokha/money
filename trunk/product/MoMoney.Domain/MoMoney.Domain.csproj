@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MoMoney.Domain</RootNamespace>
+    <AssemblyName>MoMoney.Domain</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
+    </Reference>
+    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounting\AccountHolder.cs" />
+    <Compile Include="Accounting\AccountHolderSpecs.cs" />
+    <Compile Include="Accounting\Billing\Bill.cs" />
+    <Compile Include="Accounting\Billing\BillingExtensions.cs" />
+    <Compile Include="Accounting\Billing\BillSpecs.cs" />
+    <Compile Include="Accounting\Billing\Company.cs" />
+    <Compile Include="Accounting\Billing\CompanyFactory.cs" />
+    <Compile Include="Accounting\Billing\IEmployee.cs" />
+    <Compile Include="Accounting\Billing\ILedgerEntry.cs" />
+    <Compile Include="Accounting\Billing\Payment.cs" />
+    <Compile Include="Accounting\Billing\total_payments_calculator.cs" />
+    <Compile Include="Accounting\GeneralLedger.cs" />
+    <Compile Include="Accounting\GeneralLedgerSpecs.cs" />
+    <Compile Include="Accounting\Growth\income.cs" />
+    <Compile Include="Accounting\Growth\income_extensions.cs" />
+    <Compile Include="Accounting\IInvoice.cs" />
+    <Compile Include="Core\Clock.cs" />
+    <Compile Include="Core\date.cs" />
+    <Compile Include="Core\DateExtensions.cs" />
+    <Compile Include="Core\date_specs.cs" />
+    <Compile Include="Core\day.cs" />
+    <Compile Include="Core\Entity.cs" />
+    <Compile Include="Core\IYear.cs" />
+    <Compile Include="Core\Money.cs" />
+    <Compile Include="Core\MoneyExtensions.cs" />
+    <Compile Include="Core\MoneyExtensionsSpecs.cs" />
+    <Compile Include="Core\MoneySpecs.cs" />
+    <Compile Include="Core\Month.cs" />
+    <Compile Include="Core\Months.cs" />
+    <Compile Include="Core\Percent.cs" />
+    <Compile Include="Core\PercentSpecs.cs" />
+    <Compile Include="Core\range.cs" />
+    <Compile Include="Core\range_specs.cs" />
+    <Compile Include="Repositories\IBillRepository.cs" />
+    <Compile Include="Repositories\ICompanyRepository.cs" />
+    <Compile Include="Repositories\IIncomeRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
+      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
+      <Name>Gorilla.Commons.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj">
+      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
+      <Name>Gorilla.Commons.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
