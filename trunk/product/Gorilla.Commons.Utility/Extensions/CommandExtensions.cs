@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using MoMoney.Infrastructure.Threading;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Utility.Extensions
@@ -22,11 +20,11 @@ namespace MoMoney.Utility.Extensions
             return new ChainedCommand(left, new ActionCommand(right));
         }
 
-        public static ICommand as_command_chain(this IEnumerable<ICommand> commands)
-        {
-            var processor = new CommandProcessor();
-            commands.each(processor.add);
-            return processor;
-        }
+        //public static ICommand as_command_chain(this IEnumerable<ICommand> commands)
+        //{
+        //    var processor = new CommandProcessor();
+        //    commands.each(processor.add);
+        //    return processor;
+        //}
     }
 }

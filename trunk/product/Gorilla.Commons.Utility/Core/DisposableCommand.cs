@@ -2,7 +2,7 @@ using System;
 
 namespace MoMoney.Utility.Core
 {
-    internal class DisposableCommand : IDisposableCommand
+    public class DisposableCommand : IDisposableCommand
     {
         readonly Action action;
 

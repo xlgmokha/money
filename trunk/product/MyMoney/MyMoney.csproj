@@ -93,7 +93,7 @@
     </Reference>
     <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\developwithpassion\developwithpassion.bdd.dll</HintPath>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Annotations, Version=4.1.933.3, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -622,39 +622,11 @@
     <Compile Include="Tasks\infrastructure\updating\IDeployment.cs" />
     <Compile Include="Tasks\infrastructure\updating\NullDeployment.cs" />
     <Compile Include="Tasks\infrastructure\updating\WhatIsTheAvailableVersion.cs" />
-    <Compile Include="Testing\MetaData\IntegrationAttribute.cs" />
-    <Compile Include="Testing\spechelpers\contexts\concerns.cs" />
-    <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
-    <Compile Include="Testing\spechelpers\core\empty_fixture.cs" />
-    <Compile Include="Testing\spechelpers\core\IHideObjectMembers.cs" />
-    <Compile Include="Testing\spechelpers\core\MethodCallOccurance.cs" />
-    <Compile Include="Testing\MetaData\RunInRealContainer.cs" />
     <Compile Include="Presentation\Views\helpers\Events.cs">
     </Compile>
     <Compile Include="Presentation\Views\helpers\EventTrigger.cs" />
     <Compile Include="Presentation\Views\helpers\IEventTarget.cs" />
     <Compile Include="Presentation\Views\helpers\EventTriggerSpecs.cs" />
-    <Compile Include="Utility\Core\ActionCommand.cs" />
-    <Compile Include="Utility\Core\AnonymousDisposable.cs" />
-    <Compile Include="Utility\Core\ChainedConfiguration.cs" />
-    <Compile Include="Utility\Core\chained_mapper.cs" />
-    <Compile Include="Utility\Core\AndSpecification.cs" />
-    <Compile Include="Utility\Core\DisposableCommand.cs" />
-    <Compile Include="Utility\Core\EmptyCallback.cs" />
-    <Compile Include="Utility\Core\EmptyCommand.cs" />
-    <Compile Include="Utility\Core\Factory.cs" />
-    <Compile Include="Utility\Core\IBuilder.cs" />
-    <Compile Include="Utility\Core\ICallback.cs" />
-    <Compile Include="Utility\Core\IConfiguration.cs" />
-    <Compile Include="Utility\Core\IDisposableCommand.cs" />
-    <Compile Include="Utility\Core\IFactory.cs" />
-    <Compile Include="Utility\Core\IParameterizedCommand.cs" />
-    <Compile Include="Utility\Core\IQuery.cs" />
-    <Compile Include="Utility\Core\IState.cs" />
-    <Compile Include="Utility\Core\IStateContext.cs" />
-    <Compile Include="Utility\Core\IValueReturningVisitor.cs" />
-    <Compile Include="Utility\Core\IVisitable.cs" />
-    <Compile Include="Utility\Core\IVisitor.cs" />
     <Compile Include="Infrastructure\Extensions\environment_extensions.cs" />
     <Compile Include="Infrastructure\Extensions\logging_extensions.cs" />
     <Compile Include="Infrastructure\Logging\ConsoleLogging\ConsoleLogger.cs" />
@@ -681,26 +653,8 @@
     <Compile Include="Presentation\Databindings\text_property_binding.cs" />
     <Compile Include="Presentation\Presenters\Commands\display_the_splash_screen.cs" />
     <Compile Include="Modules\Core\IModule.cs" />
-    <Compile Include="Utility\Core\OrSpecificationSpecs.cs" />
-    <Compile Include="Utility\Core\PredicateSpecification.cs" />
-    <Compile Include="Utility\Core\PredicateSpecificationSpecs.cs" />
-    <Compile Include="Utility\Extensions\EnumerableExtensionsSpecs.cs" />
-    <Compile Include="Utility\Extensions\RegistryExtensions.cs" />
     <Compile Include="Presentation\Model\Menu\File\FileMenu.cs" />
     <Compile Include="Presentation\Model\Menu\Help\HelpMenu.cs" />
-    <Compile Include="Utility\Core\ISpecification.cs" />
-    <Compile Include="Utility\Core\Map.cs" />
-    <Compile Include="Utility\Core\OrSpecification.cs" />
-    <Compile Include="Utility\Extensions\configuration_extensions.cs" />
-    <Compile Include="Utility\Extensions\ConversionExtensions.cs" />
-    <Compile Include="Utility\Extensions\EnumerableExtensions.cs" />
-    <Compile Include="Utility\Extensions\FuncExtensions.cs" />
-    <Compile Include="Utility\Extensions\mapping_extensions.cs" />
-    <Compile Include="Utility\Extensions\mapping_extensions_specs.cs" />
-    <Compile Include="Utility\Extensions\numeric_conversions.cs" />
-    <Compile Include="Utility\Extensions\numeric_conversions_specs.cs" />
-    <Compile Include="Utility\Extensions\SpecificationExtensionsSpecs.cs" />
-    <Compile Include="Utility\Extensions\specification_extensions.cs" />
     <Compile Include="Infrastructure\Logging\ILogFactory.cs" />
     <Compile Include="Infrastructure\Logging\ILogger.cs" />
     <Compile Include="Infrastructure\Logging\Log.cs" />
@@ -735,22 +689,13 @@
     <Compile Include="Presentation\Views\Startup\SplashScreenView.Designer.cs">
       <DependentUpon>SplashScreenView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utility\Core\ChainedCommand.cs" />
-    <Compile Include="Utility\Extensions\CommandExtensions.cs" />
-    <Compile Include="Utility\Extensions\TypeExtensions.cs" />
-    <Compile Include="Utility\Extensions\TypeExtensionsSpecs.cs" />
-    <Compile Include="Utility\Extensions\visitor_extensions.cs" />
     <Compile Include="boot\hookup.cs" />
     <Compile Include="Presentation\Model\Menu\ISubMenu.cs" />
-    <Compile Include="Utility\Core\IRegistry.cs" />
     <Compile Include="Infrastructure\Container\DependencyResolutionException.cs" />
     <Compile Include="Infrastructure\Container\Resolve.cs" />
     <Compile Include="Infrastructure\Container\ResolveSpecs.cs" />
     <Compile Include="Infrastructure\Container\Windsor\WindsorDependencyRegistry.cs" />
     <Compile Include="Infrastructure\Container\Windsor\WindsorDependencyRegistrySpecs.cs" />
-    <Compile Include="Utility\Core\ICommand.cs" />
-    <Compile Include="Utility\Core\IMapper.cs" />
-    <Compile Include="Utility\Extensions\StringExtensions.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\ExitCommandSpecs.cs" />
     <Compile Include="Presentation\Core\ApplicationControllerSpecs.cs" />
     <Compile Include="Presentation\Core\ApplicationController.cs" />
@@ -842,10 +787,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Testing\Call.cs" />
-    <Compile Include="Testing\spechelpers\core\assertions.cs" />
-    <Compile Include="Testing\spechelpers\core\mocking_extensions.cs" />
-    <Compile Include="Testing\MetaData\ConcernAttribute.cs" />
     <Compile Include="boot\start_the_application.cs" />
     <Compile Include="boot\container\wire_up_the_container.cs" />
     <Compile Include="boot\container\registration\run_mass_component_registration_in_to_the.cs" />
@@ -853,6 +794,18 @@
     <Compile Include="boot\container\registration\wire_up_the_mappers_in_to_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_reports_in_to_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_views_in_to_the.cs" />
+    <Compile Include="Testing\MetaData\RunInRealContainer.cs" />
+    <Compile Include="Testing\spechelpers\contexts\behaves_like_a_repository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
+      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
+      <Name>Gorilla.Commons.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj">
+      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
+      <Name>Gorilla.Commons.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\sqlcompact\" />
@@ -861,6 +814,9 @@
     <Folder Include="Tasks\domain\" />
     <Folder Include="Tasks\Stubs\" />
     <Folder Include="Testing\spechelpers\concerns\" />
+    <Folder Include="Testing\spechelpers\core\" />
+    <Folder Include="Utility\Core\" />
+    <Folder Include="Utility\Extensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
