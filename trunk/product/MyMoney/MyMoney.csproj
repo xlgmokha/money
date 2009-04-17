@@ -171,139 +171,6 @@
     <Compile Include="boot\container\registration\wire_up_the_services_in_to_the.cs" />
     <Compile Include="boot\global_error_handling.cs" />
     <Compile Include="boot\WindowsFormsApplication.cs" />
-    <Compile Include="DataAccess\db40\ConnectionFactory.cs" />
-    <Compile Include="DataAccess\db40\DetachedSession.cs" />
-    <Compile Include="DataAccess\db40\ObjectDatabaseGateway.cs" />
-    <Compile Include="DataAccess\db40\ObjectDatabaseGatewaySpecs.cs" />
-    <Compile Include="DataAccess\db40\AttachedSession.cs" />
-    <Compile Include="DataAccess\db40\spiking\db40_spike_specs.cs" />
-    <Compile Include="DataAccess\repositories\BillRepository.cs" />
-    <Compile Include="DataAccess\repositories\BillRepositorySpecs.cs" />
-    <Compile Include="DataAccess\repositories\CompanyRepository.cs" />
-    <Compile Include="DataAccess\repositories\IncomeRepository.cs" />
-    <Compile Include="DataAccess\core\IDatabaseGateway.cs" />
-    <Compile Include="DataAccess\db40\SessionContext.cs" />
-    <Compile Include="DataAccess\db40\SessionContextSpecs.cs" />
-    <Compile Include="Infrastructure\transactions2\ChangeTracker.cs" />
-    <Compile Include="Infrastructure\transactions2\ChangeTrackerFactory.cs" />
-    <Compile Include="Infrastructure\transactions2\ChangeTrackerFactorySpecs.cs" />
-    <Compile Include="Infrastructure\transactions2\ChangeTrackerSpecs.cs" />
-    <Compile Include="Infrastructure\transactions2\ConfigureDatabaseStep.cs" />
-    <Compile Include="Infrastructure\transactions2\ConnectionFactory.cs" />
-    <Compile Include="Infrastructure\transactions2\Context.cs" />
-    <Compile Include="Infrastructure\transactions2\Database.cs" />
-    <Compile Include="Infrastructure\transactions2\DatabaseConnection.cs" />
-    <Compile Include="Infrastructure\transactions2\EmptyUnitOfWork.cs" />
-    <Compile Include="Infrastructure\transactions2\IChangeTracker.cs" />
-    <Compile Include="Infrastructure\transactions2\IChangeTrackerFactory.cs" />
-    <Compile Include="Infrastructure\transactions2\IDatabaseConfiguration.cs" />
-    <Compile Include="Infrastructure\transactions2\IdentityMapProxy.cs" />
-    <Compile Include="Infrastructure\transactions2\IdentityMapSpecs.cs" />
-    <Compile Include="Infrastructure\transactions2\IIdentityMap.cs" />
-    <Compile Include="Infrastructure\cloning\BinarySerializer.cs" />
-    <Compile Include="Infrastructure\cloning\BinarySerializerSpecs.cs" />
-    <Compile Include="Infrastructure\cloning\ISerializer.cs" />
-    <Compile Include="Infrastructure\cloning\Prototype.cs" />
-    <Compile Include="Infrastructure\cloning\Serializer.cs" />
-    <Compile Include="Infrastructure\Container\Autofac\AutofacDependencyRegistry.cs" />
-    <Compile Include="Infrastructure\Container\Autofac\AutofacDependencyRegistryBuilder.cs" />
-    <Compile Include="Infrastructure\Container\Autofac\AutofacSpecs.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\ApplyLoggingInterceptor.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecification.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentExclusionSpecificationSpecs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Infrastructure\Container\Windsor\configuration\ConfigureComponentLifestyle.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\IComponentExclusionSpecification.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\LogComponent.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\RegisterComponentContract.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\type_extensions.cs" />
-    <Compile Include="Infrastructure\Container\IDependencyRegistration.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\WindsorContainerFactory.cs" />
-    <Compile Include="Infrastructure\debugging\Launch.cs" />
-    <Compile Include="Infrastructure\eventing\EventAggregator.cs" />
-    <Compile Include="Infrastructure\eventing\EventAggregatorSpecs.cs" />
-    <Compile Include="Infrastructure\eventing\IEvent.cs" />
-    <Compile Include="Infrastructure\eventing\IEventSubscriber.cs" />
-    <Compile Include="Infrastructure\Extensions\ThreadingExtensions.cs" />
-    <Compile Include="Infrastructure\interceptors\Lazy.cs" />
-    <Compile Include="Infrastructure\interceptors\LazySpecs.cs" />
-    <Compile Include="Infrastructure\interceptors\LazyLoadedInterceptor.cs" />
-    <Compile Include="Infrastructure\interceptors\LoggingInterceptor.cs" />
-    <Compile Include="Infrastructure\interceptors\RaiseEventInterceptor.cs" />
-    <Compile Include="Infrastructure\interceptors\SynchronizedInterceptor.cs" />
-    <Compile Include="Infrastructure\interceptors\UnitOfWorkInterceptor.cs" />
-    <Compile Include="Infrastructure\Logging\ILoggable.cs" />
-    <Compile Include="Infrastructure\proxies\IConstraintSelector.cs" />
-    <Compile Include="Infrastructure\proxies\IInterceptorConstraint.cs" />
-    <Compile Include="Infrastructure\proxies\IInterceptorConstraintFactory.cs" />
-    <Compile Include="Infrastructure\proxies\IMethodCallTrackerFactory.cs" />
-    <Compile Include="Infrastructure\proxies\InterceptorConstraintFactorySpecs.cs" />
-    <Compile Include="Infrastructure\proxies\InterceptorConstraintSpecs.cs" />
-    <Compile Include="Infrastructure\proxies\Interceptors\IMethodCallTracker.cs" />
-    <Compile Include="Infrastructure\proxies\Interceptors\MethodCallTracker.cs" />
-    <Compile Include="Infrastructure\proxies\Interceptors\MethodCallTrackerSpecs.cs" />
-    <Compile Include="Infrastructure\proxies\Interceptors\RunOnBackgroundThreadInterceptor.cs" />
-    <Compile Include="Infrastructure\proxies\Interceptors\RunOnBackgrounThreadInterceptorSpecs.cs" />
-    <Compile Include="Infrastructure\proxies\Interceptors\SelectiveInterceptor.cs" />
-    <Compile Include="Infrastructure\proxies\IProxyFactory.cs" />
-    <Compile Include="Infrastructure\proxies\ProxyBuilder.cs" />
-    <Compile Include="Infrastructure\proxies\ProxyBuilderSpecs.cs" />
-    <Compile Include="Infrastructure\proxies\ProxyFactory.cs" />
-    <Compile Include="Infrastructure\proxies\ProxyFactorySpecs.cs" />
-    <Compile Include="Infrastructure\reflection\ApplicationAssembly.cs" />
-    <Compile Include="Infrastructure\reflection\IAssembly.cs" />
-    <Compile Include="Infrastructure\registries\DefaultRegistry.cs" />
-    <Compile Include="Infrastructure\registries\DefaultRegistrySpecs.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\configuration\ComponentRegistrationConfiguration.cs" />
-    <Compile Include="Infrastructure\System\ApplicationEnvironment.cs" />
-    <Compile Include="Infrastructure\Threading\AsynchronousCommandProcessor.cs" />
-    <Compile Include="Infrastructure\Threading\BackgroundThreadFactory.cs" />
-    <Compile Include="Infrastructure\Threading\BackgroundThread.cs">
-    </Compile>
-    <Compile Include="Infrastructure\Threading\ICommandProcessor.cs" />
-    <Compile Include="Infrastructure\Threading\IntervalTimer.cs" />
-    <Compile Include="Infrastructure\Threading\ISynchronizationContext.cs" />
-    <Compile Include="Infrastructure\Threading\Juval\Synchronizer.cs" />
-    <Compile Include="Infrastructure\Threading\Juval\WorkItem.cs" />
-    <Compile Include="Infrastructure\Threading\SynchronizationContextFactory.cs" />
-    <Compile Include="Infrastructure\Threading\SynchronizedCommand.cs" />
-    <Compile Include="Infrastructure\Threading\SynchronizedContext.cs" />
-    <Compile Include="Infrastructure\Threading\RunOnUIThread.cs" />
-    <Compile Include="Infrastructure\Threading\TimerFactory.cs" />
-    <Compile Include="Infrastructure\Threading\WorkerThread.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Infrastructure\transactions2\IDatabase.cs" />
-    <Compile Include="Infrastructure\transactions2\IStatement.cs" />
-    <Compile Include="Infrastructure\transactions2\IStatementRegistry.cs" />
-    <Compile Include="Infrastructure\transactions2\Session.cs" />
-    <Compile Include="Infrastructure\transactions2\SessionFactory.cs" />
-    <Compile Include="Infrastructure\transactions2\SessionFactorySpecs.cs" />
-    <Compile Include="Infrastructure\transactions2\SessionNotStartedException.cs" />
-    <Compile Include="Infrastructure\transactions2\SessionProvider.cs" />
-    <Compile Include="Infrastructure\transactions2\SessionSpecs.cs" />
-    <Compile Include="Infrastructure\transactions2\StatementRegistry.cs" />
-    <Compile Include="Infrastructure\transactions2\TrackerEntry.cs" />
-    <Compile Include="Infrastructure\transactions2\TrackerEntryMapper.cs" />
-    <Compile Include="Infrastructure\transactions2\TrackerEntrySpecs.cs" />
-    <Compile Include="Infrastructure\transactions2\Transaction.cs" />
-    <Compile Include="Infrastructure\transactions2\TransactionSpecs.cs" />
-    <Compile Include="Infrastructure\transactions2\TypedKey.cs" />
-    <Compile Include="Infrastructure\transactions2\UnitOfWork.cs" />
-    <Compile Include="Infrastructure\transactions2\UnitOfWorkFactory.cs" />
-    <Compile Include="Infrastructure\transactions2\UnitOfWorkInterceptor.cs" />
-    <Compile Include="Infrastructure\transactions\IUnitOfWorkRegistrationFactory.cs" />
-    <Compile Include="Infrastructure\transactions\NullUnitOfWork.cs" />
-    <Compile Include="Infrastructure\transactions\UnitOfWork.cs" />
-    <Compile Include="Infrastructure\transactions\UnitOfWorkRegistration.cs" />
-    <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrationFactory.cs" />
-    <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrationSpecs.cs" />
-    <Compile Include="Infrastructure\transactions\unit_of_work.cs" />
-    <Compile Include="Infrastructure\transactions\UnitOfWorkFactory.cs" />
-    <Compile Include="Infrastructure\transactions\UnitOfWorkRegistry.cs" />
-    <Compile Include="Infrastructure\transactions\UnitOfWorkRegistrySpecs.cs" />
-    <Compile Include="Infrastructure\transactions\unit_of_work_specs.cs" />
     <Compile Include="Modules\ApplicationShellModule.cs" />
     <Compile Include="Modules\DatabaseModule.cs" />
     <Compile Include="Presentation\Core\ContentPresenter.cs" />
@@ -357,7 +224,6 @@
     <Compile Include="Presentation\Model\Navigation\tree_branch_specs.cs" />
     <Compile Include="Presentation\Model\Navigation\TreeViewToRootNodeMapper.cs" />
     <Compile Include="Presentation\Model\Projects\ProjectControllerSpecs.cs" />
-    <Compile Include="Presentation\Model\Projects\file.cs" />
     <Compile Include="Presentation\Model\Projects\file_not_specified_exception.cs" />
     <Compile Include="Presentation\Model\reporting\IReport.cs" />
     <Compile Include="Presentation\Model\reporting\report_binding_extensions.cs" />
@@ -366,9 +232,6 @@
     <Compile Include="Presentation\Presenters\billing\AddBillPaymentPresenter.cs" />
     <Compile Include="Presentation\Presenters\AddCompanyPresenter.cs" />
     <Compile Include="Presentation\Presenters\AddCompanyPresenterSpecs.cs" />
-    <Compile Include="Presentation\Presenters\billing\dto\AddNewBillDTO.cs" />
-    <Compile Include="Presentation\Presenters\billing\dto\BillInformationDto.cs" />
-    <Compile Include="Presentation\Presenters\billing\dto\RegisterNewCompany.cs" />
     <Compile Include="Presentation\Presenters\billing\ViewAllBillsPresenter.cs" />
     <Compile Include="Presentation\Presenters\Commands\RestartCommand.cs" />
     <Compile Include="Presentation\Presenters\Commands\RunPresenterCommand.cs" />
@@ -385,9 +248,6 @@
     <Compile Include="Presentation\Presenters\excel\ICellVisitor.cs" />
     <Compile Include="Presentation\Presenters\income\AddNewIncomePresenter.cs" />
     <Compile Include="Presentation\Presenters\income\AddNewIncomePresenterSpecs.cs" />
-    <Compile Include="Presentation\Presenters\income\dto\income_information_dto.cs" />
-    <Compile Include="Presentation\Presenters\income\dto\IncomeSubmissionDto.cs" />
-    <Compile Include="Presentation\Presenters\income\dto\monthly_summary_dto.cs" />
     <Compile Include="Presentation\Presenters\income\ViewIncomeHistoryPresenter.cs" />
     <Compile Include="Presentation\Presenters\Menu\Help\AboutTheApplicationPresenter.cs" />
     <Compile Include="Modules\ApplicationMenuModule.cs" />
@@ -566,41 +426,11 @@
     </Compile>
     <Compile Include="Presentation\Views\core\ControlAction.cs" />
     <Compile Include="Presentation\Views\updates\ICheckForUpdatesView.cs" />
-    <Compile Include="Tasks\application\BillingTasks.cs" />
-    <Compile Include="Tasks\application\CustomerTasks.cs" />
-    <Compile Include="Tasks\application\GetAllBillsQuery.cs" />
-    <Compile Include="Tasks\application\GetAllCompanysQuery.cs" />
-    <Compile Include="Tasks\application\IncomeTasks.cs" />
-    <Compile Include="Tasks\application\RegisterNewCompanyCommand.cs" />
-    <Compile Include="Tasks\application\SaveNewBillCommand.cs" />
-    <Compile Include="Tasks\infrastructure\core\CommandPump.cs" />
-    <Compile Include="Tasks\infrastructure\core\ICallbackCommand.cs" />
-    <Compile Include="Tasks\infrastructure\LogFileTasks.cs" />
-    <Compile Include="Tasks\infrastructure\core\CommandFactory.cs" />
-    <Compile Include="Tasks\infrastructure\updating\CancelUpdate.cs" />
-    <Compile Include="Tasks\infrastructure\updating\CancelUpdateSpecs.cs" />
-    <Compile Include="Tasks\infrastructure\updating\CurrentDeployment.cs" />
-    <Compile Include="Tasks\infrastructure\core\ProcessQueryCommand.cs" />
-    <Compile Include="Tasks\infrastructure\core\RunQueryCommand.cs" />
-    <Compile Include="Tasks\infrastructure\updating\DownloadTheLatestVersion.cs" />
-    <Compile Include="Tasks\infrastructure\updating\IDeployment.cs" />
-    <Compile Include="Tasks\infrastructure\updating\NullDeployment.cs" />
-    <Compile Include="Tasks\infrastructure\updating\WhatIsTheAvailableVersion.cs" />
     <Compile Include="Presentation\Views\helpers\Events.cs">
     </Compile>
     <Compile Include="Presentation\Views\helpers\EventTrigger.cs" />
     <Compile Include="Presentation\Views\helpers\IEventTarget.cs" />
     <Compile Include="Presentation\Views\helpers\EventTriggerSpecs.cs" />
-    <Compile Include="Infrastructure\Extensions\environment_extensions.cs" />
-    <Compile Include="Infrastructure\Extensions\logging_extensions.cs" />
-    <Compile Include="Infrastructure\Logging\ConsoleLogging\ConsoleLogger.cs" />
-    <Compile Include="Infrastructure\Threading\BackgroundThreadSpecs.cs" />
-    <Compile Include="Infrastructure\Threading\CommandProcessor.cs" />
-    <Compile Include="Infrastructure\Threading\CommandProcessorSpecs.cs" />
-    <Compile Include="Infrastructure\Threading\ITimerClient.cs" />
-    <Compile Include="Infrastructure\Threading\BackgroundThreadFactorySpecs.cs" />
-    <Compile Include="Infrastructure\Threading\TimerFactorySpecs.cs" />
-    <Compile Include="Infrastructure\Threading\IntervalTimerSpecs.cs" />
     <Compile Include="Presentation\Databindings\ComboBoxDataBindingSpecs.cs" />
     <Compile Include="Presentation\Databindings\combo_box_property_binding.cs" />
     <Compile Include="Presentation\Databindings\control_binding_extensions.cs" />
@@ -619,12 +449,6 @@
     <Compile Include="Modules\Core\IModule.cs" />
     <Compile Include="Presentation\Model\Menu\File\FileMenu.cs" />
     <Compile Include="Presentation\Model\Menu\Help\HelpMenu.cs" />
-    <Compile Include="Infrastructure\Logging\ILogFactory.cs" />
-    <Compile Include="Infrastructure\Logging\ILogger.cs" />
-    <Compile Include="Infrastructure\Logging\Log.cs" />
-    <Compile Include="Infrastructure\Logging\Log4NetLogging\Log4NetLogger.cs" />
-    <Compile Include="Infrastructure\Logging\Log4NetLogging\Log4NetLogFactory.cs" />
-    <Compile Include="Infrastructure\Logging\LogSpecs.cs" />
     <Compile Include="Presentation\Presenters\Shell\NotificationIconPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\StatusBarPresenter.cs" />
     <Compile Include="Presentation\Presenters\Shell\StatusBarPresenterSpecs.cs" />
@@ -655,16 +479,10 @@
     </Compile>
     <Compile Include="boot\hookup.cs" />
     <Compile Include="Presentation\Model\Menu\ISubMenu.cs" />
-    <Compile Include="Infrastructure\Container\DependencyResolutionException.cs" />
-    <Compile Include="Infrastructure\Container\Resolve.cs" />
-    <Compile Include="Infrastructure\Container\ResolveSpecs.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\WindsorDependencyRegistry.cs" />
-    <Compile Include="Infrastructure\Container\Windsor\WindsorDependencyRegistrySpecs.cs" />
     <Compile Include="Presentation\Model\Menu\File\Commands\ExitCommandSpecs.cs" />
     <Compile Include="Presentation\Core\ApplicationControllerSpecs.cs" />
     <Compile Include="Presentation\Core\ApplicationController.cs" />
     <Compile Include="Presentation\Core\IPresenter.cs" />
-    <Compile Include="Infrastructure\Container\IDependencyRegistry.cs" />
     <Compile Include="Modules\Core\LoadPresentationModulesCommand.cs" />
     <Compile Include="boot\bootstrap.cs" />
     <EmbeddedResource Include="Presentation\Views\AddCompanyView.resx">
@@ -758,8 +576,6 @@
     <Compile Include="boot\container\registration\wire_up_the_mappers_in_to_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_reports_in_to_the.cs" />
     <Compile Include="boot\container\registration\wire_up_the_views_in_to_the.cs" />
-    <Compile Include="Testing\RunInRealContainer.cs" />
-    <Compile Include="Testing\behaves_like_a_repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
@@ -770,21 +586,58 @@
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>Gorilla.Commons.Utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MoMoney.DataAccess\MoMoney.DataAccess.csproj">
+      <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
+      <Name>MoMoney.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MoMoney.Domain\MoMoney.Domain.csproj">
       <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
       <Name>MoMoney.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MoMoney.DTO\MoMoney.DTO.csproj">
+      <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
+      <Name>MoMoney.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoMoney.Infrastructure\MoMoney.Infrastructure.csproj">
+      <Project>{4E6E2528-3779-4CFC-BC43-F42EE13ED2D0}</Project>
+      <Name>MoMoney.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoMoney.Service\MoMoney.Service.csproj">
+      <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
+      <Name>MoMoney.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DataAccess\core\" />
+    <Folder Include="DataAccess\db40\spiking\" />
+    <Folder Include="DataAccess\repositories\" />
     <Folder Include="DataAccess\sqlcompact\" />
-    <Folder Include="Domain\accounting\billing\" />
-    <Folder Include="Domain\accounting\financial_growth\" />
-    <Folder Include="Domain\Core\" />
-    <Folder Include="Domain\repositories\" />
     <Folder Include="Infrastructure\caching\" />
+    <Folder Include="Infrastructure\cloning\" />
+    <Folder Include="Infrastructure\Container\Autofac\" />
+    <Folder Include="Infrastructure\Container\Windsor\configuration\" />
+    <Folder Include="Infrastructure\debugging\" />
+    <Folder Include="Infrastructure\eventing\" />
+    <Folder Include="Infrastructure\Extensions\" />
+    <Folder Include="Infrastructure\interceptors\" />
+    <Folder Include="Infrastructure\Logging\ConsoleLogging\" />
+    <Folder Include="Infrastructure\Logging\Log4NetLogging\" />
+    <Folder Include="Infrastructure\proxies\Interceptors\" />
+    <Folder Include="Infrastructure\reflection\" />
+    <Folder Include="Infrastructure\registries\" />
+    <Folder Include="Infrastructure\System\" />
+    <Folder Include="Infrastructure\Threading\Juval\" />
+    <Folder Include="Infrastructure\transactions2\" />
+    <Folder Include="Infrastructure\transactions\" />
+    <Folder Include="Presentation\Presenters\billing\dto\" />
+    <Folder Include="Presentation\Presenters\income\dto\" />
     <Folder Include="Presentation\Views\Menu\Mappers\" />
+    <Folder Include="Tasks\application\" />
     <Folder Include="Tasks\domain\" />
+    <Folder Include="Tasks\infrastructure\core\" />
+    <Folder Include="Tasks\infrastructure\updating\" />
     <Folder Include="Tasks\Stubs\" />
+    <Folder Include="Testing\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -37,7 +37,8 @@
 				<include name="${build.config.dir}\**\*.cs" />
 				<exclude name="${product.dir}\**\AssemblyInfo.cs" />
 				<exclude name="${product.dir}\**\*Specs.cs" />
-				<exclude name="${product.dir}\MyMoney\Testing\**\*.*" />
+				<!--<exclude name="${product.dir}\MyMoney\Testing\**\*.*" />-->
+				<exclude name="${product.dir}\MoMoney.DataAccess\Testing\**\*.*" />
 				<exclude name="${product.dir}\Gorilla.Commons.Testing\**\*.*" />
 			</sources>			
 			<references>

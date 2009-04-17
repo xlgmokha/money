@@ -11,7 +11,7 @@ namespace MoMoney.Presentation.Model.Projects
         void delete();
     }
 
-    internal class ApplicationFile : IFile
+    public class ApplicationFile : IFile
     {
         public ApplicationFile(string path)
         {

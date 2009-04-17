@@ -9,7 +9,7 @@ using MoMoney.Infrastructure.proxies;
 
 namespace MoMoney.Infrastructure.Container.Autofac
 {
-    internal class AutofacDependencyRegistryBuilder : IDependencyRegistration //, IBuilder<IContainer>
+    public class AutofacDependencyRegistryBuilder : IDependencyRegistration //, IBuilder<IContainer>
     {
         readonly ContainerBuilder builder;
         readonly Func<IContainer> container;

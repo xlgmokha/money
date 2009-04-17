@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4E6E2528-3779-4CFC-BC43-F42EE13ED2D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MoMoney.Infrastructure</RootNamespace>
+    <AssemblyName>MoMoney.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\auto.fac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="AutofacContrib.DynamicProxy2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\auto.fac.contrib\AutofacContrib.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o, Version=7.5.57.11498, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o.Linq, Version=7.5.57.11498, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cloning\BinarySerializer.cs" />
+    <Compile Include="Cloning\BinarySerializerSpecs.cs" />
+    <Compile Include="Cloning\ISerializer.cs" />
+    <Compile Include="Cloning\Prototype.cs" />
+    <Compile Include="Cloning\Serializer.cs" />
+    <Compile Include="Container\Autofac\AutofacDependencyRegistry.cs" />
+    <Compile Include="Container\Autofac\AutofacDependencyRegistryBuilder.cs" />
+    <Compile Include="Container\Autofac\AutofacSpecs.cs" />
+    <Compile Include="Container\DependencyResolutionException.cs" />
+    <Compile Include="Container\IDependencyRegistration.cs" />
+    <Compile Include="Container\IDependencyRegistry.cs" />
+    <Compile Include="Container\Resolve.cs" />
+    <Compile Include="Container\ResolveSpecs.cs" />
+    <Compile Include="Container\Windsor\Configuration\ApplyLoggingInterceptor.cs" />
+    <Compile Include="Container\Windsor\Configuration\ComponentExclusionSpecification.cs" />
+    <Compile Include="Container\Windsor\Configuration\ComponentExclusionSpecificationSpecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Container\Windsor\Configuration\ComponentRegistrationConfiguration.cs" />
+    <Compile Include="Container\Windsor\Configuration\ConfigureComponentLifestyle.cs" />
+    <Compile Include="Container\Windsor\Configuration\IComponentExclusionSpecification.cs" />
+    <Compile Include="Container\Windsor\Configuration\LogComponent.cs" />
+    <Compile Include="Container\Windsor\Configuration\RegisterComponentContract.cs" />
+    <Compile Include="Container\Windsor\Configuration\type_extensions.cs" />
+    <Compile Include="Container\Windsor\WindsorContainerFactory.cs" />
+    <Compile Include="Container\Windsor\WindsorDependencyRegistry.cs" />
+    <Compile Include="Container\Windsor\WindsorDependencyRegistrySpecs.cs" />
+    <Compile Include="Debugging\Launch.cs" />
+    <Compile Include="Eventing\EventAggregator.cs" />
+    <Compile Include="Eventing\EventAggregatorSpecs.cs" />
+    <Compile Include="Eventing\IEvent.cs" />
+    <Compile Include="Eventing\IEventSubscriber.cs" />
+    <Compile Include="Extensions\environment_extensions.cs" />
+    <Compile Include="Extensions\logging_extensions.cs" />
+    <Compile Include="Extensions\ThreadingExtensions.cs" />
+    <Compile Include="Interceptors\Lazy.cs" />
+    <Compile Include="Interceptors\LazyLoadedInterceptor.cs" />
+    <Compile Include="Interceptors\LazySpecs.cs" />
+    <Compile Include="Interceptors\LoggingInterceptor.cs" />
+    <Compile Include="Interceptors\RaiseEventInterceptor.cs" />
+    <Compile Include="Interceptors\SynchronizedInterceptor.cs" />
+    <Compile Include="Interceptors\UnitOfWorkInterceptor.cs" />
+    <Compile Include="Logging\ConsoleLogging\ConsoleLogger.cs" />
+    <Compile Include="Logging\ILogFactory.cs" />
+    <Compile Include="Logging\ILoggable.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\Log4NetLogging\Log4NetLogFactory.cs" />
+    <Compile Include="Logging\Log4NetLogging\Log4NetLogger.cs" />
+    <Compile Include="Logging\LogSpecs.cs" />
+    <Compile Include="Proxies\IConstraintSelector.cs" />
+    <Compile Include="Proxies\IInterceptorConstraint.cs" />
+    <Compile Include="Proxies\IInterceptorConstraintFactory.cs" />
+    <Compile Include="Proxies\IMethodCallTrackerFactory.cs" />
+    <Compile Include="Proxies\InterceptorConstraintFactorySpecs.cs" />
+    <Compile Include="Proxies\InterceptorConstraintSpecs.cs" />
+    <Compile Include="Proxies\Interceptors\IMethodCallTracker.cs" />
+    <Compile Include="Proxies\Interceptors\MethodCallTracker.cs" />
+    <Compile Include="Proxies\Interceptors\MethodCallTrackerSpecs.cs" />
+    <Compile Include="Proxies\Interceptors\RunOnBackgroundThreadInterceptor.cs" />
+    <Compile Include="Proxies\Interceptors\RunOnBackgrounThreadInterceptorSpecs.cs" />
+    <Compile Include="Proxies\Interceptors\SelectiveInterceptor.cs" />
+    <Compile Include="Proxies\IProxyFactory.cs" />
+    <Compile Include="Proxies\ProxyBuilder.cs" />
+    <Compile Include="Proxies\ProxyBuilderSpecs.cs" />
+    <Compile Include="Proxies\ProxyFactory.cs" />
+    <Compile Include="Proxies\ProxyFactorySpecs.cs" />
+    <Compile Include="Reflection\ApplicationAssembly.cs" />
+    <Compile Include="Reflection\IAssembly.cs" />
+    <Compile Include="Registries\DefaultRegistry.cs" />
+    <Compile Include="Registries\DefaultRegistrySpecs.cs" />
+    <Compile Include="System\ApplicationEnvironment.cs" />
+    <Compile Include="Threading\AsynchronousCommandProcessor.cs" />
+    <Compile Include="Threading\BackgroundThread.cs" />
+    <Compile Include="Threading\BackgroundThreadFactory.cs" />
+    <Compile Include="Threading\BackgroundThreadFactorySpecs.cs" />
+    <Compile Include="Threading\BackgroundThreadSpecs.cs" />
+    <Compile Include="Threading\CommandProcessor.cs" />
+    <Compile Include="Threading\CommandProcessorSpecs.cs" />
+    <Compile Include="Threading\ICommandProcessor.cs" />
+    <Compile Include="Threading\IntervalTimer.cs" />
+    <Compile Include="Threading\IntervalTimerSpecs.cs" />
+    <Compile Include="Threading\ISynchronizationContext.cs" />
+    <Compile Include="Threading\ITimerClient.cs" />
+    <Compile Include="Threading\Juval\Synchronizer.cs" />
+    <Compile Include="Threading\Juval\WorkItem.cs" />
+    <Compile Include="Threading\RunOnUIThread.cs" />
+    <Compile Include="Threading\SynchronizationContextFactory.cs" />
+    <Compile Include="Threading\SynchronizedCommand.cs" />
+    <Compile Include="Threading\SynchronizedContext.cs" />
+    <Compile Include="Threading\TimerFactory.cs" />
+    <Compile Include="Threading\TimerFactorySpecs.cs" />
+    <Compile Include="Threading\WorkerThread.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transactions2\ChangeTracker.cs" />
+    <Compile Include="Transactions2\ChangeTrackerFactory.cs" />
+    <Compile Include="Transactions2\ChangeTrackerFactorySpecs.cs" />
+    <Compile Include="Transactions2\ChangeTrackerSpecs.cs" />
+    <Compile Include="Transactions2\ConfigureDatabaseStep.cs" />
+    <Compile Include="Transactions2\Context.cs" />
+    <Compile Include="Transactions2\DatabaseConnection.cs" />
+    <Compile Include="Transactions2\EmptyUnitOfWork.cs" />
+    <Compile Include="Transactions2\IChangeTracker.cs" />
+    <Compile Include="Transactions2\IChangeTrackerFactory.cs" />
+    <Compile Include="Transactions2\IDatabase.cs" />
+    <Compile Include="Transactions2\IdentityMapProxy.cs" />
+    <Compile Include="Transactions2\IdentityMapSpecs.cs" />
+    <Compile Include="Transactions2\IIdentityMap.cs" />
+    <Compile Include="Transactions2\IStatement.cs" />
+    <Compile Include="Transactions2\IStatementRegistry.cs" />
+    <Compile Include="Transactions2\Session.cs" />
+    <Compile Include="Transactions2\SessionFactory.cs" />
+    <Compile Include="Transactions2\SessionFactorySpecs.cs" />
+    <Compile Include="Transactions2\SessionNotStartedException.cs" />
+    <Compile Include="Transactions2\SessionProvider.cs" />
+    <Compile Include="Transactions2\SessionSpecs.cs" />
+    <Compile Include="Transactions2\StatementRegistry.cs" />
+    <Compile Include="Transactions2\TrackerEntry.cs" />
+    <Compile Include="Transactions2\TrackerEntryMapper.cs" />
+    <Compile Include="Transactions2\TrackerEntrySpecs.cs" />
+    <Compile Include="Transactions2\Transaction.cs" />
+    <Compile Include="Transactions2\TransactionSpecs.cs" />
+    <Compile Include="Transactions2\TypedKey.cs" />
+    <Compile Include="Transactions2\UnitOfWork.cs" />
+    <Compile Include="Transactions2\UnitOfWorkFactory.cs" />
+    <Compile Include="Transactions2\UnitOfWorkInterceptor.cs" />
+    <Compile Include="Transactions\IDatabaseGateway.cs" />
+    <Compile Include="Transactions\IUnitOfWorkRegistrationFactory.cs" />
+    <Compile Include="Transactions\NullUnitOfWork.cs" />
+    <Compile Include="Transactions\UnitOfWork.cs" />
+    <Compile Include="Transactions\UnitOfWorkFactory.cs" />
+    <Compile Include="Transactions\UnitOfWorkRegistration.cs" />
+    <Compile Include="Transactions\UnitOfWorkRegistrationFactory.cs" />
+    <Compile Include="Transactions\UnitOfWorkRegistrationSpecs.cs" />
+    <Compile Include="Transactions\UnitOfWorkRegistry.cs" />
+    <Compile Include="Transactions\UnitOfWorkRegistrySpecs.cs" />
+    <Compile Include="Transactions\unit_of_work.cs" />
+    <Compile Include="Transactions\unit_of_work_specs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
+      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
+      <Name>Gorilla.Commons.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj">
+      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
+      <Name>Gorilla.Commons.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoMoney.Domain\MoMoney.Domain.csproj">
+      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
+      <Name>MoMoney.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

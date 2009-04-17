@@ -1,7 +1,7 @@
 using System.Collections;
 using MbUnit.Core.Framework;
 using MbUnit.Core.Invokers;
-using MoMoney.boot.container;
+//using MoMoney.boot.container;
 
 namespace MoMoney.Testing.MetaData
 {
@@ -23,12 +23,12 @@ namespace MoMoney.Testing.MetaData
         {
             try
             {
-                new wire_up_the_container().run();
+                //new wire_up_the_container().run();
                 return Invoker.Execute(o, args);
             }
             finally
             {
-                new tear_down_the_container().run();
+                //new tear_down_the_container().run();
             }
         }
     }

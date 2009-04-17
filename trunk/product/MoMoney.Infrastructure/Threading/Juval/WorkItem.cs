@@ -13,9 +13,9 @@ namespace MoMoney.Infrastructure.Threading.Juval
         readonly ManualResetEvent m_Event;
         object m_MethodReturnedValue;
 
-        internal WorkItem(object AsyncState, Delegate method, object[] args)
+        internal WorkItem(object async_state, Delegate method, object[] args)
         {
-            m_AsyncState = AsyncState;
+            m_AsyncState = async_state;
             m_Method = method;
             m_Args = args;
             m_Event = new ManualResetEvent(false);

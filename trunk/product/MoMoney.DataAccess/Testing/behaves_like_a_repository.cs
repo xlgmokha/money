@@ -1,5 +1,6 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
+using MbUnit.Framework;
 using MoMoney.DataAccess.core;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.transactions2;
@@ -9,6 +10,7 @@ namespace MoMoney.Testing.spechelpers.contexts
 {
     [RunInRealContainer]
     [Concern(typeof (IDatabaseGateway))]
+    [Ignore]
     public abstract class behaves_like_a_repository : concerns_for<IDatabaseGateway>
     {
         public override IDatabaseGateway create_sut()

@@ -1,6 +1,6 @@
 using Castle.Core.Interceptor;
 using MoMoney.Infrastructure.eventing;
-using MoMoney.Presentation.Model.messages;
+//using MoMoney.Presentation.Model.messages;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -27,7 +27,7 @@ namespace MoMoney.Infrastructure.transactions2
                 if (unit_of_work.is_dirty())
                 {
                     unit_of_work.commit();
-                    broker.publish<UnsavedChangesEvent>();
+                    //broker.publish<UnsavedChangesEvent>();
                 }
             }
         }
