@@ -25,7 +25,7 @@ namespace MoMoney.boot.container.registration
                 () => new BillingTasks(Lazy.load<IBillRepository>(), Lazy.load<ICompanyRepository>()));
 
             registry.proxy<ICustomerTasks, ServiceLayerConfiguration<ICustomerTasks>>(
-                () => new CustomerTasks(Lazy.load<IDatabaseGateway>()));
+                () => new CustomerTasks(Lazy.load<IAccountHolderRepository>()));
 
             registry.proxy<IIncomeTasks, ServiceLayerConfiguration<IIncomeTasks>>(
                 () => new IncomeTasks(Lazy.load<ICustomerTasks>(),

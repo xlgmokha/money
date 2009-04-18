@@ -1,22 +1,22 @@
 using System.Collections.Generic;
-using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.repositories;
+using MoMoney.Infrastructure.transactions2;
 
 namespace MoMoney.DataAccess.repositories
 {
     public class BillRepository : IBillRepository
     {
-        readonly IDatabaseGateway gateway;
+        readonly ISession session;
 
-        public BillRepository(IDatabaseGateway gateway)
+        public BillRepository(ISession session)
         {
-            this.gateway = gateway;
+            this.session = session;
         }
 
         public IEnumerable<IBill> all()
         {
-            return gateway.all<IBill>();
+            return session.all<IBill>();
         }
     }
 }

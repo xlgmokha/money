@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.accounting.billing;
-using MoMoney.Presentation.Presenters.billing.dto;
+using MoMoney.DTO;
 
 namespace MoMoney.Tasks.application
 {

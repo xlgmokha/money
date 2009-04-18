@@ -24,12 +24,12 @@ namespace MoMoney.Domain.accounting.billing
 
         public void issue_bill_to(IAccountHolder customer, DateTime that_is_due_on, IMoney for_amount)
         {
-            customer.recieve(new Bill(this, for_amount, that_is_due_on));
+            customer.receive(new Bill(this, for_amount, that_is_due_on));
         }
 
         public void pay(IAccountHolder person, IMoney amount, IDate date_of_payment)
         {
-            person.recieve(new Income(date_of_payment, amount, this));
+            person.receive(new Income(date_of_payment, amount, this));
         }
 
         public override string ToString()

@@ -161,9 +161,11 @@
     <Compile Include="Model\Navigation\tree_branch_specs.cs" />
     <Compile Include="Model\Navigation\view_all_bills_branch.cs" />
     <Compile Include="Model\Navigation\view_all_bills_report_branch.cs" />
+    <Compile Include="Model\Projects\EmptyProject.cs" />
     <Compile Include="Model\Projects\file_not_specified_exception.cs" />
     <Compile Include="Model\Projects\IProject.cs" />
     <Compile Include="Model\Projects\IProjectController.cs" />
+    <Compile Include="Model\Projects\Project.cs" />
     <Compile Include="Model\Projects\ProjectController.cs" />
     <Compile Include="Model\Projects\ProjectControllerSpecs.cs" />
     <Compile Include="Model\Reporting\IReport.cs" />

@@ -1,4 +1,5 @@
 using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Modules.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Model.Projects;
@@ -38,6 +39,7 @@ namespace MoMoney.Presentation.Presenters.Shell
 
         public void notify(UnsavedChangesEvent dto)
         {
+            this.log().debug("adding asterik");
             view.append_asterik();
         }
 

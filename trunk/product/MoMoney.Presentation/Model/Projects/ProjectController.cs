@@ -1,11 +1,13 @@
+using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.eventing;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.messages;
 
 namespace MoMoney.Presentation.Model.Projects
 {
-    public class ProjectController : IProjectController, IEventSubscriber<UnsavedChangesEvent>
+    public class ProjectController : IProjectController, ICallback<IUnitOfWork>
     {
         readonly IEventAggregator broker;
         readonly IDatabaseConfiguration configuration;
@@ -84,52 +86,14 @@ namespace MoMoney.Presentation.Model.Projects
             if (!has_been_saved_at_least_once()) throw new FileNotSpecifiedException();
         }
 
-        public void notify(UnsavedChangesEvent message)
+        public void run(IUnitOfWork item)
         {
-            unsaved_changes = true;
-        }
-    }
-
-    public class EmptyProject : IProject
-    {
-        public string name()
-        {
-            return "untitled.mo";
-        }
-
-        public bool is_file_specified()
-        {
-            return false;
-        }
-
-        public bool is_open()
-        {
-            return false;
-        }
-    }
-
-    public class Project : IProject
-    {
-        readonly IFile file;
-
-        public Project(IFile file)
-        {
-            this.file = file;
-        }
-
-        public string name()
-        {
-            return is_file_specified() ? file.path : "untitled.mo";
-        }
-
-        public bool is_file_specified()
-        {
-            return file != null;
-        }
-
-        public bool is_open()
-        {
-            return true;
+            unsaved_changes = item.is_dirty();
+            if (unsaved_changes)
+            {
+                this.log().debug("unsaved changes: {0}", unsaved_changes);
+                broker.publish<UnsavedChangesEvent>();
+            }
         }
     }
 }

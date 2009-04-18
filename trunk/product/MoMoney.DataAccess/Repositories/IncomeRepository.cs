@@ -1,22 +1,22 @@
 using System.Collections.Generic;
-using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting.financial_growth;
 using MoMoney.Domain.repositories;
+using MoMoney.Infrastructure.transactions2;
 
 namespace MoMoney.DataAccess.repositories
 {
     public class IncomeRepository : IIncomeRepository
     {
-        readonly IDatabaseGateway gateway;
+        readonly ISession session;
 
-        public IncomeRepository(IDatabaseGateway gateway)
+        public IncomeRepository(ISession session)
         {
-            this.gateway = gateway;
+            this.session = session;
         }
 
         public IEnumerable<IIncome> all()
         {
-            return gateway.all<IIncome>();
+            return session.all<IIncome>();
         }
     }
 }

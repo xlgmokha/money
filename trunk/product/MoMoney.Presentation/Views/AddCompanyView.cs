@@ -5,10 +5,10 @@ using System.Text;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.accounting.billing;
+using MoMoney.DTO;
 using MoMoney.Presentation.Databindings;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters;
-using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
 

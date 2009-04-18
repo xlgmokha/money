@@ -38,9 +38,9 @@ namespace MoMoney.Domain.accounting
 
         because b = () =>
                         {
-                            sut.recieve(first_unpaid_bill);
-                            sut.recieve(paid_bill);
-                            sut.recieve(second_unpaid_bill);
+                            sut.receive(first_unpaid_bill);
+                            sut.receive(paid_bill);
+                            sut.receive(second_unpaid_bill);
                             result = sut.collect_all_the_unpaid_bills();
                         };
 
@@ -76,9 +76,9 @@ namespace MoMoney.Domain.accounting
 
         because b = () =>
                         {
-                            sut.recieve(income_for_january_2007);
-                            sut.recieve(income_for_february_2007);
-                            sut.recieve(income_for_february_2008);
+                            sut.receive(income_for_january_2007);
+                            sut.receive(income_for_february_2007);
+                            sut.receive(income_for_february_2008);
                             result = sut.calculate_income_for(2007.as_a_year());
                         };
 

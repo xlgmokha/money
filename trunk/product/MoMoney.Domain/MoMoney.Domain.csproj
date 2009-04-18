@@ -90,6 +90,7 @@
     <Compile Include="Core\PercentSpecs.cs" />
     <Compile Include="Core\range.cs" />
     <Compile Include="Core\range_specs.cs" />
+    <Compile Include="Repositories\IAccountHolderRepository.cs" />
     <Compile Include="Repositories\IBillRepository.cs" />
     <Compile Include="Repositories\ICompanyRepository.cs" />
     <Compile Include="Repositories\IIncomeRepository.cs" />

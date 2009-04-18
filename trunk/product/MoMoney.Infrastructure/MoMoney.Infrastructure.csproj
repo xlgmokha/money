@@ -125,7 +125,6 @@
     <Compile Include="Interceptors\LoggingInterceptor.cs" />
     <Compile Include="Interceptors\RaiseEventInterceptor.cs" />
     <Compile Include="Interceptors\SynchronizedInterceptor.cs" />
-    <Compile Include="Interceptors\UnitOfWorkInterceptor.cs" />
     <Compile Include="Logging\ConsoleLogging\ConsoleLogger.cs" />
     <Compile Include="Logging\ILogFactory.cs" />
     <Compile Include="Logging\ILoggable.cs" />
@@ -209,18 +208,9 @@
     <Compile Include="Transactions2\UnitOfWork.cs" />
     <Compile Include="Transactions2\UnitOfWorkFactory.cs" />
     <Compile Include="Transactions2\UnitOfWorkInterceptor.cs" />
-    <Compile Include="Transactions\IDatabaseGateway.cs" />
-    <Compile Include="Transactions\IUnitOfWorkRegistrationFactory.cs" />
-    <Compile Include="Transactions\NullUnitOfWork.cs" />
-    <Compile Include="Transactions\UnitOfWork.cs" />
-    <Compile Include="Transactions\UnitOfWorkFactory.cs" />
-    <Compile Include="Transactions\UnitOfWorkRegistration.cs" />
-    <Compile Include="Transactions\UnitOfWorkRegistrationFactory.cs" />
-    <Compile Include="Transactions\UnitOfWorkRegistrationSpecs.cs" />
-    <Compile Include="Transactions\UnitOfWorkRegistry.cs" />
-    <Compile Include="Transactions\UnitOfWorkRegistrySpecs.cs" />
-    <Compile Include="Transactions\unit_of_work.cs" />
-    <Compile Include="Transactions\unit_of_work_specs.cs" />
+    <Compile Include="Transactions\IDatabaseGateway.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">

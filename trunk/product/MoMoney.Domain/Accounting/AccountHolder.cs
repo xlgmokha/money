@@ -9,8 +9,8 @@ namespace MoMoney.Domain.accounting
 {
     public interface IAccountHolder : IEntity
     {
-        void recieve(IBill bill);
-        void recieve(IIncome income);
+        void receive(IBill bill);
+        void receive(IIncome income);
         IEnumerable<IBill> collect_all_the_unpaid_bills();
         IMoney calculate_income_for(IYear year);
     }
@@ -27,7 +27,7 @@ namespace MoMoney.Domain.accounting
         private IList<IBill> all_bills { get; set; }
         private IList<IIncome> income_collected { get; set; }
 
-        public void recieve(IBill bill)
+        public void receive(IBill bill)
         {
             all_bills.Add(bill);
         }
@@ -42,7 +42,7 @@ namespace MoMoney.Domain.accounting
             return income_collected.in_the(year);
         }
 
-        public void recieve(IIncome income)
+        public void receive(IIncome income)
         {
             income_collected.Add(income);
         }

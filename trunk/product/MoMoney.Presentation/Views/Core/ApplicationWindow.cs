@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.helpers;
 
@@ -21,7 +20,7 @@ namespace MoMoney.Presentation.Views.core
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
-            this.log().debug("created {0}", GetType());
+            //this.log().debug("created {0}", GetType());
 
             on_activated = x => { };
             on_deactivate = x => { };

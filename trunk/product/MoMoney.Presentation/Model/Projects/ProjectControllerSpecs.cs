@@ -144,15 +144,20 @@ namespace MoMoney.Presentation.Model.Projects
     {
         it should_return_true = () => result.should_be_true();
 
-        context c = () => { };
+        context c = () =>
+                        {
+                            unit_of_work = an<IUnitOfWork>();
+                            when_the(unit_of_work).is_told_to(x => x.is_dirty()).it_will_return(true);
+                        };
 
         because b = () =>
                         {
-                            sut.downcast_to<ProjectController>().notify(new UnsavedChangesEvent());
+                            sut.downcast_to<ProjectController>().run(unit_of_work);
                             result = sut.has_unsaved_changes();
                         };
 
         static bool result;
+        static IUnitOfWork unit_of_work;
     }
 
     public class when_starting_a_new_project_and_a_project_was_already_open : behaves_like_a_project

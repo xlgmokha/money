@@ -1,6 +1,6 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Presentation.Presenters.billing.dto;
+using MoMoney.DTO;
 using MoMoney.Presentation.Views;
 using MoMoney.Tasks.application;
 using MoMoney.Tasks.infrastructure.core;

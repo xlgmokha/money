@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.keyboard;
 using MoMoney.Presentation.Resources;
 
@@ -48,6 +49,7 @@ namespace MoMoney.Presentation.Model.Menu
         {
             item.Enabled = can_be_clicked();
             task_tray_item.Enabled = can_be_clicked();
+            //this.log().debug("item: {0}, is enabled: {1}", item.Text, item.Enabled);
         }
     }
 }

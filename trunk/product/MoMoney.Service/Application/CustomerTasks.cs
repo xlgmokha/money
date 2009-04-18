@@ -1,6 +1,7 @@
 using System.Linq;
 using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting;
+using MoMoney.Domain.repositories;
 
 namespace MoMoney.Tasks.application
 {
@@ -11,21 +12,21 @@ namespace MoMoney.Tasks.application
 
     public class CustomerTasks : ICustomerTasks
     {
-        readonly IDatabaseGateway repository;
+        IAccountHolderRepository account_holders;
 
-        public CustomerTasks(IDatabaseGateway repository)
+        public CustomerTasks( IAccountHolderRepository account_holders)
         {
-            this.repository = repository;
+            this.account_holders = account_holders;
         }
 
         public IAccountHolder get_the_current_customer()
         {
-            var c = repository.all<IAccountHolder>().SingleOrDefault();
+            var c = account_holders.all().SingleOrDefault();
 
             if (null == c)
             {
                 var customer = new AccountHolder();
-                repository.save(customer);
+                account_holders.save(customer);
                 return customer;
             }
 

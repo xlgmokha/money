@@ -1,6 +1,7 @@
 using Castle.Core.Interceptor;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Infrastructure.eventing;
-//using MoMoney.Presentation.Model.messages;
+using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -23,12 +24,10 @@ namespace MoMoney.Infrastructure.transactions2
         {
             using (var unit_of_work = factory.create())
             {
+                this.log().debug("intercepting: {0}", invocation);
                 invocation.Proceed();
-                if (unit_of_work.is_dirty())
-                {
-                    unit_of_work.commit();
-                    //broker.publish<UnsavedChangesEvent>();
-                }
+                broker.publish<ICallback<IUnitOfWork>>(x => x.run(unit_of_work));
+                unit_of_work.commit();
             }
         }
     }

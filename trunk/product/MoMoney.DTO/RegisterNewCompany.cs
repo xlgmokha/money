@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Presenters.billing.dto
+namespace MoMoney.DTO
 {
     public class RegisterNewCompany
     {

@@ -73,12 +73,11 @@
     <Compile Include="Db40\AttachedSession.cs" />
     <Compile Include="Db40\ConnectionFactory.cs" />
     <Compile Include="Db40\DetachedSession.cs" />
-    <Compile Include="Db40\ObjectDatabaseGateway.cs" />
-    <Compile Include="Db40\ObjectDatabaseGatewaySpecs.cs" />
     <Compile Include="Db40\SessionContext.cs" />
     <Compile Include="Db40\SessionContextSpecs.cs" />
     <Compile Include="Db40\Spiking\db40_spike_specs.cs" />
     <Compile Include="IFile.cs" />
+    <Compile Include="Repositories\AccountHolderRepository.cs" />
     <Compile Include="Repositories\BillRepository.cs" />
     <Compile Include="Repositories\BillRepositorySpecs.cs" />
     <Compile Include="Repositories\CompanyRepository.cs" />
