@@ -1,7 +1,6 @@
 using System;
 using System.Threading;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Infrastructure.Threading
 {
@@ -20,11 +19,7 @@ namespace MoMoney.Infrastructure.Threading
 
         public void run(Action item)
         {
-            context.Post(x =>
-                             {
-                                 this.log().debug("posting action");
-                                 item();
-                             }, new object());
+            context.Post(x => item(), new object());
         }
 
         public void run(ICommand item)

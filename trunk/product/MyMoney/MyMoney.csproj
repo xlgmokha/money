@@ -216,6 +216,10 @@
     <Compile Include="boot\container\registration\wire_up_the_views_in_to_the.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
+      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
+      <Name>Gorilla.Commons.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
       <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
       <Name>Gorilla.Commons.Testing</Name>

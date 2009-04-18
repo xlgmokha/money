@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.DTO", "product\MoMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.Presentation", "product\MoMoney.Presentation\MoMoney.Presentation.csproj", "{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Infrastructure", "product\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj", "{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

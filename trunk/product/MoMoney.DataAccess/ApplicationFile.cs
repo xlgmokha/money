@@ -1,5 +1,4 @@
 using System.IO;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.Projects;
 
 namespace MoMoney.DataAccess
@@ -20,7 +19,6 @@ namespace MoMoney.DataAccess
 
         public void copy_to(string other_path)
         {
-            this.log().debug("copying {0} to {1}", path, other_path);
             File.Copy(path, other_path, true);
         }
 

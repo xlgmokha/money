@@ -14,7 +14,6 @@ namespace MoMoney.Domain.Core
         protected Entity()
         {
             id = Guid.NewGuid();
-            //UnitOfWork.For<T>().register(this as T);
         }
 
         public Guid id { get; private set; }

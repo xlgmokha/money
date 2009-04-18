@@ -1,12 +1,11 @@
 using Gorilla.Commons.Utility.Core;
-using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.repositories;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.interceptors;
 using MoMoney.Infrastructure.proxies;
+using MoMoney.Infrastructure.transactions2;
 using MoMoney.Tasks.application;
-using IUnitOfWorkInterceptor=MoMoney.Infrastructure.transactions2.IUnitOfWorkInterceptor;
 
 namespace MoMoney.boot.container.registration
 {

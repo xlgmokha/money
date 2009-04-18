@@ -89,19 +89,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cloning\BinarySerializer.cs" />
-    <Compile Include="Cloning\BinarySerializerSpecs.cs" />
-    <Compile Include="Cloning\ISerializer.cs" />
-    <Compile Include="Cloning\Prototype.cs" />
-    <Compile Include="Cloning\Serializer.cs" />
     <Compile Include="Container\Autofac\AutofacDependencyRegistry.cs" />
     <Compile Include="Container\Autofac\AutofacDependencyRegistryBuilder.cs" />
     <Compile Include="Container\Autofac\AutofacSpecs.cs" />
-    <Compile Include="Container\DependencyResolutionException.cs" />
     <Compile Include="Container\IDependencyRegistration.cs" />
-    <Compile Include="Container\IDependencyRegistry.cs" />
-    <Compile Include="Container\Resolve.cs" />
-    <Compile Include="Container\ResolveSpecs.cs" />
     <Compile Include="Container\Windsor\Configuration\ApplyLoggingInterceptor.cs" />
     <Compile Include="Container\Windsor\Configuration\ComponentRegistrationConfiguration.cs" />
     <Compile Include="Container\Windsor\Configuration\ConfigureComponentLifestyle.cs" />
@@ -111,13 +102,7 @@
     <Compile Include="Container\Windsor\WindsorContainerFactory.cs" />
     <Compile Include="Container\Windsor\WindsorDependencyRegistry.cs" />
     <Compile Include="Container\Windsor\WindsorDependencyRegistrySpecs.cs" />
-    <Compile Include="Debugging\Launch.cs" />
-    <Compile Include="Eventing\EventAggregator.cs" />
-    <Compile Include="Eventing\EventAggregatorSpecs.cs" />
-    <Compile Include="Eventing\IEvent.cs" />
-    <Compile Include="Eventing\IEventSubscriber.cs" />
     <Compile Include="Extensions\environment_extensions.cs" />
-    <Compile Include="Extensions\logging_extensions.cs" />
     <Compile Include="Extensions\ThreadingExtensions.cs" />
     <Compile Include="Interceptors\Lazy.cs" />
     <Compile Include="Interceptors\LazyLoadedInterceptor.cs" />
@@ -125,14 +110,8 @@
     <Compile Include="Interceptors\LoggingInterceptor.cs" />
     <Compile Include="Interceptors\RaiseEventInterceptor.cs" />
     <Compile Include="Interceptors\SynchronizedInterceptor.cs" />
-    <Compile Include="Logging\ConsoleLogging\ConsoleLogger.cs" />
-    <Compile Include="Logging\ILogFactory.cs" />
-    <Compile Include="Logging\ILoggable.cs" />
-    <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="Logging\Log.cs" />
     <Compile Include="Logging\Log4NetLogging\Log4NetLogFactory.cs" />
     <Compile Include="Logging\Log4NetLogging\Log4NetLogger.cs" />
-    <Compile Include="Logging\LogSpecs.cs" />
     <Compile Include="Proxies\IConstraintSelector.cs" />
     <Compile Include="Proxies\IInterceptorConstraint.cs" />
     <Compile Include="Proxies\IInterceptorConstraintFactory.cs" />
@@ -145,38 +124,15 @@
     <Compile Include="Proxies\Interceptors\RunOnBackgroundThreadInterceptor.cs" />
     <Compile Include="Proxies\Interceptors\RunOnBackgrounThreadInterceptorSpecs.cs" />
     <Compile Include="Proxies\Interceptors\SelectiveInterceptor.cs" />
+    <Compile Include="Proxies\IProxyBuilder.cs" />
     <Compile Include="Proxies\IProxyFactory.cs" />
     <Compile Include="Proxies\ProxyBuilder.cs" />
     <Compile Include="Proxies\ProxyBuilderSpecs.cs" />
     <Compile Include="Proxies\ProxyFactory.cs" />
     <Compile Include="Proxies\ProxyFactorySpecs.cs" />
-    <Compile Include="Reflection\ApplicationAssembly.cs" />
-    <Compile Include="Reflection\IAssembly.cs" />
-    <Compile Include="Registries\DefaultRegistry.cs" />
-    <Compile Include="Registries\DefaultRegistrySpecs.cs" />
-    <Compile Include="Threading\AsynchronousCommandProcessor.cs" />
-    <Compile Include="Threading\BackgroundThread.cs" />
-    <Compile Include="Threading\BackgroundThreadFactory.cs" />
-    <Compile Include="Threading\BackgroundThreadFactorySpecs.cs" />
-    <Compile Include="Threading\BackgroundThreadSpecs.cs" />
-    <Compile Include="Threading\CommandProcessor.cs" />
-    <Compile Include="Threading\CommandProcessorSpecs.cs" />
-    <Compile Include="Threading\ICommandProcessor.cs" />
-    <Compile Include="Threading\IntervalTimer.cs" />
-    <Compile Include="Threading\IntervalTimerSpecs.cs" />
-    <Compile Include="Threading\ISynchronizationContext.cs" />
-    <Compile Include="Threading\ITimerClient.cs" />
     <Compile Include="Threading\Juval\Synchronizer.cs" />
     <Compile Include="Threading\Juval\WorkItem.cs" />
     <Compile Include="Threading\RunOnUIThread.cs" />
-    <Compile Include="Threading\SynchronizationContextFactory.cs" />
-    <Compile Include="Threading\SynchronizedCommand.cs" />
-    <Compile Include="Threading\SynchronizedContext.cs" />
-    <Compile Include="Threading\TimerFactory.cs" />
-    <Compile Include="Threading\TimerFactorySpecs.cs" />
-    <Compile Include="Threading\WorkerThread.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Transactions2\ChangeTracker.cs" />
     <Compile Include="Transactions2\ChangeTrackerFactory.cs" />
     <Compile Include="Transactions2\ChangeTrackerFactorySpecs.cs" />
@@ -208,11 +164,12 @@
     <Compile Include="Transactions2\UnitOfWork.cs" />
     <Compile Include="Transactions2\UnitOfWorkFactory.cs" />
     <Compile Include="Transactions2\UnitOfWorkInterceptor.cs" />
-    <Compile Include="Transactions\IDatabaseGateway.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
+      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
+      <Name>Gorilla.Commons.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
       <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
       <Name>Gorilla.Commons.Testing</Name>
@@ -227,7 +184,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Cloning\" />
+    <Folder Include="Debugging\" />
+    <Folder Include="Eventing\" />
+    <Folder Include="Logging\ConsoleLogging\" />
     <Folder Include="Properties\" />
+    <Folder Include="Reflection\" />
+    <Folder Include="Registries\" />
+    <Folder Include="Transactions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

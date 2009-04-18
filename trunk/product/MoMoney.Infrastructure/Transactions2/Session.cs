@@ -8,7 +8,7 @@ namespace MoMoney.Infrastructure.transactions2
 {
     public interface ISession : IDisposable
     {
-        IEntity find<T>(Guid guid) where T : IEntity;
+        T find<T>(Guid guid) where T : IEntity;
         IEnumerable<T> all<T>() where T : IEntity;
         void save<T>(T entity) where T : IEntity;
         void delete<T>(T entity) where T : IEntity;
@@ -29,7 +29,7 @@ namespace MoMoney.Infrastructure.transactions2
             identity_maps = new Dictionary<Type, object>();
         }
 
-        public IEntity find<T>(Guid id) where T : IEntity
+        public T find<T>(Guid id) where T : IEntity
         {
             if (get_identity_map_for<T>().contains_an_item_for(id))
             {

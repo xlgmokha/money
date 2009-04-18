@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Infrastructure.eventing
 {
@@ -41,13 +40,11 @@ namespace MoMoney.Infrastructure.eventing
 
         public void publish<Event>(Event the_event_to_broadcast) where Event : IEvent
         {
-            this.log().debug("publishing: {0}", the_event_to_broadcast);
             process(() => subscribers.call_on_each<IEventSubscriber<Event>>(x => x.notify(the_event_to_broadcast)));
         }
 
         public void publish<T>(Expression<Action<T>> call) where T : class
         {
-            this.log().debug("publishing: {0}", call);
             process(() => subscribers.each(x => x.call_on(call.Compile())));
         }
 

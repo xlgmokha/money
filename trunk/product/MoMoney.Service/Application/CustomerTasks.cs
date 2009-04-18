@@ -1,5 +1,4 @@
 using System.Linq;
-using MoMoney.DataAccess.core;
 using MoMoney.Domain.accounting;
 using MoMoney.Domain.repositories;
 
@@ -14,7 +13,7 @@ namespace MoMoney.Tasks.application
     {
         IAccountHolderRepository account_holders;
 
-        public CustomerTasks( IAccountHolderRepository account_holders)
+        public CustomerTasks(IAccountHolderRepository account_holders)
         {
             this.account_holders = account_holders;
         }
