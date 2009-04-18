@@ -1,5 +1,6 @@
+using System;
 using Gorilla.Commons.Infrastructure.Container;
-using MoMoney.Domain.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -14,7 +15,7 @@ namespace MoMoney.Infrastructure.transactions2
             this.registry = registry;
         }
 
-        public IChangeTracker<T> create_for<T>() where T : IEntity
+        public IChangeTracker<T> create_for<T>() where T : IIdentifiable<Guid>
         {
             return new ChangeTracker<T>(registry.get_a<ITrackerEntryMapper<T>>(), statement_registry);
         }

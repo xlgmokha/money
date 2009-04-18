@@ -1,7 +1,7 @@
 using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Domain.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -18,18 +18,18 @@ namespace MoMoney.Infrastructure.transactions2
                             factory = the_dependency<IChangeTrackerFactory>();
                         };
 
-        protected static IStatementRegistry registry;
-        protected static IDatabase database;
-        protected static IChangeTrackerFactory factory;
+        static protected IStatementRegistry registry;
+        static protected IDatabase database;
+        static protected IChangeTrackerFactory factory;
     }
 
     public class when_creating_an_identity_map_for_a_specific_entity : behaves_like_transaction
     {
         it should_return_a_new_identity_map = () => result.should_not_be_null();
 
-        because b = () => { result = sut.create_for<IEntity>(); };
+        because b = () => { result = sut.create_for<IIdentifiable<Guid>>(); };
 
-        static IIdentityMap<Guid, IEntity> result;
+        static IIdentityMap<Guid, IIdentifiable<Guid>> result;
     }
 
     public class when_committing_a_transaction_and_an_item_in_the_identity_map_has_changed : behaves_like_transaction
@@ -84,7 +84,7 @@ namespace MoMoney.Infrastructure.transactions2
         static IChangeTracker<IMovie> tracker;
     }
 
-    public interface IMovie : IEntity
+    public interface IMovie : IIdentifiable<Guid>
     {
         string name { get; }
         void change_name_to(string name);

@@ -1,11 +1,11 @@
 using System;
+using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Domain.Core
 {
-    public interface IEntity
+    public interface IEntity : IIdentifiable<Guid>
     {
-        Guid id { get; }
     }
 
     [Serializable]

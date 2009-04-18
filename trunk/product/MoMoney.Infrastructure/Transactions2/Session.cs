@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
     public interface ISession : IDisposable
     {
-        T find<T>(Guid guid) where T : IEntity;
-        IEnumerable<T> all<T>() where T : IEntity;
-        void save<T>(T entity) where T : IEntity;
-        void delete<T>(T entity) where T : IEntity;
+        T find<T>(Guid guid) where T : IIdentifiable<Guid>;
+        IEnumerable<T> all<T>() where T : IIdentifiable<Guid>;
+        void save<T>(T entity) where T : IIdentifiable<Guid>;
+        void delete<T>(T entity) where T : IIdentifiable<Guid>;
         void flush();
         bool is_dirty();
     }
@@ -29,7 +29,7 @@ namespace MoMoney.Infrastructure.transactions2
             identity_maps = new Dictionary<Type, object>();
         }
 
-        public T find<T>(Guid id) where T : IEntity
+        public T find<T>(Guid id) where T : IIdentifiable<Guid>
         {
             if (get_identity_map_for<T>().contains_an_item_for(id))
             {
@@ -41,7 +41,7 @@ namespace MoMoney.Infrastructure.transactions2
             return entity;
         }
 
-        public IEnumerable<T> all<T>() where T : IEntity
+        public IEnumerable<T> all<T>() where T : IIdentifiable<Guid>
         {
             database
                 .fetch_all<T>()
@@ -50,12 +50,12 @@ namespace MoMoney.Infrastructure.transactions2
             return get_identity_map_for<T>().all();
         }
 
-        public void save<T>(T entity) where T : IEntity
+        public void save<T>(T entity) where T : IIdentifiable<Guid>
         {
             get_identity_map_for<T>().add(entity.id, entity);
         }
 
-        public void delete<T>(T entity) where T : IEntity
+        public void delete<T>(T entity) where T : IIdentifiable<Guid>
         {
             get_identity_map_for<T>().evict(entity.id);
         }
@@ -76,14 +76,14 @@ namespace MoMoney.Infrastructure.transactions2
             if (null != transaction) transaction.rollback_changes();
         }
 
-        IIdentityMap<Guid, T> get_identity_map_for<T>() where T : IEntity
+        IIdentityMap<Guid, T> get_identity_map_for<T>() where T : IIdentifiable<Guid>
         {
             return identity_maps.ContainsKey(typeof (T))
                        ? identity_maps[typeof (T)].downcast_to<IIdentityMap<Guid, T>>()
                        : create_map_for<T>();
         }
 
-        IIdentityMap<Guid, T> create_map_for<T>() where T : IEntity
+        IIdentityMap<Guid, T> create_map_for<T>() where T : IIdentifiable<Guid>
         {
             var identity_map = transaction.create_for<T>();
             identity_maps.Add(typeof (T), identity_map);

@@ -73,6 +73,7 @@
     <Compile Include="Core\IConfiguration.cs" />
     <Compile Include="Core\IDisposableCommand.cs" />
     <Compile Include="Core\IFactory.cs" />
+    <Compile Include="Core\IIdentifiable.cs" />
     <Compile Include="Core\IMapper.cs" />
     <Compile Include="Core\IParameterizedCommand.cs" />
     <Compile Include="Core\IQuery.cs" />
@@ -95,9 +96,9 @@
     <Compile Include="Extensions\EnumerableExtensionsSpecs.cs" />
     <Compile Include="Extensions\FuncExtensions.cs" />
     <Compile Include="Extensions\MappingExtensions.cs" />
-    <Compile Include="Extensions\mapping_extensions_specs.cs" />
+    <Compile Include="Extensions\MappingExtensionsSpecs.cs" />
     <Compile Include="Extensions\NumericConversions.cs" />
-    <Compile Include="Extensions\numeric_conversions_specs.cs" />
+    <Compile Include="Extensions\NumericConversionsSpecs.cs" />
     <Compile Include="Extensions\RegistryExtensions.cs" />
     <Compile Include="Extensions\SpecificationExtensionsSpecs.cs" />
     <Compile Include="Extensions\SpecificationExtensions.cs" />

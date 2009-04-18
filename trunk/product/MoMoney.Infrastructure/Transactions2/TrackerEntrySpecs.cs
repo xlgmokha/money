@@ -1,6 +1,8 @@
+using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Domain.Core;
+using Gorilla.Commons.Utility.Core;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -49,12 +51,21 @@ namespace MoMoney.Infrastructure.transactions2
 
         because b = () => { result = sut.has_changes(); };
 
+        context c = () =>
+                        {
+                            var id = Guid.NewGuid();
+                            original = new Pillow("green", id);
+                            current = new Pillow(null, id);
+                        };
+
         public override ITrackerEntry<Pillow> create_sut()
         {
-            return new TrackerEntry<Pillow>(new Pillow("green"), new Pillow(null));
+            return new TrackerEntry<Pillow>(original, current);
         }
 
         static bool result;
+        static Pillow original;
+        static Pillow current;
     }
 
     public class when_the_original_instance_has_the_same_value_as_the_current_instance :
@@ -64,21 +75,62 @@ namespace MoMoney.Infrastructure.transactions2
 
         because b = () => { result = sut.has_changes(); };
 
+        context c = () =>
+                        {
+                            var id = Guid.NewGuid();
+                            original = new Pillow("green", id);
+                            current = new Pillow("green", id);
+                        };
+
         public override ITrackerEntry<Pillow> create_sut()
         {
-            return new TrackerEntry<Pillow>(new Pillow("green"), new Pillow("green"));
+            return new TrackerEntry<Pillow>(original, current);
         }
 
         static bool result;
+        static Pillow original;
+        static Pillow current;
     }
 
-    public class Pillow : Entity<Pillow>
+    public class Pillow : IIdentifiable<Guid>
     {
         readonly string color;
 
-        public Pillow(string color)
+        public Pillow(string color) : this(color, Guid.NewGuid())
+        {
+        }
+
+        public Pillow(string color, Guid id)
         {
             this.color = color;
+            this.id = id;
+        }
+
+        public Guid id { get; set; }
+
+        public bool Equals(Pillow other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return other.id.Equals(id);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != typeof (Pillow)) return false;
+            return Equals((Pillow) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return id.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return "{0} id: {1}".formatted_using(base.ToString(), id);
         }
     }
 }

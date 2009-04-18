@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Domain.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -18,8 +18,8 @@ namespace MoMoney.Infrastructure.transactions2
                             database = the_dependency<IDatabase>();
                         };
 
-        protected static ITransaction transaction;
-        protected static IDatabase database;
+        static protected ITransaction transaction;
+        static protected IDatabase database;
     }
 
     public class when_saving_a_transient_item_to_a_session : behaves_like_session
@@ -137,7 +137,7 @@ namespace MoMoney.Infrastructure.transactions2
         because b = () => { result = sut.find<ITestEntity>(id); };
 
         static Guid id;
-        static IEntity result;
+        static IIdentifiable<Guid> result;
         static ITestEntity correct_item;
         static ITestEntity wrong_item;
         static IIdentityMap<Guid, ITestEntity> map;
@@ -171,7 +171,7 @@ namespace MoMoney.Infrastructure.transactions2
         static ITestEntity entity;
     }
 
-    public interface ITestEntity : IEntity
+    public interface ITestEntity : IIdentifiable<Guid>
     {
     }
 }

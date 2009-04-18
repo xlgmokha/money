@@ -1,12 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Gorilla.Commons.Infrastructure.Logging;
+using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
-    public class ChangeTracker<T> : IChangeTracker<T> where T : IEntity
+    public class ChangeTracker<T> : IChangeTracker<T> where T : IIdentifiable<Guid>
     {
         readonly ITrackerEntryMapper<T> mapper;
         readonly IStatementRegistry registry;

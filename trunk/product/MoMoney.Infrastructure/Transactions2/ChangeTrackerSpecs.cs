@@ -1,6 +1,7 @@
+using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Domain.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -8,17 +9,18 @@ namespace MoMoney.Infrastructure.transactions2
     {
     }
 
-    [Concern(typeof (ChangeTracker<IEntity>))]
-    public abstract class behaves_like_change_tracker : concerns_for<IChangeTracker<IEntity>, ChangeTracker<IEntity>>
+    [Concern(typeof (ChangeTracker<IIdentifiable<Guid>>))]
+    public abstract class behaves_like_change_tracker :
+        concerns_for<IChangeTracker<IIdentifiable<Guid>>, ChangeTracker<IIdentifiable<Guid>>>
     {
         context c = () =>
                         {
-                            mapper = the_dependency<ITrackerEntryMapper<IEntity>>();
+                            mapper = the_dependency<ITrackerEntryMapper<IIdentifiable<Guid>>>();
                             registry = the_dependency<IStatementRegistry>();
                         };
 
-        protected static ITrackerEntryMapper<IEntity> mapper;
-        protected static IStatementRegistry registry;
+        static protected ITrackerEntryMapper<IIdentifiable<Guid>> mapper;
+        static protected IStatementRegistry registry;
     }
 
     public class when_commit_that_changes_made_to_an_item : behaves_like_change_tracker
@@ -27,10 +29,10 @@ namespace MoMoney.Infrastructure.transactions2
 
         context c = () =>
                         {
-                            item = an<IEntity>();
+                            item = an<IIdentifiable<Guid>>();
                             statement = an<IStatement>();
                             database = an<IDatabase>();
-                            var entry = an<ITrackerEntry<IEntity>>();
+                            var entry = an<ITrackerEntry<IIdentifiable<Guid>>>();
 
                             when_the(mapper).is_told_to(x => x.map_from(item)).it_will_return(entry);
                             when_the(entry).is_told_to(x => x.has_changes()).it_will_return(true);
@@ -44,7 +46,7 @@ namespace MoMoney.Infrastructure.transactions2
                             sut.commit_to(database);
                         };
 
-        static IEntity item;
+        static IIdentifiable<Guid> item;
         static IDatabase database;
         static IStatement statement;
     }
@@ -55,8 +57,8 @@ namespace MoMoney.Infrastructure.transactions2
 
         context c = () =>
                         {
-                            item = an<IEntity>();
-                            var registration = an<ITrackerEntry<IEntity>>();
+                            item = an<IIdentifiable<Guid>>();
+                            var registration = an<ITrackerEntry<IIdentifiable<Guid>>>();
 
                             when_the(mapper).is_told_to(x => x.map_from(item)).it_will_return(registration);
                             when_the(registration).is_told_to(x => x.has_changes()).it_will_return(true);
@@ -70,7 +72,7 @@ namespace MoMoney.Infrastructure.transactions2
                         };
 
         static bool result;
-        static IEntity item;
+        static IIdentifiable<Guid> item;
     }
 
     public class when_checking_if_there_are_changes_and_there_are_not : behaves_like_change_tracker
@@ -79,8 +81,8 @@ namespace MoMoney.Infrastructure.transactions2
 
         context c = () =>
                         {
-                            item = an<IEntity>();
-                            var entry = an<ITrackerEntry<IEntity>>();
+                            item = an<IIdentifiable<Guid>>();
+                            var entry = an<ITrackerEntry<IIdentifiable<Guid>>>();
 
                             when_the(mapper).is_told_to(x => x.map_from(item)).it_will_return(entry);
                             when_the(entry).is_told_to(x => x.has_changes()).it_will_return(false);
@@ -93,6 +95,6 @@ namespace MoMoney.Infrastructure.transactions2
                         };
 
         static bool result;
-        static IEntity item;
+        static IIdentifiable<Guid> item;
     }
 }

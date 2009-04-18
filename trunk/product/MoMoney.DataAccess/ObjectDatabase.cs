@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Gorilla.Commons.Infrastructure.FileSystem;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
 using MoMoney.Infrastructure.transactions2;
 
@@ -18,7 +20,7 @@ namespace MoMoney.DataAccess
             path = new ApplicationFile(Path.GetTempFileName());
         }
 
-        public IEnumerable<T> fetch_all<T>() where T : IEntity
+        public IEnumerable<T> fetch_all<T>() where T : IIdentifiable<Guid>
         {
             using (var connection = factory.open_connection_to(path_to_database()))
             {

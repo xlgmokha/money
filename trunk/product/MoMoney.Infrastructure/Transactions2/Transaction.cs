@@ -1,14 +1,14 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
     public interface ITransaction
     {
-        IIdentityMap<Guid, T> create_for<T>() where T : IEntity;
+        IIdentityMap<Guid, T> create_for<T>() where T : IIdentifiable<Guid>;
         void commit_changes();
         void rollback_changes();
         bool is_dirty();
@@ -27,7 +27,7 @@ namespace MoMoney.Infrastructure.transactions2
             change_trackers = new Dictionary<Type, IChangeTracker>();
         }
 
-        public IIdentityMap<Guid, T> create_for<T>() where T : IEntity
+        public IIdentityMap<Guid, T> create_for<T>() where T : IIdentifiable<Guid>
         {
             return new IdentityMapProxy<Guid, T>(get_change_tracker_for<T>(), new IdentityMap<Guid, T>());
         }
@@ -48,7 +48,7 @@ namespace MoMoney.Infrastructure.transactions2
             return change_trackers.Values.Count(x => x.is_dirty()) > 0;
         }
 
-        IChangeTracker<T> get_change_tracker_for<T>() where T : IEntity
+        IChangeTracker<T> get_change_tracker_for<T>() where T : IIdentifiable<Guid>
         {
             if (!change_trackers.ContainsKey(typeof (T))) change_trackers.Add(typeof (T), factory.create_for<T>());
             return change_trackers[typeof (T)].downcast_to<IChangeTracker<T>>();

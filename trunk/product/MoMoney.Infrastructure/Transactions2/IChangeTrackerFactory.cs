@@ -1,9 +1,10 @@
-using MoMoney.Domain.Core;
+using System;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
     public interface IChangeTrackerFactory
     {
-        IChangeTracker<T> create_for<T>() where T : IEntity;
+        IChangeTracker<T> create_for<T>() where T : IIdentifiable<Guid>;
     }
 }

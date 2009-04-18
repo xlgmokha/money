@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
-using MoMoney.Domain.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
-    public class IdentityMapProxy<Key, Value> : IIdentityMap<Key, Value> where Value : IEntity
+    public class IdentityMapProxy<Key, Value> : IIdentityMap<Key, Value> where Value : IIdentifiable<Guid>
     {
         readonly IIdentityMap<Key, Value> real_map;
         readonly IChangeTracker<Value> change_tracker;

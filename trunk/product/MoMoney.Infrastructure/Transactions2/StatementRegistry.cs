@@ -1,22 +1,23 @@
+using System;
 using Gorilla.Commons.Infrastructure.Logging;
-using MoMoney.Domain.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
     public class StatementRegistry : IStatementRegistry
     {
-        public IStatement prepare_delete_statement_for<T>(T entity) where T : IEntity
+        public IStatement prepare_delete_statement_for<T>(T entity) where T : IIdentifiable<Guid>
         {
             return new DeletionStatement<T>(entity);
         }
 
-        public IStatement prepare_command_for<T>(T entity) where T : IEntity
+        public IStatement prepare_command_for<T>(T entity) where T : IIdentifiable<Guid>
         {
             return new SaveOrUpdateStatement<T>(entity);
         }
     }
 
-    public class SaveOrUpdateStatement<T> : IStatement where T : IEntity
+    public class SaveOrUpdateStatement<T> : IStatement where T : IIdentifiable<Guid>
     {
         readonly T entity;
 

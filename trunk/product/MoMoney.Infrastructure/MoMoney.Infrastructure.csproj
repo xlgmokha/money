@@ -178,10 +178,6 @@
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>Gorilla.Commons.Utility</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MoMoney.Domain\MoMoney.Domain.csproj">
-      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
-      <Name>MoMoney.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

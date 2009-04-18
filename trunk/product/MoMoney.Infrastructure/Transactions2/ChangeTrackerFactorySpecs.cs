@@ -1,6 +1,7 @@
+using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Domain.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -12,8 +13,8 @@ namespace MoMoney.Infrastructure.transactions2
     {
         it should_return_a_new_tracker = () => result.should_not_be_null();
 
-        because b = () => { result = sut.create_for<IEntity>(); };
+        because b = () => { result = sut.create_for<IIdentifiable<Guid>>(); };
 
-        static IChangeTracker<IEntity> result;
+        static IChangeTracker<IIdentifiable<Guid>> result;
     }
 }

@@ -1,5 +1,5 @@
 using System;
-using MoMoney.Domain.Core;
+using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Infrastructure.transactions2
 {
@@ -9,7 +9,7 @@ namespace MoMoney.Infrastructure.transactions2
         void commit_to(IDatabase database);
     }
 
-    public interface IChangeTracker<T> : IChangeTracker where T : IEntity
+    public interface IChangeTracker<T> : IChangeTracker where T : IIdentifiable<Guid>
     {
         void register(T value);
         void delete(T entity);

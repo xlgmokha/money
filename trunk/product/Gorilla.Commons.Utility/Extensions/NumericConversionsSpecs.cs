@@ -1,8 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Extensions;
 
-namespace MoMoney.Utility.Extensions
+namespace Gorilla.Commons.Utility.Extensions
 {
     public class when_converting_a_valid_string_to_a_long : concerns
     {
