@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Model.Projects
+namespace Gorilla.Commons.Infrastructure.FileSystem
 {
     public interface IFile
     {

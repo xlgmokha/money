@@ -69,28 +69,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationFile.cs" />
-    <Compile Include="Db40\AttachedSession.cs" />
-    <Compile Include="Db40\ConnectionFactory.cs" />
-    <Compile Include="Db40\DetachedSession.cs" />
-    <Compile Include="Db40\SessionContext.cs" />
-    <Compile Include="Db40\SessionContextSpecs.cs" />
     <Compile Include="Db40\Spiking\db40_spike_specs.cs" />
-    <Compile Include="IFile.cs" />
     <Compile Include="Repositories\AccountHolderRepository.cs" />
     <Compile Include="Repositories\BillRepository.cs" />
-    <Compile Include="Repositories\BillRepositorySpecs.cs" />
     <Compile Include="Repositories\CompanyRepository.cs" />
     <Compile Include="Repositories\IncomeRepository.cs" />
-    <Compile Include="Testing\behaves_like_a_repository.cs" />
-    <Compile Include="Testing\RunInRealContainer.cs" />
-    <Compile Include="Transactions2\ConfigureDatabaseStep.cs" />
-    <Compile Include="Transactions2\ConnectionFactory.cs" />
-    <Compile Include="Transactions2\Database.cs" />
-    <Compile Include="Transactions2\DatabaseConnection.cs" />
-    <Compile Include="Transactions2\IDatabaseConfiguration.cs" />
+    <Compile Include="Db40\ConfigureDatabaseStep.cs" />
+    <Compile Include="Db40\ConnectionFactory.cs" />
+    <Compile Include="ObjectDatabase.cs" />
+    <Compile Include="Db40\DatabaseConnection.cs" />
+    <Compile Include="IConnectionFactory.cs" />
+    <Compile Include="IDatabaseConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
+      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
+      <Name>Gorilla.Commons.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
       <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
       <Name>Gorilla.Commons.Testing</Name>
@@ -109,7 +104,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

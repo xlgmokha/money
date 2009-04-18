@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Db4objects.Db4o;
+using MoMoney.Infrastructure.transactions2;
 
-namespace MoMoney.Infrastructure.transactions2
+namespace MoMoney.DataAccess.Db40
 {
     public class DatabaseConnection : IDatabaseConnection
     {

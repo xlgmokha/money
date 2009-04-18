@@ -1,7 +1,7 @@
 using Db4objects.Db4o.Config;
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Infrastructure.transactions2
+namespace MoMoney.DataAccess.Db40
 {
     public interface IConfigureDatabaseStep : IConfiguration<IConfiguration>
     {

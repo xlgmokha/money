@@ -1,7 +1,6 @@
 using System.IO;
-using MoMoney.Presentation.Model.Projects;
 
-namespace MoMoney.DataAccess
+namespace Gorilla.Commons.Infrastructure.FileSystem
 {
     public class ApplicationFile : IFile
     {

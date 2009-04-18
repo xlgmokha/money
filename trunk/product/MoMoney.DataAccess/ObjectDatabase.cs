@@ -1,19 +1,18 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using MoMoney.DataAccess;
+using Gorilla.Commons.Infrastructure.FileSystem;
 using MoMoney.Domain.Core;
-using MoMoney.Presentation.Model.Projects;
+using MoMoney.Infrastructure.transactions2;
 
-namespace MoMoney.Infrastructure.transactions2
+namespace MoMoney.DataAccess
 {
-    public class Database : IDatabase, IDatabaseConfiguration
+    public class ObjectDatabase : IDatabase, IDatabaseConfiguration
     {
         readonly IConnectionFactory factory;
         IFile path;
 
-        public Database(IConnectionFactory factory)
+        public ObjectDatabase(IConnectionFactory factory)
         {
             this.factory = factory;
             path = new ApplicationFile(Path.GetTempFileName());
@@ -51,7 +50,6 @@ namespace MoMoney.Infrastructure.transactions2
         {
             path.delete();
             path = new ApplicationFile(Path.GetTempFileName());
-            
         }
 
         IFile path_to_database()

@@ -1,6 +1,6 @@
-using MoMoney.Presentation.Model.Projects;
+using Gorilla.Commons.Infrastructure.FileSystem;
 
-namespace MoMoney.Infrastructure.transactions2
+namespace MoMoney.DataAccess
 {
     public interface IDatabaseConfiguration
     {

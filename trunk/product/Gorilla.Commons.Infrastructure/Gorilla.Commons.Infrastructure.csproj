@@ -75,6 +75,8 @@
     <Compile Include="Eventing\EventAggregatorSpecs.cs" />
     <Compile Include="Eventing\IEvent.cs" />
     <Compile Include="Eventing\IEventSubscriber.cs" />
+    <Compile Include="FileSystem\ApplicationFile.cs" />
+    <Compile Include="FileSystem\IFile.cs" />
     <Compile Include="Logging\Console\ConsoleLogger.cs" />
     <Compile Include="Logging\ILogFactory.cs" />
     <Compile Include="Logging\ILoggable.cs" />
