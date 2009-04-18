@@ -1,6 +1,5 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Modules.Core;
 using MoMoney.Presentation.Model.Projects;
 
 namespace MoMoney.Presentation.Model.Menu.File.Commands
@@ -11,12 +10,10 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         context c = () =>
                         {
                             current_project = the_dependency<IProjectController>();
-                            command = the_dependency<ILoadPresentationModulesCommand>();
                             save_changes_command = the_dependency<ISaveChangesCommand>();
                         };
 
         protected static IProjectController current_project;
-        protected static ILoadPresentationModulesCommand command;
         protected static ISaveChangesCommand save_changes_command;
     }
 

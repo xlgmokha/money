@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MoMoney.Presentation</RootNamespace>
+    <AssemblyName>MoMoney.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveReports.Viewer3, Version=5.2.1013.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\active.reports\ActiveReports.Viewer3.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveReports3, Version=5.2.1013.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\active.reports\ActiveReports3.dll</HintPath>
+    </Reference>
+    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=3.0.8.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\component.factory\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition, Version=2009.1.23.0, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\managed.extensibility.framework\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.3392.19652, Culture=neutral, PublicKeyToken=b602bcfb76b4e90d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\dock.panel.suite\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="XPExplorerBar, Version=3.3.0.0, Culture=neutral, PublicKeyToken=26272737b5f33015">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\xp.explorer.bar\XPExplorerBar.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ApplicationController.cs" />
+    <Compile Include="Core\ApplicationControllerSpecs.cs" />
+    <Compile Include="Core\ApplicationEnvironment.cs" />
+    <Compile Include="Core\ContentPresenter.cs" />
+    <Compile Include="Core\IContentPresenter.cs" />
+    <Compile Include="Core\IPresenter.cs" />
+    <Compile Include="Core\PresenterRegistry.cs" />
+    <Compile Include="Databindings\binding_selector.cs" />
+    <Compile Include="Databindings\binding_selector_specs.cs" />
+    <Compile Include="Databindings\ComboBoxDataBindingSpecs.cs" />
+    <Compile Include="Databindings\combo_box_property_binding.cs" />
+    <Compile Include="Databindings\control_binding_extensions.cs" />
+    <Compile Include="Databindings\Create.cs" />
+    <Compile Include="Databindings\date_time_picker_property_binding.cs" />
+    <Compile Include="Databindings\date_time_property_binding_specs.cs" />
+    <Compile Include="Databindings\IPropertyBinding.cs" />
+    <Compile Include="Databindings\ListboxExtensions.cs" />
+    <Compile Include="Databindings\property_binder.cs" />
+    <Compile Include="Databindings\property_binder_specs.cs" />
+    <Compile Include="Databindings\property_inspector.cs" />
+    <Compile Include="Databindings\property_inspector_factory.cs" />
+    <Compile Include="Databindings\property_inspector_specs.cs" />
+    <Compile Include="Databindings\TextBoxDataBindingSpecs.cs" />
+    <Compile Include="Databindings\text_property_binding.cs" />
+    <Compile Include="IModule.cs" />
+    <Compile Include="Model\FileSystem\folder.cs" />
+    <Compile Include="Model\Interaction\INotification.cs" />
+    <Compile Include="Model\Interaction\notification_message.cs" />
+    <Compile Include="Model\Keyboard\ShortcutKey.cs" />
+    <Compile Include="Model\Keyboard\ShortcutKeys.cs" />
+    <Compile Include="Model\Menu\create.cs" />
+    <Compile Include="Model\Menu\File\CloseProjectCommand.cs" />
+    <Compile Include="Model\Menu\File\CloseWindowCommand.cs" />
+    <Compile Include="Model\Menu\File\ExitCommand.cs" />
+    <Compile Include="Model\Menu\File\ExitCommandSpecs.cs" />
+    <Compile Include="Model\Menu\File\FileMenu.cs" />
+    <Compile Include="Model\Menu\File\NewCommand.cs" />
+    <Compile Include="Model\Menu\File\NewCommandSpecs.cs" />
+    <Compile Include="Model\Menu\File\OpenCommand.cs" />
+    <Compile Include="Model\Menu\File\OpenCommandSpecs.cs" />
+    <Compile Include="Model\Menu\File\SaveAsCommand.cs" />
+    <Compile Include="Model\Menu\File\SaveAsCommandSpecs.cs" />
+    <Compile Include="Model\Menu\File\SaveChangesCommand.cs" />
+    <Compile Include="Model\Menu\File\SaveCommand.cs" />
+    <Compile Include="Model\Menu\File\SaveCommandSpecs.cs" />
+    <Compile Include="Model\Menu\Help\display_information_about_the_application.cs" />
+    <Compile Include="Model\Menu\Help\HelpMenu.cs" />
+    <Compile Include="Model\Menu\ISubMenu.cs" />
+    <Compile Include="Model\Menu\IToolbarButton.cs" />
+    <Compile Include="Model\Menu\IToolbarItemBuilder.cs" />
+    <Compile Include="Model\Menu\MenuItem.cs" />
+    <Compile Include="Model\Menu\MenuItemBuilder.cs" />
+    <Compile Include="Model\Menu\MenuItemSeparator.cs" />
+    <Compile Include="Model\Menu\SubMenu.cs" />
+    <Compile Include="Model\Menu\SubMenuRegistry.cs" />
+    <Compile Include="Model\Menu\ToolBarItemBuilder.cs" />
+    <Compile Include="Model\Menu\Window\WindowMenu.cs" />
+    <Compile Include="Model\Messages\closing_project_event.cs" />
+    <Compile Include="Model\Messages\closing_the_application.cs" />
+    <Compile Include="Model\Messages\new_project_opened.cs" />
+    <Compile Include="Model\Messages\saved_changes_event.cs" />
+    <Compile Include="Model\Messages\UnhandledErrorOccurred.cs" />
+    <Compile Include="Model\Messages\unsaved_changes_event.cs" />
+    <Compile Include="Model\Navigation\AddNewIncomeBranch.cs" />
+    <Compile Include="Model\Navigation\add_bill_payment_branch.cs" />
+    <Compile Include="Model\Navigation\add_new_bill_branch.cs" />
+    <Compile Include="Model\Navigation\IBranchVisitor.cs" />
+    <Compile Include="Model\Navigation\NavigationTreeVisitor.cs" />
+    <Compile Include="Model\Navigation\navigation_tree_visitor_specs.cs" />
+    <Compile Include="Model\Navigation\TreeBranch.cs" />
+    <Compile Include="Model\Navigation\TreeViewToRootNodeMapper.cs" />
+    <Compile Include="Model\Navigation\tree_branch_specs.cs" />
+    <Compile Include="Model\Navigation\view_all_bills_branch.cs" />
+    <Compile Include="Model\Navigation\view_all_bills_report_branch.cs" />
+    <Compile Include="Model\Projects\file_not_specified_exception.cs" />
+    <Compile Include="Model\Projects\IProject.cs" />
+    <Compile Include="Model\Projects\IProjectController.cs" />
+    <Compile Include="Model\Projects\ProjectController.cs" />
+    <Compile Include="Model\Projects\ProjectControllerSpecs.cs" />
+    <Compile Include="Model\Reporting\IReport.cs" />
+    <Compile Include="Model\Reporting\report_binding_extensions.cs" />
+    <Compile Include="Model\Reporting\report_binding_extensions_specs.cs" />
+    <Compile Include="Presenters\AddCompanyPresenter.cs" />
+    <Compile Include="Presenters\AddCompanyPresenterSpecs.cs" />
+    <Compile Include="Presenters\Billing\AddBillPaymentPresenter.cs" />
+    <Compile Include="Presenters\Billing\ViewAllBillsPresenter.cs" />
+    <Compile Include="Presenters\Commands\display_the_splash_screen.cs" />
+    <Compile Include="Presenters\Commands\RestartCommand.cs" />
+    <Compile Include="Presenters\Commands\RunPresenterCommand.cs" />
+    <Compile Include="Presenters\Commands\RunThe.cs" />
+    <Compile Include="Presenters\Commands\run_the_specs.cs" />
+    <Compile Include="Presenters\Excel\Cell.cs" />
+    <Compile Include="Presenters\Excel\change_font_size.cs" />
+    <Compile Include="Presenters\Excel\composite_cell_visitor.cs" />
+    <Compile Include="Presenters\Excel\constrained_cell_visitor.cs" />
+    <Compile Include="Presenters\Excel\excel_usage.cs" />
+    <Compile Include="Presenters\Excel\format_back_color.cs" />
+    <Compile Include="Presenters\Excel\ICell.cs" />
+    <Compile Include="Presenters\Excel\ICellInterior.cs" />
+    <Compile Include="Presenters\Excel\ICellVisitor.cs" />
+    <Compile Include="Presenters\Income\AddNewIncomePresenter.cs" />
+    <Compile Include="Presenters\Income\AddNewIncomePresenterSpecs.cs" />
+    <Compile Include="Presenters\Income\ViewIncomeHistoryPresenter.cs" />
+    <Compile Include="Presenters\Menu\AboutTheApplicationPresenter.cs" />
+    <Compile Include="Presenters\Menu\ApplicationMenuPresenter.cs" />
+    <Compile Include="Presenters\Navigation\AddBillingTaskPane.cs" />
+    <Compile Include="Presenters\Navigation\AddCompanyTaskPane.cs" />
+    <Compile Include="Presenters\Navigation\AddIncomeTaskPane.cs" />
+    <Compile Include="Presenters\Navigation\AddReportingTaskPane.cs" />
+    <Compile Include="Presenters\Navigation\Build.cs" />
+    <Compile Include="Presenters\Navigation\ExpandoBuilder.cs" />
+    <Compile Include="Presenters\Navigation\ExpandoItemBuilder.cs" />
+    <Compile Include="Presenters\Navigation\IActionTaskPaneFactory.cs" />
+    <Compile Include="Presenters\Navigation\MainMenuPresenter.cs" />
+    <Compile Include="Presenters\Navigation\NavigationPresenter.cs" />
+    <Compile Include="Presenters\Navigation\NavigationPresenterSpecs.cs" />
+    <Compile Include="Presenters\Reporting\ReportPresenter.cs" />
+    <Compile Include="Presenters\Shell\ApplicationShellPresenter.cs" />
+    <Compile Include="Presenters\Shell\GettingStartedPresenter.cs" />
+    <Compile Include="Presenters\Shell\GettingStartedPresenterSpecs.cs" />
+    <Compile Include="Presenters\Shell\LogFilePresenter.cs" />
+    <Compile Include="Presenters\Shell\LogFileViewPresenterSpecs.cs" />
+    <Compile Include="Presenters\Shell\NotificationIconPresenter.cs" />
+    <Compile Include="Presenters\Shell\NotificationIconPresenterSpecs.cs" />
+    <Compile Include="Presenters\Shell\StatusBarPresenter.cs" />
+    <Compile Include="Presenters\Shell\StatusBarPresenterSpecs.cs" />
+    <Compile Include="Presenters\Shell\TaskTrayPresenter.cs" />
+    <Compile Include="Presenters\Shell\TitleBarPresenter.cs" />
+    <Compile Include="Presenters\Shell\TitleBarPresenterSpecs.cs" />
+    <Compile Include="Presenters\Shell\ToolBarPresenter.cs" />
+    <Compile Include="Presenters\Shell\UnhandledErrorPresenter.cs" />
+    <Compile Include="Presenters\Shell\UnhandledErrorPresenterSpecs.cs" />
+    <Compile Include="Presenters\Startup\display_the_splash_screen.cs" />
+    <Compile Include="Presenters\Startup\hide_the_splash_screen.cs" />
+    <Compile Include="Presenters\Startup\ISplashScreenState.cs" />
+    <Compile Include="Presenters\Startup\SplashScreenPresenter.cs" />
+    <Compile Include="Presenters\Startup\SplashScreenPresenterSpecs.cs" />
+    <Compile Include="Presenters\Updates\CheckForUpdatesPresenter.cs" />
+    <Compile Include="Presenters\Updates\CheckForUpdatesPresenterSpecs.cs" />
+    <Compile Include="Resources\ApplicationIcon.cs" />
+    <Compile Include="Resources\ApplicationIcons.cs" />
+    <Compile Include="Resources\ApplicationImage.cs" />
+    <Compile Include="Resources\ApplicationImages.cs" />
+    <Compile Include="Resources\HybridIcon.cs" />
+    <Compile Include="Views\AddCompanyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddCompanyView.Designer.cs">
+      <DependentUpon>AddCompanyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Billing\AddBillPaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Billing\AddBillPaymentView.Designer.cs">
+      <DependentUpon>AddBillPaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Billing\IAddBillPaymentView.cs" />
+    <Compile Include="Views\Billing\IViewAllBills.cs" />
+    <Compile Include="Views\Billing\ViewAllBills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Billing\ViewAllBills.Designer.cs">
+      <DependentUpon>ViewAllBills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Billing\view_all_bills_report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Billing\view_all_bills_report.Designer.cs">
+      <DependentUpon>view_all_bills_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Core\ApplicationDockedWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Core\ApplicationDockedWindow.Designer.cs">
+      <DependentUpon>ApplicationDockedWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Core\ApplicationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Core\ApplicationWindow.Designer.cs">
+      <DependentUpon>ApplicationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Core\ControlAction.cs" />
+    <Compile Include="Views\Core\ICommandDialog.cs" />
+    <Compile Include="Views\Core\IDockedContentView.cs" />
+    <Compile Include="Views\Core\IView.cs" />
+    <Compile Include="Views\Core\IWindowEvents.cs" />
+    <Compile Include="Views\Dialogs\ISaveChangesView.cs" />
+    <Compile Include="Views\Dialogs\SaveChangesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\SaveChangesView.Designer.cs">
+      <DependentUpon>SaveChangesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\SaveChangesViewSpecs.cs" />
+    <Compile Include="Views\Dialogs\SelectFileToOpenDialog.cs" />
+    <Compile Include="Views\Dialogs\SelectFileToSaveToDialog.cs" />
+    <Compile Include="Views\Helpers\BindableListFactory.cs" />
+    <Compile Include="Views\Helpers\ControlAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Helpers\Events.cs" />
+    <Compile Include="Views\Helpers\EventTrigger.cs" />
+    <Compile Include="Views\Helpers\EventTriggerExtensions.cs" />
+    <Compile Include="Views\Helpers\EventTriggerSpecs.cs" />
+    <Compile Include="Views\Helpers\IEventTarget.cs" />
+    <Compile Include="Views\Helpers\SuspendLayout.cs" />
+    <Compile Include="Views\IAddCompanyView.cs" />
+    <Compile Include="Views\Income\AddNewIncomeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Income\AddNewIncomeView.Designer.cs">
+      <DependentUpon>AddNewIncomeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Income\IAddNewIncomeView.cs" />
+    <Compile Include="Views\Income\IViewIncomeHistory.cs" />
+    <Compile Include="Views\Income\ViewAllIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Income\ViewAllIncome.Designer.cs">
+      <DependentUpon>ViewAllIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\AboutTheApplicationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\AboutTheApplicationView.Designer.cs">
+      <DependentUpon>AboutTheApplicationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\IAboutApplicationView.cs" />
+    <Compile Include="Views\Navigation\IMainMenuView.cs" />
+    <Compile Include="Views\Navigation\INavigationView.cs" />
+    <Compile Include="Views\Navigation\MainMenuView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Navigation\MainMenuView.Designer.cs">
+      <DependentUpon>MainMenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Navigation\NavigationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Navigation\NavigationView.Designer.cs">
+      <DependentUpon>NavigationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\IReportViewer.cs" />
+    <Compile Include="Views\Reporting\ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reporting\ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shell\ApplicationShell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Shell\ApplicationShell.Designer.cs">
+      <DependentUpon>ApplicationShell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shell\ApplicationShellSpecs.cs" />
+    <Compile Include="Views\Shell\BitmapRegion.cs" />
+    <Compile Include="Views\Shell\button_extensions.cs" />
+    <Compile Include="Views\Shell\IGettingStartedView.cs" />
+    <Compile Include="Views\Shell\ILogFileView.cs" />
+    <Compile Include="Views\Shell\INotificationIconView.cs" />
+    <Compile Include="Views\Shell\IShell.cs" />
+    <Compile Include="Views\Shell\IStatusBarView.cs" />
+    <Compile Include="Views\Shell\IUnhandledErrorView.cs" />
+    <Compile Include="Views\Shell\LogFileView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Shell\LogFileView.Designer.cs">
+      <DependentUpon>LogFileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shell\NotificationIconView.cs" />
+    <Compile Include="Views\Shell\StatusBarView.cs" />
+    <Compile Include="Views\Shell\TaskTrayMessage.cs" />
+    <Compile Include="Views\Shell\TitleBar.cs" />
+    <Compile Include="Views\Shell\UnhandledErrorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Shell\UnhandledErrorView.Designer.cs">
+      <DependentUpon>UnhandledErrorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shell\WelcomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Shell\WelcomeScreen.Designer.cs">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Startup\ISplashScreenView.cs" />
+    <Compile Include="Views\Startup\SplashScreenView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Startup\SplashScreenView.Designer.cs">
+      <DependentUpon>SplashScreenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Updates\CheckForUpdatesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Updates\CheckForUpdatesView.Designer.cs">
+      <DependentUpon>CheckForUpdatesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Updates\ICheckForUpdatesView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AddCompanyView.resx">
+      <DependentUpon>AddCompanyView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Billing\AddBillPaymentView.resx">
+      <DependentUpon>AddBillPaymentView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Billing\ViewAllBills.resx">
+      <DependentUpon>ViewAllBills.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Billing\view_all_bills_report.resx">
+      <DependentUpon>view_all_bills_report.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Core\ApplicationWindow.resx">
+      <DependentUpon>ApplicationWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dialogs\SaveChangesView.resx">
+      <DependentUpon>SaveChangesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Income\AddNewIncomeView.resx">
+      <DependentUpon>AddNewIncomeView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Income\ViewAllIncome.resx">
+      <DependentUpon>ViewAllIncome.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Menu\AboutTheApplicationView.resx">
+      <DependentUpon>AboutTheApplicationView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Navigation\MainMenuView.resx">
+      <DependentUpon>MainMenuView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Navigation\NavigationView.resx">
+      <DependentUpon>NavigationView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reporting\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shell\ApplicationShell.resx">
+      <DependentUpon>ApplicationShell.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shell\LogFileView.resx">
+      <DependentUpon>LogFileView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shell\UnhandledErrorView.resx">
+      <DependentUpon>UnhandledErrorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shell\WelcomeScreen.resx">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Startup\SplashScreenView.resx">
+      <DependentUpon>SplashScreenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Updates\CheckForUpdatesView.resx">
+      <DependentUpon>CheckForUpdatesView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
+      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
+      <Name>Gorilla.Commons.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj">
+      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
+      <Name>Gorilla.Commons.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoMoney.DataAccess\MoMoney.DataAccess.csproj">
+      <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
+      <Name>MoMoney.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoMoney.Domain\MoMoney.Domain.csproj">
+      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
+      <Name>MoMoney.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoMoney.DTO\MoMoney.DTO.csproj">
+      <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
+      <Name>MoMoney.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoMoney.Infrastructure\MoMoney.Infrastructure.csproj">
+      <Project>{4E6E2528-3779-4CFC-BC43-F42EE13ED2D0}</Project>
+      <Name>MoMoney.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoMoney.Service\MoMoney.Service.csproj">
+      <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
+      <Name>MoMoney.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

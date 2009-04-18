@@ -20,10 +20,10 @@ namespace MoMoney.Presentation.Databindings
                             factory = an<IPropertyInspectorFactory>();
                             inspector = an<IPropertyInspector<IAnInterface, string>>();
 
-                            MockingExtensions.it_will_return(MockingExtensions.is_told_to(factory, f => f.create<IAnInterface, string>()), inspector);
+                            factory.is_told_to(f => f.create<IAnInterface, string>()).it_will_return(inspector);
 
-                            MockingExtensions.it_will_return(MockingExtensions.is_told_to(inspector, i => i.inspect(null))
-                                                    .IgnoreArguments(), typeof (IAnInterface).GetProperty("FirstName"));
+                            inspector.is_told_to(i => i.inspect(null))
+                                .IgnoreArguments().it_will_return(typeof (IAnInterface).GetProperty("FirstName"));
                         };
 
         because b = () =>

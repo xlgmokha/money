@@ -8,7 +8,7 @@ namespace MoMoney.Presentation.Presenters.Startup
     {
     }
 
-    internal class SplashScreenPresenter : ISplashScreenPresenter
+    public class SplashScreenPresenter : ISplashScreenPresenter
     {
         readonly ITimer timer;
         readonly ISplashScreenView view;

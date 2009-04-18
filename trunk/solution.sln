@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.Infrastructure", "p
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.DTO", "product\MoMoney.DTO\MoMoney.DTO.csproj", "{ACF52FAB-435B-48C9-A383-C787CB2D8000}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.Presentation", "product\MoMoney.Presentation\MoMoney.Presentation.csproj", "{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{ACF52FAB-435B-48C9-A383-C787CB2D8000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACF52FAB-435B-48C9-A383-C787CB2D8000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACF52FAB-435B-48C9-A383-C787CB2D8000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
