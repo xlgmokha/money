@@ -80,7 +80,7 @@
     <Compile Include="Logging\ILoggable.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Log.cs" />
-    <Compile Include="Logging\logging_extensions.cs" />
+    <Compile Include="Logging\LoggingExtensions.cs" />
     <Compile Include="Logging\LogSpecs.cs" />
     <Compile Include="Reflection\ApplicationAssembly.cs" />
     <Compile Include="Reflection\IAssembly.cs" />
@@ -98,6 +98,7 @@
     <Compile Include="Threading\IntervalTimerSpecs.cs" />
     <Compile Include="Threading\ISynchronizationContext.cs" />
     <Compile Include="Threading\ITimerClient.cs" />
+    <Compile Include="Threading\IWorkerThread.cs" />
     <Compile Include="Threading\SynchronizationContextFactory.cs" />
     <Compile Include="Threading\SynchronizedCommand.cs" />
     <Compile Include="Threading\SynchronizedContext.cs" />
@@ -119,7 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Proxies\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

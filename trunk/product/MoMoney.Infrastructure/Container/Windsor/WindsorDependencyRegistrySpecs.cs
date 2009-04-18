@@ -1,6 +1,7 @@
 using Castle.Core;
 using Castle.Windsor;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
 
 namespace MoMoney.Infrastructure.Container.Windsor

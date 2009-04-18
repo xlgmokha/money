@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     public class AsynchronousCommandProcessor : ICommandProcessor
     {

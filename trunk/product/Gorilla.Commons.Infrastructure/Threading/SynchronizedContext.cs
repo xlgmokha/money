@@ -1,7 +1,7 @@
 using System.Threading;
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     public class SynchronizedContext : ISynchronizationContext
     {

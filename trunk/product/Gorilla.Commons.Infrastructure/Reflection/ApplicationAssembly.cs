@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace MoMoney.Infrastructure.reflection
+namespace Gorilla.Commons.Infrastructure.Reflection
 {
     public class ApplicationAssembly : IAssembly
     {

@@ -1,4 +1,4 @@
-using MoMoney.Infrastructure.eventing;
+using Gorilla.Commons.Infrastructure.Eventing;
 using MoMoney.Infrastructure.transactions2;
 using MoMoney.Modules.Core;
 

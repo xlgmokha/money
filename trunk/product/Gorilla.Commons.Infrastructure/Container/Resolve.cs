@@ -1,8 +1,8 @@
 using System;
 
-namespace MoMoney.Infrastructure.Container
+namespace Gorilla.Commons.Infrastructure.Container
 {
-    static public class resolve
+    static public class Resolve
     {
         static IDependencyRegistry underlying_registry;
         static bool initialized;

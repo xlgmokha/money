@@ -1,5 +1,5 @@
 using Castle.Core.Interceptor;
-using MoMoney.Infrastructure.eventing;
+using Gorilla.Commons.Infrastructure.Eventing;
 
 namespace MoMoney.Infrastructure.interceptors
 {

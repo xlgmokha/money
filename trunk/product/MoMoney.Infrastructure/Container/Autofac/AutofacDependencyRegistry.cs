@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Autofac;
+using Gorilla.Commons.Infrastructure.Container;
 
 namespace MoMoney.Infrastructure.Container.Autofac
 {

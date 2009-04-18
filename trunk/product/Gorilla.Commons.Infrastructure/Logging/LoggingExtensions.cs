@@ -1,9 +1,8 @@
 using System;
-using MoMoney.Infrastructure.Logging;
 
-namespace MoMoney.Infrastructure.Extensions
+namespace Gorilla.Commons.Infrastructure.Logging
 {
-    public static class logging_extensions
+    public static class LoggingExtensions
     {
         public static ILogger log<T>(this T item_to_log)
         {

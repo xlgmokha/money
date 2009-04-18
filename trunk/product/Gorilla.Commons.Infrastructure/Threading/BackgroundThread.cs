@@ -1,6 +1,6 @@
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     public interface IBackgroundThread : IDisposableCommand
     {
@@ -23,7 +23,7 @@ namespace MoMoney.Infrastructure.Threading
 
         public void run()
         {
-            worker_thread.Begin();
+            worker_thread.begin();
         }
 
         public void Dispose()

@@ -1,4 +1,4 @@
-namespace MoMoney.Infrastructure.eventing
+namespace Gorilla.Commons.Infrastructure.Eventing
 {
     public interface IEventSubscriber<Event> where Event : IEvent
     {

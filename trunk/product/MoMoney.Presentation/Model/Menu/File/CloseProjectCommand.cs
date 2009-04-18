@@ -1,5 +1,5 @@
+using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.Logging;
 using MoMoney.Presentation.Model.Projects;
 
 namespace MoMoney.Presentation.Model.Menu.File.Commands

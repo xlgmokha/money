@@ -1,7 +1,7 @@
 using System;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace MoMoney.Infrastructure.Container
+namespace Gorilla.Commons.Infrastructure.Container
 {
     public class DependencyResolutionException<T> : Exception
     {

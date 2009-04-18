@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Infrastructure.Logging
+namespace Gorilla.Commons.Infrastructure.Logging
 {
     public interface ILogger
     {

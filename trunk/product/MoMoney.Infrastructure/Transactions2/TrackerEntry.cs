@@ -1,5 +1,5 @@
 using System.Reflection;
-using MoMoney.Infrastructure.Extensions;
+using Gorilla.Commons.Infrastructure.Logging;
 
 namespace MoMoney.Infrastructure.transactions2
 {

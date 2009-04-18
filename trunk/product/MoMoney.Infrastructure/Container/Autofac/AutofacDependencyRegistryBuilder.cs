@@ -3,6 +3,7 @@ using Autofac;
 using Autofac.Builder;
 using Autofac.Modules;
 using AutofacContrib.DynamicProxy2;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.proxies;

@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Infrastructure.cloning
+namespace Gorilla.Commons.Infrastructure.Cloning
 {
     public interface ISerializer<T> : IDisposable
     {

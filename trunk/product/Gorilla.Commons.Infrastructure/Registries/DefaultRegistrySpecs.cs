@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.Container;
 
-namespace MoMoney.Infrastructure.registries
+namespace Gorilla.Commons.Infrastructure.Registries
 {
     [Concern(typeof (DefaultRegistry<int>))]
     public class when_retrieving_all_the_items_from_the_default_repository :

@@ -1,8 +1,8 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.Container;
 
 namespace MoMoney.Presentation.Views.Shell
 {
@@ -24,7 +24,7 @@ namespace MoMoney.Presentation.Views.Shell
 
         public static Button will_execute<Command>(this Button button, Func<bool> when) where Command : ICommand
         {
-            button.Click += (sender, e) => { if (when()) resolve.dependency_for<Command>().run(); };
+            button.Click += (sender, e) => { if (when()) Resolve.dependency_for<Command>().run(); };
             button.Enabled = when();
             return button;
         }

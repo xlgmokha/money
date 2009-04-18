@@ -1,7 +1,7 @@
 using Castle.Core;
 using Castle.MicroKernel.Registration;
+using Gorilla.Commons.Infrastructure.Logging;
 using MoMoney.Infrastructure.interceptors;
-using MoMoney.Infrastructure.Logging;
 
 namespace MoMoney.Infrastructure.Container.Windsor.configuration
 {

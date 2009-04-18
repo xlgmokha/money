@@ -2,11 +2,12 @@ using System.ComponentModel;
 using System.Deployment.Application;
 using System.Threading;
 using System.Windows.Forms;
+using Gorilla.Commons.Infrastructure.Container;
+using Gorilla.Commons.Infrastructure.Logging;
+using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.Logging;
-using MoMoney.Infrastructure.Logging.Log4NetLogging;
-using MoMoney.Infrastructure.Threading;
+using MoMoney.Infrastructure.Logging.Log4Net;
 using MoMoney.Tasks.infrastructure.updating;
 
 namespace MoMoney.boot.container.registration

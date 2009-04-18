@@ -6,11 +6,12 @@ using System.Globalization;
 using System.Security.Principal;
 using System.Threading;
 using System.Windows.Forms;
+using Gorilla.Commons.Infrastructure.Container;
+using Gorilla.Commons.Infrastructure.Eventing;
+using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.boot.container;
-using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Startup;
@@ -54,12 +55,12 @@ namespace MoMoney.boot
         {
             try
             {
-                Application.Run(resolve.dependency_for<Shell>());
+                Application.Run(Resolve.dependency_for<Shell>());
             }
             catch (Exception e)
             {
                 this.log().error(e);
-                resolve.dependency_for<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
+                Resolve.dependency_for<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
             }
         }
     }

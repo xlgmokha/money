@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace MoMoney.Infrastructure.cloning
+namespace Gorilla.Commons.Infrastructure.Cloning
 {
     public interface IPrototype
     {

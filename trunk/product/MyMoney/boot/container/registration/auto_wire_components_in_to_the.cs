@@ -1,10 +1,10 @@
 using System;
 using System.Reflection;
+using Gorilla.Commons.Infrastructure.Reflection;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.Container;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
-using MoMoney.Infrastructure.reflection;
 
 namespace MoMoney.boot.container.registration
 {

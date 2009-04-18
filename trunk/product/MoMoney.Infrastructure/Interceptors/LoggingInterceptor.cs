@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Castle.Core.Interceptor;
-using MoMoney.Infrastructure.Extensions;
+using Gorilla.Commons.Infrastructure.Logging;
 
 namespace MoMoney.Infrastructure.interceptors
 {

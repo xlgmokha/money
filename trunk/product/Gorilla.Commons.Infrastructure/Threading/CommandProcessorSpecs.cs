@@ -2,15 +2,11 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     [Concern(typeof (CommandProcessor))]
     public abstract class behaves_like_a_command_processor : concerns_for<ICommandProcessor, CommandProcessor>
     {
-        //public override ICommandProcessor create_sut()
-        //{
-        //    return new command_processor();
-        //}
     }
 
     public class when_running_all_the_queued_commands_waiting_for_execution : behaves_like_a_command_processor

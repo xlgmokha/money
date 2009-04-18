@@ -1,5 +1,5 @@
 using Castle.Core.Interceptor;
-using MoMoney.Infrastructure.Threading;
+using Gorilla.Commons.Infrastructure.Threading;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.Infrastructure.proxies.Interceptors

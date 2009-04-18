@@ -1,16 +1,9 @@
 using System;
 using System.ComponentModel;
-using MoMoney.Infrastructure.Extensions;
+using Gorilla.Commons.Infrastructure.Logging;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
-    public interface IWorkerThread : IDisposable
-    {
-        event DoWorkEventHandler DoWork;
-        event EventHandler Disposed;
-        void Begin();
-    }
-
     public class WorkerThread : Component, IWorkerThread
     {
         static readonly object do_work_key = new object();
@@ -28,7 +21,7 @@ namespace MoMoney.Infrastructure.Threading
             remove { Events.RemoveHandler(do_work_key, value); }
         }
 
-        public void Begin()
+        public void begin()
         {
             if (is_running)
             {

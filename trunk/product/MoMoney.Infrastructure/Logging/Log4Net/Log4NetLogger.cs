@@ -1,7 +1,8 @@
 using System;
+using Gorilla.Commons.Infrastructure.Logging;
 using log4net;
 
-namespace MoMoney.Infrastructure.Logging.Log4NetLogging
+namespace MoMoney.Infrastructure.Logging.Log4Net
 {
     public class Log4NetLogger : ILogger
     {

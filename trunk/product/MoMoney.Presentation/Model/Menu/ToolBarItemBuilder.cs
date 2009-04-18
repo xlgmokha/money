@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
+using Gorilla.Commons.Infrastructure.Container;
+using Gorilla.Commons.Infrastructure.Eventing;
+using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.eventing;
-using MoMoney.Infrastructure.Threading;
 using MoMoney.Presentation.Resources;
 
 namespace MoMoney.Presentation.Model.Menu

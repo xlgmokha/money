@@ -1,7 +1,7 @@
 using System;
 using System.Timers;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     public interface ITimerFactory
     {

@@ -1,8 +1,8 @@
 using System;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Infrastructure.eventing;
 using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.messages;
 

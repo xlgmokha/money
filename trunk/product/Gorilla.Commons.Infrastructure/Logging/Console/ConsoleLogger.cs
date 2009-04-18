@@ -3,13 +3,13 @@ using System.IO;
 using System.Threading;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace MoMoney.Infrastructure.Logging.ConsoleLogging
+namespace Gorilla.Commons.Infrastructure.Logging.Console
 {
     public class ConsoleLogger : ILogger
     {
         readonly TextWriter writer;
 
-        public ConsoleLogger() : this(Console.Out)
+        public ConsoleLogger() : this(System.Console.Out)
         {
         }
 
@@ -18,9 +18,9 @@ namespace MoMoney.Infrastructure.Logging.ConsoleLogging
             this.writer = writer;
         }
 
-        public void informational(string formattedString, params object[] arguments)
+        public void informational(string formatted_string, params object[] arguments)
         {
-            writer.WriteLine(formattedString, arguments);
+            writer.WriteLine(formatted_string, arguments);
         }
 
         public void debug(string formatted_string, params object[] arguments)

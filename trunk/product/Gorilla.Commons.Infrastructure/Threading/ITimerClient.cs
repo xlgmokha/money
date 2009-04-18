@@ -1,4 +1,4 @@
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     public interface ITimerClient
     {

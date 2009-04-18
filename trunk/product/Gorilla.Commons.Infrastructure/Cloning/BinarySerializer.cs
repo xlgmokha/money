@@ -1,6 +1,6 @@
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace MoMoney.Infrastructure.cloning
+namespace Gorilla.Commons.Infrastructure.Cloning
 {
     public class BinarySerializer<T> : Serializer<T>
     {

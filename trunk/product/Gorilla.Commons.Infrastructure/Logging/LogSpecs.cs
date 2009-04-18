@@ -1,8 +1,8 @@
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
-using MoMoney.Infrastructure.Container;
 
-namespace MoMoney.Infrastructure.Logging
+namespace Gorilla.Commons.Infrastructure.Logging
 {
     [Concern(typeof (Log))]
     public class when_creating_a_logger_for_a_particular_type_ : concerns
@@ -18,12 +18,12 @@ namespace MoMoney.Infrastructure.Logging
                     registry.is_told_to(x => x.get_a<ILogFactory>()).it_will_return(factory);
                     factory.is_told_to(x => x.create_for(typeof (string))).it_will_return(logger);
 
-                    resolve.initialize_with(registry);
+                    Resolve.initialize_with(registry);
                 };
 
         because b = () => { result = Log.For("mo"); };
 
-        after_each_observation a = () => resolve.initialize_with(null);
+        after_each_observation a = () => Resolve.initialize_with(null);
 
         static ILogger result;
         static ILogger logger;

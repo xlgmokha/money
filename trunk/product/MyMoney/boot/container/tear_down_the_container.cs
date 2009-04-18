@@ -1,5 +1,5 @@
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.Container;
 
 namespace MoMoney.boot.container
 {
@@ -7,7 +7,7 @@ namespace MoMoney.boot.container
     {
         public void run()
         {
-            resolve.initialize_with(null);
+            Resolve.initialize_with(null);
         }
     }
 }

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Timers;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     public interface ITimer
     {

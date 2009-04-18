@@ -1,8 +1,8 @@
 using System.Collections.Generic;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.Container;
 
-namespace MoMoney.Infrastructure.registries
+namespace Gorilla.Commons.Infrastructure.Registries
 {
     public class DefaultRegistry<T> : IRegistry<T>
     {

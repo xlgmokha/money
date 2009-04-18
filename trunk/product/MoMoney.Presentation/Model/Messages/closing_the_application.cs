@@ -1,4 +1,4 @@
-using MoMoney.Infrastructure.eventing;
+using Gorilla.Commons.Infrastructure.Eventing;
 
 namespace MoMoney.Presentation.Model.messages
 {

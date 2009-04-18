@@ -1,3 +1,4 @@
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.boot.container.registration;
@@ -36,7 +37,7 @@ namespace MoMoney.boot.container
                 .then(new wire_up_the_reports_in_to_the(registry))
                 .run();
 
-            resolve.initialize_with(registry.build());
+            Resolve.initialize_with(registry.build());
         }
     }
 }

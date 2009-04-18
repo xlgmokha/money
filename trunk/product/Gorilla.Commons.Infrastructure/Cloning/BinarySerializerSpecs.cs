@@ -4,7 +4,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MbUnit.Framework;
 
-namespace MoMoney.Infrastructure.cloning
+namespace Gorilla.Commons.Infrastructure.Cloning
 {
     [Concern(typeof(BinarySerializer<TestItem>))]
     public abstract class behaves_like_serializer : concerns_for<ISerializer<TestItem>>

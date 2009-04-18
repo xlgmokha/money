@@ -1,7 +1,7 @@
 using Castle.Core.Interceptor;
+using Gorilla.Commons.Infrastructure.Eventing;
+using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.eventing;
-using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Infrastructure.transactions2
 {

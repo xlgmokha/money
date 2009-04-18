@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace MoMoney.Infrastructure.eventing
+namespace Gorilla.Commons.Infrastructure.Eventing
 {
     public interface IEventAggregator
     {

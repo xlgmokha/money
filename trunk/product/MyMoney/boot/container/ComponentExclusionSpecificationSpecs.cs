@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
 using MoMoney.Domain.Core;
 

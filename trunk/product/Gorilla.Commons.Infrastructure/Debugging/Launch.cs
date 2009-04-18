@@ -1,20 +1,14 @@
 using System.Diagnostics;
 
-namespace MoMoney.Infrastructure.debugging
+namespace Gorilla.Commons.Infrastructure.Debugging
 {
-    public static class Launch
+    static public class Launch
     {
-        public static void the_debugger()
+        static public void the_debugger()
         {
 #if DEBUG
-            if (Debugger.IsAttached)
-            {
-                Debugger.Break();
-            }
-            else
-            {
-                Debugger.Launch();
-            }
+            if (Debugger.IsAttached) Debugger.Break();
+            else Debugger.Launch();
 #endif
         }
     }

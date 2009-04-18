@@ -1,4 +1,4 @@
-using MoMoney.Infrastructure.Threading;
+using Gorilla.Commons.Infrastructure.Threading;
 using MoMoney.Presentation.Views.Startup;
 using MoMoney.Utility.Core;
 

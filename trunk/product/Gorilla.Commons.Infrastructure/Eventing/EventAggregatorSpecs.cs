@@ -4,7 +4,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using Rhino.Mocks;
 
-namespace MoMoney.Infrastructure.eventing
+namespace Gorilla.Commons.Infrastructure.Eventing
 {
     public class behaves_like_event_aggregator : concerns_for<IEventAggregator, EventAggregator>
     {
@@ -18,7 +18,7 @@ namespace MoMoney.Infrastructure.eventing
     {
         it should_notify_all_subscribers_of_the_event = () =>
                                                             {
-                                                                first_subscriber.was_told_to(x => x.notify(message));
+                                                                first_subscriber.was_told_to<IEventSubscriber<TestEvent>>(x => x.notify(message));
                                                                 second_subscriber.was_told_to(x => x.notify(message));
                                                             };
 

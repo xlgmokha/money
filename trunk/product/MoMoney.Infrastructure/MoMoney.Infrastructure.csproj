@@ -110,8 +110,8 @@
     <Compile Include="Interceptors\LoggingInterceptor.cs" />
     <Compile Include="Interceptors\RaiseEventInterceptor.cs" />
     <Compile Include="Interceptors\SynchronizedInterceptor.cs" />
-    <Compile Include="Logging\Log4NetLogging\Log4NetLogFactory.cs" />
-    <Compile Include="Logging\Log4NetLogging\Log4NetLogger.cs" />
+    <Compile Include="Logging\Log4Net\Log4NetLogFactory.cs" />
+    <Compile Include="Logging\Log4Net\Log4NetLogger.cs" />
     <Compile Include="Proxies\IConstraintSelector.cs" />
     <Compile Include="Proxies\IInterceptorConstraint.cs" />
     <Compile Include="Proxies\IInterceptorConstraintFactory.cs" />
@@ -184,14 +184,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Cloning\" />
-    <Folder Include="Debugging\" />
-    <Folder Include="Eventing\" />
-    <Folder Include="Logging\ConsoleLogging\" />
     <Folder Include="Properties\" />
-    <Folder Include="Reflection\" />
-    <Folder Include="Registries\" />
-    <Folder Include="Transactions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

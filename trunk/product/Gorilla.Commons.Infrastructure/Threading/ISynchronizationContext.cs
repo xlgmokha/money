@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     public interface ISynchronizationContext : IParameterizedCommand<ICommand>
     {

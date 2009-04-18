@@ -1,7 +1,7 @@
 using System.IO;
 using System.Runtime.Serialization;
 
-namespace MoMoney.Infrastructure.cloning
+namespace Gorilla.Commons.Infrastructure.Cloning
 {
     public class Serializer<T> : ISerializer<T>
     {

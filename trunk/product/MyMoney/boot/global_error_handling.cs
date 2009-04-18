@@ -1,10 +1,10 @@
 using System;
 using System.Windows.Forms;
+using Gorilla.Commons.Infrastructure.Container;
+using Gorilla.Commons.Infrastructure.Eventing;
+using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.eventing;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.messages;
 
 namespace MoMoney.boot
@@ -20,7 +20,7 @@ namespace MoMoney.boot
         void handle(Exception e)
         {
             e.add_to_log();
-            resolve.dependency_for<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
+            Resolve.dependency_for<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
         }
     }
 }

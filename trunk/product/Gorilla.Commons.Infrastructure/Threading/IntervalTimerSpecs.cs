@@ -4,7 +4,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using Rhino.Mocks;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     [Concern(typeof (IntervalTimer))]
     public abstract class behaves_like_an_interval_timer : concerns_for<ITimer, IntervalTimer>

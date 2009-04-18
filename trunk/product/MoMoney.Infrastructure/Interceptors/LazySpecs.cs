@@ -1,6 +1,6 @@
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
-using MoMoney.Infrastructure.Container;
 
 namespace MoMoney.Infrastructure.interceptors
 {
@@ -10,10 +10,10 @@ namespace MoMoney.Infrastructure.interceptors
         context c = () =>
                         {
                             test_container = dependency<IDependencyRegistry>();
-                            resolve.initialize_with(test_container);
+                            Resolve.initialize_with(test_container);
                         };
 
-        after_each_observation a = () => resolve.initialize_with(null);
+        after_each_observation a = () => Resolve.initialize_with(null);
 
         protected static IDependencyRegistry test_container;
     }

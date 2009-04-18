@@ -1,8 +1,8 @@
 using System;
-using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.Logging.ConsoleLogging;
+using Gorilla.Commons.Infrastructure.Container;
+using Gorilla.Commons.Infrastructure.Logging.Console;
 
-namespace MoMoney.Infrastructure.Logging
+namespace Gorilla.Commons.Infrastructure.Logging
 {
     public static class Log
     {
@@ -15,7 +15,7 @@ namespace MoMoney.Infrastructure.Logging
         {
             try
             {
-                return resolve.dependency_for<ILogFactory>().create_for(type_to_create_a_logger_for);
+                return Resolve.dependency_for<ILogFactory>().create_for(type_to_create_a_logger_for);
             }
             catch
             {

@@ -1,6 +1,6 @@
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Testing;
-using MoMoney.Infrastructure.eventing;
 using MoMoney.Presentation.Presenters.Commands;
 
 namespace MoMoney.Modules

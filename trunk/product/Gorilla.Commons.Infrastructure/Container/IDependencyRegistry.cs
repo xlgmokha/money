@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MoMoney.Infrastructure.Container
+namespace Gorilla.Commons.Infrastructure.Container
 {
     public interface IDependencyRegistry
     {

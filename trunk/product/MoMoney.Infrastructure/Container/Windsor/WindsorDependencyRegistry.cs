@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Castle.Core;
 using Castle.Windsor;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.proxies;

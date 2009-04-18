@@ -1,9 +1,9 @@
 using System;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.Container;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     public interface IBackgroundThreadFactory
     {

@@ -3,7 +3,7 @@ using Gorilla.Commons.Testing;
 using MoMoney.Utility.Core;
 using Rhino.Mocks;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     [Concern(typeof (BackgroundThread))]
     public abstract class behaves_like_a_background_thread : concerns_for<IBackgroundThread, BackgroundThread>
@@ -22,7 +22,7 @@ namespace MoMoney.Infrastructure.Threading
     {
         it should_execute_the_command_asynchronously = () => command_to_execute.was_told_to(c => c.run());
 
-        it should_start_the_worker_thread_asynchronously = () => worker_thread.was_told_to(t => t.Begin());
+        it should_start_the_worker_thread_asynchronously = () => worker_thread.was_told_to(t => t.begin());
 
         because b = () =>
                         {

@@ -1,18 +1,13 @@
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
-using MoMoney.Infrastructure.Container;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Infrastructure.Threading
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     [Concern(typeof (BackgroundThreadFactory))]
     public abstract class behaves_like_a_background_thread_factory : concerns_for<IBackgroundThreadFactory, BackgroundThreadFactory>
     {
-        //public override IBackgroundThreadFactory create_sut()
-        //{
-        //    return new BackgroundThreadFactory(registry);
-        //}
-
         context c = () => { registry = the_dependency<IDependencyRegistry>(); };
 
         protected static IDependencyRegistry registry;
