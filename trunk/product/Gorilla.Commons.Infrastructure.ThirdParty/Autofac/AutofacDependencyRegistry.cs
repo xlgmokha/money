@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Autofac;
 using Gorilla.Commons.Infrastructure.Container;
 
-namespace MoMoney.Infrastructure.Container.Autofac
+namespace Gorilla.Commons.Infrastructure.Autofac
 {
     internal class AutofacDependencyRegistry : IDependencyRegistry
     {

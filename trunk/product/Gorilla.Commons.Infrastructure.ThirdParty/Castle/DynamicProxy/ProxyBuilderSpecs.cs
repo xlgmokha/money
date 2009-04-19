@@ -6,7 +6,7 @@ using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace MoMoney.Infrastructure.proxies
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     [Concern(typeof (ProxyBuilder<IAnInterface>))]
     public class behaves_like_proxy_builder : concerns_for<IProxyBuilder<IAnInterface>, ProxyBuilder<IAnInterface>>

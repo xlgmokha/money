@@ -1,10 +1,10 @@
 using System;
 using System.Reflection;
+using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Reflection;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.interceptors;
+using MoMoney.boot.container.registration.proxy_configuration;
 using MoMoney.Modules.Core;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu.File;

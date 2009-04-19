@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-namespace MoMoney.Infrastructure.Threading.Juval
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     [Serializable]
     internal class WorkItem : IAsyncResult

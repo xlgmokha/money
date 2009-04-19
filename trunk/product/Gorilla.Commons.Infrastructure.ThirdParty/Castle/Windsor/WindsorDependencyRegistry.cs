@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using Castle.Core;
 using Castle.Windsor;
+using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Infrastructure.proxies;
 
-namespace MoMoney.Infrastructure.Container.Windsor
+namespace Gorilla.Commons.Infrastructure.Castle.Windsor
 {
     internal class WindsorDependencyRegistry : IDependencyRegistration, IDependencyRegistry
     {

@@ -5,7 +5,7 @@ using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit;
 using Gorilla.Commons.Testing;
 
-namespace MoMoney.Infrastructure.proxies
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     [Concern(typeof(ProxyFactory))]
     public abstract class behaves_like_proxy_factory : concerns_for<IProxyFactory, ProxyFactory>
@@ -90,7 +90,6 @@ namespace MoMoney.Infrastructure.proxies
         {
         }
     }
-
 
     public class TestInterceptor : IInterceptor
     {

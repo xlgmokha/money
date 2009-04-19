@@ -3,14 +3,14 @@ using Autofac;
 using Autofac.Builder;
 using Autofac.Modules;
 using AutofacContrib.DynamicProxy2;
+using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Infrastructure.proxies;
 
-namespace MoMoney.Infrastructure.Container.Autofac
+namespace Gorilla.Commons.Infrastructure.Autofac
 {
-    public class AutofacDependencyRegistryBuilder : IDependencyRegistration //, IBuilder<IContainer>
+    public class AutofacDependencyRegistryBuilder : IDependencyRegistration
     {
         readonly ContainerBuilder builder;
         readonly Func<IContainer> container;

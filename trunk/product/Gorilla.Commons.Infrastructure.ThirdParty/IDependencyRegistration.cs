@@ -1,9 +1,9 @@
 using System;
+using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.proxies;
 
-namespace MoMoney.Infrastructure.Container
+namespace Gorilla.Commons.Infrastructure
 {
     public interface IDependencyRegistration : IBuilder<IDependencyRegistry>
     {

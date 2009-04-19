@@ -5,7 +5,7 @@ using Gorilla.Commons.Infrastructure.Reflection;
 using log4net;
 using log4net.Config;
 
-namespace MoMoney.Infrastructure.Logging.Log4Net
+namespace Gorilla.Commons.Infrastructure.Log4Net
 {
     public class Log4NetLogFactory : ILogFactory
     {

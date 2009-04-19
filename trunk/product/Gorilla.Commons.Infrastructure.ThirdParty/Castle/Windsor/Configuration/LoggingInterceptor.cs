@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Castle.Core.Interceptor;
 using Gorilla.Commons.Infrastructure.Logging;
 
-namespace MoMoney.Infrastructure.interceptors
+namespace Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration
 {
     public interface ILoggingInterceptor : IInterceptor
     {

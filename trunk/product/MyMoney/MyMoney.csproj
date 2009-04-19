@@ -167,7 +167,6 @@
     <Compile Include="boot\container\registration\auto_wire_components_in_to_the.cs" />
     <Compile Include="boot\container\registration\auto_wire_components_in_to_the_specs.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\SynchronizedConfiguration.cs" />
-    <Compile Include="boot\container\registration\SynchronizedConfiguration.cs" />
     <Compile Include="boot\container\registration\wire_up_the_infrastructure_in_to_the.cs" />
     <Compile Include="boot\container\tear_down_the_container.cs" />
     <Compile Include="boot\container\registration\wire_up_the_data_access_components_into_the.cs" />
@@ -244,10 +243,6 @@
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
       <Name>MoMoney.DTO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MoMoney.Infrastructure\MoMoney.Infrastructure.csproj">
-      <Project>{4E6E2528-3779-4CFC-BC43-F42EE13ED2D0}</Project>
-      <Name>MoMoney.Infrastructure</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MoMoney.Presentation\MoMoney.Presentation.csproj">
       <Project>{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}</Project>
       <Name>MoMoney.Presentation</Name>
@@ -256,44 +251,6 @@
       <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
       <Name>MoMoney.Service</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentation\Core\" />
-    <Folder Include="Presentation\Databindings\" />
-    <Folder Include="Presentation\Model\file_system\" />
-    <Folder Include="Presentation\Model\interaction\" />
-    <Folder Include="Presentation\Model\keyboard\" />
-    <Folder Include="Presentation\Model\Menu\File\Commands\" />
-    <Folder Include="Presentation\Model\Menu\Help\commands\" />
-    <Folder Include="Presentation\Model\Menu\window\" />
-    <Folder Include="Presentation\Model\messages\" />
-    <Folder Include="Presentation\Model\Navigation\branches\" />
-    <Folder Include="Presentation\Model\Projects\" />
-    <Folder Include="Presentation\Model\reporting\" />
-    <Folder Include="Presentation\Model\updates\" />
-    <Folder Include="Presentation\Presenters\billing\dto\" />
-    <Folder Include="Presentation\Presenters\Commands\" />
-    <Folder Include="Presentation\Presenters\excel\formatting\" />
-    <Folder Include="Presentation\Presenters\income\dto\" />
-    <Folder Include="Presentation\Presenters\Menu\Help\" />
-    <Folder Include="Presentation\Presenters\Navigation\" />
-    <Folder Include="Presentation\Presenters\reporting\" />
-    <Folder Include="Presentation\Presenters\Shell\" />
-    <Folder Include="Presentation\Presenters\Startup\" />
-    <Folder Include="Presentation\Presenters\updates\" />
-    <Folder Include="Presentation\Resources\" />
-    <Folder Include="Presentation\Views\billing\" />
-    <Folder Include="Presentation\Views\core\" />
-    <Folder Include="Presentation\Views\dialogs\" />
-    <Folder Include="Presentation\Views\helpers\" />
-    <Folder Include="Presentation\Views\income\" />
-    <Folder Include="Presentation\Views\Menu\Help\" />
-    <Folder Include="Presentation\Views\Menu\Mappers\" />
-    <Folder Include="Presentation\Views\Navigation\" />
-    <Folder Include="Presentation\Views\reporting\" />
-    <Folder Include="Presentation\Views\Shell\" />
-    <Folder Include="Presentation\Views\Startup\" />
-    <Folder Include="Presentation\Views\updates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

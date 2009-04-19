@@ -1,5 +1,5 @@
+using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.Container;
 
 namespace MoMoney.boot.container.registration
 {

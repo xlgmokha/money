@@ -4,7 +4,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
 
-namespace MoMoney.Infrastructure.Container.Windsor
+namespace Gorilla.Commons.Infrastructure.Castle.Windsor
 {
     [Concern(typeof (WindsorDependencyRegistry))]
     internal class behaves_like_windsor_dependency_registry :

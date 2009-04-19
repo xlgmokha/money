@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Castle.Core.Interceptor;
 
-namespace Ec.AuditTool.Infrastructure.Proxies.Interceptors
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
 {
     public class SelectiveInterceptor : IInterceptor
     {

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 using Gorilla.Commons.Testing;
-using MoMoney.Infrastructure.proxies.Interceptors;
 
-namespace MoMoney.Infrastructure.proxies
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     [Concern(typeof (InterceptorConstraint<string>))]
     public class behaves_like_constraint : concerns_for<IInterceptorConstraint<string>, InterceptorConstraint<string>>

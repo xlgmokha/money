@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using MoMoney.Infrastructure.proxies.Interceptors;
+using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 
-namespace MoMoney.Infrastructure.proxies
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     public interface IInterceptorConstraint<TypeToPutConstraintOn> : IConstraintSelector<TypeToPutConstraintOn>
     {

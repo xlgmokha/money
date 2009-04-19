@@ -2,7 +2,7 @@ using Castle.Core.Interceptor;
 using Gorilla.Commons.Infrastructure.Threading;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Infrastructure.proxies.Interceptors
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
 {
     public class RunOnBackgroundThreadInterceptor<CommandToExecute> : IInterceptor
         where CommandToExecute : IDisposableCommand

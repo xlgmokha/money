@@ -5,12 +5,7 @@ using Gorilla.Commons.Utility.Extensions;
 
 namespace Gorilla.Commons.Infrastructure.Proxies
 {
-    public interface IProxyFactory<T>
-    {
-        T CreateProxy();
-    }
-
-    public class RemotingProxyFactory<T> : RealProxy, IProxyFactory<T>
+    public class RemotingProxyFactory<T> : RealProxy
     {
         readonly T target;
         readonly IEnumerable<IInterceptor> interceptors;

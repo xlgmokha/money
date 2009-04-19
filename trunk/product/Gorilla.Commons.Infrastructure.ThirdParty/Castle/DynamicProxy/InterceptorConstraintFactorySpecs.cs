@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace MoMoney.Infrastructure.proxies
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     [Concern(typeof (InterceptorConstraintFactory))]
     public class behaves_like_constraint_factory :

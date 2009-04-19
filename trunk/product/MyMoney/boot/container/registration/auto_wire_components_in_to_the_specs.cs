@@ -1,10 +1,10 @@
 using System;
 using developwithpassion.bdd.contexts;
+using Gorilla.Commons.Infrastructure;
+using Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration;
 using Gorilla.Commons.Infrastructure.Reflection;
 using Gorilla.Commons.Testing;
 using MbUnit.Framework;
-using MoMoney.Infrastructure.Container;
-using MoMoney.Infrastructure.Container.Windsor.configuration;
 
 namespace MoMoney.boot.container.registration
 {

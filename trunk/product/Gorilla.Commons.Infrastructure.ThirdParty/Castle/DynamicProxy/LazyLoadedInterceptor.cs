@@ -1,7 +1,7 @@
 using System;
 using Castle.Core.Interceptor;
 
-namespace MoMoney.Infrastructure.interceptors
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     internal class LazyLoadedInterceptor<T> : IInterceptor
     {

@@ -4,7 +4,7 @@ using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace MoMoney.Infrastructure.proxies.Interceptors
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
 {
     [Concern(typeof (MethodCallTracker<IAnInterface>))]
     public class behaves_like_method_call_tracker :

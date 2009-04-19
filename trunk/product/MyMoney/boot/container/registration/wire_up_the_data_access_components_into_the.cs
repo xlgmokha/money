@@ -1,9 +1,9 @@
+using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DataAccess;
-using MoMoney.Infrastructure.Container;
 
 namespace MoMoney.boot.container.registration
 {

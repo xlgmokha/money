@@ -3,7 +3,7 @@ using System.ComponentModel;
 using Castle.Core.Interceptor;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace MoMoney.Infrastructure.interceptors
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
 {
     public interface ISynchronizedInterceptor : IInterceptor
     {

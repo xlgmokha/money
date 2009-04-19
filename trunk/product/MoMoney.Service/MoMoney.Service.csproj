@@ -96,10 +96,6 @@
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
       <Name>MoMoney.DTO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MoMoney.Infrastructure\MoMoney.Infrastructure.csproj">
-      <Project>{4E6E2528-3779-4CFC-BC43-F42EE13ED2D0}</Project>
-      <Name>MoMoney.Infrastructure</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />

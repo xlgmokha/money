@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Security.Permissions;
 using System.Threading;
 
-namespace MoMoney.Infrastructure.Threading.Juval
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     [SecurityPermission(SecurityAction.Demand, ControlThread = true)]
     public class Synchronizer : ISynchronizeInvoke, IDisposable

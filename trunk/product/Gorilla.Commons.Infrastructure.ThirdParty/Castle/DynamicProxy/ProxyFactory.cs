@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Interceptor;
 using Castle.DynamicProxy;
-using MoMoney.Infrastructure.interceptors;
 
-namespace MoMoney.Infrastructure.proxies
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     public class ProxyFactory : IProxyFactory
     {

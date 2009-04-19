@@ -1,9 +1,8 @@
 using Castle.Core.Interceptor;
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.interceptors;
 
-namespace MoMoney.Infrastructure.Interceptors
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
 {
     public class RunOnUIThread : IInterceptor
     {

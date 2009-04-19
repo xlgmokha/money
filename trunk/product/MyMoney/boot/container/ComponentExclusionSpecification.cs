@@ -1,4 +1,5 @@
 using System;
+using Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration;
 using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Infrastructure.Container.Windsor.configuration

@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Interceptor;
-using Ec.AuditTool.Infrastructure.Proxies.Interceptors;
+using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 
-namespace MoMoney.Infrastructure.proxies
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     public class ProxyBuilder<TypeToProxy> : IProxyBuilder<TypeToProxy>
     {

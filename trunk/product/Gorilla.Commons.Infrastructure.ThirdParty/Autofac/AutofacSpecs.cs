@@ -6,7 +6,7 @@ using Autofac.Modules;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace MoMoney.Infrastructure.Container.Autofac
+namespace Gorilla.Commons.Infrastructure.Autofac
 {
     public class when_trying_to_register_a_single_item_in_the_autofac_container : concerns
     {

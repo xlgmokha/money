@@ -1,9 +1,8 @@
 using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Gorilla.Commons.Infrastructure.Logging;
-using MoMoney.Infrastructure.interceptors;
 
-namespace MoMoney.Infrastructure.Container.Windsor.configuration
+namespace Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration
 {
     public class ApplyLoggingInterceptor : IRegistrationConfiguration
     {

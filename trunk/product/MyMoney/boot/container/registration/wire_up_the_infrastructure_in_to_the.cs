@@ -1,9 +1,9 @@
+using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.Registries;
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.Container;
 //using MoMoney.Infrastructure.transactions;
 using MoMoney.Presentation.Model.Projects;
 

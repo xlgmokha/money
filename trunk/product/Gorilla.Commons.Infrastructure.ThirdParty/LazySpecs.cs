@@ -2,7 +2,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
 
-namespace MoMoney.Infrastructure.interceptors
+namespace Gorilla.Commons.Infrastructure
 {
     [Concern(typeof (Lazy))]
     public abstract class behaves_like_a_lazy_loaded_object : concerns
@@ -20,7 +20,7 @@ namespace MoMoney.Infrastructure.interceptors
 
     public class when_calling_a_method_with_no_arguments_on_a_lazy_loaded_proxy : behaves_like_a_lazy_loaded_object
     {
-        it should_forward_the_original_call_to_the_target = () => target.was_told_to(t => t.OneMethod());
+        it should_forward_the_original_call_to_the_target = () => target.was_told_to<ITargetObject>(t => t.OneMethod());
 
         context c = () =>
                         {

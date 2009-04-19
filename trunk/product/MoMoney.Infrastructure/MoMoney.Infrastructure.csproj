@@ -89,14 +89,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interceptors\RaiseEventInterceptor.cs" />
-    <Compile Include="Interceptors\SynchronizedInterceptor.cs" />
-    <Compile Include="Threading\Juval\Synchronizer.cs" />
-    <Compile Include="Threading\Juval\WorkItem.cs" />
-    <Compile Include="Interceptors\RunOnUIThread.cs" />
-    <Compile Include="Interceptors\UnitOfWorkInterceptor.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Infrastructure.ThirdParty\Gorilla.Commons.Infrastructure.ThirdParty.csproj">
       <Project>{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}</Project>
       <Name>Gorilla.Commons.Infrastructure.ThirdParty</Name>

@@ -112,12 +112,14 @@
     <Compile Include="Threading\SynchronizationContextFactory.cs" />
     <Compile Include="Threading\SynchronizedCommand.cs" />
     <Compile Include="Threading\SynchronizedContext.cs" />
+    <Compile Include="Threading\Synchronizer.cs" />
     <Compile Include="Threading\ThreadingExtensions.cs" />
     <Compile Include="Threading\TimerFactory.cs" />
     <Compile Include="Threading\TimerFactorySpecs.cs" />
     <Compile Include="Threading\WorkerThread.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Threading\WorkItem.cs" />
     <Compile Include="Transactions\ChangeTracker.cs" />
     <Compile Include="Transactions\ChangeTrackerFactory.cs" />
     <Compile Include="Transactions\ChangeTrackerFactorySpecs.cs" />

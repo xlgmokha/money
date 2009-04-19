@@ -1,7 +1,7 @@
 using System;
 using Castle.Core.Interceptor;
 
-namespace MoMoney.Infrastructure.proxies
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     public interface IProxyFactory
     {

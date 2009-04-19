@@ -1,6 +1,6 @@
+using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Infrastructure.interceptors;
 using MoMoney.Modules.Core;
 
 namespace MoMoney.boot

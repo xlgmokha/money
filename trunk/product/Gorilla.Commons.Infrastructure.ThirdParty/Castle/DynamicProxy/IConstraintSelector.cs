@@ -1,4 +1,4 @@
-namespace MoMoney.Infrastructure.proxies
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy
 {
     public interface IConstraintSelector<TypeToPutConstraintOn>
     {

@@ -4,7 +4,7 @@ using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Testing;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Infrastructure.proxies.Interceptors
+namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
 {
     [Concern(typeof (RunOnBackgroundThreadInterceptor<>))]
     public class behaves_like_background_thread_interceptor :
