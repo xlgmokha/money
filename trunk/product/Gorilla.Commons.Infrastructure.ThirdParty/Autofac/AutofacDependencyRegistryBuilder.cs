@@ -24,6 +24,7 @@ namespace MoMoney.Infrastructure.Container.Autofac
             this.builder = builder;
             builder.RegisterModule(new ImplicitCollectionSupportModule());
             builder.RegisterModule(new StandardInterceptionModule());
+            builder.SetDefaultScope(InstanceScope.Factory);
             container = () => builder.Build();
             container = container.memorize();
         }

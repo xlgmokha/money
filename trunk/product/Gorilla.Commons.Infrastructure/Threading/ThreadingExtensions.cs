@@ -1,7 +1,6 @@
-using Gorilla.Commons.Infrastructure.Threading;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Infrastructure.Extensions
+namespace Gorilla.Commons.Infrastructure.Threading
 {
     public static class ThreadingExtensions
     {

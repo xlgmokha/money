@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.Presentation", "pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Infrastructure", "product\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj", "{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Infrastructure.ThirdParty", "product\Gorilla.Commons.Infrastructure.ThirdParty\Gorilla.Commons.Infrastructure.ThirdParty.csproj", "{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

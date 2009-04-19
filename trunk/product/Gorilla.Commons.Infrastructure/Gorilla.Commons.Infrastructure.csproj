@@ -85,6 +85,7 @@
     <Compile Include="Logging\LoggingExtensions.cs" />
     <Compile Include="Logging\LogSpecs.cs" />
     <Compile Include="Reflection\ApplicationAssembly.cs" />
+    <Compile Include="Reflection\EnvironmentExtensions.cs" />
     <Compile Include="Reflection\IAssembly.cs" />
     <Compile Include="Registries\DefaultRegistry.cs" />
     <Compile Include="Registries\DefaultRegistrySpecs.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Threading\SynchronizationContextFactory.cs" />
     <Compile Include="Threading\SynchronizedCommand.cs" />
     <Compile Include="Threading\SynchronizedContext.cs" />
+    <Compile Include="Threading\ThreadingExtensions.cs" />
     <Compile Include="Threading\TimerFactory.cs" />
     <Compile Include="Threading\TimerFactorySpecs.cs" />
     <Compile Include="Threading\WorkerThread.cs">

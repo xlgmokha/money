@@ -1,6 +1,4 @@
-﻿using MoMoney.Infrastructure.Extensions;
-
-namespace MoMoney.Presentation.Views.core
+﻿namespace MoMoney.Presentation.Views.core
 {
     partial class ApplicationDockedWindow
     {

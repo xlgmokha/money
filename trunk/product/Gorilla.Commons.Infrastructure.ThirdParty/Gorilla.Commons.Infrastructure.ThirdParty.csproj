@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4E6E2528-3779-4CFC-BC43-F42EE13ED2D0}</ProjectGuid>
+    <ProjectGuid>{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MoMoney.Infrastructure</RootNamespace>
-    <AssemblyName>MoMoney.Infrastructure</AssemblyName>
+    <RootNamespace>Gorilla.Commons.Infrastructure</RootNamespace>
+    <AssemblyName>Gorilla.Commons.Infrastructure.ThirdParty</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -89,18 +89,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interceptors\RaiseEventInterceptor.cs" />
-    <Compile Include="Interceptors\SynchronizedInterceptor.cs" />
-    <Compile Include="Threading\Juval\Synchronizer.cs" />
-    <Compile Include="Threading\Juval\WorkItem.cs" />
-    <Compile Include="Interceptors\RunOnUIThread.cs" />
-    <Compile Include="Interceptors\UnitOfWorkInterceptor.cs" />
+    <Compile Include="Autofac\AutofacDependencyRegistry.cs" />
+    <Compile Include="Autofac\AutofacDependencyRegistryBuilder.cs" />
+    <Compile Include="Autofac\AutofacSpecs.cs" />
+    <Compile Include="IDependencyRegistration.cs" />
+    <Compile Include="Log4Net\Log4NetLogFactory.cs" />
+    <Compile Include="Log4Net\Log4NetLogger.cs" />
+    <Compile Include="Proxies\IConstraintSelector.cs" />
+    <Compile Include="Proxies\IInterceptorConstraint.cs" />
+    <Compile Include="Proxies\IInterceptorConstraintFactory.cs" />
+    <Compile Include="Proxies\IMethodCallTrackerFactory.cs" />
+    <Compile Include="Proxies\InterceptorConstraintFactorySpecs.cs" />
+    <Compile Include="Proxies\InterceptorConstraintSpecs.cs" />
+    <Compile Include="Proxies\Interceptors\IMethodCallTracker.cs" />
+    <Compile Include="Proxies\Interceptors\MethodCallTracker.cs" />
+    <Compile Include="Proxies\Interceptors\MethodCallTrackerSpecs.cs" />
+    <Compile Include="Proxies\Interceptors\RunOnBackgroundThreadInterceptor.cs" />
+    <Compile Include="Proxies\Interceptors\RunOnBackgrounThreadInterceptorSpecs.cs" />
+    <Compile Include="Proxies\Interceptors\SelectiveInterceptor.cs" />
+    <Compile Include="Proxies\IProxyBuilder.cs" />
+    <Compile Include="Proxies\IProxyFactory.cs" />
+    <Compile Include="Proxies\Lazy.cs" />
+    <Compile Include="Proxies\LazyLoadedInterceptor.cs" />
+    <Compile Include="Proxies\LazySpecs.cs" />
+    <Compile Include="Proxies\ProxyBuilder.cs" />
+    <Compile Include="Proxies\ProxyBuilderSpecs.cs" />
+    <Compile Include="Proxies\ProxyFactory.cs" />
+    <Compile Include="Proxies\ProxyFactorySpecs.cs" />
+    <Compile Include="Windsor\Configuration\ApplyLoggingInterceptor.cs" />
+    <Compile Include="Windsor\Configuration\ComponentRegistrationConfiguration.cs" />
+    <Compile Include="Windsor\Configuration\ConfigureComponentLifestyle.cs" />
+    <Compile Include="Windsor\Configuration\IComponentExclusionSpecification.cs" />
+    <Compile Include="Windsor\Configuration\LogComponent.cs" />
+    <Compile Include="Windsor\Configuration\LoggingInterceptor.cs" />
+    <Compile Include="Windsor\Configuration\RegisterComponentContract.cs" />
+    <Compile Include="Windsor\WindsorContainerFactory.cs" />
+    <Compile Include="Windsor\WindsorDependencyRegistry.cs" />
+    <Compile Include="Windsor\WindsorDependencyRegistrySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gorilla.Commons.Infrastructure.ThirdParty\Gorilla.Commons.Infrastructure.ThirdParty.csproj">
-      <Project>{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}</Project>
-      <Name>Gorilla.Commons.Infrastructure.ThirdParty</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
       <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
       <Name>Gorilla.Commons.Infrastructure</Name>
@@ -115,11 +142,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Container\Autofac\" />
-    <Folder Include="Container\Windsor\Configuration\" />
-    <Folder Include="Logging\Log4Net\" />
+    <Folder Include="Castle\DynamicProxy\Interceptors\" />
+    <Folder Include="Castle\Windsor\Configuration\" />
     <Folder Include="Properties\" />
-    <Folder Include="Proxies\Interceptors\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,8 +1,8 @@
 using System;
 
-namespace MoMoney.Infrastructure.Extensions
+namespace Gorilla.Commons.Infrastructure.Reflection
 {
-    public static class environment_extensions
+    public static class EnvironmentExtensions
     {
         public static string startup_directory<T>(this T item)
         {

@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using MoMoney.Infrastructure.Extensions;
 using MoMoney.Presentation.Model.keyboard;
 using MoMoney.Presentation.Resources;
 

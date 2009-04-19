@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 using Gorilla.Commons.Infrastructure.Logging;
+using Gorilla.Commons.Infrastructure.Reflection;
 using log4net;
 using log4net.Config;
-using MoMoney.Infrastructure.Extensions;
 
 namespace MoMoney.Infrastructure.Logging.Log4Net
 {

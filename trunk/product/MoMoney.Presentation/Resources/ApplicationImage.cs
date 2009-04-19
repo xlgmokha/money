@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.IO;
-using MoMoney.Infrastructure.Extensions;
+using Gorilla.Commons.Infrastructure.Reflection;
 
 namespace MoMoney.Presentation.Resources
 {
