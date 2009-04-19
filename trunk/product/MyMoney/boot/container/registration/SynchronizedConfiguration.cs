@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility.Core;
+using MoMoney.Infrastructure.Interceptors;
 using MoMoney.Infrastructure.proxies;
-using MoMoney.Infrastructure.Threading;
 
 namespace MoMoney.boot.container.registration
 {

@@ -1,5 +1,5 @@
 using Gorilla.Commons.Infrastructure.FileSystem;
-using MoMoney.Infrastructure.transactions2;
+using Gorilla.Commons.Infrastructure.Transactions;
 
 namespace MoMoney.DataAccess
 {

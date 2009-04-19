@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Gorilla.Commons.Infrastructure.FileSystem;
+using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
-using MoMoney.Infrastructure.transactions2;
 
 namespace MoMoney.DataAccess
 {

@@ -2,10 +2,10 @@ using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.FileSystem;
+using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DataAccess;
-using MoMoney.Infrastructure.transactions2;
 using MoMoney.Presentation.Model.messages;
 
 namespace MoMoney.Presentation.Model.Projects
