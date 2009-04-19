@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using Gorilla.Commons.Windows.Forms;
+using Gorilla.Commons.Windows.Forms.Helpers;
 using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.helpers;
 
 namespace MoMoney.Presentation.Views.core
 {

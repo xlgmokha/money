@@ -231,6 +231,10 @@
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>Gorilla.Commons.Utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gorilla.Commons.Windows.Forms\Gorilla.Commons.Windows.Forms.csproj">
+      <Project>{54B55B2B-A58F-45DF-A446-234C9D70DC0B}</Project>
+      <Name>Gorilla.Commons.Windows.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MoMoney.DataAccess\MoMoney.DataAccess.csproj">
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
       <Name>MoMoney.DataAccess</Name>

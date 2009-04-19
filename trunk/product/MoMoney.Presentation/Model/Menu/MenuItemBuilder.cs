@@ -3,7 +3,8 @@ using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Presentation.Model.keyboard;
+using Gorilla.Commons.Windows.Forms.Keyboard;
+using Gorilla.Commons.Windows.Forms.Resources;
 using MoMoney.Presentation.Resources;
 
 namespace MoMoney.Presentation.Model.Menu

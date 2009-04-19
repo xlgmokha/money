@@ -94,29 +94,10 @@
     <Compile Include="Core\IContentPresenter.cs" />
     <Compile Include="Core\IPresenter.cs" />
     <Compile Include="Core\PresenterRegistry.cs" />
-    <Compile Include="Databindings\binding_selector.cs" />
-    <Compile Include="Databindings\binding_selector_specs.cs" />
-    <Compile Include="Databindings\ComboBoxDataBindingSpecs.cs" />
-    <Compile Include="Databindings\combo_box_property_binding.cs" />
-    <Compile Include="Databindings\control_binding_extensions.cs" />
-    <Compile Include="Databindings\Create.cs" />
-    <Compile Include="Databindings\date_time_picker_property_binding.cs" />
-    <Compile Include="Databindings\date_time_property_binding_specs.cs" />
-    <Compile Include="Databindings\IPropertyBinding.cs" />
-    <Compile Include="Databindings\ListboxExtensions.cs" />
-    <Compile Include="Databindings\property_binder.cs" />
-    <Compile Include="Databindings\property_binder_specs.cs" />
-    <Compile Include="Databindings\property_inspector.cs" />
-    <Compile Include="Databindings\property_inspector_factory.cs" />
-    <Compile Include="Databindings\property_inspector_specs.cs" />
-    <Compile Include="Databindings\TextBoxDataBindingSpecs.cs" />
-    <Compile Include="Databindings\text_property_binding.cs" />
     <Compile Include="IModule.cs" />
     <Compile Include="Model\FileSystem\folder.cs" />
     <Compile Include="Model\Interaction\INotification.cs" />
     <Compile Include="Model\Interaction\notification_message.cs" />
-    <Compile Include="Model\Keyboard\ShortcutKey.cs" />
-    <Compile Include="Model\Keyboard\ShortcutKeys.cs" />
     <Compile Include="Model\Menu\create.cs" />
     <Compile Include="Model\Menu\File\CloseProjectCommand.cs" />
     <Compile Include="Model\Menu\File\CloseWindowCommand.cs" />
@@ -228,11 +209,8 @@
     <Compile Include="Presenters\Startup\SplashScreenPresenterSpecs.cs" />
     <Compile Include="Presenters\Updates\CheckForUpdatesPresenter.cs" />
     <Compile Include="Presenters\Updates\CheckForUpdatesPresenterSpecs.cs" />
-    <Compile Include="Resources\ApplicationIcon.cs" />
     <Compile Include="Resources\ApplicationIcons.cs" />
-    <Compile Include="Resources\ApplicationImage.cs" />
     <Compile Include="Resources\ApplicationImages.cs" />
-    <Compile Include="Resources\HybridIcon.cs" />
     <Compile Include="Views\AddCompanyView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +251,7 @@
     </Compile>
     <Compile Include="Views\Core\ControlAction.cs" />
     <Compile Include="Views\Core\ICommandDialog.cs" />
+    <Compile Include="Views\Core\IDialogLauncher.cs" />
     <Compile Include="Views\Core\IDockedContentView.cs" />
     <Compile Include="Views\Core\IView.cs" />
     <Compile Include="Views\Core\IWindowEvents.cs" />
@@ -286,16 +265,6 @@
     <Compile Include="Views\Dialogs\SaveChangesViewSpecs.cs" />
     <Compile Include="Views\Dialogs\SelectFileToOpenDialog.cs" />
     <Compile Include="Views\Dialogs\SelectFileToSaveToDialog.cs" />
-    <Compile Include="Views\Helpers\BindableListFactory.cs" />
-    <Compile Include="Views\Helpers\ControlAdapter.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Views\Helpers\Events.cs" />
-    <Compile Include="Views\Helpers\EventTrigger.cs" />
-    <Compile Include="Views\Helpers\EventTriggerExtensions.cs" />
-    <Compile Include="Views\Helpers\EventTriggerSpecs.cs" />
-    <Compile Include="Views\Helpers\IEventTarget.cs" />
-    <Compile Include="Views\Helpers\SuspendLayout.cs" />
     <Compile Include="Views\IAddCompanyView.cs" />
     <Compile Include="Views\Income\AddNewIncomeView.cs">
       <SubType>Form</SubType>
@@ -346,8 +315,6 @@
       <DependentUpon>ApplicationShell.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Shell\ApplicationShellSpecs.cs" />
-    <Compile Include="Views\Shell\BitmapRegion.cs" />
-    <Compile Include="Views\Shell\button_extensions.cs" />
     <Compile Include="Views\Shell\IGettingStartedView.cs" />
     <Compile Include="Views\Shell\ILogFileView.cs" />
     <Compile Include="Views\Shell\INotificationIconView.cs" />
@@ -471,6 +438,14 @@
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>Gorilla.Commons.Utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gorilla.Commons.Windows.Forms.ThirdParty\Gorilla.Commons.Windows.Forms.ThirdParty.csproj">
+      <Project>{8050731D-48B2-4636-9D1C-2B6D052F39DC}</Project>
+      <Name>Gorilla.Commons.Windows.Forms.ThirdParty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gorilla.Commons.Windows.Forms\Gorilla.Commons.Windows.Forms.csproj">
+      <Project>{54B55B2B-A58F-45DF-A446-234C9D70DC0B}</Project>
+      <Name>Gorilla.Commons.Windows.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MoMoney.DataAccess\MoMoney.DataAccess.csproj">
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
       <Name>MoMoney.DataAccess</Name>
@@ -489,7 +464,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Model\Keyboard\" />
     <Folder Include="Properties\" />
+    <Folder Include="Views\Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

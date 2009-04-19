@@ -1,5 +1,5 @@
 using System.Windows.Forms;
-using MoMoney.Presentation.Resources;
+using Gorilla.Commons.Windows.Forms.Resources;
 
 namespace MoMoney.Presentation.Views.Shell
 {

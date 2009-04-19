@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace MoMoney.Presentation.Views.core
+namespace Gorilla.Commons.Windows.Forms
 {
     public interface IWindowEvents
     {

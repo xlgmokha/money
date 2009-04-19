@@ -1,8 +1,8 @@
 using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
+using Gorilla.Commons.Windows.Forms.Helpers;
 using MoMoney.Presentation.Model.Menu.File.Commands;
-using MoMoney.Presentation.Views.helpers;
 
 namespace MoMoney.Presentation.Views.dialogs
 {

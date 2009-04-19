@@ -1,10 +1,10 @@
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
+using Gorilla.Commons.Windows.Forms.Resources;
 using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
-using MoMoney.Presentation.Resources;
 using MenuItem=System.Windows.Forms.MenuItem;
 
 namespace MoMoney.Presentation.Views.Shell

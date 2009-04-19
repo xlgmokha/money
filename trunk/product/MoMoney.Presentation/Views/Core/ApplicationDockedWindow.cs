@@ -1,10 +1,12 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
+using Gorilla.Commons.Windows.Forms;
+using Gorilla.Commons.Windows.Forms.Helpers;
+using Gorilla.Commons.Windows.Forms.Resources;
 using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.helpers;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MoMoney.Presentation.Views.core

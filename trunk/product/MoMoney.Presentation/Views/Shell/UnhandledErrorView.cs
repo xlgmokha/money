@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Gorilla.Commons.Windows.Forms;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;

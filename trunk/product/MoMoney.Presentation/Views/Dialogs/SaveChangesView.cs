@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using Gorilla.Commons.Windows.Forms;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;

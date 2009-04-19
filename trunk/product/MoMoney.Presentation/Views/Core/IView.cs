@@ -1,15 +1,9 @@
 using System;
 using System.ComponentModel;
-using MoMoney.Presentation.Core;
 
-namespace MoMoney.Presentation.Views.core
+namespace Gorilla.Commons.Windows.Forms
 {
     public interface IView : IWindowEvents, ISynchronizeInvoke, IDisposable
     {
-    }
-
-    public interface IView<Presenter> : IView where Presenter : IPresenter
-    {
-        void attach_to(Presenter presenter);
     }
 }
