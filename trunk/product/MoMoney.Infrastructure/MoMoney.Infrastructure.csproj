@@ -115,11 +115,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Container\Autofac\" />
-    <Folder Include="Container\Windsor\Configuration\" />
-    <Folder Include="Logging\Log4Net\" />
     <Folder Include="Properties\" />
-    <Folder Include="Proxies\Interceptors\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

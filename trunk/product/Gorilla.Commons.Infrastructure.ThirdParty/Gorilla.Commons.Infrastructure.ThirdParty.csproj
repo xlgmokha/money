@@ -95,37 +95,37 @@
     <Compile Include="IDependencyRegistration.cs" />
     <Compile Include="Log4Net\Log4NetLogFactory.cs" />
     <Compile Include="Log4Net\Log4NetLogger.cs" />
-    <Compile Include="Proxies\IConstraintSelector.cs" />
-    <Compile Include="Proxies\IInterceptorConstraint.cs" />
-    <Compile Include="Proxies\IInterceptorConstraintFactory.cs" />
-    <Compile Include="Proxies\IMethodCallTrackerFactory.cs" />
-    <Compile Include="Proxies\InterceptorConstraintFactorySpecs.cs" />
-    <Compile Include="Proxies\InterceptorConstraintSpecs.cs" />
-    <Compile Include="Proxies\Interceptors\IMethodCallTracker.cs" />
-    <Compile Include="Proxies\Interceptors\MethodCallTracker.cs" />
-    <Compile Include="Proxies\Interceptors\MethodCallTrackerSpecs.cs" />
-    <Compile Include="Proxies\Interceptors\RunOnBackgroundThreadInterceptor.cs" />
-    <Compile Include="Proxies\Interceptors\RunOnBackgrounThreadInterceptorSpecs.cs" />
-    <Compile Include="Proxies\Interceptors\SelectiveInterceptor.cs" />
-    <Compile Include="Proxies\IProxyBuilder.cs" />
-    <Compile Include="Proxies\IProxyFactory.cs" />
-    <Compile Include="Proxies\Lazy.cs" />
-    <Compile Include="Proxies\LazyLoadedInterceptor.cs" />
-    <Compile Include="Proxies\LazySpecs.cs" />
-    <Compile Include="Proxies\ProxyBuilder.cs" />
-    <Compile Include="Proxies\ProxyBuilderSpecs.cs" />
-    <Compile Include="Proxies\ProxyFactory.cs" />
-    <Compile Include="Proxies\ProxyFactorySpecs.cs" />
-    <Compile Include="Windsor\Configuration\ApplyLoggingInterceptor.cs" />
-    <Compile Include="Windsor\Configuration\ComponentRegistrationConfiguration.cs" />
-    <Compile Include="Windsor\Configuration\ConfigureComponentLifestyle.cs" />
-    <Compile Include="Windsor\Configuration\IComponentExclusionSpecification.cs" />
-    <Compile Include="Windsor\Configuration\LogComponent.cs" />
-    <Compile Include="Windsor\Configuration\LoggingInterceptor.cs" />
-    <Compile Include="Windsor\Configuration\RegisterComponentContract.cs" />
-    <Compile Include="Windsor\WindsorContainerFactory.cs" />
-    <Compile Include="Windsor\WindsorDependencyRegistry.cs" />
-    <Compile Include="Windsor\WindsorDependencyRegistrySpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\IConstraintSelector.cs" />
+    <Compile Include="Castle\DynamicProxy\IInterceptorConstraint.cs" />
+    <Compile Include="Castle\DynamicProxy\IInterceptorConstraintFactory.cs" />
+    <Compile Include="Castle\DynamicProxy\IMethodCallTrackerFactory.cs" />
+    <Compile Include="Castle\DynamicProxy\InterceptorConstraintFactorySpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\InterceptorConstraintSpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\IMethodCallTracker.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\MethodCallTracker.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\MethodCallTrackerSpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\RunOnBackgroundThreadInterceptor.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\RunOnBackgrounThreadInterceptorSpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\SelectiveInterceptor.cs" />
+    <Compile Include="Castle\DynamicProxy\IProxyBuilder.cs" />
+    <Compile Include="Castle\DynamicProxy\IProxyFactory.cs" />
+    <Compile Include="Castle\DynamicProxy\Lazy.cs" />
+    <Compile Include="Castle\DynamicProxy\LazyLoadedInterceptor.cs" />
+    <Compile Include="Castle\DynamicProxy\LazySpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\ProxyBuilder.cs" />
+    <Compile Include="Castle\DynamicProxy\ProxyBuilderSpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\ProxyFactory.cs" />
+    <Compile Include="Castle\DynamicProxy\ProxyFactorySpecs.cs" />
+    <Compile Include="Castle\Windsor\Configuration\ApplyLoggingInterceptor.cs" />
+    <Compile Include="Castle\Windsor\Configuration\ComponentRegistrationConfiguration.cs" />
+    <Compile Include="Castle\Windsor\Configuration\ConfigureComponentLifestyle.cs" />
+    <Compile Include="Castle\Windsor\Configuration\IComponentExclusionSpecification.cs" />
+    <Compile Include="Castle\Windsor\Configuration\LogComponent.cs" />
+    <Compile Include="Castle\Windsor\Configuration\LoggingInterceptor.cs" />
+    <Compile Include="Castle\Windsor\Configuration\RegisterComponentContract.cs" />
+    <Compile Include="Castle\Windsor\WindsorContainerFactory.cs" />
+    <Compile Include="Castle\Windsor\WindsorDependencyRegistry.cs" />
+    <Compile Include="Castle\Windsor\WindsorDependencyRegistrySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
@@ -142,8 +142,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Castle\DynamicProxy\Interceptors\" />
-    <Folder Include="Castle\Windsor\Configuration\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
