@@ -20,8 +20,8 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             register.singleton<IDatabase, ObjectDatabase>();
-            register.singleton(() => Resolve.a<IDatabase>().downcast_to<IDatabaseConfiguration>());
-            register.proxy<ISession, NoConfiguration<ISession>>( () => Resolve.a<ISessionProvider>().get_the_current_session());
+            register.singleton(() => Resolve.the<IDatabase>().downcast_to<IDatabaseConfiguration>());
+            register.proxy<ISession, NoConfiguration<ISession>>( () => Resolve.the<ISessionProvider>().get_the_current_session());
         }
     }
 }

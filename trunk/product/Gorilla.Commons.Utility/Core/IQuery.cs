@@ -1,7 +1,12 @@
 namespace Gorilla.Commons.Utility.Core
 {
-    public interface IQuery<T>
+    public interface IQuery<TOutput>
     {
-        T fetch();
+        TOutput fetch();
+    }
+
+    public interface IQuery<TInput, TOutput>
+    {
+        TOutput fetch(TInput item);
     }
 }

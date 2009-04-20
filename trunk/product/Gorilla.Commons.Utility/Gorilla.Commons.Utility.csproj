@@ -74,8 +74,10 @@
     <Compile Include="Core\IDisposableCommand.cs" />
     <Compile Include="Core\IFactory.cs" />
     <Compile Include="Core\IIdentifiable.cs" />
+    <Compile Include="Core\IImport.cs" />
     <Compile Include="Core\IMapper.cs" />
     <Compile Include="Core\IParameterizedCommand.cs" />
+    <Compile Include="Core\IParser.cs" />
     <Compile Include="Core\IQuery.cs" />
     <Compile Include="Core\IRegistry.cs" />
     <Compile Include="Core\ISpecification.cs" />

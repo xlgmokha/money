@@ -22,7 +22,7 @@ namespace MoMoney.boot
 {
     public class WindowsFormsApplication<Shell> : ICommand where Shell : Form
     {
-        public WindowsFormsApplication()
+        protected WindowsFormsApplication()
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Application.EnableVisualStyles();
@@ -55,12 +55,12 @@ namespace MoMoney.boot
         {
             try
             {
-                Application.Run(Resolve.a<Shell>());
+                Application.Run(Resolve.the<Shell>());
             }
             catch (Exception e)
             {
                 this.log().error(e);
-                Resolve.a<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
+                Resolve.the<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
             }
         }
     }

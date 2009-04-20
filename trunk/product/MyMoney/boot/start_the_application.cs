@@ -12,11 +12,12 @@ namespace MoMoney.boot
         readonly ICommandProcessor processor;
 
         public start_the_application(IBackgroundThread thread)
-            : this(thread,Lazy.load<ILoadPresentationModulesCommand>(), Lazy.load<ICommandProcessor>())
+            : this(thread, Lazy.load<ILoadPresentationModulesCommand>(), Lazy.load<ICommandProcessor>())
         {
         }
 
-        public start_the_application(IBackgroundThread thread,ILoadPresentationModulesCommand command, ICommandProcessor processor)
+        public start_the_application(IBackgroundThread thread, ILoadPresentationModulesCommand command,
+                                     ICommandProcessor processor)
         {
             this.thread = thread;
             this.command = command;

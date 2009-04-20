@@ -13,7 +13,7 @@ namespace Gorilla.Commons.Infrastructure.Container
             initialized = registry != null;
         }
 
-        static public DependencyToResolve a<DependencyToResolve>()
+        static public DependencyToResolve the<DependencyToResolve>()
         {
             try
             {

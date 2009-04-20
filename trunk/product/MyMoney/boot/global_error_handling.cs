@@ -20,7 +20,7 @@ namespace MoMoney.boot
         void handle(Exception e)
         {
             e.add_to_log();
-            Resolve.a<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
+            Resolve.the<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
         }
     }
 }
