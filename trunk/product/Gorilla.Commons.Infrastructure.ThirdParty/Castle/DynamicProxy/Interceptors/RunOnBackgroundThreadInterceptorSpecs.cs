@@ -12,15 +12,12 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
     {
         context c = () => { thread_factory = the_dependency<IBackgroundThreadFactory>(); };
 
-        protected static IBackgroundThreadFactory thread_factory;
+        static protected IBackgroundThreadFactory thread_factory;
     }
 
     public class when_intercepting_a_call_to_a_method_that_takes_a_long_time_to_complete :
         behaves_like_background_thread_interceptor
     {
-        static IInvocation invocation;
-        static IBackgroundThread background_thread;
-
         context c = () =>
                         {
                             invocation = an<IInvocation>();
@@ -40,5 +37,8 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
 
         it should_hide_the_progress_bar_when_the_invocation_is_completed =
             () => background_thread.was_told_to(b => b.Dispose());
+
+        static IInvocation invocation;
+        static IBackgroundThread background_thread;
     }
 }

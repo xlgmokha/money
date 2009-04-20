@@ -110,7 +110,7 @@
     <Compile Include="Castle\DynamicProxy\Interceptors\MethodCallTracker.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\MethodCallTrackerSpecs.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\RunOnBackgroundThreadInterceptor.cs" />
-    <Compile Include="Castle\DynamicProxy\Interceptors\RunOnBackgrounThreadInterceptorSpecs.cs" />
+    <Compile Include="Castle\DynamicProxy\Interceptors\RunOnBackgroundThreadInterceptorSpecs.cs" />
     <Compile Include="Castle\DynamicProxy\Interceptors\SelectiveInterceptor.cs" />
     <Compile Include="Castle\DynamicProxy\IProxyBuilder.cs" />
     <Compile Include="Castle\DynamicProxy\IProxyFactory.cs" />
