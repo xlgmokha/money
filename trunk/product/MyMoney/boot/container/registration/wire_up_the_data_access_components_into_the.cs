@@ -3,6 +3,7 @@ using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
+using MoMoney.boot.container.registration.proxy_configuration;
 using MoMoney.DataAccess;
 
 namespace MoMoney.boot.container.registration
@@ -18,10 +19,9 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            //register.singleton<ISessionContext, SessionContext>();
             register.singleton<IDatabase, ObjectDatabase>();
-            register.singleton(() => Resolve.dependency_for<IDatabase>().downcast_to<IDatabaseConfiguration>());
-            register.singleton<ISession>(() => Resolve.dependency_for<ISessionProvider>().get_the_current_session());
+            register.singleton(() => Resolve.a<IDatabase>().downcast_to<IDatabaseConfiguration>());
+            register.proxy<ISession, NoConfiguration<ISession>>( () => Resolve.a<ISessionProvider>().get_the_current_session());
         }
     }
 }

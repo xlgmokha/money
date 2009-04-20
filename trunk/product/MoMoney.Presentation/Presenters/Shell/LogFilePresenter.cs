@@ -1,6 +1,6 @@
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Views.Shell;
-using MoMoney.Tasks.infrastructure;
+using MoMoney.Service.Infrastructure.Logging;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {

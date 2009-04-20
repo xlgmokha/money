@@ -8,7 +8,7 @@
     <ProjectGuid>{8050731D-48B2-4636-9D1C-2B6D052F39DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gorilla.Commons.Windows.Forms.ThirdParty</RootNamespace>
+    <RootNamespace>Gorilla.Commons.Windows.Forms</RootNamespace>
     <AssemblyName>Gorilla.Commons.Windows.Forms.ThirdParty</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

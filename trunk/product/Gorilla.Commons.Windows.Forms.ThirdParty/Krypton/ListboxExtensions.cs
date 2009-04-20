@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using ComponentFactory.Krypton.Toolkit;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace MoMoney.Presentation.Databindings
+namespace Gorilla.Commons.Windows.Forms.Krypton
 {
     static public class ListboxExtensions
     {

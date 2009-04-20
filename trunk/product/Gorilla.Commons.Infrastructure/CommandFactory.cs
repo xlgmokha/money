@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Tasks.infrastructure.core
+namespace Gorilla.Commons.Infrastructure
 {
     public interface ICommandFactory
     {

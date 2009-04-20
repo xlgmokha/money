@@ -22,13 +22,10 @@ namespace MoMoney.boot.container.registration
         {
             registry.singleton<IEventAggregator, EventAggregator>();
             registry.singleton<ITimer, IntervalTimer>();
-            //registry.singleton<IUnitOfWorkRegistry, UnitOfWorkRegistry>();
             registry.singleton<IProjectController, ProjectController>();
             registry.transient(typeof (IRegistry<>), typeof (DefaultRegistry<>));
-            //registry.transient(typeof (IUnitOfWorkRegistrationFactory<>), typeof (UnitOfWorkRegistrationFactory<>));
-
             registry.transient(typeof (ITrackerEntryMapper<>), typeof (TrackerEntryMapper<>));
-            registry.transient(typeof (IKey<>), typeof (TypedKey<>));
+            registry.transient(typeof(IKey<>), typeof(TypedKey<>));
             registry.transient(typeof (IComponentFactory<>), typeof (Factory<>));
             registry.singleton<IContext, Context>();
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 
@@ -45,6 +46,8 @@ namespace Gorilla.Commons.Infrastructure.Transactions
 
         public bool is_dirty()
         {
+            this.log().debug("changes trackers {0}", change_trackers.Count);
+            this.log().debug("is transaction dirty? {0}", change_trackers.Values.Count(x => x.is_dirty()));
             return change_trackers.Values.Count(x => x.is_dirty()) > 0;
         }
 

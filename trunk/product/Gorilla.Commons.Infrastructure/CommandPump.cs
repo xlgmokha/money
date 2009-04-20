@@ -2,7 +2,7 @@ using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Tasks.infrastructure.core
+namespace Gorilla.Commons.Infrastructure
 {
     public interface ICommandPump
     {

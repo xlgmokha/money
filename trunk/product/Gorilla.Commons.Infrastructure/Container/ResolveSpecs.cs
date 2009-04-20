@@ -20,7 +20,7 @@ namespace Gorilla.Commons.Infrastructure.Container
                             Resolve.initialize_with(registry);
                         };
 
-        because b = () => { result = Resolve.dependency_for<ICommand>(); };
+        because b = () => { result = Resolve.a<ICommand>(); };
 
         it should_leverage_the_underlying_container_it_was_initialized_with =
             () => registry.was_told_to(x => x.get_a<ICommand>());
@@ -43,7 +43,7 @@ namespace Gorilla.Commons.Infrastructure.Container
                             Resolve.initialize_with(registry);
                         };
 
-        because b = () => { the_call = call.to(() => Resolve.dependency_for<ICommand>()); };
+        because b = () => { the_call = call.to(() => Resolve.a<ICommand>()); };
 
         after_each_observation a = () => Resolve.initialize_with(null);
 

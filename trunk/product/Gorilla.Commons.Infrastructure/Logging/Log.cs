@@ -15,7 +15,7 @@ namespace Gorilla.Commons.Infrastructure.Logging
         {
             try
             {
-                return Resolve.dependency_for<ILogFactory>().create_for(type_to_create_a_logger_for);
+                return Resolve.a<ILogFactory>().create_for(type_to_create_a_logger_for);
             }
             catch
             {

@@ -57,12 +57,7 @@
     <Compile Include="Application\IncomeTasks.cs" />
     <Compile Include="Application\RegisterNewCompanyCommand.cs" />
     <Compile Include="Application\SaveNewBillCommand.cs" />
-    <Compile Include="Infrastructure\Core\CommandFactory.cs" />
-    <Compile Include="Infrastructure\Core\CommandPump.cs" />
-    <Compile Include="Infrastructure\Core\ICallbackCommand.cs" />
-    <Compile Include="Infrastructure\Core\ProcessQueryCommand.cs" />
-    <Compile Include="Infrastructure\Core\RunQueryCommand.cs" />
-    <Compile Include="Infrastructure\LogFileTasks.cs" />
+    <Compile Include="Infrastructure\Logging\LogFileTasks.cs" />
     <Compile Include="Infrastructure\Updating\CancelUpdate.cs" />
     <Compile Include="Infrastructure\Updating\CancelUpdateSpecs.cs" />
     <Compile Include="Infrastructure\Updating\CurrentDeployment.cs" />
@@ -99,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />
+    <Folder Include="Infrastructure\Core\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,7 +24,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
 
         static public Button will_execute<Command>(this Button button, Func<bool> when) where Command : ICommand
         {
-            button.Click += (sender, e) => { if (when()) Resolve.dependency_for<Command>().run(); };
+            button.Click += (sender, e) => { if (when()) Resolve.a<Command>().run(); };
             button.Enabled = when();
             return button;
         }

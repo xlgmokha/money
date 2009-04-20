@@ -1,13 +1,12 @@
 using System.IO;
 using Gorilla.Commons.Infrastructure.Reflection;
 
-namespace MoMoney.Tasks.infrastructure
+namespace MoMoney.Service.Infrastructure.Logging
 {
     public interface ILogFileTasks
     {
         string get_the_contents_of_the_log_file();
         string get_the_path_to_the_log_file();
-        //void notify(ICallback<string> view);
     }
 
     public class LogFileTasks : ILogFileTasks
@@ -29,13 +28,5 @@ namespace MoMoney.Tasks.infrastructure
         {
             return Path.Combine(this.startup_directory(), @"logs\log.txt");
         }
-
-        //public void notify(ICallback<string> view)
-        //{
-        //    var watcher = new FileSystemWatcher(Path.Combine(this.startup_directory(), "logs"), "log.txt");
-        //    watcher.Changed += (sender, args) => view.run(get_the_contents_of_the_log_file());
-        //    watcher.EnableRaisingEvents = true;
-        //    watcher.Error += (sender, args) => this.log().error(args.GetException());
-        //}
     }
 }

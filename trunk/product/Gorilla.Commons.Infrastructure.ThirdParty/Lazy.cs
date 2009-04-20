@@ -16,7 +16,7 @@ namespace Gorilla.Commons.Infrastructure
 
         static IInterceptor create_interceptor_for<T>() where T : class
         {
-            Func<T> get_the_implementation = Resolve.dependency_for<T>;
+            Func<T> get_the_implementation = Resolve.a<T>;
             return new LazyLoadedInterceptor<T>(get_the_implementation.memorize());
         }
 

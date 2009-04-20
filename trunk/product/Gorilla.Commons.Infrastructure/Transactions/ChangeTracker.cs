@@ -24,6 +24,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
 
         public void register(T entity)
         {
+            this.log().debug("registered: {0}", entity);
             items.Add(mapper.map_from(entity));
         }
 
@@ -41,6 +42,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
 
         public bool is_dirty()
         {
+            this.log().debug("is change tracker dirty? {0}",items.Count(x => x.has_changes()) );
             return items.Count(x => x.has_changes()) > 0 || to_be_deleted.Count > 0;
         }
 

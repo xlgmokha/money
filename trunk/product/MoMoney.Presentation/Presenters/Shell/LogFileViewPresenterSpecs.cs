@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Views.Shell;
-using MoMoney.Tasks.infrastructure;
+using MoMoney.Service.Infrastructure.Logging;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {

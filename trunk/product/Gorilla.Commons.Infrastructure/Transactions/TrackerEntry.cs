@@ -23,6 +23,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
 
         public bool has_changes()
         {
+            this.log().debug("checking for changes");
             var type = original.GetType();
             foreach (var field in type.GetFields(BindingFlags.NonPublic | BindingFlags.Instance))
             {
@@ -30,12 +31,12 @@ namespace Gorilla.Commons.Infrastructure.Transactions
                 var current_value = field.GetValue(current);
                 if (original_value == null && current_value != null)
                 {
-                    this.log().debug("has changes: {0}", original);
+                    this.log().debug("{0} has changes: {1}", field, original);
                     return true;
                 }
                 if (original_value != null && !original_value.Equals(current_value))
                 {
-                    this.log().debug("has changes: {0}", original);
+                    this.log().debug("{0} has changes: {1}", field, original);
                     return true;
                 }
             }

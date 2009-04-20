@@ -28,6 +28,7 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
                 this.log().debug("intercepting: {0}", invocation);
                 invocation.Proceed();
                 broker.publish<ICallback<IUnitOfWork>>(x => x.run(unit_of_work));
+                this.log().debug("committing unit of work");
                 unit_of_work.commit();
             }
         }

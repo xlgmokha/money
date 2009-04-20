@@ -55,12 +55,12 @@ namespace MoMoney.boot
         {
             try
             {
-                Application.Run(Resolve.dependency_for<Shell>());
+                Application.Run(Resolve.a<Shell>());
             }
             catch (Exception e)
             {
                 this.log().error(e);
-                Resolve.dependency_for<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
+                Resolve.a<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
             }
         }
     }

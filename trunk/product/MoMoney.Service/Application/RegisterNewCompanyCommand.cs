@@ -2,7 +2,7 @@ using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.DTO;
 
-namespace MoMoney.Tasks.application
+namespace MoMoney.Service.Application
 {
     public interface IRegisterNewCompanyCommand : IParameterizedCommand<RegisterNewCompany>
     {

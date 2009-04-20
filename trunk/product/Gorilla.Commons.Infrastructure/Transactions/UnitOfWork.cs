@@ -1,4 +1,5 @@
 using System;
+using Gorilla.Commons.Infrastructure.Logging;
 
 namespace Gorilla.Commons.Infrastructure.Transactions
 {
@@ -28,6 +29,7 @@ namespace Gorilla.Commons.Infrastructure.Transactions
 
         public bool is_dirty()
         {
+            this.log().debug("is session dirty? {0}", session.is_dirty());
             return session.is_dirty();
         }
 

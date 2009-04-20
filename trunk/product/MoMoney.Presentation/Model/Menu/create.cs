@@ -6,7 +6,7 @@ namespace MoMoney.Presentation.Model.Menu
     {
         public static IMenuItemBuilder a_menu_item()
         {
-            return Resolve.dependency_for<IMenuItemBuilder>();
+            return Resolve.a<IMenuItemBuilder>();
         }
 
         public static IMenuItem a_menu_item_separator()
@@ -16,7 +16,7 @@ namespace MoMoney.Presentation.Model.Menu
 
         public static IToolbarItemBuilder a_tool_bar_item()
         {
-            return Resolve.dependency_for<IToolbarItemBuilder>();
+            return Resolve.a<IToolbarItemBuilder>();
         }
     }
 }
