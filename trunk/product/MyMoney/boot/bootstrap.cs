@@ -3,12 +3,12 @@ using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.boot
 {
-    public class bootstrap : WindowsFormsApplication<ApplicationShell>
+    public class Bootstrap : WindowsFormsApplication<ApplicationShell>
     {
         [STAThread]
         static void Main()
         {
-            new bootstrap().run();
+            new Bootstrap().run();
         }
     }
 }

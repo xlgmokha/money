@@ -6,10 +6,10 @@ using Gorilla.Commons.Utility.Extensions;
 using Gorilla.Commons.Windows.Forms;
 using Gorilla.Commons.Windows.Forms.Krypton;
 using MoMoney.DTO;
-using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters.income;
 using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Presentation.Views.core;
+using MoMoney.Service.Application;
 
 namespace MoMoney.Presentation.Views.income
 {
@@ -39,7 +39,7 @@ namespace MoMoney.Presentation.Views.income
             ux_income_received_grid.DataSource = incomes.databind();
         }
 
-        public void notify(params notification_message[] messages)
+        public void notify(params NotificationMessage[] messages)
         {
             var builder = new StringBuilder();
             messages.each(x => builder.AppendLine(x));

@@ -7,10 +7,10 @@ using Gorilla.Commons.Utility.Extensions;
 using Gorilla.Commons.Windows.Forms;
 using Gorilla.Commons.Windows.Forms.Databinding;
 using MoMoney.DTO;
-using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
+using MoMoney.Service.Application;
 
 namespace MoMoney.Presentation.Views
 {
@@ -48,7 +48,7 @@ namespace MoMoney.Presentation.Views
             listView1.Items.AddRange(companies.Select(x => new ListViewItem(x.name, 0)).ToArray());
         }
 
-        public void notify(params notification_message[] messages)
+        public void notify(params NotificationMessage[] messages)
         {
             var builder = new StringBuilder();
             messages.each(x => builder.Append(x));

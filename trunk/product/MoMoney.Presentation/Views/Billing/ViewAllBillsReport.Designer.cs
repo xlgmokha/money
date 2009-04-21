@@ -3,7 +3,7 @@ namespace MoMoney.Presentation.Views.billing
     /// <summary>
     /// Summary description for view_all_bills.
     /// </summary>
-    partial class view_all_bills_report
+    partial class ViewAllBillsReport
     {
         private DataDynamics.ActiveReports.PageHeader pageHeader;
         private DataDynamics.ActiveReports.Detail detail;
@@ -27,7 +27,7 @@ namespace MoMoney.Presentation.Views.billing
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(view_all_bills_report));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllBillsReport));
             this.pageHeader = new DataDynamics.ActiveReports.PageHeader();
             this.detail = new DataDynamics.ActiveReports.Detail();
             this.ux_company_name = new DataDynamics.ActiveReports.RichTextBox();

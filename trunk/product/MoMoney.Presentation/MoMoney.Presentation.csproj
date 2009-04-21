@@ -228,11 +228,11 @@
     <Compile Include="Views\Billing\ViewAllBills.Designer.cs">
       <DependentUpon>ViewAllBills.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Billing\view_all_bills_report.cs">
+    <Compile Include="Views\Billing\ViewAllBillsReport.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\Billing\view_all_bills_report.Designer.cs">
-      <DependentUpon>view_all_bills_report.cs</DependentUpon>
+    <Compile Include="Views\Billing\ViewAllBillsReport.Designer.cs">
+      <DependentUpon>ViewAllBillsReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Core\ApplicationDockedWindow.cs">
       <SubType>Form</SubType>
@@ -368,8 +368,8 @@
       <DependentUpon>ViewAllBills.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Billing\view_all_bills_report.resx">
-      <DependentUpon>view_all_bills_report.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Billing\ViewAllBillsReport.resx">
+      <DependentUpon>ViewAllBillsReport.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Core\ApplicationWindow.resx">
@@ -458,7 +458,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Views\Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -67,7 +67,7 @@
     <Compile Include="Application\GetAllIncomeQuery.cs" />
     <Compile Include="Application\IncomeTasks.cs" />
     <Compile Include="Application\INotification.cs" />
-    <Compile Include="Application\notification_message.cs" />
+    <Compile Include="Application\NotificationMessage.cs" />
     <Compile Include="Application\RegisterNewCompanyCommand.cs" />
     <Compile Include="Application\SaveNewBillCommand.cs" />
     <Compile Include="Infrastructure\Logging\LogFileTasks.cs" />
@@ -107,7 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />
-    <Folder Include="Infrastructure\Core\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

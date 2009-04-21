@@ -17,7 +17,7 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             registry.transient<IReportViewer, ReportViewer>();
-            registry.transient<IViewAllBillsReport, view_all_bills_report>();
+            registry.transient<IViewAllBillsReport, ViewAllBillsReport>();
         }
     }
 }

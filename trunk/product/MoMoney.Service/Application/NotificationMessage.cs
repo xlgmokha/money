@@ -1,22 +1,22 @@
-namespace MoMoney.Presentation.Model.interaction
+namespace MoMoney.Service.Application
 {
-    public class notification_message
+    public class NotificationMessage
     {
         private readonly string the_message_to_display;
 
-        public notification_message(string the_message_to_display)
+        public NotificationMessage(string the_message_to_display)
         {
             this.the_message_to_display = the_message_to_display;
         }
 
-        public static implicit operator string(notification_message message)
+        public static implicit operator string(NotificationMessage message)
         {
             return message.ToString();
         }
 
-        public static implicit operator notification_message(string message)
+        public static implicit operator NotificationMessage(string message)
         {
-            return new notification_message(message);
+            return new NotificationMessage(message);
         }
 
         public override string ToString()
@@ -24,7 +24,7 @@ namespace MoMoney.Presentation.Model.interaction
             return the_message_to_display;
         }
 
-        public bool Equals(notification_message obj)
+        public bool Equals(NotificationMessage obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
@@ -35,8 +35,8 @@ namespace MoMoney.Presentation.Model.interaction
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (notification_message)) return false;
-            return Equals((notification_message) obj);
+            if (obj.GetType() != typeof (NotificationMessage)) return false;
+            return Equals((NotificationMessage) obj);
         }
 
         public override int GetHashCode()
