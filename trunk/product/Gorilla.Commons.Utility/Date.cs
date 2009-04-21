@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace MoMoney.Domain.Core
+namespace Gorilla.Commons.Utility
 {
     public interface IDate : IComparable<IDate>, IComparable, IEquatable<IDate>
     {
@@ -13,7 +13,7 @@ namespace MoMoney.Domain.Core
     [Serializable]
     public class Date : IDate, IEquatable<Date>
     {
-        private readonly long ticks;
+        readonly long ticks;
 
         public Date(int year, int month, int day)
         {
@@ -30,12 +30,12 @@ namespace MoMoney.Domain.Core
             return new DateTime(ticks);
         }
 
-        public static implicit operator Date(DateTime date)
+        static public implicit operator Date(DateTime date)
         {
             return new Date(date.Year, date.Month, date.Day);
         }
 
-        public static implicit operator DateTime(Date date)
+        static public implicit operator DateTime(Date date)
         {
             return date.to_date_time();
         }

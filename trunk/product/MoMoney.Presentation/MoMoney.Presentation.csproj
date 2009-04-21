@@ -123,48 +123,47 @@
     <Compile Include="Model\Menu\SubMenuRegistry.cs" />
     <Compile Include="Model\Menu\ToolBarItemBuilder.cs" />
     <Compile Include="Model\Menu\Window\WindowMenu.cs" />
-    <Compile Include="Model\Messages\closing_project_event.cs" />
-    <Compile Include="Model\Messages\closing_the_application.cs" />
-    <Compile Include="Model\Messages\new_project_opened.cs" />
-    <Compile Include="Model\Messages\saved_changes_event.cs" />
+    <Compile Include="Model\Messages\ClosingProjectEvent.cs" />
+    <Compile Include="Model\Messages\ClosingTheApplication.cs" />
+    <Compile Include="Model\Messages\NewProjectOpened.cs" />
+    <Compile Include="Model\Messages\SavedChangesEvent.cs" />
     <Compile Include="Model\Messages\UnhandledErrorOccurred.cs" />
-    <Compile Include="Model\Messages\unsaved_changes_event.cs" />
+    <Compile Include="Model\Messages\UnsavedChangesEvent.cs" />
     <Compile Include="Model\Navigation\AddNewIncomeBranch.cs" />
-    <Compile Include="Model\Navigation\add_bill_payment_branch.cs" />
-    <Compile Include="Model\Navigation\add_new_bill_branch.cs" />
+    <Compile Include="Model\Navigation\AddBillPaymentBranch.cs" />
+    <Compile Include="Model\Navigation\AddNewBillBranch.cs" />
     <Compile Include="Model\Navigation\IBranchVisitor.cs" />
     <Compile Include="Model\Navigation\NavigationTreeVisitor.cs" />
-    <Compile Include="Model\Navigation\navigation_tree_visitor_specs.cs" />
+    <Compile Include="Model\Navigation\NavigationTreeVisitorSpecs.cs" />
     <Compile Include="Model\Navigation\TreeBranch.cs" />
     <Compile Include="Model\Navigation\TreeViewToRootNodeMapper.cs" />
-    <Compile Include="Model\Navigation\tree_branch_specs.cs" />
-    <Compile Include="Model\Navigation\view_all_bills_branch.cs" />
-    <Compile Include="Model\Navigation\view_all_bills_report_branch.cs" />
+    <Compile Include="Model\Navigation\TreeBranchSpecs.cs" />
+    <Compile Include="Model\Navigation\ViewAllBillsBranch.cs" />
+    <Compile Include="Model\Navigation\ViewAllBillsReportBranch.cs" />
     <Compile Include="Model\Projects\EmptyProject.cs" />
-    <Compile Include="Model\Projects\file_not_specified_exception.cs" />
+    <Compile Include="Model\Projects\FileNotSpecifiedException.cs" />
     <Compile Include="Model\Projects\IProject.cs" />
     <Compile Include="Model\Projects\IProjectController.cs" />
     <Compile Include="Model\Projects\Project.cs" />
     <Compile Include="Model\Projects\ProjectController.cs" />
     <Compile Include="Model\Projects\ProjectControllerSpecs.cs" />
     <Compile Include="Model\Reporting\IReport.cs" />
-    <Compile Include="Model\Reporting\report_binding_extensions.cs" />
-    <Compile Include="Model\Reporting\report_binding_extensions_specs.cs" />
+    <Compile Include="Model\Reporting\ReportBindingExtensions.cs" />
+    <Compile Include="Model\Reporting\ReportBindingExtensionsSpecs.cs" />
     <Compile Include="Presenters\AddCompanyPresenter.cs" />
     <Compile Include="Presenters\AddCompanyPresenterSpecs.cs" />
     <Compile Include="Presenters\Billing\AddBillPaymentPresenter.cs" />
     <Compile Include="Presenters\Billing\ViewAllBillsPresenter.cs" />
-    <Compile Include="Presenters\Commands\display_the_splash_screen.cs" />
     <Compile Include="Presenters\Commands\RestartCommand.cs" />
     <Compile Include="Presenters\Commands\RunPresenterCommand.cs" />
     <Compile Include="Presenters\Commands\RunThe.cs" />
-    <Compile Include="Presenters\Commands\run_the_specs.cs" />
+    <Compile Include="Presenters\Commands\RunTheSpecs.cs" />
     <Compile Include="Presenters\Excel\Cell.cs" />
-    <Compile Include="Presenters\Excel\change_font_size.cs" />
-    <Compile Include="Presenters\Excel\composite_cell_visitor.cs" />
-    <Compile Include="Presenters\Excel\constrained_cell_visitor.cs" />
-    <Compile Include="Presenters\Excel\excel_usage.cs" />
-    <Compile Include="Presenters\Excel\format_back_color.cs" />
+    <Compile Include="Presenters\Excel\ChangeFontSize.cs" />
+    <Compile Include="Presenters\Excel\CompositeCellVisitor.cs" />
+    <Compile Include="Presenters\Excel\ConstrainedCellVisitor.cs" />
+    <Compile Include="Presenters\Excel\ExcelUsage.cs" />
+    <Compile Include="Presenters\Excel\FormatBackColor.cs" />
     <Compile Include="Presenters\Excel\ICell.cs" />
     <Compile Include="Presenters\Excel\ICellInterior.cs" />
     <Compile Include="Presenters\Excel\ICellVisitor.cs" />
@@ -448,10 +447,6 @@
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
       <Name>MoMoney.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MoMoney.Domain\MoMoney.Domain.csproj">
-      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
-      <Name>MoMoney.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MoMoney.DTO\MoMoney.DTO.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
       <Name>MoMoney.DTO</Name>
@@ -462,8 +457,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\Interaction\" />
-    <Folder Include="Model\Keyboard\" />
     <Folder Include="Properties\" />
     <Folder Include="Views\Helpers\" />
   </ItemGroup>

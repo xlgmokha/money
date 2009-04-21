@@ -16,7 +16,6 @@ using MoMoney.boot.container;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Startup;
 using MoMoney.windows.ui;
-using display_the_splash_screen=MoMoney.Presentation.Presenters.Commands.display_the_splash_screen;
 
 namespace MoMoney.boot
 {

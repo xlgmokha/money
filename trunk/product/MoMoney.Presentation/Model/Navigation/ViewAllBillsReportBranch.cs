@@ -2,13 +2,13 @@ using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Presenters.reporting;
 using MoMoney.Presentation.Resources;
 
-namespace MoMoney.Presentation.Model.Navigation.branches
+namespace MoMoney.Presentation.Model.Navigation
 {
-    public class view_all_bills_report_branch : IBranchVisitor
+    public class ViewAllBillsReportBranch : IBranchVisitor
     {
         private readonly IRunThe<IViewAllBillsReportPresenter> command;
 
-        public view_all_bills_report_branch(IRunThe<IViewAllBillsReportPresenter> command)
+        public ViewAllBillsReportBranch(IRunThe<IViewAllBillsReportPresenter> command)
         {
             this.command = command;
         }

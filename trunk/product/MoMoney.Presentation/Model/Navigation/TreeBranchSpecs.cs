@@ -6,6 +6,10 @@ using Rhino.Mocks;
 
 namespace MoMoney.Presentation.Model.Navigation
 {
+    public class TreeBranchSpecs
+    {
+    }
+
     [Concern(typeof (TreeBranch))]
     public abstract class behaves_like_a_tree_branch : concerns_for<ITreeBranch, TreeBranch>
     {
@@ -20,8 +24,8 @@ namespace MoMoney.Presentation.Model.Navigation
             return new TreeBranch(tree_node, command);
         }
 
-        protected static TreeNode tree_node;
-        protected static ICommand command;
+        static protected TreeNode tree_node;
+        static protected ICommand command;
     }
 
     public class when_accepting_a_visitor_that_visits_tree_nodes : behaves_like_a_tree_branch

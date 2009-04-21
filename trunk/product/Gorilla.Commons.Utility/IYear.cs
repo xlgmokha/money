@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Domain.Core
+namespace Gorilla.Commons.Utility
 {
     public interface IYear
     {

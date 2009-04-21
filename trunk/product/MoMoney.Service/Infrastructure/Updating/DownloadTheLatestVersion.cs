@@ -1,6 +1,6 @@
 using Gorilla.Commons.Infrastructure;
+using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Domain.Core;
 using MoMoney.Tasks.infrastructure.updating;
 
 namespace MoMoney.Service.Infrastructure.Updating

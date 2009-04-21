@@ -2,13 +2,13 @@ using MoMoney.Presentation.Presenters.billing;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Resources;
 
-namespace MoMoney.Presentation.Model.Navigation.branches
+namespace MoMoney.Presentation.Model.Navigation
 {
-    public class view_all_bills_branch : IBranchVisitor
+    public class ViewAllBillsBranch : IBranchVisitor
     {
         private readonly IRunThe<IViewAllBillsPresenter> command;
 
-        public view_all_bills_branch(IRunThe<IViewAllBillsPresenter> command)
+        public ViewAllBillsBranch(IRunThe<IViewAllBillsPresenter> command)
         {
             this.command = command;
         }

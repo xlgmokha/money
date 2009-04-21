@@ -9,11 +9,6 @@ namespace MoMoney.Presentation.Model.Navigation
     public abstract class behaves_like_a_navigation_tree_visitor :
         concerns_for<INavigationTreeVisitor, NavigationTreeVisitor>
     {
-        //public override INavigationTreeVisitor create_sut()
-        //{
-        //    return new NavigationTreeVisitor(factory, registry);
-        //}
-
         context c = () =>
                         {
                             factory = the_dependency<ITreeViewToRootNodeMapper>();
@@ -32,21 +27,17 @@ namespace MoMoney.Presentation.Model.Navigation
                                                                  root_node.was_told_to(x => x.accept(second_visitor));
                                                              };
 
-        context c = () =>
-                        {
-                            tree_view = dependency<TreeView>();
-                            root_node = an<ITreeBranch>();
-                            first_visitor = an<IBranchVisitor>();
-                            second_visitor = an<IBranchVisitor>();
+        context c =
+            () =>
+                {
+                    tree_view = dependency<TreeView>();
+                    root_node = an<ITreeBranch>();
+                    first_visitor = an<IBranchVisitor>();
+                    second_visitor = an<IBranchVisitor>();
 
-                            when_the(factory)
-                                .is_told_to(x => x.map_from(tree_view))
-                                .it_will_return(root_node);
-
-                            when_the(registry)
-                                .is_told_to(x => x.all())
-                                .it_will_return(first_visitor, second_visitor);
-                        };
+                    when_the(factory).is_told_to(x => x.map_from(tree_view)).it_will_return(root_node);
+                    when_the(registry).is_told_to(x => x.all()).it_will_return(first_visitor, second_visitor);
+                };
 
         because b = () => sut.visit(tree_view);
 

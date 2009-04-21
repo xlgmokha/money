@@ -1,7 +1,7 @@
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Resources;
 
-namespace MoMoney.Presentation.Model.Navigation.branches
+namespace MoMoney.Presentation.Model.Navigation
 {
     public class AddNewIncomeBranch : IBranchVisitor
     {

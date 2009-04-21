@@ -2,13 +2,13 @@ using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Resources;
 
-namespace MoMoney.Presentation.Model.Navigation.branches
+namespace MoMoney.Presentation.Model.Navigation
 {
-    public class add_new_bill_branch : IBranchVisitor
+    public class AddNewBillBranch : IBranchVisitor
     {
         readonly IRunPresenterCommand command;
 
-        public add_new_bill_branch(IRunPresenterCommand command)
+        public AddNewBillBranch(IRunPresenterCommand command)
         {
             this.command = command;
         }

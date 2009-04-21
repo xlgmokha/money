@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace MoMoney.Domain.Core
+namespace Gorilla.Commons.Utility
 {
     public class when_comparing_fifty_divided_by_one_hundred_to_fifty_percent : concerns
     {

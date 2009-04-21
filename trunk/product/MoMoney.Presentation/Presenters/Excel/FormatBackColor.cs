@@ -1,12 +1,13 @@
 using System.Drawing;
+using MoMoney.Presentation.Presenters.excel;
 
-namespace MoMoney.Presentation.Presenters.excel.formatting
+namespace MoMoney.Presentation.Presenters.Excel
 {
-    public class format_back_color : ICellVisitor
+    public class FormatBackColor : ICellVisitor
     {
         private readonly Color color;
 
-        public format_back_color(Color color)
+        public FormatBackColor(Color color)
         {
             this.color = color;
         }

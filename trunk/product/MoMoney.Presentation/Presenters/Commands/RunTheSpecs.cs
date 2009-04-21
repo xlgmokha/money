@@ -4,6 +4,10 @@ using MoMoney.Presentation.Core;
 
 namespace MoMoney.Presentation.Presenters.Commands
 {
+    public class RunTheSpecs
+    {
+    }
+
     [Concern(typeof (RunThe<>))]
     public class when_initializing_different_regions_of_the_user_interface :
         concerns_for<IRunThe<IPresenter>, RunThe<IPresenter>>

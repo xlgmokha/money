@@ -5,7 +5,11 @@ using Gorilla.Commons.Testing;
 
 namespace MoMoney.Presentation.Model.reporting
 {
-    [Concern(typeof (report_binding_extensions))]
+    public class ReportBindingExtensionsSpecs
+    {
+    }
+
+    [Concern(typeof (ReportBindingExtensions))]
     public class when_binding_a_active_report_control_to_a_string_property_of_a_dto : concerns
     {
         it should_set_the_controls_datafield_property_to_the_name_of_the_dtos_property =
@@ -18,7 +22,7 @@ namespace MoMoney.Presentation.Model.reporting
         static ARControl control;
     }
 
-    [Concern(typeof (report_binding_extensions))]
+    [Concern(typeof (ReportBindingExtensions))]
     public class when_binding_a_active_report_control_to_a_date_time_property_of_a_dto : concerns
     {
         it should_set_the_controls_datafield_property_to_the_name_of_the_dtos_property =

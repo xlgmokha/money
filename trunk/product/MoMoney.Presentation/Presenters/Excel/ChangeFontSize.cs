@@ -1,10 +1,12 @@
-namespace MoMoney.Presentation.Presenters.excel.formatting
+using MoMoney.Presentation.Presenters.excel;
+
+namespace MoMoney.Presentation.Presenters.Excel
 {
-    public class change_font_size : ICellVisitor
+    public class ChangeFontSize : ICellVisitor
     {
         private readonly int font_size;
 
-        public change_font_size(int font_size)
+        public ChangeFontSize(int font_size)
         {
             this.font_size = font_size;
         }

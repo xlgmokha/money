@@ -5,7 +5,7 @@ using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Presentation.Model.reporting
 {
-    public static class report_binding_extensions
+    public static class ReportBindingExtensions
     {
         public static void bind_to<T, K>(this ARControl control, Expression<Func<T, K>> func)
         {

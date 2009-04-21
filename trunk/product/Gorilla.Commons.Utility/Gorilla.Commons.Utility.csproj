@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clock.cs" />
     <Compile Include="Core\ActionCommand.cs" />
     <Compile Include="Core\AndSpecification.cs" />
     <Compile Include="Core\AnonymousDisposable.cs" />
@@ -91,6 +92,8 @@
     <Compile Include="Core\OrSpecificationSpecs.cs" />
     <Compile Include="Core\PredicateSpecification.cs" />
     <Compile Include="Core\PredicateSpecificationSpecs.cs" />
+    <Compile Include="Date.cs" />
+    <Compile Include="DateSpecs.cs" />
     <Compile Include="Extensions\CommandExtensions.cs" />
     <Compile Include="Extensions\ConfigurationExtensions.cs" />
     <Compile Include="Extensions\ConversionExtensions.cs" />
@@ -108,6 +111,9 @@
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Extensions\TypeExtensionsSpecs.cs" />
     <Compile Include="Extensions\VisitorExtensions.cs" />
+    <Compile Include="IYear.cs" />
+    <Compile Include="Percent.cs" />
+    <Compile Include="PercentSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">

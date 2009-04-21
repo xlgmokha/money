@@ -1,4 +1,5 @@
 using System;
+using Gorilla.Commons.Utility;
 
 namespace MoMoney.Domain.Core
 {

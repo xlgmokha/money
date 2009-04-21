@@ -2,7 +2,7 @@ using System;
 using MoMoney.Presentation.Presenters.Startup;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Presentation.Presenters.Commands
+namespace MoMoney.boot
 {
     public class display_the_splash_screen : IDisposableCommand
     {

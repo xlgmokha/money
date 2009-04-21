@@ -3,11 +3,11 @@ using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Presentation.Presenters.excel
 {
-    public class composite_cell_visitor : ICellVisitor
+    public class CompositeCellVisitor : ICellVisitor
     {
         private readonly IList<ICellVisitor> all_visitors;
 
-        public composite_cell_visitor()
+        public CompositeCellVisitor()
         {
             all_visitors = new List<ICellVisitor>();
         }
