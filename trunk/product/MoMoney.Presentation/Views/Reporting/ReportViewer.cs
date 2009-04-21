@@ -1,4 +1,5 @@
-﻿using DataDynamics.ActiveReports;
+using System;
+using DataDynamics.ActiveReports;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.reporting;
 using MoMoney.Presentation.Views.core;

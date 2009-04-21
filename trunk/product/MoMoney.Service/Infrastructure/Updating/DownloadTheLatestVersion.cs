@@ -1,8 +1,9 @@
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
+using MoMoney.Tasks.infrastructure.updating;
 
-namespace MoMoney.Tasks.infrastructure.updating
+namespace MoMoney.Service.Infrastructure.Updating
 {
     public interface IDownloadTheLatestVersion : ICallbackCommand<Percent>
     {

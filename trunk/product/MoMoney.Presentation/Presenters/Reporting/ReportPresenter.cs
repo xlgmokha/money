@@ -1,7 +1,4 @@
-using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.accounting.billing;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.billing;
 using MoMoney.Presentation.Views.reporting;
 using MoMoney.Tasks.application;
@@ -15,28 +12,18 @@ namespace MoMoney.Presentation.Presenters.reporting
     public class ReportPresenter : ContentPresenter<IReportViewer>, IViewAllBillsReportPresenter
     {
         readonly IViewAllBillsReport report;
-        readonly IBillingTasks tasks;
+        readonly IGetAllBillsQuery query;
 
-        public ReportPresenter(IReportViewer view, IViewAllBillsReport report, IBillingTasks tasks) : base(view)
+        public ReportPresenter(IReportViewer view, IViewAllBillsReport report, IGetAllBillsQuery query) : base(view)
         {
-            this.tasks = tasks;
             this.report = report;
+            this.query = query;
         }
 
         public override void run()
         {
-            report.bind_to(tasks.all_bills().map_all_using(x => map_from(x)));
+            report.run(query.fetch());
             view.display(report);
-        }
-
-        BillInformationDTO map_from(IBill x)
-        {
-            return new BillInformationDTO
-                       {
-                           company_name = x.company_to_pay.name,
-                           due_date = x.due_date.to_date_time(),
-                           the_amount_owed = x.the_amount_owed.to_string()
-                       };
         }
     }
 }

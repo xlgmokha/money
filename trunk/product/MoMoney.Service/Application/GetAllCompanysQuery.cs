@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Domain.accounting.billing;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.repositories;
+using MoMoney.DTO;
 
 namespace MoMoney.Tasks.application
 {
-    public interface IGetAllCompanysQuery : IQuery<IEnumerable<ICompany>>
+    public interface IGetAllCompanysQuery : IQuery<IEnumerable<CompanyDTO>>
     {
     }
 
@@ -18,9 +19,9 @@ namespace MoMoney.Tasks.application
             this.companys = companys;
         }
 
-        public IEnumerable<ICompany> fetch()
+        public IEnumerable<CompanyDTO> fetch()
         {
-            return companys.all();
+            return companys.all().map_all_using(x => new CompanyDTO {id = x.id, name = x.name});
         }
     }
 }

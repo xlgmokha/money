@@ -1,9 +1,9 @@
-using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.accounting.financial_growth;
+using System.Collections.Generic;
+using Gorilla.Commons.Infrastructure;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Presentation.Views.income;
-using MoMoney.Tasks.application;
+using MoMoney.Service.Application;
 
 namespace MoMoney.Presentation.Presenters.income
 {
@@ -13,26 +13,17 @@ namespace MoMoney.Presentation.Presenters.income
 
     public class ViewIncomeHistoryPresenter : ContentPresenter<IViewIncomeHistory>, IViewIncomeHistoryPresenter
     {
-        readonly IIncomeTasks tasks;
+        readonly ICommandPump pump;
 
-        public ViewIncomeHistoryPresenter(IViewIncomeHistory view, IIncomeTasks tasks) : base(view)
+        public ViewIncomeHistoryPresenter(IViewIncomeHistory view, ICommandPump pump) : base(view)
         {
-            this.tasks = tasks;
+            this.pump = pump;
         }
 
         public override void run()
         {
-            view.display(tasks.retrive_all_income().map_all_using(x => map_from(x)));
-        }
-
-        income_information_dto map_from(IIncome x)
-        {
-            return new income_information_dto
-                       {
-                           amount = x.amount_tendered.ToString(),
-                           company = x.company.ToString(),
-                           recieved_date = x.date_of_issue.ToString(),
-                       };
+            view.attach_to(this);
+            pump.run<IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>(view);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 using Gorilla.Commons.Windows.Forms;
 using Gorilla.Commons.Windows.Forms.Krypton;
-using MoMoney.Domain.accounting.billing;
+using MoMoney.DTO;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters.income;
 using MoMoney.Presentation.Presenters.income.dto;
@@ -29,12 +29,12 @@ namespace MoMoney.Presentation.Views.income
             submit_button = x => presenter.submit_new(create_income());
         }
 
-        public void display(IEnumerable<ICompany> companies)
+        public void run(IEnumerable<CompanyDTO> companies)
         {
             ux_companys.bind_to(companies);
         }
 
-        public void display(IEnumerable<income_information_dto> incomes)
+        public void run(IEnumerable<IncomeInformationDTO> incomes)
         {
             ux_income_received_grid.DataSource = incomes.databind();
         }
@@ -50,7 +50,7 @@ namespace MoMoney.Presentation.Views.income
         {
             return new IncomeSubmissionDto
                        {
-                           company_id = ux_companys.SelectedItem.downcast_to<ICompany>().id,
+                           company_id = ux_companys.SelectedItem.downcast_to<CompanyDTO>().id,
                            amount = ux_amount.Text.to_double(),
                            recieved_date = ux_date_received.Value
                        };

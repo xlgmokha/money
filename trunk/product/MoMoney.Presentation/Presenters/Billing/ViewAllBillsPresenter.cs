@@ -1,4 +1,5 @@
-using Gorilla.Commons.Utility.Extensions;
+using System.Collections.Generic;
+using Gorilla.Commons.Infrastructure;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.billing;
@@ -12,25 +13,17 @@ namespace MoMoney.Presentation.Presenters.billing
 
     public class ViewAllBillsPresenter : ContentPresenter<IViewAllBills>, IViewAllBillsPresenter
     {
-        readonly IBillingTasks tasks;
+        readonly ICommandPump pump;
 
-        public ViewAllBillsPresenter(IViewAllBills view, IBillingTasks tasks) : base(view)
+        public ViewAllBillsPresenter(IViewAllBills view, ICommandPump pump) : base(view)
         {
-            this.tasks = tasks;
+            this.pump = pump;
         }
 
         public override void run()
         {
-            view.display(
-                tasks
-                    .all_bills()
-                    .map_all_using(
-                    x => new BillInformationDTO
-                             {
-                                 company_name = x.company_to_pay.name,
-                                 the_amount_owed = x.the_amount_owed.ToString(),
-                                 due_date = x.due_date.to_date_time(),
-                             }));
+            view.attach_to(this);
+            pump.run<IEnumerable<BillInformationDTO>, IGetAllBillsQuery>(view);
         }
     }
 }

@@ -9,12 +9,12 @@ namespace MoMoney.Domain.Core
         T end_of_range { get; }
     }
 
-    public class range<T> : IRange<T> where T : IComparable
+    public class Range<T> : IRange<T> where T : IComparable
     {
         public T start_of_range { get; private set; }
         public T end_of_range { get; private set; }
 
-        public range(T start_of_range, T end_of_range)
+        public Range(T start_of_range, T end_of_range)
         {
             if (start_of_range.CompareTo(end_of_range) < 0) {
                 this.start_of_range = start_of_range;

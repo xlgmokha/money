@@ -96,8 +96,6 @@
     <Compile Include="Core\PresenterRegistry.cs" />
     <Compile Include="IModule.cs" />
     <Compile Include="Model\FileSystem\folder.cs" />
-    <Compile Include="Model\Interaction\INotification.cs" />
-    <Compile Include="Model\Interaction\notification_message.cs" />
     <Compile Include="Model\Menu\create.cs" />
     <Compile Include="Model\Menu\File\CloseProjectCommand.cs" />
     <Compile Include="Model\Menu\File\CloseWindowCommand.cs" />
@@ -464,6 +462,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Model\Interaction\" />
     <Folder Include="Model\Keyboard\" />
     <Folder Include="Properties\" />
     <Folder Include="Views\Helpers\" />

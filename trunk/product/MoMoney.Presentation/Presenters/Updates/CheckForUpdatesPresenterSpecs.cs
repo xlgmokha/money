@@ -1,6 +1,8 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Core;
+using MoMoney.Domain.Core;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.updates;
@@ -16,17 +18,11 @@ namespace MoMoney.Presentation.Presenters.updates
         context c = () =>
                         {
                             view = the_dependency<ICheckForUpdatesView>();
-                            command = the_dependency<IRestartCommand>();
-                            download_the_latest = the_dependency<IDownloadTheLatestVersion>();
                             pump = the_dependency<ICommandPump>();
-                            cancel_update = the_dependency<ICancelUpdate>();
                         };
 
-        protected static ICheckForUpdatesView view;
-        protected static IRestartCommand command;
-        protected static IDownloadTheLatestVersion download_the_latest;
-        protected static ICancelUpdate cancel_update;
-       protected static ICommandPump pump;
+        static protected ICheckForUpdatesView view;
+        static protected ICommandPump pump;
     }
 
     public class when_attempting_to_check_for_updates : behaves_like_check_for_updates_presenter
@@ -36,7 +32,8 @@ namespace MoMoney.Presentation.Presenters.updates
         it should_tell_the_view_to_display_the_information_on_the_current_version_of_the_application =
             () => view.was_told_to(x => x.display());
 
-        it should_go_and_find_out_what_the_latest_version_is = () => pump.was_told_to(x => x.run<ApplicationVersion, IWhatIsTheAvailableVersion>(view));
+        it should_go_and_find_out_what_the_latest_version_is =
+            () => pump.was_told_to(x => x.run<ApplicationVersion, IWhatIsTheAvailableVersion>(view));
 
         because b = () => sut.run();
     }
@@ -44,7 +41,7 @@ namespace MoMoney.Presentation.Presenters.updates
     public class when_initiating_an_update_and_one_is_available : behaves_like_check_for_updates_presenter
     {
         it should_start_downloading_the_latest_version_of_the_application =
-            () => download_the_latest.was_told_to(x => x.run(sut));
+            () => pump.was_told_to(x => x.run<IDownloadTheLatestVersion, ICallback<Percent>>(sut));
 
         because b = () => sut.begin_update();
     }
@@ -65,7 +62,7 @@ namespace MoMoney.Presentation.Presenters.updates
 
     public class when_an_update_is_cancelled : behaves_like_check_for_updates_presenter
     {
-        it should_stop_downloading_the_latest_update = () => cancel_update.was_told_to(x => x.run());
+        it should_stop_downloading_the_latest_update = () => pump.was_told_to(x => x.run<ICancelUpdate>());
 
         because b = () => sut.cancel_update();
     }
@@ -73,7 +70,7 @@ namespace MoMoney.Presentation.Presenters.updates
     public class when_an_update_is_complete_and_the_user_agrees_to_restart_the_application :
         behaves_like_check_for_updates_presenter
     {
-        it should_restart_the_application = () => command.run();
+        it should_restart_the_application = () => pump.was_told_to(x => x.run<IRestartCommand>());
 
         because b = () => sut.restart();
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
 using Gorilla.Commons.Windows.Forms;
 using Gorilla.Commons.Windows.Forms.Krypton;
-using MoMoney.Domain.accounting.billing;
+using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.billing;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.core;
@@ -26,7 +26,7 @@ namespace MoMoney.Presentation.Views.billing
             submit_clicked = x => presenter.submit_bill_payment(create_dto());
         }
 
-        public void run(IEnumerable<ICompany> companys)
+        public void run(IEnumerable<CompanyDTO> companys)
         {
             ux_company_names.bind_to(companys);
         }

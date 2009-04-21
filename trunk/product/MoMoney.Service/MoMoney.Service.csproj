@@ -31,9 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
+    </Reference>
     <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -50,11 +58,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\AddNewIncomeCommand.cs" />
+    <Compile Include="Application\AddNewIncomeCommandSpecs.cs" />
     <Compile Include="Application\BillingTasks.cs" />
     <Compile Include="Application\CustomerTasks.cs" />
     <Compile Include="Application\GetAllBillsQuery.cs" />
     <Compile Include="Application\GetAllCompanysQuery.cs" />
+    <Compile Include="Application\GetAllIncomeQuery.cs" />
     <Compile Include="Application\IncomeTasks.cs" />
+    <Compile Include="Application\INotification.cs" />
+    <Compile Include="Application\notification_message.cs" />
     <Compile Include="Application\RegisterNewCompanyCommand.cs" />
     <Compile Include="Application\SaveNewBillCommand.cs" />
     <Compile Include="Infrastructure\Logging\LogFileTasks.cs" />

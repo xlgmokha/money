@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 using Gorilla.Commons.Windows.Forms;
 using Gorilla.Commons.Windows.Forms.Databinding;
-using MoMoney.Domain.accounting.billing;
 using MoMoney.DTO;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters;
@@ -41,7 +40,7 @@ namespace MoMoney.Presentation.Views
             submit_button = x => presenter.submit(dto);
         }
 
-        public void run(IEnumerable<ICompany> companies)
+        public void run(IEnumerable<CompanyDTO> companies)
         {
             ux_companys_listing.DataSource = companies.databind();
 

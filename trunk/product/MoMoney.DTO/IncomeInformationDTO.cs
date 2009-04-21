@@ -1,6 +1,6 @@
 namespace MoMoney.Presentation.Presenters.income.dto
 {
-    public class income_information_dto
+    public class IncomeInformationDTO
     {
         public string company { get; set; }
         public string amount { get; set; }

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.accounting.billing;
 using MoMoney.DTO;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Views;
@@ -30,7 +29,7 @@ namespace MoMoney.Presentation.Presenters
         public override void run()
         {
             view.attach_to(this);
-            pump.run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view);
+            pump.run<IEnumerable<CompanyDTO>, IGetAllCompanysQuery>(view);
         }
 
         public void submit(RegisterNewCompany dto)
@@ -40,7 +39,7 @@ namespace MoMoney.Presentation.Presenters
             else
                 pump
                     .run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto)
-                    .run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view);
+                    .run<IEnumerable<CompanyDTO>, IGetAllCompanysQuery>(view);
         }
 
         bool company_has_already_been_registered(RegisterNewCompany dto)

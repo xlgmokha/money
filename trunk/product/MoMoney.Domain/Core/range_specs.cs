@@ -3,21 +3,21 @@ using Gorilla.Commons.Testing;
 
 namespace MoMoney.Domain.Core
 {
-    [Concern(typeof (range<int>))]
+    [Concern(typeof (Range<int>))]
     public abstract class behaves_like_a_range_from_1_to_10 : concerns_for<IRange<int>>
     {
         public override IRange<int> create_sut()
         {
-            return new range<int>(1, 10);
+            return new Range<int>(1, 10);
         }
     }
 
-    [Concern(typeof (range<int>))]
+    [Concern(typeof (Range<int>))]
     public abstract class behaves_like_a_range_from_10_to_1 : concerns_for<IRange<int>>
     {
         public override IRange<int> create_sut()
         {
-            return new range<int>(10, 1);
+            return new Range<int>(10, 1);
         }
     }
 

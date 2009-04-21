@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Infrastructure;
-using MoMoney.Domain.accounting.billing;
+using MoMoney.DTO;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.billing;
@@ -26,7 +26,7 @@ namespace MoMoney.Presentation.Presenters.billing
         {
             view.attach_to(this);
             pump
-                .run<IEnumerable<ICompany>, IGetAllCompanysQuery>(view)
+                .run<IEnumerable<CompanyDTO>, IGetAllCompanysQuery>(view)
                 .run<IEnumerable<BillInformationDTO>, IGetAllBillsQuery>(view);
         }
 

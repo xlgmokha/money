@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using MoMoney.Presentation.Presenters.billing;
 using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.core;
 
@@ -13,7 +14,11 @@ namespace MoMoney.Presentation.Views.billing
             titled("View Bills");
         }
 
-        public void display(IEnumerable<BillInformationDTO> bills)
+        public void attach_to(IViewAllBillsPresenter presenter)
+        {
+        }
+
+        public void run(IEnumerable<BillInformationDTO> bills)
         {
             ux_bills.DataSource = bills.ToList();
         }

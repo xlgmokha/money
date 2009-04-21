@@ -1,4 +1,5 @@
 using Gorilla.Commons.Infrastructure;
+using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
 using MoMoney.Presentation.Core;
@@ -21,22 +22,12 @@ namespace MoMoney.Presentation.Presenters.updates
     public class CheckForUpdatesPresenter : ICheckForUpdatesPresenter
     {
         readonly ICheckForUpdatesView view;
-        readonly IRestartCommand command;
-        readonly IDownloadTheLatestVersion download_the_latest;
-        readonly ICancelUpdate cancel_requested_update;
         readonly ICommandPump pump;
 
-        public CheckForUpdatesPresenter(ICheckForUpdatesView view,
-                                        ICommandPump pump,
-                                        IRestartCommand command,
-                                        IDownloadTheLatestVersion download_the_latest,
-                                        ICancelUpdate cancel_requested_update)
+        public CheckForUpdatesPresenter(ICheckForUpdatesView view, ICommandPump pump)
         {
             this.pump = pump;
             this.view = view;
-            this.cancel_requested_update = cancel_requested_update;
-            this.download_the_latest = download_the_latest;
-            this.command = command;
         }
 
         public void run()
@@ -48,18 +39,18 @@ namespace MoMoney.Presentation.Presenters.updates
 
         public void begin_update()
         {
-            download_the_latest.run(this);
+            pump.run<IDownloadTheLatestVersion, ICallback<Percent>>(this);
         }
 
         public void cancel_update()
         {
-            cancel_requested_update.run();
+            pump.run<ICancelUpdate>();
             view.close();
         }
 
         public void restart()
         {
-            command.run();
+            pump.run<IRestartCommand>();
         }
 
         public void do_not_update()
@@ -71,10 +62,15 @@ namespace MoMoney.Presentation.Presenters.updates
         {
             if (completed.Equals(new Percent(100)))
             {
+                this.log().debug("completed download");
                 view.update_complete();
                 restart();
             }
-            else view.downloaded(completed);
+            else
+            {
+                this.log().debug("completed {0}", completed);
+                view.downloaded(completed);
+            }
         }
     }
 }

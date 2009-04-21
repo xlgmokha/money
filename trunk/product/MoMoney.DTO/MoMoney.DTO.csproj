@@ -48,8 +48,9 @@
     <Compile Include="AddNewBillDTO.cs" />
     <Compile Include="ApplicationVersion.cs" />
     <Compile Include="BillInformationDto.cs" />
+    <Compile Include="CompanyDTO.cs" />
     <Compile Include="IncomeSubmissionDto.cs" />
-    <Compile Include="income_information_dto.cs" />
+    <Compile Include="IncomeInformationDTO.cs" />
     <Compile Include="monthly_summary_dto.cs" />
     <Compile Include="RegisterNewCompany.cs" />
   </ItemGroup>
