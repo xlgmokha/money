@@ -3,7 +3,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility;
 using MoMoney.Domain.accounting.billing;
-using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Accounting.Growth;
 using MoMoney.Domain.Core;
 using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters.income.dto;

@@ -3,7 +3,7 @@ using Gorilla.Commons.Utility;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.accounting.financial_growth
+namespace MoMoney.Domain.Accounting.Growth
 {
     public interface IIncome : IEntity
     {

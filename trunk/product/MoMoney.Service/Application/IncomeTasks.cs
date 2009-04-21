@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using MoMoney.Domain.accounting.billing;
-using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Accounting.Growth;
 using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
 using MoMoney.Presentation.Presenters.income.dto;

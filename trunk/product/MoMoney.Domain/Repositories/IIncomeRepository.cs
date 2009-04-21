@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Accounting.Growth;
 
 namespace MoMoney.Domain.repositories
 {

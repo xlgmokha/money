@@ -67,11 +67,11 @@
     <Compile Include="Accounting\Billing\IEmployee.cs" />
     <Compile Include="Accounting\Billing\ILedgerEntry.cs" />
     <Compile Include="Accounting\Billing\Payment.cs" />
-    <Compile Include="Accounting\Billing\total_payments_calculator.cs" />
+    <Compile Include="Accounting\Billing\TotalPaymentsCalculator.cs" />
     <Compile Include="Accounting\GeneralLedger.cs" />
     <Compile Include="Accounting\GeneralLedgerSpecs.cs" />
     <Compile Include="Accounting\Growth\income.cs" />
-    <Compile Include="Accounting\Growth\income_extensions.cs" />
+    <Compile Include="Accounting\Growth\IncomeExtensions.cs" />
     <Compile Include="Accounting\IInvoice.cs" />
     <Compile Include="Core\DateExtensions.cs" />
     <Compile Include="Core\day.cs" />

@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Gorilla.Commons.Utility;
 using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.accounting.financial_growth
+namespace MoMoney.Domain.Accounting.Growth
 {
-    public static class income_extensions
+    public static class IncomeExtensions
     {
         public static IMoney in_the(this IEnumerable<IIncome> income_collected, IYear year)
         {

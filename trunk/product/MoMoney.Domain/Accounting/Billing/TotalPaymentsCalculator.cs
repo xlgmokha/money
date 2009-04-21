@@ -3,9 +3,9 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.accounting.billing
 {
-    internal class total_payments_calculator : IValueReturningVisitor<IMoney, IPayment>
+    internal class TotalPaymentsCalculator : IValueReturningVisitor<IMoney, IPayment>
     {
-        public total_payments_calculator()
+        public TotalPaymentsCalculator()
         {
             reset();
         }

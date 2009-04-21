@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Accounting.Growth;
 using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Tasks.application;
 

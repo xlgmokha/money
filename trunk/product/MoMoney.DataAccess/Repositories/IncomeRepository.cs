@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Infrastructure.Transactions;
-using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Accounting.Growth;
 using MoMoney.Domain.repositories;
 
 namespace MoMoney.DataAccess.repositories

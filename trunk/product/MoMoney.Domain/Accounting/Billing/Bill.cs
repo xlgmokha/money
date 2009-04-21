@@ -43,7 +43,7 @@ namespace MoMoney.Domain.accounting.billing
 
         private IMoney the_amount_paid()
         {
-            return payments.return_value_from_visiting_all_items_with(new total_payments_calculator());
+            return payments.return_value_from_visiting_all_items_with(new TotalPaymentsCalculator());
         }
 
         public bool Equals(Bill obj)

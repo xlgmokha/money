@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Domain.accounting.billing;
-using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Accounting.Growth;
 using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.accounting

@@ -1,6 +1,6 @@
 using System;
 using Gorilla.Commons.Utility;
-using MoMoney.Domain.accounting.financial_growth;
+using MoMoney.Domain.Accounting.Growth;
 using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.accounting.billing
