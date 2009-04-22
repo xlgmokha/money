@@ -4,7 +4,6 @@ using Gorilla.Commons.Testing;
 using MoMoney.DTO;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Application;
-using MoMoney.Tasks.application;
 
 namespace MoMoney.Presentation.Presenters
 {
@@ -15,12 +14,10 @@ namespace MoMoney.Presentation.Presenters
         context c = () =>
                         {
                             view = the_dependency<IAddCompanyView>();
-                            tasks = the_dependency<IBillingTasks>();
                             pump = the_dependency<ICommandPump>();
                         };
 
         protected static IAddCompanyView view;
-        protected static IBillingTasks tasks;
         protected static ICommandPump pump;
     }
 
@@ -31,18 +28,18 @@ namespace MoMoney.Presentation.Presenters
         because b = () => sut.run();
     }
 
+    [Concern(typeof (AddCompanyPresenter))]
     public class when_registering_a_new_company : behaves_like_the_add_company_presenter
     {
         context c = () =>
                         {
                             dto = new RegisterNewCompany {company_name = "Microsoft"};
-                            when_the(tasks).is_asked_for(x => x.all_companys()).it_will_return_nothing();
                             when_the(pump)
                                 .is_told_to(x => x.run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto))
                                 .it_will_return(pump);
                         };
 
-        because b = () => { sut.submit(dto); };
+        because b = () => sut.submit(dto);
 
         it should_add_the_new_company =
             () => pump.was_told_to(x => x.run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto));

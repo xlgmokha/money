@@ -1,15 +1,14 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.DTO;
-using MoMoney.Presentation.Model.interaction;
 using MoMoney.Presentation.Presenters;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Core;
 
 namespace MoMoney.Presentation.Views
 {
-    public interface IAddCompanyView : IDockedContentView, INotification, IView<IAddCompanyPresenter>,
+    public interface IAddCompanyView : IDockedContentView,
+                                       IView<IAddCompanyPresenter>,
                                        ICallback<IEnumerable<CompanyDTO>>
     {
-        //void run(IEnumerable<ICompany> companies);
     }
 }

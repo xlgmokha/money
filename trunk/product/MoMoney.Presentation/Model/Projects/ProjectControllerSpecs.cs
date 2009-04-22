@@ -5,8 +5,8 @@ using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.DataAccess;
 using MoMoney.Presentation.Model.messages;
+using MoMoney.Service.Infrastructure;
 
 namespace MoMoney.Presentation.Model.Projects
 {
@@ -20,11 +20,11 @@ namespace MoMoney.Presentation.Model.Projects
         context c = () =>
                         {
                             broker = the_dependency<IEventAggregator>();
-                            configuration = the_dependency<IDatabaseConfiguration>();
+                            tasks = the_dependency<IProjectTasks>();
                         };
 
-        protected static IEventAggregator broker;
-        protected static IDatabaseConfiguration configuration;
+        static protected IEventAggregator broker;
+        static protected IProjectTasks tasks;
     }
 
     public class when_saving_the_current_project : behaves_like_a_project
@@ -60,7 +60,7 @@ namespace MoMoney.Presentation.Model.Projects
 
     public class when_specifying_a_new_path_to_save_an_opened_project_to : behaves_like_a_project
     {
-        it should_save_the_current_database_to_the_new_path = () => configuration.was_told_to(x => x.copy_to("blah"));
+        it should_save_the_current_database_to_the_new_path = () => tasks.was_told_to(x => x.copy_to("blah"));
 
         context c = () =>
                         {

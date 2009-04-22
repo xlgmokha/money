@@ -6,6 +6,7 @@ using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.billing;
 using MoMoney.Presentation.Views.dialogs;
 using MoMoney.Presentation.Views.income;
+using MoMoney.Presentation.Views.Menu;
 using MoMoney.Presentation.Views.Menu.Help;
 using MoMoney.Presentation.Views.Navigation;
 using MoMoney.Presentation.Views.Shell;

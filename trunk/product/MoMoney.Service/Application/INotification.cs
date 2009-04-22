@@ -1,6 +1,4 @@
-using MoMoney.Service.Application;
-
-namespace MoMoney.Presentation.Model.interaction
+namespace MoMoney.Service.Application
 {
     public interface INotification
     {

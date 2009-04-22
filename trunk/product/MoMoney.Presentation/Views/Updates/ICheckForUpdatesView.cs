@@ -2,7 +2,7 @@ using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Model.updates;
 using MoMoney.Presentation.Presenters.updates;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Core;
 
 namespace MoMoney.Presentation.Views.updates
 {

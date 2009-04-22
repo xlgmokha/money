@@ -1,6 +1,6 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Core;
 using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Core
@@ -15,8 +15,8 @@ namespace MoMoney.Presentation.Core
                             shell = the_dependency<IShell>();
                         };
 
-        protected static IShell shell;
-        protected static IPresenterRegistry presenter_registry;
+        static protected IShell shell;
+        static protected IPresenterRegistry presenter_registry;
     }
 
     public class when_the_application_controller_is_asked_to_run_a_presenter : behaves_like_an_application_controller

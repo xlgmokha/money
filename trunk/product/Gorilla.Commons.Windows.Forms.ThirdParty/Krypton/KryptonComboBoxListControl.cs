@@ -1,12 +1,13 @@
-using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
+using Gorilla.Commons.Windows.Forms.Helpers;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace Gorilla.Commons.Windows.Forms.Krypton
 {
-    public class ComboBoxListControl<TItemToStore> : IListControl<TItemToStore>
+    public class KryptonComboBoxListControl<TItemToStore> : IListControl<TItemToStore>
     {
-        readonly ComboBox combo_box;
+        readonly KryptonComboBox combo_box;
 
-        public ComboBoxListControl(ComboBox combo_box)
+        public KryptonComboBoxListControl(KryptonComboBox combo_box)
         {
             this.combo_box = combo_box;
         }

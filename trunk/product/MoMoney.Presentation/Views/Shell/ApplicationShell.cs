@@ -7,8 +7,8 @@ using Gorilla.Commons.Utility.Extensions;
 using Gorilla.Commons.Windows.Forms;
 using Gorilla.Commons.Windows.Forms.Helpers;
 using MoMoney.Presentation.Presenters.Shell;
-using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Core;
 
 namespace MoMoney.Presentation.Views.Shell
 {

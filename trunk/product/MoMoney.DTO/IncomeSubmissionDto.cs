@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Presentation.Presenters.income.dto
+namespace MoMoney.DTO
 {
     public class IncomeSubmissionDto
     {

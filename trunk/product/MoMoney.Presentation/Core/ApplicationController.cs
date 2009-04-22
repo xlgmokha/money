@@ -34,9 +34,9 @@ namespace MoMoney.Presentation.Core
                 var view = content_presenter.View;
 
                 //view.on_activated = x => content_presenter.activate();
-                //view.on_deactivate = x => content_presenter.deactivate();
+                //view.deactivated = x => content_presenter.deactivate();
                 //view.on_closing = x => x.Cancel = !content_presenter.can_close();
-                //view.on_closed = x => remove(presenter);
+                //view.closed = x => remove(presenter);
 
                 shell.add(view);
             }

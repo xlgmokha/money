@@ -1,32 +1,30 @@
 using System.Collections.Generic;
+using Gorilla.Commons.Utility.Extensions;
 
 namespace Gorilla.Commons.Windows.Forms.Helpers
 {
-    public class BindableListBox<ItemToBindTo> : IBindableList<ItemToBindTo>
+    public class BindableListBox<TItemToBindTo> : IBindableList<TItemToBindTo>
     {
-        readonly IListControl<ItemToBindTo> listControl;
+        readonly IListControl<TItemToBindTo> list_control;
 
-        public BindableListBox(IListControl<ItemToBindTo> listControl)
+        public BindableListBox(IListControl<TItemToBindTo> list_control)
         {
-            this.listControl = listControl;
+            this.list_control = list_control;
         }
 
-        public void bind_to(IEnumerable<ItemToBindTo> items)
+        public void bind_to(IEnumerable<TItemToBindTo> items)
         {
-            foreach (var item in items)
-            {
-                listControl.add_item(item);
-            }
+            items.each(x => list_control.add_item(x));
         }
 
-        public ItemToBindTo get_selected_item()
+        public TItemToBindTo get_selected_item()
         {
-            return listControl.get_selected_item();
+            return list_control.get_selected_item();
         }
 
-        public void set_selected_item(ItemToBindTo item)
+        public void set_selected_item(TItemToBindTo item)
         {
-            listControl.set_selected_item(item);
+            list_control.set_selected_item(item);
         }
     }
 }

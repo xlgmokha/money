@@ -83,7 +83,9 @@
     <Compile Include="Core\Month.cs" />
     <Compile Include="Core\Months.cs" />
     <Compile Include="Core\range.cs" />
-    <Compile Include="Core\range_specs.cs" />
+    <Compile Include="Core\RangeSpecs.cs" />
+    <Compile Include="Core\Ranking.cs" />
+    <Compile Include="Core\RankingSpecs.cs" />
     <Compile Include="Repositories\IAccountHolderRepository.cs" />
     <Compile Include="Repositories\IBillRepository.cs" />
     <Compile Include="Repositories\ICompanyRepository.cs" />

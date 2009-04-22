@@ -67,6 +67,7 @@
     <Compile Include="Core\DisposableCommand.cs" />
     <Compile Include="Core\EmptyCallback.cs" />
     <Compile Include="Core\EmptyCommand.cs" />
+    <Compile Include="Core\ComponentFactory.cs" />
     <Compile Include="Core\Factory.cs" />
     <Compile Include="Core\IBuilder.cs" />
     <Compile Include="Core\ICallback.cs" />

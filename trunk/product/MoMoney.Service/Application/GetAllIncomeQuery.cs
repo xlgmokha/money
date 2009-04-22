@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Accounting.Growth;
+using MoMoney.Domain.repositories;
 using MoMoney.Presentation.Presenters.income.dto;
-using MoMoney.Tasks.application;
 
 namespace MoMoney.Service.Application
 {
@@ -13,16 +13,16 @@ namespace MoMoney.Service.Application
 
     public class GetAllIncomeQuery : IGetAllIncomeQuery
     {
-        readonly IIncomeTasks tasks;
+        readonly IIncomeRepository all_income;
 
-        public GetAllIncomeQuery(IIncomeTasks tasks)
+        public GetAllIncomeQuery(IIncomeRepository all_income)
         {
-            this.tasks = tasks;
+            this.all_income = all_income;
         }
 
         public IEnumerable<IncomeInformationDTO> fetch()
         {
-            return tasks.retrive_all_income().map_all_using(x => map_from(x));
+            return all_income.all().map_all_using(x => map_from(x));
         }
 
         static IncomeInformationDTO map_from(IIncome x)

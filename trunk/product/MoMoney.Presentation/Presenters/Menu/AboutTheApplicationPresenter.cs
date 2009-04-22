@@ -1,5 +1,5 @@
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views.Menu.Help;
+using MoMoney.Presentation.Views.Menu;
 
 namespace MoMoney.Presentation.Presenters.Menu.Help
 {

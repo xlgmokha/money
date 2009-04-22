@@ -4,24 +4,24 @@ using MoMoney.Presentation.Core;
 
 namespace MoMoney.Presentation.Presenters.Commands
 {
-    public interface IRunThe<Presenter> : ICommand where Presenter : IPresenter
+    public interface IRunThe<TPresenter> : ICommand where TPresenter : IPresenter
     {
     }
 
-    public class RunThe<Presenter> : IRunThe<Presenter> where Presenter : IPresenter
+    public class RunThe<TPresenter> : IRunThe<TPresenter> where TPresenter : IPresenter
     {
-        readonly IApplicationController application_controller;
+        readonly IApplicationController controller;
         readonly ICommandProcessor processor;
 
-        public RunThe(IApplicationController application_controller, ICommandProcessor processor)
+        public RunThe(IApplicationController controller, ICommandProcessor processor)
         {
-            this.application_controller = application_controller;
+            this.controller = controller;
             this.processor = processor;
         }
 
         public void run()
         {
-            processor.add(() => application_controller.run<Presenter>());
+            processor.add(() => controller.run<TPresenter>());
         }
     }
 }

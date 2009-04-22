@@ -1,3 +1,4 @@
+using Gorilla.Commons.Windows.Forms.Helpers;
 using MoMoney.Presentation.Presenters.Navigation;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
@@ -21,9 +22,10 @@ namespace MoMoney.Presentation.Views.Navigation
 
         public void add(IActionTaskPaneFactory factory)
         {
-            ux_system_task_pane.SuspendLayout();
-            ux_system_task_pane.Expandos.Add(factory.create());
-            ux_system_task_pane.ResumeLayout();
+            using (ux_system_task_pane.suspend_layout())
+            {
+                ux_system_task_pane.Expandos.Add(factory.create());
+            }
         }
     }
 }

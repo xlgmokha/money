@@ -47,12 +47,5 @@ namespace MoMoney.Presentation.Views
             listView1.Items.Clear();
             listView1.Items.AddRange(companies.Select(x => new ListViewItem(x.name, 0)).ToArray());
         }
-
-        public void notify(params NotificationMessage[] messages)
-        {
-            var builder = new StringBuilder();
-            messages.each(x => builder.Append(x));
-            MessageBox.Show(builder.ToString());
-        }
     }
 }

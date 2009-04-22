@@ -1,17 +1,10 @@
-using System.Windows.Forms;
-
 namespace Gorilla.Commons.Windows.Forms.Helpers
 {
     static public class BindableListFactory
     {
-        static public IBindableList<ItemToBindTo> create_for<ItemToBindTo>(ListBox listbox)
+        static public IBindableList<TItemToBindTo> create_for<TItemToBindTo>(IListControl<TItemToBindTo> list_control)
         {
-            return new BindableListBox<ItemToBindTo>(new ListBoxListControl<ItemToBindTo>(listbox));
-        }
-
-        static public IBindableList<ItemToBindTo> create_for<ItemToBindTo>(ComboBox combobox)
-        {
-            return new BindableListBox<ItemToBindTo>(new ComboBoxListControl<ItemToBindTo>(combobox));
+            return new BindableListBox<TItemToBindTo>(list_control);
         }
     }
 }

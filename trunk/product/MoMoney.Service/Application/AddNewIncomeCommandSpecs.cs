@@ -5,9 +5,8 @@ using Gorilla.Commons.Utility;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.Accounting.Growth;
 using MoMoney.Domain.Core;
-using MoMoney.Presentation.Model.interaction;
-using MoMoney.Presentation.Presenters.income.dto;
-using MoMoney.Tasks.application;
+using MoMoney.Domain.repositories;
+using MoMoney.DTO;
 
 namespace MoMoney.Service.Application
 {
@@ -21,11 +20,15 @@ namespace MoMoney.Service.Application
         context c = () =>
                         {
                             notification = the_dependency<INotification>();
-                            tasks = the_dependency<IIncomeTasks>();
+                            tasks = the_dependency<ICustomerTasks>();
+                            all_income = the_dependency<IIncomeRepository>();
+                            companies = the_dependency<ICompanyRepository>();
                         };
 
         static protected INotification notification;
-        static protected IIncomeTasks tasks;
+        static protected ICustomerTasks tasks;
+        static protected IIncomeRepository all_income;
+        static protected ICompanyRepository companies;
     }
 
     [Concern(typeof (AddNewIncomeCommand))]
@@ -52,7 +55,7 @@ namespace MoMoney.Service.Application
                             when_the(matching_income).is_asked_for(x => x.company).it_will_return(a_company);
                             when_the(matching_income).is_asked_for(x => x.date_of_issue).it_will_return(today);
                             when_the(a_company).is_asked_for(x => x.id).it_will_return(id);
-                            when_the(tasks).is_told_to(x => x.retrive_all_income()).it_will_return(matching_income);
+                            when_the(all_income).is_told_to(x => x.all()).it_will_return(matching_income);
                         };
 
         because b = () => sut.run(income);

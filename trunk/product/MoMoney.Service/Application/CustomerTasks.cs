@@ -2,7 +2,7 @@ using System.Linq;
 using MoMoney.Domain.accounting;
 using MoMoney.Domain.repositories;
 
-namespace MoMoney.Tasks.application
+namespace MoMoney.Service.Application
 {
     public interface ICustomerTasks
     {
@@ -11,7 +11,7 @@ namespace MoMoney.Tasks.application
 
     public class CustomerTasks : ICustomerTasks
     {
-        IAccountHolderRepository account_holders;
+        readonly IAccountHolderRepository account_holders;
 
         public CustomerTasks(IAccountHolderRepository account_holders)
         {

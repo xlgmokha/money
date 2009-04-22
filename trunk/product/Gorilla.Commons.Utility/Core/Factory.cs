@@ -1,14 +1,6 @@
 namespace Gorilla.Commons.Utility.Core
 {
-    public interface IComponentFactory<T> : IFactory<T> where T : new()
-    {
-    }
+    public delegate Out Factory<In, Out>(In input);
 
-    public class Factory<T> : IComponentFactory<T> where T : new()
-    {
-        public T create()
-        {
-            return new T();
-        }
-    }
+    public delegate Out Factory<Out>();
 }

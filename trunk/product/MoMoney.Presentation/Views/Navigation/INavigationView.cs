@@ -1,5 +1,5 @@
 using MoMoney.Presentation.Model.Navigation;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Core;
 
 namespace MoMoney.Presentation.Views.Navigation
 {

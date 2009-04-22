@@ -3,6 +3,10 @@ using Gorilla.Commons.Testing;
 
 namespace MoMoney.Domain.Core
 {
+    public class RangeSpecs
+    {
+    }
+
     [Concern(typeof (Range<int>))]
     public abstract class behaves_like_a_range_from_1_to_10 : concerns_for<IRange<int>>
     {

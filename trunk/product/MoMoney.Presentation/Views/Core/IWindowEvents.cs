@@ -1,13 +1,14 @@
 using System;
 using System.ComponentModel;
+using Gorilla.Commons.Windows.Forms;
 
-namespace Gorilla.Commons.Windows.Forms
+namespace MoMoney.Presentation.Views.Core
 {
     public interface IWindowEvents
     {
-        ControlAction<EventArgs> on_activated { get; set; }
-        ControlAction<EventArgs> on_deactivate { get; set; }
-        ControlAction<EventArgs> on_closed { get; set; }
-        ControlAction<CancelEventArgs> on_closing { get; set; }
+        ControlAction<EventArgs> activated { get; set; }
+        ControlAction<EventArgs> deactivated { get; set; }
+        ControlAction<EventArgs> closed { get; set; }
+        ControlAction<CancelEventArgs> closing { get; set; }
     }
 }

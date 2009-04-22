@@ -4,19 +4,19 @@ using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.DataAccess;
 using MoMoney.Presentation.Model.messages;
+using MoMoney.Service.Infrastructure;
 
 namespace MoMoney.Presentation.Model.Projects
 {
     public class ProjectController : IProjectController, ICallback<IUnitOfWork>
     {
         readonly IEventAggregator broker;
-        readonly IDatabaseConfiguration configuration;
+        readonly IProjectTasks configuration;
         IProject project;
         bool unsaved_changes = false;
 
-        public ProjectController(IEventAggregator broker, IDatabaseConfiguration configuration)
+        public ProjectController(IEventAggregator broker, IProjectTasks configuration)
         {
             this.broker = broker;
             this.configuration = configuration;

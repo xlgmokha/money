@@ -1,12 +1,13 @@
-using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
+using Gorilla.Commons.Windows.Forms.Helpers;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace Gorilla.Commons.Windows.Forms.Krypton
 {
-    public class ListBoxListControl<TItemToStore> : IListControl<TItemToStore>
+    public class KryptonListBoxListControl<TItemToStore> : IListControl<TItemToStore>
     {
-        readonly ListBox list_box;
+        readonly KryptonListBox list_box;
 
-        public ListBoxListControl(ListBox list_box)
+        public KryptonListBoxListControl(KryptonListBox list_box)
         {
             this.list_box = list_box;
         }
