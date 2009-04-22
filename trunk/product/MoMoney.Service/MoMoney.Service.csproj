@@ -61,6 +61,7 @@
     <Compile Include="Application\AddNewIncomeCommand.cs" />
     <Compile Include="Application\AddNewIncomeCommandSpecs.cs" />
     <Compile Include="Application\CustomerTasks.cs" />
+    <Compile Include="Application\EventLog.cs" />
     <Compile Include="Application\GetAllBillsQuery.cs" />
     <Compile Include="Application\GetAllCompanysQuery.cs" />
     <Compile Include="Application\GetAllIncomeQuery.cs" />

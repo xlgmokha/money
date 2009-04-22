@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
 using Gorilla.Commons.Windows.Forms;
+using Gorilla.Commons.Windows.Forms.Helpers;
 using Gorilla.Commons.Windows.Forms.Krypton;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.billing;
@@ -13,12 +14,14 @@ namespace MoMoney.Presentation.Views.billing
     public partial class AddBillPaymentView : ApplicationDockedWindow, IAddBillPaymentView
     {
         ControlAction<EventArgs> submit_clicked = x => { };
+        readonly IBindableList<CompanyDTO> companies_list;
 
         public AddBillPaymentView()
         {
             InitializeComponent();
             titled("Add Bill Payment");
             ux_submit_button.Click += (sender, e) => submit_clicked(e);
+            companies_list = ux_company_names.create_for<CompanyDTO>();
         }
 
         public void attach_to(IAddBillPaymentPresenter presenter)
@@ -28,7 +31,8 @@ namespace MoMoney.Presentation.Views.billing
 
         public void run(IEnumerable<CompanyDTO> companys)
         {
-            ux_company_names.bind_to(companys);
+            companies_list.bind_to(companys);
+            //ux_company_names.bind_to(companys);
         }
 
         public void run(IEnumerable<BillInformationDTO> bills)
@@ -40,7 +44,7 @@ namespace MoMoney.Presentation.Views.billing
         {
             return new AddNewBillDTO
                        {
-                           company_name = ux_company_names.SelectedItem.to_string(),
+                           company_id = companies_list.get_selected_item().id,
                            due_date = ux_due_date.Value,
                            total = ux_amount.Text.to_double()
                        };

@@ -49,6 +49,7 @@ namespace Gorilla.Commons.Infrastructure.Threading
         {
             keep_working = false;
             manual_reset.Set();
+            manual_reset.Close();
         }
 
         [STAThread]

@@ -1,10 +1,9 @@
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
-using MoMoney.Presentation.Presenters.billing.dto;
-using MoMoney.Service.Application;
+using MoMoney.DTO;
 
-namespace MoMoney.Tasks.application
+namespace MoMoney.Service.Application
 {
     public interface ISaveNewBillCommand : IParameterizedCommand<AddNewBillDTO>
     {
@@ -24,7 +23,7 @@ namespace MoMoney.Tasks.application
         public void run(AddNewBillDTO item)
         {
             companys
-                .find_company_named(item.company_name)
+                .find_company_by(item.company_id)
                 .issue_bill_to(
                 tasks.get_the_current_customer(),
                 item.due_date,

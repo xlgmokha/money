@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 using Gorilla.Commons.Windows.Forms;
@@ -10,7 +9,6 @@ using MoMoney.DTO;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;
-using MoMoney.Service.Application;
 
 namespace MoMoney.Presentation.Views
 {
