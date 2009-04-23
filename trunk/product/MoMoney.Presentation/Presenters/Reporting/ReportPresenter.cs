@@ -1,7 +1,7 @@
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Views.billing;
 using MoMoney.Presentation.Views.reporting;
-using MoMoney.Tasks.application;
+using MoMoney.Service.Application;
 
 namespace MoMoney.Presentation.Presenters.reporting
 {

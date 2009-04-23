@@ -1,14 +1,9 @@
-using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
 
 namespace MoMoney.Service.Application
 {
-    public interface ISaveNewBillCommand : IParameterizedCommand<AddNewBillDTO>
-    {
-    }
-
     public class SaveNewBillCommand : ISaveNewBillCommand
     {
         readonly ICompanyRepository companys;

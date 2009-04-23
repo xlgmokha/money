@@ -2,10 +2,8 @@ using System.Collections.Generic;
 using Gorilla.Commons.Infrastructure;
 using MoMoney.DTO;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Presentation.Views.income;
 using MoMoney.Service.Application;
-using MoMoney.Tasks.application;
 
 namespace MoMoney.Presentation.Presenters.income
 {

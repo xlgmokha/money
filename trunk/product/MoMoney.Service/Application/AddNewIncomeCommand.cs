@@ -1,5 +1,4 @@
 using System.Linq;
-using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
@@ -7,10 +6,6 @@ using MoMoney.DTO;
 
 namespace MoMoney.Service.Application
 {
-    public interface IAddNewIncomeCommand : IParameterizedCommand<IncomeSubmissionDto>
-    {
-    }
-
     public class AddNewIncomeCommand : IAddNewIncomeCommand
     {
         readonly ICustomerTasks tasks;

@@ -48,6 +48,12 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -65,7 +71,13 @@
     <Compile Include="Application\GetAllBillsQuery.cs" />
     <Compile Include="Application\GetAllCompanysQuery.cs" />
     <Compile Include="Application\GetAllIncomeQuery.cs" />
+    <Compile Include="Application\IAddNewIncomeCommand.cs" />
+    <Compile Include="Application\IGetAllBillsQuery.cs" />
+    <Compile Include="Application\IGetAllCompanysQuery.cs" />
+    <Compile Include="Application\IGetAllIncomeQuery.cs" />
     <Compile Include="Application\INotification.cs" />
+    <Compile Include="Application\IRegisterNewCompanyCommand.cs" />
+    <Compile Include="Application\ISaveNewBillCommand.cs" />
     <Compile Include="Application\NotificationMessage.cs" />
     <Compile Include="Application\RegisterNewCompanyCommand.cs" />
     <Compile Include="Application\SaveNewBillCommand.cs" />

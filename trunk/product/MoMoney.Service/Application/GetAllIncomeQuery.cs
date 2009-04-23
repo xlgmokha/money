@@ -1,16 +1,11 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Accounting.Growth;
 using MoMoney.Domain.repositories;
-using MoMoney.Presentation.Presenters.income.dto;
+using MoMoney.DTO;
 
 namespace MoMoney.Service.Application
 {
-    public interface IGetAllIncomeQuery : IQuery<IEnumerable<IncomeInformationDTO>>
-    {
-    }
-
     public class GetAllIncomeQuery : IGetAllIncomeQuery
     {
         readonly IIncomeRepository all_income;

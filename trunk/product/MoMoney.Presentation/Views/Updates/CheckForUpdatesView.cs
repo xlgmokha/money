@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Reflection;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility;
 using Gorilla.Commons.Windows.Forms;
-using MoMoney.Presentation.Model.updates;
+using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.updates;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.core;

@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Presentation.Model.updates
+namespace MoMoney.DTO
 {
     public class ApplicationVersion
     {

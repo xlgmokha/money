@@ -1,5 +1,5 @@
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Presentation.Model.updates;
+using MoMoney.DTO;
 using MoMoney.Tasks.infrastructure.updating;
 
 namespace MoMoney.Service.Infrastructure.Updating

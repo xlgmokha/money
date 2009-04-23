@@ -6,7 +6,6 @@ using Gorilla.Commons.Windows.Forms.Helpers;
 using Gorilla.Commons.Windows.Forms.Krypton;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.billing;
-using MoMoney.Presentation.Presenters.billing.dto;
 using MoMoney.Presentation.Views.core;
 
 namespace MoMoney.Presentation.Views.billing

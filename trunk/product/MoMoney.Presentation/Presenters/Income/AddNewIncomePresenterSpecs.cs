@@ -3,10 +3,8 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Testing;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Presentation.Views.income;
 using MoMoney.Service.Application;
-using MoMoney.Tasks.application;
 
 namespace MoMoney.Presentation.Presenters.income
 {

@@ -35,6 +35,9 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -51,7 +54,7 @@
     <Compile Include="CompanyDTO.cs" />
     <Compile Include="IncomeSubmissionDto.cs" />
     <Compile Include="IncomeInformationDTO.cs" />
-    <Compile Include="monthly_summary_dto.cs" />
+    <Compile Include="MonthlySummaryDTO.cs" />
     <Compile Include="RegisterNewCompany.cs" />
   </ItemGroup>
   <ItemGroup>

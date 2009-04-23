@@ -7,7 +7,6 @@ using Gorilla.Commons.Windows.Forms.Helpers;
 using Gorilla.Commons.Windows.Forms.Krypton;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.income;
-using MoMoney.Presentation.Presenters.income.dto;
 using MoMoney.Presentation.Views.core;
 
 namespace MoMoney.Presentation.Views.income

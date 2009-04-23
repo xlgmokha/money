@@ -3,7 +3,7 @@ using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Presentation.Model.updates;
+using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.updates;
 using MoMoney.Service.Infrastructure.Updating;

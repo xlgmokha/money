@@ -1,5 +1,4 @@
 using System.Linq;
-using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.repositories;
@@ -7,10 +6,6 @@ using MoMoney.DTO;
 
 namespace MoMoney.Service.Application
 {
-    public interface IRegisterNewCompanyCommand : IParameterizedCommand<RegisterNewCompany>
-    {
-    }
-
     public class RegisterNewCompanyCommand : IRegisterNewCompanyCommand
     {
         readonly ICompanyFactory factory;

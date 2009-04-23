@@ -1,34 +1,33 @@
+using System.Runtime.Serialization;
+
 namespace MoMoney.Service.Application
 {
+    [DataContract]
     public class NotificationMessage
     {
-        private readonly string the_message_to_display;
+        [DataMember]
+        public string message { get; set; }
 
-        public NotificationMessage(string the_message_to_display)
-        {
-            this.the_message_to_display = the_message_to_display;
-        }
-
-        public static implicit operator string(NotificationMessage message)
+        static public implicit operator string(NotificationMessage message)
         {
             return message.ToString();
         }
 
-        public static implicit operator NotificationMessage(string message)
+        static public implicit operator NotificationMessage(string message)
         {
-            return new NotificationMessage(message);
+            return new NotificationMessage {message = message};
         }
 
         public override string ToString()
         {
-            return the_message_to_display;
+            return message;
         }
 
         public bool Equals(NotificationMessage obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return Equals(obj.the_message_to_display, the_message_to_display);
+            return Equals(obj.message, message);
         }
 
         public override bool Equals(object obj)
@@ -41,7 +40,7 @@ namespace MoMoney.Service.Application
 
         public override int GetHashCode()
         {
-            return (the_message_to_display != null ? the_message_to_display.GetHashCode() : 0);
+            return (message != null ? message.GetHashCode() : 0);
         }
     }
 }

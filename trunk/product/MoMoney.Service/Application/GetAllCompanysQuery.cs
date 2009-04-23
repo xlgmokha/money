@@ -1,15 +1,10 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
 
-namespace MoMoney.Tasks.application
+namespace MoMoney.Service.Application
 {
-    public interface IGetAllCompanysQuery : IQuery<IEnumerable<CompanyDTO>>
-    {
-    }
-
     public class GetAllCompanysQuery : IGetAllCompanysQuery
     {
         readonly ICompanyRepository companys;

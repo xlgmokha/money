@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Presentation.Model.updates;
+using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.updates;
 using MoMoney.Presentation.Views.Core;
 
