@@ -7,7 +7,7 @@ namespace MoMoney.Domain.Accounting.Growth
 {
     public interface IIncome : IEntity
     {
-        IDate date_of_issue { get; }
+        Date date_of_issue { get; }
         Money amount_tendered { get; }
         ICompany company { get; }
     }
@@ -15,7 +15,7 @@ namespace MoMoney.Domain.Accounting.Growth
     [Serializable]
     internal class Income : Entity<IIncome>, IIncome
     {
-        public Income(IDate date_of_issue, Money amount_tendered, ICompany company)
+        public Income(Date date_of_issue, Money amount_tendered, ICompany company)
         {
             this.company = company;
             this.amount_tendered = amount_tendered;
@@ -24,7 +24,7 @@ namespace MoMoney.Domain.Accounting.Growth
 
         public ICompany company { get; private set; }
         public Money amount_tendered { get; private set; }
-        public IDate date_of_issue { get; private set; }
+        public Date date_of_issue { get; private set; }
 
         public bool Equals(Income obj)
         {

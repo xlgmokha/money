@@ -12,7 +12,7 @@ namespace MoMoney.Domain.accounting.billing
         void pay(Money amount_to_pay);
         ICompany company_to_pay { get; }
         Money the_amount_owed { get; }
-        IDate due_date { get; }
+        Date due_date { get; }
     }
 
     [Serializable]
@@ -22,13 +22,13 @@ namespace MoMoney.Domain.accounting.billing
         {
             this.company_to_pay = company_to_pay;
             this.the_amount_owed = the_amount_owed;
-            this.due_date = due_date.as_a_date();
+            this.due_date = due_date;
             payments = new List<IPayment>();
         }
 
         public ICompany company_to_pay { get; private set; }
         public Money the_amount_owed { get; private set; }
-        public IDate due_date { get; private set; }
+        public Date due_date { get; private set; }
         public IList<IPayment> payments { get; private set; }
 
         public bool is_paid_for()

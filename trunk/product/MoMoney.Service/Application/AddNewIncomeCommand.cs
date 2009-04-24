@@ -35,7 +35,7 @@ namespace MoMoney.Service.Application
                     .pay(
                     tasks.get_the_current_customer(),
                     item.amount.as_money(),
-                    item.recieved_date.as_a_date()
+                    item.recieved_date
                     );
             }
         }
@@ -47,7 +47,7 @@ namespace MoMoney.Service.Application
                        .all()
                        .where(x => x.amount_tendered.Equals(income.amount.as_money()))
                        .where(x => x.company.id.Equals(income.company_id))
-                       .where(x => x.date_of_issue.Equals(income.recieved_date.as_a_date()))
+                       .where(x => x.date_of_issue.Equals(income.recieved_date))
                        .Count() > 0;
         }
     }

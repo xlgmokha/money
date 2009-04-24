@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.Accounting.Growth;
 using MoMoney.Domain.Core;
@@ -55,19 +56,15 @@ namespace MoMoney.Domain.accounting
                             income_for_february_2007 = an<IIncome>();
                             income_for_february_2008 = an<IIncome>();
 
-                            income_for_january_2007.is_told_to(x => x.date_of_issue).it_will_return(
-                                new DateTime(2007, 01, 01).as_a_date());
+                            income_for_january_2007.is_told_to(x => x.date_of_issue).it_will_return<Date>( new DateTime(2007, 01, 01));
                             income_for_january_2007.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000, 00));
 
-                            income_for_february_2007.is_told_to(x => x.date_of_issue).it_will_return(
-                                new DateTime(2007, 02, 01).as_a_date());
+                            income_for_february_2007.is_told_to(x => x.date_of_issue).it_will_return<Date>( new DateTime(2007, 02, 01));
                             income_for_february_2007.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000,
                                                                                                                  00));
 
-                            income_for_february_2008.is_told_to(x => x.date_of_issue).it_will_return(
-                                new DateTime(2008, 02, 01).as_a_date());
-                            income_for_february_2008.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000,
-                                                                                                                 00));
+                            income_for_february_2008.is_told_to(x => x.date_of_issue).it_will_return<Date>( new DateTime(2008, 02, 01));
+                            income_for_february_2008.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000, 00));
                         };
 
         because b = () =>

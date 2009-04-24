@@ -4,14 +4,8 @@ using Gorilla.Commons.Utility.Extensions;
 
 namespace Gorilla.Commons.Utility
 {
-    public interface IDate : IComparable<IDate>, IComparable, IEquatable<IDate>
-    {
-        bool is_in(IYear year);
-        DateTime to_date_time();
-    }
-
     [Serializable]
-    public class Date : IDate, IEquatable<Date>
+    public class Date :  IComparable<Date>, IComparable, IEquatable<Date>
     {
         readonly long ticks;
 
@@ -40,7 +34,7 @@ namespace Gorilla.Commons.Utility
             return date.to_date_time();
         }
 
-        public int CompareTo(IDate other)
+        public int CompareTo(Date other)
         {
             var the_other_date = other.downcast_to<Date>();
             if (ticks.Equals(the_other_date.ticks))
@@ -50,16 +44,11 @@ namespace Gorilla.Commons.Utility
             return ticks > the_other_date.ticks ? 1 : -1;
         }
 
-        public bool Equals(Date obj)
+        public bool Equals(Date other)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.ticks == ticks;
-        }
-
-        public bool Equals(IDate other)
-        {
-            return other.CompareTo(this) == 0;
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return other.ticks == ticks;
         }
 
         public override bool Equals(object obj)
@@ -75,6 +64,16 @@ namespace Gorilla.Commons.Utility
             return ticks.GetHashCode();
         }
 
+        public static bool operator ==(Date left, Date right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(Date left, Date right)
+        {
+            return !Equals(left, right);
+        }
+
         public override string ToString()
         {
             return new DateTime(ticks, DateTimeKind.Local).ToString("MMM dd yyyy", CultureInfo.InvariantCulture);
@@ -82,8 +81,8 @@ namespace Gorilla.Commons.Utility
 
         int IComparable.CompareTo(object obj)
         {
-            if (obj.is_an_implementation_of<IDate>())
-                return CompareTo(obj.downcast_to<IDate>());
+            if (obj.is_an_implementation_of<Date>())
+                return CompareTo(obj.downcast_to<Date>());
             throw new InvalidOperationException();
         }
     }
