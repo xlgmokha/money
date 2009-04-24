@@ -13,7 +13,8 @@ namespace MoMoney.Service.Application
         readonly IIncomeRepository all_income;
         readonly ICompanyRepository companys;
 
-        public AddNewIncomeCommand(ICustomerTasks tasks, INotification notification, IIncomeRepository all_income,ICompanyRepository companys)
+        public AddNewIncomeCommand(ICustomerTasks tasks, INotification notification, IIncomeRepository all_income,
+                                   ICompanyRepository companys)
         {
             this.tasks = tasks;
             this.notification = notification;

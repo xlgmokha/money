@@ -118,6 +118,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Application\Public\AddNewIncomeCommand.svc" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Domain\" />
     <Folder Include="Properties\" />
   </ItemGroup>

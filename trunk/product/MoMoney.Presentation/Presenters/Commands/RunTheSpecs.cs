@@ -1,6 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Testing;
+using MbUnit.Framework;
 using MoMoney.Presentation.Core;
 
 namespace MoMoney.Presentation.Presenters.Commands
@@ -9,6 +10,7 @@ namespace MoMoney.Presentation.Presenters.Commands
     {
     }
 
+    [Ignore]
     [Concern(typeof (RunThe<>))]
     public class when_initializing_different_regions_of_the_user_interface :
         concerns_for<IRunThe<IPresenter>, RunThe<IPresenter>>

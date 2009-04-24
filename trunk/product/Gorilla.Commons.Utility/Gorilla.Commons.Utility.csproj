@@ -101,6 +101,8 @@
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensionsSpecs.cs" />
     <Compile Include="Extensions\FuncExtensions.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\ListExtensionsSpecs.cs" />
     <Compile Include="Extensions\MappingExtensions.cs" />
     <Compile Include="Extensions\MappingExtensionsSpecs.cs" />
     <Compile Include="Extensions\NumericConversions.cs" />
