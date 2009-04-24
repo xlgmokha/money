@@ -9,6 +9,6 @@ namespace MoMoney.Domain.Core
 
         because b = () => { result = 1.99.as_money(); };
 
-        static IMoney result;
+        static Money result;
     }
 }

@@ -24,7 +24,7 @@ namespace MoMoney.Domain.accounting.billing
         because b = () => { result = sut.is_paid_for(); };
 
         static bool result;
-        static IMoney amount_owed;
+        static Money amount_owed;
         static ICompany enmax;
     }
 
@@ -51,7 +51,7 @@ namespace MoMoney.Domain.accounting.billing
             return new Bill(direct_energy, one_hundred_twenty_three_dollars_fourty_five_cents, DateTime.Now);
         }
 
-        static IMoney one_hundred_twenty_three_dollars_fourty_five_cents;
+        static Money one_hundred_twenty_three_dollars_fourty_five_cents;
         static bool result;
         static ICompany direct_energy;
     }

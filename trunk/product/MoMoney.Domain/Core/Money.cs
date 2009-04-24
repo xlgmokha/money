@@ -3,16 +3,12 @@ using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Domain.Core
 {
-    public interface IMoney : IEquatable<IMoney>
-    {
-        long dollars { get; }
-        int cents { get; }
-        IMoney add(IMoney other);
-    }
-
     [Serializable]
-    public class Money : IMoney
+    public class Money : IEquatable<Money>
     {
+        readonly long dollars;
+        readonly int cents;
+
         public Money(long dollars) : this(dollars, 0)
         {
         }
@@ -28,10 +24,7 @@ namespace MoMoney.Domain.Core
             }
         }
 
-        public long dollars { get; private set; }
-        public int cents { get; private set; }
-
-        public IMoney add(IMoney other)
+        public Money add(Money other)
         {
             var new_dollars = dollars + other.dollars;
             if (other.cents + cents > 100)
@@ -43,7 +36,7 @@ namespace MoMoney.Domain.Core
             return new Money(new_dollars, cents + other.cents);
         }
 
-        public bool Equals(IMoney other)
+        public bool Equals(Money other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
@@ -54,11 +47,8 @@ namespace MoMoney.Domain.Core
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (typeof (IMoney).IsAssignableFrom(obj.GetType()))
-            {
-                return Equals((IMoney) obj);
-            }
-            return false;
+            if (obj.GetType() != typeof (Money)) return false;
+            return Equals((Money) obj);
         }
 
         public override int GetHashCode()
@@ -67,6 +57,16 @@ namespace MoMoney.Domain.Core
             {
                 return (dollars.GetHashCode()*397) ^ cents;
             }
+        }
+
+        public static bool operator ==(Money left, Money right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(Money left, Money right)
+        {
+            return !Equals(left, right);
         }
 
         public override string ToString()

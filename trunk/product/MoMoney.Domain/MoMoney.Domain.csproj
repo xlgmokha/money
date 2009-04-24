@@ -74,7 +74,6 @@
     <Compile Include="Accounting\Growth\IncomeExtensions.cs" />
     <Compile Include="Accounting\IInvoice.cs" />
     <Compile Include="Core\DateExtensions.cs" />
-    <Compile Include="Core\day.cs" />
     <Compile Include="Core\Entity.cs" />
     <Compile Include="Core\Money.cs" />
     <Compile Include="Core\MoneyExtensions.cs" />

@@ -3,7 +3,7 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.accounting.billing
 {
-    internal class TotalPaymentsCalculator : IValueReturningVisitor<IMoney, IPayment>
+    internal class TotalPaymentsCalculator : IValueReturningVisitor<Money, IPayment>
     {
         public TotalPaymentsCalculator()
         {
@@ -15,7 +15,7 @@ namespace MoMoney.Domain.accounting.billing
             value = value.add(payment.amount_paid);
         }
 
-        public IMoney value { get; private set; }
+        public Money value { get; private set; }
 
         public void reset()
         {

@@ -9,16 +9,16 @@ namespace MoMoney.Domain.accounting.billing
     public interface IBill : IEntity
     {
         bool is_paid_for();
-        void pay(IMoney amount_to_pay);
+        void pay(Money amount_to_pay);
         ICompany company_to_pay { get; }
-        IMoney the_amount_owed { get; }
+        Money the_amount_owed { get; }
         IDate due_date { get; }
     }
 
     [Serializable]
     public class Bill : Entity<IBill>, IBill
     {
-        public Bill(ICompany company_to_pay, IMoney the_amount_owed, DateTime due_date)
+        public Bill(ICompany company_to_pay, Money the_amount_owed, DateTime due_date)
         {
             this.company_to_pay = company_to_pay;
             this.the_amount_owed = the_amount_owed;
@@ -27,7 +27,7 @@ namespace MoMoney.Domain.accounting.billing
         }
 
         public ICompany company_to_pay { get; private set; }
-        public IMoney the_amount_owed { get; private set; }
+        public Money the_amount_owed { get; private set; }
         public IDate due_date { get; private set; }
         public IList<IPayment> payments { get; private set; }
 
@@ -36,12 +36,12 @@ namespace MoMoney.Domain.accounting.billing
             return the_amount_paid().Equals(the_amount_owed);
         }
 
-        public void pay(IMoney amount_to_pay)
+        public void pay(Money amount_to_pay)
         {
             payments.Add(new Payment(amount_to_pay));
         }
 
-        private IMoney the_amount_paid()
+        private Money the_amount_paid()
         {
             return payments.return_value_from_visiting_all_items_with(new TotalPaymentsCalculator());
         }

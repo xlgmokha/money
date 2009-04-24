@@ -5,18 +5,18 @@ namespace MoMoney.Domain.accounting.billing
 {
     public interface IPayment : IEntity
     {
-        IMoney amount_paid { get; }
+        Money amount_paid { get; }
     }
 
     [Serializable]
     internal class Payment : Entity<IPayment>, IPayment
     {
-        public Payment(IMoney amount_paid)
+        public Payment(Money amount_paid)
         {
             this.amount_paid = amount_paid;
         }
 
-        public IMoney amount_paid { get; private set; }
+        public Money amount_paid { get; private set; }
 
         public bool Equals(Payment obj)
         {

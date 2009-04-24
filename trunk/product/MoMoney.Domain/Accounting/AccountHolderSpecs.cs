@@ -11,10 +11,6 @@ namespace MoMoney.Domain.accounting
     [Concern(typeof (AccountHolder))]
     public abstract class behaves_like_an_account_holder : concerns_for<IAccountHolder, AccountHolder>
     {
-        //public override IAccountHolder create_sut()
-        //{
-        //    return new AccountHolder();
-        //}
     }
 
     public class when_a_customer_is_checking_for_any_bills_that_have_not_been_paid : behaves_like_an_account_holder
@@ -84,7 +80,7 @@ namespace MoMoney.Domain.accounting
 
         it should_return_the_correct_amount = () => result.should_be_equal_to(2000.as_money());
 
-        static IMoney result;
+        static Money result;
         static IIncome income_for_january_2007;
         static IIncome income_for_february_2007;
         static IIncome income_for_february_2008;
