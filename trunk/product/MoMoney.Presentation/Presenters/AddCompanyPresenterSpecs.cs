@@ -17,8 +17,8 @@ namespace MoMoney.Presentation.Presenters
                             pump = the_dependency<ICommandPump>();
                         };
 
-        protected static IAddCompanyView view;
-        protected static ICommandPump pump;
+        static protected IAddCompanyView view;
+        static protected ICommandPump pump;
     }
 
     public class when_the_user_is_about_to_add_an_expense : behaves_like_the_add_company_presenter

@@ -1,7 +1,6 @@
 using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 using Gorilla.Commons.Utility.Core;
+using MoMoney.boot.container.registration.proxy_configuration;
 using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.repositories;
 using MoMoney.Service.Application;
@@ -32,22 +31,23 @@ namespace MoMoney.boot.container.registration
                 () => new GetAllCompanysQuery(Lazy.load<ICompanyRepository>()));
             registry.proxy<IGetAllBillsQuery, ServiceLayerConfiguration<IGetAllBillsQuery>>(
                 () => new GetAllBillsQuery(Lazy.load<IBillRepository>()));
+            registry.proxy<IGetAllIncomeQuery, ServiceLayerConfiguration<IGetAllIncomeQuery>>(
+                () => new GetAllIncomeQuery(Lazy.load<IIncomeRepository>()));
         }
 
         void wire_up_the_commands()
         {
             registry.proxy<IRegisterNewCompanyCommand, ServiceLayerConfiguration<IRegisterNewCompanyCommand>>(
-                () => new RegisterNewCompanyCommand(Lazy.load<ICompanyFactory>(),Lazy.load<INotification>(),Lazy.load<ICompanyRepository>()));
+                () =>
+                new RegisterNewCompanyCommand(Lazy.load<ICompanyFactory>(), Lazy.load<INotification>(),
+                                              Lazy.load<ICompanyRepository>()));
             registry.proxy<ISaveNewBillCommand, ServiceLayerConfiguration<ISaveNewBillCommand>>(
                 () => new SaveNewBillCommand(Lazy.load<ICompanyRepository>(), Lazy.load<ICustomerTasks>()));
-        }
-    }
 
-    internal class ServiceLayerConfiguration<T> : IConfiguration<IProxyBuilder<T>>
-    {
-        public void configure(IProxyBuilder<T> item)
-        {
-            item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>()).intercept_all();
+            registry.proxy<IAddNewIncomeCommand, ServiceLayerConfiguration<IAddNewIncomeCommand>>(
+                () =>
+                new AddNewIncomeCommand(Lazy.load<ICustomerTasks>(), Lazy.load<INotification>(),
+                                        Lazy.load<IIncomeRepository>(), Lazy.load<ICompanyRepository>()));
         }
     }
 }

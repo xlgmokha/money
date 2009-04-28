@@ -31,7 +31,6 @@ namespace MoMoney.Presentation.Views.billing
         public void run(IEnumerable<CompanyDTO> companys)
         {
             companies_list.bind_to(companys);
-            //ux_company_names.bind_to(companys);
         }
 
         public void run(IEnumerable<BillInformationDTO> bills)

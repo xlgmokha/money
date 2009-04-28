@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 using Gorilla.Commons.Windows.Forms;
 using Gorilla.Commons.Windows.Forms.Helpers;
@@ -33,7 +32,6 @@ namespace MoMoney.Presentation.Views.income
         public void run(IEnumerable<CompanyDTO> companies)
         {
             companies_list.bind_to(companies);
-            //ux_companys.bind_to(companies);
         }
 
         public void run(IEnumerable<IncomeInformationDTO> incomes)

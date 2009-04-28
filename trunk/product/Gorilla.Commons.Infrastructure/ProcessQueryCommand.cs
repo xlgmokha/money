@@ -1,3 +1,5 @@
+using System;
+using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
 
 namespace Gorilla.Commons.Infrastructure
@@ -9,15 +11,18 @@ namespace Gorilla.Commons.Infrastructure
     public class ProcessQueryCommand<T> : IProcessQueryCommand<T>
     {
         readonly IQuery<T> query;
+        readonly ISynchronizationContextFactory factory;
 
-        public ProcessQueryCommand(IQuery<T> query)
+        public ProcessQueryCommand(IQuery<T> query, ISynchronizationContextFactory factory)
         {
             this.query = query;
+            this.factory = factory;
         }
 
         public void run(ICallback<T> callback)
         {
-            callback.run(query.fetch());
+            var dto = query.fetch();
+            factory.create().run(new ActionCommand((Action) (()=> callback.run(dto))));
         }
     }
 }
