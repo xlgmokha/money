@@ -9,7 +9,7 @@ namespace MoMoney.Service.Infrastructure.Logging
         string get_the_path_to_the_log_file();
     }
 
-    public class LogFileTasks2 : ILogFileTasks
+    public class LogFileTasks : ILogFileTasks
     {
         public string get_the_contents_of_the_log_file()
         {

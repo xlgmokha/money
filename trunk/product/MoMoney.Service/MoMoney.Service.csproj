@@ -81,7 +81,7 @@
     <Compile Include="Application\NotificationMessage.cs" />
     <Compile Include="Application\RegisterNewCompanyCommand.cs" />
     <Compile Include="Application\SaveNewBillCommand.cs" />
-    <Compile Include="Infrastructure\Logging\LogFileTasks2.cs" />
+    <Compile Include="Infrastructure\Logging\LogFileTasks.cs" />
     <Compile Include="Infrastructure\ProjectTasks.cs" />
     <Compile Include="Infrastructure\Updating\CancelUpdate.cs" />
     <Compile Include="Infrastructure\Updating\CancelUpdateSpecs.cs" />
