@@ -1,7 +1,7 @@
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.boot.container.registration.proxy_configuration;
-using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 using MoMoney.Service.Application;
 

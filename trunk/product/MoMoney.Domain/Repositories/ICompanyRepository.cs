@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.Accounting;
 
 namespace MoMoney.Domain.repositories
 {

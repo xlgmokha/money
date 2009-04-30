@@ -16,11 +16,13 @@ namespace MoMoney.Domain.Core
 
         public Range(T start_of_range, T end_of_range)
         {
-            if (start_of_range.CompareTo(end_of_range) < 0) {
+            if (start_of_range.CompareTo(end_of_range) < 0)
+            {
                 this.start_of_range = start_of_range;
                 this.end_of_range = end_of_range;
             }
-            else {
+            else
+            {
                 this.start_of_range = end_of_range;
                 this.end_of_range = start_of_range;
             }

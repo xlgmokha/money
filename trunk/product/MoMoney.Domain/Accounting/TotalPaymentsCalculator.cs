@@ -1,4 +1,5 @@
 using Gorilla.Commons.Utility.Core;
+using MoMoney.Domain.Accounting;
 using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.accounting.billing

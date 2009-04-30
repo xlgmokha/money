@@ -1,9 +1,9 @@
 using System;
 using Gorilla.Commons.Utility;
-using MoMoney.Domain.Accounting.Growth;
+using MoMoney.Domain.accounting;
 using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.accounting.billing
+namespace MoMoney.Domain.Accounting
 {
     public interface ICompany : IEntity
     {

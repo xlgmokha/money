@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility;
-using MoMoney.Domain.accounting.billing;
-using MoMoney.Domain.Accounting.Growth;
+using MoMoney.Domain.Accounting;
 using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.accounting
@@ -72,7 +71,7 @@ namespace MoMoney.Domain.accounting
                             sut.receive(income_for_january_2007);
                             sut.receive(income_for_february_2007);
                             sut.receive(income_for_february_2008);
-                            result = sut.calculate_income_for(2007.as_a_year());
+                            result = sut.calculate_income_for(2007);
                         };
 
         it should_return_the_correct_amount = () => result.should_be_equal_to(2000.as_money());

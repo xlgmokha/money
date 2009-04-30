@@ -1,4 +1,4 @@
-namespace MoMoney.Domain.accounting.billing
+namespace MoMoney.Domain.Accounting
 {
     public static class BillingExtensions
     {

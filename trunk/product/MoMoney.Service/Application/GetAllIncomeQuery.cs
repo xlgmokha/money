@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.Accounting.Growth;
+using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
 

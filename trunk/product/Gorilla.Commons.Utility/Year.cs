@@ -6,9 +6,18 @@ namespace Gorilla.Commons.Utility
     {
         readonly int the_underlying_year;
 
+        public Year(int year) : this(new DateTime(year, 01, 01))
+        {
+        }
+
         public Year(DateTime date)
         {
             the_underlying_year = date.Year;
+        }
+
+        static public implicit operator Year(int year)
+        {
+            return new Year(year);
         }
 
         public bool Equals(Year obj)

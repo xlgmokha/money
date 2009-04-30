@@ -3,7 +3,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.accounting.billing
+namespace MoMoney.Domain.Accounting
 {
     [Concern(typeof (Bill))]
     public class when_checking_to_see_if_a_new_bill_has_been_paid_for : concerns_for<IBill>

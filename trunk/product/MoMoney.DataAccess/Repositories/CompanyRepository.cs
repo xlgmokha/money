@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 
 namespace MoMoney.DataAccess.repositories

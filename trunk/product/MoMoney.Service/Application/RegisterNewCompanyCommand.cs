@@ -1,6 +1,6 @@
 using System.Linq;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.accounting.billing;
+using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
 

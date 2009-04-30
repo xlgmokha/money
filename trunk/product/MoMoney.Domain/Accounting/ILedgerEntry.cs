@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Domain.accounting.billing
+namespace MoMoney.Domain.Accounting
 {
     public interface ILedgerEntry
     {

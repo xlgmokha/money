@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Domain.accounting.billing;
-using MoMoney.Domain.Accounting.Growth;
+using MoMoney.Domain.Accounting;
 using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.accounting
@@ -19,14 +18,14 @@ namespace MoMoney.Domain.accounting
     [Serializable]
     public class AccountHolder : Entity<IAccountHolder>, IAccountHolder
     {
+        IList<IBill> all_bills { get; set; }
+        IList<IIncome> income_collected { get; set; }
+
         public AccountHolder()
         {
             all_bills = new List<IBill>();
             income_collected = new List<IIncome>();
         }
-
-        private IList<IBill> all_bills { get; set; }
-        private IList<IIncome> income_collected { get; set; }
 
         public void receive(IBill bill)
         {

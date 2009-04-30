@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Extensions;
+using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.accounting.billing
+namespace MoMoney.Domain.Accounting
 {
     public interface IBill : IEntity
     {
@@ -18,6 +19,8 @@ namespace MoMoney.Domain.accounting.billing
     [Serializable]
     public class Bill : Entity<IBill>, IBill
     {
+        IList<IPayment> payments { get; set; }
+
         public Bill(ICompany company_to_pay, Money the_amount_owed, DateTime due_date)
         {
             this.company_to_pay = company_to_pay;
@@ -29,7 +32,6 @@ namespace MoMoney.Domain.accounting.billing
         public ICompany company_to_pay { get; private set; }
         public Money the_amount_owed { get; private set; }
         public Date due_date { get; private set; }
-        public IList<IPayment> payments { get; private set; }
 
         public bool is_paid_for()
         {
@@ -41,7 +43,7 @@ namespace MoMoney.Domain.accounting.billing
             payments.Add(new Payment(amount_to_pay));
         }
 
-        private Money the_amount_paid()
+        Money the_amount_paid()
         {
             return payments.return_value_from_visiting_all_items_with(new TotalPaymentsCalculator());
         }
@@ -64,7 +66,8 @@ namespace MoMoney.Domain.accounting.billing
 
         public override int GetHashCode()
         {
-            unchecked {
+            unchecked
+            {
                 var result = (company_to_pay != null ? company_to_pay.GetHashCode() : 0);
                 result = (result*397) ^ (the_amount_owed != null ? the_amount_owed.GetHashCode() : 0);
                 result = (result*397) ^ due_date.GetHashCode();

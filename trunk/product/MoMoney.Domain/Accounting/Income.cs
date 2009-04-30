@@ -1,9 +1,8 @@
 using System;
 using Gorilla.Commons.Utility;
-using MoMoney.Domain.accounting.billing;
 using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.Accounting.Growth
+namespace MoMoney.Domain.Accounting
 {
     public interface IIncome : IEntity
     {
@@ -44,7 +43,8 @@ namespace MoMoney.Domain.Accounting.Growth
 
         public override int GetHashCode()
         {
-            unchecked {
+            unchecked
+            {
                 var result = (company != null ? company.GetHashCode() : 0);
                 result = (result*397) ^ (amount_tendered != null ? amount_tendered.GetHashCode() : 0);
                 result = (result*397) ^ (date_of_issue != null ? date_of_issue.GetHashCode() : 0);

@@ -1,7 +1,7 @@
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.repositories;
 
-namespace MoMoney.Domain.accounting.billing
+namespace MoMoney.Domain.Accounting
 {
     public interface ICompanyFactory : IFactory<ICompany>
     {
