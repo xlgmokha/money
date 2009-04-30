@@ -2,14 +2,9 @@ using System;
 
 namespace Gorilla.Commons.Utility
 {
-    public interface IYear
+    public class Year
     {
-        bool represents(DateTime time);
-    }
-
-    public class Year : IYear
-    {
-        private readonly int the_underlying_year;
+        readonly int the_underlying_year;
 
         public Year(DateTime date)
         {

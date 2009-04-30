@@ -114,9 +114,9 @@
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Extensions\TypeExtensionsSpecs.cs" />
     <Compile Include="Extensions\VisitorExtensions.cs" />
-    <Compile Include="IYear.cs" />
     <Compile Include="Percent.cs" />
     <Compile Include="PercentSpecs.cs" />
+    <Compile Include="Year.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">

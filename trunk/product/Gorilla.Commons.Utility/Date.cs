@@ -14,7 +14,7 @@ namespace Gorilla.Commons.Utility
             ticks = new DateTime(year, month, day).Ticks;
         }
 
-        public bool is_in(IYear the_year)
+        public bool is_in(Year the_year)
         {
             return the_year.represents(to_date_time());
         }

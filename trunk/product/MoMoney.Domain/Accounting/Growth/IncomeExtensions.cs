@@ -1,19 +1,16 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Utility;
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.Accounting.Growth
 {
-    public static class IncomeExtensions
+    static public class IncomeExtensions
     {
-        public static Money in_the(this IEnumerable<IIncome> income_collected, IYear year)
+        static public Money in_the(this IEnumerable<IIncome> income_collected, Year year)
         {
-            Money income_for_year = new Money(0);
-            foreach (var income in income_collected) {
-                if (income.date_of_issue.is_in(year)) {
-                    income_for_year = income_for_year.add(income.amount_tendered);
-                }
-            }
+            var income_for_year = new Money(0);
+            income_collected.each(x => { if (x.date_of_issue.is_in(year)) income_for_year = income_for_year.add(x.amount_tendered); });
             return income_for_year;
         }
     }

@@ -13,7 +13,7 @@ namespace MoMoney.Domain.accounting
         void receive(IBill bill);
         void receive(IIncome income);
         IEnumerable<IBill> collect_all_the_unpaid_bills();
-        Money calculate_income_for(IYear year);
+        Money calculate_income_for(Year year);
     }
 
     [Serializable]
@@ -38,7 +38,7 @@ namespace MoMoney.Domain.accounting
             return all_bills.where(bill => bill.is_not_paid());
         }
 
-        public Money calculate_income_for(IYear year)
+        public Money calculate_income_for(Year year)
         {
             return income_collected.in_the(year);
         }
