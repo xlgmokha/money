@@ -88,7 +88,7 @@
     <Compile Include="Core\IValueReturningVisitor.cs" />
     <Compile Include="Core\IVisitable.cs" />
     <Compile Include="Core\IVisitor.cs" />
-    <Compile Include="Core\Map.cs" />
+    <Compile Include="Core\Mapper.cs" />
     <Compile Include="Core\OrSpecification.cs" />
     <Compile Include="Core\OrSpecificationSpecs.cs" />
     <Compile Include="Core\PredicateSpecification.cs" />

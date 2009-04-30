@@ -18,7 +18,7 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            registry.transient(typeof (IMapper<,>), typeof (Map<,>));
+            registry.transient(typeof (IMapper<,>), typeof (Mapper<,>));
             registry.singleton<Converter<IBill, BillInformationDTO>>(
                 () => x => new BillInformationDTO
                                {

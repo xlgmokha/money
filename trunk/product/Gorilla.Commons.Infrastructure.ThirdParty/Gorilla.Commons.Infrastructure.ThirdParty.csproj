@@ -131,6 +131,7 @@
     <Compile Include="Castle\Windsor\WindsorContainerFactory.cs" />
     <Compile Include="Castle\Windsor\WindsorDependencyRegistry.cs" />
     <Compile Include="Castle\Windsor\WindsorDependencyRegistrySpecs.cs" />
+    <Compile Include="New\New.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
