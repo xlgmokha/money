@@ -5,18 +5,23 @@ namespace MoMoney.Domain.Accounting
 {
     public interface IPayment : IEntity
     {
-        Money amount_paid { get; }
+        Money apply_to(Money money);
     }
 
     [Serializable]
     internal class Payment : Entity<IPayment>, IPayment
     {
+        Money amount_paid { get; set; }
+
         public Payment(Money amount_paid)
         {
             this.amount_paid = amount_paid;
         }
 
-        public Money amount_paid { get; private set; }
+        public Money apply_to(Money money)
+        {
+            return money.add(amount_paid);
+        }
 
         public bool Equals(Payment obj)
         {
@@ -34,7 +39,8 @@ namespace MoMoney.Domain.Accounting
 
         public override int GetHashCode()
         {
-            unchecked {
+            unchecked
+            {
                 return (base.GetHashCode()*397) ^ (amount_paid != null ? amount_paid.GetHashCode() : 0);
             }
         }

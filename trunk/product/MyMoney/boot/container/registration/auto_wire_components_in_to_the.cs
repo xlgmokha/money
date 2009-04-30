@@ -3,15 +3,10 @@ using System.Reflection;
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration;
 using Gorilla.Commons.Infrastructure.Reflection;
-using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.boot.container.registration
 {
-    public interface IStartupCommand : ICommand, IParameterizedCommand<IAssembly>
-    {
-    }
-
     public class auto_wire_components_in_to_the : IStartupCommand
     {
         readonly IDependencyRegistration registrar;

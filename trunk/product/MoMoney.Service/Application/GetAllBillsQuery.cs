@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
@@ -9,25 +10,17 @@ namespace MoMoney.Service.Application
     public class GetAllBillsQuery : IGetAllBillsQuery
     {
         readonly IBillRepository bills;
+        readonly IMapper<IBill, BillInformationDTO> mapper;
 
-        public GetAllBillsQuery(IBillRepository bills)
+        public GetAllBillsQuery(IBillRepository bills, IMapper<IBill, BillInformationDTO> mapper)
         {
             this.bills = bills;
+            this.mapper = mapper;
         }
 
         public IEnumerable<BillInformationDTO> fetch()
         {
-            return bills.all().map_all_using(x => map_from(x));
-        }
-
-        BillInformationDTO map_from(IBill bill)
-        {
-            return new BillInformationDTO
-                       {
-                           company_name = bill.company_to_pay.name,
-                           the_amount_owed = bill.the_amount_owed.ToString(),
-                           due_date = bill.due_date.to_date_time(),
-                       };
+            return bills.all().map_all_using(mapper);
         }
     }
 }

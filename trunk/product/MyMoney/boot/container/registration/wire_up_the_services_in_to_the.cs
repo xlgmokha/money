@@ -3,6 +3,7 @@ using Gorilla.Commons.Utility.Core;
 using MoMoney.boot.container.registration.proxy_configuration;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
+using MoMoney.DTO;
 using MoMoney.Service.Application;
 
 namespace MoMoney.boot.container.registration
@@ -28,11 +29,11 @@ namespace MoMoney.boot.container.registration
         void wire_up_queries()
         {
             registry.proxy<IGetAllCompanysQuery, ServiceLayerConfiguration<IGetAllCompanysQuery>>(
-                () => new GetAllCompanysQuery(Lazy.load<ICompanyRepository>()));
+                () => new GetAllCompanysQuery(Lazy.load<ICompanyRepository>(),Lazy.load<IMapper<ICompany, CompanyDTO>>()));
             registry.proxy<IGetAllBillsQuery, ServiceLayerConfiguration<IGetAllBillsQuery>>(
-                () => new GetAllBillsQuery(Lazy.load<IBillRepository>()));
+                () => new GetAllBillsQuery(Lazy.load<IBillRepository>(), Lazy.load<IMapper<IBill, BillInformationDTO>>()));
             registry.proxy<IGetAllIncomeQuery, ServiceLayerConfiguration<IGetAllIncomeQuery>>(
-                () => new GetAllIncomeQuery(Lazy.load<IIncomeRepository>()));
+                () => new GetAllIncomeQuery(Lazy.load<IIncomeRepository>(),Lazy.load<IMapper<IIncome, IncomeInformationDTO>>()));
         }
 
         void wire_up_the_commands()

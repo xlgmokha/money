@@ -166,6 +166,7 @@
     </Compile>
     <Compile Include="boot\container\registration\auto_wire_components_in_to_the.cs" />
     <Compile Include="boot\container\registration\auto_wire_components_in_to_the_specs.cs" />
+    <Compile Include="boot\container\registration\IStartupCommand.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\NoConfiguration.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\ServiceLayerConfiguration.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\SynchronizedConfiguration.cs" />

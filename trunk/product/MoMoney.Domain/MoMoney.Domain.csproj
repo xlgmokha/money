@@ -72,7 +72,6 @@
     <Compile Include="Accounting\GeneralLedgerSpecs.cs" />
     <Compile Include="Accounting\AnnualIncomeVisitor.cs" />
     <Compile Include="Accounting\IncomeExtensions.cs" />
-    <Compile Include="Accounting\IInvoice.cs" />
     <Compile Include="Core\Entity.cs" />
     <Compile Include="Core\Money.cs" />
     <Compile Include="Core\MoneyExtensions.cs" />

@@ -1,7 +1,5 @@
 using System.ComponentModel;
 using System.Deployment.Application;
-using System.Threading;
-using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Log4Net;
@@ -27,19 +25,10 @@ namespace MoMoney.boot.container.registration
             registration.singleton<IDependencyRegistry>(() => registration.build());
             registration.singleton<ILogFactory, Log4NetLogFactory>();
             registration.singleton<ICommandProcessor, AsynchronousCommandProcessor>();
-            registration.singleton(
-                () =>
-                    {
-                        return AsyncOperationManager.SynchronizationContext;
-                        //if (SynchronizationContext.Current == null)
-                        //{
-                        //    SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
-                        //}
-                        //return SynchronizationContext.Current;
-                    });
-            registration.singleton<AsyncOperation>(() => AsyncOperationManager.CreateOperation(null));
-            registration.singleton<ApplicationDeployment>(() => ApplicationDeployment.IsNetworkDeployed ? ApplicationDeployment.CurrentDeployment : null);
-            registration.singleton<IDeployment>(() => ApplicationDeployment.IsNetworkDeployed ? (IDeployment)new CurrentDeployment() : (IDeployment)new NullDeployment());
+            registration.singleton(() => AsyncOperationManager.SynchronizationContext);
+            registration.singleton<AsyncOperation>(() => AsyncOperationManager.CreateOperation(new object()));
+            registration.singleton<ApplicationDeployment>( () => ApplicationDeployment.IsNetworkDeployed ? ApplicationDeployment.CurrentDeployment : null);
+            registration.singleton<IDeployment>( () => ApplicationDeployment.IsNetworkDeployed ? (IDeployment) new CurrentDeployment() : (IDeployment) new NullDeployment());
         }
     }
 }
