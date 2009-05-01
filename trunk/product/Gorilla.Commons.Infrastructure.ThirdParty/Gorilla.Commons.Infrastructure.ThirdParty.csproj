@@ -131,7 +131,15 @@
     <Compile Include="Castle\Windsor\WindsorContainerFactory.cs" />
     <Compile Include="Castle\Windsor\WindsorDependencyRegistry.cs" />
     <Compile Include="Castle\Windsor\WindsorDependencyRegistrySpecs.cs" />
-    <Compile Include="New\New.cs" />
+    <Compile Include="Experiments\Autofac\AutofacContainerBuilder.cs" />
+    <Compile Include="Experiments\ExtendedRegistration.cs" />
+    <Compile Include="Experiments\IContainerBuilder.cs" />
+    <Compile Include="Experiments\IExtendedRegistration.cs" />
+    <Compile Include="Experiments\IResolver.cs" />
+    <Compile Include="Experiments\ObjectUsageHasExpiredException.cs" />
+    <Compile Include="Experiments\SimpleContainerBuilder.cs" />
+    <Compile Include="Experiments\SimpleRegistry.cs" />
+    <Compile Include="Experiments\TypeAlreadyRegisteredInContainerException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
