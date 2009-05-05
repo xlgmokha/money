@@ -69,6 +69,7 @@
     <Compile Include="Core\EmptyCommand.cs" />
     <Compile Include="Core\ComponentFactory.cs" />
     <Compile Include="Core\Factory.cs" />
+    <Compile Include="Core\FilteredVisitor.cs" />
     <Compile Include="Core\IBuilder.cs" />
     <Compile Include="Core\ICallback.cs" />
     <Compile Include="Core\ICommand.cs" />

@@ -18,7 +18,7 @@ namespace MoMoney.boot.container.registration.proxy_configuration
         public void Intercept(IInvocation invocation)
         {
             if (filter.is_satisfied_by(Thread.CurrentPrincipal)) invocation.Proceed();
-            else this.log().debug("call to {0} was blocked");
+            else this.log().debug("call to {0} was blocked", invocation);
         }
     }
 }
