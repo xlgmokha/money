@@ -13,7 +13,7 @@ namespace MoMoney.boot.container.registration.proxy_configuration
         {
             item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>()).intercept_all();
             item.add_interceptor(
-                new InterceptingFilter(new IsInRole("Users").or(new IsInRole("Administrators"))))
+                new SecuringProxy(new IsInRole("Users").or(new IsInRole("Administrators"))))
                 .intercept_all();
         }
     }

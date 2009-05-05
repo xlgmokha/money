@@ -6,11 +6,11 @@ using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
-    public class InterceptingFilter : IInterceptor
+    public class SecuringProxy : IInterceptor
     {
         readonly ISpecification<IPrincipal> filter;
 
-        public InterceptingFilter(ISpecification<IPrincipal> filter)
+        public SecuringProxy(ISpecification<IPrincipal> filter)
         {
             this.filter = filter;
         }
