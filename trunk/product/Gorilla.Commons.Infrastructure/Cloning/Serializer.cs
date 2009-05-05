@@ -14,17 +14,13 @@ namespace Gorilla.Commons.Infrastructure.Cloning
         public void serialize(T to_serialize)
         {
             using (var stream = new FileStream(file_path, FileMode.Create, FileAccess.Write))
-            {
                 formatter.Serialize(stream, to_serialize);
-            }
         }
 
         public T deserialize()
         {
             using (var stream = new FileStream(file_path, FileMode.Open, FileAccess.Read))
-            {
                 return (T) formatter.Deserialize(stream);
-            }
         }
 
         public void Dispose()

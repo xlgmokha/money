@@ -68,6 +68,9 @@
     <Content Include="local.properties.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Empty.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

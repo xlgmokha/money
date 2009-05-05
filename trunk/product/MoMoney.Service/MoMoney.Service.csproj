@@ -83,6 +83,9 @@
     <Compile Include="Application\SaveNewBillCommand.cs" />
     <Compile Include="Infrastructure\Logging\LogFileTasks.cs" />
     <Compile Include="Infrastructure\ProjectTasks.cs" />
+    <Compile Include="Infrastructure\Security\IsInRole.cs" />
+    <Compile Include="Infrastructure\Security\IsInRoleSpecs.cs" />
+    <Compile Include="Infrastructure\Security\Role.cs" />
     <Compile Include="Infrastructure\Updating\CancelUpdate.cs" />
     <Compile Include="Infrastructure\Updating\CancelUpdateSpecs.cs" />
     <Compile Include="Infrastructure\Updating\CurrentDeployment.cs" />

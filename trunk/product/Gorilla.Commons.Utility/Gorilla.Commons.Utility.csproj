@@ -89,6 +89,8 @@
     <Compile Include="Core\IVisitable.cs" />
     <Compile Include="Core\IVisitor.cs" />
     <Compile Include="Core\Mapper.cs" />
+    <Compile Include="Core\NotSpecification.cs" />
+    <Compile Include="Core\NotSpecificationSpecs.cs" />
     <Compile Include="Core\OrSpecification.cs" />
     <Compile Include="Core\OrSpecificationSpecs.cs" />
     <Compile Include="Core\PredicateSpecification.cs" />
