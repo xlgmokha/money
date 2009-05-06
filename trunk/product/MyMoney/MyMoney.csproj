@@ -111,6 +111,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.windows.forms.dll</HintPath>
     </Reference>
+    <Reference Include="gorilla.testing, Version=2009.5.5.194, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\gorilla\gorilla.testing.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Annotations, Version=4.1.933.3, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\jetbrains\JetBrains.Annotations.dll</HintPath>

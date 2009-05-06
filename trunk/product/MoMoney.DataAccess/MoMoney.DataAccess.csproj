@@ -55,6 +55,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
     </Reference>
+    <Reference Include="gorilla.testing, Version=2009.5.5.194, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\gorilla\gorilla.testing.dll</HintPath>
+    </Reference>
     <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
@@ -90,10 +94,6 @@
     <Compile Include="IDatabaseConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
-      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>Gorilla.Commons.Testing</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MoMoney.Domain\MoMoney.Domain.csproj">
       <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
       <Name>MoMoney.Domain</Name>

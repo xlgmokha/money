@@ -5,8 +5,6 @@
 
 	<fileset id="test.references.fileset">
 		<include name="${build.lib.dir}\**\*.dll" />
-		<exclude name="${build.lib.dir}\app\sql.server.compact\**\*.dll" />
-		<include name="${build.lib.dir}\app\sql.server.compact\**\System.Data.SqlServerCe.dll" />
 	</fileset>
 
 	<target name="test.compile" depends="init, test.copy.dependencies">

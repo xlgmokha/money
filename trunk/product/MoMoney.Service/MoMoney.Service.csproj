@@ -47,6 +47,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
     </Reference>
+    <Reference Include="gorilla.testing, Version=2009.5.5.194, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\gorilla\gorilla.testing.dll</HintPath>
+    </Reference>
     <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>

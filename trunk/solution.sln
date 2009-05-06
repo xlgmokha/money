@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoney.Build", "build\MyMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoney", "product\MyMoney\MyMoney.csproj", "{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Utility", "product\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj", "{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Testing", "product\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj", "{44E65096-9657-4716-90F8-4535BABE8039}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.Domain", "product\MoMoney.Domain\MoMoney.Domain.csproj", "{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}"
@@ -18,14 +16,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.DTO", "product\MoMoney.DTO\MoMoney.DTO.csproj", "{ACF52FAB-435B-48C9-A383-C787CB2D8000}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.Presentation", "product\MoMoney.Presentation\MoMoney.Presentation.csproj", "{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Infrastructure", "product\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj", "{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Infrastructure.ThirdParty", "product\Gorilla.Commons.Infrastructure.ThirdParty\Gorilla.Commons.Infrastructure.ThirdParty.csproj", "{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Windows.Forms", "product\Gorilla.Commons.Windows.Forms\Gorilla.Commons.Windows.Forms.csproj", "{54B55B2B-A58F-45DF-A446-234C9D70DC0B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla.Commons.Windows.Forms.ThirdParty", "product\Gorilla.Commons.Windows.Forms.ThirdParty\Gorilla.Commons.Windows.Forms.ThirdParty.csproj", "{8050731D-48B2-4636-9D1C-2B6D052F39DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +31,6 @@ Global
 		{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44E65096-9657-4716-90F8-4535BABE8039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{44E65096-9657-4716-90F8-4535BABE8039}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44E65096-9657-4716-90F8-4535BABE8039}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -69,22 +55,6 @@ Global
 		{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54B55B2B-A58F-45DF-A446-234C9D70DC0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54B55B2B-A58F-45DF-A446-234C9D70DC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54B55B2B-A58F-45DF-A446-234C9D70DC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54B55B2B-A58F-45DF-A446-234C9D70DC0B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8050731D-48B2-4636-9D1C-2B6D052F39DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8050731D-48B2-4636-9D1C-2B6D052F39DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8050731D-48B2-4636-9D1C-2B6D052F39DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8050731D-48B2-4636-9D1C-2B6D052F39DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

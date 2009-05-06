@@ -25,7 +25,8 @@ namespace MoMoney.boot.container.registration
             register.singleton<IDatabase, ObjectDatabase>();
             register.singleton(() => Resolve.the<IDatabase>().downcast_to<IDatabaseConfiguration>());
             register.transient<ISessionProvider, SessionProvider>();
-            register.proxy<ISession, NoConfiguration<ISession>>( () => Resolve.the<ISessionProvider>().get_the_current_session());
+            register.proxy<ISession, NoConfiguration<ISession>>(
+                () => Resolve.the<ISessionProvider>().get_the_current_session());
 
             register.transient<IUnitOfWorkInterceptor, UnitOfWorkInterceptor>();
             register.transient<IUnitOfWorkFactory, UnitOfWorkFactory>();
@@ -35,8 +36,6 @@ namespace MoMoney.boot.container.registration
             register.transient<IConnectionFactory, ConnectionFactory>();
             register.transient<IConfigureDatabaseStep, ConfigureDatabaseStep>();
             register.transient<IPrototype, Prototype>();
-
-
         }
     }
 }
