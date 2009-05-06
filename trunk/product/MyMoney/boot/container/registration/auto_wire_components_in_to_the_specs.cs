@@ -9,7 +9,7 @@ using MbUnit.Framework;
 namespace MoMoney.boot.container.registration
 {
     [Ignore("I am not sure why but line 19 throws a BadImageFormatException")]
-    public class behaves_like_auto_registering_components_into_container :
+    public abstract class behaves_like_auto_registering_components_into_container :
         concerns_for<IStartupCommand, auto_wire_components_in_to_the>
     {
         context c = () =>

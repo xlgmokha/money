@@ -11,7 +11,7 @@ namespace MoMoney.boot.container.registration.proxy_configuration
     {
     }
 
-    public class when_attempting_to_perform_an_action_that_requires_authentication :
+    public abstract class when_attempting_to_perform_an_action_that_requires_authentication :
         concerns_for< SecuringProxy>
     {
         context c = () => { filter = the_dependency<ISpecification<IPrincipal>>(); };

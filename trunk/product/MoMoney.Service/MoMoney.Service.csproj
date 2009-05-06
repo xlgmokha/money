@@ -107,10 +107,6 @@
     <Compile Include="Infrastructure\Updating\WhatIsTheAvailableVersion.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
-      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>Gorilla.Commons.Testing</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MoMoney.DataAccess\MoMoney.DataAccess.csproj">
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
       <Name>MoMoney.DataAccess</Name>
