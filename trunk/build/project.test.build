@@ -5,12 +5,13 @@
 
 	<fileset id="test.references.fileset">
 		<include name="${build.lib.dir}\**\*.dll" />
+		<include name="${build.compile.dir}\${app.output}" />
 	</fileset>
 
-	<target name="test.compile" depends="init, test.copy.dependencies">
+	<target name="test.compile" depends="app.compile, test.copy.dependencies">
 		<csc output="${build.compile.dir}\${test.output}" target="library" debug="${debug}">
 			<sources basedir="${product.dir}">
-				<include name="**\*.cs" />
+				<include name="**\*Specs.cs" />
 			</sources>
 			<references refid="test.references.fileset"/>
 		</csc>
