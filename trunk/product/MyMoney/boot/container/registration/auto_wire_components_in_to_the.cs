@@ -1,9 +1,12 @@
 using System;
 using System.Reflection;
 using Gorilla.Commons.Infrastructure;
+using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 using Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration;
+using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.Reflection;
 using Gorilla.Commons.Utility.Extensions;
+using MoMoney.Infrastructure.Container.Windsor.configuration;
 
 namespace MoMoney.boot.container.registration
 {
@@ -11,6 +14,11 @@ namespace MoMoney.boot.container.registration
     {
         readonly IDependencyRegistration registrar;
         readonly IComponentExclusionSpecification exclusion_policy;
+
+        public auto_wire_components_in_to_the(IDependencyRegistration registrar)
+            : this(registrar, new ComponentExclusionSpecification())
+        {
+        }
 
         public auto_wire_components_in_to_the(IDependencyRegistration registration,
                                               IComponentExclusionSpecification exclusion_policy)
@@ -22,6 +30,7 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             run(new ApplicationAssembly(Assembly.GetExecutingAssembly()));
+            //run(new ApplicationAssembly(Assembly.GetAssembly(typeof(IEventAggregator))));
         }
 
         public void run(IAssembly item)

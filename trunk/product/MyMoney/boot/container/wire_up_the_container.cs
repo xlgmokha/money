@@ -1,33 +1,28 @@
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Autofac;
-using Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.boot.container.registration;
-using MoMoney.Infrastructure.Container.Windsor.configuration;
 
 namespace MoMoney.boot.container
 {
     internal class wire_up_the_container : ICommand
     {
         readonly IDependencyRegistration registry;
-        readonly IComponentExclusionSpecification specification;
 
-        public wire_up_the_container()
-            : this(new AutofacDependencyRegistryBuilder(), new ComponentExclusionSpecification())
+        public wire_up_the_container() : this(new AutofacDependencyRegistryBuilder())
         {
         }
 
-        public wire_up_the_container(IDependencyRegistration registry, IComponentExclusionSpecification specification)
+        public wire_up_the_container(IDependencyRegistration registry)
         {
             this.registry = registry;
-            this.specification = specification;
         }
 
         public void run()
         {
-            new auto_wire_components_in_to_the(registry, specification)
+            new auto_wire_components_in_to_the(registry)
                 .then(new wire_up_the_essential_services_into_the(registry))
                 .then(new wire_up_the_data_access_components_into_the(registry))
                 .then(new wire_up_the_infrastructure_in_to_the(registry))

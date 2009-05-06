@@ -47,6 +47,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
     </Reference>
+    <Reference Include="gorilla.commons.infrastructure, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.commons.utility, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
+    </Reference>
     <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
@@ -82,17 +90,9 @@
     <Compile Include="IDatabaseConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
-      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
-      <Name>Gorilla.Commons.Infrastructure</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
       <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
       <Name>Gorilla.Commons.Testing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj">
-      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
-      <Name>Gorilla.Commons.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\MoMoney.Domain\MoMoney.Domain.csproj">
       <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>

@@ -1,10 +1,14 @@
+using System.ComponentModel;
+using System.Deployment.Application;
 using Gorilla.Commons.Infrastructure;
+using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.Registries;
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Model.Projects;
+using MoMoney.Tasks.infrastructure.updating;
 
 namespace MoMoney.boot.container.registration
 {
@@ -24,9 +28,24 @@ namespace MoMoney.boot.container.registration
             registry.singleton<IProjectController, ProjectController>();
             registry.transient(typeof (IRegistry<>), typeof (DefaultRegistry<>));
             registry.transient(typeof (ITrackerEntryMapper<>), typeof (TrackerEntryMapper<>));
-            registry.transient(typeof(IKey<>), typeof(TypedKey<>));
+            registry.transient(typeof (IKey<>), typeof (TypedKey<>));
             registry.transient(typeof (IComponentFactory<>), typeof (ComponentFactory<>));
             registry.singleton<IContext, Context>();
+
+            registry.singleton(() => AsyncOperationManager.SynchronizationContext);
+            registry.singleton<AsyncOperation>(() => AsyncOperationManager.CreateOperation(new object()));
+            registry.singleton<ApplicationDeployment>(
+                () => ApplicationDeployment.IsNetworkDeployed ? ApplicationDeployment.CurrentDeployment : null);
+            registry.singleton<IDeployment>(
+                () =>
+                ApplicationDeployment.IsNetworkDeployed
+                    ? (IDeployment) new CurrentDeployment()
+                    : (IDeployment) new NullDeployment());
+
+            registry.transient<ICommandPump, CommandPump>();
+            registry.transient<ICommandFactory, CommandFactory>();
+            registry.transient<ISynchronizationContextFactory, SynchronizationContextFactory>();
+            registry.singleton<ICommandProcessor, AsynchronousCommandProcessor>();
         }
     }
 }

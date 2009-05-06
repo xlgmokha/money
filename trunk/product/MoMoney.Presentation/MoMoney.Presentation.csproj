@@ -51,6 +51,22 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
     </Reference>
+    <Reference Include="gorilla.commons.infrastructure, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.commons.utility, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.commons.windows.forms, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.windows.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.commons.windows.forms.thirdparty, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.windows.forms.thirdparty.dll</HintPath>
+    </Reference>
     <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
@@ -424,25 +440,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gorilla.Commons.Infrastructure\Gorilla.Commons.Infrastructure.csproj">
-      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
-      <Name>Gorilla.Commons.Infrastructure</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Gorilla.Commons.Testing\Gorilla.Commons.Testing.csproj">
       <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
       <Name>Gorilla.Commons.Testing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gorilla.Commons.Utility\Gorilla.Commons.Utility.csproj">
-      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
-      <Name>Gorilla.Commons.Utility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gorilla.Commons.Windows.Forms.ThirdParty\Gorilla.Commons.Windows.Forms.ThirdParty.csproj">
-      <Project>{8050731D-48B2-4636-9D1C-2B6D052F39DC}</Project>
-      <Name>Gorilla.Commons.Windows.Forms.ThirdParty</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gorilla.Commons.Windows.Forms\Gorilla.Commons.Windows.Forms.csproj">
-      <Project>{54B55B2B-A58F-45DF-A446-234C9D70DC0B}</Project>
-      <Name>Gorilla.Commons.Windows.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\MoMoney.DTO\MoMoney.DTO.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
