@@ -1,5 +1,3 @@
-using System.Security.Principal;
-using System.Threading;
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
@@ -9,49 +7,41 @@ namespace MoMoney.boot.container.registration.proxy_configuration
 {
     public class InterceptingFilterSpecs
     {
-    }
+        public class when_intercepting_a_call : concerns_for<IInterceptor, InterceptingFilter>
+        {
+            context c = () => { condition = the_dependency<ISpecification<IInvocation>>(); };
 
-    public abstract class when_attempting_to_perform_an_action_that_requires_authentication :
-        concerns_for< SecuringProxy>
-    {
-        context c = () => { filter = the_dependency<ISpecification<IPrincipal>>(); };
+            static protected ISpecification<IInvocation> condition;
+        }
 
-        static protected ISpecification<IPrincipal> filter;
-    }
+        public class when_a_condition_is_not_met : when_intercepting_a_call
+        {
+            context c = () =>
+                            {
+                                invocation = an<IInvocation>();
+                                when_the(condition).is_told_to(x => x.is_satisfied_by(invocation)).it_will_return(false);
+                            };
 
-    public class when_logged_in_as_a_user_that_belongs_to_the_proper_role :
-        when_attempting_to_perform_an_action_that_requires_authentication
-    {
-        context c = () =>
-                        {
-                            invocation = an<IInvocation>();
-                            when_the(filter)
-                                .is_told_to(x => x.is_satisfied_by(Thread.CurrentPrincipal))
-                                .it_will_return(true);
-                        };
+            because b = () => sut.Intercept(invocation);
 
-        because b = () => sut.Intercept(invocation);
+            it should_not_forward_the_call_to_the_target = () => invocation.was_not_told_to(x => x.Proceed());
 
-        it should_proceed_with_request = () => invocation.was_told_to(x => x.Proceed());
+            static IInvocation invocation;
+        }
 
-        static IInvocation invocation;
-    }
+        public class when_a_condition_is_met : when_intercepting_a_call
+        {
+            context c = () =>
+                            {
+                                invocation = an<IInvocation>();
+                                when_the(condition).is_told_to(x => x.is_satisfied_by(invocation)).it_will_return(true);
+                            };
 
-    public class when_not_logged_in_as_a_user_that_belongs_to_the_proper_role :
-        when_attempting_to_perform_an_action_that_requires_authentication
-    {
-        context c = () =>
-                        {
-                            invocation = an<IInvocation>();
-                            when_the(filter)
-                                .is_told_to(x => x.is_satisfied_by(Thread.CurrentPrincipal))
-                                .it_will_return(false);
-                        };
+            because b = () => sut.Intercept(invocation);
 
-        because b = () => sut.Intercept(invocation);
+            it should_forward_the_call_to_the_target = () => invocation.was_told_to(x => x.Proceed());
 
-        it should_not_proceed_with_request = () => invocation.was_not_told_to(x => x.Proceed());
-
-        static IInvocation invocation;
+            static IInvocation invocation;
+        }
     }
 }
