@@ -38,6 +38,9 @@
     <call target="convert.bootstrap" />
     <property name="msbuild.exe" value="${framework.dir}\msbuild.exe" />
     <exec program="${msbuild.exe}" commandline="/toolsversion:3.5 ${bootstrap.file}" />
+    
+  	<property name="target.exe" value="${installation.dir}\setup.exe" />
+  	<call target="sign.code" />
   </target>
 	
 	<target name="installer" depends="load_local_properties,create.installation.dir,create.bootstrap">		
@@ -53,5 +56,12 @@
 		<exec program="${mage.exe}" commandline="${args.update.deployment}" />
 		<exec program="${mage.exe}" commandline="${args.sign.deployment}" />
 	</target>
+  
+  <target name="sign.code">
+			<echo message="signing ${target.exe}" />
+			<!--<exec program="${dot.net.sdk.dir}\signtool.exe"
+				commandline="sign /f ${certificate.filename} /p ${certificate.password} /t http://timestamp.verisign.com/scripts/timstamp.dll ${target.exe}"
+				/>-->
+  </target>
   
 </project>

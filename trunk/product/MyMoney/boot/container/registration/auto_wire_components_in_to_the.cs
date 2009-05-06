@@ -1,9 +1,7 @@
 using System;
 using System.Reflection;
 using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 using Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration;
-using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.Reflection;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Infrastructure.Container.Windsor.configuration;
@@ -30,7 +28,6 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             run(new ApplicationAssembly(Assembly.GetExecutingAssembly()));
-            //run(new ApplicationAssembly(Assembly.GetAssembly(typeof(IEventAggregator))));
         }
 
         public void run(IAssembly item)

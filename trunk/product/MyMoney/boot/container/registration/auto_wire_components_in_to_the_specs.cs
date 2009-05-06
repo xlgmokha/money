@@ -18,6 +18,11 @@ namespace MoMoney.boot.container.registration
                             builder = the_dependency<IDependencyRegistration>();
                         };
 
+        public override IStartupCommand create_sut()
+        {
+            return new auto_wire_components_in_to_the(builder, exclusions_criteria);
+        }
+
         protected static IDependencyRegistration builder;
         protected static IComponentExclusionSpecification exclusions_criteria;
     }
