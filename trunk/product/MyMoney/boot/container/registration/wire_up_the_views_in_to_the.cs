@@ -29,6 +29,7 @@ namespace MoMoney.boot.container.registration
             register.singleton<IShell>(() => shell);
             register.singleton<IWin32Window>(() => shell);
             register.singleton<ISynchronizeInvoke>(() => shell);
+            register.singleton<IRegionManager>(() => shell);
             //register.proxy<IShell, SynchronizedConfiguration<IShell>>(() => shell);
             register.singleton(() => shell);
             register.transient<IAboutApplicationView, AboutTheApplicationView>();

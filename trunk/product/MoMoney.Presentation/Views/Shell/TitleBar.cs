@@ -11,9 +11,9 @@ namespace MoMoney.Presentation.Views.Shell
 
     public class TitleBar : ITitleBar
     {
-        readonly IShell shell;
+        readonly IRegionManager shell;
 
-        public TitleBar(IShell shell)
+        public TitleBar(IRegionManager shell)
         {
             this.shell = shell;
         }
@@ -21,33 +21,24 @@ namespace MoMoney.Presentation.Views.Shell
         public void display(string title)
         {
             shell.region<Form>(x =>
-            {
-                if (x.Text.Contains("-"))
-                {
-                   x.Text =x.Text.Remove(x.Text.IndexOf("-") - 1);
-                }
-               x.Text =x.Text + " - " + title;
-            });
+                                   {
+                                       if (x.Text.Contains("-")) x.Text = x.Text.Remove(x.Text.IndexOf("-") - 1);
+                                       x.Text = x.Text + " - " + title;
+                                   });
         }
 
         public void append_asterik()
         {
             shell.region<Form>(x =>
-            {
-                if (x.Text.Contains("*"))
-                {
-                    return;
-                }
-                x.Text = x.Text + "*";
-            });
+                                   {
+                                       if (x.Text.Contains("*")) return;
+                                       x.Text = x.Text + "*";
+                                   });
         }
 
         public void remove_asterik()
         {
-            shell.region<Form>(x =>
-            {
-                x.Text = x.Text.Replace("*", "");
-            });
+            shell.region<Form>(x => { x.Text = x.Text.Replace("*", ""); });
         }
     }
 }

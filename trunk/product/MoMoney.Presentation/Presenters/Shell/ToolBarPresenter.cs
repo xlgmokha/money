@@ -16,10 +16,10 @@ namespace MoMoney.Presentation.Presenters.Shell
 
     public class ToolBarPresenter : IToolbarPresenter
     {
-        readonly IShell shell;
+        readonly IRegionManager shell;
         readonly IProjectController project;
 
-        public ToolBarPresenter(IShell shell, IProjectController project)
+        public ToolBarPresenter(IRegionManager shell, IProjectController project)
         {
             this.shell = shell;
             this.project = project;

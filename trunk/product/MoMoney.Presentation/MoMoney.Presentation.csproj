@@ -336,6 +336,7 @@
     <Compile Include="Views\Shell\IGettingStartedView.cs" />
     <Compile Include="Views\Shell\ILogFileView.cs" />
     <Compile Include="Views\Shell\INotificationIconView.cs" />
+    <Compile Include="Views\Shell\IRegionManager.cs" />
     <Compile Include="Views\Shell\IShell.cs" />
     <Compile Include="Views\Shell\IStatusBarView.cs" />
     <Compile Include="Views\Shell\IUnhandledErrorView.cs" />

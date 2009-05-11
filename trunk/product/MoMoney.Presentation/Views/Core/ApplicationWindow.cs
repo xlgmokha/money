@@ -60,7 +60,7 @@ namespace MoMoney.Presentation.Views.core
 
         public IApplicationWindow titled(string title)
         {
-            base.Text = "MoMoney - " + title;
+            base.Text = "MoMoney (BETA) - " + title;
             return this;
         }
 

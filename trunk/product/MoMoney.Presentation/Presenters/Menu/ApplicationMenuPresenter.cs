@@ -13,9 +13,9 @@ namespace MoMoney.Presentation.Presenters.Menu
     public class ApplicationMenuPresenter : IApplicationMenuPresenter
     {
         readonly ISubMenuRegistry registry;
-        readonly IShell shell;
+        readonly IRegionManager shell;
 
-        public ApplicationMenuPresenter(ISubMenuRegistry registry, IShell shell)
+        public ApplicationMenuPresenter(ISubMenuRegistry registry, IRegionManager shell)
         {
             this.registry = registry;
             this.shell = shell;

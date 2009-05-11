@@ -5,9 +5,9 @@ namespace MoMoney.Presentation.Views.Shell
 {
     public class StatusBarView : IStatusBarView
     {
-        readonly IShell shell;
+        readonly IRegionManager shell;
 
-        public StatusBarView(IShell shell)
+        public StatusBarView(IRegionManager shell)
         {
             this.shell = shell;
         }

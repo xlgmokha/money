@@ -14,9 +14,9 @@ namespace MoMoney.Presentation.Views.Shell
         readonly IFileMenu file_menu;
         readonly IWindowMenu window_menu;
         readonly IHelpMenu help_menu;
-        readonly IShell shell;
+        readonly IRegionManager shell;
 
-        public NotificationIconView(IFileMenu file_menu, IWindowMenu window_menu, IHelpMenu help_menu, IShell shell)
+        public NotificationIconView(IFileMenu file_menu, IWindowMenu window_menu, IHelpMenu help_menu, IRegionManager shell)
         {
             this.file_menu = file_menu;
             this.shell = shell;
