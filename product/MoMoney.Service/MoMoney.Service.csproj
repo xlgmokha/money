@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MoMoney.Service</RootNamespace>
+    <AssemblyName>MoMoney.Service</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
+    </Reference>
+    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.commons.infrastructure, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.commons.utility, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.testing, Version=2009.5.5.194, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\gorilla\gorilla.testing.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\AddNewIncomeCommand.cs" />
+    <Compile Include="Application\AddNewIncomeCommandSpecs.cs" />
+    <Compile Include="Application\CustomerTasks.cs" />
+    <Compile Include="Application\EventLog.cs" />
+    <Compile Include="Application\GetAllBillsQuery.cs" />
+    <Compile Include="Application\GetAllCompanysQuery.cs" />
+    <Compile Include="Application\GetAllIncomeQuery.cs" />
+    <Compile Include="Application\IAddNewIncomeCommand.cs" />
+    <Compile Include="Application\IGetAllBillsQuery.cs" />
+    <Compile Include="Application\IGetAllCompanysQuery.cs" />
+    <Compile Include="Application\IGetAllIncomeQuery.cs" />
+    <Compile Include="Application\INotification.cs" />
+    <Compile Include="Application\IRegisterNewCompanyCommand.cs" />
+    <Compile Include="Application\ISaveNewBillCommand.cs" />
+    <Compile Include="Application\NotificationMessage.cs" />
+    <Compile Include="Application\RegisterNewCompanyCommand.cs" />
+    <Compile Include="Application\SaveNewBillCommand.cs" />
+    <Compile Include="Infrastructure\Logging\LogFileTasks.cs" />
+    <Compile Include="Infrastructure\ProjectTasks.cs" />
+    <Compile Include="Infrastructure\Security\IsInRole.cs" />
+    <Compile Include="Infrastructure\Security\IsInRoleSpecs.cs" />
+    <Compile Include="Infrastructure\Security\Role.cs" />
+    <Compile Include="Infrastructure\Updating\CancelUpdate.cs" />
+    <Compile Include="Infrastructure\Updating\CancelUpdateSpecs.cs" />
+    <Compile Include="Infrastructure\Updating\CurrentDeployment.cs" />
+    <Compile Include="Infrastructure\Updating\DownloadTheLatestVersion.cs" />
+    <Compile Include="Infrastructure\Updating\IDeployment.cs" />
+    <Compile Include="Infrastructure\Updating\NullDeployment.cs" />
+    <Compile Include="Infrastructure\Updating\WhatIsTheAvailableVersion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MoMoney.DataAccess\MoMoney.DataAccess.csproj">
+      <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
+      <Name>MoMoney.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoMoney.Domain\MoMoney.Domain.csproj">
+      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
+      <Name>MoMoney.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoMoney.DTO\MoMoney.DTO.csproj">
+      <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
+      <Name>MoMoney.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Application\Public\AddNewIncomeCommand.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="Infrastructure\Core\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
