@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Db40\ConfigureObjectContainerStep.cs" />
     <Compile Include="Db40\Spiking\db40_spike_specs.cs" />
     <Compile Include="Repositories\AccountHolderRepository.cs" />
     <Compile Include="Repositories\BillRepository.cs" />
