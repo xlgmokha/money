@@ -31,9 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiveReports3, Version=5.2.1013.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+    <Reference Include="ActiveReports6, Version=6.0.1797.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\active.reports\ActiveReports3.dll</HintPath>
+      <HintPath>..\..\build\lib\app\active.reports\ActiveReports6.dll</HintPath>
     </Reference>
     <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

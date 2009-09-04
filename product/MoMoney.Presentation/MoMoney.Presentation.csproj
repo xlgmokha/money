@@ -31,13 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiveReports.Viewer3, Version=5.2.1013.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+    <Reference Include="ActiveReports.Document, Version=6.0.1797.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\active.reports\ActiveReports.Viewer3.dll</HintPath>
+      <HintPath>..\..\build\lib\app\active.reports\ActiveReports.Document.dll</HintPath>
     </Reference>
-    <Reference Include="ActiveReports3, Version=5.2.1013.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+    <Reference Include="ActiveReports.Viewer6, Version=6.0.1797.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\active.reports\ActiveReports3.dll</HintPath>
+      <HintPath>..\..\build\lib\app\active.reports\ActiveReports.Viewer6.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveReports6, Version=6.0.1797.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\active.reports\ActiveReports6.dll</HintPath>
     </Reference>
     <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -378,6 +382,7 @@
     <Compile Include="Views\Updates\ICheckForUpdatesView.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Views\AddCompanyView.resx">
       <DependentUpon>AddCompanyView.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -453,9 +458,6 @@
       <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
       <Name>MoMoney.Service</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -15,7 +15,7 @@ namespace MoMoney.Presentation.Views.reporting
 
         public void display(IReport report)
         {
-            var the_active_report = report.downcast_to<ActiveReport3>();
+            var the_active_report = report.downcast_to<ActiveReport>();
             the_active_report.Run();
             ux_report_viewer.Document = the_active_report.Document;
             titled(report.name);

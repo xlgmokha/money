@@ -12,7 +12,7 @@ namespace MoMoney.Presentation.Views.billing
         void run(IEnumerable<BillInformationDTO> bills);
     }
 
-    public partial class ViewAllBillsReport : ActiveReport3, IViewAllBillsReport
+    public partial class ViewAllBillsReport : ActiveReport, IViewAllBillsReport
     {
         public ViewAllBillsReport()
         {
