@@ -1,28 +1,32 @@
+using Gorilla.Commons.Infrastructure.Container;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views;
+using MoMoney.Presentation.Model.reporting;
 using MoMoney.Presentation.Views.reporting;
-using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public interface IReportPresenter : IContentPresenter
+    public interface IReportPresenter<Report, T, Query> : IContentPresenter
+        where Report : IBindReportTo<T, Query>
+        where Query : IQuery<T>
     {
     }
 
-    public class ReportPresenter : ContentPresenter<IReportViewer>, IReportPresenter
+    public class ReportPresenter<Report, T, Query> : ContentPresenter<IReportViewer>, IReportPresenter<Report, T, Query>
+        where Report : IBindReportTo<T, Query>
+        where Query : IQuery<T>
     {
-        readonly IViewAllBillsReport report;
-        readonly IGetAllBillsQuery query;
+        readonly IDependencyRegistry registry;
 
-        public ReportPresenter(IReportViewer view, IViewAllBillsReport report, IGetAllBillsQuery query) : base(view)
+        public ReportPresenter(IReportViewer view, IDependencyRegistry registry) : base(view)
         {
-            this.report = report;
-            this.query = query;
+            this.registry = registry;
         }
 
         public override void run()
         {
-            report.run(query.fetch());
+            var report = registry.get_a<Report>();
+            report.run(registry.get_a<Query>().fetch());
             view.display(report);
         }
     }

@@ -106,6 +106,7 @@
     <Compile Include="Model\Navigation\INavigationTreeVisitor.cs" />
     <Compile Include="Model\Navigation\ITreeBranch.cs" />
     <Compile Include="Model\Navigation\ITreeViewToRootNodeMapper.cs" />
+    <Compile Include="Model\Reporting\IBindReportTo.cs" />
     <Compile Include="Presenters\CommandFactory.cs" />
     <Compile Include="Presenters\CommandPump.cs" />
     <Compile Include="Core\ApplicationController.cs" />
@@ -160,7 +161,6 @@
     <Compile Include="Model\Navigation\TreeViewToRootNodeMapper.cs" />
     <Compile Include="Model\Navigation\TreeBranchSpecs.cs" />
     <Compile Include="Model\Navigation\ViewAllBillsBranch.cs" />
-    <Compile Include="Model\Navigation\ViewAllBillsReportBranch.cs" />
     <Compile Include="Model\Projects\EmptyProject.cs" />
     <Compile Include="Model\Projects\FileNotSpecifiedException.cs" />
     <Compile Include="Model\Projects\IProject.cs" />

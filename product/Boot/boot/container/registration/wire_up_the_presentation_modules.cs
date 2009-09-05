@@ -1,17 +1,21 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Reflection;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.boot.container.registration.proxy_configuration;
+using MoMoney.DTO;
 using MoMoney.Presentation;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views;
+using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.boot.container.registration
 {
@@ -35,6 +39,7 @@ namespace MoMoney.boot.container.registration
                 () => new ApplicationController(Lazy.load<IPresenterRegistry>(), Lazy.load<IShell>());
             registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(target.memorize());
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
+            registry.transient(typeof (IPresenter), typeof (ReportPresenter<IViewAllBillsReport,IEnumerable<BillInformationDTO>,IGetAllBillsQuery>));
             registry.transient<IFileMenu, FileMenu>();
             registry.transient<IWindowMenu, WindowMenu>();
             registry.transient<IHelpMenu, HelpMenu>();
@@ -44,6 +49,7 @@ namespace MoMoney.boot.container.registration
                 .where(x => typeof (IPresenter).IsAssignableFrom(x))
                 .where(x => !x.IsInterface)
                 .where(x => !x.IsAbstract)
+                .where(x => !x.IsGenericType)
                 .each(type => registry.transient(typeof (IPresenter), type));
 
             item
@@ -51,6 +57,7 @@ namespace MoMoney.boot.container.registration
                 .where(x => typeof (IModule).IsAssignableFrom(x))
                 .where(x => !x.IsInterface)
                 .where(x => !x.IsAbstract)
+                .where(x => !x.IsGenericType)
                 .each(type => registry.transient(typeof (IModule), type));
         }
     }
