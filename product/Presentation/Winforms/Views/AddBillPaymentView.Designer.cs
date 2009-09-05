@@ -1,4 +1,4 @@
-﻿namespace MoMoney.Presentation.Views.billing
+﻿namespace MoMoney.Presentation.Winforms.Views
 {
     partial class AddBillPaymentView
     {

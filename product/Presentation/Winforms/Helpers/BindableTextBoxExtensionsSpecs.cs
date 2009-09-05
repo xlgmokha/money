@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public class BindableTextBoxExtensionsSpecs
     {
@@ -12,7 +12,7 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
     [Concern(typeof (BindableTextBoxExtensions))]
     public class when_binding_a_text_control_to_a_command : concerns
     {
-        it should_run_each_command_when_the_text_changes_in_the_text_control = () => command.was_told_to(x => x.run(result));
+        it should_run_each_command_when_the_text_changes_in_the_text_control = () => command.was_told_to<ITextBoxCommand<string>>(x => x.run(result));
 
         context c = () =>
                         {

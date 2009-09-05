@@ -4,12 +4,12 @@ using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
-using Gorilla.Commons.Windows.Forms.Helpers;
 using MoMoney.Presentation.Presenters.Shell;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.Core;
+using MoMoney.Presentation.Winforms.Helpers;
 
-namespace MoMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Winforms.Views
 {
     [Export(typeof (IShell))]
     public partial class ApplicationShell : ApplicationWindow, IShell

@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Windows.Forms.Resources;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Navigation
 {

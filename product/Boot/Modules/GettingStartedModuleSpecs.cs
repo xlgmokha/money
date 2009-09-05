@@ -22,7 +22,8 @@ namespace MoMoney.Modules
 
         public class when_initializing_the_getting_started_module : behaves_like_the_getting_started_module
         {
-            it should_start_listening_for_when_a_new_project_is_started = () => broker.was_told_to(x => x.subscribe((GettingStartedModule)sut));
+            it should_start_listening_for_when_a_new_project_is_started =
+                () => broker.was_told_to(x => x.subscribe((GettingStartedModule) sut));
 
             because b = () => sut.run();
         }

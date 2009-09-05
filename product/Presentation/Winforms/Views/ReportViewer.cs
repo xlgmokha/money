@@ -2,9 +2,9 @@ using System;
 using DataDynamics.ActiveReports;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.reporting;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.reporting;
 
-namespace MoMoney.Presentation.Views.reporting
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class ReportViewer : ApplicationDockedWindow, IReportViewer
     {

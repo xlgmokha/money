@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public class RebindTextBoxCommandSpecs
     {

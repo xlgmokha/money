@@ -7,9 +7,9 @@ namespace MoMoney.boot.container.registration.mapping
 {
     public class Map<Input, Output> : IMap<Input, Output>
     {
-        private IMapInitializationStep<Output> map_initialization_step;
-        private readonly IList<IMappingStep<Input, Output>> mapping_steps;
-        private readonly IMappingStepFactory mapping_step_factory;
+        IMapInitializationStep<Output> map_initialization_step;
+        readonly IList<IMappingStep<Input, Output>> mapping_steps;
+        readonly IMappingStepFactory mapping_step_factory;
 
         public Map() : this(new MappingStepFactory())
         {

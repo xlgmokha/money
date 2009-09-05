@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 
-namespace Gorilla.Commons.Windows.Forms.Resources
+namespace MoMoney.Presentation.Winforms.Resources
 {
     public class HybridIcon : ApplicationIcon
     {

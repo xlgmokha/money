@@ -4,7 +4,7 @@ using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Windows.Forms.Resources;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Menu
 {

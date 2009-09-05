@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Views.updates
+namespace MoMoney.Presentation.Winforms.Views
 {
     partial class CheckForUpdatesView
     {
@@ -49,7 +49,7 @@ namespace MoMoney.Presentation.Views.updates
             this.label3.Size = new System.Drawing.Size(364, 2);
             this.label3.TabIndex = 15;
             this.label3.Text = "                                                                                 " +
-                "       ";
+                               "       ";
             // 
             // label2
             // 

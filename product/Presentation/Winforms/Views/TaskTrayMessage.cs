@@ -1,6 +1,7 @@
 using Gorilla.Commons.Utility.Extensions;
+using MoMoney.Presentation.Views.Shell;
 
-namespace MoMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Winforms.Views
 {
     public class TaskTrayMessage : ITaskTrayMessageView
     {

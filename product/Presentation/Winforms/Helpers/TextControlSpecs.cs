@@ -4,7 +4,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Core;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public class TextControlSpecs
     {

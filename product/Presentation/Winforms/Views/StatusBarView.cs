@@ -1,7 +1,8 @@
 using System.Windows.Forms;
-using Gorilla.Commons.Windows.Forms.Resources;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Winforms.Resources;
 
-namespace MoMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Winforms.Views
 {
     public class StatusBarView : IStatusBarView
     {

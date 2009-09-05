@@ -2,7 +2,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public static class BitmapRegion
     {

@@ -1,7 +1,8 @@
 using System;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.boot;
+using MoMoney.Presentation.Winforms.Views;
 
-namespace MoMoney.boot
+namespace MoMoney
 {
     public class Bootstrap : WindowsFormsApplication<ApplicationShell>
     {

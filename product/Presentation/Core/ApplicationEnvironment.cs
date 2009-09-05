@@ -1,7 +1,7 @@
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.Threading;
 
-namespace MoMoney.Infrastructure.System
+namespace MoMoney.Presentation.Core
 {
     public interface IApplication
     {

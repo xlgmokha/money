@@ -1,10 +1,10 @@
 using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Windows.Forms.Helpers;
 using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Winforms.Helpers;
 
-namespace MoMoney.Presentation.Views.dialogs
+namespace MoMoney.Presentation.Winforms.Views
 {
     [Concern(typeof(SaveChangesView))]
     [Integration]

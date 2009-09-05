@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Windows.Forms.Keyboard;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Winforms.Keyboard;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Menu.File
 {

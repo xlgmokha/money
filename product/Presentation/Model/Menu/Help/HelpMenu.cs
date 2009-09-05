@@ -4,7 +4,7 @@ using MoMoney.Presentation.Model.Menu.Help.commands;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Presenters.updates;
-using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Menu.Help
 {

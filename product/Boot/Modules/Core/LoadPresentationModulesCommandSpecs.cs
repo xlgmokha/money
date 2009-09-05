@@ -7,7 +7,8 @@ using MoMoney.Presentation;
 namespace MoMoney.Modules.Core
 {
     [Concern(typeof (LoadPresentationModulesCommand))]
-    public class when_loading_the_application_shell : concerns_for<ILoadPresentationModulesCommand, LoadPresentationModulesCommand>
+    public class when_loading_the_application_shell :
+        concerns_for<ILoadPresentationModulesCommand, LoadPresentationModulesCommand>
     {
         it should_initialize_all_the_presentation_modules = () => processor.was_told_to(x => x.add(module));
 

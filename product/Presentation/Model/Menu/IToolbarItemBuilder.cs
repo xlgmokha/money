@@ -1,6 +1,6 @@
 using System;
 using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Windows.Forms.Resources;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Menu
 {

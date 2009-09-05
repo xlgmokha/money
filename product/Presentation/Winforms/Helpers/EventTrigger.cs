@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public static class EventTrigger
     {

@@ -2,7 +2,7 @@ using System;
 using System.Linq.Expressions;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     static public class BindableTextBoxExtensions
     {

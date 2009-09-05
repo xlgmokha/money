@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.income;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.income;
 
-namespace MoMoney.Presentation.Views.income
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class ViewAllIncome : ApplicationDockedWindow, IViewIncomeHistory
     {

@@ -1,6 +1,4 @@
-using Gorilla.Commons.Windows.Forms.Resources;
-
-namespace MoMoney.Presentation.Resources
+namespace MoMoney.Presentation.Winforms.Resources
 {
     public static class ApplicationImages
     {

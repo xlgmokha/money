@@ -2,7 +2,7 @@ using System.Reflection;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Windows.Forms.Databinding
+namespace MoMoney.Presentation.Winforms.Databinding
 {
     [Concern(typeof (PropertyBinder<,>))]
     public abstract class behaves_like_a_property_binder :

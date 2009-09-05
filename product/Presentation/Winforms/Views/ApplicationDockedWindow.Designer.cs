@@ -1,4 +1,4 @@
-﻿namespace MoMoney.Presentation.Views.core
+﻿namespace MoMoney.Presentation.Winforms.Views
 {
     partial class ApplicationDockedWindow
     {

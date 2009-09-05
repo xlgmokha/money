@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 using MoMoney.Presentation.Presenters.Shell;
-using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.Core;
+using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Winforms.Resources;
 
-namespace MoMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class UnhandledErrorView : ApplicationWindow, IUnhandledErrorView
     {

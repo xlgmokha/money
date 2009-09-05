@@ -11,11 +11,11 @@ using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
 using MoMoney.Presentation.Presenters.Commands;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
 
 namespace MoMoney.boot.container.registration
 {
-    internal class wire_up_the_presentation_modules : ICommand, IParameterizedCommand<IAssembly>
+    class wire_up_the_presentation_modules : ICommand, IParameterizedCommand<IAssembly>
     {
         readonly IDependencyRegistration registry;
 
@@ -31,13 +31,14 @@ namespace MoMoney.boot.container.registration
 
         public void run(IAssembly item)
         {
-            Func<IApplicationController> target = () => new ApplicationController(Lazy.load<IPresenterRegistry>(), Lazy.load<IShell>());
-            registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>( target.memorize());
+            Func<IApplicationController> target =
+                () => new ApplicationController(Lazy.load<IPresenterRegistry>(), Lazy.load<IShell>());
+            registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(target.memorize());
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
             registry.transient<IFileMenu, FileMenu>();
             registry.transient<IWindowMenu, WindowMenu>();
             registry.transient<IHelpMenu, HelpMenu>();
-            
+
             item
                 .all_types()
                 .where(x => typeof (IPresenter).IsAssignableFrom(x))

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public interface IBindableList<ItemToBindTo>
     {

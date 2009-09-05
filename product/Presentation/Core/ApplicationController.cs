@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Core
 {

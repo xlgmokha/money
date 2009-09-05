@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
-using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Startup;
+using MoMoney.Presentation.Winforms.Resources;
 
-namespace MoMoney.Presentation.Views.Startup
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class SplashScreenView : ApplicationWindow, ISplashScreenView
     {

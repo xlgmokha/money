@@ -1,7 +1,7 @@
 using System.Windows.Forms;
-using Gorilla.Commons.Windows.Forms.Helpers;
+using MoMoney.Presentation.Winforms.Helpers;
 
-namespace Gorilla.Commons.Windows.Forms.Databinding
+namespace MoMoney.Presentation.Winforms.Databinding
 {
     static public class TextBoxExtensions
     {

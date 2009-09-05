@@ -4,8 +4,9 @@ using DataDynamics.ActiveReports;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DTO;
 using MoMoney.Presentation.Model.reporting;
+using MoMoney.Presentation.Views.billing;
 
-namespace MoMoney.Presentation.Views.billing
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class ViewAllBillsReport : ActiveReport, IViewAllBillsReport
     {

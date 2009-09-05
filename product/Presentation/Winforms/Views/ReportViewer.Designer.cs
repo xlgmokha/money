@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Views.reporting
+namespace MoMoney.Presentation.Winforms.Views
 {
     partial class ReportViewer
     {

@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Views
+namespace MoMoney.Presentation.Winforms.Views
 {
     partial class AddCompanyView
     {

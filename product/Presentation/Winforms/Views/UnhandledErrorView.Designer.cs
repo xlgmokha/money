@@ -1,4 +1,4 @@
-﻿namespace MoMoney.Presentation.Views.Shell
+﻿namespace MoMoney.Presentation.Winforms.Views
 {
     partial class UnhandledErrorView
     {

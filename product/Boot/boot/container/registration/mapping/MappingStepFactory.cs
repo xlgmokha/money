@@ -5,7 +5,7 @@ namespace MoMoney.boot.container.registration.mapping
 {
     public class MappingStepFactory : IMappingStepFactory
     {
-        private readonly ITargetActionFactory target_action_factory;
+        readonly ITargetActionFactory target_action_factory;
 
         public MappingStepFactory() : this(new TargetActionFactory())
         {

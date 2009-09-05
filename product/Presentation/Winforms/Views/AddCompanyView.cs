@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
-using Gorilla.Commons.Windows.Forms.Databinding;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters;
-using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.Core;
+using MoMoney.Presentation.Winforms.Databinding;
+using MoMoney.Presentation.Winforms.Resources;
 
-namespace MoMoney.Presentation.Views
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class AddCompanyView : ApplicationDockedWindow, IAddCompanyView
     {
@@ -34,7 +34,7 @@ namespace MoMoney.Presentation.Views
 
         public void attach_to(IAddCompanyPresenter presenter)
         {
-            ux_company_name.bind_to(dto, x => x.company_name);
+            Create.bind_to(ux_company_name, dto, x => x.company_name);
             submit_button = x => presenter.submit(dto);
         }
 

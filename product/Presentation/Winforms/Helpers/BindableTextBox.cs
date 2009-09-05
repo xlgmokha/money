@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public interface IBindableTextBox<T>
     {

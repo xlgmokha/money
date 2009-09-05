@@ -5,7 +5,7 @@ namespace MoMoney.boot.container.registration.mapping
 {
     public class TargetActionFactory : ITargetActionFactory
     {
-        private readonly IPropertyResolver property_resolver;
+        readonly IPropertyResolver property_resolver;
 
         public TargetActionFactory(IPropertyResolver property_resolver)
         {

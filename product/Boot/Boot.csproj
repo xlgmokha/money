@@ -59,10 +59,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
     </Reference>
-    <Reference Include="gorilla.commons.windows.forms, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.windows.forms.dll</HintPath>
-    </Reference>
     <Reference Include="gorilla.testing, Version=2009.5.5.194, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\gorilla\gorilla.testing.dll</HintPath>
@@ -178,7 +174,7 @@
     <Compile Include="Modules\Core\LoadPresentationModulesCommandSpecs.cs" />
     <Compile Include="boot\hookup.cs" />
     <Compile Include="Modules\Core\LoadPresentationModulesCommand.cs" />
-    <Compile Include="boot\bootstrap.cs" />
+    <Compile Include="bootstrap.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Gorilla.Commons.Windows.Forms.Databinding
+namespace MoMoney.Presentation.Winforms.Databinding
 {
     public class DateTimePickerPropertyBinding<TypeToBindTo> : IPropertyBinding<DateTime>
     {

@@ -2,7 +2,7 @@ using System.Reflection;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Windows.Forms.Databinding
+namespace MoMoney.Presentation.Winforms.Databinding
 {
     [Concern(typeof (PropertyInspector<,>))]
     public class when_parsing_a_valie_expression_for_the_information_on_the_property :

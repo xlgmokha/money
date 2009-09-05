@@ -7,7 +7,7 @@ using MoMoney.boot.container.registration;
 
 namespace MoMoney.boot.container
 {
-    internal class wire_up_the_container : ICommand
+    class wire_up_the_container : ICommand
     {
         readonly IDependencyRegistration registry;
 

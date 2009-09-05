@@ -23,8 +23,8 @@ namespace MoMoney.boot.container.registration
             return new auto_wire_components_in_to_the(builder, exclusions_criteria);
         }
 
-        protected static IDependencyRegistration builder;
-        protected static IComponentExclusionSpecification exclusions_criteria;
+        static protected IDependencyRegistration builder;
+        static protected IComponentExclusionSpecification exclusions_criteria;
     }
 
     public class when_registering_all_the_components_from_an_assembly :

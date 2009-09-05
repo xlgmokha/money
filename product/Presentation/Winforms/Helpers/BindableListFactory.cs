@@ -1,4 +1,4 @@
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     static public class BindableListFactory
     {

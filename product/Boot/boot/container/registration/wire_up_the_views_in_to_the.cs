@@ -11,10 +11,11 @@ using MoMoney.Presentation.Views.Navigation;
 using MoMoney.Presentation.Views.Shell;
 using MoMoney.Presentation.Views.Startup;
 using MoMoney.Presentation.Views.updates;
+using MoMoney.Presentation.Winforms.Views;
 
 namespace MoMoney.boot.container.registration
 {
-    internal class wire_up_the_views_in_to_the : ICommand
+    class wire_up_the_views_in_to_the : ICommand
     {
         readonly IDependencyRegistration register;
 

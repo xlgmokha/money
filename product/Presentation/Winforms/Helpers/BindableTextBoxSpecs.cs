@@ -3,7 +3,7 @@ using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public class BindableTextBoxSpecs
     {

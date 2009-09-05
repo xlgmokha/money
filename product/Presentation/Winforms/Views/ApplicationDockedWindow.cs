@@ -3,13 +3,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
-using Gorilla.Commons.Windows.Forms.Helpers;
-using Gorilla.Commons.Windows.Forms.Resources;
-using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.Core;
+using MoMoney.Presentation.Winforms.Helpers;
+using MoMoney.Presentation.Winforms.Resources;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace MoMoney.Presentation.Views.core
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class ApplicationDockedWindow : DockContent, IApplicationDockedWindow
     {

@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace Gorilla.Commons.Windows.Forms.Databinding
+namespace MoMoney.Presentation.Winforms.Databinding
 {
     public interface IPropertyInspector<TypeToBindTo, TypeOfProperty>
     {

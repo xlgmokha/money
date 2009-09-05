@@ -1,4 +1,5 @@
-namespace MoMoney.Presentation.Views.Startup {
+namespace MoMoney.Presentation.Winforms.Views
+{
     partial class SplashScreenView
     {
         /// <summary>

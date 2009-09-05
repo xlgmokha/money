@@ -63,14 +63,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
     </Reference>
-    <Reference Include="gorilla.commons.windows.forms, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.windows.forms.dll</HintPath>
-    </Reference>
-    <Reference Include="gorilla.commons.windows.forms.thirdparty, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.windows.forms.thirdparty.dll</HintPath>
-    </Reference>
     <Reference Include="gorilla.testing, Version=2009.5.5.194, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\gorilla\gorilla.testing.dll</HintPath>
@@ -351,7 +343,7 @@
     <Compile Include="Winforms\Views\ApplicationShell.Designer.cs">
       <DependentUpon>ApplicationShell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ApplicationShellSpecs.cs" />
+    <Compile Include="Winforms\Views\ApplicationShellSpecs.cs" />
     <Compile Include="Views\IGettingStartedView.cs" />
     <Compile Include="Views\ILogFileView.cs" />
     <Compile Include="Views\INotificationIconView.cs" />
@@ -444,7 +436,6 @@
     <Compile Include="Winforms\Helpers\SuspendLayout.cs" />
     <Compile Include="Winforms\Helpers\TextControl.cs" />
     <Compile Include="Winforms\Helpers\TextControlSpecs.cs" />
-    <Compile Include="Winforms\Helpers\ValidateTextBoxCommandSpecs.cs" />
     <Compile Include="Winforms\Keyboard\ShortcutKey.cs" />
     <Compile Include="Winforms\Keyboard\ShortcutKeys.cs" />
     <Compile Include="Winforms\Krypton\BindableListExtensions.cs" />

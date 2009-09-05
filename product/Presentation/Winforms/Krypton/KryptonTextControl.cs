@@ -1,8 +1,8 @@
 using System;
 using ComponentFactory.Krypton.Toolkit;
-using Gorilla.Commons.Windows.Forms.Helpers;
+using MoMoney.Presentation.Winforms.Helpers;
 
-namespace Gorilla.Commons.Windows.Forms.Krypton
+namespace MoMoney.Presentation.Winforms.Krypton
 {
     public class KryptonTextControl<T> : ITextControl<T>
     {

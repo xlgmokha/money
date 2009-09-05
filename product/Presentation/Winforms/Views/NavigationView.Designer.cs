@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Views.Navigation
+namespace MoMoney.Presentation.Winforms.Views
 {
     partial class NavigationView
     {

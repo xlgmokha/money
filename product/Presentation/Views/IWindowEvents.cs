@@ -1,7 +1,8 @@
 using System;
 using System.ComponentModel;
+using MoMoney.Presentation.Views.Core;
 
-namespace MoMoney.Presentation.Views.Core
+namespace MoMoney.Presentation.Views
 {
     public interface IWindowEvents
     {

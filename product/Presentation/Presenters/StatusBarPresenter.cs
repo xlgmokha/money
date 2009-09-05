@@ -2,8 +2,8 @@ using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.messages;
-using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {

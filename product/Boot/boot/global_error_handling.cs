@@ -9,7 +9,7 @@ using MoMoney.Presentation.Model.messages;
 
 namespace MoMoney.boot
 {
-    internal class global_error_handling : ICommand
+    class global_error_handling : ICommand
     {
         public void run()
         {

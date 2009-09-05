@@ -2,7 +2,6 @@ using System.Collections;
 using System.ComponentModel;
 using System.Deployment.Application;
 using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.Registries;
 using Gorilla.Commons.Infrastructure.Threading;
@@ -15,7 +14,7 @@ using MoMoney.Tasks.infrastructure.updating;
 
 namespace MoMoney.boot.container.registration
 {
-    internal class wire_up_the_infrastructure_in_to_the : ICommand
+    class wire_up_the_infrastructure_in_to_the : ICommand
     {
         readonly IDependencyRegistration registry;
 
@@ -33,7 +32,7 @@ namespace MoMoney.boot.container.registration
             registry.transient(typeof (ITrackerEntryMapper<>), typeof (TrackerEntryMapper<>));
             registry.transient(typeof (IKey<>), typeof (TypedKey<>));
             registry.transient(typeof (IComponentFactory<>), typeof (ComponentFactory<>));
-            registry.singleton<IContext>( ()=>new Context(new Hashtable()));
+            registry.singleton<IContext>(() => new Context(new Hashtable()));
 
             registry.singleton(() => AsyncOperationManager.SynchronizationContext);
             registry.singleton<AsyncOperation>(() => AsyncOperationManager.CreateOperation(new object()));

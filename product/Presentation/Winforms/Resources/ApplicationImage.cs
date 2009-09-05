@@ -3,7 +3,7 @@ using System.Drawing;
 using System.IO;
 using Gorilla.Commons.Infrastructure.Reflection;
 
-namespace Gorilla.Commons.Windows.Forms.Resources
+namespace MoMoney.Presentation.Winforms.Resources
 {
     public class ApplicationImage : IDisposable
     {

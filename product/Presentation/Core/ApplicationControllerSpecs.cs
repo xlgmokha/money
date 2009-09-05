@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.Core;
-using MoMoney.Presentation.Views.Shell;
 
 namespace MoMoney.Presentation.Core
 {

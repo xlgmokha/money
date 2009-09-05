@@ -1,7 +1,8 @@
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.FileSystem;
+using MoMoney.Presentation.Views.dialogs;
 
-namespace MoMoney.Presentation.Views.dialogs
+namespace MoMoney.Presentation.Winforms.Views
 {
     public class SelectFileToOpenDialog : ISelectFileToOpenDialog
     {

@@ -5,7 +5,7 @@ using MoMoney.Modules.Core;
 
 namespace MoMoney.boot
 {
-    internal class start_the_application : ICommand
+    class start_the_application : ICommand
     {
         readonly IBackgroundThread thread;
         readonly ILoadPresentationModulesCommand command;

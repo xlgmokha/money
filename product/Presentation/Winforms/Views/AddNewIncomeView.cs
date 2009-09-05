@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
-using Gorilla.Commons.Windows.Forms.Helpers;
-using Gorilla.Commons.Windows.Forms.Krypton;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.income;
-using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.Core;
+using MoMoney.Presentation.Views.income;
+using MoMoney.Presentation.Winforms.Helpers;
+using MoMoney.Presentation.Winforms.Krypton;
 
-namespace MoMoney.Presentation.Views.income
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class AddNewIncomeView : ApplicationDockedWindow, IAddNewIncomeView
     {

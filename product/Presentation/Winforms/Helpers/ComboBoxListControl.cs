@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public class ComboBoxListControl<TItemToStore> : IListControl<TItemToStore>
     {

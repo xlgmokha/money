@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Views.billing
+namespace MoMoney.Presentation.Winforms.Views
 {
     /// <summary>
     /// Summary description for view_all_bills.

@@ -6,7 +6,7 @@ using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.boot.container.registration
 {
-    internal class wire_up_the_essential_services_into_the : ICommand
+    class wire_up_the_essential_services_into_the : ICommand
     {
         readonly IDependencyRegistration registration;
 

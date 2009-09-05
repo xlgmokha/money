@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
-using Gorilla.Commons.Windows.Forms.Resources;
 
-namespace MoMoney.Presentation.Resources
+namespace MoMoney.Presentation.Winforms.Resources
 {
     static public class ApplicationIcons
     {

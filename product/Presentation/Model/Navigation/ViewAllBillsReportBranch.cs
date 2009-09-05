@@ -1,6 +1,6 @@
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Presenters.reporting;
-using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Navigation
 {

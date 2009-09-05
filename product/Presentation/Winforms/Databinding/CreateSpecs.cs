@@ -2,7 +2,7 @@ using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Windows.Forms.Databinding
+namespace MoMoney.Presentation.Winforms.Databinding
 {
     public class CreateSpecs
     {

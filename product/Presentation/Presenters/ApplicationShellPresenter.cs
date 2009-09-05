@@ -2,7 +2,7 @@ using Gorilla.Commons.Infrastructure.Eventing;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu.File.Commands;
 using MoMoney.Presentation.Model.messages;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {

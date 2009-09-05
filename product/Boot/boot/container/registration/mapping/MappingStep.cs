@@ -2,8 +2,8 @@ namespace MoMoney.boot.container.registration.mapping
 {
     public class MappingStep<Input, Output, Type> : IMappingStep<Input, Output>
     {
-        private readonly ISourceEvaluator<Input, Type> input_evaluator;
-        private readonly ITargetAction<Output, Type> action_to_run_against_destination;
+        readonly ISourceEvaluator<Input, Type> input_evaluator;
+        readonly ITargetAction<Output, Type> action_to_run_against_destination;
 
         public MappingStep(ISourceEvaluator<Input, Type> source_evaluator, ITargetAction<Output, Type> target_action)
         {

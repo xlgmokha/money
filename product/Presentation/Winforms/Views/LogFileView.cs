@@ -1,6 +1,6 @@
-﻿using MoMoney.Presentation.Views.core;
+﻿using MoMoney.Presentation.Views.Shell;
 
-namespace MoMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class LogFileView : ApplicationDockedWindow, ILogFileView
     {

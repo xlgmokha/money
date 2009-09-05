@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public class RebindTextBoxCommand<T> : ITextBoxCommand<T>
     {

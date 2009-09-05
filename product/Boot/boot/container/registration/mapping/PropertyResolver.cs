@@ -9,8 +9,8 @@ namespace MoMoney.boot.container.registration.mapping
 {
     public class PropertyResolver : IPropertyResolver
     {
-        private BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic |
-                                     BindingFlags.FlattenHierarchy;
+        BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic |
+                             BindingFlags.FlattenHierarchy;
 
         public PropertyInfo resolve_using<Input, PropertyType>(Expression<Func<Input, PropertyType>> expression)
         {
@@ -49,7 +49,7 @@ namespace MoMoney.boot.container.registration.mapping
             return all_properties_belonging_to(typeof (T));
         }
 
-        private PropertyInfo[] all_properties_for(Type type)
+        PropertyInfo[] all_properties_for(Type type)
         {
             return type.GetProperties(flags);
         }

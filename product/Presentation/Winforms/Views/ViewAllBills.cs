@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.billing;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.billing;
 
-namespace MoMoney.Presentation.Views.billing
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class ViewAllBills : ApplicationDockedWindow, IViewAllBills
     {

@@ -1,6 +1,6 @@
-namespace MoMoney.Presentation.Views.dialogs
+namespace MoMoney.Presentation.Winforms.Views
 {
-public    partial class SaveChangesView
+    public    partial class SaveChangesView
     {
         /// <summary>
         /// Required designer variable.
@@ -134,7 +134,7 @@ public    partial class SaveChangesView
 
         #endregion
 
-    public System.Windows.Forms.Button save_button;
+        public System.Windows.Forms.Button save_button;
         public System.Windows.Forms.Button do_not_save_button;
         public System.Windows.Forms.Button cancel_button;
         public System.Windows.Forms.PictureBox ux_image;

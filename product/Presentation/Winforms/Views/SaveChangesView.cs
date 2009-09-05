@@ -2,11 +2,11 @@ using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using MoMoney.Presentation.Model.Menu.File.Commands;
-using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.core;
 using MoMoney.Presentation.Views.Core;
+using MoMoney.Presentation.Views.dialogs;
+using MoMoney.Presentation.Winforms.Resources;
 
-namespace MoMoney.Presentation.Views.dialogs
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class SaveChangesView : ApplicationWindow, ISaveChangesView
     {

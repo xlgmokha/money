@@ -1,13 +1,10 @@
-using System.Security.Principal;
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
 using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Service.Infrastructure.Security;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
-    internal class ServiceLayerConfiguration<T> : IConfiguration<IProxyBuilder<T>>
+    class ServiceLayerConfiguration<T> : IConfiguration<IProxyBuilder<T>>
     {
         public void configure(IProxyBuilder<T> item)
         {

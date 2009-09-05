@@ -1,10 +1,10 @@
 using System;
 using System.Reflection;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Menu;
+using MoMoney.Presentation.Winforms.Resources;
 
-namespace MoMoney.Presentation.Views.Menu
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class AboutTheApplicationView : ApplicationDockedWindow, IAboutApplicationView
     {

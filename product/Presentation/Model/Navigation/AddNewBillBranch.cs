@@ -1,5 +1,5 @@
 using MoMoney.Presentation.Presenters;
-using MoMoney.Presentation.Resources;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Navigation
 {

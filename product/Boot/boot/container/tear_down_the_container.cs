@@ -3,7 +3,7 @@ using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.boot.container
 {
-    internal class tear_down_the_container : ICommand
+    class tear_down_the_container : ICommand
     {
         public void run()
         {

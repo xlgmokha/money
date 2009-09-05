@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     [Concern(typeof (EventTrigger))]
     public class when_invoking_a_call_on_a_target_via_reflection : concerns
@@ -11,8 +11,8 @@ namespace Gorilla.Commons.Windows.Forms.Helpers
         it should_correctly_call_that_method =
             () =>
                 {
-                    control.called_on_key_press.should_be_true();
-                    control.called_on_enter.should_be_false();
+                    Assertions.should_be_true(control.called_on_key_press);
+                    Assertions.should_be_false(control.called_on_enter);
                 };
 
         context c = () => { control = new TestControl(); };

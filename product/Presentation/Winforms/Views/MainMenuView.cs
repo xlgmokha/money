@@ -1,10 +1,10 @@
-using Gorilla.Commons.Windows.Forms.Helpers;
 using MoMoney.Presentation.Presenters.Navigation;
-using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.core;
+using MoMoney.Presentation.Views.Navigation;
+using MoMoney.Presentation.Winforms.Helpers;
+using MoMoney.Presentation.Winforms.Resources;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace MoMoney.Presentation.Views.Navigation
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class MainMenuView : ApplicationDockedWindow, IMainMenuView
     {

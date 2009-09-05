@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Windows.Forms.Databinding
+namespace MoMoney.Presentation.Winforms.Databinding
 {
     [Concern(typeof (Create))]
     public class when_a_new_date_is_selected_by_a_date_time_picker_that_is_bound_to_a_property : concerns

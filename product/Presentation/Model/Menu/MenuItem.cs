@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
-using Gorilla.Commons.Windows.Forms.Keyboard;
-using Gorilla.Commons.Windows.Forms.Resources;
+using MoMoney.Presentation.Winforms.Keyboard;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Menu
 {

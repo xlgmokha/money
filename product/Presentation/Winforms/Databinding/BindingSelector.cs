@@ -1,6 +1,5 @@
 using System;
 using System.Linq.Expressions;
-using Gorilla.Commons.Windows.Forms.Databinding;
 
 namespace MoMoney.Presentation.Winforms.Databinding
 {

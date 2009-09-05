@@ -1,7 +1,8 @@
 using System.Windows.Forms;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.Shell;
 
-namespace MoMoney.Presentation.Views
+namespace MoMoney.Presentation.Winforms.Views
 {
     public class TitleBar : ITitleBar
     {

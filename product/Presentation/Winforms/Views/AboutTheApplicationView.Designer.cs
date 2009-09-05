@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Views.Menu
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class AboutTheApplicationView
     {

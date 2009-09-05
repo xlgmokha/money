@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Testing;
-using MoMoney.Infrastructure.System;
+using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
 
 namespace MoMoney.Presentation.Model.Menu.File.Commands

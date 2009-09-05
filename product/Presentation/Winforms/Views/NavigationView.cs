@@ -1,12 +1,12 @@
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.Navigation;
-using MoMoney.Presentation.Resources;
-using MoMoney.Presentation.Views.core;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
+using MoMoney.Presentation.Views.Navigation;
+using MoMoney.Presentation.Winforms.Resources;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace MoMoney.Presentation.Views.Navigation
+namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class NavigationView : ApplicationDockedWindow, INavigationView
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public class BindableListBox<TItemToBindTo> : IBindableList<TItemToBindTo>
     {

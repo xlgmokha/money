@@ -2,7 +2,7 @@ using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Windows.Forms.Databinding
+namespace MoMoney.Presentation.Winforms.Databinding
 {
     [Concern(typeof (Create))]
     public class when_binding_a_property_on_an_object_to_a_textbox : concerns

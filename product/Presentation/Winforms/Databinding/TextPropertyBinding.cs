@@ -1,7 +1,7 @@
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace Gorilla.Commons.Windows.Forms.Databinding
+namespace MoMoney.Presentation.Winforms.Databinding
 {
     public class TextPropertyBinding<TypeToBindTo, PropertyType> : IPropertyBinding<PropertyType>
     {

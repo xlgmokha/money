@@ -7,7 +7,7 @@ using MoMoney.DTO;
 
 namespace MoMoney.boot.container.registration
 {
-    internal class wire_up_the_mappers_in_to_the : ICommand
+    class wire_up_the_mappers_in_to_the : ICommand
     {
         readonly IDependencyRegistration registry;
 

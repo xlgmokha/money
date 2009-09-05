@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Gorilla.Commons.Windows.Forms.Databinding
+namespace MoMoney.Presentation.Winforms.Databinding
 {
     public interface IPropertyBinder<TypeToBindTo, PropertyType>
     {

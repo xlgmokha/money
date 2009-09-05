@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace Gorilla.Commons.Windows.Forms.Keyboard
+namespace MoMoney.Presentation.Winforms.Keyboard
 {
     public class ShortcutKey
     {

@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Views.income
+namespace MoMoney.Presentation.Winforms.Views
 {
     partial class ViewAllIncome
     {

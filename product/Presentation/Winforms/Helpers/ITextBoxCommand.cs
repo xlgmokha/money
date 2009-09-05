@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility.Core;
 
-namespace Gorilla.Commons.Windows.Forms.Helpers
+namespace MoMoney.Presentation.Winforms.Helpers
 {
     public interface ITextBoxCommand<T> : IParameterizedCommand<IBindableTextBox<T>>
     {
