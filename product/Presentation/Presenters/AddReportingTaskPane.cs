@@ -1,8 +1,8 @@
-using MoMoney.Presentation.Presenters.reporting;
+using MoMoney.Presentation.Presenters.Navigation;
 using MoMoney.Presentation.Winforms.Resources;
 using XPExplorerBar;
 
-namespace MoMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters
 {
     public class AddReportingTaskPane : IActionTaskPaneFactory
     {
@@ -21,7 +21,7 @@ namespace MoMoney.Presentation.Presenters.Navigation
                 Build.task_pane_item()
                     .named("View All Bills")
                     .represented_by_image(ApplicationImages.ReadingABill)
-                    .when_clicked_execute(() => command.run<IViewAllBillsReportPresenter>())
+                    .when_clicked_execute(() => command.run<IReportPresenter>())
                 )
                 .build();
         }

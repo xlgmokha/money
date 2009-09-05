@@ -5,19 +5,20 @@ using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Winforms.Resources;
 using XPExplorerBar;
 
-namespace MoMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters
 {
     public interface IExpandoItemBuilder : IBuilder<TaskItem>
     {
         IExpandoItemBuilder named(string name);
         IExpandoItemBuilder represented_by_image(ApplicationImage image);
+        IExpandoItemBuilder represented_by_icon(HybridIcon image);
         IExpandoItemBuilder when_clicked_execute(Action action);
     }
 
     public class ExpandoItemBuilder : IExpandoItemBuilder
     {
         string the_name = "";
-        ApplicationImage the_image;
+        Image the_image;
         Action the_action = () => { };
 
         public IExpandoItemBuilder named(string name)
@@ -29,6 +30,12 @@ namespace MoMoney.Presentation.Presenters.Navigation
         public IExpandoItemBuilder represented_by_image(ApplicationImage image)
         {
             the_image = image;
+            return this;
+        }
+        
+        public IExpandoItemBuilder represented_by_icon(HybridIcon icon)
+        {
+            the_image = icon;
             return this;
         }
 

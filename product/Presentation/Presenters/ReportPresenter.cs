@@ -1,15 +1,15 @@
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views.billing;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.reporting;
 using MoMoney.Service.Contracts.Application;
 
-namespace MoMoney.Presentation.Presenters.reporting
+namespace MoMoney.Presentation.Presenters
 {
-    public interface IViewAllBillsReportPresenter : IContentPresenter
+    public interface IReportPresenter : IContentPresenter
     {
     }
 
-    public class ReportPresenter : ContentPresenter<IReportViewer>, IViewAllBillsReportPresenter
+    public class ReportPresenter : ContentPresenter<IReportViewer>, IReportPresenter
     {
         readonly IViewAllBillsReport report;
         readonly IGetAllBillsQuery query;

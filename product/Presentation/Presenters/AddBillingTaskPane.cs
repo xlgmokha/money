@@ -1,8 +1,9 @@
 using MoMoney.Presentation.Presenters.billing;
+using MoMoney.Presentation.Presenters.Navigation;
 using MoMoney.Presentation.Winforms.Resources;
 using XPExplorerBar;
 
-namespace MoMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters
 {
     public class AddBillingTaskPane : IActionTaskPaneFactory
     {
@@ -21,13 +22,13 @@ namespace MoMoney.Presentation.Presenters.Navigation
                 .with_item(
                 Build.task_pane_item()
                     .named("Add Bill Payments")
-                    .represented_by_image(ApplicationImages.ReadingABill)
+                    .represented_by_icon(ApplicationIcons.AddBillPayment)
                     .when_clicked_execute(() => command.run<IAddBillPaymentPresenter>())
                 )
                 .with_item(
                 Build.task_pane_item()
-                    .named("View All Bills")
-                    .represented_by_image(ApplicationImages.ReadingABill)
+                    .named("View All Bills Payments")
+                    .represented_by_icon(ApplicationIcons.ViewAllBillPayments)
                     .when_clicked_execute(() => command.run<IViewAllBillsPresenter>())
                 )
                 .build();

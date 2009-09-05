@@ -1,9 +1,10 @@
-using Gorilla.Commons.Utility.Core;
+using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views.Navigation;
+using MoMoney.Presentation.Presenters.Navigation;
+using MoMoney.Presentation.Views;
 
-namespace MoMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters
 {
     public interface IMainMenuPresenter : IContentPresenter
     {
@@ -11,16 +12,24 @@ namespace MoMoney.Presentation.Presenters.Navigation
 
     public class MainMenuPresenter : ContentPresenter<IMainMenuView>, IMainMenuPresenter
     {
-        readonly IRegistry<IActionTaskPaneFactory> registry;
+        IRunPresenterCommand command;
 
-        public MainMenuPresenter(IMainMenuView view, IRegistry<IActionTaskPaneFactory> registry) : base(view)
+        public MainMenuPresenter(IMainMenuView view, IRunPresenterCommand command) : base(view)
         {
-            this.registry = registry;
+            this.command = command;
         }
 
         public override void run()
         {
-            registry.all().each(x => view.add(x));
+            all_factories().each(x => view.add(x));
+        }
+
+        IEnumerable<IActionTaskPaneFactory> all_factories()
+        {
+            yield return new AddCompanyTaskPane(command);
+            yield return new AddIncomeTaskPane(command);
+            yield return new AddBillingTaskPane(command);
+            yield return new AddReportingTaskPane(command);
         }
     }
 }

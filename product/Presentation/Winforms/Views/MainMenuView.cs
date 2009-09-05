@@ -1,5 +1,5 @@
 using MoMoney.Presentation.Presenters.Navigation;
-using MoMoney.Presentation.Views.Navigation;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Resources;
 using WeifenLuo.WinFormsUI.Docking;

@@ -1,7 +1,8 @@
+using MoMoney.Presentation.Presenters.Navigation;
 using MoMoney.Presentation.Winforms.Resources;
 using XPExplorerBar;
 
-namespace MoMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters
 {
     public class AddCompanyTaskPane : IActionTaskPaneFactory
     {
@@ -19,7 +20,7 @@ namespace MoMoney.Presentation.Presenters.Navigation
                 .with_item(
                 Build.task_pane_item()
                     .named("Add Company")
-                    .represented_by_image(ApplicationImages.CompanyDetails)
+                    .represented_by_icon(ApplicationIcons.AddCompany)
                     .when_clicked_execute(() => command.run<IAddCompanyPresenter>()))
                 .build();
         }

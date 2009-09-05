@@ -27,5 +27,6 @@ namespace MoMoney.Presentation.Winforms.Resources
 
         public static readonly ApplicationImage GenerateReportDisabled =
             new ApplicationImage("generate_report_disabled.png");
+
     }
 }

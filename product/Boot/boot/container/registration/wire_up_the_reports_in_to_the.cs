@@ -1,6 +1,6 @@
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Presentation.Views.billing;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.reporting;
 using MoMoney.Presentation.Winforms.Views;
 

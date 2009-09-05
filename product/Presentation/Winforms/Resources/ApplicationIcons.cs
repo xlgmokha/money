@@ -23,6 +23,12 @@ namespace MoMoney.Presentation.Winforms.Resources
         static public readonly HybridIcon CloseWindow = new HybridIcon("minimize_box_blue.ico", x => add(x));
         static public readonly HybridIcon Empty = new HybridIcon("", x => add(x));
 
+        static public readonly HybridIcon AddCompany = new HybridIcon("plus__orange.ico", x => add(x));
+        static public readonly HybridIcon AddNewIncome = new HybridIcon("plus__orange.ico", x => add(x));
+        static public readonly HybridIcon ViewAllIncome = new HybridIcon("search.ico", x => add(x));
+        static public readonly HybridIcon AddBillPayment = new HybridIcon("plus__orange.ico", x => add(x));
+        static public readonly HybridIcon ViewAllBillPayments = new HybridIcon("search.ico", x => add(x));
+
         static public IEnumerable<ApplicationIcon> all()
         {
             return all_icons.all();

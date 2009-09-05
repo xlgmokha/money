@@ -4,7 +4,7 @@ using DataDynamics.ActiveReports;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DTO;
 using MoMoney.Presentation.Model.reporting;
-using MoMoney.Presentation.Views.billing;
+using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Winforms.Views
 {
