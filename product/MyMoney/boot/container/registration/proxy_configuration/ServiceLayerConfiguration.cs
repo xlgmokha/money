@@ -13,11 +13,11 @@ namespace MoMoney.boot.container.registration.proxy_configuration
         {
             item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>()).intercept_all();
 
-            item
-                .add_interceptor(
-                new SecuringProxy(new IsInRole(WindowsBuiltInRole.User.ToString())
-                                      .or(new IsInRole(WindowsBuiltInRole.Administrator.ToString()))))
-                .intercept_all();
+            //item
+            //    .add_interceptor(
+            //    new SecuringProxy(new IsInRole(WindowsBuiltInRole.User.ToString())
+            //                          .or(new IsInRole(WindowsBuiltInRole.Administrator.ToString()))))
+            //    .intercept_all();
         }
     }
 }
