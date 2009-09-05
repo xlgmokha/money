@@ -72,9 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MoMoney.DTO\MoMoney.DTO.csproj">
+    <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
-      <Name>MoMoney.DTO</Name>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

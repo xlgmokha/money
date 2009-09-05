@@ -4,13 +4,12 @@ using MoMoney.boot.container.registration.proxy_configuration;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Service.Application;
 using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.boot.container.registration
 {
-    internal class wire_up_the_services_in_to_the : ICommand
+    class wire_up_the_services_in_to_the : ICommand
     {
         readonly IDependencyRegistration registry;
 
@@ -31,11 +30,15 @@ namespace MoMoney.boot.container.registration
         void wire_up_queries()
         {
             registry.proxy<IGetAllCompanysQuery, ServiceLayerConfiguration<IGetAllCompanysQuery>>(
-                () => new GetAllCompanysQuery(Lazy.load<ICompanyRepository>(),Lazy.load<IMapper<ICompany, CompanyDTO>>()));
+                () =>
+                new GetAllCompanysQuery(Lazy.load<ICompanyRepository>(), Lazy.load<IMapper<ICompany, CompanyDTO>>()));
             registry.proxy<IGetAllBillsQuery, ServiceLayerConfiguration<IGetAllBillsQuery>>(
-                () => new GetAllBillsQuery(Lazy.load<IBillRepository>(), Lazy.load<IMapper<IBill, BillInformationDTO>>()));
+                () =>
+                new GetAllBillsQuery(Lazy.load<IBillRepository>(), Lazy.load<IMapper<IBill, BillInformationDTO>>()));
             registry.proxy<IGetAllIncomeQuery, ServiceLayerConfiguration<IGetAllIncomeQuery>>(
-                () => new GetAllIncomeQuery(Lazy.load<IIncomeRepository>(),Lazy.load<IMapper<IIncome, IncomeInformationDTO>>()));
+                () =>
+                new GetAllIncomeQuery(Lazy.load<IIncomeRepository>(),
+                                      Lazy.load<IMapper<IIncome, IncomeInformationDTO>>()));
         }
 
         void wire_up_the_commands()

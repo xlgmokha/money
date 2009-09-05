@@ -454,9 +454,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MoMoney.DTO\MoMoney.DTO.csproj">
+    <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
-      <Name>MoMoney.DTO</Name>
+      <Name>DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj">
       <Project>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</Project>

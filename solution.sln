@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoney.Build", "build\MyMoney.Build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Build", "build\Build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoney", "product\MyMoney\MyMoney.csproj", "{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boot", "product\Boot\Boot.csproj", "{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.Domain", "product\MoMoney.Domain\MoMoney.Domain.csproj", "{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "product\Domain\Domain.csproj", "{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.Service", "product\MoMoney.Service\MoMoney.Service.csproj", "{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "product\Service\Service.csproj", "{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.DataAccess", "product\MoMoney.DataAccess\MoMoney.DataAccess.csproj", "{580E68A8-EDEE-4350-8BBE-A053645B0F83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "product\DataAccess\DataAccess.csproj", "{580E68A8-EDEE-4350-8BBE-A053645B0F83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.DTO", "product\MoMoney.DTO\MoMoney.DTO.csproj", "{ACF52FAB-435B-48C9-A383-C787CB2D8000}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "product\DTO\DTO.csproj", "{ACF52FAB-435B-48C9-A383-C787CB2D8000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoney.Presentation", "product\MoMoney.Presentation\MoMoney.Presentation.csproj", "{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "product\Presentation\Presentation.csproj", "{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Contracts", "product\Service.Contracts\Service.Contracts.csproj", "{41D2B68B-031B-44FF-BAC5-7752D9E29F94}"
 EndProject
