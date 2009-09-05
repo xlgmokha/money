@@ -7,7 +7,6 @@ namespace MoMoney.Presentation.Resources
         public static readonly ApplicationImage Splash = new ApplicationImage("splash_screen.gif");
         public static readonly ApplicationImage ReadingABill = new ApplicationImage("reading_a_bill.jpg");
         public static readonly ApplicationImage PayingABill = new ApplicationImage("paying_a_bill.jpg");
-        public static readonly ApplicationImage Welcome = new ApplicationImage("welcome.png");
 
         public static readonly ApplicationImage CreateNewFile = new ApplicationImage("new_file.png");
         public static readonly ApplicationImage CreateNewFileSelected = new ApplicationImage("new_file_selected.png");

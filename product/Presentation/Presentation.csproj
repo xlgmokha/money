@@ -234,8 +234,8 @@
     <Compile Include="Presenters\Updates\CheckForUpdatesPresenter.cs" />
     <Compile Include="Presenters\Updates\CheckForUpdatesPresenterSpecs.cs" />
     <Compile Include="Presenters\Commands\ProcessQueryCommand.cs" />
-    <Compile Include="Resources\ApplicationIcons.cs" />
-    <Compile Include="Resources\ApplicationImages.cs" />
+    <Compile Include="Winforms\Resources\ApplicationIcons.cs" />
+    <Compile Include="Winforms\Resources\ApplicationImages.cs" />
     <Compile Include="Presenters\Commands\RunQueryCommand.cs" />
     <Compile Include="Views\AddCompanyView.cs">
       <SubType>Form</SubType>
@@ -384,6 +384,67 @@
       <DependentUpon>CheckForUpdatesView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Updates\ICheckForUpdatesView.cs" />
+    <Compile Include="Winforms\Databinding\BindingSelector.cs" />
+    <Compile Include="Winforms\Databinding\BindingSelectorSpecs.cs" />
+    <Compile Include="Winforms\Databinding\ComboBoxDataBindingSpecs.cs" />
+    <Compile Include="Winforms\Databinding\ComboBoxPropertyBinding.cs" />
+    <Compile Include="Winforms\Databinding\ControlBindingExtensions.cs" />
+    <Compile Include="Winforms\Databinding\Create.cs" />
+    <Compile Include="Winforms\Databinding\CreateSpecs.cs" />
+    <Compile Include="Winforms\Databinding\DateTimePickerPropertyBinding.cs" />
+    <Compile Include="Winforms\Databinding\DateTimePropertyBindingSpecs.cs" />
+    <Compile Include="Winforms\Databinding\IPropertyBinding.cs" />
+    <Compile Include="Winforms\Databinding\ListboxExtensions.cs" />
+    <Compile Include="Winforms\Databinding\PropertyBinder.cs" />
+    <Compile Include="Winforms\Databinding\PropertyBinderSpecs.cs" />
+    <Compile Include="Winforms\Databinding\PropertyInspector.cs" />
+    <Compile Include="Winforms\Databinding\PropertyInspectorFactory.cs" />
+    <Compile Include="Winforms\Databinding\PropertyInspectorSpecs.cs" />
+    <Compile Include="Winforms\Databinding\TextBoxDataBindingSpecs.cs" />
+    <Compile Include="Winforms\Databinding\TextBoxExtensions.cs" />
+    <Compile Include="Winforms\Databinding\TextPropertyBinding.cs" />
+    <Compile Include="Winforms\Helpers\BindableListBox.cs" />
+    <Compile Include="Winforms\Helpers\BindableListBoxSpecs.cs" />
+    <Compile Include="Winforms\Helpers\BindableListExtensions.cs" />
+    <Compile Include="Winforms\Helpers\BindableListFactory.cs" />
+    <Compile Include="Winforms\Helpers\BindableTextBox.cs" />
+    <Compile Include="Winforms\Helpers\BindableTextBoxExtensions.cs" />
+    <Compile Include="Winforms\Helpers\BindableTextBoxExtensionsSpecs.cs" />
+    <Compile Include="Winforms\Helpers\BindableTextBoxSpecs.cs" />
+    <Compile Include="Winforms\Helpers\BitmapRegion.cs" />
+    <Compile Include="Winforms\Helpers\ButtonExtensions.cs" />
+    <Compile Include="Winforms\Helpers\ComboBoxListControl.cs" />
+    <Compile Include="Winforms\Helpers\ControlAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Winforms\Helpers\ControlExtensions.cs" />
+    <Compile Include="Winforms\Helpers\Events.cs" />
+    <Compile Include="Winforms\Helpers\EventTrigger.cs" />
+    <Compile Include="Winforms\Helpers\EventTriggerExtensions.cs" />
+    <Compile Include="Winforms\Helpers\EventTriggerSpecs.cs" />
+    <Compile Include="Winforms\Helpers\IBindableList.cs" />
+    <Compile Include="Winforms\Helpers\IEventTarget.cs" />
+    <Compile Include="Winforms\Helpers\IListControl.cs" />
+    <Compile Include="Winforms\Helpers\ITextBoxCommand.cs" />
+    <Compile Include="Winforms\Helpers\ITextControl.cs" />
+    <Compile Include="Winforms\Helpers\ListBoxListControl.cs" />
+    <Compile Include="Winforms\Helpers\RebindTextBoxCommand.cs" />
+    <Compile Include="Winforms\Helpers\RebindTextBoxCommandSpecs.cs" />
+    <Compile Include="Winforms\Helpers\SuspendLayout.cs" />
+    <Compile Include="Winforms\Helpers\TextControl.cs" />
+    <Compile Include="Winforms\Helpers\TextControlSpecs.cs" />
+    <Compile Include="Winforms\Helpers\ValidateTextBoxCommandSpecs.cs" />
+    <Compile Include="Winforms\Keyboard\ShortcutKey.cs" />
+    <Compile Include="Winforms\Keyboard\ShortcutKeys.cs" />
+    <Compile Include="Winforms\Krypton\BindableListExtensions.cs" />
+    <Compile Include="Winforms\Krypton\KryptonComboBoxListControl.cs" />
+    <Compile Include="Winforms\Krypton\KryptonListBoxListControl.cs" />
+    <Compile Include="Winforms\Krypton\KryptonTextControl.cs" />
+    <Compile Include="Winforms\Krypton\ListboxExtensions.cs" />
+    <Compile Include="Winforms\Krypton\TextBoxExtensions.cs" />
+    <Compile Include="Winforms\Resources\ApplicationIcon.cs" />
+    <Compile Include="Winforms\Resources\ApplicationImage.cs" />
+    <Compile Include="Winforms\Resources\HybridIcon.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -462,6 +523,18 @@
       <Project>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</Project>
       <Name>Service.Contracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Winforms\Views\Billing\" />
+    <Folder Include="Winforms\Views\Core\" />
+    <Folder Include="Winforms\Views\Dialogs\" />
+    <Folder Include="Winforms\Views\Income\" />
+    <Folder Include="Winforms\Views\Menu\" />
+    <Folder Include="Winforms\Views\Navigation\" />
+    <Folder Include="Winforms\Views\Reporting\" />
+    <Folder Include="Winforms\Views\Shell\" />
+    <Folder Include="Winforms\Views\Startup\" />
+    <Folder Include="Winforms\Views\Updates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
