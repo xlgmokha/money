@@ -38,6 +38,7 @@ namespace MoMoney.Presentation.Model.Menu.Help
             yield return Create
                 .a_menu_item()
                 .named("Check For Updates...")
+                .represented_by(ApplicationIcons.Update)
                 .that_executes(() => command.run<ICheckForUpdatesPresenter>())
                 .build();
 
@@ -46,6 +47,7 @@ namespace MoMoney.Presentation.Model.Menu.Help
             yield return Create
                 .a_menu_item()
                 .named("View Log File")
+                .represented_by(ApplicationIcons.ViewLog)
                 .that_executes(() => command.run<ILogFilePresenter>())
                 .build();
         }

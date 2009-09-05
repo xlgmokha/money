@@ -8,15 +8,19 @@ namespace MoMoney.Presentation.Winforms.Resources
         static readonly IList<ApplicationIcon> all_icons = new List<ApplicationIcon>();
 
         static public readonly ApplicationIcon Application = new ApplicationIcon("mokhan.ico", x => add(x));
-        static public readonly ApplicationIcon FileExplorer = new ApplicationIcon("search4files.ico", x => add(x));
-        static public readonly HybridIcon ApplicationReady = new HybridIcon("application_ready.ico", x => add(x));
-        static public readonly ApplicationIcon AddIncome = new ApplicationIcon("text_document.ico", x => add(x));
-        static public readonly HybridIcon NewProject = new HybridIcon("new_project.ico", x => add(x));
-        static public readonly HybridIcon OpenProject = new HybridIcon("open.ico", x => add(x));
-        static public readonly HybridIcon SaveProject = new HybridIcon("save.ico", x => add(x));
-        static public readonly HybridIcon SaveProjectAs = new HybridIcon("save_as.ico", x => add(x));
-        static public readonly HybridIcon ExitApplication = new HybridIcon("", x => add(x));
-        static public readonly HybridIcon About = new HybridIcon("about.ico", x => add(x));
+        static public readonly ApplicationIcon FileExplorer = new ApplicationIcon("binoculars.ico", x => add(x));
+        static public readonly HybridIcon ApplicationReady = new HybridIcon("circle_green.ico", x => add(x));
+        static public readonly ApplicationIcon AddIncome = new ApplicationIcon("generic_document.ico", x => add(x));
+        static public readonly HybridIcon NewProject = new HybridIcon("generic_document.ico", x => add(x));
+        static public readonly HybridIcon OpenProject = new HybridIcon("foldergreen.ico", x => add(x));
+        static public readonly HybridIcon SaveProject = new HybridIcon("emptydrive.ico", x => add(x));
+        static public readonly HybridIcon SaveProjectAs = new HybridIcon("unknowndrive.ico", x => add(x));
+        static public readonly HybridIcon CloseProject = new HybridIcon("close_box_red.ico", x => add(x));
+        static public readonly HybridIcon ExitApplication = new HybridIcon("shutdown_box_red.ico", x => add(x));
+        static public readonly HybridIcon About = new HybridIcon("info_box_blue.ico", x => add(x));
+        static public readonly HybridIcon Update = new HybridIcon("connect_tonetwork.ico", x => add(x));
+        static public readonly HybridIcon ViewLog = new HybridIcon("Book3.ico", x => add(x));
+        static public readonly HybridIcon CloseWindow = new HybridIcon("minimize_box_blue.ico", x => add(x));
         static public readonly HybridIcon Empty = new HybridIcon("", x => add(x));
 
         static public IEnumerable<ApplicationIcon> all()

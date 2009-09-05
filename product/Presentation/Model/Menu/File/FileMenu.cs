@@ -63,6 +63,7 @@ namespace MoMoney.Presentation.Model.Menu.File
                 .a_menu_item()
                 .named("&Close")
                 .can_be_clicked_when(() => project.is_open())
+                .represented_by(ApplicationIcons.CloseProject)
                 .that_executes<ICloseCommand>()
                 .build();
 
