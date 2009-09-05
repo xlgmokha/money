@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using MoMoney.Presentation.Model.Menu.Help.commands;
-using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Presenters.Shell;
 using MoMoney.Presentation.Presenters.updates;
 using MoMoney.Presentation.Resources;

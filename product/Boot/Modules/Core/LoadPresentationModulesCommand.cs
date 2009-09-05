@@ -5,10 +5,6 @@ using MoMoney.Presentation;
 
 namespace MoMoney.Modules.Core
 {
-    public interface ILoadPresentationModulesCommand : ICommand
-    {
-    }
-
     public class LoadPresentationModulesCommand : ILoadPresentationModulesCommand
     {
         readonly IRegistry<IModule> registry;

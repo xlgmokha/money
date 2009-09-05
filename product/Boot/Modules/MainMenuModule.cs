@@ -1,15 +1,10 @@
 using Gorilla.Commons.Infrastructure.Eventing;
-using MoMoney.Presentation;
 using MoMoney.Presentation.Model.messages;
-using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Presenters.Navigation;
 
 namespace MoMoney.Modules
 {
-    public interface IMainMenuModule : IModule, IEventSubscriber<NewProjectOpened>
-    {
-    }
-
     public class MainMenuModule : IMainMenuModule
     {
         readonly IEventAggregator broker;

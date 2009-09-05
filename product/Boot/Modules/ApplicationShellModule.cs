@@ -1,5 +1,5 @@
 using MoMoney.Presentation;
-using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Presenters.Shell;
 
 namespace MoMoney.Modules

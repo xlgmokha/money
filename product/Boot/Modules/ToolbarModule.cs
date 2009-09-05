@@ -1,20 +1,11 @@
 using Gorilla.Commons.Infrastructure.Eventing;
-using MoMoney.Presentation;
 using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Model.messages;
-using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Presenters.Shell;
 
 namespace MoMoney.Modules
 {
-    public interface IToolbarModule : IModule,
-                                      IEventSubscriber<NewProjectOpened>,
-                                      IEventSubscriber<ClosingProjectEvent>,
-                                      IEventSubscriber<SavedChangesEvent>,
-                                      IEventSubscriber<UnsavedChangesEvent>
-    {
-    }
-
     public class ToolbarModule : IToolbarModule
     {
         readonly IEventAggregator broker;

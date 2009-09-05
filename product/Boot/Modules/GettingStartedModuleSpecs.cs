@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Testing;
-using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters;
 
 namespace MoMoney.Modules
 {

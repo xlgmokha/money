@@ -4,10 +4,6 @@ using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Presentation.Model.Navigation
 {
-    public interface INavigationTreeVisitor : IVisitor<TreeView>
-    {
-    }
-
     public class NavigationTreeVisitor : INavigationTreeVisitor
     {
         readonly ITreeViewToRootNodeMapper mapper;

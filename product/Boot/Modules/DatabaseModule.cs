@@ -1,13 +1,8 @@
 using Gorilla.Commons.Infrastructure.Eventing;
 using MoMoney.DataAccess;
-using MoMoney.Presentation;
 
 namespace MoMoney.Modules
 {
-    public interface IDatabaseModule : IModule
-    {
-    }
-
     public class DatabaseModule : IDatabaseModule
     {
         readonly IDatabaseConfiguration configuration;

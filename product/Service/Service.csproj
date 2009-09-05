@@ -83,6 +83,7 @@
     <Compile Include="Application\GetAllBillsQuery.cs" />
     <Compile Include="Application\GetAllCompanysQuery.cs" />
     <Compile Include="Application\GetAllIncomeQuery.cs" />
+    <Compile Include="Application\IEventLog.cs" />
     <Compile Include="Application\RegisterNewCompanyCommand.cs" />
     <Compile Include="Application\SaveNewBillCommand.cs" />
     <Compile Include="Infrastructure\Logging\LogFileTasks.cs" />
@@ -123,7 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />
-    <Folder Include="Infrastructure\Core\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

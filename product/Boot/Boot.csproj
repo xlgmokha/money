@@ -162,8 +162,14 @@
     <Compile Include="boot\global_error_handling.cs" />
     <Compile Include="boot\WindowsFormsApplication.cs" />
     <Compile Include="Modules\ApplicationShellModule.cs" />
+    <Compile Include="Modules\Core\ILoadPresentationModulesCommand.cs" />
     <Compile Include="Modules\DatabaseModule.cs" />
     <Compile Include="Modules\ApplicationMenuModule.cs" />
+    <Compile Include="Modules\IApplicationMenuModule.cs" />
+    <Compile Include="Modules\IDatabaseModule.cs" />
+    <Compile Include="Modules\IMainMenuModule.cs" />
+    <Compile Include="Modules\INavigationModule.cs" />
+    <Compile Include="Modules\IToolbarModule.cs" />
     <Compile Include="Modules\MainMenuModule.cs" />
     <Compile Include="Modules\NavigationModule.cs" />
     <Compile Include="Modules\GettingStartedModule.cs" />
