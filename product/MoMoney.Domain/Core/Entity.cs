@@ -16,7 +16,7 @@ namespace MoMoney.Domain.Core
             id = Guid.NewGuid();
         }
 
-        public Guid id { get; private set; }
+        public Id<Guid> id { get; private set; }
 
         public bool Equals(Entity<T> obj)
         {

@@ -151,6 +151,7 @@
     <Compile Include="boot\container\registration\proxy_configuration\SecuringProxySpecs.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\ServiceLayerConfiguration.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\SynchronizedConfiguration.cs" />
+    <Compile Include="boot\container\registration\proxy_configuration\UnitOfWorkInterceptor.cs" />
     <Compile Include="boot\container\registration\wire_up_the_infrastructure_in_to_the.cs" />
     <Compile Include="boot\container\tear_down_the_container.cs" />
     <Compile Include="boot\container\registration\wire_up_the_data_access_components_into_the.cs" />

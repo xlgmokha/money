@@ -98,6 +98,11 @@
     <Compile Include="Infrastructure\Security\IsInRole.cs" />
     <Compile Include="Infrastructure\Security\IsInRoleSpecs.cs" />
     <Compile Include="Infrastructure\Security\Role.cs" />
+    <Compile Include="Infrastructure\Transactions\EmptyUnitOfWork.cs" />
+    <Compile Include="Infrastructure\Transactions\UnitOfWork.cs" />
+    <Compile Include="Infrastructure\Transactions\UnitOfWorkFactory.cs" />
+    <Compile Include="Infrastructure\Transactions\UnitOfWorkFactorySpecs.cs" />
+    <Compile Include="Infrastructure\Transactions\UnitOfWorkSpecs.cs" />
     <Compile Include="Infrastructure\Updating\CancelUpdate.cs" />
     <Compile Include="Infrastructure\Updating\CancelUpdateSpecs.cs" />
     <Compile Include="Infrastructure\Updating\CurrentDeployment.cs" />
@@ -119,9 +124,6 @@
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
       <Name>MoMoney.DTO</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Application\Public\AddNewIncomeCommand.svc" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />

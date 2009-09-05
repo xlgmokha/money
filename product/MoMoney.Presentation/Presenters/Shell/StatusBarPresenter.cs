@@ -1,7 +1,6 @@
 using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Modules.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Resources;
 using MoMoney.Presentation.Views.Shell;

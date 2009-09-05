@@ -4,7 +4,7 @@ using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
 
-namespace MoMoney.Infrastructure.Container.Windsor.configuration
+namespace MoMoney.boot.container
 {
     public static class type_extensions
     {

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.ComponentModel;
 using System.Deployment.Application;
 using Gorilla.Commons.Infrastructure;
@@ -30,7 +31,7 @@ namespace MoMoney.boot.container.registration
             registry.transient(typeof (ITrackerEntryMapper<>), typeof (TrackerEntryMapper<>));
             registry.transient(typeof (IKey<>), typeof (TypedKey<>));
             registry.transient(typeof (IComponentFactory<>), typeof (ComponentFactory<>));
-            registry.singleton<IContext, Context>();
+            registry.singleton<IContext>( ()=>new Context(new Hashtable()));
 
             registry.singleton(() => AsyncOperationManager.SynchronizationContext);
             registry.singleton<AsyncOperation>(() => AsyncOperationManager.CreateOperation(new object()));

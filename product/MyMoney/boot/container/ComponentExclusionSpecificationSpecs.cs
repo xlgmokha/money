@@ -6,8 +6,8 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
-using MoMoney.Infrastructure.Container.Windsor.configuration;
 
 namespace MoMoney.boot.container
 {
@@ -85,7 +85,7 @@ namespace MoMoney.boot.container
 
     public class FakeEntity : IEntity
     {
-        public Guid id
+        public Id<Guid> id
         {
             get { throw new NotImplementedException(); }
         }

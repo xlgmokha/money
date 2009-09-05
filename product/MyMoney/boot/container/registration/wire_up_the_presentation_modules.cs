@@ -5,7 +5,7 @@ using Gorilla.Commons.Infrastructure.Reflection;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.boot.container.registration.proxy_configuration;
-using MoMoney.Modules.Core;
+using MoMoney.Presentation;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;

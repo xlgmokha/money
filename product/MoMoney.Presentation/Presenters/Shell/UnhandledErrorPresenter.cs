@@ -1,5 +1,4 @@
 using Gorilla.Commons.Infrastructure.Eventing;
-using MoMoney.Modules.Core;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters.Commands;

@@ -1,7 +1,6 @@
 using System.Security.Principal;
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Service.Infrastructure.Security;

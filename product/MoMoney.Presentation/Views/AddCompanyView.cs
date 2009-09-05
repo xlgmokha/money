@@ -42,8 +42,8 @@ namespace MoMoney.Presentation.Views
         {
             ux_companys_listing.DataSource = companies.databind();
 
-            listView1.Items.Clear();
-            listView1.Items.AddRange(companies.Select(x => new ListViewItem(x.name, 0)).ToArray());
+            //listView1.Items.Clear();
+            //listView1.Items.AddRange(companies.Select(x => new ListViewItem(x.name, 0)).ToArray());
         }
     }
 }

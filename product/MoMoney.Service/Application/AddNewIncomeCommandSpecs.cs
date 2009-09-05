@@ -2,6 +2,7 @@ using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
@@ -41,7 +42,7 @@ namespace MoMoney.Service.Application
                             var a_company = an<ICompany>();
                             var matching_income = an<IIncome>();
                             var today = new Date(2008, 12, 26);
-                            var id = Guid.NewGuid();
+                            Id<Guid> id = Guid.NewGuid();
 
                             income = new IncomeSubmissionDto
                                          {

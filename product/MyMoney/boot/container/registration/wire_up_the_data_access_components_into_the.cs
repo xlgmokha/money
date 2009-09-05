@@ -1,5 +1,4 @@
 using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors;
 using Gorilla.Commons.Infrastructure.Cloning;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Transactions;
@@ -8,6 +7,8 @@ using Gorilla.Commons.Utility.Extensions;
 using MoMoney.boot.container.registration.proxy_configuration;
 using MoMoney.DataAccess;
 using MoMoney.DataAccess.Db40;
+using MoMoney.DataAccess.Transactions;
+using MoMoney.Service.Infrastructure.Transactions;
 
 namespace MoMoney.boot.container.registration
 {

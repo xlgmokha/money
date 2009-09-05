@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Service="MoMoney.Service.Application.AddNewIncomeCommand" CodeBehind="MoMoney.Service.Application.AddNewIncomeCommand.cs" />
