@@ -1,7 +1,7 @@
 using System.Text;
 using System.Windows.Forms;
+using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Service.Application;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {

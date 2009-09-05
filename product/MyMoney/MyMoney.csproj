@@ -220,6 +220,10 @@
       <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
       <Name>MoMoney.Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj">
+      <Project>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</Project>
+      <Name>Service.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

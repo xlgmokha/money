@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Deployment.Application;
 
-namespace MoMoney.Tasks.infrastructure.updating
+namespace MoMoney.Service.Infrastructure.Updating
 {
     public interface IDeployment
     {

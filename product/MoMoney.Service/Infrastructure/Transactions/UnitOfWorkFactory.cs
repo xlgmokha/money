@@ -1,12 +1,8 @@
 using Gorilla.Commons.Infrastructure.Transactions;
-using Gorilla.Commons.Utility.Core;
+using MoMoney.Service.Contracts.Infrastructure.Transactions;
 
 namespace MoMoney.Service.Infrastructure.Transactions
 {
-    public interface IUnitOfWorkFactory : IFactory<IUnitOfWork>
-    {
-    }
-
     public class UnitOfWorkFactory : IUnitOfWorkFactory
     {
         readonly IContext context;

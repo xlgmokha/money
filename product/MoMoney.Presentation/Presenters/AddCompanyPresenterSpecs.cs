@@ -1,9 +1,9 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Testing;
 using MoMoney.DTO;
 using MoMoney.Presentation.Views;
-using MoMoney.Service.Application;
+using MoMoney.Service.Contracts.Application;
+using ICommandPump=MoMoney.Presentation.Presenters.Commands.ICommandPump;
 
 namespace MoMoney.Presentation.Presenters
 {

@@ -8,11 +8,12 @@ using MoMoney.boot.container.registration.proxy_configuration;
 using MoMoney.DataAccess;
 using MoMoney.DataAccess.Db40;
 using MoMoney.DataAccess.Transactions;
+using MoMoney.Service.Contracts.Infrastructure.Transactions;
 using MoMoney.Service.Infrastructure.Transactions;
 
 namespace MoMoney.boot.container.registration
 {
-    internal class wire_up_the_data_access_components_into_the : ICommand
+    class wire_up_the_data_access_components_into_the : ICommand
     {
         readonly IDependencyRegistration register;
 

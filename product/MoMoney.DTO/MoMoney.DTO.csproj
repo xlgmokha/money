@@ -52,7 +52,7 @@
     <Compile Include="ApplicationVersion.cs" />
     <Compile Include="BillInformationDto.cs" />
     <Compile Include="CompanyDTO.cs" />
-    <Compile Include="IncomeSubmissionDto.cs" />
+    <Compile Include="IncomeSubmissionDTO.cs" />
     <Compile Include="IncomeInformationDTO.cs" />
     <Compile Include="MonthlySummaryDTO.cs" />
     <Compile Include="RegisterNewCompany.cs" />

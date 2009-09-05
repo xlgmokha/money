@@ -1,4 +1,3 @@
-using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Core;
@@ -6,6 +5,7 @@ using MoMoney.DTO;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.updates;
+using MoMoney.Service.Contracts.Infrastructure.Updating;
 using MoMoney.Service.Infrastructure.Updating;
 using MoMoney.Tasks.infrastructure.updating;
 

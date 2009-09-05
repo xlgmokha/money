@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace MoMoney.DTO
 {
     [DataContract]
-    public class IncomeSubmissionDto
+    public class IncomeSubmissionDTO
     {
         [DataMember]
         public Guid company_id { get; set; }

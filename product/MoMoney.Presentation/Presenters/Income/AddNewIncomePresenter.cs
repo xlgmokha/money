@@ -1,15 +1,15 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Infrastructure;
 using MoMoney.DTO;
 using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Presenters.Commands;
 using MoMoney.Presentation.Views.income;
-using MoMoney.Service.Application;
+using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.Presentation.Presenters.income
 {
     public interface IAddNewIncomePresenter : IContentPresenter
     {
-        void submit_new(IncomeSubmissionDto income);
+        void submit_new(IncomeSubmissionDTO income);
     }
 
     public class AddNewIncomePresenter : ContentPresenter<IAddNewIncomeView>, IAddNewIncomePresenter
@@ -28,9 +28,9 @@ namespace MoMoney.Presentation.Presenters.income
             pump.run<IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>(view);
         }
 
-        public void submit_new(IncomeSubmissionDto income)
+        public void submit_new(IncomeSubmissionDTO income)
         {
-            pump.run<IAddNewIncomeCommand, IncomeSubmissionDto>(income);
+            pump.run<IAddNewIncomeCommand, IncomeSubmissionDTO>(income);
             pump.run<IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>(view);
         }
     }

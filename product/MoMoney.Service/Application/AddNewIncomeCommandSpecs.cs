@@ -7,6 +7,7 @@ using MoMoney.Domain.Accounting;
 using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
+using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.Service.Application
 {
@@ -20,13 +21,13 @@ namespace MoMoney.Service.Application
         context c = () =>
                         {
                             notification = the_dependency<INotification>();
-                            tasks = the_dependency<ICustomerTasks>();
+                            tasks = the_dependency<IGetTheCurrentCustomerQuery>();
                             all_income = the_dependency<IIncomeRepository>();
                             companies = the_dependency<ICompanyRepository>();
                         };
 
         static protected INotification notification;
-        static protected ICustomerTasks tasks;
+        static protected IGetTheCurrentCustomerQuery tasks;
         static protected IIncomeRepository all_income;
         static protected ICompanyRepository companies;
     }
@@ -44,7 +45,7 @@ namespace MoMoney.Service.Application
                             var today = new Date(2008, 12, 26);
                             Id<Guid> id = Guid.NewGuid();
 
-                            income = new IncomeSubmissionDto
+                            income = new IncomeSubmissionDTO
                                          {
                                              amount = 100.00,
                                              company_id = id,
@@ -60,6 +61,6 @@ namespace MoMoney.Service.Application
 
         because b = () => sut.run(income);
 
-        static IncomeSubmissionDto income;
+        static IncomeSubmissionDTO income;
     }
 }

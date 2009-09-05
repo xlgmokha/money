@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Deployment.Application;
 using System.Threading;
+using MoMoney.Service.Infrastructure.Updating;
 
 namespace MoMoney.Tasks.infrastructure.updating
 {

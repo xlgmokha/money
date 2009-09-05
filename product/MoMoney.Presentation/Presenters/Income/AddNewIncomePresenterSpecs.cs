@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Testing;
 using MoMoney.DTO;
 using MoMoney.Presentation.Views.income;
-using MoMoney.Service.Application;
+using MoMoney.Service.Contracts.Application;
+using ICommandPump=MoMoney.Presentation.Presenters.Commands.ICommandPump;
 
 namespace MoMoney.Presentation.Presenters.income
 {
@@ -26,16 +26,16 @@ namespace MoMoney.Presentation.Presenters.income
     public class when_new_income_is_submitted : behaves_like_add_new_income_presenter
     {
         it should_add_the_income_to_the_account_holders_account =
-            () => pump.was_told_to(x => x.run<IAddNewIncomeCommand, IncomeSubmissionDto>(income));
+            () => pump.was_told_to(x => x.run<IAddNewIncomeCommand, IncomeSubmissionDTO>(income));
 
         it should_display_the_new_income =
             () => pump.was_told_to(x => x.run<IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>(view));
 
-        context c = () => { income = new IncomeSubmissionDto {}; };
+        context c = () => { income = new IncomeSubmissionDTO {}; };
 
         because b = () => sut.submit_new(income);
 
-        static IncomeSubmissionDto income;
+        static IncomeSubmissionDTO income;
     }
 
     [Concern(typeof (AddNewIncomePresenter))]

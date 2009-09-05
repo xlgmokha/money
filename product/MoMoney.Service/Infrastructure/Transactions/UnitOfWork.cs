@@ -1,14 +1,7 @@
-using System;
 using Gorilla.Commons.Infrastructure.Transactions;
 
 namespace MoMoney.Service.Infrastructure.Transactions
 {
-    public interface IUnitOfWork : IDisposable
-    {
-        void commit();
-        bool is_dirty();
-    }
-
     public class UnitOfWork : IUnitOfWork
     {
         readonly ISession session;

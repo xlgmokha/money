@@ -111,6 +111,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenters\Commands\CommandFactory.cs" />
+    <Compile Include="Presenters\Commands\CommandPump.cs" />
     <Compile Include="Core\ApplicationController.cs" />
     <Compile Include="Core\ApplicationControllerSpecs.cs" />
     <Compile Include="Core\ApplicationEnvironment.cs" />
@@ -231,8 +233,10 @@
     <Compile Include="Presenters\Startup\SplashScreenPresenterSpecs.cs" />
     <Compile Include="Presenters\Updates\CheckForUpdatesPresenter.cs" />
     <Compile Include="Presenters\Updates\CheckForUpdatesPresenterSpecs.cs" />
+    <Compile Include="Presenters\Commands\ProcessQueryCommand.cs" />
     <Compile Include="Resources\ApplicationIcons.cs" />
     <Compile Include="Resources\ApplicationImages.cs" />
+    <Compile Include="Presenters\Commands\RunQueryCommand.cs" />
     <Compile Include="Views\AddCompanyView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -454,9 +458,9 @@
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
       <Name>MoMoney.DTO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MoMoney.Service\MoMoney.Service.csproj">
-      <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
-      <Name>MoMoney.Service</Name>
+    <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj">
+      <Project>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</Project>
+      <Name>Service.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

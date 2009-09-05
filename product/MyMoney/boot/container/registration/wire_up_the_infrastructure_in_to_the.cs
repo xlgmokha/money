@@ -9,6 +9,8 @@ using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Model.Projects;
+using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Service.Infrastructure.Updating;
 using MoMoney.Tasks.infrastructure.updating;
 
 namespace MoMoney.boot.container.registration

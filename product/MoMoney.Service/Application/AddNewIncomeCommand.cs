@@ -1,19 +1,21 @@
 using System.Linq;
+using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
+using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.Service.Application
 {
     public class AddNewIncomeCommand : IAddNewIncomeCommand
     {
-        readonly ICustomerTasks tasks;
+        readonly IGetTheCurrentCustomerQuery tasks;
         readonly INotification notification;
         readonly IIncomeRepository all_income;
         readonly ICompanyRepository companys;
 
-        public AddNewIncomeCommand(ICustomerTasks tasks, INotification notification, IIncomeRepository all_income,
+        public AddNewIncomeCommand(IGetTheCurrentCustomerQuery tasks, INotification notification, IIncomeRepository all_income,
                                    ICompanyRepository companys)
         {
             this.tasks = tasks;
@@ -22,7 +24,7 @@ namespace MoMoney.Service.Application
             this.companys = companys;
         }
 
-        public void run(IncomeSubmissionDto item)
+        public void run(IncomeSubmissionDTO item)
         {
             if (similar_income_has_been_submitted(item))
             {
@@ -33,14 +35,14 @@ namespace MoMoney.Service.Application
                 companys
                     .find_company_by(item.company_id)
                     .pay(
-                    tasks.get_the_current_customer(),
+                    tasks.fetch(),
                     item.amount.as_money(),
                     item.recieved_date
                     );
             }
         }
 
-        bool similar_income_has_been_submitted(IncomeSubmissionDto income)
+        bool similar_income_has_been_submitted(IncomeSubmissionDTO income)
         {
             if (all_income.all().Count() == 0) return false;
             return all_income

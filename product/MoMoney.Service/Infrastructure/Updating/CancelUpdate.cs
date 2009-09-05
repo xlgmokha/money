@@ -1,11 +1,7 @@
-using Gorilla.Commons.Utility.Core;
+using MoMoney.Tasks.infrastructure.updating;
 
-namespace MoMoney.Tasks.infrastructure.updating
+namespace MoMoney.Service.Infrastructure.Updating
 {
-    public interface ICancelUpdate : ICommand
-    {
-    }
-
     public class CancelUpdate : ICancelUpdate
     {
         readonly IDeployment deployment;

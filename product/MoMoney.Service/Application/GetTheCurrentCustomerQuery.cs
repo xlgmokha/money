@@ -1,24 +1,24 @@
 using System.Linq;
+using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.accounting;
 using MoMoney.Domain.repositories;
 
 namespace MoMoney.Service.Application
 {
-    public interface ICustomerTasks
+    public interface IGetTheCurrentCustomerQuery : IQuery<IAccountHolder>
     {
-        IAccountHolder get_the_current_customer();
     }
 
-    public class CustomerTasks : ICustomerTasks
+    public class GetTheCurrentCustomerQuery : IGetTheCurrentCustomerQuery
     {
         readonly IAccountHolderRepository account_holders;
 
-        public CustomerTasks(IAccountHolderRepository account_holders)
+        public GetTheCurrentCustomerQuery(IAccountHolderRepository account_holders)
         {
             this.account_holders = account_holders;
         }
 
-        public IAccountHolder get_the_current_customer()
+        public IAccountHolder fetch()
         {
             var c = account_holders.all().SingleOrDefault();
 

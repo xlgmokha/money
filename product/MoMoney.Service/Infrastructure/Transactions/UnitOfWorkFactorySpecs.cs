@@ -1,6 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Testing;
+using MoMoney.Service.Contracts.Infrastructure.Transactions;
 
 namespace MoMoney.Service.Infrastructure.Transactions
 {

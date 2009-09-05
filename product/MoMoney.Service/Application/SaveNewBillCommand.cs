@@ -1,15 +1,16 @@
 using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
+using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.Service.Application
 {
     public class SaveNewBillCommand : ISaveNewBillCommand
     {
         readonly ICompanyRepository companys;
-        readonly ICustomerTasks tasks;
+        readonly IGetTheCurrentCustomerQuery tasks;
 
-        public SaveNewBillCommand(ICompanyRepository companys, ICustomerTasks tasks)
+        public SaveNewBillCommand(ICompanyRepository companys, IGetTheCurrentCustomerQuery tasks)
         {
             this.companys = companys;
             this.tasks = tasks;
@@ -20,7 +21,7 @@ namespace MoMoney.Service.Application
             companys
                 .find_company_by(item.company_id)
                 .issue_bill_to(
-                tasks.get_the_current_customer(),
+                tasks.fetch(),
                 item.due_date,
                 item.total.as_money()
                 );

@@ -39,9 +39,9 @@ namespace MoMoney.Presentation.Views.income
             ux_income_received_grid.DataSource = incomes.databind();
         }
 
-        IncomeSubmissionDto create_income()
+        IncomeSubmissionDTO create_income()
         {
-            return new IncomeSubmissionDto
+            return new IncomeSubmissionDTO
                        {
                            company_id = companies_list.get_selected_item().id,
                            amount = ux_amount.Text.to_double(),

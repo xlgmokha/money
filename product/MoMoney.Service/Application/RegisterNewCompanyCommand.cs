@@ -1,8 +1,10 @@
 using System.Linq;
+using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
+using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.Service.Application
 {
@@ -12,7 +14,8 @@ namespace MoMoney.Service.Application
         readonly INotification notification;
         readonly ICompanyRepository companies;
 
-        public RegisterNewCompanyCommand(ICompanyFactory factory, INotification notification, ICompanyRepository companies)
+        public RegisterNewCompanyCommand(ICompanyFactory factory, INotification notification,
+                                         ICompanyRepository companies)
         {
             this.factory = factory;
             this.notification = notification;
