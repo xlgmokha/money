@@ -2,7 +2,7 @@ using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.reporting;
-using MoMoney.Presentation.Views.reporting;
+using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Presenters
 {

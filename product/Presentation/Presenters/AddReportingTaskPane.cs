@@ -24,8 +24,14 @@ namespace MoMoney.Presentation.Presenters
                 .with_item(
                 Build.task_pane_item()
                     .named("View All Bills")
-                    .represented_by_image(ApplicationImages.ReadingABill)
+                    .represented_by_icon(ApplicationIcons.ViewAllBillPayments)
                     .when_clicked_execute(() => command.run<IReportPresenter<IViewAllBillsReport, IEnumerable<BillInformationDTO>, IGetAllBillsQuery>>())
+                )
+                .with_item(
+                Build.task_pane_item()
+                    .named("View All Income")
+                    .represented_by_icon(ApplicationIcons.ViewAllIncome)
+                    .when_clicked_execute(() => command.run<IReportPresenter<IViewAllIncomeReport, IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>>())
                 )
                 .build();
         }

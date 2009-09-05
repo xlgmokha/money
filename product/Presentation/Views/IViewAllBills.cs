@@ -4,7 +4,7 @@ using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.billing;
 using MoMoney.Presentation.Views.Core;
 
-namespace MoMoney.Presentation.Views.billing
+namespace MoMoney.Presentation.Views
 {
     public interface IViewAllBills : IDockedContentView,
                                      IView<IViewAllBillsPresenter>,

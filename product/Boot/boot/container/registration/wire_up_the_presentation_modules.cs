@@ -39,7 +39,6 @@ namespace MoMoney.boot.container.registration
                 () => new ApplicationController(Lazy.load<IPresenterRegistry>(), Lazy.load<IShell>());
             registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(target.memorize());
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
-            registry.transient(typeof (IPresenter), typeof (ReportPresenter<IViewAllBillsReport,IEnumerable<BillInformationDTO>,IGetAllBillsQuery>));
             registry.transient<IFileMenu, FileMenu>();
             registry.transient<IWindowMenu, WindowMenu>();
             registry.transient<IHelpMenu, HelpMenu>();
