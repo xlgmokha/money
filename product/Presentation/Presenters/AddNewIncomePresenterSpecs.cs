@@ -2,9 +2,8 @@ using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.DTO;
-using MoMoney.Presentation.Views.income;
+using MoMoney.Presentation.Views;
 using MoMoney.Service.Contracts.Application;
-using ICommandPump=MoMoney.Presentation.Presenters.Commands.ICommandPump;
 
 namespace MoMoney.Presentation.Presenters.income
 {

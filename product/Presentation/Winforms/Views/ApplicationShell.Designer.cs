@@ -66,8 +66,8 @@ namespace MoMoney.Presentation.Winforms.Views
             // ux_status_bar
             // 
             this.ux_status_bar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                                                                                           this.status_bar_label,
-                                                                                           this.status_bar_progress_bar});
+            this.status_bar_progress_bar,
+            this.status_bar_label});
             this.ux_status_bar.Location = new System.Drawing.Point(0, 485);
             this.ux_status_bar.Name = "ux_status_bar";
             this.ux_status_bar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;

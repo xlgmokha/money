@@ -2,7 +2,7 @@ using System;
 using System.Linq.Expressions;
 using Gorilla.Commons.Utility.Core;
 
-namespace Gorilla.Commons.Infrastructure.Threading
+namespace MoMoney.Service.Infrastructure.Threading
 {
     public interface ICommandProcessor : ICommand
     {

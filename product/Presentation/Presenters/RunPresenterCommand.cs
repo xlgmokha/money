@@ -1,5 +1,5 @@
-using Gorilla.Commons.Infrastructure.Threading;
 using MoMoney.Presentation.Core;
+using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Presentation.Presenters
 {

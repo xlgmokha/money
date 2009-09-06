@@ -1,8 +1,8 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Testing;
 using MbUnit.Framework;
 using MoMoney.Presentation.Core;
+using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Presentation.Presenters.Commands
 {

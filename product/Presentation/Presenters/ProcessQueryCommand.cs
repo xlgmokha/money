@@ -2,7 +2,7 @@ using System;
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters
 {
     public interface IProcessQueryCommand<T> : IParameterizedCommand<ICallback<T>>
     {

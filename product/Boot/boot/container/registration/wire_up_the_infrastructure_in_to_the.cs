@@ -7,7 +7,7 @@ using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Service.Infrastructure.Eventing;
 using MoMoney.Service.Infrastructure.Threading;
 using MoMoney.Service.Infrastructure.Updating;

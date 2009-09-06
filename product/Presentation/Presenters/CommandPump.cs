@@ -1,8 +1,8 @@
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
+using MoMoney.Service.Infrastructure.Threading;
 
-namespace MoMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters
 {
     public interface ICommandPump
     {

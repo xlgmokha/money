@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters.income;
-using MoMoney.Presentation.Views.income;
+using MoMoney.Presentation.Presenters;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views

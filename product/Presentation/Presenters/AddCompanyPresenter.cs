@@ -3,7 +3,6 @@ using MoMoney.DTO;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Contracts.Application;
-using ICommandPump=MoMoney.Presentation.Presenters.Commands.ICommandPump;
 
 namespace MoMoney.Presentation.Presenters
 {

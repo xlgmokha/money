@@ -1,7 +1,8 @@
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
+using MoMoney.Presentation.Presenters.Commands;
 
-namespace MoMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters
 {
     public interface ICommandFactory
     {

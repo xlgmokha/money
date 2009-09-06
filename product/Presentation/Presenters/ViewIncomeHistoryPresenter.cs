@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using MoMoney.DTO;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Presenters.Commands;
-using MoMoney.Presentation.Views.income;
+using MoMoney.Presentation.Views;
 using MoMoney.Service.Contracts.Application;
 
-namespace MoMoney.Presentation.Presenters.income
+namespace MoMoney.Presentation.Presenters
 {
     public interface IViewIncomeHistoryPresenter : IContentPresenter
     {

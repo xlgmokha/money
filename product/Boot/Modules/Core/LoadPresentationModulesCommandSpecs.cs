@@ -1,8 +1,8 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation;
+using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Modules.Core
 {

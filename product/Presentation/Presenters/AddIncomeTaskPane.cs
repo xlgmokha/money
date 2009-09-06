@@ -1,4 +1,3 @@
-using MoMoney.Presentation.Presenters.income;
 using MoMoney.Presentation.Presenters.Navigation;
 using MoMoney.Presentation.Winforms.Resources;
 using XPExplorerBar;

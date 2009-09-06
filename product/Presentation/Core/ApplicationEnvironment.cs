@@ -1,5 +1,5 @@
 using System.Windows.Forms;
-using Gorilla.Commons.Infrastructure.Threading;
+using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Presentation.Core
 {

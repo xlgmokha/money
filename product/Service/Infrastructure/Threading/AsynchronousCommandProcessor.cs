@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading;
-using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Service.Infrastructure.Threading
