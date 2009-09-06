@@ -66,14 +66,12 @@ namespace MoMoney.Presentation.Presenters
 
         public void notify(StartedRunningCommand message)
         {
-            //view.display(ApplicationIcons.hour_glass, "Running... {0}".formatted_using(message.running_action));
             timer.start_notifying(view, new TimeSpan(1));
         }
 
         public void notify(FinishedRunningCommand message)
         {
             timer.stop_notifying(view);
-            //view.display(ApplicationIcons.green_circle, "Ready");
             view.reset_progress_bar();
         }
     }

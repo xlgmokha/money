@@ -1,3 +1,4 @@
+using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Views.Shell;
 using MoMoney.Service.Infrastructure.Eventing;
@@ -6,6 +7,8 @@ namespace MoMoney.Presentation.Presenters.Shell
 {
     public interface ITaskTrayPresenter : IModule,
                                           IEventSubscriber<SavedChangesEvent>,
+                                          IEventSubscriber<StartedRunningCommand>,
+                                          IEventSubscriber<FinishedRunningCommand>,
                                           IEventSubscriber<NewProjectOpened>
     {
     }
@@ -37,6 +40,16 @@ namespace MoMoney.Presentation.Presenters.Shell
         public void notify(NewProjectOpened message)
         {
             view.display("opened {0}", message.path);
+        }
+
+        public void notify(StartedRunningCommand message)
+        {
+            view.display("Running... {0}".formatted_using(message.running_action));
+        }
+
+        public void notify(FinishedRunningCommand message)
+        {
+            view.display("Finished... {0}".formatted_using(message.completed_action));
         }
     }
 }
