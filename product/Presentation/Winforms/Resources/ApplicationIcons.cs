@@ -9,7 +9,6 @@ namespace MoMoney.Presentation.Winforms.Resources
 
         static public readonly ApplicationIcon Application = new ApplicationIcon("mokhan.ico", x => add(x));
         static public readonly ApplicationIcon FileExplorer = new ApplicationIcon("binoculars.ico", x => add(x));
-        static public readonly HybridIcon ApplicationReady = new HybridIcon("circle_green.ico", x => add(x));
         static public readonly ApplicationIcon AddIncome = new ApplicationIcon("generic_document.ico", x => add(x));
         static public readonly HybridIcon NewProject = new HybridIcon("generic_document.ico", x => add(x));
         static public readonly HybridIcon OpenProject = new HybridIcon("foldergreen.ico", x => add(x));
@@ -28,6 +27,17 @@ namespace MoMoney.Presentation.Winforms.Resources
         static public readonly HybridIcon ViewAllIncome = new HybridIcon("search.ico", x => add(x));
         static public readonly HybridIcon AddBillPayment = new HybridIcon("plus__orange.ico", x => add(x));
         static public readonly HybridIcon ViewAllBillPayments = new HybridIcon("search.ico", x => add(x));
+        static public readonly HybridIcon Home = new HybridIcon("home.ico", x => add(x));
+
+        static public readonly HybridIcon hour_glass = new HybridIcon("hourglass.ico", x => add(x));
+        static public readonly HybridIcon green_circle = new HybridIcon("circle_green.ico", x => add(x));
+        static public readonly HybridIcon blue_circle = new HybridIcon("circle_blue.ico", x => add(x));
+        static public readonly HybridIcon grey_circle = new HybridIcon("circle_grey.ico", x => add(x));
+        static public readonly HybridIcon orange_circle = new HybridIcon("circle_orange.ico", x => add(x));
+        static public readonly HybridIcon red_circle = new HybridIcon("circle_red.ico", x => add(x));
+        static public readonly HybridIcon yellow_circle = new HybridIcon("circle_yellow.ico", x => add(x));
+
+        static public readonly HybridIcon floppy_disk = new HybridIcon("floppydisk.ico", x => add(x));
 
         static public IEnumerable<ApplicationIcon> all()
         {

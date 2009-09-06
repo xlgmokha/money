@@ -1,8 +1,8 @@
 using System.Net.NetworkInformation;
-using Gorilla.Commons.Infrastructure.Eventing;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Views.Shell;
 using MoMoney.Presentation.Winforms.Resources;
+using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Presentation.Presenters.Shell
 {

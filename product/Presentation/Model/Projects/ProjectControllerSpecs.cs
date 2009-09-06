@@ -1,11 +1,11 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Service.Contracts.Infrastructure;
+using MoMoney.Service.Infrastructure.Eventing;
 using MoMoney.Service.Infrastructure.Transactions;
 
 namespace MoMoney.Presentation.Model.Projects

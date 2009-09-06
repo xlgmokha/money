@@ -1,5 +1,5 @@
-using Gorilla.Commons.Infrastructure.Eventing;
 using MoMoney.DataAccess;
+using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Modules
 {

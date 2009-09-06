@@ -103,6 +103,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Messages\FinishedRunningCommand.cs" />
+    <Compile Include="Model\Messages\StartedRunningCommand.cs" />
     <Compile Include="Model\Navigation\INavigationTreeVisitor.cs" />
     <Compile Include="Model\Navigation\ITreeBranch.cs" />
     <Compile Include="Model\Navigation\ITreeViewToRootNodeMapper.cs" />
@@ -535,6 +537,10 @@
     <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj">
       <Project>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</Project>
       <Name>Service.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
+      <Name>Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

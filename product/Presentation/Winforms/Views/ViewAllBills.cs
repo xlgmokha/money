@@ -3,6 +3,7 @@ using System.Linq;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters.billing;
 using MoMoney.Presentation.Views;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views
 {
@@ -11,7 +12,7 @@ namespace MoMoney.Presentation.Winforms.Views
         public ViewAllBills()
         {
             InitializeComponent();
-            titled("View Bills");
+            titled("View Bill Payments").icon(ApplicationIcons.ViewAllBillPayments);
         }
 
         public void attach_to(IViewAllBillsPresenter presenter)

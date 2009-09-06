@@ -7,6 +7,7 @@ using MoMoney.Presentation.Views.Core;
 using MoMoney.Presentation.Views.income;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Krypton;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views
 {
@@ -18,7 +19,8 @@ namespace MoMoney.Presentation.Winforms.Views
         public AddNewIncomeView()
         {
             InitializeComponent();
-            titled("Add Income");
+            titled("Add Income")
+                .icon(ApplicationIcons.AddNewIncome);
             ux_submit_button.Click += (sender, e) => submit_button(e);
 
             companies_list = ux_companys.create_for<CompanyDTO>();

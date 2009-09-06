@@ -1,8 +1,8 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Views.Startup;
+using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Presentation.Presenters.Startup
 {

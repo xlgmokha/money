@@ -143,6 +143,7 @@
     <Compile Include="boot\container\registration\proxy_configuration\InterceptingFilterFactorySpecs.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\InterceptingFilterSpecs.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\NoConfiguration.cs" />
+    <Compile Include="boot\container\registration\proxy_configuration\NotifyProgressInterceptor.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\SecuringProxy.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\SecuringProxySpecs.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\ServiceLayerConfiguration.cs" />

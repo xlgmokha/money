@@ -20,9 +20,6 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            registry.proxy<IGetTheCurrentCustomerQuery, ServiceLayerConfiguration<IGetTheCurrentCustomerQuery>>(
-                () => new GetTheCurrentCustomerQuery(Lazy.load<IAccountHolderRepository>()));
-
             wire_up_queries();
             wire_up_the_commands();
         }
@@ -39,6 +36,8 @@ namespace MoMoney.boot.container.registration
                 () =>
                 new GetAllIncomeQuery(Lazy.load<IIncomeRepository>(),
                                       Lazy.load<IMapper<IIncome, IncomeInformationDTO>>()));
+            registry.proxy<IGetTheCurrentCustomerQuery, ServiceLayerConfiguration<IGetTheCurrentCustomerQuery>>(
+                () => new GetTheCurrentCustomerQuery(Lazy.load<IAccountHolderRepository>()));
         }
 
         void wire_up_the_commands()

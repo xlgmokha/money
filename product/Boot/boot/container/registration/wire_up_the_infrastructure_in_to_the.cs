@@ -2,13 +2,14 @@ using System.Collections;
 using System.ComponentModel;
 using System.Deployment.Application;
 using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.Registries;
 using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Presenters.Commands;
+using MoMoney.Service.Infrastructure.Eventing;
+using MoMoney.Service.Infrastructure.Threading;
 using MoMoney.Service.Infrastructure.Updating;
 using MoMoney.Tasks.infrastructure.updating;
 

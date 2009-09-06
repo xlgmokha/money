@@ -1,4 +1,5 @@
 using System.Windows.Forms;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Views.Shell;
 using MoMoney.Presentation.Winforms.Resources;
 
@@ -20,6 +21,16 @@ namespace MoMoney.Presentation.Winforms.Views
                                                        x.Text = text_to_display;
                                                        x.Image = icon_to_display;
                                                    });
+        }
+
+        public void reset_progress_bar()
+        {
+            shell.region<ToolStripProgressBar>(x => { x.ProgressBar.Value = 0; });
+        }
+
+        public void notify()
+        {
+            shell.region<ToolStripProgressBar>(x => { x.Increment(10); });
         }
     }
 }

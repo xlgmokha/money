@@ -1,11 +1,11 @@
 using System;
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.messages;
+using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.boot
 {

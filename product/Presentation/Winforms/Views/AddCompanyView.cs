@@ -20,7 +20,8 @@ namespace MoMoney.Presentation.Winforms.Views
         public AddCompanyView()
         {
             InitializeComponent();
-            titled("Add A Company");
+            titled("Add A Company")
+                .icon(ApplicationIcons.AddCompany);
             dto = new RegisterNewCompany();
 
             listView1.View = View.LargeIcon;

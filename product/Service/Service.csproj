@@ -35,6 +35,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
     <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
@@ -42,6 +50,10 @@
     <Reference Include="gorilla.commons.infrastructure, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.commons.infrastructure.thirdparty, Version=2009.9.5.2051, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.thirdparty.dll</HintPath>
     </Reference>
     <Reference Include="gorilla.commons.utility, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -86,11 +98,43 @@
     <Compile Include="Application\IEventLog.cs" />
     <Compile Include="Application\RegisterNewCompanyCommand.cs" />
     <Compile Include="Application\SaveNewBillCommand.cs" />
+    <Compile Include="Infrastructure\Eventing\EventAggregator.cs" />
+    <Compile Include="Infrastructure\Eventing\EventAggregatorSpecs.cs" />
+    <Compile Include="Infrastructure\Eventing\IEvent.cs" />
+    <Compile Include="Infrastructure\Eventing\IEventAggregator.cs" />
+    <Compile Include="Infrastructure\Eventing\IEventSubscriber.cs" />
     <Compile Include="Infrastructure\Logging\LogFileTasks.cs" />
     <Compile Include="Infrastructure\ProjectTasks.cs" />
     <Compile Include="Infrastructure\Security\IsInRole.cs" />
     <Compile Include="Infrastructure\Security\IsInRoleSpecs.cs" />
     <Compile Include="Infrastructure\Security\Role.cs" />
+    <Compile Include="Infrastructure\Threading\AsynchronousCommandProcessor.cs" />
+    <Compile Include="Infrastructure\Threading\BackgroundThread.cs" />
+    <Compile Include="Infrastructure\Threading\BackgroundThreadFactory.cs" />
+    <Compile Include="Infrastructure\Threading\BackgroundThreadFactorySpecs.cs" />
+    <Compile Include="Infrastructure\Threading\BackgroundThreadSpecs.cs" />
+    <Compile Include="Infrastructure\Threading\CommandProcessor.cs" />
+    <Compile Include="Infrastructure\Threading\CommandProcessorSpecs.cs" />
+    <Compile Include="Infrastructure\Threading\ICommandProcessor.cs" />
+    <Compile Include="Infrastructure\Threading\IntervalTimer.cs" />
+    <Compile Include="Infrastructure\Threading\IntervalTimerSpecs.cs" />
+    <Compile Include="Infrastructure\Threading\ITimerClient.cs" />
+    <Compile Include="Infrastructure\Threading\IWorkerThread.cs" />
+    <Compile Include="Infrastructure\Threading\RaiseEventInterceptor.cs" />
+    <Compile Include="Infrastructure\Threading\RunOnBackgroundThreadInterceptor.cs" />
+    <Compile Include="Infrastructure\Threading\RunOnBackgroundThreadInterceptorSpecs.cs" />
+    <Compile Include="Infrastructure\Threading\RunOnUIThread.cs" />
+    <Compile Include="Infrastructure\Threading\SynchronizationContextFactory.cs" />
+    <Compile Include="Infrastructure\Threading\SynchronizedCommand.cs" />
+    <Compile Include="Infrastructure\Threading\SynchronizedContext.cs" />
+    <Compile Include="Infrastructure\Threading\Synchronizer.cs" />
+    <Compile Include="Infrastructure\Threading\ThreadingExtensions.cs" />
+    <Compile Include="Infrastructure\Threading\TimerFactory.cs" />
+    <Compile Include="Infrastructure\Threading\TimerFactorySpecs.cs" />
+    <Compile Include="Infrastructure\Threading\WorkerThread.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\Threading\WorkItem.cs" />
     <Compile Include="Infrastructure\Transactions\EmptyUnitOfWork.cs" />
     <Compile Include="Infrastructure\Transactions\UnitOfWork.cs" />
     <Compile Include="Infrastructure\Transactions\UnitOfWorkFactory.cs" />

@@ -1,4 +1,5 @@
 ﻿using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views
 {
@@ -11,7 +12,8 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void display(string file_path)
         {
-            titled("Log File - {0}", file_path);
+            titled("Log File - {0}", file_path)
+                .icon(ApplicationIcons.ViewLog);
         }
 
         public void run(string file_contents)

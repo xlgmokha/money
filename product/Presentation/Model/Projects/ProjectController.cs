@@ -1,10 +1,10 @@
-using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Service.Contracts.Infrastructure;
+using MoMoney.Service.Infrastructure.Eventing;
 using MoMoney.Service.Infrastructure.Transactions;
 
 namespace MoMoney.Presentation.Model.Projects

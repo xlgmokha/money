@@ -1,5 +1,5 @@
 using System;
-using MoMoney.Presentation.Presenters.Startup;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Utility.Core;
 
 namespace MoMoney.boot

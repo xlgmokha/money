@@ -1,7 +1,7 @@
-using Gorilla.Commons.Infrastructure.Eventing;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
+using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Presentation.Model.Menu.File.Commands
 {

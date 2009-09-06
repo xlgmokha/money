@@ -1,9 +1,11 @@
 using Gorilla.Commons.Infrastructure.Threading;
+using MoMoney.Presentation.Presenters.Startup;
 using MoMoney.Presentation.Views.Startup;
 using MoMoney.Presentation.Winforms.Views;
+using MoMoney.Service.Infrastructure.Threading;
 using MoMoney.Utility.Core;
 
-namespace MoMoney.Presentation.Presenters.Startup
+namespace MoMoney.Presentation.Presenters
 {
     public interface ISplashScreenPresenter : IDisposableCommand, ITimerClient
     {

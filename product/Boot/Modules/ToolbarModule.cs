@@ -1,8 +1,8 @@
-using Gorilla.Commons.Infrastructure.Eventing;
 using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Presenters.Shell;
+using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Modules
 {

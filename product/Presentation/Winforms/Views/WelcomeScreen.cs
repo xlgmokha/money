@@ -11,7 +11,7 @@ namespace MoMoney.Presentation.Winforms.Views
         public WelcomeScreen()
         {
             InitializeComponent();
-            titled("Getting Started");
+            titled("Getting Started").icon(ApplicationIcons.Home);
 
             ux_open_existing_file_button.will_be_shown_as(ApplicationImages.OpenExistingFile)
                 .when_hovered_over_will_show(ApplicationImages.OpenExistingFileSelected)

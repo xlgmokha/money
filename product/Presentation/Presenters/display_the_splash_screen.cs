@@ -1,6 +1,6 @@
 using System;
-using Gorilla.Commons.Infrastructure.Threading;
 using MoMoney.Presentation.Views.Startup;
+using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Presentation.Presenters.Startup
 {

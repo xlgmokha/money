@@ -1,5 +1,5 @@
 using System;
-using Gorilla.Commons.Infrastructure.Eventing;
+using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Presentation.Model.messages
 {
