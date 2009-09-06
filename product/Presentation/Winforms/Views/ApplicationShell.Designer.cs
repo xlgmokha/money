@@ -46,8 +46,8 @@ namespace MoMoney.Presentation.Winforms.Views
             WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             this.ux_main_menu_strip = new System.Windows.Forms.MenuStrip();
             this.ux_status_bar = new System.Windows.Forms.StatusStrip();
-            this.status_bar_label = new System.Windows.Forms.ToolStripStatusLabel();
             this.status_bar_progress_bar = new System.Windows.Forms.ToolStripProgressBar();
+            this.status_bar_label = new System.Windows.Forms.ToolStripStatusLabel();
             this.ux_dock_panel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.ux_tool_bar_strip = new System.Windows.Forms.ToolStrip();
             this.notification_icon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -66,8 +66,8 @@ namespace MoMoney.Presentation.Winforms.Views
             // ux_status_bar
             // 
             this.ux_status_bar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.status_bar_progress_bar,
-            this.status_bar_label});
+            this.status_bar_label,
+            this.status_bar_progress_bar});
             this.ux_status_bar.Location = new System.Drawing.Point(0, 485);
             this.ux_status_bar.Name = "ux_status_bar";
             this.ux_status_bar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -75,16 +75,19 @@ namespace MoMoney.Presentation.Winforms.Views
             this.ux_status_bar.TabIndex = 2;
             this.ux_status_bar.Text = "statusStrip1";
             // 
+            // status_bar_progress_bar
+            // 
+            this.status_bar_progress_bar.Name = "status_bar_progress_bar";
+            this.status_bar_progress_bar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.status_bar_progress_bar.RightToLeftLayout = true;
+            this.status_bar_progress_bar.Size = new System.Drawing.Size(75, 16);
+            this.status_bar_progress_bar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
             // status_bar_label
             // 
             this.status_bar_label.Name = "status_bar_label";
             this.status_bar_label.Size = new System.Drawing.Size(16, 17);
             this.status_bar_label.Text = "...";
-            // 
-            // status_bar_progress_bar
-            // 
-            this.status_bar_progress_bar.Name = "status_bar_progress_bar";
-            this.status_bar_progress_bar.Size = new System.Drawing.Size(75, 16);
             // 
             // ux_dock_panel
             // 

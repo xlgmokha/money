@@ -8,8 +8,8 @@ namespace MoMoney.boot.container.registration.proxy_configuration
     {
         public void configure(IProxyBuilder<T> item)
         {
-            item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>()).intercept_all();
             item.add_interceptor(Lazy.load<INotifyProgressInterceptor>()).intercept_all();
+            item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>()).intercept_all();
 
             //item
             //    .add_interceptor(
