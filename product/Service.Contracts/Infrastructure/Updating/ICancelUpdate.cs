@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Tasks.infrastructure.updating
+namespace MoMoney.Service.Contracts.Infrastructure.Updating
 {
     public interface ICancelUpdate : ICommand
     {

@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.windows.ui
+namespace MoMoney.boot
 {
     class hookup
     {

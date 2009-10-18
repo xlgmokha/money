@@ -9,7 +9,7 @@ namespace MoMoney.Presentation.Winforms.Databinding
     public class when_a_new_date_is_selected_by_a_date_time_picker_that_is_bound_to_a_property : concerns
     {
         it should_update_the_value_of_the_property =
-            () => Assertions.should_be_equal_to(thing_to_bind_to.birth_day, november_nineteenth);
+            () => thing_to_bind_to.birth_day.should_be_equal_to(november_nineteenth);
 
         context c = () =>
                         {

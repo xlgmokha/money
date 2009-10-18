@@ -1,10 +1,10 @@
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters
 {
     public interface IApplicationShellPresenter : IPresenter, IEventSubscriber<ClosingProjectEvent>
     {

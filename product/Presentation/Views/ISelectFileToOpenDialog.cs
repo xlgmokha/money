@@ -1,6 +1,6 @@
 using Gorilla.Commons.Infrastructure.FileSystem;
 
-namespace MoMoney.Presentation.Views.dialogs
+namespace MoMoney.Presentation.Views
 {
     public interface ISelectFileToOpenDialog
     {

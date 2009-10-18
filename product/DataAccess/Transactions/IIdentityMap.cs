@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public interface IIdentityMap<TKey, TValue>
     {

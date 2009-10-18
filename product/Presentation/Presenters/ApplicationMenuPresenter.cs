@@ -2,9 +2,9 @@ using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
 
-namespace MoMoney.Presentation.Presenters.Menu
+namespace MoMoney.Presentation.Presenters
 {
     public interface IApplicationMenuPresenter : IPresenter
     {

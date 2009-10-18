@@ -1,10 +1,10 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters
 {
     [Concern(typeof (NotificationIconPresenter))]
     public abstract class behaves_like_notification_icon_presenter : concerns_for<INotificationIconPresenter, NotificationIconPresenter>
@@ -15,10 +15,10 @@ namespace MoMoney.Presentation.Presenters.Shell
         //}
 
         context c = () =>
-                        {
-                            view = the_dependency<INotificationIconView>();
-                            broker = the_dependency<IEventAggregator>();
-                        };
+        {
+            view = the_dependency<INotificationIconView>();
+            broker = the_dependency<IEventAggregator>();
+        };
 
         protected static INotificationIconView view;
         protected static IEventAggregator broker;

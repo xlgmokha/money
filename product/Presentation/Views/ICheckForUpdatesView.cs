@@ -1,10 +1,9 @@
 using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters.updates;
-using MoMoney.Presentation.Views.Core;
+using MoMoney.Presentation.Presenters;
 
-namespace MoMoney.Presentation.Views.updates
+namespace MoMoney.Presentation.Views
 {
     public interface ICheckForUpdatesView : IView<ICheckForUpdatesPresenter>, ICallback<ApplicationVersion>
     {

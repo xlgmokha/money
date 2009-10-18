@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.FileSystem;
-using MoMoney.Presentation.Views.dialogs;
+using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Winforms.Views
 {

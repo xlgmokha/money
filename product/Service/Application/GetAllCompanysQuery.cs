@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Accounting;
@@ -8,6 +9,7 @@ using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.Service.Application
 {
+    [DisplayName("Loading all companies...")]
     public class GetAllCompanysQuery : IGetAllCompanysQuery
     {
         readonly ICompanyRepository companys;

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Menu.window

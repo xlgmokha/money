@@ -1,6 +1,6 @@
 using System;
 
-namespace MoMoney.Service.Infrastructure.Transactions
+namespace MoMoney.Service.Contracts.Infrastructure.Transactions
 {
     public interface IUnitOfWork : IDisposable
     {

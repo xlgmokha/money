@@ -4,7 +4,7 @@ using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters
 {
     public interface ITitleBarPresenter : IModule,
                                           IEventSubscriber<UnsavedChangesEvent>,

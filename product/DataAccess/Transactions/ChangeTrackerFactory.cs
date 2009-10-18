@@ -1,6 +1,5 @@
 using System;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.DataAccess.Transactions

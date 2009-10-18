@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Infrastructure.Transactions;
+using MoMoney.DataAccess.Transactions;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 

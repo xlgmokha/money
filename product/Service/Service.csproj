@@ -98,6 +98,7 @@
     <Compile Include="Application\IEventLog.cs" />
     <Compile Include="Application\RegisterNewCompanyCommand.cs" />
     <Compile Include="Application\SaveNewBillCommand.cs" />
+    <Compile Include="Infrastructure\debugging\Launch.cs" />
     <Compile Include="Infrastructure\Eventing\EventAggregator.cs" />
     <Compile Include="Infrastructure\Eventing\EventAggregatorSpecs.cs" />
     <Compile Include="Infrastructure\Eventing\IEvent.cs" />

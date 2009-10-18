@@ -1,9 +1,8 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using MoMoney.Presentation.Model.Menu.File.Commands;
-using MoMoney.Presentation.Views.Core;
-using MoMoney.Presentation.Views.dialogs;
+using MoMoney.Presentation.Model.Menu.File;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views

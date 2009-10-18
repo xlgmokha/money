@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Presenters.Navigation;
 using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Presenters

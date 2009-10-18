@@ -3,13 +3,6 @@ using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Views.billing;
-using MoMoney.Presentation.Views.dialogs;
-using MoMoney.Presentation.Views.Menu;
-using MoMoney.Presentation.Views.Navigation;
-using MoMoney.Presentation.Views.Shell;
-using MoMoney.Presentation.Views.Startup;
-using MoMoney.Presentation.Views.updates;
 using MoMoney.Presentation.Winforms.Views;
 
 namespace MoMoney.boot.container.registration

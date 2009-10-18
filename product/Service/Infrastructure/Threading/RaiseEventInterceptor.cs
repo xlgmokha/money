@@ -1,7 +1,7 @@
 using Castle.Core.Interceptor;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
+namespace MoMoney.Service.Infrastructure.Threading
 {
     public interface IRaiseEventInterceptor<Event> : IInterceptor where Event : IEvent, new()
     {

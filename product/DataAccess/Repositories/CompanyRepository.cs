@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Extensions;
+using MoMoney.DataAccess.Transactions;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 

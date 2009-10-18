@@ -1,8 +1,8 @@
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Views.dialogs;
+using MoMoney.Presentation.Views;
 
-namespace MoMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File
 {
     public interface ISaveAsCommand : ICommand
     {

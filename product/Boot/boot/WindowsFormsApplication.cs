@@ -8,14 +8,13 @@ using System.Threading;
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
-using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.boot.container;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Service.Infrastructure.Eventing;
-using MoMoney.windows.ui;
+using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.boot
 {

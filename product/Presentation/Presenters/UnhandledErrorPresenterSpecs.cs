@@ -2,10 +2,10 @@ using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.messages;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters
 {
     public class behaves_like_unhandled_error_presenter :
         concerns_for<IUnhandledErrorPresenter, UnhandledErrorPresenter>
@@ -16,10 +16,10 @@ namespace MoMoney.Presentation.Presenters.Shell
         //}
 
         context c = () =>
-                        {
-                            view = the_dependency<IUnhandledErrorView>();
-                            broker = the_dependency<IEventAggregator>();
-                        };
+        {
+            view = the_dependency<IUnhandledErrorView>();
+            broker = the_dependency<IEventAggregator>();
+        };
 
         protected static IUnhandledErrorView view;
         protected static IEventAggregator broker;

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Views.Core;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Resources;
 using WeifenLuo.WinFormsUI.Docking;

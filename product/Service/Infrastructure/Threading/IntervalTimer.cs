@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Timers;
-using Gorilla.Commons.Infrastructure.Threading;
 
 namespace MoMoney.Service.Infrastructure.Threading
 {

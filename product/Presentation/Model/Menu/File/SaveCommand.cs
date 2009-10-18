@@ -1,7 +1,7 @@
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Model.Projects;
 
-namespace MoMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File
 {
     public interface ISaveCommand : ICommand
     {

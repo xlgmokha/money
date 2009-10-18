@@ -1,7 +1,7 @@
 using System;
 using Gorilla.Commons.Utility.Core;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public interface IChangeTracker : IDisposable
     {

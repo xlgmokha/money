@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters
 {
     public class NotificationPresenter : INotification
     {

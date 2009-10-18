@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Presentation.Views.Menu;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views

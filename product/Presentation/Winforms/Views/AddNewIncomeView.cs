@@ -4,7 +4,6 @@ using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Views.Core;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Krypton;
 using MoMoney.Presentation.Winforms.Resources;

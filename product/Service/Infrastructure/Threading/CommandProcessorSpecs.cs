@@ -1,9 +1,8 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Service.Infrastructure.Threading;
 
-namespace Gorilla.Commons.Infrastructure.Threading
+namespace MoMoney.Service.Infrastructure.Threading
 {
     [Concern(typeof (CommandProcessor))]
     public abstract class behaves_like_a_command_processor : concerns_for<ICommandProcessor, CommandProcessor>
@@ -18,17 +17,17 @@ namespace Gorilla.Commons.Infrastructure.Threading
         it should_run_the_second_command_in_the_queue = () => second_command.was_told_to(f => f.run());
 
         context c = () =>
-                        {
-                            first_command = an<ICommand>();
-                            second_command = an<ICommand>();
-                        };
+        {
+            first_command = an<ICommand>();
+            second_command = an<ICommand>();
+        };
 
         because b = () =>
-                        {
-                            sut.add(first_command);
-                            sut.add(second_command);
-                            sut.run();
-                        };
+        {
+            sut.add(first_command);
+            sut.add(second_command);
+            sut.run();
+        };
 
         static ICommand first_command;
         static ICommand second_command;
@@ -43,11 +42,11 @@ namespace Gorilla.Commons.Infrastructure.Threading
         context c = () => { first_command = an<ICommand>(); };
 
         because b = () =>
-                        {
-                            sut.add(first_command);
-                            sut.run();
-                            sut.run();
-                        };
+        {
+            sut.add(first_command);
+            sut.run();
+            sut.run();
+        };
 
         static ICommand first_command;
     }

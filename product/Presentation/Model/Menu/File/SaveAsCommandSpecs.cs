@@ -2,9 +2,9 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Views.dialogs;
+using MoMoney.Presentation.Views;
 
-namespace MoMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File
 {
     [Concern(typeof (SaveAsCommand))]
     public class when_saving_the_current_project_to_a_new_file_path : concerns_for<ISaveAsCommand, SaveAsCommand>
@@ -12,13 +12,13 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         it should_save_the_current_project_to_the_new_path = () => current_project.was_told_to(x => x.save_project_to(new_path));
 
         context c = () =>
-                        {
-                            current_project = an<IProjectController>();
-                            view = an<ISelectFileToSaveToDialog>();
-                            new_path = "blah_blah";
+        {
+            current_project = an<IProjectController>();
+            view = an<ISelectFileToSaveToDialog>();
+            new_path = "blah_blah";
 
-                            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(new_path);
-                        };
+            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(new_path);
+        };
 
         because b = () => sut.run();
 

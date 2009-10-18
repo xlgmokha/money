@@ -1,6 +1,6 @@
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace MoMoney.Presentation.Views.Core
+namespace MoMoney.Presentation.Views
 {
     public interface IDockedContentView : IDockContent, IView
     {

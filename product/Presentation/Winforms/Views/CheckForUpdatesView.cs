@@ -3,10 +3,8 @@ using System.Reflection;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters.updates;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Views.Core;
-using MoMoney.Presentation.Views.updates;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views

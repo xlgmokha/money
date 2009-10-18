@@ -3,13 +3,10 @@ using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.DTO;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Presenters.Commands;
-using MoMoney.Presentation.Views.updates;
+using MoMoney.Presentation.Views;
 using MoMoney.Service.Contracts.Infrastructure.Updating;
-using MoMoney.Service.Infrastructure.Updating;
-using MoMoney.Tasks.infrastructure.updating;
 
-namespace MoMoney.Presentation.Presenters.updates
+namespace MoMoney.Presentation.Presenters
 {
     public interface ICheckForUpdatesPresenter : IPresenter, ICallback<Percent>
     {

@@ -5,7 +5,7 @@ using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 using XPExplorerBar;
 
-namespace MoMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters
 {
     public interface IExpandoBuilder : IBuilder<Expando>
     {

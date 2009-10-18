@@ -1,6 +1,4 @@
-using MoMoney.Presentation.Views.Core;
-
-namespace MoMoney.Presentation.Views.Menu
+namespace MoMoney.Presentation.Views
 {
     public interface IAboutApplicationView : IDockedContentView
     {

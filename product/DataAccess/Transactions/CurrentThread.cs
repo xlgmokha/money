@@ -1,6 +1,6 @@
 using System.Threading;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public class CurrentThread : IThread
     {

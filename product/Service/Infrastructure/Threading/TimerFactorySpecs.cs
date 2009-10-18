@@ -3,7 +3,7 @@ using System.Timers;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Infrastructure.Threading
+namespace MoMoney.Service.Infrastructure.Threading
 {
     [Concern(typeof (TimerFactory))]
     public abstract class behaves_like_a_timer_factory : concerns_for<ITimerFactory, TimerFactory>
@@ -31,11 +31,11 @@ namespace Gorilla.Commons.Infrastructure.Threading
             () => result.Interval.should_be_equal_to(milliseconds);
 
         because b = () =>
-                        {
-                            var timer_interval = new TimeSpan(50);
-                            milliseconds = 50;
-                            result = sut.create_for(timer_interval);
-                        };
+        {
+            var timer_interval = new TimeSpan(50);
+            milliseconds = 50;
+            result = sut.create_for(timer_interval);
+        };
 
         static Timer result;
         static double milliseconds;

@@ -5,8 +5,8 @@ using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Service.Contracts.Infrastructure;
+using MoMoney.Service.Contracts.Infrastructure.Transactions;
 using MoMoney.Service.Infrastructure.Eventing;
-using MoMoney.Service.Infrastructure.Transactions;
 
 namespace MoMoney.Presentation.Model.Projects
 {
@@ -34,7 +34,6 @@ namespace MoMoney.Presentation.Model.Projects
         context c = () =>
                         {
                             file_to_update = an<IFile>();
-                            current_file = an<IFile>();
                             when_the(file_to_update).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
                         };
 
@@ -45,7 +44,6 @@ namespace MoMoney.Presentation.Model.Projects
                         };
 
         static IFile file_to_update;
-        static IFile current_file;
     }
 
     public class when_attempting_to_save_the_changes_to_a_project_and_a_file_to_save_to_has_not_been_specified :

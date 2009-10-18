@@ -2,16 +2,16 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Projects;
 
-namespace MoMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File
 {
     [Concern(typeof (NewCommand))]
     public abstract class behaves_like_new_command : concerns_for<INewCommand, NewCommand>
     {
         context c = () =>
-                        {
-                            current_project = the_dependency<IProjectController>();
-                            save_changes_command = the_dependency<ISaveChangesCommand>();
-                        };
+        {
+            current_project = the_dependency<IProjectController>();
+            save_changes_command = the_dependency<ISaveChangesCommand>();
+        };
 
         protected static IProjectController current_project;
         protected static ISaveChangesCommand save_changes_command;

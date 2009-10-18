@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Model.file_system
+namespace MoMoney.Presentation.Model.FileSystem
 {
     public interface IFolder
     {

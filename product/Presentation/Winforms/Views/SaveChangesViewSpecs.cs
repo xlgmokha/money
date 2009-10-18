@@ -1,7 +1,7 @@
 using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Winforms.Helpers;
 
 namespace MoMoney.Presentation.Winforms.Views

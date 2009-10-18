@@ -1,7 +1,6 @@
 using System.Windows.Forms;
-using MoMoney.Presentation.Views.Core;
 
-namespace MoMoney.Presentation.Views.core
+namespace MoMoney.Presentation.Views
 {
     public interface IApplicationWindow : IView
     {

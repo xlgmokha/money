@@ -1,10 +1,10 @@
 using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Presentation.Views.Startup;
+using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Threading;
 
-namespace MoMoney.Presentation.Presenters.Startup
+namespace MoMoney.Presentation.Presenters
 {
     [Concern(typeof (SplashScreenPresenter))]
     public abstract class behaves_like_splash_screen_presenter : concerns_for<ISplashScreenPresenter>
@@ -15,10 +15,10 @@ namespace MoMoney.Presentation.Presenters.Startup
         }
 
         context c = () =>
-                        {
-                            timer = the_dependency<ITimer>();
-                            view = the_dependency<ISplashScreenView>();
-                        };
+        {
+            timer = the_dependency<ITimer>();
+            view = the_dependency<ISplashScreenView>();
+        };
 
         protected static ITimer timer;
         protected static ISplashScreenView view;
@@ -41,10 +41,10 @@ namespace MoMoney.Presentation.Presenters.Startup
         context c = () => when_the(view).is_asked_for(v => v.current_opacity()).it_will_return(0.5);
 
         because b = () =>
-                        {
-                            sut.run();
-                            sut.notify();
-                        };
+        {
+            sut.run();
+            sut.notify();
+        };
     }
 
     public class when_the_timer_notifies_the_presenter_to_update_and_the_opacity_of_the_view_has_reached_100_percent :
@@ -55,10 +55,10 @@ namespace MoMoney.Presentation.Presenters.Startup
         context c = () => when_the(view).is_asked_for(v => v.current_opacity()).it_will_return(1);
 
         because b = () =>
-                        {
-                            sut.run();
-                            sut.notify();
-                        };
+        {
+            sut.run();
+            sut.notify();
+        };
     }
 
     public class when_hiding_the_splash_screen : behaves_like_splash_screen_presenter
@@ -71,10 +71,10 @@ namespace MoMoney.Presentation.Presenters.Startup
         context c = () => when_the(view).is_asked_for(v => v.current_opacity()).it_will_return(.5);
 
         because b = () =>
-                        {
-                            sut.Dispose();
-                            sut.notify();
-                        };
+        {
+            sut.Dispose();
+            sut.notify();
+        };
     }
 
     public class when_the_splash_screen_is_fading_away_and_its_opacity_has_reached_zero :
@@ -87,9 +87,9 @@ namespace MoMoney.Presentation.Presenters.Startup
         context c = () => when_the(view).is_asked_for(v => v.current_opacity()).it_will_return(0);
 
         because b = () =>
-                        {
-                            sut.Dispose();
-                            sut.notify();
-                        };
+        {
+            sut.Dispose();
+            sut.notify();
+        };
     }
 }

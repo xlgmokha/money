@@ -1,8 +1,8 @@
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Navigation;
-using MoMoney.Presentation.Views.Navigation;
+using MoMoney.Presentation.Views;
 
-namespace MoMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters
 {
     public interface INavigationPresenter : IContentPresenter
     {

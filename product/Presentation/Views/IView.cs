@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using MoMoney.Presentation.Core;
 
-namespace MoMoney.Presentation.Views.Core
+namespace MoMoney.Presentation.Views
 {
     public interface IView : IWindowEvents, ISynchronizeInvoke, IDisposable
     {

@@ -1,4 +1,5 @@
-using Gorilla.Commons.Infrastructure.Transactions;
+using MoMoney.DataAccess.Transactions;
+using MoMoney.Service.Contracts.Infrastructure.Transactions;
 
 namespace MoMoney.Service.Infrastructure.Transactions
 {

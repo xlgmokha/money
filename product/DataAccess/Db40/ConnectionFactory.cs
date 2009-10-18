@@ -1,8 +1,8 @@
 using Db4objects.Db4o;
 using Db4objects.Db4o.Config;
 using Gorilla.Commons.Infrastructure.FileSystem;
-using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Extensions;
+using MoMoney.DataAccess.Transactions;
 
 namespace MoMoney.DataAccess.Db40
 {

@@ -2,10 +2,9 @@ using System;
 using System.Timers;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Service.Infrastructure.Threading;
 using Rhino.Mocks;
 
-namespace Gorilla.Commons.Infrastructure.Threading
+namespace MoMoney.Service.Infrastructure.Threading
 {
     [Concern(typeof (IntervalTimer))]
     public abstract class behaves_like_an_interval_timer : concerns_for<ITimer, IntervalTimer>
@@ -26,12 +25,12 @@ namespace Gorilla.Commons.Infrastructure.Threading
         it should_start_the_timer = () => timer.was_told_to(t => t.Start());
 
         context c = () =>
-                        {
-                            client = an<ITimerClient>();
-                            timer = dependency<Timer>();
+        {
+            client = an<ITimerClient>();
+            timer = dependency<Timer>();
 
-                            factory.is_told_to(f => f.create_for(new TimeSpan(0, 10, 0))).it_will_return(timer);
-                        };
+            factory.is_told_to(f => f.create_for(new TimeSpan(0, 10, 0))).it_will_return(timer);
+        };
 
         because b = () => sut.start_notifying(client, new TimeSpan(0, 10, 0));
     }
@@ -40,28 +39,28 @@ namespace Gorilla.Commons.Infrastructure.Threading
     public class when_starting_a_timer_for_an_existing_client : behaves_like_an_interval_timer
     {
         it should_stop_the_previously_started_timer = () =>
-                                                          {
-                                                              first_timer.was_told_to(t => t.Stop());
-                                                              first_timer.was_told_to(t => t.Dispose());
-                                                          };
+        {
+            first_timer.was_told_to(t => t.Stop());
+            first_timer.was_told_to(t => t.Dispose());
+        };
 
         it should_start_a_new_timer = () => second_timer.was_told_to(t => t.Start());
 
         context c = () =>
-                        {
-                            client = an<ITimerClient>();
-                            first_timer = dependency<Timer>();
-                            second_timer = dependency<Timer>();
+        {
+            client = an<ITimerClient>();
+            first_timer = dependency<Timer>();
+            second_timer = dependency<Timer>();
 
-                            factory.is_told_to(f => f.create_for(new TimeSpan(0, 1, 1))).it_will_return(first_timer);
-                            factory.is_told_to(f => f.create_for(new TimeSpan(0, 2, 2))).it_will_return(second_timer);
-                        };
+            factory.is_told_to(f => f.create_for(new TimeSpan(0, 1, 1))).it_will_return(first_timer);
+            factory.is_told_to(f => f.create_for(new TimeSpan(0, 2, 2))).it_will_return(second_timer);
+        };
 
         because b = () =>
-                        {
-                            sut.start_notifying(client, new TimeSpan(0, 1, 1));
-                            sut.start_notifying(client, new TimeSpan(0, 2, 2));
-                        };
+        {
+            sut.start_notifying(client, new TimeSpan(0, 1, 1));
+            sut.start_notifying(client, new TimeSpan(0, 2, 2));
+        };
 
         static ITimerClient client;
         static Timer first_timer;
@@ -77,17 +76,17 @@ namespace Gorilla.Commons.Infrastructure.Threading
         static Timer timer;
 
         context c = () =>
-                        {
-                            client = an<ITimerClient>();
-                            timer = dependency<Timer>();
-                            factory.is_told_to(f => f.create_for(Arg<TimeSpan>.Is.Anything)).it_will_return(timer);
-                        };
+        {
+            client = an<ITimerClient>();
+            timer = dependency<Timer>();
+            factory.is_told_to(f => f.create_for(Arg<TimeSpan>.Is.Anything)).it_will_return(timer);
+        };
 
         because b = () =>
-                        {
-                            sut.start_notifying(client, new TimeSpan(0, 10, 0));
-                            timer.Raise(t => t.Elapsed += null, timer, null);
-                        };
+        {
+            sut.start_notifying(client, new TimeSpan(0, 10, 0));
+            timer.Raise(t => t.Elapsed += null, timer, null);
+        };
     }
 
     [Concern(typeof (IntervalTimer))]
@@ -101,19 +100,19 @@ namespace Gorilla.Commons.Infrastructure.Threading
         it should_dispose_the_timer_that_was_started_for_the_client = () => timer.was_told_to(t => t.Dispose());
 
         context c = () =>
-                        {
-                            client = an<ITimerClient>();
-                            timer = dependency<Timer>();
+        {
+            client = an<ITimerClient>();
+            timer = dependency<Timer>();
 
-                            when_the(factory).is_told_to(t => t.create_for(Arg<TimeSpan>.Is.Anything)).it_will_return(
-                                timer);
-                        };
+            when_the(factory).is_told_to(t => t.create_for(Arg<TimeSpan>.Is.Anything)).it_will_return(
+                timer);
+        };
 
         because b = () =>
-                        {
-                            sut.start_notifying(client, new TimeSpan(0, 0, 1));
-                            sut.stop_notifying(client);
-                        };
+        {
+            sut.start_notifying(client, new TimeSpan(0, 0, 1));
+            sut.stop_notifying(client);
+        };
     }
 
     [Concern(typeof (IntervalTimer))]

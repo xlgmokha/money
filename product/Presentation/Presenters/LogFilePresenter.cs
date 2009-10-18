@@ -1,8 +1,8 @@
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views.Shell;
-using MoMoney.Service.Infrastructure.Logging;
+using MoMoney.Presentation.Views;
+using MoMoney.Service.Contracts.Infrastructure.Logging;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters
 {
     public interface ILogFilePresenter : IContentPresenter
     {

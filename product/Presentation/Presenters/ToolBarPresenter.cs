@@ -3,12 +3,12 @@ using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu;
-using MoMoney.Presentation.Model.Menu.File.Commands;
+using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters
 {
     public interface IToolbarPresenter : IPresenter
     {

@@ -3,7 +3,7 @@ using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters
 {
     public interface IRestartCommand : ICommand
     {

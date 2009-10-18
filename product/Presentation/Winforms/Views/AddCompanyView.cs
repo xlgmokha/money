@@ -6,7 +6,6 @@ using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Views.Core;
 using MoMoney.Presentation.Winforms.Databinding;
 using MoMoney.Presentation.Winforms.Resources;
 
@@ -35,7 +34,7 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void attach_to(IAddCompanyPresenter presenter)
         {
-            Create.bind_to(ux_company_name, dto, x => x.company_name);
+            ux_company_name.bind_to(dto, x => x.company_name);
             submit_button = x => presenter.submit(dto);
         }
 

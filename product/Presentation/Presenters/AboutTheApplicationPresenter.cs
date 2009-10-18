@@ -1,7 +1,7 @@
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views.Menu;
+using MoMoney.Presentation.Views;
 
-namespace MoMoney.Presentation.Presenters.Menu.Help
+namespace MoMoney.Presentation.Presenters
 {
     public interface IAboutApplicationPresenter : IContentPresenter
     {

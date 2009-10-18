@@ -1,7 +1,7 @@
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters
 {
     public interface IGettingStartedPresenter : IContentPresenter
     {

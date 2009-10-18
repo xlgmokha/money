@@ -1,4 +1,4 @@
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public interface IContext
     {

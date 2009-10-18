@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public class PerThread : IContext
     {
@@ -39,14 +39,14 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         {
             var id = Thread.CurrentThread.ManagedThreadId;
             within_lock(() =>
-                            {
-                                if (!slots.ContainsKey(id))
-                                {
-                                    var slot = Thread.GetNamedDataSlot(GetType().FullName);
-                                    slots.Add(id, slot);
-                                    Thread.SetData(slot, new Hashtable());
-                                }
-                            });
+            {
+                if (!slots.ContainsKey(id))
+                {
+                    var slot = Thread.GetNamedDataSlot(GetType().FullName);
+                    slots.Add(id, slot);
+                    Thread.SetData(slot, new Hashtable());
+                }
+            });
             return (IDictionary) Thread.GetData(slots[id]);
         }
 

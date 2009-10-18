@@ -1,9 +1,9 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters
 {
     public class GettingStartedPresenterSpecs
     {
@@ -11,10 +11,10 @@ namespace MoMoney.Presentation.Presenters.Shell
             concerns_for<IGettingStartedPresenter, GettingStartedPresenter>
         {
             context c = () =>
-                            {
-                                view = the_dependency<IGettingStartedView>();
-                                broker = the_dependency<IEventAggregator>();
-                            };
+            {
+                view = the_dependency<IGettingStartedView>();
+                broker = the_dependency<IEventAggregator>();
+            };
 
             static protected IEventAggregator broker;
             static protected IGettingStartedView view;

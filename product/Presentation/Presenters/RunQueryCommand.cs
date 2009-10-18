@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters
 {
     public interface IRunQueryCommand<T> : ICommand
     {

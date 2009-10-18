@@ -4,7 +4,7 @@ using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Core;
 using Gorilla.Commons.Utility.Extensions;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public class TrackerEntrySpecs
     {
@@ -55,11 +55,11 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         because b = () => { result = sut.has_changes(); };
 
         context c = () =>
-                        {
-                            var id = Guid.NewGuid();
-                            original = new Pillow("green", id);
-                            current = new Pillow(null, id);
-                        };
+        {
+            var id = Guid.NewGuid();
+            original = new Pillow("green", id);
+            current = new Pillow(null, id);
+        };
 
         public override ITrackerEntry<Pillow> create_sut()
         {
@@ -80,11 +80,11 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         because b = () => { result = sut.has_changes(); };
 
         context c = () =>
-                        {
-                            var id = Guid.NewGuid();
-                            original = new Pillow("green", id);
-                            current = new Pillow("green", id);
-                        };
+        {
+            var id = Guid.NewGuid();
+            original = new Pillow("green", id);
+            current = new Pillow("green", id);
+        };
 
         public override ITrackerEntry<Pillow> create_sut()
         {

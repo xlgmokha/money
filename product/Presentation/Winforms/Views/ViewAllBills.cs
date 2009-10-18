@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters.billing;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 

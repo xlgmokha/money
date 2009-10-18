@@ -1,6 +1,6 @@
 using System;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public class SessionNotStartedException : Exception
     {

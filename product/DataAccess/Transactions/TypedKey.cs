@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public class TypedKey<T> : IKey<T>
     {

@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
-using MoMoney.Presentation.Presenters.Shell;
-using MoMoney.Presentation.Views.Core;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Presenters;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views

@@ -2,7 +2,7 @@ using Gorilla.Commons.Infrastructure.Logging;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Model.Projects;
 
-namespace MoMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File
 {
     public interface ICloseCommand : ICommand, ISaveChangesCallback, ILoggable
     {

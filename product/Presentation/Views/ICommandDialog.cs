@@ -1,6 +1,6 @@
 using Gorilla.Commons.Utility.Core;
 
-namespace Gorilla.Commons.Windows.Forms
+namespace MoMoney.Presentation.Views
 {
     public interface ICommandDialog<Command> where Command : ICommand
     {

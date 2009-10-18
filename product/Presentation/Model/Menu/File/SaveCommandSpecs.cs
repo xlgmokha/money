@@ -2,7 +2,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Projects;
 
-namespace MoMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File
 {
     [Concern(typeof (SaveCommand))]
     public abstract class behaves_like_the_save_command : concerns_for<ISaveCommand, SaveCommand>
@@ -13,10 +13,10 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         }
 
         context c = () =>
-                        {
-                            current_project = an<IProjectController>();
-                            save_as_command = an<ISaveAsCommand>();
-                        };
+        {
+            current_project = an<IProjectController>();
+            save_as_command = an<ISaveAsCommand>();
+        };
         protected static ISaveAsCommand save_as_command;
         protected static IProjectController current_project;
     }

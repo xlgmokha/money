@@ -3,23 +3,20 @@ using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters.Commands;
-using MoMoney.Presentation.Views.updates;
+using MoMoney.Presentation.Views;
 using MoMoney.Service.Contracts.Infrastructure.Updating;
-using MoMoney.Service.Infrastructure.Updating;
-using MoMoney.Tasks.infrastructure.updating;
 
-namespace MoMoney.Presentation.Presenters.updates
+namespace MoMoney.Presentation.Presenters
 {
     [Concern(typeof (CheckForUpdatesPresenter))]
     public abstract class behaves_like_check_for_updates_presenter :
         concerns_for<ICheckForUpdatesPresenter, CheckForUpdatesPresenter>
     {
         context c = () =>
-                        {
-                            view = the_dependency<ICheckForUpdatesView>();
-                            pump = the_dependency<ICommandPump>();
-                        };
+        {
+            view = the_dependency<ICheckForUpdatesView>();
+            pump = the_dependency<ICommandPump>();
+        };
 
         static protected ICheckForUpdatesView view;
         static protected ICommandPump pump;

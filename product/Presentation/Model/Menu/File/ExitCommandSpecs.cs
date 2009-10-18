@@ -4,7 +4,7 @@ using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File
 {
     [Concern(typeof (ExitCommand))]
     public abstract class behaves_like_exit_command : concerns_for<IExitCommand>
@@ -15,11 +15,11 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
         }
 
         context c = () =>
-                        {
-                            application = the_dependency<IApplication>();
-                            broker = the_dependency<IEventAggregator>();
-                            save_changes_command = the_dependency<ISaveChangesCommand>();
-                        };
+        {
+            application = the_dependency<IApplication>();
+            broker = the_dependency<IEventAggregator>();
+            save_changes_command = the_dependency<ISaveChangesCommand>();
+        };
 
         protected static IApplication application;
         protected static IEventAggregator broker;

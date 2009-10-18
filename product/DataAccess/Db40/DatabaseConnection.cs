@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Db4objects.Db4o;
-using Gorilla.Commons.Infrastructure.Transactions;
+using MoMoney.DataAccess.Transactions;
 
 namespace MoMoney.DataAccess.Db40
 {

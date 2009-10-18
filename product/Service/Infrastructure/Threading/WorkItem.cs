@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-namespace Gorilla.Commons.Infrastructure.Threading
+namespace MoMoney.Service.Infrastructure.Threading
 {
     [Serializable]
     internal class WorkItem : IAsyncResult

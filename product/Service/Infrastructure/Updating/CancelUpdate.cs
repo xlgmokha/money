@@ -1,4 +1,4 @@
-using MoMoney.Tasks.infrastructure.updating;
+using MoMoney.Service.Contracts.Infrastructure.Updating;
 
 namespace MoMoney.Service.Infrastructure.Updating
 {

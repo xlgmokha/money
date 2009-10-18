@@ -2,19 +2,19 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Views.dialogs;
+using MoMoney.Presentation.Views;
 
-namespace MoMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File
 {
     [Concern(typeof (OpenCommand))]
     public abstract class behaves_like_command_to_open_a_project : concerns_for<IOpenCommand, OpenCommand>
     {
         context c = () =>
-                        {
-                            view = the_dependency<ISelectFileToOpenDialog>();
-                            project = the_dependency<IProjectController>();
-                            save_changes_command = the_dependency<ISaveChangesCommand>();
-                        };
+        {
+            view = the_dependency<ISelectFileToOpenDialog>();
+            project = the_dependency<IProjectController>();
+            save_changes_command = the_dependency<ISaveChangesCommand>();
+        };
 
         protected static IProjectController project;
         protected static ISelectFileToOpenDialog view;
@@ -37,10 +37,10 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
             () => project.was_told_to(x => x.open_project_from(file_path));
 
         context c = () =>
-                        {
-                            file_path = "blah_blah";
-                            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
-                        };
+        {
+            file_path = "blah_blah";
+            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
+        };
 
         because b = () => sut.saved();
 
@@ -54,10 +54,10 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
             () => project.was_told_to(x => x.open_project_from(file_path));
 
         context c = () =>
-                        {
-                            file_path = "blah_blah";
-                            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
-                        };
+        {
+            file_path = "blah_blah";
+            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
+        };
 
         because b = () => sut.not_saved();
 
@@ -72,10 +72,10 @@ namespace MoMoney.Presentation.Model.Menu.File.Commands
             () => project.was_not_told_to(x => x.open_project_from(file_path));
 
         context c = () =>
-                        {
-                            file_path = "blah_blah";
-                            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
-                        };
+        {
+            file_path = "blah_blah";
+            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
+        };
 
         because b = () => sut.cancelled();
 

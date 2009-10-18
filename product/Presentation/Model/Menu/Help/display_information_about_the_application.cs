@@ -1,8 +1,7 @@
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Presenters;
-using MoMoney.Presentation.Presenters.Menu.Help;
 
-namespace MoMoney.Presentation.Model.Menu.Help.commands
+namespace MoMoney.Presentation.Model.Menu.Help
 {
     public interface IDisplayInformationAboutTheApplication : ICommand
     {

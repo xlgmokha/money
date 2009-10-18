@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Presenters.Navigation
+namespace MoMoney.Presentation.Presenters
 {
     public class Build
     {

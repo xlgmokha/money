@@ -19,7 +19,7 @@ namespace MoMoney.Service.Infrastructure.Eventing
     {
         it should_notify_all_subscribers_of_the_event = () =>
                                                             {
-                                                                first_subscriber.was_told_to<IEventSubscriber<TestEvent>>(x => x.notify(message));
+                                                                first_subscriber.was_told_to(x => x.notify(message));
                                                                 second_subscriber.was_told_to(x => x.notify(message));
                                                             };
 

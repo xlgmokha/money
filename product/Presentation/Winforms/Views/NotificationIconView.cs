@@ -4,7 +4,7 @@ using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 using MenuItem=System.Windows.Forms.MenuItem;
 

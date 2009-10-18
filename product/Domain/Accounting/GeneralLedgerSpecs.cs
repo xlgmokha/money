@@ -36,7 +36,7 @@ namespace MoMoney.Domain.accounting
                                                                      };
 
         it should_not_return_any_entries_that_were_not_posted_for_that_month =
-            () => Assertions.should_not_contain(result, april_first);
+            () => result.should_not_contain(april_first);
 
         context c = () =>
                         {

@@ -1,5 +1,6 @@
 using System.IO;
 using Gorilla.Commons.Infrastructure.Reflection;
+using MoMoney.Service.Contracts.Infrastructure.Logging;
 
 namespace MoMoney.Service.Infrastructure.Logging
 {

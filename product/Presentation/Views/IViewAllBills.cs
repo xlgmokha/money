@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters.billing;
-using MoMoney.Presentation.Views.Core;
+using MoMoney.Presentation.Presenters;
 
 namespace MoMoney.Presentation.Views
 {

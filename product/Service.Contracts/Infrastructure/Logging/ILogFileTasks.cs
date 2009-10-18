@@ -1,4 +1,4 @@
-namespace MoMoney.Service.Infrastructure.Logging
+namespace MoMoney.Service.Contracts.Infrastructure.Logging
 {
     public interface ILogFileTasks
     {

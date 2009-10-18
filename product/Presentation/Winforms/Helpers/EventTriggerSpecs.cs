@@ -11,8 +11,8 @@ namespace MoMoney.Presentation.Winforms.Helpers
         it should_correctly_call_that_method =
             () =>
                 {
-                    Assertions.should_be_true(control.called_on_key_press);
-                    Assertions.should_be_false(control.called_on_enter);
+                    control.called_on_key_press.should_be_true();
+                    control.called_on_enter.should_be_false();
                 };
 
         context c = () => { control = new TestControl(); };

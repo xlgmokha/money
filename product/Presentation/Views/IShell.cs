@@ -1,8 +1,6 @@
 using System.ComponentModel;
 using System.Windows.Forms;
-using MoMoney.Presentation.Presenters.Shell;
-using MoMoney.Presentation.Views.Core;
-using MoMoney.Presentation.Views.Shell;
+using MoMoney.Presentation.Presenters;
 
 namespace MoMoney.Presentation.Views
 {

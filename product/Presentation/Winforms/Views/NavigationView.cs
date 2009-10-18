@@ -2,7 +2,6 @@ using System.Windows.Forms;
 using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Presentation.Model.Navigation;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Views.Navigation;
 using MoMoney.Presentation.Winforms.Resources;
 using WeifenLuo.WinFormsUI.Docking;
 

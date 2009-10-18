@@ -3,7 +3,7 @@ using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
 using MoMoney.Utility.Core;
 
-namespace Gorilla.Commons.Infrastructure.Threading
+namespace MoMoney.Service.Infrastructure.Threading
 {
     [Concern(typeof (BackgroundThreadFactory))]
     public abstract class behaves_like_a_background_thread_factory : concerns_for<IBackgroundThreadFactory, BackgroundThreadFactory>

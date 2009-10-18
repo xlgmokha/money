@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using Gorilla.Commons.Utility.Core;
 
-namespace Gorilla.Commons.Infrastructure.Threading
+namespace MoMoney.Service.Infrastructure.Threading
 {
     public interface ISynchronizedCommand : IParameterizedCommand<Action>, IParameterizedCommand<ICommand>
     {

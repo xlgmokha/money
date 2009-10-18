@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     [Concern(typeof (IdentityMap<,>))]
     public class behaves_like_identity_map : concerns_for<IIdentityMap<int, string>, IdentityMap<int, string>>
@@ -18,10 +18,10 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         it should_return_the_item_that_was_added_for_the_given_key = () => result.should_be_equal_to("1");
 
         because b = () =>
-                        {
-                            sut.add(1, "1");
-                            result = sut.item_that_belongs_to(1);
-                        };
+        {
+            sut.add(1, "1");
+            result = sut.item_that_belongs_to(1);
+        };
 
         static string result;
     }
@@ -43,10 +43,10 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         it should_return_true = () => result.should_be_true();
 
         because b = () =>
-                        {
-                            sut.add(10, "10");
-                            result = sut.contains_an_item_for(10);
-                        };
+        {
+            sut.add(10, "10");
+            result = sut.contains_an_item_for(10);
+        };
 
         static bool result;
     }
@@ -69,11 +69,11 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         it should_replace_the_old_item_with_the_new_one = () => result.should_be_equal_to("7");
 
         because b = () =>
-                        {
-                            sut.add(6, "6");
-                            sut.update_the_item_for(6, "7");
-                            result = sut.item_that_belongs_to(6);
-                        };
+        {
+            sut.add(6, "6");
+            sut.update_the_item_for(6, "7");
+            result = sut.item_that_belongs_to(6);
+        };
 
         static string result;
     }
@@ -85,10 +85,10 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         it should_add_the_new_item = () => result.should_be_equal_to("3");
 
         because b = () =>
-                        {
-                            sut.update_the_item_for(3, "3");
-                            result = sut.item_that_belongs_to(3);
-                        };
+        {
+            sut.update_the_item_for(3, "3");
+            result = sut.item_that_belongs_to(3);
+        };
 
         static string result;
     }

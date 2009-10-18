@@ -1,8 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using MoMoney.Presentation.Views.core;
-using MoMoney.Presentation.Views.Core;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Resources;
 

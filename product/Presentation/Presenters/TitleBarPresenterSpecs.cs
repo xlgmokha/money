@@ -5,17 +5,17 @@ using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters.Shell
+namespace MoMoney.Presentation.Presenters
 {
     [Concern(typeof (TitleBarPresenter))]
     public abstract class behaves_like_a_title_bar_presenter : concerns_for<ITitleBarPresenter, TitleBarPresenter>
     {
         context c = () =>
-                        {
-                            project = the_dependency<IProjectController>();
-                            view = the_dependency<ITitleBar>();
-                            broker = the_dependency<IEventAggregator>();
-                        };
+        {
+            project = the_dependency<IProjectController>();
+            view = the_dependency<ITitleBar>();
+            broker = the_dependency<IEventAggregator>();
+        };
 
         protected static ITitleBar view;
         protected static IEventAggregator broker;

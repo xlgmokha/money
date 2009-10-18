@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Gorilla.Commons.Infrastructure.FileSystem;
-using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Utility.Core;
+using MoMoney.DataAccess.Transactions;
 
 namespace MoMoney.DataAccess
 {

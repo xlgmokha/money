@@ -4,7 +4,7 @@ using MbUnit.Framework;
 using MoMoney.Presentation.Core;
 using MoMoney.Service.Infrastructure.Threading;
 
-namespace MoMoney.Presentation.Presenters.Commands
+namespace MoMoney.Presentation.Presenters
 {
     public class RunTheSpecs
     {
@@ -19,10 +19,10 @@ namespace MoMoney.Presentation.Presenters.Commands
         it should_initialize_the_presenter_that_controls_that_region = () => processor.was_told_to(x => x.add(() => controller.run<IPresenter>()));
 
         context c = () =>
-                        {
-                            controller = the_dependency<IApplicationController>();
-                            processor = the_dependency<ICommandProcessor>();
-                        };
+        {
+            controller = the_dependency<IApplicationController>();
+            processor = the_dependency<ICommandProcessor>();
+        };
 
         because b = () => sut.run();
 

@@ -1,7 +1,7 @@
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Presentation.Views;
 
-namespace MoMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File
 {
     public interface ICloseWindowCommand : ICommand
     {

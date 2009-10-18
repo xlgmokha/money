@@ -1,7 +1,6 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
 
 namespace MoMoney.Presentation.Winforms.Helpers
 {

@@ -1,7 +1,6 @@
 using Gorilla.Commons.Utility.Core;
-using MoMoney.Presentation.Views.Core;
 
-namespace MoMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views
 {
     public interface ILogFileView : IDockedContentView, ICallback<string>
     {

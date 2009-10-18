@@ -1,7 +1,7 @@
 using Gorilla.Commons.Infrastructure.Cloning;
 using Gorilla.Commons.Utility.Core;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public interface ITrackerEntryMapper<T> : IMapper<T, ITrackerEntry<T>>
     {

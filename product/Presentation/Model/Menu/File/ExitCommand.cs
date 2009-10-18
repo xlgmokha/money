@@ -3,7 +3,7 @@ using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Model.Menu.File.Commands
+namespace MoMoney.Presentation.Model.Menu.File
 {
     public interface IExitCommand : ICommand, ISaveChangesCallback
     {

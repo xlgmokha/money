@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Views.Startup
+namespace MoMoney.Presentation.Views
 {
     public interface ISplashScreenView
     {

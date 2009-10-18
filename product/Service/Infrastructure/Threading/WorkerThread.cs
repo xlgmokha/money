@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using Gorilla.Commons.Infrastructure.Logging;
 
-namespace Gorilla.Commons.Infrastructure.Threading
+namespace MoMoney.Service.Infrastructure.Threading
 {
     public class WorkerThread : Component, IWorkerThread
     {

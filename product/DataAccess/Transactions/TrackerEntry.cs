@@ -1,7 +1,7 @@
 using System.Reflection;
 using Gorilla.Commons.Infrastructure.Logging;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public interface ITrackerEntry<T>
     {

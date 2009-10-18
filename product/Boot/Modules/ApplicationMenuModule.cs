@@ -1,7 +1,6 @@
 using MoMoney.Presentation.Model.Menu;
 using MoMoney.Presentation.Model.messages;
 using MoMoney.Presentation.Presenters;
-using MoMoney.Presentation.Presenters.Menu;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Modules

@@ -1,10 +1,9 @@
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure.Threading;
 using Gorilla.Commons.Testing;
 using MoMoney.Utility.Core;
 
-namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
+namespace MoMoney.Service.Infrastructure.Threading
 {
     [Concern(typeof (RunOnBackgroundThreadInterceptor<>))]
     public abstract class behaves_like_background_thread_interceptor :
@@ -20,13 +19,13 @@ namespace Gorilla.Commons.Infrastructure.Castle.DynamicProxy.Interceptors
         behaves_like_background_thread_interceptor
     {
         context c = () =>
-                        {
-                            invocation = an<IInvocation>();
-                            background_thread = an<IBackgroundThread>();
-                            thread_factory
-                                .is_told_to(f => f.create_for<IDisposableCommand>())
-                                .it_will_return(background_thread);
-                        };
+        {
+            invocation = an<IInvocation>();
+            background_thread = an<IBackgroundThread>();
+            thread_factory
+                .is_told_to(f => f.create_for<IDisposableCommand>())
+                .it_will_return(background_thread);
+        };
 
         because b = () => sut.Intercept(invocation);
 

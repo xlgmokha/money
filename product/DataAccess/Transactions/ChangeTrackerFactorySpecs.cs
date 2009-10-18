@@ -1,6 +1,5 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure.Transactions;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Core;
 

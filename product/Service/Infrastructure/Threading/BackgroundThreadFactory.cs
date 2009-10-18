@@ -3,7 +3,7 @@ using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Utility.Core;
 using MoMoney.Utility.Core;
 
-namespace Gorilla.Commons.Infrastructure.Threading
+namespace MoMoney.Service.Infrastructure.Threading
 {
     public interface IBackgroundThreadFactory
     {

@@ -1,7 +1,6 @@
-using MoMoney.Presentation.Presenters.Shell;
-using MoMoney.Presentation.Views.Core;
+using MoMoney.Presentation.Presenters;
 
-namespace MoMoney.Presentation.Views.Shell
+namespace MoMoney.Presentation.Views
 {
     public interface IGettingStartedView : IDockedContentView,
                                            IView<IGettingStartedPresenter>

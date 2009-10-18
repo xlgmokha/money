@@ -4,7 +4,7 @@ using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Contracts.Application;
 
-namespace MoMoney.Presentation.Presenters.billing
+namespace MoMoney.Presentation.Presenters
 {
     public interface IViewAllBillsPresenter : IContentPresenter
     {

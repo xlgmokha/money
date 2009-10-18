@@ -1,8 +1,8 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Service.Infrastructure.Updating;
+using MoMoney.Service.Contracts.Infrastructure.Updating;
 
-namespace MoMoney.Tasks.infrastructure.updating
+namespace MoMoney.Service.Infrastructure.Updating
 {
     public class CancelUpdateSpecs
     {

@@ -3,7 +3,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility.Core;
 
-namespace Gorilla.Commons.Infrastructure.Transactions
+namespace MoMoney.DataAccess.Transactions
 {
     public class TransactionSpecs
     {
@@ -13,10 +13,10 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     public class behaves_like_transaction : concerns_for<ITransaction, Transaction>
     {
         context c = () =>
-                        {
-                            database = the_dependency<IDatabase>();
-                            factory = the_dependency<IChangeTrackerFactory>();
-                        };
+        {
+            database = the_dependency<IDatabase>();
+            factory = the_dependency<IChangeTrackerFactory>();
+        };
 
         static protected IDatabase database;
         static protected IChangeTrackerFactory factory;
@@ -36,24 +36,24 @@ namespace Gorilla.Commons.Infrastructure.Transactions
     public class when_committing_a_transaction_and_an_item_in_the_identity_map_has_changed : behaves_like_transaction
     {
         it should_commit_the_changes_to_that_item =
-            () => tracker.was_told_to<IChangeTracker<IMovie>>(x => x.commit_to(database));
+            () => tracker.was_told_to(x => x.commit_to(database));
 
         context c = () =>
-                        {
-                            movie = new Movie("Goldeneye");
-                            tracker = an<IChangeTracker<IMovie>>();
+        {
+            movie = new Movie("Goldeneye");
+            tracker = an<IChangeTracker<IMovie>>();
 
-                            when_the(factory).is_told_to(x => x.create_for<IMovie>()).it_will_return(tracker);
-                            when_the(tracker).is_told_to(x => x.is_dirty()).it_will_return(true);
-                        };
+            when_the(factory).is_told_to(x => x.create_for<IMovie>()).it_will_return(tracker);
+            when_the(tracker).is_told_to(x => x.is_dirty()).it_will_return(true);
+        };
 
 
         because b = () =>
-                        {
-                            sut.create_for<IMovie>().add(movie.id, movie);
-                            movie.change_name_to("Austin Powers");
-                            sut.commit_changes();
-                        };
+        {
+            sut.create_for<IMovie>().add(movie.id, movie);
+            movie.change_name_to("Austin Powers");
+            sut.commit_changes();
+        };
 
         static IMovie movie;
         static IChangeTracker<IMovie> tracker;
@@ -67,21 +67,21 @@ namespace Gorilla.Commons.Infrastructure.Transactions
         it should_delete_all_items_marked_for_deletion = () => tracker.was_told_to(x => x.commit_to(database));
 
         context c = () =>
-                        {
-                            movie = new Movie("Goldeneye");
-                            tracker = an<IChangeTracker<IMovie>>();
+        {
+            movie = new Movie("Goldeneye");
+            tracker = an<IChangeTracker<IMovie>>();
 
-                            when_the(factory).is_told_to(x => x.create_for<IMovie>()).it_will_return(tracker);
-                            when_the(tracker).is_told_to(x => x.is_dirty()).it_will_return(true);
-                        };
+            when_the(factory).is_told_to(x => x.create_for<IMovie>()).it_will_return(tracker);
+            when_the(tracker).is_told_to(x => x.is_dirty()).it_will_return(true);
+        };
 
         because b = () =>
-                        {
-                            var map = sut.create_for<IMovie>();
-                            map.add(movie.id, movie);
-                            map.evict(movie.id);
-                            sut.commit_changes();
-                        };
+        {
+            var map = sut.create_for<IMovie>();
+            map.add(movie.id, movie);
+            map.evict(movie.id);
+            sut.commit_changes();
+        };
 
         static IMovie movie;
         static IChangeTracker<IMovie> tracker;
