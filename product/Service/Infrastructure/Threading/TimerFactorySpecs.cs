@@ -3,7 +3,7 @@ using System.Timers;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     [Concern(typeof (TimerFactory))]
     public abstract class behaves_like_a_timer_factory : concerns_for<ITimerFactory, TimerFactory>

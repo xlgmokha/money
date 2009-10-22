@@ -1,12 +1,14 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
+using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using Gorilla.Commons.Utility.Core;
 using MoMoney.DTO;
-using MoMoney.Presentation.Views;
+using MoMoney.Presentation.Presenters;
+using momoney.presentation.views;
+using momoney.service.contracts.infrastructure.updating;
 using MoMoney.Service.Contracts.Infrastructure.Updating;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     [Concern(typeof (CheckForUpdatesPresenter))]
     public abstract class behaves_like_check_for_updates_presenter :
@@ -38,7 +40,7 @@ namespace MoMoney.Presentation.Presenters
     public class when_initiating_an_update_and_one_is_available : behaves_like_check_for_updates_presenter
     {
         it should_start_downloading_the_latest_version_of_the_application =
-            () => pump.was_told_to(x => x.run<IDownloadTheLatestVersion, ICallback<Percent>>(sut));
+            () => pump.was_told_to(x => x.run<IDownloadTheLatestVersion, Callback<Percent>>(sut));
 
         because b = () => sut.begin_update();
     }

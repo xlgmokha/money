@@ -1,11 +1,9 @@
 using System.ServiceModel;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.DTO;
 
 namespace MoMoney.Service.Contracts.Application
 {
     [ServiceContract]
-    public interface ISaveNewBillCommand : IParameterizedCommand<AddNewBillDTO>
-    {
-    }
+    public interface ISaveNewBillCommand : ParameterizedCommand<AddNewBillDTO> {}
 }

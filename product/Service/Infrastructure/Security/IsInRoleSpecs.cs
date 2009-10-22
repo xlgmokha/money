@@ -1,18 +1,18 @@
 using System.Security.Principal;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Service.Infrastructure.Security
 {
     public class IsInRoleSpecs
     {
         public class when_checking_if_a_principal_belongs_to_a_role :
-            concerns_for<ISpecification<IPrincipal>, IsInRole>
+            concerns_for<Specification<IPrincipal>, IsInRole>
         {
             static protected readonly Role administrator_role = new Role("administrators");
 
-            public override ISpecification<IPrincipal> create_sut()
+            public override Specification<IPrincipal> create_sut()
             {
                 return new IsInRole(administrator_role);
             }

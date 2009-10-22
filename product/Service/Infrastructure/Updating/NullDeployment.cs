@@ -2,8 +2,9 @@ using System;
 using System.ComponentModel;
 using System.Deployment.Application;
 using System.Threading;
+using MoMoney.Service.Infrastructure.Updating;
 
-namespace MoMoney.Service.Infrastructure.Updating
+namespace momoney.service.infrastructure.updating
 {
     public class NullDeployment : IDeployment
     {

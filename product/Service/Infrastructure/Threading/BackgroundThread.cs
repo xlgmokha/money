@@ -1,20 +1,16 @@
-using MoMoney.Utility.Core;
+using gorilla.commons.Utility;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
-    public interface IBackgroundThread : IDisposableCommand
-    {
-    }
+    public interface IBackgroundThread : DisposableCommand {}
 
     public class BackgroundThread : IBackgroundThread
     {
         readonly IWorkerThread worker_thread;
 
-        public BackgroundThread(IDisposableCommand command_to_execute) : this(command_to_execute, new WorkerThread())
-        {
-        }
+        public BackgroundThread(DisposableCommand command_to_execute) : this(command_to_execute, new WorkerThread()) {}
 
-        public BackgroundThread(IDisposableCommand command_to_execute, IWorkerThread worker_thread)
+        public BackgroundThread(DisposableCommand command_to_execute, IWorkerThread worker_thread)
         {
             this.worker_thread = worker_thread;
             worker_thread.DoWork += (sender, e) => command_to_execute.run();

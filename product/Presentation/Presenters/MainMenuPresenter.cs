@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
+using momoney.presentation.presenters;
 using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public interface IMainMenuPresenter : IContentPresenter
-    {
-    }
+    public interface IMainMenuPresenter : IContentPresenter {}
 
     public class MainMenuPresenter : ContentPresenter<IMainMenuView>, IMainMenuPresenter
     {

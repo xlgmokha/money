@@ -2,7 +2,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Utility.Core;
 
 namespace MoMoney.Presentation.Winforms.Helpers
 {
@@ -22,9 +21,12 @@ namespace MoMoney.Presentation.Winforms.Helpers
             return button;
         }
 
-        static public Button will_execute<Command>(this Button button, Func<bool> when) where Command : ICommand
+        static public Button will_execute<Command>(this Button button, Func<bool> when) where Command : gorilla.commons.utility.Command
         {
-            button.Click += (sender, e) => { if (when()) Resolve.the<Command>().run(); };
+            button.Click += (sender, e) =>
+            {
+                if (when()) Resolve.the<Command>().run();
+            };
             button.Enabled = when();
             return button;
         }
@@ -32,14 +34,14 @@ namespace MoMoney.Presentation.Winforms.Helpers
         static public Control with_tool_tip(this Control control, string title, string caption)
         {
             var tip = new ToolTip
-                          {
-                              IsBalloon = true,
-                              ToolTipTitle = title,
-                              ToolTipIcon = ToolTipIcon.Info,
-                              UseAnimation = true,
-                              UseFading = true,
-                              AutoPopDelay = 10000,
-                          };
+                      {
+                          IsBalloon = true,
+                          ToolTipTitle = title,
+                          ToolTipIcon = ToolTipIcon.Info,
+                          UseAnimation = true,
+                          UseFading = true,
+                          AutoPopDelay = 10000,
+                      };
             tip.SetToolTip(control, caption);
             control.Controls.Add(new ControlAdapter(tip));
             return control;

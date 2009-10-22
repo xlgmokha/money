@@ -4,29 +4,28 @@ using MbUnit.Framework;
 using MoMoney.Presentation.Core;
 using MoMoney.Service.Infrastructure.Threading;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     public class RunTheSpecs
     {
-    }
-
-    [Ignore]
-    [Concern(typeof (RunThe<>))]
-    public class when_initializing_different_regions_of_the_user_interface :
-        concerns_for<IRunThe<IPresenter>, RunThe<IPresenter>>
-    {
-        //it should_initialize_the_presenter_that_controls_that_region = () => controller.was_told_to(x => x.run<IPresenter>());
-        it should_initialize_the_presenter_that_controls_that_region = () => processor.was_told_to(x => x.add(() => controller.run<IPresenter>()));
-
-        context c = () =>
+        [Ignore]
+        [Concern(typeof (RunThe<>))]
+        public class when_initializing_different_regions_of_the_user_interface :
+            concerns_for<IRunThe<IPresenter>, RunThe<IPresenter>>
         {
-            controller = the_dependency<IApplicationController>();
-            processor = the_dependency<ICommandProcessor>();
-        };
+            //it should_initialize_the_presenter_that_controls_that_region = () => controller.was_told_to(x => x.run<IPresenter>());
+            it should_initialize_the_presenter_that_controls_that_region = () => processor.was_told_to(x => x.add(() => controller.run<IPresenter>()));
 
-        because b = () => sut.run();
+            context c = () =>
+            {
+                controller = the_dependency<IApplicationController>();
+                processor = the_dependency<ICommandProcessor>();
+            };
 
-        static IApplicationController controller;
-        static ICommandProcessor processor;
+            because b = () => sut.run();
+
+            static IApplicationController controller;
+            static ICommandProcessor processor;
+        }
     }
 }

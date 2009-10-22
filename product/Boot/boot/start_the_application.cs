@@ -1,20 +1,19 @@
-using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
+using gorilla.commons.utility;
 using MoMoney.Modules.Core;
+using momoney.service.infrastructure.threading;
 using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.boot
 {
-    class start_the_application : ICommand
+    class start_the_application : Command
     {
         readonly IBackgroundThread thread;
         readonly ILoadPresentationModulesCommand command;
         readonly ICommandProcessor processor;
 
         public start_the_application(IBackgroundThread thread)
-            : this(thread, Lazy.load<ILoadPresentationModulesCommand>(), Lazy.load<ICommandProcessor>())
-        {
-        }
+            : this(thread, Lazy.load<ILoadPresentationModulesCommand>(), Lazy.load<ICommandProcessor>()) {}
 
         public start_the_application(IBackgroundThread thread, ILoadPresentationModulesCommand command,
                                      ICommandProcessor processor)

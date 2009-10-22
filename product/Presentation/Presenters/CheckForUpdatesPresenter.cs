@@ -1,14 +1,16 @@
 using Gorilla.Commons.Infrastructure.Logging;
+using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using Gorilla.Commons.Utility.Core;
 using MoMoney.DTO;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views;
+using MoMoney.Presentation.Presenters;
+using momoney.presentation.views;
+using momoney.service.contracts.infrastructure.updating;
 using MoMoney.Service.Contracts.Infrastructure.Updating;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
-    public interface ICheckForUpdatesPresenter : IPresenter, ICallback<Percent>
+    public interface ICheckForUpdatesPresenter : IPresenter, Callback<Percent>
     {
         void begin_update();
         void cancel_update();
@@ -36,7 +38,7 @@ namespace MoMoney.Presentation.Presenters
 
         public void begin_update()
         {
-            pump.run<IDownloadTheLatestVersion, ICallback<Percent>>(this);
+            pump.run<IDownloadTheLatestVersion, Callback<Percent>>(this);
         }
 
         public void cancel_update()

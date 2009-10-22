@@ -1,10 +1,10 @@
 using System;
-using Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.infrastructure.thirdparty.Castle.Windsor.Configuration;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container
 {
-    public class ComponentExclusionSpecification : IComponentExclusionSpecification
+    public class ComponentExclusionSpecificationImplementation : ComponentExclusionSpecification
     {
         public bool is_satisfied_by(Type type)
         {

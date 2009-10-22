@@ -2,10 +2,11 @@ using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.DTO;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Contracts.Application;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     [Concern(typeof (AddNewIncomePresenter))]
     public abstract class behaves_like_add_new_income_presenter :

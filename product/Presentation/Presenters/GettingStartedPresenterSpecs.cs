@@ -1,9 +1,9 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     public class GettingStartedPresenterSpecs
     {

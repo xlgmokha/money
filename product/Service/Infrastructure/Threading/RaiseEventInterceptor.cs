@@ -1,7 +1,7 @@
 using Castle.Core.Interceptor;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     public interface IRaiseEventInterceptor<Event> : IInterceptor where Event : IEvent, new()
     {

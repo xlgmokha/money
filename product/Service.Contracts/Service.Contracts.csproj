@@ -8,8 +8,8 @@
     <ProjectGuid>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MoMoney.Service.Contracts</RootNamespace>
-    <AssemblyName>MoMoney.Service.Contracts</AssemblyName>
+    <RootNamespace>momoney.service.contracts</RootNamespace>
+    <AssemblyName>momoney.service.contracts</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -56,29 +56,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\IAddNewIncomeCommand.cs" />
-    <Compile Include="Application\IGetAllBillsQuery.cs" />
-    <Compile Include="Application\IGetAllCompanysQuery.cs" />
-    <Compile Include="Application\IGetAllIncomeQuery.cs" />
-    <Compile Include="Application\IRegisterNewCompanyCommand.cs" />
-    <Compile Include="Application\ISaveNewBillCommand.cs" />
-    <Compile Include="Infrastructure\IProjectTasks.cs" />
-    <Compile Include="Infrastructure\Logging\ILogFileTasks.cs" />
-    <Compile Include="Infrastructure\Transactions\IUnitOfWork.cs" />
-    <Compile Include="Infrastructure\Transactions\IUnitOfWorkFactory.cs" />
-    <Compile Include="Infrastructure\Updating\ICancelUpdate.cs" />
-    <Compile Include="Infrastructure\Updating\IDownloadTheLatestVersion.cs" />
-    <Compile Include="Infrastructure\Updating\IWhatIsTheAvailableVersion.cs" />
+    <Compile Include="application\IAddNewIncomeCommand.cs" />
+    <Compile Include="application\IGetAllBillsQuery.cs" />
+    <Compile Include="application\IGetAllCompanysQuery.cs" />
+    <Compile Include="application\IGetAllIncomeQuery.cs" />
+    <Compile Include="application\IRegisterNewCompanyCommand.cs" />
+    <Compile Include="application\ISaveNewBillCommand.cs" />
+    <Compile Include="infrastructure\IProjectTasks.cs" />
+    <Compile Include="infrastructure\logging\ILogFileTasks.cs" />
+    <Compile Include="infrastructure\transactions\IUnitOfWork.cs" />
+    <Compile Include="infrastructure\transactions\IUnitOfWorkFactory.cs" />
+    <Compile Include="infrastructure\updating\ICancelUpdate.cs" />
+    <Compile Include="infrastructure\updating\IDownloadTheLatestVersion.cs" />
+    <Compile Include="infrastructure\updating\IWhatIsTheAvailableVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj">
+    <ProjectReference Include="..\DTO\dto.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
-      <Name>DTO</Name>
+      <Name>dto</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <Folder Include="domain\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

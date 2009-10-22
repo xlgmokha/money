@@ -1,7 +1,7 @@
 using System;
+using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Presentation.Model.messages;
+using momoney.presentation.model.events;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 using MoMoney.Service.Infrastructure.Eventing;

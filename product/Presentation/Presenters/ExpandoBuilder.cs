@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
+using MoMoney.Presentation.Presenters;
 using XPExplorerBar;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
-    public interface IExpandoBuilder : IBuilder<Expando>
+    public interface IExpandoBuilder : Builder<Expando>
     {
         IExpandoBuilder named(string name);
         IExpandoBuilder with_item(IExpandoItemBuilder builder);

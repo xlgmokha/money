@@ -1,12 +1,12 @@
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
-using Gorilla.Commons.Utility.Core;
-using MoMoney.Service.Infrastructure.Threading;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
+using gorilla.commons.utility;
+using momoney.service.infrastructure.threading;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
-    class SynchronizedConfiguration<T> : IConfiguration<IProxyBuilder<T>>
+    class SynchronizedConfiguration<T> : Configuration<ProxyBuilder<T>>
     {
-        public void configure(IProxyBuilder<T> item)
+        public void configure(ProxyBuilder<T> item)
         {
             item.add_interceptor<RunOnUIThread>().intercept_all();
         }

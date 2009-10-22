@@ -1,13 +1,13 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Model.Excel
 {
     public class ConstrainedCellVisitor : ICellVisitor
     {
-        private readonly ICellVisitor cell_visitor;
-        private readonly ISpecification<ICell> constraint;
+        readonly ICellVisitor cell_visitor;
+        readonly Specification<ICell> constraint;
 
-        public ConstrainedCellVisitor(ICellVisitor cell_visitor, ISpecification<ICell> constraint)
+        public ConstrainedCellVisitor(ICellVisitor cell_visitor, Specification<ICell> constraint)
         {
             this.cell_visitor = cell_visitor;
             this.constraint = constraint;

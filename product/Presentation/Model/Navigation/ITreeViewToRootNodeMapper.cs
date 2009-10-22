@@ -1,9 +1,7 @@
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Model.Navigation
 {
-    public interface ITreeViewToRootNodeMapper : IMapper<TreeView, ITreeBranch>
-    {
-    }
+    public interface ITreeViewToRootNodeMapper : Mapper<TreeView, ITreeBranch> {}
 }

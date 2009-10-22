@@ -1,10 +1,10 @@
 using System;
 using System.Linq.Expressions;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration.mapping
 {
-    public interface IMap<Input, Output> : IMapper<Input, Output>
+    public interface IMap<Input, Output> : Mapper<Input, Output>
     {
         void add(IMappingStep<Input, Output> step);
 

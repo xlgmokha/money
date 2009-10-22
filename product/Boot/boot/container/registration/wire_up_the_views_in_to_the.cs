@@ -1,17 +1,18 @@
 using System.ComponentModel;
 using System.Windows.Forms;
-using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.infrastructure.thirdparty;
+using gorilla.commons.utility;
+using momoney.presentation.views;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Views;
 
 namespace MoMoney.boot.container.registration
 {
-    class wire_up_the_views_in_to_the : ICommand
+    class wire_up_the_views_in_to_the : Command
     {
-        readonly IDependencyRegistration register;
+        readonly DependencyRegistration register;
 
-        public wire_up_the_views_in_to_the(IDependencyRegistration registry)
+        public wire_up_the_views_in_to_the(DependencyRegistration registry)
         {
             register = registry;
         }

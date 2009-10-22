@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
+using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.Core;
 

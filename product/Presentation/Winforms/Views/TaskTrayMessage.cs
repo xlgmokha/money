@@ -1,5 +1,5 @@
-using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Presentation.Views;
+using gorilla.commons.utility;
+using momoney.presentation.views;
 
 namespace MoMoney.Presentation.Winforms.Views
 {

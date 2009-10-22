@@ -1,13 +1,13 @@
-using MoMoney.Presentation.Views;
+using gorilla.commons.Utility;
+using momoney.presentation.presenters;
+using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Views;
+using momoney.service.infrastructure.threading;
 using MoMoney.Service.Infrastructure.Threading;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public interface ISplashScreenPresenter : IDisposableCommand, ITimerClient
-    {
-    }
+    public interface ISplashScreenPresenter : DisposableCommand, ITimerClient {}
 
     public class SplashScreenPresenter : ISplashScreenPresenter
     {
@@ -15,9 +15,7 @@ namespace MoMoney.Presentation.Presenters
         readonly ISplashScreenView view;
         ISplashScreenState current_state;
 
-        public SplashScreenPresenter() : this(new IntervalTimer(), new SplashScreenView())
-        {
-        }
+        public SplashScreenPresenter() : this(new IntervalTimer(), new SplashScreenView()) {}
 
         public SplashScreenPresenter(ITimer timer, ISplashScreenView view)
         {
@@ -28,7 +26,7 @@ namespace MoMoney.Presentation.Presenters
         public void run()
         {
             view.display();
-            current_state = new display_the_splash_screen(timer, view, this);
+            current_state = new DisplayTheSplashScreen(timer, view, this);
         }
 
         public void Dispose()

@@ -1,35 +1,34 @@
 using System;
-using System.Reflection;
-using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Reflection;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.infrastructure.thirdparty;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
+using gorilla.commons.utility;
 using MoMoney.boot.container.registration.proxy_configuration;
 using MoMoney.Presentation;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
-using MoMoney.Presentation.Presenters;
+using momoney.presentation.presenters;
 using MoMoney.Presentation.Views;
 
 namespace MoMoney.boot.container.registration
 {
-    class wire_up_the_presentation_modules : ICommand, IParameterizedCommand<IAssembly>
+    class wire_up_the_presentation_modules : Command, ParameterizedCommand<Assembly>
     {
-        readonly IDependencyRegistration registry;
+        readonly DependencyRegistration registry;
 
-        public wire_up_the_presentation_modules(IDependencyRegistration registry)
+        public wire_up_the_presentation_modules(DependencyRegistration registry)
         {
             this.registry = registry;
         }
 
         public void run()
         {
-            run(new ApplicationAssembly(Assembly.GetExecutingAssembly()));
+            run(new ApplicationAssembly(System.Reflection.Assembly.GetExecutingAssembly()));
         }
 
-        public void run(IAssembly item)
+        public void run(Assembly item)
         {
             Func<IApplicationController> target =
                 () => new ApplicationController(Lazy.load<IPresenterRegistry>(), Lazy.load<IShell>());

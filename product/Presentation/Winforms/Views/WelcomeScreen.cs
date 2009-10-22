@@ -1,6 +1,6 @@
-using MoMoney.Presentation.Model.Menu.File;
-using MoMoney.Presentation.Presenters;
-using MoMoney.Presentation.Views;
+using momoney.presentation.model.menu.file;
+using momoney.presentation.presenters;
+using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Resources;
 

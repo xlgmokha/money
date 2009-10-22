@@ -1,17 +1,16 @@
+using System.Collections;
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Core
 {
-    public interface IPresenterRegistry : IRegistry<IPresenter>
-    {
-    }
+    public interface IPresenterRegistry : Registry<IPresenter> {}
 
     public class PresenterRegistry : IPresenterRegistry
     {
-        readonly IRegistry<IPresenter> presenters;
+        readonly Registry<IPresenter> presenters;
 
-        public PresenterRegistry(IRegistry<IPresenter> presenters)
+        public PresenterRegistry(Registry<IPresenter> presenters)
         {
             this.presenters = presenters;
         }
@@ -19,6 +18,16 @@ namespace MoMoney.Presentation.Core
         public IEnumerable<IPresenter> all()
         {
             return presenters.all();
+        }
+
+        public IEnumerator<IPresenter> GetEnumerator()
+        {
+            return all().GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

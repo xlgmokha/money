@@ -1,5 +1,5 @@
 using System;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.Domain.Core
 {
@@ -9,9 +9,7 @@ namespace MoMoney.Domain.Core
         readonly long dollars;
         readonly int cents;
 
-        public Money(long dollars) : this(dollars, 0)
-        {
-        }
+        public Money(long dollars) : this(dollars, 0) {}
 
         public Money(long dollars, int cents)
         {
@@ -59,12 +57,12 @@ namespace MoMoney.Domain.Core
             }
         }
 
-        public static bool operator ==(Money left, Money right)
+        static public bool operator ==(Money left, Money right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(Money left, Money right)
+        static public bool operator !=(Money left, Money right)
         {
             return !Equals(left, right);
         }

@@ -3,32 +3,33 @@ using System.Threading;
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
-    public class SecuringProxySpecs
-    {
-    }
+    public class SecuringProxySpecs {}
 
     public class when_attempting_to_perform_an_action_that_requires_authentication :
         concerns_for<SecuringProxy>
     {
-        context c = () => { filter = the_dependency<ISpecification<IPrincipal>>(); };
+        context c = () =>
+        {
+            filter = the_dependency<Specification<IPrincipal>>();
+        };
 
-        static protected ISpecification<IPrincipal> filter;
+        static protected Specification<IPrincipal> filter;
     }
 
     public class when_logged_in_as_a_user_that_belongs_to_the_proper_role :
         when_attempting_to_perform_an_action_that_requires_authentication
     {
         context c = () =>
-                        {
-                            invocation = an<IInvocation>();
-                            when_the(filter)
-                                .is_told_to(x => x.is_satisfied_by(Thread.CurrentPrincipal))
-                                .it_will_return(true);
-                        };
+        {
+            invocation = an<IInvocation>();
+            when_the(filter)
+                .is_told_to(x => x.is_satisfied_by(Thread.CurrentPrincipal))
+                .it_will_return(true);
+        };
 
         because b = () => sut.Intercept(invocation);
 
@@ -41,12 +42,12 @@ namespace MoMoney.boot.container.registration.proxy_configuration
         when_attempting_to_perform_an_action_that_requires_authentication
     {
         context c = () =>
-                        {
-                            invocation = an<IInvocation>();
-                            when_the(filter)
-                                .is_told_to(x => x.is_satisfied_by(Thread.CurrentPrincipal))
-                                .it_will_return(false);
-                        };
+        {
+            invocation = an<IInvocation>();
+            when_the(filter)
+                .is_told_to(x => x.is_satisfied_by(Thread.CurrentPrincipal))
+                .it_will_return(false);
+        };
 
         because b = () => sut.Intercept(invocation);
 

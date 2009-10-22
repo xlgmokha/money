@@ -1,5 +1,4 @@
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Core
@@ -9,7 +8,7 @@ namespace MoMoney.Presentation.Core
         void run<Presenter>() where Presenter : IPresenter;
     }
 
-    public class ApplicationController : IApplicationController, IParameterizedCommand<IPresenter>
+    public class ApplicationController : IApplicationController, ParameterizedCommand<IPresenter>
     {
         readonly IPresenterRegistry registered_presenters;
         readonly IShell shell;

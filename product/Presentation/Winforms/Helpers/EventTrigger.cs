@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Winforms.Helpers
 {
-    public static class EventTrigger
+    static public class EventTrigger
     {
         const BindingFlags binding_flags =
             BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy | BindingFlags.Instance;
@@ -22,7 +22,7 @@ namespace MoMoney.Presentation.Winforms.Helpers
             expression_handlers[ExpressionType.Constant] = get_constant_value;
         }
 
-        public static void trigger_event<Target>(Expression<Action<Target>> expression_representing_event_to_raise,
+        static public void trigger_event<Target>(Expression<Action<Target>> expression_representing_event_to_raise,
                                                  object target) where Target : IEventTarget
         {
             var method_call_expression = expression_representing_event_to_raise.Body.downcast_to<MethodCallExpression>();

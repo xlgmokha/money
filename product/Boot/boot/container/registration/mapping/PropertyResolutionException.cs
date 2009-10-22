@@ -1,5 +1,5 @@
 using System;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration.mapping
 {
@@ -11,9 +11,6 @@ namespace MoMoney.boot.container.registration.mapping
                                            string property_that_could_not_be_found)
             : base(
                 exception_message_format.formatted_using(property_that_could_not_be_found,
-                                                         type_that_did_not_have_the_property.Name))
-
-        {
-        }
+                                                         type_that_did_not_have_the_property.Name)) {}
     }
 }

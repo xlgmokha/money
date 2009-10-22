@@ -1,33 +1,49 @@
 using System;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Utility.Core;
-using MoMoney.Utility.Core;
+using gorilla.commons.Utility;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     public interface IBackgroundThreadFactory
     {
-        IBackgroundThread create_for<CommandToExecute>() where CommandToExecute : IDisposableCommand;
+        IBackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand;
         IBackgroundThread create_for(Action action);
     }
 
     public class BackgroundThreadFactory : IBackgroundThreadFactory
     {
-        private readonly IDependencyRegistry registry;
+        readonly DependencyRegistry registry;
 
-        public BackgroundThreadFactory(IDependencyRegistry registry)
+        public BackgroundThreadFactory(DependencyRegistry registry)
         {
             this.registry = registry;
         }
 
-        public IBackgroundThread create_for<CommandToExecute>() where CommandToExecute : IDisposableCommand
+        public IBackgroundThread create_for<CommandToExecute>() where CommandToExecute : DisposableCommand
         {
             return new BackgroundThread(registry.get_a<CommandToExecute>());
         }
 
         public IBackgroundThread create_for(Action action)
         {
-            return new BackgroundThread(new DisposableCommand(action));
+            return new BackgroundThread(new AnonymousDisposableCommand(action));
+        }
+
+        class AnonymousDisposableCommand : DisposableCommand
+        {
+            readonly Action action;
+
+            public AnonymousDisposableCommand(Action action)
+            {
+                this.action = action;
+            }
+
+            public void run()
+            {
+                action();
+            }
+
+            public void Dispose() {}
         }
     }
 }

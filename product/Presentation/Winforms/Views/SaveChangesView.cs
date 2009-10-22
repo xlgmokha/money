@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using MoMoney.Presentation.Model.Menu.File;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views

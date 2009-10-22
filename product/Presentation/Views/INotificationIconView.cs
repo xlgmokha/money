@@ -1,7 +1,7 @@
 using System;
 using MoMoney.Presentation.Winforms.Resources;
 
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
     public interface INotificationIconView : IDisposable
     {

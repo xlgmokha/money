@@ -1,11 +1,12 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Model.messages;
+using momoney.presentation.model.events;
+using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Model.Menu.File
+namespace momoney.presentation.model.menu.file
 {
-    public interface IExitCommand : ICommand, ISaveChangesCallback
+    public interface IExitCommand : Command, ISaveChangesCallback
     {
     }
 

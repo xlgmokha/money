@@ -1,5 +1,5 @@
 using MoMoney.Presentation;
-using MoMoney.Presentation.Model.messages;
+using momoney.presentation.model.events;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Modules

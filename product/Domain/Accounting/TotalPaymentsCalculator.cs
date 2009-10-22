@@ -1,9 +1,9 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.Accounting
 {
-    internal class TotalPaymentsCalculator : IValueReturningVisitor<Money, IPayment>
+    class TotalPaymentsCalculator : ValueReturningVisitor<Money, IPayment>
     {
         public TotalPaymentsCalculator()
         {

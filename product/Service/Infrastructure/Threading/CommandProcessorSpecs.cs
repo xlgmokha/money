@@ -1,13 +1,12 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
+using MoMoney.Service.Infrastructure.Threading;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     [Concern(typeof (CommandProcessor))]
-    public abstract class behaves_like_a_command_processor : concerns_for<ICommandProcessor, CommandProcessor>
-    {
-    }
+    public abstract class behaves_like_a_command_processor : concerns_for<ICommandProcessor, CommandProcessor> {}
 
     [Concern(typeof (CommandProcessor))]
     public class when_running_all_the_queued_commands_waiting_for_execution : behaves_like_a_command_processor
@@ -18,8 +17,8 @@ namespace MoMoney.Service.Infrastructure.Threading
 
         context c = () =>
         {
-            first_command = an<ICommand>();
-            second_command = an<ICommand>();
+            first_command = an<Command>();
+            second_command = an<Command>();
         };
 
         because b = () =>
@@ -29,8 +28,8 @@ namespace MoMoney.Service.Infrastructure.Threading
             sut.run();
         };
 
-        static ICommand first_command;
-        static ICommand second_command;
+        static Command first_command;
+        static Command second_command;
     }
 
     [Concern(typeof (CommandProcessor))]
@@ -39,7 +38,10 @@ namespace MoMoney.Service.Infrastructure.Threading
         it should_not_re_run_the_commands_that_have_already_executed =
             () => first_command.was_told_to(f => f.run()).only_once();
 
-        context c = () => { first_command = an<ICommand>(); };
+        context c = () =>
+        {
+            first_command = an<Command>();
+        };
 
         because b = () =>
         {
@@ -48,6 +50,6 @@ namespace MoMoney.Service.Infrastructure.Threading
             sut.run();
         };
 
-        static ICommand first_command;
+        static Command first_command;
     }
 }

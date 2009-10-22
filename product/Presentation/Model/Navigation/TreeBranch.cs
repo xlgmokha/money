@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Navigation
@@ -9,21 +9,21 @@ namespace MoMoney.Presentation.Model.Navigation
     public class TreeBranch : ITreeBranch
     {
         readonly TreeNode node;
-        readonly ICommand the_command;
+        readonly Command the_command;
 
-        public TreeBranch(TreeNode node, ICommand the_command)
+        public TreeBranch(TreeNode node, Command the_command)
         {
             this.node = node;
             this.the_command = the_command;
             this.node.TreeView.DoubleClick += (sender, e) => Click();
         }
 
-        public void accept(IVisitor<ITreeBranch> visitor)
+        public void accept(Visitor<ITreeBranch> visitor)
         {
             visitor.visit(this);
         }
 
-        public ITreeBranch add_child(string name, ApplicationIcon icon, ICommand command)
+        public ITreeBranch add_child(string name, ApplicationIcon icon, Command command)
         {
             var new_node = new TreeNode(name)
                                {
@@ -36,7 +36,7 @@ namespace MoMoney.Presentation.Model.Navigation
 
         public ITreeBranch add_child(string name, ApplicationIcon icon, Action command)
         {
-            return add_child(name, icon, new ActionCommand(command));
+            return add_child(name, icon, new AnonymousCommand(command));
         }
 
         void Click()

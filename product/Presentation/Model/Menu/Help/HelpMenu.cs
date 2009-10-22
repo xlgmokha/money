@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using MoMoney.Presentation.model.menu.help;
+using momoney.presentation.presenters;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Winforms.Resources;
 

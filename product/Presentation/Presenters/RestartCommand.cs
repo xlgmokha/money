@@ -1,13 +1,11 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Model.messages;
+using momoney.presentation.model.events;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
-    public interface IRestartCommand : ICommand
-    {
-    }
+    public interface IRestartCommand : Command {}
 
     public class RestartCommand : IRestartCommand
     {

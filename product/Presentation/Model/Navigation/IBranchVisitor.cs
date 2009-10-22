@@ -1,8 +1,6 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Model.Navigation
 {
-    public interface IBranchVisitor : IVisitor<ITreeBranch>
-    {
-    }
+    public interface IBranchVisitor : Visitor<ITreeBranch> {}
 }

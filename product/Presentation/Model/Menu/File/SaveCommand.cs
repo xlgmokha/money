@@ -1,11 +1,9 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Model.Projects;
 
-namespace MoMoney.Presentation.Model.Menu.File
+namespace momoney.presentation.model.menu.file
 {
-    public interface ISaveCommand : ICommand
-    {
-    }
+    public interface ISaveCommand : Command {}
 
     public class SaveCommand : ISaveCommand
     {

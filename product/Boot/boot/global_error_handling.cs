@@ -2,14 +2,13 @@ using System;
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Presentation.Model.messages;
+using gorilla.commons.utility;
+using momoney.presentation.model.events;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.boot
 {
-    class global_error_handling : ICommand
+    class global_error_handling : Command
     {
         public void run()
         {

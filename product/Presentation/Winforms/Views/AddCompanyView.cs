@@ -2,18 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Extensions;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters;
+using momoney.presentation.views;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Databinding;
 using MoMoney.Presentation.Winforms.Resources;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class AddCompanyView : ApplicationDockedWindow, IAddCompanyView
     {
-        ControlAction<EventArgs> submit_button = x => { };
+        ControlAction<EventArgs> submit_button = x => {};
         readonly RegisterNewCompany dto;
 
         public AddCompanyView()

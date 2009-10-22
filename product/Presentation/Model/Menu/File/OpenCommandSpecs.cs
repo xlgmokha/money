@@ -1,10 +1,11 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 
-namespace MoMoney.Presentation.Model.Menu.File
+namespace momoney.presentation.model.menu.file
 {
     [Concern(typeof (OpenCommand))]
     public abstract class behaves_like_command_to_open_a_project : concerns_for<IOpenCommand, OpenCommand>

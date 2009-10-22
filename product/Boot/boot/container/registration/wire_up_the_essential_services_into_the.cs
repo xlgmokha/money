@@ -1,24 +1,25 @@
-using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Infrastructure.Log4Net;
+using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.infrastructure.thirdparty;
+using gorilla.commons.infrastructure.thirdparty.Log4Net;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration
 {
-    class wire_up_the_essential_services_into_the : ICommand
+    class wire_up_the_essential_services_into_the : Command
     {
-        readonly IDependencyRegistration registration;
+        readonly DependencyRegistration registration;
 
-        public wire_up_the_essential_services_into_the(IDependencyRegistration registration)
+        public wire_up_the_essential_services_into_the(DependencyRegistration registration)
         {
             this.registration = registration;
         }
 
         public void run()
         {
-            registration.singleton(() => registration);
-            registration.singleton(() => registration.build());
-            registration.singleton<ILogFactory, Log4NetLogFactory>();
+            registration.singleton<DependencyRegistration>(() => registration);
+            registration.singleton<DependencyRegistry>(() => registration.build());
+            registration.singleton<LogFactory, Log4NetLogFactory>();
         }
     }
 }

@@ -1,4 +1,6 @@
-namespace MoMoney.Presentation.Presenters
+using MoMoney.Presentation.Presenters;
+
+namespace momoney.presentation.presenters
 {
     public class Build
     {

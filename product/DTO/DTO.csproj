@@ -8,8 +8,8 @@
     <ProjectGuid>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MoMoney.DTO</RootNamespace>
-    <AssemblyName>MoMoney.DTO</AssemblyName>
+    <RootNamespace>momoney.dto</RootNamespace>
+    <AssemblyName>momoney.dto</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

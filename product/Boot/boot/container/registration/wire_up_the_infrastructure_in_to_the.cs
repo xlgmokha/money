@@ -1,23 +1,25 @@
 using System.Collections;
 using System.ComponentModel;
 using System.Deployment.Application;
-using Gorilla.Commons.Infrastructure;
 using Gorilla.Commons.Infrastructure.Registries;
-using Gorilla.Commons.Utility.Core;
-using MoMoney.DataAccess.Transactions;
+using gorilla.commons.infrastructure.thirdparty;
+using gorilla.commons.utility;
+using momoney.database.transactions;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Service.Infrastructure.Eventing;
+using momoney.service.infrastructure.threading;
 using MoMoney.Service.Infrastructure.Threading;
+using momoney.service.infrastructure.updating;
 using MoMoney.Service.Infrastructure.Updating;
 
 namespace MoMoney.boot.container.registration
 {
-    class wire_up_the_infrastructure_in_to_the : ICommand
+    class wire_up_the_infrastructure_in_to_the : Command
     {
-        readonly IDependencyRegistration registry;
+        readonly DependencyRegistration registry;
 
-        public wire_up_the_infrastructure_in_to_the(IDependencyRegistration registry)
+        public wire_up_the_infrastructure_in_to_the(DependencyRegistration registry)
         {
             this.registry = registry;
         }
@@ -27,10 +29,10 @@ namespace MoMoney.boot.container.registration
             registry.singleton<IEventAggregator, EventAggregator>();
             registry.singleton<ITimer, IntervalTimer>();
             registry.singleton<IProjectController, ProjectController>();
-            registry.transient(typeof (IRegistry<>), typeof (DefaultRegistry<>));
+            registry.transient(typeof (Registry<>), typeof (DefaultRegistry<>));
             registry.transient(typeof (ITrackerEntryMapper<>), typeof (TrackerEntryMapper<>));
             registry.transient(typeof (IKey<>), typeof (TypedKey<>));
-            registry.transient(typeof (IComponentFactory<>), typeof (ComponentFactory<>));
+            registry.transient(typeof (ComponentFactory<>), typeof (DefaultConstructorFactory<>));
             registry.singleton<IContext>(() => new Context(new Hashtable()));
 
             registry.singleton(() => AsyncOperationManager.SynchronizationContext);

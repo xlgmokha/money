@@ -2,9 +2,9 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 
-namespace MoMoney.Presentation.Model.Menu.File
+namespace momoney.presentation.model.menu.file
 {
     [Concern(typeof (SaveAsCommand))]
     public class when_saving_the_current_project_to_a_new_file_path : concerns_for<ISaveAsCommand, SaveAsCommand>

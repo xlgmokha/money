@@ -1,6 +1,5 @@
 using System.Linq;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
@@ -10,15 +9,15 @@ namespace MoMoney.Service.Application
 {
     public class AddNewIncomeCommand : IAddNewIncomeCommand
     {
-        readonly IGetTheCurrentCustomerQuery tasks;
-        readonly INotification notification;
+        readonly IGetTheCurrentCustomerQuery query;
+        readonly Notification notification;
         readonly IIncomeRepository all_income;
         readonly ICompanyRepository companys;
 
-        public AddNewIncomeCommand(IGetTheCurrentCustomerQuery tasks, INotification notification, IIncomeRepository all_income,
+        public AddNewIncomeCommand(IGetTheCurrentCustomerQuery query, Notification notification, IIncomeRepository all_income,
                                    ICompanyRepository companys)
         {
-            this.tasks = tasks;
+            this.query = query;
             this.notification = notification;
             this.all_income = all_income;
             this.companys = companys;
@@ -35,7 +34,7 @@ namespace MoMoney.Service.Application
                 companys
                     .find_company_by(item.company_id)
                     .pay(
-                    tasks.fetch(),
+                    query.fetch(),
                     item.amount.as_money(),
                     item.recieved_date
                     );

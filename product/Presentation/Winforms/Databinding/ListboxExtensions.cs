@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Winforms.Databinding
 {

@@ -1,8 +1,6 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Modules.Core
 {
-    public interface ILoadPresentationModulesCommand : ICommand
-    {
-    }
+    public interface ILoadPresentationModulesCommand : Command {}
 }

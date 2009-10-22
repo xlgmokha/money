@@ -1,10 +1,11 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Model.messages;
+using momoney.presentation.model.events;
+using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Model.Menu.File
+namespace momoney.presentation.model.menu.file
 {
     [Concern(typeof (ExitCommand))]
     public abstract class behaves_like_exit_command : concerns_for<IExitCommand>

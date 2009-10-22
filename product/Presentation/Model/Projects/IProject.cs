@@ -1,8 +1,8 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Model.Projects
 {
-    public interface IProject : IState
+    public interface IProject : State
     {
         string name();
         bool is_file_specified();

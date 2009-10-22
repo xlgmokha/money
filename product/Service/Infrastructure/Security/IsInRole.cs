@@ -1,9 +1,9 @@
 using System.Security.Principal;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Service.Infrastructure.Security
 {
-    public class IsInRole : ISpecification<IPrincipal>
+    public class IsInRole : Specification<IPrincipal>
     {
         readonly Role role;
 

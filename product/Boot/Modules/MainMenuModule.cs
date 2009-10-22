@@ -1,4 +1,4 @@
-using MoMoney.Presentation.Model.messages;
+using momoney.presentation.model.events;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Service.Infrastructure.Eventing;
 

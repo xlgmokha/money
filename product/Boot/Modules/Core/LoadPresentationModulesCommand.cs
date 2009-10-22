@@ -1,5 +1,4 @@
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 using MoMoney.Presentation;
 using MoMoney.Service.Infrastructure.Threading;
 
@@ -7,10 +6,10 @@ namespace MoMoney.Modules.Core
 {
     public class LoadPresentationModulesCommand : ILoadPresentationModulesCommand
     {
-        readonly IRegistry<IModule> registry;
+        readonly Registry<IModule> registry;
         readonly ICommandProcessor processor;
 
-        public LoadPresentationModulesCommand(IRegistry<IModule> registry, ICommandProcessor processor)
+        public LoadPresentationModulesCommand(Registry<IModule> registry, ICommandProcessor processor)
         {
             this.registry = registry;
             this.processor = processor;

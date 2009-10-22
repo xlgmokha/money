@@ -1,6 +1,6 @@
 using System;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Winforms.Keyboard;
 using MoMoney.Presentation.Winforms.Resources;
 using MoMoney.Service.Infrastructure.Eventing;
@@ -8,10 +8,10 @@ using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Presentation.Model.Menu
 {
-    public interface IMenuItemBuilder : IBuilder<IMenuItem>
+    public interface IMenuItemBuilder : Builder<IMenuItem>
     {
         IMenuItemBuilder named(string name);
-        IMenuItemBuilder that_executes<TheCommand>() where TheCommand : ICommand;
+        IMenuItemBuilder that_executes<TheCommand>() where TheCommand : Command;
         IMenuItemBuilder that_executes(Action action);
         IMenuItemBuilder represented_by(HybridIcon project);
         IMenuItemBuilder can_be_accessed_with(ShortcutKey hot_key);
@@ -20,7 +20,7 @@ namespace MoMoney.Presentation.Model.Menu
 
     public class MenuItemBuilder : IMenuItemBuilder
     {
-        readonly IDependencyRegistry registry;
+        readonly DependencyRegistry registry;
         readonly IEventAggregator aggregator;
         readonly ICommandProcessor processor;
 
@@ -30,10 +30,10 @@ namespace MoMoney.Presentation.Model.Menu
         ShortcutKey key { get; set; }
         Func<bool> can_be_clicked = () => true;
 
-        public MenuItemBuilder(IDependencyRegistry registry, IEventAggregator aggregator, ICommandProcessor processor)
+        public MenuItemBuilder(DependencyRegistry registry, IEventAggregator aggregator, ICommandProcessor processor)
         {
             name_of_the_menu = "Unknown";
-            command_to_execute = () => { };
+            command_to_execute = () => {};
             this.registry = registry;
             this.processor = processor;
             this.aggregator = aggregator;
@@ -47,9 +47,9 @@ namespace MoMoney.Presentation.Model.Menu
             return this;
         }
 
-        public IMenuItemBuilder that_executes<TheCommand>() where TheCommand : ICommand
+        public IMenuItemBuilder that_executes<TheCommand>() where TheCommand : Command
         {
-            command_to_execute = () => processor.add( registry.get_a<TheCommand>());
+            command_to_execute = () => processor.add(registry.get_a<TheCommand>());
             return this;
         }
 

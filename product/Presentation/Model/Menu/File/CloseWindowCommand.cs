@@ -1,11 +1,9 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Views;
 
-namespace MoMoney.Presentation.Model.Menu.File
+namespace momoney.presentation.model.menu.file
 {
-    public interface ICloseWindowCommand : ICommand
-    {
-    }
+    public interface ICloseWindowCommand : Command {}
 
     public class CloseWindowCommand : ICloseWindowCommand
     {

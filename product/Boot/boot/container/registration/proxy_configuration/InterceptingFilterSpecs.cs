@@ -1,7 +1,7 @@
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
@@ -9,18 +9,21 @@ namespace MoMoney.boot.container.registration.proxy_configuration
     {
         public class when_intercepting_a_call : concerns_for<IInterceptor, InterceptingFilter>
         {
-            context c = () => { condition = the_dependency<ISpecification<IInvocation>>(); };
+            context c = () =>
+            {
+                condition = the_dependency<Specification<IInvocation>>();
+            };
 
-            static protected ISpecification<IInvocation> condition;
+            static protected Specification<IInvocation> condition;
         }
 
         public class when_a_condition_is_not_met : when_intercepting_a_call
         {
             context c = () =>
-                            {
-                                invocation = an<IInvocation>();
-                                when_the(condition).is_told_to(x => x.is_satisfied_by(invocation)).it_will_return(false);
-                            };
+            {
+                invocation = an<IInvocation>();
+                when_the(condition).is_told_to(x => x.is_satisfied_by(invocation)).it_will_return(false);
+            };
 
             because b = () => sut.Intercept(invocation);
 
@@ -32,10 +35,10 @@ namespace MoMoney.boot.container.registration.proxy_configuration
         public class when_a_condition_is_met : when_intercepting_a_call
         {
             context c = () =>
-                            {
-                                invocation = an<IInvocation>();
-                                when_the(condition).is_told_to(x => x.is_satisfied_by(invocation)).it_will_return(true);
-                            };
+            {
+                invocation = an<IInvocation>();
+                when_the(condition).is_told_to(x => x.is_satisfied_by(invocation)).it_will_return(true);
+            };
 
             because b = () => sut.Intercept(invocation);
 

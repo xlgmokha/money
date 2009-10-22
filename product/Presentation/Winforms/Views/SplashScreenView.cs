@@ -1,6 +1,6 @@
 using System;
 using System.Windows.Forms;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views

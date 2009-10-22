@@ -1,6 +1,6 @@
+using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using Gorilla.Commons.Utility.Core;
-using MoMoney.Service.Contracts.Infrastructure.Updating;
+using momoney.service.contracts.infrastructure.updating;
 
 namespace MoMoney.Service.Infrastructure.Updating
 {
@@ -13,7 +13,7 @@ namespace MoMoney.Service.Infrastructure.Updating
             this.deployment = deployment;
         }
 
-        public void run(ICallback<Percent> callback)
+        public void run(Callback<Percent> callback)
         {
             deployment.UpdateProgressChanged += (o, e) => callback.run(new Percent(e.BytesCompleted, e.BytesTotal));
             deployment.UpdateCompleted += (sender, args) => callback.run(100);

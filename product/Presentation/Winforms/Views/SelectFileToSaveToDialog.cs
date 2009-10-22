@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.FileSystem;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 
 namespace MoMoney.Presentation.Winforms.Views
 {
@@ -15,7 +15,7 @@ namespace MoMoney.Presentation.Winforms.Views
             this.window = window;
         }
 
-        public IFile tell_me_the_path_to_the_file()
+        public File tell_me_the_path_to_the_file()
         {
             var result = dialog.ShowDialog(window);
             var the_path = (ApplicationFile) (result == DialogResult.Cancel ? string.Empty : dialog.FileName);

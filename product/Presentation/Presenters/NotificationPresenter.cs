@@ -1,11 +1,10 @@
 using System.Text;
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
-    public class NotificationPresenter : INotification
+    public class NotificationPresenter : Notification
     {
         public void notify(params NotificationMessage[] messages)
         {

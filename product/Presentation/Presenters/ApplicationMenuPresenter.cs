@@ -1,14 +1,12 @@
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
-    public interface IApplicationMenuPresenter : IPresenter
-    {
-    }
+    public interface IApplicationMenuPresenter : IPresenter {}
 
     public class ApplicationMenuPresenter : IApplicationMenuPresenter
     {

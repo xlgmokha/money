@@ -1,21 +1,18 @@
-using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Infrastructure.Autofac;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.infrastructure.thirdparty;
+using gorilla.commons.infrastructure.thirdparty.Autofac;
+using gorilla.commons.utility;
 using MoMoney.boot.container.registration;
 
 namespace MoMoney.boot.container
 {
-    class wire_up_the_container : ICommand
+    class wire_up_the_container : Command
     {
-        readonly IDependencyRegistration registry;
+        readonly DependencyRegistration registry;
 
-        public wire_up_the_container() : this(new AutofacDependencyRegistryBuilder())
-        {
-        }
+        public wire_up_the_container() : this(new AutofacDependencyRegistryBuilder()) {}
 
-        public wire_up_the_container(IDependencyRegistration registry)
+        public wire_up_the_container(DependencyRegistration registry)
         {
             this.registry = registry;
         }

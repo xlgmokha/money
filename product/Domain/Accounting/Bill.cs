@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Gorilla.Commons.Utility;
-using Gorilla.Commons.Utility.Extensions;
 using MoMoney.Domain.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Domain.Accounting
 {
@@ -44,7 +44,7 @@ namespace MoMoney.Domain.Accounting
 
         Money the_amount_paid()
         {
-            return payments.return_value_from_visiting_all_items_with(new TotalPaymentsCalculator());
+            return payments.return_value_from_visiting_all_with(new TotalPaymentsCalculator());
         }
 
         public bool Equals(Bill obj)

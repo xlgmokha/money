@@ -1,8 +1,6 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Model.Excel
 {
-    public interface ICellVisitor : IVisitor<ICell>
-    {
-    }
+    public interface ICellVisitor : Visitor<ICell> {}
 }

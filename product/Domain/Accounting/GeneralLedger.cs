@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.Core;
 
@@ -14,7 +14,7 @@ namespace MoMoney.Domain.accounting
     [Serializable]
     public class GeneralLedger : IGeneralLedger
     {
-        private readonly List<ILedgerEntry> entries;
+        readonly List<ILedgerEntry> entries;
 
         public GeneralLedger(List<ILedgerEntry> entries)
         {

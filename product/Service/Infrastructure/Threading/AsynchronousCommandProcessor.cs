@@ -2,30 +2,30 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Service.Infrastructure.Threading
 {
     public class AsynchronousCommandProcessor : ICommandProcessor
     {
-        readonly Queue<ICommand> queued_commands;
+        readonly Queue<Command> queued_commands;
         readonly EventWaitHandle manual_reset;
         readonly IList<Thread> worker_threads;
         bool keep_working;
 
         public AsynchronousCommandProcessor()
         {
-            queued_commands = new Queue<ICommand>();
+            queued_commands = new Queue<Command>();
             worker_threads = new List<Thread>();
             manual_reset = new ManualResetEvent(false);
         }
 
         public void add(Expression<Action> action_to_process)
         {
-            add(new ActionCommand(action_to_process));
+            add(new AnonymousCommand(action_to_process));
         }
 
-        public void add(ICommand command_to_process)
+        public void add(Command command_to_process)
         {
             lock (queued_commands)
             {
@@ -64,7 +64,7 @@ namespace MoMoney.Service.Infrastructure.Threading
 
         void run_next_command()
         {
-            ICommand command;
+            Command command;
             lock (queued_commands)
             {
                 if (queued_commands.Count == 0)

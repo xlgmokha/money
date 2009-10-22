@@ -1,18 +1,20 @@
 using System;
 using System.Linq.Expressions;
 using DataDynamics.ActiveReports;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Model.reporting
 {
-    public static class ReportBindingExtensions
+    static public class ReportBindingExtensions
     {
-        public static void bind_to<T, K>(this ARControl control, Expression<Func<T, K>> func)
+        static public void bind_to<T, K>(this ARControl control, Expression<Func<T, K>> func)
         {
-            if (func.Body.is_an_implementation_of<MemberExpression>()) {
+            if (func.Body.is_an_implementation_of<MemberExpression>())
+            {
                 control.DataField = func.Body.downcast_to<MemberExpression>().Member.Name;
             }
-            else {
+            else
+            {
                 control.DataField = func.Body.downcast_to<UnaryExpression>().Method.Name;
             }
         }

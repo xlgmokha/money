@@ -8,8 +8,8 @@
     <ProjectGuid>{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MoMoney</RootNamespace>
-    <AssemblyName>MoMoney</AssemblyName>
+    <RootNamespace>momoney</RootNamespace>
+    <AssemblyName>momoney</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,15 +47,19 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
     </Reference>
-    <Reference Include="gorilla.commons.infrastructure, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+    <Reference Include="gorilla.commons.infrastructure, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="gorilla.commons.infrastructure.thirdparty, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+    <Reference Include="gorilla.commons.infrastructure.thirdparty, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.thirdparty.dll</HintPath>
     </Reference>
-    <Reference Include="gorilla.commons.utility, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+    <Reference Include="gorilla.commons.infrastructure.thirdparty.log4net, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.thirdparty.log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.commons.utility, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
     </Reference>
@@ -158,23 +162,23 @@
     <Compile Include="boot\display_the_splash_screen.cs" />
     <Compile Include="boot\global_error_handling.cs" />
     <Compile Include="boot\WindowsFormsApplication.cs" />
-    <Compile Include="Modules\ApplicationShellModule.cs" />
-    <Compile Include="Modules\Core\ILoadPresentationModulesCommand.cs" />
-    <Compile Include="Modules\DatabaseModule.cs" />
-    <Compile Include="Modules\ApplicationMenuModule.cs" />
-    <Compile Include="Modules\IApplicationMenuModule.cs" />
-    <Compile Include="Modules\IDatabaseModule.cs" />
-    <Compile Include="Modules\IMainMenuModule.cs" />
-    <Compile Include="Modules\INavigationModule.cs" />
-    <Compile Include="Modules\IToolbarModule.cs" />
-    <Compile Include="Modules\MainMenuModule.cs" />
-    <Compile Include="Modules\NavigationModule.cs" />
-    <Compile Include="Modules\GettingStartedModule.cs" />
-    <Compile Include="Modules\GettingStartedModuleSpecs.cs" />
-    <Compile Include="Modules\ToolbarModule.cs" />
-    <Compile Include="Modules\Core\LoadPresentationModulesCommandSpecs.cs" />
+    <Compile Include="modules\ApplicationShellModule.cs" />
+    <Compile Include="modules\core\ILoadPresentationModulesCommand.cs" />
+    <Compile Include="modules\DatabaseModule.cs" />
+    <Compile Include="modules\ApplicationMenuModule.cs" />
+    <Compile Include="modules\IApplicationMenuModule.cs" />
+    <Compile Include="modules\IDatabaseModule.cs" />
+    <Compile Include="modules\IMainMenuModule.cs" />
+    <Compile Include="modules\INavigationModule.cs" />
+    <Compile Include="modules\IToolbarModule.cs" />
+    <Compile Include="modules\MainMenuModule.cs" />
+    <Compile Include="modules\NavigationModule.cs" />
+    <Compile Include="modules\GettingStartedModule.cs" />
+    <Compile Include="modules\GettingStartedModuleSpecs.cs" />
+    <Compile Include="modules\ToolbarModule.cs" />
+    <Compile Include="modules\core\LoadPresentationModulesCommandSpecs.cs" />
     <Compile Include="boot\hookup.cs" />
-    <Compile Include="Modules\Core\LoadPresentationModulesCommand.cs" />
+    <Compile Include="modules\core\LoadPresentationModulesCommand.cs" />
     <Compile Include="bootstrap.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -203,29 +207,29 @@
     <Compile Include="boot\container\registration\wire_up_the_views_in_to_the.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\database\database.csproj">
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
-      <Name>DataAccess</Name>
+      <Name>database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
+    <ProjectReference Include="..\Domain\domain.csproj">
       <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
-      <Name>Domain</Name>
+      <Name>domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
+    <ProjectReference Include="..\DTO\dto.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
-      <Name>DTO</Name>
+      <Name>dto</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Presentation\Presentation.csproj">
+    <ProjectReference Include="..\Presentation\presentation.csproj">
       <Project>{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}</Project>
-      <Name>Presentation</Name>
+      <Name>presentation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Service\Service.csproj">
+    <ProjectReference Include="..\Service\service.csproj">
       <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
-      <Name>Service</Name>
+      <Name>service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj">
+    <ProjectReference Include="..\Service.Contracts\service.contracts.csproj">
       <Project>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</Project>
-      <Name>Service.Contracts</Name>
+      <Name>service.contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,17 +1,16 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
+using MoMoney.Presentation.Presenters;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
-    public interface IRunQueryCommand<T> : ICommand
-    {
-    }
+    public interface IRunQueryCommand<T> : Command {}
 
     public class RunQueryCommand<T> : IRunQueryCommand<T>
     {
-        readonly ICallback<T> callback;
+        readonly Callback<T> callback;
         readonly IProcessQueryCommand<T> command;
 
-        public RunQueryCommand(ICallback<T> callback, IProcessQueryCommand<T> command)
+        public RunQueryCommand(Callback<T> callback, IProcessQueryCommand<T> command)
         {
             this.callback = callback;
             this.command = command;

@@ -1,18 +1,16 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Domain.repositories;
 
 namespace MoMoney.Domain.Accounting
 {
-    public interface ICompanyFactory : IFactory<ICompany>
-    {
-    }
+    public interface ICompanyFactory : Factory<ICompany> {}
 
     public class CompanyFactory : ICompanyFactory
     {
-        readonly IComponentFactory<Company> factory;
+        readonly ComponentFactory<Company> factory;
         readonly ICompanyRepository companys;
 
-        public CompanyFactory(IComponentFactory<Company> factory, ICompanyRepository companys)
+        public CompanyFactory(ComponentFactory<Company> factory, ICompanyRepository companys)
         {
             this.factory = factory;
             this.companys = companys;

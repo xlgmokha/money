@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters;
-using MoMoney.Presentation.Views;
+using momoney.presentation.presenters;
+using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Krypton;
 using MoMoney.Presentation.Winforms.Resources;

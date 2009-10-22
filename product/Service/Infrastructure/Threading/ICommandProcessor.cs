@@ -1,13 +1,13 @@
 using System;
 using System.Linq.Expressions;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Service.Infrastructure.Threading
 {
-    public interface ICommandProcessor : ICommand
+    public interface ICommandProcessor : Command
     {
         void add(Expression<Action> action_to_process);
-        void add(ICommand command_to_process);
+        void add(Command command_to_process);
         void stop();
     }
 }

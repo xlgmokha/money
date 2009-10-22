@@ -2,15 +2,15 @@ using System.Security.Principal;
 using System.Threading;
 using Castle.Core.Interceptor;
 using Gorilla.Commons.Infrastructure.Logging;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
     public class SecuringProxy : IInterceptor
     {
-        readonly ISpecification<IPrincipal> filter;
+        readonly Specification<IPrincipal> filter;
 
-        public SecuringProxy(ISpecification<IPrincipal> filter)
+        public SecuringProxy(Specification<IPrincipal> filter)
         {
             this.filter = filter;
         }

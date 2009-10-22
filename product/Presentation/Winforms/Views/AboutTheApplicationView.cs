@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
-using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Presentation.Views;
+using gorilla.commons.utility;
+using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views
@@ -24,9 +24,7 @@ namespace MoMoney.Presentation.Winforms.Views
             ux_logo.Image = ApplicationImages.Splash;
         }
 
-        public void display()
-        {
-        }
+        public void display() {}
 
         string assembly_version
         {

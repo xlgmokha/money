@@ -1,21 +1,21 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Utility.Core;
+using gorilla.commons.Utility;
 using Rhino.Mocks;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     [Concern(typeof (BackgroundThread))]
     public abstract class behaves_like_a_background_thread : concerns_for<IBackgroundThread, BackgroundThread>
     {
         context c = () =>
         {
-            command_to_execute = the_dependency<IDisposableCommand>();
+            command_to_execute = the_dependency<DisposableCommand>();
             worker_thread = the_dependency<IWorkerThread>();
         };
 
-        protected static IDisposableCommand command_to_execute;
-        protected static IWorkerThread worker_thread;
+        static protected DisposableCommand command_to_execute;
+        static protected IWorkerThread worker_thread;
     }
 
     [Concern(typeof (BackgroundThread))]

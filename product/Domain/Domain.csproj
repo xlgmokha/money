@@ -8,8 +8,8 @@
     <ProjectGuid>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MoMoney.Domain</RootNamespace>
-    <AssemblyName>MoMoney.Domain</AssemblyName>
+    <RootNamespace>momoney.domain</RootNamespace>
+    <AssemblyName>momoney.domain</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -65,36 +65,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accounting\AccountHolder.cs" />
-    <Compile Include="Accounting\AccountHolderSpecs.cs" />
-    <Compile Include="Accounting\Bill.cs" />
-    <Compile Include="Accounting\BillingExtensions.cs" />
-    <Compile Include="Accounting\BillSpecs.cs" />
-    <Compile Include="Accounting\Company.cs" />
-    <Compile Include="Accounting\CompanyFactory.cs" />
-    <Compile Include="Accounting\ILedgerEntry.cs" />
-    <Compile Include="Accounting\Income.cs" />
-    <Compile Include="Accounting\Payment.cs" />
-    <Compile Include="Accounting\TotalPaymentsCalculator.cs" />
-    <Compile Include="Accounting\GeneralLedger.cs" />
-    <Compile Include="Accounting\GeneralLedgerSpecs.cs" />
-    <Compile Include="Accounting\AnnualIncomeVisitor.cs" />
-    <Compile Include="Accounting\IncomeExtensions.cs" />
-    <Compile Include="Core\Entity.cs" />
-    <Compile Include="Core\Money.cs" />
-    <Compile Include="Core\MoneyExtensions.cs" />
-    <Compile Include="Core\MoneyExtensionsSpecs.cs" />
-    <Compile Include="Core\MoneySpecs.cs" />
-    <Compile Include="Core\Month.cs" />
-    <Compile Include="Core\Months.cs" />
-    <Compile Include="Core\range.cs" />
-    <Compile Include="Core\RangeSpecs.cs" />
-    <Compile Include="Core\Ranking.cs" />
-    <Compile Include="Core\RankingSpecs.cs" />
-    <Compile Include="Repositories\IAccountHolderRepository.cs" />
-    <Compile Include="Repositories\IBillRepository.cs" />
-    <Compile Include="Repositories\ICompanyRepository.cs" />
-    <Compile Include="Repositories\IIncomeRepository.cs" />
+    <Compile Include="accounting\AccountHolder.cs" />
+    <Compile Include="accounting\AccountHolderSpecs.cs" />
+    <Compile Include="accounting\Bill.cs" />
+    <Compile Include="accounting\BillingExtensions.cs" />
+    <Compile Include="accounting\BillSpecs.cs" />
+    <Compile Include="accounting\Company.cs" />
+    <Compile Include="accounting\CompanyFactory.cs" />
+    <Compile Include="accounting\ILedgerEntry.cs" />
+    <Compile Include="accounting\Income.cs" />
+    <Compile Include="accounting\Payment.cs" />
+    <Compile Include="accounting\TotalPaymentsCalculator.cs" />
+    <Compile Include="accounting\GeneralLedger.cs" />
+    <Compile Include="accounting\GeneralLedgerSpecs.cs" />
+    <Compile Include="accounting\AnnualIncomeVisitor.cs" />
+    <Compile Include="accounting\IncomeExtensions.cs" />
+    <Compile Include="core\Entity.cs" />
+    <Compile Include="core\Money.cs" />
+    <Compile Include="core\MoneyExtensions.cs" />
+    <Compile Include="core\MoneyExtensionsSpecs.cs" />
+    <Compile Include="core\MoneySpecs.cs" />
+    <Compile Include="core\Month.cs" />
+    <Compile Include="core\Months.cs" />
+    <Compile Include="core\range.cs" />
+    <Compile Include="core\RangeSpecs.cs" />
+    <Compile Include="core\Ranking.cs" />
+    <Compile Include="core\RankingSpecs.cs" />
+    <Compile Include="repositories\IAccountHolderRepository.cs" />
+    <Compile Include="repositories\IBillRepository.cs" />
+    <Compile Include="repositories\ICompanyRepository.cs" />
+    <Compile Include="repositories\IIncomeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

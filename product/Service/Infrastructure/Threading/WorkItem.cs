@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     [Serializable]
     internal class WorkItem : IAsyncResult

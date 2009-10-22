@@ -2,7 +2,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Projects;
 
-namespace MoMoney.Presentation.Model.Menu.File
+namespace momoney.presentation.model.menu.file
 {
     [Concern(typeof (SaveCommand))]
     public abstract class behaves_like_the_save_command : concerns_for<ISaveCommand, SaveCommand>

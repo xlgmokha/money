@@ -1,12 +1,10 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
 using MoMoney.Service.Infrastructure.Threading;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
-    public interface IRunThe<TPresenter> : ICommand where TPresenter : IPresenter
-    {
-    }
+    public interface IRunThe<TPresenter> : Command where TPresenter : IPresenter {}
 
     public class RunThe<TPresenter> : IRunThe<TPresenter> where TPresenter : IPresenter
     {

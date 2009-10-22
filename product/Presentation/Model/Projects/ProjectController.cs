@@ -1,15 +1,14 @@
 using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Infrastructure.Logging;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Presentation.Model.messages;
+using gorilla.commons.utility;
+using momoney.presentation.model.events;
 using MoMoney.Service.Contracts.Infrastructure;
-using MoMoney.Service.Contracts.Infrastructure.Transactions;
+using momoney.service.contracts.infrastructure.transactions;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Presentation.Model.Projects
 {
-    public class ProjectController : IProjectController, ICallback<IUnitOfWork>
+    public class ProjectController : IProjectController, Callback<IUnitOfWork>
     {
         readonly IEventAggregator broker;
         readonly IProjectTasks configuration;
@@ -36,7 +35,7 @@ namespace MoMoney.Presentation.Model.Projects
             broker.publish(new NewProjectOpened(name()));
         }
 
-        public void open_project_from(IFile file)
+        public void open_project_from(File file)
         {
             if (!file.does_the_file_exist()) return;
             close_project();
@@ -53,7 +52,7 @@ namespace MoMoney.Presentation.Model.Projects
             broker.publish<SavedChangesEvent>();
         }
 
-        public void save_project_to(IFile new_file)
+        public void save_project_to(File new_file)
         {
             if (new_file.path.is_blank()) return;
             project = new Project(new_file);

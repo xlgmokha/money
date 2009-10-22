@@ -1,10 +1,11 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
+using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 
-namespace MoMoney.Presentation.Model.Menu.File
+namespace momoney.presentation.model.menu.file
 {
-    public interface IOpenCommand : ICommand, ISaveChangesCallback
+    public interface IOpenCommand : Command, ISaveChangesCallback
     {
     }
 

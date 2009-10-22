@@ -1,8 +1,4 @@
-using Gorilla.Commons.Utility.Core;
-
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
-    public interface ICommandDialog<Command> where Command : ICommand
-    {
-    }
+    public interface ICommandDialog<Command> where Command : gorilla.commons.utility.Command {}
 }

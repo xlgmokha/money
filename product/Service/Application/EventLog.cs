@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Service.Application
 {
     public class EventLog : IEventLog
     {
-        readonly IList<ICommand> events = new List<ICommand>();
+        readonly IList<Command> events = new List<Command>();
 
-        public void process(ICommand the_event)
+        public void process(Command the_event)
         {
             the_event.run();
             events.Add(the_event);

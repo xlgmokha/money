@@ -1,10 +1,10 @@
-using MoMoney.Utility.Core;
+using gorilla.commons.Utility;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
-    public static class ThreadingExtensions
+    static public class ThreadingExtensions
     {
-        public static IBackgroundThread on_a_background_thread(this IDisposableCommand command)
+        static public IBackgroundThread on_a_background_thread(this DisposableCommand command)
         {
             return new BackgroundThread(command);
         }

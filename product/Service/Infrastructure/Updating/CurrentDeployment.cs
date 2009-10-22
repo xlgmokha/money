@@ -1,8 +1,9 @@
 using System;
 using System.ComponentModel;
 using System.Deployment.Application;
+using MoMoney.Service.Infrastructure.Updating;
 
-namespace MoMoney.Service.Infrastructure.Updating
+namespace momoney.service.infrastructure.updating
 {
     public class CurrentDeployment : IDeployment
     {

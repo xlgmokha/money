@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using ComponentFactory.Krypton.Toolkit;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Winforms.Krypton
 {

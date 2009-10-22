@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
@@ -11,9 +10,9 @@ namespace MoMoney.Service.Application
     public class GetAllBillsQuery : IGetAllBillsQuery
     {
         readonly IBillRepository bills;
-        readonly IMapper<IBill, BillInformationDTO> mapper;
+        readonly Mapper<IBill, BillInformationDTO> mapper;
 
-        public GetAllBillsQuery(IBillRepository bills, IMapper<IBill, BillInformationDTO> mapper)
+        public GetAllBillsQuery(IBillRepository bills, Mapper<IBill, BillInformationDTO> mapper)
         {
             this.bills = bills;
             this.mapper = mapper;

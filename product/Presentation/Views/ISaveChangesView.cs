@@ -1,6 +1,6 @@
 using MoMoney.Presentation.Model.Menu.File;
 
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
     public interface ISaveChangesView : IView<ISaveChangesPresenter>
     {

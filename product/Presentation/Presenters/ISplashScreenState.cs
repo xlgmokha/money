@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     public interface ISplashScreenState
     {

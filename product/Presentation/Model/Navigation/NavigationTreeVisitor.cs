@@ -1,15 +1,14 @@
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Model.Navigation
 {
     public class NavigationTreeVisitor : INavigationTreeVisitor
     {
         readonly ITreeViewToRootNodeMapper mapper;
-        readonly IRegistry<IBranchVisitor> visitors;
+        readonly Registry<IBranchVisitor> visitors;
 
-        public NavigationTreeVisitor(ITreeViewToRootNodeMapper mapper, IRegistry<IBranchVisitor> visitors)
+        public NavigationTreeVisitor(ITreeViewToRootNodeMapper mapper, Registry<IBranchVisitor> visitors)
         {
             this.mapper = mapper;
             this.visitors = visitors;

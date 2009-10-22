@@ -1,11 +1,11 @@
+using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using Gorilla.Commons.Utility.Core;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters;
+using momoney.presentation.presenters;
 
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
-    public interface ICheckForUpdatesView : IView<ICheckForUpdatesPresenter>, ICallback<ApplicationVersion>
+    public interface ICheckForUpdatesView : IView<ICheckForUpdatesPresenter>, Callback<ApplicationVersion>
     {
         void display();
         void downloaded(Percent percentage_complete);

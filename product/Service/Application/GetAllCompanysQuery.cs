@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.ComponentModel;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
@@ -9,13 +7,12 @@ using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.Service.Application
 {
-    [DisplayName("Loading all companies...")]
     public class GetAllCompanysQuery : IGetAllCompanysQuery
     {
         readonly ICompanyRepository companys;
-        readonly IMapper<ICompany, CompanyDTO> mapper;
+        readonly Mapper<ICompany, CompanyDTO> mapper;
 
-        public GetAllCompanysQuery(ICompanyRepository companys, IMapper<ICompany, CompanyDTO> mapper)
+        public GetAllCompanysQuery(ICompanyRepository companys, Mapper<ICompany, CompanyDTO> mapper)
         {
             this.companys = companys;
             this.mapper = mapper;

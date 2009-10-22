@@ -1,10 +1,12 @@
 using Castle.Core.Interceptor;
-using MoMoney.Presentation.Model.messages;
+using momoney.presentation.model.events;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
-    public interface INotifyProgressInterceptor : IInterceptor {}
+    public interface INotifyProgressInterceptor : IInterceptor
+    {
+    }
 
     public class NotifyProgressInterceptor : INotifyProgressInterceptor
     {
@@ -17,9 +19,9 @@ namespace MoMoney.boot.container.registration.proxy_configuration
 
         public void Intercept(IInvocation invocation)
         {
-            broker.publish(new StartedRunningCommand(invocation.InvocationTarget));
+            broker.publish(new StartedRunningCommand(invocation.TargetType.Name));
             invocation.Proceed();
-            broker.publish(new FinishedRunningCommand(invocation.InvocationTarget));
+            broker.publish(new FinishedRunningCommand(invocation.TargetType.Name));
         }
     }
 }

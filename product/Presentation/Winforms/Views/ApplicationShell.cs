@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Extensions;
-using MoMoney.Presentation.Presenters;
+using gorilla.commons.utility;
+using momoney.presentation.presenters;
+using momoney.presentation.views;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Helpers;
 
@@ -20,17 +21,17 @@ namespace MoMoney.Presentation.Winforms.Views
         {
             InitializeComponent();
             regions = new Dictionary<string, IComponent>
-                          {
-                              {GetType().FullName, this},
-                              {typeof (Form).FullName, this},
-                              {ux_main_menu_strip.GetType().FullName, ux_main_menu_strip},
-                              {ux_dock_panel.GetType().FullName, ux_dock_panel},
-                              {ux_tool_bar_strip.GetType().FullName, ux_tool_bar_strip},
-                              {ux_status_bar.GetType().FullName, ux_status_bar},
-                              {notification_icon.GetType().FullName, notification_icon},
-                              {status_bar_label.GetType().FullName, status_bar_label},
-                              {status_bar_progress_bar.GetType().FullName, status_bar_progress_bar}
-                          };
+                      {
+                          {GetType().FullName, this},
+                          {typeof (Form).FullName, this},
+                          {ux_main_menu_strip.GetType().FullName, ux_main_menu_strip},
+                          {ux_dock_panel.GetType().FullName, ux_dock_panel},
+                          {ux_tool_bar_strip.GetType().FullName, ux_tool_bar_strip},
+                          {ux_status_bar.GetType().FullName, ux_status_bar},
+                          {notification_icon.GetType().FullName, notification_icon},
+                          {status_bar_label.GetType().FullName, status_bar_label},
+                          {status_bar_progress_bar.GetType().FullName, status_bar_progress_bar}
+                      };
             Closed += (o, e) => closed_action(e);
         }
 

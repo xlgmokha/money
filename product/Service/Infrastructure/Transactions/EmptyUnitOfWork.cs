@@ -1,5 +1,5 @@
 using Gorilla.Commons.Infrastructure.Logging;
-using MoMoney.Service.Contracts.Infrastructure.Transactions;
+using momoney.service.contracts.infrastructure.transactions;
 
 namespace MoMoney.Service.Infrastructure.Transactions
 {

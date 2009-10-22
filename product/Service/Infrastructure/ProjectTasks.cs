@@ -1,5 +1,5 @@
 using Gorilla.Commons.Infrastructure.FileSystem;
-using MoMoney.DataAccess;
+using momoney.database;
 using MoMoney.Service.Contracts.Infrastructure;
 
 namespace MoMoney.Service.Infrastructure
@@ -13,7 +13,7 @@ namespace MoMoney.Service.Infrastructure
             this.configuration = configuration;
         }
 
-        public void open(IFile file)
+        public void open(File file)
         {
             configuration.open(file);
         }

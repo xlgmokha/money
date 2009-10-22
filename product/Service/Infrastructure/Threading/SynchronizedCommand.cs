@@ -1,12 +1,10 @@
 using System;
 using System.Threading;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
-    public interface ISynchronizedCommand : IParameterizedCommand<Action>, IParameterizedCommand<ICommand>
-    {
-    }
+    public interface ISynchronizedCommand : ParameterizedCommand<Action>, ParameterizedCommand<Command> {}
 
     public class SynchronizedCommand : ISynchronizedCommand
     {
@@ -22,7 +20,7 @@ namespace MoMoney.Service.Infrastructure.Threading
             context.Post(x => item(), new object());
         }
 
-        public void run(ICommand item)
+        public void run(Command item)
         {
             run(item.run);
         }

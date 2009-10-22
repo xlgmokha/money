@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters;
+using momoney.presentation.views;
 
 namespace MoMoney.Presentation.Views
 {
     public interface IAddCompanyView : IDockedContentView,
                                        IView<IAddCompanyPresenter>,
-                                       ICallback<IEnumerable<CompanyDTO>>
-    {
-    }
+                                       Callback<IEnumerable<CompanyDTO>> {}
 }

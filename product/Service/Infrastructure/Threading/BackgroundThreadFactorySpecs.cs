@@ -1,16 +1,19 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Testing;
-using MoMoney.Utility.Core;
+using gorilla.commons.Utility;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     [Concern(typeof (BackgroundThreadFactory))]
     public abstract class behaves_like_a_background_thread_factory : concerns_for<IBackgroundThreadFactory, BackgroundThreadFactory>
     {
-        context c = () => { registry = the_dependency<IDependencyRegistry>(); };
+        context c = () =>
+        {
+            registry = the_dependency<DependencyRegistry>();
+        };
 
-        protected static IDependencyRegistry registry;
+        static protected DependencyRegistry registry;
     }
 
     [Concern(typeof (BackgroundThreadFactory))]
@@ -19,9 +22,12 @@ namespace MoMoney.Service.Infrastructure.Threading
         it should_return_an_instance_of_a_background_thread = () => result.should_not_be_null();
 
         it should_lookup_an_instance_of_the_command_to_execute =
-            () => registry.was_told_to(r => r.get_a<IDisposableCommand>());
+            () => registry.was_told_to(r => r.get_a<DisposableCommand>());
 
-        because b = () => { result = sut.create_for<IDisposableCommand>(); };
+        because b = () =>
+        {
+            result = sut.create_for<DisposableCommand>();
+        };
 
         static IBackgroundThread result;
     }

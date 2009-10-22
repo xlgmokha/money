@@ -1,10 +1,10 @@
 using Castle.Core.Interceptor;
-using MoMoney.Utility.Core;
+using gorilla.commons.Utility;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     public class RunOnBackgroundThreadInterceptor<CommandToExecute> : IInterceptor
-        where CommandToExecute : IDisposableCommand
+        where CommandToExecute : DisposableCommand
     {
         readonly IBackgroundThreadFactory thread_factory;
 

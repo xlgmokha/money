@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Security.Permissions;
 using System.Threading;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     [SecurityPermission(SecurityAction.Demand, ControlThread = true)]
     public class Synchronizer : ISynchronizeInvoke, IDisposable
@@ -14,7 +14,7 @@ namespace MoMoney.Service.Infrastructure.Threading
 
         public Synchronizer()
         {
-            worker_thread = new WorkerThread();
+            worker_thread = new WorkerThread(this);
         }
 
         public bool InvokeRequired
@@ -55,10 +55,12 @@ namespace MoMoney.Service.Infrastructure.Threading
             bool end_loop;
             readonly Mutex end_loop_mutex;
             readonly AutoResetEvent item_added;
+            Synchronizer synchronizer;
             readonly Queue work_item_queue;
 
-            internal WorkerThread()
+            internal WorkerThread(Synchronizer synchronizer)
             {
+                this.synchronizer = synchronizer;
                 end_loop = false;
                 thread = null;
                 end_loop_mutex = new Mutex();
@@ -86,7 +88,7 @@ namespace MoMoney.Service.Infrastructure.Threading
                 }
                 get
                 {
-                    bool result;
+                    var result = false;
                     end_loop_mutex.WaitOne();
                     result = end_loop;
                     end_loop_mutex.ReleaseMutex();

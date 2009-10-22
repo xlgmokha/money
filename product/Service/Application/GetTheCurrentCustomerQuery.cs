@@ -1,13 +1,11 @@
 using System.Linq;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Domain.accounting;
 using MoMoney.Domain.repositories;
 
 namespace MoMoney.Service.Application
 {
-    public interface IGetTheCurrentCustomerQuery : IQuery<IAccountHolder>
-    {
-    }
+    public interface IGetTheCurrentCustomerQuery : Query<IAccountHolder> {}
 
     public class GetTheCurrentCustomerQuery : IGetTheCurrentCustomerQuery
     {

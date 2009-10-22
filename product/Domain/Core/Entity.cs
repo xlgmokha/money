@@ -1,12 +1,9 @@
 using System;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.Domain.Core
 {
-    public interface IEntity : IIdentifiable<Guid>
-    {
-    }
+    public interface IEntity : Identifiable<Guid> {}
 
     [Serializable]
     public abstract class Entity<T> : IEntity where T : class, IEntity

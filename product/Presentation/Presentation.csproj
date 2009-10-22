@@ -8,8 +8,8 @@
     <ProjectGuid>{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MoMoney.Presentation</RootNamespace>
-    <AssemblyName>MoMoney.Presentation</AssemblyName>
+    <RootNamespace>momoney.presentation</RootNamespace>
+    <AssemblyName>momoney.presentation</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -103,448 +103,444 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Messages\FinishedRunningCommand.cs" />
-    <Compile Include="Model\Messages\StartedRunningCommand.cs" />
-    <Compile Include="Model\Navigation\INavigationTreeVisitor.cs" />
-    <Compile Include="Model\Navigation\ITreeBranch.cs" />
-    <Compile Include="Model\Navigation\ITreeViewToRootNodeMapper.cs" />
-    <Compile Include="Model\Reporting\IBindReportTo.cs" />
-    <Compile Include="Presenters\CommandFactory.cs" />
-    <Compile Include="Presenters\CommandPump.cs" />
-    <Compile Include="Core\ApplicationController.cs" />
-    <Compile Include="Core\ApplicationControllerSpecs.cs" />
-    <Compile Include="Core\ApplicationEnvironment.cs" />
-    <Compile Include="Core\ContentPresenter.cs" />
-    <Compile Include="Core\IContentPresenter.cs" />
-    <Compile Include="Core\IPresenter.cs" />
-    <Compile Include="Core\PresenterRegistry.cs" />
+    <Compile Include="model\eventing\FinishedRunningCommand.cs" />
+    <Compile Include="model\eventing\StartedRunningCommand.cs" />
+    <Compile Include="model\navigation\INavigationTreeVisitor.cs" />
+    <Compile Include="model\navigation\ITreeBranch.cs" />
+    <Compile Include="model\navigation\ITreeViewToRootNodeMapper.cs" />
+    <Compile Include="model\reporting\IBindReportTo.cs" />
+    <Compile Include="presenters\CommandFactory.cs" />
+    <Compile Include="presenters\CommandPump.cs" />
+    <Compile Include="core\ApplicationController.cs" />
+    <Compile Include="core\ApplicationControllerSpecs.cs" />
+    <Compile Include="core\ApplicationEnvironment.cs" />
+    <Compile Include="core\ContentPresenter.cs" />
+    <Compile Include="core\IContentPresenter.cs" />
+    <Compile Include="core\IPresenter.cs" />
+    <Compile Include="core\PresenterRegistry.cs" />
     <Compile Include="IModule.cs" />
-    <Compile Include="Model\FileSystem\folder.cs" />
-    <Compile Include="Model\Menu\create.cs" />
-    <Compile Include="Model\Menu\File\CloseProjectCommand.cs" />
-    <Compile Include="Model\Menu\File\CloseWindowCommand.cs" />
-    <Compile Include="Model\Menu\File\ExitCommand.cs" />
-    <Compile Include="Model\Menu\File\ExitCommandSpecs.cs" />
-    <Compile Include="Model\Menu\File\FileMenu.cs" />
-    <Compile Include="Model\Menu\File\NewCommand.cs" />
-    <Compile Include="Model\Menu\File\NewCommandSpecs.cs" />
-    <Compile Include="Model\Menu\File\OpenCommand.cs" />
-    <Compile Include="Model\Menu\File\OpenCommandSpecs.cs" />
-    <Compile Include="Model\Menu\File\SaveAsCommand.cs" />
-    <Compile Include="Model\Menu\File\SaveAsCommandSpecs.cs" />
-    <Compile Include="Model\Menu\File\SaveChangesCommand.cs" />
-    <Compile Include="Model\Menu\File\SaveCommand.cs" />
-    <Compile Include="Model\Menu\File\SaveCommandSpecs.cs" />
-    <Compile Include="Model\Menu\Help\display_information_about_the_application.cs" />
-    <Compile Include="Model\Menu\Help\HelpMenu.cs" />
-    <Compile Include="Model\Menu\ISubMenu.cs" />
-    <Compile Include="Model\Menu\IToolbarButton.cs" />
-    <Compile Include="Model\Menu\IToolbarItemBuilder.cs" />
-    <Compile Include="Model\Menu\MenuItem.cs" />
-    <Compile Include="Model\Menu\MenuItemBuilder.cs" />
-    <Compile Include="Model\Menu\MenuItemSeparator.cs" />
-    <Compile Include="Model\Menu\SubMenu.cs" />
-    <Compile Include="Model\Menu\SubMenuRegistry.cs" />
-    <Compile Include="Model\Menu\ToolBarItemBuilder.cs" />
-    <Compile Include="Model\Menu\Window\WindowMenu.cs" />
-    <Compile Include="Model\Messages\ClosingProjectEvent.cs" />
-    <Compile Include="Model\Messages\ClosingTheApplication.cs" />
-    <Compile Include="Model\Messages\NewProjectOpened.cs" />
-    <Compile Include="Model\Messages\SavedChangesEvent.cs" />
-    <Compile Include="Model\Messages\UnhandledErrorOccurred.cs" />
-    <Compile Include="Model\Messages\UnsavedChangesEvent.cs" />
-    <Compile Include="Model\Navigation\AddNewIncomeBranch.cs" />
-    <Compile Include="Model\Navigation\AddBillPaymentBranch.cs" />
-    <Compile Include="Model\Navigation\AddNewBillBranch.cs" />
-    <Compile Include="Model\Navigation\IBranchVisitor.cs" />
-    <Compile Include="Model\Navigation\NavigationTreeVisitor.cs" />
-    <Compile Include="Model\Navigation\NavigationTreeVisitorSpecs.cs" />
-    <Compile Include="Model\Navigation\TreeBranch.cs" />
-    <Compile Include="Model\Navigation\TreeViewToRootNodeMapper.cs" />
-    <Compile Include="Model\Navigation\TreeBranchSpecs.cs" />
-    <Compile Include="Model\Navigation\ViewAllBillsBranch.cs" />
-    <Compile Include="Model\Projects\EmptyProject.cs" />
-    <Compile Include="Model\Projects\FileNotSpecifiedException.cs" />
-    <Compile Include="Model\Projects\IProject.cs" />
-    <Compile Include="Model\Projects\IProjectController.cs" />
-    <Compile Include="Model\Projects\Project.cs" />
-    <Compile Include="Model\Projects\ProjectController.cs" />
-    <Compile Include="Model\Projects\ProjectControllerSpecs.cs" />
-    <Compile Include="Model\Reporting\IReport.cs" />
-    <Compile Include="Model\Reporting\ReportBindingExtensions.cs" />
-    <Compile Include="Model\Reporting\ReportBindingExtensionsSpecs.cs" />
-    <Compile Include="Presenters\AddCompanyPresenter.cs" />
-    <Compile Include="Presenters\AddCompanyPresenterSpecs.cs" />
-    <Compile Include="Presenters\AddBillPaymentPresenter.cs" />
-    <Compile Include="Presenters\IRunPresenterCommand.cs" />
-    <Compile Include="Presenters\ViewAllBillsPresenter.cs" />
-    <Compile Include="Presenters\RestartCommand.cs" />
-    <Compile Include="Presenters\RunPresenterCommand.cs" />
-    <Compile Include="Presenters\RunThe.cs" />
-    <Compile Include="Presenters\RunTheSpecs.cs" />
-    <Compile Include="Model\Excel\Cell.cs" />
-    <Compile Include="Model\Excel\ChangeFontSize.cs" />
-    <Compile Include="Model\Excel\CompositeCellVisitor.cs" />
-    <Compile Include="Model\Excel\ConstrainedCellVisitor.cs" />
-    <Compile Include="Model\Excel\ExcelUsage.cs" />
-    <Compile Include="Model\Excel\FormatBackColor.cs" />
-    <Compile Include="Model\Excel\ICell.cs" />
-    <Compile Include="Model\Excel\ICellInterior.cs" />
-    <Compile Include="Model\Excel\ICellVisitor.cs" />
-    <Compile Include="Presenters\AddNewIncomePresenter.cs" />
-    <Compile Include="Presenters\AddNewIncomePresenterSpecs.cs" />
-    <Compile Include="Presenters\ViewIncomeHistoryPresenter.cs" />
-    <Compile Include="Presenters\AboutTheApplicationPresenter.cs" />
-    <Compile Include="Presenters\ApplicationMenuPresenter.cs" />
-    <Compile Include="Presenters\AddBillingTaskPane.cs" />
-    <Compile Include="Presenters\AddCompanyTaskPane.cs" />
-    <Compile Include="Presenters\AddIncomeTaskPane.cs" />
-    <Compile Include="Presenters\AddReportingTaskPane.cs" />
-    <Compile Include="Presenters\Build.cs" />
-    <Compile Include="Presenters\ExpandoBuilder.cs" />
-    <Compile Include="Presenters\ExpandoItemBuilder.cs" />
-    <Compile Include="Presenters\IActionTaskPaneFactory.cs" />
-    <Compile Include="Presenters\MainMenuPresenter.cs" />
-    <Compile Include="Presenters\NavigationPresenter.cs" />
-    <Compile Include="Presenters\NavigationPresenterSpecs.cs" />
-    <Compile Include="Presenters\ReportPresenter.cs" />
-    <Compile Include="Presenters\ApplicationShellPresenter.cs" />
-    <Compile Include="Presenters\GettingStartedPresenter.cs" />
-    <Compile Include="Presenters\GettingStartedPresenterSpecs.cs" />
-    <Compile Include="Presenters\LogFilePresenter.cs" />
-    <Compile Include="Presenters\LogFileViewPresenterSpecs.cs" />
-    <Compile Include="Presenters\NotificationIconPresenter.cs" />
-    <Compile Include="Presenters\NotificationIconPresenterSpecs.cs" />
-    <Compile Include="Presenters\NotificationPresenter.cs" />
-    <Compile Include="Presenters\StatusBarPresenter.cs" />
-    <Compile Include="Presenters\StatusBarPresenterSpecs.cs" />
-    <Compile Include="Presenters\TaskTrayPresenter.cs" />
-    <Compile Include="Presenters\TitleBarPresenter.cs" />
-    <Compile Include="Presenters\TitleBarPresenterSpecs.cs" />
-    <Compile Include="Presenters\ToolBarPresenter.cs" />
-    <Compile Include="Presenters\UnhandledErrorPresenter.cs" />
-    <Compile Include="Presenters\UnhandledErrorPresenterSpecs.cs" />
-    <Compile Include="Presenters\display_the_splash_screen.cs" />
-    <Compile Include="Presenters\hide_the_splash_screen.cs" />
-    <Compile Include="Presenters\ISplashScreenState.cs" />
-    <Compile Include="Presenters\SplashScreenPresenter.cs" />
-    <Compile Include="Presenters\SplashScreenPresenterSpecs.cs" />
-    <Compile Include="Presenters\CheckForUpdatesPresenter.cs" />
-    <Compile Include="Presenters\CheckForUpdatesPresenterSpecs.cs" />
-    <Compile Include="Presenters\ProcessQueryCommand.cs" />
-    <Compile Include="Views\ISelectFileToOpenDialog.cs" />
-    <Compile Include="Views\ISelectFileToSaveToDialog.cs" />
-    <Compile Include="Views\ITaskTrayMessageView.cs" />
-    <Compile Include="Views\ITitleBar.cs" />
-    <Compile Include="Views\IViewAllBillsReport.cs" />
-    <Compile Include="Views\IApplicationDockedWindow.cs" />
-    <Compile Include="Views\IApplicationWindow.cs" />
-    <Compile Include="Views\IViewAllIncomeReport.cs" />
-    <Compile Include="Winforms\Resources\ApplicationIcons.cs" />
-    <Compile Include="Winforms\Resources\ApplicationImages.cs" />
-    <Compile Include="Presenters\RunQueryCommand.cs" />
-    <Compile Include="Winforms\Views\AddCompanyView.cs">
+    <Compile Include="model\filesystem\folder.cs" />
+    <Compile Include="model\menu\create.cs" />
+    <Compile Include="model\menu\file\CloseProjectCommand.cs" />
+    <Compile Include="model\menu\file\CloseWindowCommand.cs" />
+    <Compile Include="model\menu\file\ExitCommand.cs" />
+    <Compile Include="model\menu\file\ExitCommandSpecs.cs" />
+    <Compile Include="model\menu\file\FileMenu.cs" />
+    <Compile Include="model\menu\file\NewCommand.cs" />
+    <Compile Include="model\menu\file\NewCommandSpecs.cs" />
+    <Compile Include="model\menu\file\OpenCommand.cs" />
+    <Compile Include="model\menu\file\OpenCommandSpecs.cs" />
+    <Compile Include="model\menu\file\SaveAsCommand.cs" />
+    <Compile Include="model\menu\file\SaveAsCommandSpecs.cs" />
+    <Compile Include="model\menu\file\SaveChangesCommand.cs" />
+    <Compile Include="model\menu\file\SaveCommand.cs" />
+    <Compile Include="model\menu\file\SaveCommandSpecs.cs" />
+    <Compile Include="model\menu\help\DisplayInformationAboutTheApplication.cs" />
+    <Compile Include="model\menu\help\HelpMenu.cs" />
+    <Compile Include="model\menu\ISubMenu.cs" />
+    <Compile Include="model\menu\IToolbarButton.cs" />
+    <Compile Include="model\menu\IToolbarItemBuilder.cs" />
+    <Compile Include="model\menu\MenuItem.cs" />
+    <Compile Include="model\menu\MenuItemBuilder.cs" />
+    <Compile Include="model\menu\MenuItemSeparator.cs" />
+    <Compile Include="model\menu\SubMenu.cs" />
+    <Compile Include="model\menu\SubMenuRegistry.cs" />
+    <Compile Include="model\menu\ToolBarItemBuilder.cs" />
+    <Compile Include="model\menu\window\WindowMenu.cs" />
+    <Compile Include="model\eventing\ClosingProjectEvent.cs" />
+    <Compile Include="model\eventing\ClosingTheApplication.cs" />
+    <Compile Include="model\eventing\NewProjectOpened.cs" />
+    <Compile Include="model\eventing\SavedChangesEvent.cs" />
+    <Compile Include="model\eventing\UnhandledErrorOccurred.cs" />
+    <Compile Include="model\eventing\UnsavedChangesEvent.cs" />
+    <Compile Include="model\navigation\AddNewIncomeBranch.cs" />
+    <Compile Include="model\navigation\AddBillPaymentBranch.cs" />
+    <Compile Include="model\navigation\AddNewBillBranch.cs" />
+    <Compile Include="model\navigation\IBranchVisitor.cs" />
+    <Compile Include="model\navigation\NavigationTreeVisitor.cs" />
+    <Compile Include="model\navigation\NavigationTreeVisitorSpecs.cs" />
+    <Compile Include="model\navigation\TreeBranch.cs" />
+    <Compile Include="model\navigation\TreeViewToRootNodeMapper.cs" />
+    <Compile Include="model\navigation\TreeBranchSpecs.cs" />
+    <Compile Include="model\navigation\ViewAllBillsBranch.cs" />
+    <Compile Include="model\projects\EmptyProject.cs" />
+    <Compile Include="model\projects\FileNotSpecifiedException.cs" />
+    <Compile Include="model\projects\IProject.cs" />
+    <Compile Include="model\projects\IProjectController.cs" />
+    <Compile Include="model\projects\Project.cs" />
+    <Compile Include="model\projects\ProjectController.cs" />
+    <Compile Include="model\projects\ProjectControllerSpecs.cs" />
+    <Compile Include="model\reporting\IReport.cs" />
+    <Compile Include="model\reporting\ReportBindingExtensions.cs" />
+    <Compile Include="model\reporting\ReportBindingExtensionsSpecs.cs" />
+    <Compile Include="presenters\AddCompanyPresenter.cs" />
+    <Compile Include="presenters\AddCompanyPresenterSpecs.cs" />
+    <Compile Include="presenters\AddBillPaymentPresenter.cs" />
+    <Compile Include="presenters\IRunPresenterCommand.cs" />
+    <Compile Include="presenters\ViewAllBillsPresenter.cs" />
+    <Compile Include="presenters\RestartCommand.cs" />
+    <Compile Include="presenters\RunPresenterCommand.cs" />
+    <Compile Include="presenters\RunThe.cs" />
+    <Compile Include="presenters\RunTheSpecs.cs" />
+    <Compile Include="model\excel\Cell.cs" />
+    <Compile Include="model\excel\ChangeFontSize.cs" />
+    <Compile Include="model\excel\CompositeCellVisitor.cs" />
+    <Compile Include="model\excel\ConstrainedCellVisitor.cs" />
+    <Compile Include="model\excel\ExcelUsage.cs" />
+    <Compile Include="model\excel\FormatBackColor.cs" />
+    <Compile Include="model\excel\ICell.cs" />
+    <Compile Include="model\excel\ICellInterior.cs" />
+    <Compile Include="model\excel\ICellVisitor.cs" />
+    <Compile Include="presenters\AddNewIncomePresenter.cs" />
+    <Compile Include="presenters\AddNewIncomePresenterSpecs.cs" />
+    <Compile Include="presenters\ViewIncomeHistoryPresenter.cs" />
+    <Compile Include="presenters\AboutTheApplicationPresenter.cs" />
+    <Compile Include="presenters\ApplicationMenuPresenter.cs" />
+    <Compile Include="presenters\AddBillingTaskPane.cs" />
+    <Compile Include="presenters\AddCompanyTaskPane.cs" />
+    <Compile Include="presenters\AddIncomeTaskPane.cs" />
+    <Compile Include="presenters\AddReportingTaskPane.cs" />
+    <Compile Include="presenters\Build.cs" />
+    <Compile Include="presenters\ExpandoBuilder.cs" />
+    <Compile Include="presenters\ExpandoItemBuilder.cs" />
+    <Compile Include="presenters\IActionTaskPaneFactory.cs" />
+    <Compile Include="presenters\MainMenuPresenter.cs" />
+    <Compile Include="presenters\NavigationPresenter.cs" />
+    <Compile Include="presenters\NavigationPresenterSpecs.cs" />
+    <Compile Include="presenters\ReportPresenter.cs" />
+    <Compile Include="presenters\ApplicationShellPresenter.cs" />
+    <Compile Include="presenters\GettingStartedPresenter.cs" />
+    <Compile Include="presenters\GettingStartedPresenterSpecs.cs" />
+    <Compile Include="presenters\LogFilePresenter.cs" />
+    <Compile Include="presenters\LogFileViewPresenterSpecs.cs" />
+    <Compile Include="presenters\NotificationIconPresenter.cs" />
+    <Compile Include="presenters\NotificationIconPresenterSpecs.cs" />
+    <Compile Include="presenters\NotificationPresenter.cs" />
+    <Compile Include="presenters\StatusBarPresenter.cs" />
+    <Compile Include="presenters\StatusBarPresenterSpecs.cs" />
+    <Compile Include="presenters\TaskTrayPresenter.cs" />
+    <Compile Include="presenters\TitleBarPresenter.cs" />
+    <Compile Include="presenters\TitleBarPresenterSpecs.cs" />
+    <Compile Include="presenters\ToolBarPresenter.cs" />
+    <Compile Include="presenters\UnhandledErrorPresenter.cs" />
+    <Compile Include="presenters\UnhandledErrorPresenterSpecs.cs" />
+    <Compile Include="presenters\DisplayTheSplashScreen.cs" />
+    <Compile Include="presenters\hide_the_splash_screen.cs" />
+    <Compile Include="presenters\ISplashScreenState.cs" />
+    <Compile Include="presenters\SplashScreenPresenter.cs" />
+    <Compile Include="presenters\SplashScreenPresenterSpecs.cs" />
+    <Compile Include="presenters\CheckForUpdatesPresenter.cs" />
+    <Compile Include="presenters\CheckForUpdatesPresenterSpecs.cs" />
+    <Compile Include="presenters\ProcessQueryCommand.cs" />
+    <Compile Include="views\ISelectFileToOpenDialog.cs" />
+    <Compile Include="views\ISelectFileToSaveToDialog.cs" />
+    <Compile Include="views\ITaskTrayMessageView.cs" />
+    <Compile Include="views\ITitleBar.cs" />
+    <Compile Include="views\IViewAllBillsReport.cs" />
+    <Compile Include="views\IApplicationDockedWindow.cs" />
+    <Compile Include="views\IApplicationWindow.cs" />
+    <Compile Include="views\IViewAllIncomeReport.cs" />
+    <Compile Include="winforms\resources\ApplicationIcons.cs" />
+    <Compile Include="winforms\resources\ApplicationImages.cs" />
+    <Compile Include="presenters\RunQueryCommand.cs" />
+    <Compile Include="winforms\views\AddCompanyView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\AddCompanyView.Designer.cs">
+    <Compile Include="winforms\views\AddCompanyView.Designer.cs">
       <DependentUpon>AddCompanyView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\AddBillPaymentView.cs">
+    <Compile Include="winforms\views\AddBillPaymentView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\AddBillPaymentView.Designer.cs">
+    <Compile Include="winforms\views\AddBillPaymentView.Designer.cs">
       <DependentUpon>AddBillPaymentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\IAddBillPaymentView.cs" />
-    <Compile Include="Views\IViewAllBills.cs" />
-    <Compile Include="Winforms\Views\ViewAllIncomesReport.cs">
+    <Compile Include="views\IAddBillPaymentView.cs" />
+    <Compile Include="views\IViewAllBills.cs" />
+    <Compile Include="winforms\views\ViewAllIncomesReport.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\ViewAllIncomesReport.Designer.cs">
+    <Compile Include="winforms\views\ViewAllIncomesReport.Designer.cs">
       <DependentUpon>ViewAllIncomesReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\ViewAllBills.cs">
+    <Compile Include="winforms\views\ViewAllBills.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\ViewAllBills.Designer.cs">
+    <Compile Include="winforms\views\ViewAllBills.Designer.cs">
       <DependentUpon>ViewAllBills.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\ViewAllBillsReport.cs">
+    <Compile Include="winforms\views\ViewAllBillsReport.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\ViewAllBillsReport.Designer.cs">
+    <Compile Include="winforms\views\ViewAllBillsReport.Designer.cs">
       <DependentUpon>ViewAllBillsReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\ApplicationDockedWindow.cs">
+    <Compile Include="winforms\views\ApplicationDockedWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\ApplicationDockedWindow.Designer.cs">
+    <Compile Include="winforms\views\ApplicationDockedWindow.Designer.cs">
       <DependentUpon>ApplicationDockedWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\ApplicationWindow.cs">
+    <Compile Include="winforms\views\ApplicationWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\ApplicationWindow.Designer.cs">
+    <Compile Include="winforms\views\ApplicationWindow.Designer.cs">
       <DependentUpon>ApplicationWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ControlAction.cs" />
-    <Compile Include="Views\ICommandDialog.cs" />
-    <Compile Include="Views\IDialogLauncher.cs" />
-    <Compile Include="Views\IDockedContentView.cs" />
-    <Compile Include="Views\IView.cs" />
-    <Compile Include="Views\IWindowEvents.cs" />
-    <Compile Include="Views\ISaveChangesView.cs" />
-    <Compile Include="Winforms\Views\SaveChangesView.cs">
+    <Compile Include="views\ControlAction.cs" />
+    <Compile Include="views\ICommandDialog.cs" />
+    <Compile Include="views\IDialogLauncher.cs" />
+    <Compile Include="views\IDockedContentView.cs" />
+    <Compile Include="views\IView.cs" />
+    <Compile Include="views\IWindowEvents.cs" />
+    <Compile Include="views\ISaveChangesView.cs" />
+    <Compile Include="winforms\views\SaveChangesView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\SaveChangesView.Designer.cs">
+    <Compile Include="winforms\views\SaveChangesView.Designer.cs">
       <DependentUpon>SaveChangesView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\SaveChangesViewSpecs.cs" />
-    <Compile Include="Winforms\Views\SelectFileToOpenDialog.cs" />
-    <Compile Include="Winforms\Views\SelectFileToSaveToDialog.cs" />
-    <Compile Include="Views\IAddCompanyView.cs" />
-    <Compile Include="Winforms\Views\AddNewIncomeView.cs">
+    <Compile Include="winforms\views\SaveChangesViewSpecs.cs" />
+    <Compile Include="winforms\views\SelectFileToOpenDialog.cs" />
+    <Compile Include="winforms\views\SelectFileToSaveToDialog.cs" />
+    <Compile Include="views\IAddCompanyView.cs" />
+    <Compile Include="winforms\views\AddNewIncomeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\AddNewIncomeView.Designer.cs">
+    <Compile Include="winforms\views\AddNewIncomeView.Designer.cs">
       <DependentUpon>AddNewIncomeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\IAddNewIncomeView.cs" />
-    <Compile Include="Views\IViewIncomeHistory.cs" />
-    <Compile Include="Winforms\Views\ViewAllIncome.cs">
+    <Compile Include="views\IAddNewIncomeView.cs" />
+    <Compile Include="views\IViewIncomeHistory.cs" />
+    <Compile Include="winforms\views\ViewAllIncome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\ViewAllIncome.Designer.cs">
+    <Compile Include="winforms\views\ViewAllIncome.Designer.cs">
       <DependentUpon>ViewAllIncome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\AboutTheApplicationView.cs">
+    <Compile Include="winforms\views\AboutTheApplicationView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\AboutTheApplicationView.Designer.cs">
+    <Compile Include="winforms\views\AboutTheApplicationView.Designer.cs">
       <DependentUpon>AboutTheApplicationView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\IAboutApplicationView.cs" />
-    <Compile Include="Views\IMainMenuView.cs" />
-    <Compile Include="Views\INavigationView.cs" />
-    <Compile Include="Winforms\Views\MainMenuView.cs">
+    <Compile Include="views\IAboutApplicationView.cs" />
+    <Compile Include="views\IMainMenuView.cs" />
+    <Compile Include="views\INavigationView.cs" />
+    <Compile Include="winforms\views\MainMenuView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\MainMenuView.Designer.cs">
+    <Compile Include="winforms\views\MainMenuView.Designer.cs">
       <DependentUpon>MainMenuView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\NavigationView.cs">
+    <Compile Include="winforms\views\NavigationView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\NavigationView.Designer.cs">
+    <Compile Include="winforms\views\NavigationView.Designer.cs">
       <DependentUpon>NavigationView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\IReportViewer.cs" />
-    <Compile Include="Winforms\Views\ReportViewer.cs">
+    <Compile Include="views\IReportViewer.cs" />
+    <Compile Include="winforms\views\ReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\ReportViewer.Designer.cs">
+    <Compile Include="winforms\views\ReportViewer.Designer.cs">
       <DependentUpon>ReportViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\ApplicationShell.cs">
+    <Compile Include="winforms\views\ApplicationShell.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\ApplicationShell.Designer.cs">
+    <Compile Include="winforms\views\ApplicationShell.Designer.cs">
       <DependentUpon>ApplicationShell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\ApplicationShellSpecs.cs" />
-    <Compile Include="Views\IGettingStartedView.cs" />
-    <Compile Include="Views\ILogFileView.cs" />
-    <Compile Include="Views\INotificationIconView.cs" />
-    <Compile Include="Views\IRegionManager.cs" />
-    <Compile Include="Views\IShell.cs" />
-    <Compile Include="Views\IStatusBarView.cs" />
-    <Compile Include="Views\IUnhandledErrorView.cs" />
-    <Compile Include="Winforms\Views\LogFileView.cs">
+    <Compile Include="winforms\views\ApplicationShellSpecs.cs" />
+    <Compile Include="views\IGettingStartedView.cs" />
+    <Compile Include="views\ILogFileView.cs" />
+    <Compile Include="views\INotificationIconView.cs" />
+    <Compile Include="views\IRegionManager.cs" />
+    <Compile Include="views\IShell.cs" />
+    <Compile Include="views\IStatusBarView.cs" />
+    <Compile Include="views\IUnhandledErrorView.cs" />
+    <Compile Include="winforms\views\LogFileView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\LogFileView.Designer.cs">
+    <Compile Include="winforms\views\LogFileView.Designer.cs">
       <DependentUpon>LogFileView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\NotificationIconView.cs" />
-    <Compile Include="Winforms\Views\StatusBarView.cs" />
-    <Compile Include="Winforms\Views\TaskTrayMessage.cs" />
-    <Compile Include="Winforms\Views\TitleBar.cs" />
-    <Compile Include="Winforms\Views\UnhandledErrorView.cs">
+    <Compile Include="winforms\views\NotificationIconView.cs" />
+    <Compile Include="winforms\views\StatusBarView.cs" />
+    <Compile Include="winforms\views\TaskTrayMessage.cs" />
+    <Compile Include="winforms\views\TitleBar.cs" />
+    <Compile Include="winforms\views\UnhandledErrorView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\UnhandledErrorView.Designer.cs">
+    <Compile Include="winforms\views\UnhandledErrorView.Designer.cs">
       <DependentUpon>UnhandledErrorView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\WelcomeScreen.cs">
+    <Compile Include="winforms\views\WelcomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\WelcomeScreen.Designer.cs">
+    <Compile Include="winforms\views\WelcomeScreen.Designer.cs">
       <DependentUpon>WelcomeScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ISplashScreenView.cs" />
-    <Compile Include="Winforms\Views\SplashScreenView.cs">
+    <Compile Include="views\ISplashScreenView.cs" />
+    <Compile Include="winforms\views\SplashScreenView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\SplashScreenView.Designer.cs">
+    <Compile Include="winforms\views\SplashScreenView.Designer.cs">
       <DependentUpon>SplashScreenView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Winforms\Views\CheckForUpdatesView.cs">
+    <Compile Include="winforms\views\CheckForUpdatesView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winforms\Views\CheckForUpdatesView.Designer.cs">
+    <Compile Include="winforms\views\CheckForUpdatesView.Designer.cs">
       <DependentUpon>CheckForUpdatesView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ICheckForUpdatesView.cs" />
-    <Compile Include="Winforms\Databinding\BindingSelector.cs" />
-    <Compile Include="Winforms\Databinding\BindingSelectorSpecs.cs" />
-    <Compile Include="Winforms\Databinding\ComboBoxDataBindingSpecs.cs" />
-    <Compile Include="Winforms\Databinding\ComboBoxPropertyBinding.cs" />
-    <Compile Include="Winforms\Databinding\ControlBindingExtensions.cs" />
-    <Compile Include="Winforms\Databinding\Create.cs" />
-    <Compile Include="Winforms\Databinding\CreateSpecs.cs" />
-    <Compile Include="Winforms\Databinding\DateTimePickerPropertyBinding.cs" />
-    <Compile Include="Winforms\Databinding\DateTimePropertyBindingSpecs.cs" />
-    <Compile Include="Winforms\Databinding\IPropertyBinding.cs" />
-    <Compile Include="Winforms\Databinding\ListboxExtensions.cs" />
-    <Compile Include="Winforms\Databinding\PropertyBinder.cs" />
-    <Compile Include="Winforms\Databinding\PropertyBinderSpecs.cs" />
-    <Compile Include="Winforms\Databinding\PropertyInspector.cs" />
-    <Compile Include="Winforms\Databinding\PropertyInspectorFactory.cs" />
-    <Compile Include="Winforms\Databinding\PropertyInspectorSpecs.cs" />
-    <Compile Include="Winforms\Databinding\TextBoxDataBindingSpecs.cs" />
-    <Compile Include="Winforms\Databinding\TextBoxExtensions.cs" />
-    <Compile Include="Winforms\Databinding\TextPropertyBinding.cs" />
-    <Compile Include="Winforms\Helpers\BindableListBox.cs" />
-    <Compile Include="Winforms\Helpers\BindableListBoxSpecs.cs" />
-    <Compile Include="Winforms\Helpers\BindableListExtensions.cs" />
-    <Compile Include="Winforms\Helpers\BindableListFactory.cs" />
-    <Compile Include="Winforms\Helpers\BindableTextBox.cs" />
-    <Compile Include="Winforms\Helpers\BindableTextBoxExtensions.cs" />
-    <Compile Include="Winforms\Helpers\BindableTextBoxExtensionsSpecs.cs" />
-    <Compile Include="Winforms\Helpers\BindableTextBoxSpecs.cs" />
-    <Compile Include="Winforms\Helpers\BitmapRegion.cs" />
-    <Compile Include="Winforms\Helpers\ButtonExtensions.cs" />
-    <Compile Include="Winforms\Helpers\ComboBoxListControl.cs" />
-    <Compile Include="Winforms\Helpers\ControlAdapter.cs">
+    <Compile Include="views\ICheckForUpdatesView.cs" />
+    <Compile Include="winforms\databinding\BindingSelector.cs" />
+    <Compile Include="winforms\databinding\BindingSelectorSpecs.cs" />
+    <Compile Include="winforms\databinding\ComboBoxDataBindingSpecs.cs" />
+    <Compile Include="winforms\databinding\ComboBoxPropertyBinding.cs" />
+    <Compile Include="winforms\databinding\ControlBindingExtensions.cs" />
+    <Compile Include="winforms\databinding\Create.cs" />
+    <Compile Include="winforms\databinding\CreateSpecs.cs" />
+    <Compile Include="winforms\databinding\DateTimePickerPropertyBinding.cs" />
+    <Compile Include="winforms\databinding\DateTimePropertyBindingSpecs.cs" />
+    <Compile Include="winforms\databinding\IPropertyBinding.cs" />
+    <Compile Include="winforms\databinding\ListboxExtensions.cs" />
+    <Compile Include="winforms\databinding\PropertyBinder.cs" />
+    <Compile Include="winforms\databinding\PropertyBinderSpecs.cs" />
+    <Compile Include="winforms\databinding\PropertyInspector.cs" />
+    <Compile Include="winforms\databinding\PropertyInspectorFactory.cs" />
+    <Compile Include="winforms\databinding\PropertyInspectorSpecs.cs" />
+    <Compile Include="winforms\databinding\TextBoxDataBindingSpecs.cs" />
+    <Compile Include="winforms\databinding\TextBoxExtensions.cs" />
+    <Compile Include="winforms\databinding\TextPropertyBinding.cs" />
+    <Compile Include="winforms\helpers\BindableListBox.cs" />
+    <Compile Include="winforms\helpers\BindableListBoxSpecs.cs" />
+    <Compile Include="winforms\helpers\BindableListExtensions.cs" />
+    <Compile Include="winforms\helpers\BindableListFactory.cs" />
+    <Compile Include="winforms\helpers\BindableTextBox.cs" />
+    <Compile Include="winforms\helpers\BindableTextBoxExtensions.cs" />
+    <Compile Include="winforms\helpers\BindableTextBoxExtensionsSpecs.cs" />
+    <Compile Include="winforms\helpers\BindableTextBoxSpecs.cs" />
+    <Compile Include="winforms\helpers\BitmapRegion.cs" />
+    <Compile Include="winforms\helpers\ButtonExtensions.cs" />
+    <Compile Include="winforms\helpers\ComboBoxListControl.cs" />
+    <Compile Include="winforms\helpers\ControlAdapter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Winforms\Helpers\ControlExtensions.cs" />
-    <Compile Include="Winforms\Helpers\Events.cs" />
-    <Compile Include="Winforms\Helpers\EventTrigger.cs" />
-    <Compile Include="Winforms\Helpers\EventTriggerExtensions.cs" />
-    <Compile Include="Winforms\Helpers\EventTriggerSpecs.cs" />
-    <Compile Include="Winforms\Helpers\IBindableList.cs" />
-    <Compile Include="Winforms\Helpers\IEventTarget.cs" />
-    <Compile Include="Winforms\Helpers\IListControl.cs" />
-    <Compile Include="Winforms\Helpers\ITextBoxCommand.cs" />
-    <Compile Include="Winforms\Helpers\ITextControl.cs" />
-    <Compile Include="Winforms\Helpers\ListBoxListControl.cs" />
-    <Compile Include="Winforms\Helpers\RebindTextBoxCommand.cs" />
-    <Compile Include="Winforms\Helpers\RebindTextBoxCommandSpecs.cs" />
-    <Compile Include="Winforms\Helpers\SuspendLayout.cs" />
-    <Compile Include="Winforms\Helpers\TextControl.cs" />
-    <Compile Include="Winforms\Helpers\TextControlSpecs.cs" />
-    <Compile Include="Winforms\Keyboard\ShortcutKey.cs" />
-    <Compile Include="Winforms\Keyboard\ShortcutKeys.cs" />
-    <Compile Include="Winforms\Krypton\BindableListExtensions.cs" />
-    <Compile Include="Winforms\Krypton\KryptonComboBoxListControl.cs" />
-    <Compile Include="Winforms\Krypton\KryptonListBoxListControl.cs" />
-    <Compile Include="Winforms\Krypton\KryptonTextControl.cs" />
-    <Compile Include="Winforms\Krypton\ListboxExtensions.cs" />
-    <Compile Include="Winforms\Krypton\TextBoxExtensions.cs" />
-    <Compile Include="Winforms\Resources\ApplicationIcon.cs" />
-    <Compile Include="Winforms\Resources\ApplicationImage.cs" />
-    <Compile Include="Winforms\Resources\HybridIcon.cs" />
+    <Compile Include="winforms\helpers\ControlExtensions.cs" />
+    <Compile Include="winforms\helpers\Events.cs" />
+    <Compile Include="winforms\helpers\EventTrigger.cs" />
+    <Compile Include="winforms\helpers\EventTriggerExtensions.cs" />
+    <Compile Include="winforms\helpers\EventTriggerSpecs.cs" />
+    <Compile Include="winforms\helpers\IBindableList.cs" />
+    <Compile Include="winforms\helpers\IEventTarget.cs" />
+    <Compile Include="winforms\helpers\IListControl.cs" />
+    <Compile Include="winforms\helpers\ITextBoxCommand.cs" />
+    <Compile Include="winforms\helpers\ITextControl.cs" />
+    <Compile Include="winforms\helpers\ListBoxListControl.cs" />
+    <Compile Include="winforms\helpers\RebindTextBoxCommand.cs" />
+    <Compile Include="winforms\helpers\RebindTextBoxCommandSpecs.cs" />
+    <Compile Include="winforms\helpers\SuspendLayout.cs" />
+    <Compile Include="winforms\helpers\TextControl.cs" />
+    <Compile Include="winforms\helpers\TextControlSpecs.cs" />
+    <Compile Include="winforms\keyboard\ShortcutKey.cs" />
+    <Compile Include="winforms\keyboard\ShortcutKeys.cs" />
+    <Compile Include="winforms\krypton\BindableListExtensions.cs" />
+    <Compile Include="winforms\krypton\KryptonComboBoxListControl.cs" />
+    <Compile Include="winforms\krypton\KryptonListBoxListControl.cs" />
+    <Compile Include="winforms\krypton\KryptonTextControl.cs" />
+    <Compile Include="winforms\krypton\ListboxExtensions.cs" />
+    <Compile Include="winforms\krypton\TextBoxExtensions.cs" />
+    <Compile Include="winforms\resources\ApplicationIcon.cs" />
+    <Compile Include="winforms\resources\ApplicationImage.cs" />
+    <Compile Include="winforms\resources\HybridIcon.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Winforms\Views\AddCompanyView.resx">
+    <EmbeddedResource Include="winforms\views\AddCompanyView.resx">
       <DependentUpon>AddCompanyView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\AddBillPaymentView.resx">
+    <EmbeddedResource Include="winforms\views\AddBillPaymentView.resx">
       <DependentUpon>AddBillPaymentView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\ViewAllIncomesReport.resx">
+    <EmbeddedResource Include="winforms\views\ViewAllIncomesReport.resx">
       <DependentUpon>ViewAllIncomesReport.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\ViewAllBills.resx">
+    <EmbeddedResource Include="winforms\views\ViewAllBills.resx">
       <DependentUpon>ViewAllBills.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\ViewAllBillsReport.resx">
+    <EmbeddedResource Include="winforms\views\ViewAllBillsReport.resx">
       <DependentUpon>ViewAllBillsReport.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\ApplicationWindow.resx">
+    <EmbeddedResource Include="winforms\views\ApplicationWindow.resx">
       <DependentUpon>ApplicationWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\SaveChangesView.resx">
+    <EmbeddedResource Include="winforms\views\SaveChangesView.resx">
       <DependentUpon>SaveChangesView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\AddNewIncomeView.resx">
+    <EmbeddedResource Include="winforms\views\AddNewIncomeView.resx">
       <DependentUpon>AddNewIncomeView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\ViewAllIncome.resx">
+    <EmbeddedResource Include="winforms\views\ViewAllIncome.resx">
       <DependentUpon>ViewAllIncome.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\AboutTheApplicationView.resx">
+    <EmbeddedResource Include="winforms\views\AboutTheApplicationView.resx">
       <DependentUpon>AboutTheApplicationView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\MainMenuView.resx">
+    <EmbeddedResource Include="winforms\views\MainMenuView.resx">
       <DependentUpon>MainMenuView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\NavigationView.resx">
+    <EmbeddedResource Include="winforms\views\NavigationView.resx">
       <DependentUpon>NavigationView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\ReportViewer.resx">
+    <EmbeddedResource Include="winforms\views\ReportViewer.resx">
       <DependentUpon>ReportViewer.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\ApplicationShell.resx">
+    <EmbeddedResource Include="winforms\views\ApplicationShell.resx">
       <DependentUpon>ApplicationShell.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\LogFileView.resx">
+    <EmbeddedResource Include="winforms\views\LogFileView.resx">
       <DependentUpon>LogFileView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\UnhandledErrorView.resx">
+    <EmbeddedResource Include="winforms\views\UnhandledErrorView.resx">
       <DependentUpon>UnhandledErrorView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\WelcomeScreen.resx">
+    <EmbeddedResource Include="winforms\views\WelcomeScreen.resx">
       <DependentUpon>WelcomeScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\SplashScreenView.resx">
+    <EmbeddedResource Include="winforms\views\SplashScreenView.resx">
       <DependentUpon>SplashScreenView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winforms\Views\CheckForUpdatesView.resx">
+    <EmbeddedResource Include="winforms\views\CheckForUpdatesView.resx">
       <DependentUpon>CheckForUpdatesView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj">
+    <ProjectReference Include="..\DTO\dto.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
-      <Name>DTO</Name>
+      <Name>dto</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj">
+    <ProjectReference Include="..\Service.Contracts\service.contracts.csproj">
       <Project>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</Project>
-      <Name>Service.Contracts</Name>
+      <Name>service.contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Service\Service.csproj">
+    <ProjectReference Include="..\Service\service.csproj">
       <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
-      <Name>Service</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\utility\utility.csproj">
-      <Project>{22DF610D-CBC8-4042-A470-ABF246C5DDD4}</Project>
-      <Name>utility</Name>
+      <Name>service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

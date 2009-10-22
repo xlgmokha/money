@@ -1,12 +1,10 @@
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
-    class NoConfiguration<T> : IConfiguration<IProxyBuilder<T>>
+    class NoConfiguration<T> : Configuration<ProxyBuilder<T>>
     {
-        public void configure(IProxyBuilder<T> item)
-        {
-        }
+        public void configure(ProxyBuilder<T> item) {}
     }
 }

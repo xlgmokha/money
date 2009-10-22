@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
     public interface IRegionManager
     {

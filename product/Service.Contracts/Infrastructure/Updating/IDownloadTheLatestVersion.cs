@@ -1,9 +1,7 @@
+using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using Gorilla.Commons.Utility.Core;
 
-namespace MoMoney.Service.Contracts.Infrastructure.Updating
+namespace momoney.service.contracts.infrastructure.updating
 {
-    public interface IDownloadTheLatestVersion : ICallbackCommand<Percent>
-    {
-    }
+    public interface IDownloadTheLatestVersion : CallbackCommand<Percent> {}
 }

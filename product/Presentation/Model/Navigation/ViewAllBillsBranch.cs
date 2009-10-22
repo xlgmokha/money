@@ -1,4 +1,4 @@
-using MoMoney.Presentation.Presenters;
+using momoney.presentation.presenters;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Navigation

@@ -1,4 +1,4 @@
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     public interface ITimerClient
     {

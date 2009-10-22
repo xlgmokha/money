@@ -1,7 +1,7 @@
 using System;
-using MoMoney.Presentation.Presenters;
+using momoney.presentation.presenters;
 
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
     public interface IUnhandledErrorView : IView<IUnhandledErrorPresenter>
     {

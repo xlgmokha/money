@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using MoMoney.DTO;
 using MoMoney.Presentation.Core;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Contracts.Application;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     public interface IViewAllBillsPresenter : IContentPresenter
     {

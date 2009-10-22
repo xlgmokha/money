@@ -1,14 +1,13 @@
+using System.Collections;
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
 
 namespace MoMoney.Presentation.Model.Menu
 {
-    public interface ISubMenuRegistry : IRegistry<ISubMenu>
-    {
-    }
+    public interface ISubMenuRegistry : Registry<ISubMenu> {}
 
     public class SubMenuRegistry : ISubMenuRegistry
     {
@@ -28,6 +27,16 @@ namespace MoMoney.Presentation.Model.Menu
             yield return file_menu;
             yield return window_menu;
             yield return help_menu;
+        }
+
+        public IEnumerator<ISubMenu> GetEnumerator()
+        {
+            return all().GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

@@ -1,12 +1,11 @@
-using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Infrastructure.Castle.DynamicProxy;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
-    class ServiceLayerConfiguration<T> : IConfiguration<IProxyBuilder<T>>
+    class ServiceLayerConfiguration<T> : Configuration<ProxyBuilder<T>>
     {
-        public void configure(IProxyBuilder<T> item)
+        public void configure(ProxyBuilder<T> item)
         {
             item.add_interceptor(Lazy.load<INotifyProgressInterceptor>()).intercept_all();
             item.add_interceptor(Lazy.load<IUnitOfWorkInterceptor>()).intercept_all();

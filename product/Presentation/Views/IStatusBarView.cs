@@ -1,5 +1,5 @@
 using MoMoney.Presentation.Winforms.Resources;
-using MoMoney.Service.Infrastructure.Threading;
+using momoney.service.infrastructure.threading;
 
 namespace MoMoney.Presentation.Views
 {

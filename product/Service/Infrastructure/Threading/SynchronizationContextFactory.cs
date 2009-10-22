@@ -1,18 +1,16 @@
 using System.Threading;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
-    public interface ISynchronizationContextFactory : IFactory<ISynchronizationContext>
-    {
-    }
+    public interface ISynchronizationContextFactory : Factory<ISynchronizationContext> {}
 
     public class SynchronizationContextFactory : ISynchronizationContextFactory
     {
-        readonly IDependencyRegistry registry;
+        readonly DependencyRegistry registry;
 
-        public SynchronizationContextFactory(IDependencyRegistry registry)
+        public SynchronizationContextFactory(DependencyRegistry registry)
         {
             this.registry = registry;
         }

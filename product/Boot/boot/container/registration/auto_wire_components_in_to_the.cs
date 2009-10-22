@@ -1,24 +1,21 @@
 using System;
-using System.Reflection;
-using Gorilla.Commons.Infrastructure;
-using Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration;
 using Gorilla.Commons.Infrastructure.Reflection;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.infrastructure.thirdparty;
+using gorilla.commons.infrastructure.thirdparty.Castle.Windsor.Configuration;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration
 {
     public class auto_wire_components_in_to_the : IStartupCommand
     {
-        readonly IDependencyRegistration registrar;
-        readonly IComponentExclusionSpecification exclusion_policy;
+        readonly DependencyRegistration registrar;
+        readonly ComponentExclusionSpecification exclusion_policy;
 
-        public auto_wire_components_in_to_the(IDependencyRegistration registrar)
-            : this(registrar, new ComponentExclusionSpecification())
-        {
-        }
+        public auto_wire_components_in_to_the(DependencyRegistration registrar)
+            : this(registrar, new ComponentExclusionSpecificationImplementation()) {}
 
-        public auto_wire_components_in_to_the(IDependencyRegistration registration,
-                                              IComponentExclusionSpecification exclusion_policy)
+        public auto_wire_components_in_to_the(DependencyRegistration registration,
+                                              ComponentExclusionSpecification exclusion_policy)
         {
             registrar = registration;
             this.exclusion_policy = exclusion_policy;
@@ -26,10 +23,10 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            run(new ApplicationAssembly(Assembly.GetExecutingAssembly()));
+            run(new ApplicationAssembly(System.Reflection.Assembly.GetExecutingAssembly()));
         }
 
-        public void run(IAssembly item)
+        public void run(Assembly item)
         {
             item
                 .all_types()

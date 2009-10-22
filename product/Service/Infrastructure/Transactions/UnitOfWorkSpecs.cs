@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.DataAccess.Transactions;
-using MoMoney.Service.Contracts.Infrastructure.Transactions;
+using momoney.database.transactions;
+using momoney.service.contracts.infrastructure.transactions;
 
 namespace MoMoney.Service.Infrastructure.Transactions
 {

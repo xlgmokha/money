@@ -1,10 +1,10 @@
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.Domain.Core
 {
-    public static class MoneyExtensions
+    static public class MoneyExtensions
     {
-        public static Money as_money(this double amount)
+        static public Money as_money(this double amount)
         {
             var quotient = amount/0.01;
             var wholePart = (int) quotient;
@@ -16,7 +16,7 @@ namespace MoMoney.Domain.Core
             return new Money(cents/100, cents%100);
         }
 
-        public static Money as_money(this int amount)
+        static public Money as_money(this int amount)
         {
             var quotient = amount/0.01;
             var wholePart = (int) quotient;

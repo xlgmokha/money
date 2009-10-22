@@ -2,9 +2,10 @@ using System;
 using System.Timers;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
+using MoMoney.Service.Infrastructure.Threading;
 using Rhino.Mocks;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     [Concern(typeof (IntervalTimer))]
     public abstract class behaves_like_an_interval_timer : concerns_for<ITimer, IntervalTimer>

@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Infrastructure.Castle.Windsor.Configuration;
 using Gorilla.Commons.Infrastructure.Container;
+using gorilla.commons.infrastructure.thirdparty.Castle.Windsor.Configuration;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Domain.Core;
 
 namespace MoMoney.boot.container
 {
     public abstract class behaves_like_component_exclusion_specification :
-        concerns_for<IComponentExclusionSpecification, ComponentExclusionSpecification>
-    {
-    }
+        concerns_for<ComponentExclusionSpecification, ComponentExclusionSpecificationImplementation> {}
 
     public class when_checking_if_a_windows_form_should_be_excluded : behaves_like_component_exclusion_specification
     {
         it should_be_excluded = () => result.should_be_true();
 
-        because b = () => { result = sut.is_satisfied_by(typeof (FakeForm)); };
+        because b = () =>
+        {
+            result = sut.is_satisfied_by(typeof (FakeForm));
+        };
 
         static bool result;
     }
@@ -30,7 +31,10 @@ namespace MoMoney.boot.container
     {
         it should_be_excluded = () => result.should_be_true();
 
-        because b = () => { result = sut.is_satisfied_by(typeof (FakeDependencyRegistry)); };
+        because b = () =>
+        {
+            result = sut.is_satisfied_by(typeof (FakeDependencyRegistry));
+        };
 
         static bool result;
     }
@@ -39,7 +43,10 @@ namespace MoMoney.boot.container
     {
         it should_be_excluded = () => result.should_be_true();
 
-        because b = () => { result = sut.is_satisfied_by(typeof (FakeStaticClass)); };
+        because b = () =>
+        {
+            result = sut.is_satisfied_by(typeof (FakeStaticClass));
+        };
 
         static bool result;
     }
@@ -48,7 +55,10 @@ namespace MoMoney.boot.container
     {
         it should_be_excluded = () => result.should_be_true();
 
-        because b = () => { result = sut.is_satisfied_by(typeof (FakeEntity)); };
+        because b = () =>
+        {
+            result = sut.is_satisfied_by(typeof (FakeEntity));
+        };
 
         static bool result;
     }
@@ -57,31 +67,30 @@ namespace MoMoney.boot.container
     {
         it should_be_excluded = () => result.should_be_true();
 
-        because b = () => { result = sut.is_satisfied_by(typeof (IDbConnection)); };
+        because b = () =>
+        {
+            result = sut.is_satisfied_by(typeof (IDbConnection));
+        };
 
         static bool result;
     }
 
-    public class FakeForm : Form
-    {
-    }
+    public class FakeForm : Form {}
 
-    public class FakeDependencyRegistry : IDependencyRegistry
+    public class FakeDependencyRegistry : DependencyRegistry
     {
         public Interface get_a<Interface>()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Interface> all_the<Interface>()
+        public IEnumerable<Contract> get_all<Contract>()
         {
             throw new NotImplementedException();
         }
     }
 
-    static public class FakeStaticClass
-    {
-    }
+    static public class FakeStaticClass {}
 
     public class FakeEntity : IEntity
     {

@@ -1,13 +1,12 @@
 using Castle.Core.Interceptor;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
+using momoney.service.contracts.infrastructure.transactions;
 using MoMoney.Service.Contracts.Infrastructure.Transactions;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
-    public interface IUnitOfWorkInterceptor : IInterceptor
-    {
-    }
+    public interface IUnitOfWorkInterceptor : IInterceptor {}
 
     public class UnitOfWorkInterceptor : IUnitOfWorkInterceptor
     {
@@ -25,7 +24,7 @@ namespace MoMoney.boot.container.registration.proxy_configuration
             using (var unit_of_work = factory.create())
             {
                 invocation.Proceed();
-                broker.publish<ICallback<IUnitOfWork>>(x => x.run(unit_of_work));
+                broker.publish<Callback<IUnitOfWork>>(x => x.run(unit_of_work));
                 unit_of_work.commit();
             }
         }

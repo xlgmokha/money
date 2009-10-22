@@ -1,8 +1,8 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
-    public interface ILogFileView : IDockedContentView, ICallback<string>
+    public interface ILogFileView : IDockedContentView, Callback<string>
     {
         void display(string file_path);
     }

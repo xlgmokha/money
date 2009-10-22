@@ -1,10 +1,10 @@
 using System;
+using gorilla.commons.Utility;
 using MoMoney.Presentation.Presenters;
-using MoMoney.Utility.Core;
 
 namespace MoMoney.boot
 {
-    public class display_the_splash_screen : IDisposableCommand
+    public class display_the_splash_screen : DisposableCommand
     {
         readonly Func<ISplashScreenPresenter> presenter;
 

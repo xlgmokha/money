@@ -1,10 +1,10 @@
+using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using Gorilla.Commons.Utility.Core;
 using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.Accounting
 {
-    public class AnnualIncomeVisitor : IValueReturningVisitor<Money, IIncome>
+    public class AnnualIncomeVisitor : ValueReturningVisitor<Money, IIncome>
     {
         readonly Year year;
 

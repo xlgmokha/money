@@ -1,8 +1,9 @@
 using System;
-using MoMoney.Presentation.Views;
+using MoMoney.Presentation.Presenters;
+using momoney.presentation.views;
 using MoMoney.Service.Infrastructure.Threading;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     public class hide_the_splash_screen : ISplashScreenState
     {

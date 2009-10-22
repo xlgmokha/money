@@ -1,9 +1,9 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Service.Application
 {
     public interface IEventLog
     {
-        void process(ICommand the_event);
+        void process(Command the_event);
     }
 }

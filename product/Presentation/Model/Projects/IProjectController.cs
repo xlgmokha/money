@@ -6,9 +6,9 @@ namespace MoMoney.Presentation.Model.Projects
     {
         string name();
         void start_new_project();
-        void open_project_from(IFile file);
+        void open_project_from(File file);
         void save_changes();
-        void save_project_to(IFile new_file);
+        void save_project_to(File new_file);
         void close_project();
         bool has_been_saved_at_least_once();
         bool has_unsaved_changes();

@@ -1,14 +1,13 @@
 using System;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
+using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 
 namespace MoMoney.Presentation.Model.Menu.File
 {
-    public interface ISaveChangesCommand : IParameterizedCommand<ISaveChangesCallback>
-    {
-    }
+    public interface ISaveChangesCommand : ParameterizedCommand<ISaveChangesCallback> {}
 
     public interface ISaveChangesPresenter : IPresenter
     {

@@ -1,9 +1,9 @@
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container
 {
-    class tear_down_the_container : ICommand
+    class tear_down_the_container : Command
     {
         public void run()
         {

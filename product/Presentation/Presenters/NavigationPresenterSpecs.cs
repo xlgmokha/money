@@ -1,9 +1,9 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Navigation;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     [Concern(typeof (NavigationPresenter))]
     public class when_building_the_navigation_tree : concerns_for<INavigationPresenter, NavigationPresenter>

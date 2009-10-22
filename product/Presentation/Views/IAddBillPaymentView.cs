@@ -1,14 +1,12 @@
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.DTO;
-using MoMoney.Presentation.Presenters;
+using momoney.presentation.presenters;
 
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
     public interface IAddBillPaymentView : IDockedContentView,
                                            IView<IAddBillPaymentPresenter>,
-                                           ICallback<IEnumerable<CompanyDTO>>,
-                                           ICallback<IEnumerable<BillInformationDTO>>
-    {
-    }
+                                           Callback<IEnumerable<CompanyDTO>>,
+                                           Callback<IEnumerable<BillInformationDTO>> {}
 }

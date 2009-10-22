@@ -1,9 +1,7 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using XPExplorerBar;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
-    public interface IActionTaskPaneFactory : IFactory<Expando>
-    {
-    }
+    public interface IActionTaskPaneFactory : Factory<Expando> {}
 }

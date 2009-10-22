@@ -1,9 +1,10 @@
+using MoMoney.Presentation;
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Model.messages;
-using MoMoney.Presentation.Views;
+using momoney.presentation.model.events;
+using momoney.presentation.views;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     public interface IUnhandledErrorPresenter : IModule, IPresenter,
                                                 IEventSubscriber<UnhandledErrorOccurred>

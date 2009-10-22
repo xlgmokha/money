@@ -1,9 +1,7 @@
 using Gorilla.Commons.Infrastructure.Reflection;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration
 {
-    public interface IStartupCommand : ICommand, IParameterizedCommand<IAssembly>
-    {
-    }
+    public interface IStartupCommand : Command, ParameterizedCommand<Assembly> {}
 }

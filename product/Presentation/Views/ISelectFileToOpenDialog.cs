@@ -1,9 +1,9 @@
 using Gorilla.Commons.Infrastructure.FileSystem;
 
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
     public interface ISelectFileToOpenDialog
     {
-        IFile tell_me_the_path_to_the_file();
+        File tell_me_the_path_to_the_file();
     }
 }

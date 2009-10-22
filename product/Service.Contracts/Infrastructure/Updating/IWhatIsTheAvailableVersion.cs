@@ -1,9 +1,9 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.DTO;
 
 namespace MoMoney.Service.Contracts.Infrastructure.Updating
 {
-    public interface IWhatIsTheAvailableVersion : IQuery<ApplicationVersion>
+    public interface IWhatIsTheAvailableVersion : Query<ApplicationVersion>
     {
     }
 }

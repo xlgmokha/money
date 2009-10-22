@@ -1,11 +1,12 @@
-using Gorilla.Commons.Utility.Core;
-using MoMoney.Service.Infrastructure.Threading;
+using gorilla.commons.utility;
+using momoney.presentation.presenters;
+using momoney.service.infrastructure.threading;
 
 namespace MoMoney.Presentation.Presenters
 {
     public interface ICommandFactory
     {
-        ICommand create_for<T>(ICallback<T> item, IQuery<T> query);
+        Command create_for<T>(Callback<T> item, Query<T> query);
     }
 
     public class CommandFactory : ICommandFactory
@@ -17,7 +18,7 @@ namespace MoMoney.Presentation.Presenters
             this.factory = factory;
         }
 
-        public ICommand create_for<T>(ICallback<T> item, IQuery<T> query)
+        public Command create_for<T>(Callback<T> item, Query<T> query)
         {
             return new RunQueryCommand<T>(item, new ProcessQueryCommand<T>(query, factory));
         }

@@ -8,17 +8,17 @@ using System.Threading;
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
-using Gorilla.Commons.Utility.Core;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
+using momoney.boot;
 using MoMoney.boot.container;
-using MoMoney.Presentation.Model.messages;
+using momoney.presentation.model.events;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Service.Infrastructure.Eventing;
-using MoMoney.Service.Infrastructure.Threading;
+using momoney.service.infrastructure.threading;
 
 namespace MoMoney.boot
 {
-    public class WindowsFormsApplication<Shell> : ICommand where Shell : Form
+    public class WindowsFormsApplication<Shell> : Command where Shell : Form
     {
         protected WindowsFormsApplication()
         {
@@ -67,9 +67,7 @@ namespace MoMoney.boot
     {
         readonly IServiceContainer container;
 
-        public ApplicationContainer() : this(new ServiceContainer())
-        {
-        }
+        public ApplicationContainer() : this(new ServiceContainer()) {}
 
         public ApplicationContainer(IServiceContainer container)
         {

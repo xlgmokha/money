@@ -2,13 +2,12 @@ using System;
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Winforms.Helpers
 {
     public class TextControlSpecs
     {
-    }
 
     [Concern(typeof (TextControl<>))]
     public abstract class behaves_like_text_control : concerns_for<ITextControl<DateTime>, TextControl<DateTime>>
@@ -42,7 +41,7 @@ namespace MoMoney.Presentation.Winforms.Helpers
     {
         it should_invoke_the_action_bound_to_it = () => action.was_told_to(x => x.run());
 
-        context c = () => { action = an<ICommand>(); };
+        context c = () => { action = an<Command>(); };
 
         because b = () =>
                         {
@@ -50,7 +49,7 @@ namespace MoMoney.Presentation.Winforms.Helpers
                             textbox.control_is(x => x.OnLeave(new EventArgs()));
                         };
 
-        static ICommand action;
+        static Command action;
     }
 
     [Concern(typeof (TextControl<>))]
@@ -59,5 +58,6 @@ namespace MoMoney.Presentation.Winforms.Helpers
         it should_not_blow_up = () => { };
 
         because b = () => textbox.control_is(x => x.OnLeave(new EventArgs()));
+    }
     }
 }

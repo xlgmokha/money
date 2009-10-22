@@ -1,4 +1,4 @@
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
     public interface ITaskTrayMessageView
     {

@@ -1,13 +1,13 @@
 using Castle.Core.Interceptor;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {
     public class InterceptingFilter : IInterceptor
     {
-        readonly ISpecification<IInvocation> condition;
+        readonly Specification<IInvocation> condition;
 
-        public InterceptingFilter(ISpecification<IInvocation> condition)
+        public InterceptingFilter(Specification<IInvocation> condition)
         {
             this.condition = condition;
         }

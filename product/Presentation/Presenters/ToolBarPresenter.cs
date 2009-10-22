@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu;
-using MoMoney.Presentation.Model.Menu.File;
+using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Model.Projects;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Resources;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     public interface IToolbarPresenter : IPresenter
     {

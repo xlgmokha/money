@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration.mapping
 {
@@ -11,15 +11,11 @@ namespace MoMoney.boot.container.registration.mapping
         readonly IList<IMappingStep<Input, Output>> mapping_steps;
         readonly IMappingStepFactory mapping_step_factory;
 
-        public Map() : this(new MappingStepFactory())
-        {
-        }
+        public Map() : this(new MappingStepFactory()) {}
 
         public Map(IMappingStepFactory mapping_step_factory)
             : this(
-                new MissingInitializationStep<Output>(), new List<IMappingStep<Input, Output>>(), mapping_step_factory)
-        {
-        }
+                new MissingInitializationStep<Output>(), new List<IMappingStep<Input, Output>>(), mapping_step_factory) {}
 
         public Map(IMapInitializationStep<Output> map_initialization_step,
                    IList<IMappingStep<Input, Output>> mapping_steps, IMappingStepFactory mapping_step_factory)

@@ -1,8 +1,6 @@
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
-namespace MoMoney.Service.Contracts.Infrastructure.Updating
+namespace momoney.service.contracts.infrastructure.updating
 {
-    public interface ICancelUpdate : ICommand
-    {
-    }
+    public interface ICancelUpdate : Command {}
 }

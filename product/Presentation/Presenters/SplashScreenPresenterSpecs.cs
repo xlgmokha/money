@@ -1,7 +1,7 @@
 using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Presentation.Presenters

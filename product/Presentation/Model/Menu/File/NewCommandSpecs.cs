@@ -1,8 +1,9 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Projects;
 
-namespace MoMoney.Presentation.Model.Menu.File
+namespace momoney.presentation.model.menu.file
 {
     [Concern(typeof (NewCommand))]
     public abstract class behaves_like_new_command : concerns_for<INewCommand, NewCommand>

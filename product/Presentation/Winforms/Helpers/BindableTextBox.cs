@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Gorilla.Commons.Utility.Extensions;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Winforms.Helpers
 {

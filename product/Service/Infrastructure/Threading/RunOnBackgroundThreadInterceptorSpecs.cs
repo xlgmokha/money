@@ -1,15 +1,18 @@
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using MoMoney.Utility.Core;
+using gorilla.commons.Utility;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     [Concern(typeof (RunOnBackgroundThreadInterceptor<>))]
     public abstract class behaves_like_background_thread_interceptor :
-        concerns_for<IInterceptor, RunOnBackgroundThreadInterceptor<IDisposableCommand>>
+        concerns_for<IInterceptor, RunOnBackgroundThreadInterceptor<DisposableCommand>>
     {
-        context c = () => { thread_factory = the_dependency<IBackgroundThreadFactory>(); };
+        context c = () =>
+        {
+            thread_factory = the_dependency<IBackgroundThreadFactory>();
+        };
 
         static protected IBackgroundThreadFactory thread_factory;
     }
@@ -23,14 +26,14 @@ namespace MoMoney.Service.Infrastructure.Threading
             invocation = an<IInvocation>();
             background_thread = an<IBackgroundThread>();
             thread_factory
-                .is_told_to(f => f.create_for<IDisposableCommand>())
+                .is_told_to(f => f.create_for<DisposableCommand>())
                 .it_will_return(background_thread);
         };
 
         because b = () => sut.Intercept(invocation);
 
         it should_display_a_progress_bar_on_a_background_thread =
-            () => thread_factory.was_told_to(f => f.create_for<IDisposableCommand>());
+            () => thread_factory.was_told_to(f => f.create_for<DisposableCommand>());
 
         it should_proceed_with_the_orginal_invocation_on_the_actual_object =
             () => invocation.was_told_to(i => i.Proceed());

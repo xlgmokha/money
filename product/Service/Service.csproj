@@ -8,8 +8,8 @@
     <ProjectGuid>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MoMoney.Service</RootNamespace>
-    <AssemblyName>MoMoney.Service</AssemblyName>
+    <RootNamespace>momoney.service</RootNamespace>
+    <AssemblyName>momoney.service</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -88,87 +88,86 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\AddNewIncomeCommand.cs" />
-    <Compile Include="Application\AddNewIncomeCommandSpecs.cs" />
-    <Compile Include="Application\GetTheCurrentCustomerQuery.cs" />
-    <Compile Include="Application\EventLog.cs" />
-    <Compile Include="Application\GetAllBillsQuery.cs" />
-    <Compile Include="Application\GetAllCompanysQuery.cs" />
-    <Compile Include="Application\GetAllIncomeQuery.cs" />
-    <Compile Include="Application\IEventLog.cs" />
-    <Compile Include="Application\RegisterNewCompanyCommand.cs" />
-    <Compile Include="Application\SaveNewBillCommand.cs" />
-    <Compile Include="Infrastructure\debugging\Launch.cs" />
-    <Compile Include="Infrastructure\Eventing\EventAggregator.cs" />
-    <Compile Include="Infrastructure\Eventing\EventAggregatorSpecs.cs" />
-    <Compile Include="Infrastructure\Eventing\IEvent.cs" />
-    <Compile Include="Infrastructure\Eventing\IEventAggregator.cs" />
-    <Compile Include="Infrastructure\Eventing\IEventSubscriber.cs" />
-    <Compile Include="Infrastructure\Logging\LogFileTasks.cs" />
-    <Compile Include="Infrastructure\ProjectTasks.cs" />
-    <Compile Include="Infrastructure\Security\IsInRole.cs" />
-    <Compile Include="Infrastructure\Security\IsInRoleSpecs.cs" />
-    <Compile Include="Infrastructure\Security\Role.cs" />
-    <Compile Include="Infrastructure\Threading\AsynchronousCommandProcessor.cs" />
-    <Compile Include="Infrastructure\Threading\BackgroundThread.cs" />
-    <Compile Include="Infrastructure\Threading\BackgroundThreadFactory.cs" />
-    <Compile Include="Infrastructure\Threading\BackgroundThreadFactorySpecs.cs" />
-    <Compile Include="Infrastructure\Threading\BackgroundThreadSpecs.cs" />
-    <Compile Include="Infrastructure\Threading\CommandProcessor.cs" />
-    <Compile Include="Infrastructure\Threading\CommandProcessorSpecs.cs" />
-    <Compile Include="Infrastructure\Threading\ICommandProcessor.cs" />
-    <Compile Include="Infrastructure\Threading\IntervalTimer.cs" />
-    <Compile Include="Infrastructure\Threading\IntervalTimerSpecs.cs" />
-    <Compile Include="Infrastructure\Threading\ITimerClient.cs" />
-    <Compile Include="Infrastructure\Threading\IWorkerThread.cs" />
-    <Compile Include="Infrastructure\Threading\RaiseEventInterceptor.cs" />
-    <Compile Include="Infrastructure\Threading\RunOnBackgroundThreadInterceptor.cs" />
-    <Compile Include="Infrastructure\Threading\RunOnBackgroundThreadInterceptorSpecs.cs" />
-    <Compile Include="Infrastructure\Threading\RunOnUIThread.cs" />
-    <Compile Include="Infrastructure\Threading\SynchronizationContextFactory.cs" />
-    <Compile Include="Infrastructure\Threading\SynchronizedCommand.cs" />
-    <Compile Include="Infrastructure\Threading\SynchronizedContext.cs" />
-    <Compile Include="Infrastructure\Threading\Synchronizer.cs" />
-    <Compile Include="Infrastructure\Threading\ThreadingExtensions.cs" />
-    <Compile Include="Infrastructure\Threading\TimerFactory.cs" />
-    <Compile Include="Infrastructure\Threading\TimerFactorySpecs.cs" />
-    <Compile Include="Infrastructure\Threading\WorkerThread.cs">
+    <Compile Include="application\AddNewIncomeCommand.cs" />
+    <Compile Include="application\AddNewIncomeCommandSpecs.cs" />
+    <Compile Include="application\GetTheCurrentCustomerQuery.cs" />
+    <Compile Include="application\EventLog.cs" />
+    <Compile Include="application\GetAllBillsQuery.cs" />
+    <Compile Include="application\GetAllCompanysQuery.cs" />
+    <Compile Include="application\GetAllIncomeQuery.cs" />
+    <Compile Include="application\IEventLog.cs" />
+    <Compile Include="application\RegisterNewCompanyCommand.cs" />
+    <Compile Include="application\SaveNewBillCommand.cs" />
+    <Compile Include="infrastructure\eventing\EventAggregator.cs" />
+    <Compile Include="infrastructure\eventing\EventAggregatorSpecs.cs" />
+    <Compile Include="infrastructure\eventing\IEvent.cs" />
+    <Compile Include="infrastructure\eventing\IEventAggregator.cs" />
+    <Compile Include="infrastructure\eventing\IEventSubscriber.cs" />
+    <Compile Include="infrastructure\logging\LogFileTasks.cs" />
+    <Compile Include="infrastructure\ProjectTasks.cs" />
+    <Compile Include="infrastructure\security\IsInRole.cs" />
+    <Compile Include="infrastructure\security\IsInRoleSpecs.cs" />
+    <Compile Include="infrastructure\security\Role.cs" />
+    <Compile Include="infrastructure\threading\AsynchronousCommandProcessor.cs" />
+    <Compile Include="infrastructure\threading\BackgroundThread.cs" />
+    <Compile Include="infrastructure\threading\BackgroundThreadFactory.cs" />
+    <Compile Include="infrastructure\threading\BackgroundThreadFactorySpecs.cs" />
+    <Compile Include="infrastructure\threading\BackgroundThreadSpecs.cs" />
+    <Compile Include="infrastructure\threading\CommandProcessor.cs" />
+    <Compile Include="infrastructure\threading\CommandProcessorSpecs.cs" />
+    <Compile Include="infrastructure\threading\ICommandProcessor.cs" />
+    <Compile Include="infrastructure\threading\IntervalTimer.cs" />
+    <Compile Include="infrastructure\threading\IntervalTimerSpecs.cs" />
+    <Compile Include="infrastructure\threading\ITimerClient.cs" />
+    <Compile Include="infrastructure\threading\IWorkerThread.cs" />
+    <Compile Include="infrastructure\threading\RaiseEventInterceptor.cs" />
+    <Compile Include="infrastructure\threading\RunOnBackgroundThreadInterceptor.cs" />
+    <Compile Include="infrastructure\threading\RunOnBackgroundThreadInterceptorSpecs.cs" />
+    <Compile Include="infrastructure\threading\RunOnUIThread.cs" />
+    <Compile Include="infrastructure\threading\SynchronizationContextFactory.cs" />
+    <Compile Include="infrastructure\threading\SynchronizedCommand.cs" />
+    <Compile Include="infrastructure\threading\SynchronizedContext.cs" />
+    <Compile Include="infrastructure\threading\Synchronizer.cs" />
+    <Compile Include="infrastructure\threading\ThreadingExtensions.cs" />
+    <Compile Include="infrastructure\threading\TimerFactory.cs" />
+    <Compile Include="infrastructure\threading\TimerFactorySpecs.cs" />
+    <Compile Include="infrastructure\threading\WorkerThread.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Infrastructure\Threading\WorkItem.cs" />
-    <Compile Include="Infrastructure\Transactions\EmptyUnitOfWork.cs" />
-    <Compile Include="Infrastructure\Transactions\UnitOfWork.cs" />
-    <Compile Include="Infrastructure\Transactions\UnitOfWorkFactory.cs" />
-    <Compile Include="Infrastructure\Transactions\UnitOfWorkFactorySpecs.cs" />
-    <Compile Include="Infrastructure\Transactions\UnitOfWorkSpecs.cs" />
-    <Compile Include="Infrastructure\Updating\CancelUpdate.cs" />
-    <Compile Include="Infrastructure\Updating\CancelUpdateSpecs.cs" />
-    <Compile Include="Infrastructure\Updating\CurrentDeployment.cs" />
-    <Compile Include="Infrastructure\Updating\DownloadTheLatestVersion.cs" />
-    <Compile Include="Infrastructure\Updating\IDeployment.cs" />
-    <Compile Include="Infrastructure\Updating\NullDeployment.cs" />
-    <Compile Include="Infrastructure\Updating\WhatIsTheAvailableVersion.cs" />
+    <Compile Include="infrastructure\threading\WorkItem.cs" />
+    <Compile Include="infrastructure\transactions\EmptyUnitOfWork.cs" />
+    <Compile Include="infrastructure\transactions\UnitOfWork.cs" />
+    <Compile Include="infrastructure\transactions\UnitOfWorkFactory.cs" />
+    <Compile Include="infrastructure\transactions\UnitOfWorkFactorySpecs.cs" />
+    <Compile Include="infrastructure\transactions\UnitOfWorkSpecs.cs" />
+    <Compile Include="infrastructure\updating\CancelUpdate.cs" />
+    <Compile Include="infrastructure\updating\CancelUpdateSpecs.cs" />
+    <Compile Include="infrastructure\updating\CurrentDeployment.cs" />
+    <Compile Include="infrastructure\updating\DownloadTheLatestVersion.cs" />
+    <Compile Include="infrastructure\updating\IDeployment.cs" />
+    <Compile Include="infrastructure\updating\NullDeployment.cs" />
+    <Compile Include="infrastructure\updating\WhatIsTheAvailableVersion.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\database\database.csproj">
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
-      <Name>DataAccess</Name>
+      <Name>database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
+    <ProjectReference Include="..\Domain\domain.csproj">
       <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
-      <Name>Domain</Name>
+      <Name>domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
+    <ProjectReference Include="..\DTO\dto.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
-      <Name>DTO</Name>
+      <Name>dto</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj">
+    <ProjectReference Include="..\Service.Contracts\service.contracts.csproj">
       <Project>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</Project>
-      <Name>Service.Contracts</Name>
+      <Name>service.contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <Folder Include="domain\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

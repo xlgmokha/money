@@ -1,10 +1,11 @@
 using System.Net.NetworkInformation;
-using MoMoney.Presentation.Model.messages;
-using MoMoney.Presentation.Views;
+using MoMoney.Presentation;
+using momoney.presentation.model.events;
+using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Resources;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace MoMoney.Presentation.Presenters
+namespace momoney.presentation.presenters
 {
     public interface INotificationIconPresenter : IModule,
                                                   IEventSubscriber<ClosingTheApplication>,

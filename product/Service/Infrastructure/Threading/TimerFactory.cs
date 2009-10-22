@@ -1,7 +1,7 @@
 using System;
 using System.Timers;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
     public interface ITimerFactory
     {

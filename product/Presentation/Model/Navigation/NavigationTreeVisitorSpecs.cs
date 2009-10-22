@@ -1,7 +1,7 @@
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Model.Navigation
 {
@@ -10,34 +10,34 @@ namespace MoMoney.Presentation.Model.Navigation
         concerns_for<INavigationTreeVisitor, NavigationTreeVisitor>
     {
         context c = () =>
-                        {
-                            factory = the_dependency<ITreeViewToRootNodeMapper>();
-                            registry = the_dependency<IRegistry<IBranchVisitor>>();
-                        };
+        {
+            factory = the_dependency<ITreeViewToRootNodeMapper>();
+            registry = the_dependency<Registry<IBranchVisitor>>();
+        };
 
         static protected ITreeViewToRootNodeMapper factory;
-        static protected IRegistry<IBranchVisitor> registry;
+        static protected Registry<IBranchVisitor> registry;
     }
 
     public class when_visiting_the_navigation_tree : behaves_like_a_navigation_tree_visitor
     {
         it should_visit_each_of_the_tree_node_visitors = () =>
-                                                             {
-                                                                 root_node.was_told_to(x => x.accept(first_visitor));
-                                                                 root_node.was_told_to(x => x.accept(second_visitor));
-                                                             };
+        {
+            root_node.was_told_to(x => x.accept(first_visitor));
+            root_node.was_told_to(x => x.accept(second_visitor));
+        };
 
         context c =
             () =>
-                {
-                    tree_view = dependency<TreeView>();
-                    root_node = an<ITreeBranch>();
-                    first_visitor = an<IBranchVisitor>();
-                    second_visitor = an<IBranchVisitor>();
+            {
+                tree_view = dependency<TreeView>();
+                root_node = an<ITreeBranch>();
+                first_visitor = an<IBranchVisitor>();
+                second_visitor = an<IBranchVisitor>();
 
-                    when_the(factory).is_told_to(x => x.map_from(tree_view)).it_will_return(root_node);
-                    when_the(registry).is_told_to(x => x.all()).it_will_return(first_visitor, second_visitor);
-                };
+                when_the(factory).is_told_to(x => x.map_from(tree_view)).it_will_return(root_node);
+                when_the(registry).is_told_to(x => x.all()).it_will_return(first_visitor, second_visitor);
+            };
 
         because b = () => sut.visit(tree_view);
 

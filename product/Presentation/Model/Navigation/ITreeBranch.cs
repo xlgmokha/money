@@ -1,13 +1,13 @@
 using System;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Navigation
 {
     public interface ITreeBranch
     {
-        void accept(IVisitor<ITreeBranch> visitor);
-        ITreeBranch add_child(string name, ApplicationIcon icon, ICommand command);
+        void accept(Visitor<ITreeBranch> visitor);
+        ITreeBranch add_child(string name, ApplicationIcon icon, Command command);
         ITreeBranch add_child(string name, ApplicationIcon icon, Action command);
     }
 }

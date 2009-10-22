@@ -4,9 +4,9 @@ namespace MoMoney.Presentation.Model.Projects
 {
     public class Project : IProject
     {
-        readonly IFile file;
+        readonly File file;
 
-        public Project(IFile file)
+        public Project(File file)
         {
             this.file = file;
         }

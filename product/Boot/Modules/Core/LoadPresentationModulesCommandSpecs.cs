@@ -1,6 +1,6 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation;
 using MoMoney.Service.Infrastructure.Threading;
 
@@ -13,16 +13,16 @@ namespace MoMoney.Modules.Core
         it should_initialize_all_the_presentation_modules = () => processor.was_told_to(x => x.add(module));
 
         context c = () =>
-                        {
-                            registry = the_dependency<IRegistry<IModule>>();
-                            processor = the_dependency<ICommandProcessor>();
-                            module = an<IModule>();
-                            when_the(registry).is_told_to(r => r.all()).it_will_return(module);
-                        };
+        {
+            registry = the_dependency<Registry<IModule>>();
+            processor = the_dependency<ICommandProcessor>();
+            module = an<IModule>();
+            when_the(registry).is_told_to(r => r.all()).it_will_return(module);
+        };
 
         because b = () => sut.run();
 
-        static IRegistry<IModule> registry;
+        static Registry<IModule> registry;
         static IModule module;
         static ICommandProcessor processor;
     }

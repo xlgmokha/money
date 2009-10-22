@@ -1,3 +1,4 @@
+using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Resources;
 using WeifenLuo.WinFormsUI.Docking;
 

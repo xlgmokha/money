@@ -1,11 +1,9 @@
 using System.Threading;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 
-namespace MoMoney.Service.Infrastructure.Threading
+namespace momoney.service.infrastructure.threading
 {
-    public interface ISynchronizationContext : IParameterizedCommand<ICommand>
-    {
-    }
+    public interface ISynchronizationContext : ParameterizedCommand<Command> {}
 
     public class SynchronizedContext : ISynchronizationContext
     {
@@ -16,7 +14,7 @@ namespace MoMoney.Service.Infrastructure.Threading
             this.context = context;
         }
 
-        public void run(ICommand item)
+        public void run(Command item)
         {
             context.Post(x => item.run(), new object());
             //context.Send(x => item.run(), new object());

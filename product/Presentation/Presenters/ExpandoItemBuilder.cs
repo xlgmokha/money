@@ -1,13 +1,13 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Gorilla.Commons.Utility.Core;
+using gorilla.commons.utility;
 using MoMoney.Presentation.Winforms.Resources;
 using XPExplorerBar;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public interface IExpandoItemBuilder : IBuilder<TaskItem>
+    public interface IExpandoItemBuilder : Builder<TaskItem>
     {
         IExpandoItemBuilder named(string name);
         IExpandoItemBuilder represented_by_image(ApplicationImage image);
@@ -19,7 +19,7 @@ namespace MoMoney.Presentation.Presenters
     {
         string the_name = "";
         Image the_image;
-        Action the_action = () => { };
+        Action the_action = () => {};
 
         public IExpandoItemBuilder named(string name)
         {
@@ -32,7 +32,7 @@ namespace MoMoney.Presentation.Presenters
             the_image = image;
             return this;
         }
-        
+
         public IExpandoItemBuilder represented_by_icon(HybridIcon icon)
         {
             the_image = icon;
@@ -48,15 +48,15 @@ namespace MoMoney.Presentation.Presenters
         public TaskItem build()
         {
             var item = new TaskItem
-                           {
-                               Anchor = ((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right),
-                               BackColor = Color.Transparent,
-                               Image = the_image,
-                               Name = "ux" + the_name,
-                               Text = the_name,
-                               UseVisualStyleBackColor = false,
-                               ShowFocusCues = true,
-                           };
+                       {
+                           Anchor = ((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right),
+                           BackColor = Color.Transparent,
+                           Image = the_image,
+                           Name = "ux" + the_name,
+                           Text = the_name,
+                           UseVisualStyleBackColor = false,
+                           ShowFocusCues = true,
+                       };
             item.Click += (sender, e) => the_action();
             return item;
         }
