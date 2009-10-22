@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>momoney.database</RootNamespace>
+    <AssemblyName>momoney.database</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o, Version=7.5.57.11498, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o.Linq, Version=7.5.57.11498, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.commons.infrastructure, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.commons.utility, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
+    </Reference>
+    <Reference Include="gorilla.testing, Version=2009.5.5.194, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\gorilla\gorilla.testing.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="db4o\ConfigureObjectContainerStep.cs" />
+    <Compile Include="db4o\Spiking\db40_spike_specs.cs" />
+    <Compile Include="repositories\AccountHolderRepository.cs" />
+    <Compile Include="repositories\BillRepository.cs" />
+    <Compile Include="repositories\CompanyRepository.cs" />
+    <Compile Include="repositories\IncomeRepository.cs" />
+    <Compile Include="db4o\ConfigureDatabaseStep.cs" />
+    <Compile Include="db4o\ConnectionFactory.cs" />
+    <Compile Include="ObjectDatabase.cs" />
+    <Compile Include="db4o\DatabaseConnection.cs" />
+    <Compile Include="IConnectionFactory.cs" />
+    <Compile Include="IDatabaseConfiguration.cs" />
+    <Compile Include="transactions\ChangeTracker.cs" />
+    <Compile Include="transactions\ChangeTrackerFactory.cs" />
+    <Compile Include="transactions\ChangeTrackerFactorySpecs.cs" />
+    <Compile Include="transactions\ChangeTrackerSpecs.cs" />
+    <Compile Include="transactions\Context.cs" />
+    <Compile Include="transactions\ContextFactory.cs" />
+    <Compile Include="transactions\ContextFactorySpecs.cs" />
+    <Compile Include="transactions\CurrentThread.cs" />
+    <Compile Include="transactions\IChangeTracker.cs" />
+    <Compile Include="transactions\IChangeTrackerFactory.cs" />
+    <Compile Include="transactions\IContext.cs" />
+    <Compile Include="transactions\IDatabase.cs" />
+    <Compile Include="transactions\IDatabaseConnection.cs" />
+    <Compile Include="transactions\IdentityMapProxy.cs" />
+    <Compile Include="transactions\IdentityMapSpecs.cs" />
+    <Compile Include="transactions\IIdentityMap.cs" />
+    <Compile Include="transactions\IKey.cs" />
+    <Compile Include="transactions\IScopedStorage.cs" />
+    <Compile Include="transactions\IStatement.cs" />
+    <Compile Include="transactions\IStatementRegistry.cs" />
+    <Compile Include="transactions\IThread.cs" />
+    <Compile Include="transactions\PerThread.cs" />
+    <Compile Include="transactions\PerThreadScopedStorage.cs" />
+    <Compile Include="transactions\PerThreadScopedStorageSpecs.cs" />
+    <Compile Include="transactions\Session.cs" />
+    <Compile Include="transactions\SessionFactory.cs" />
+    <Compile Include="transactions\SessionFactorySpecs.cs" />
+    <Compile Include="transactions\SessionNotStartedException.cs" />
+    <Compile Include="transactions\SessionProvider.cs" />
+    <Compile Include="transactions\SessionSpecs.cs" />
+    <Compile Include="transactions\SingletonScopedStorage.cs" />
+    <Compile Include="transactions\StatementRegistry.cs" />
+    <Compile Include="transactions\TrackerEntry.cs" />
+    <Compile Include="transactions\TrackerEntryMapper.cs" />
+    <Compile Include="transactions\TrackerEntrySpecs.cs" />
+    <Compile Include="transactions\Transaction.cs" />
+    <Compile Include="transactions\TransactionSpecs.cs" />
+    <Compile Include="transactions\TypedKey.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\domain.csproj">
+      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
+      <Name>domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
