@@ -1,5 +1,5 @@
 using Castle.Core.Interceptor;
-using momoney.presentation.model.events;
+using momoney.presentation.model.eventing;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.boot.container.registration.proxy_configuration

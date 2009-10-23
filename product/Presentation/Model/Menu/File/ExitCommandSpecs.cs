@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Core;
-using momoney.presentation.model.events;
+using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Service.Infrastructure.Eventing;
 

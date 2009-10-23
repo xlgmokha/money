@@ -36,7 +36,7 @@ namespace momoney.database.transactions
     public class when_committing_a_transaction_and_an_item_in_the_identity_map_has_changed : behaves_like_transaction
     {
         it should_commit_the_changes_to_that_item =
-            () => tracker.was_told_to<IChangeTracker<IMovie>>(x => x.commit_to(database));
+            () => tracker.was_told_to(x => x.commit_to(database));
 
         context c = () =>
         {

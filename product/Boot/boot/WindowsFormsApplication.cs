@@ -11,7 +11,7 @@ using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
 using momoney.boot;
 using MoMoney.boot.container;
-using momoney.presentation.model.events;
+using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Service.Infrastructure.Eventing;
 using momoney.service.infrastructure.threading;

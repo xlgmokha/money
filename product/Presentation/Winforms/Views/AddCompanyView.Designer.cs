@@ -28,7 +28,7 @@ namespace MoMoney.Presentation.Winforms.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCompanyView));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCompanyView));
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.ux_companys_listing = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.kryptonSplitContainer2 = new ComponentFactory.Krypton.Toolkit.KryptonSplitContainer();

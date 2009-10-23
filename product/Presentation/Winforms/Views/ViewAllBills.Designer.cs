@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllBills));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllBills));
             this.kryptonGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
             this.ux_bills = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();

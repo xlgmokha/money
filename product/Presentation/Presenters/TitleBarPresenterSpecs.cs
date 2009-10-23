@@ -1,6 +1,6 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using momoney.presentation.model.events;
+using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;

@@ -1,6 +1,6 @@
 using MoMoney.Presentation;
 using MoMoney.Presentation.Core;
-using momoney.presentation.model.events;
+using momoney.presentation.model.eventing;
 using momoney.presentation.views;
 using MoMoney.Service.Infrastructure.Eventing;
 

@@ -1,6 +1,6 @@
 using gorilla.commons.utility;
 using MoMoney.Presentation;
-using momoney.presentation.model.events;
+using momoney.presentation.model.eventing;
 using momoney.presentation.views;
 using MoMoney.Service.Infrastructure.Eventing;
 

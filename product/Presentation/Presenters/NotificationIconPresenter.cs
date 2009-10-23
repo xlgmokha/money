@@ -1,6 +1,6 @@
 using System.Net.NetworkInformation;
 using MoMoney.Presentation;
-using momoney.presentation.model.events;
+using momoney.presentation.model.eventing;
 using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Resources;
 using MoMoney.Service.Infrastructure.Eventing;

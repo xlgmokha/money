@@ -27,7 +27,7 @@ namespace MoMoney.Presentation.Winforms.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllBillsReport));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllBillsReport));
             this.pageHeader = new DataDynamics.ActiveReports.PageHeader();
             this.detail = new DataDynamics.ActiveReports.Detail();
             this.ux_company_name = new DataDynamics.ActiveReports.RichTextBox();

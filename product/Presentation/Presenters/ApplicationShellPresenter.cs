@@ -1,5 +1,5 @@
 using MoMoney.Presentation.Core;
-using momoney.presentation.model.events;
+using momoney.presentation.model.eventing;
 using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;

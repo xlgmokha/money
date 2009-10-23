@@ -1,7 +1,7 @@
 using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
-using momoney.presentation.model.events;
+using momoney.presentation.model.eventing;
 using MoMoney.Service.Contracts.Infrastructure;
 using momoney.service.contracts.infrastructure.transactions;
 using MoMoney.Service.Infrastructure.Eventing;

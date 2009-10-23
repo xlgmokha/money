@@ -29,21 +29,21 @@ namespace MoMoney.Presentation.Winforms.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
-            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin1 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient1 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient2 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient3 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient4 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient5 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient3 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient6 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            var dockPanelSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
+            var autoHideStripSkin1 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
+            var dockPanelGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            var tabGradient1 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            var dockPaneStripSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
+            var dockPaneStripGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
+            var tabGradient2 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            var dockPanelGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            var tabGradient3 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            var dockPaneStripToolWindowGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
+            var tabGradient4 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            var tabGradient5 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            var dockPanelGradient3 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            var tabGradient6 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            var tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             this.ux_main_menu_strip = new System.Windows.Forms.MenuStrip();
             this.ux_status_bar = new System.Windows.Forms.StatusStrip();
             this.status_bar_progress_bar = new System.Windows.Forms.ToolStripProgressBar();
