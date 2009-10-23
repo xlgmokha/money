@@ -32,7 +32,7 @@ namespace MoMoney.boot.container.registration
             register.transient<IUnitOfWorkFactory, UnitOfWorkFactory>();
             register.transient<ISessionFactory, SessionFactory>();
             register.transient<IChangeTrackerFactory, ChangeTrackerFactory>();
-            register.transient<IStatementRegistry, StatementRegistry>();
+            register.transient<DatabaseCommandRegistry, ObjectDatabaseCommandRegistry>();
             register.transient<IConnectionFactory, ConnectionFactory>();
             register.transient<IConfigureDatabaseStep, ConfigureDatabaseStep>();
             register.transient<IConfigureObjectContainerStep, ConfigureObjectContainerStep>();

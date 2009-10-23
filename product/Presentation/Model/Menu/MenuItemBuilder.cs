@@ -22,7 +22,7 @@ namespace MoMoney.Presentation.Model.Menu
     {
         readonly DependencyRegistry registry;
         readonly IEventAggregator aggregator;
-        readonly ICommandProcessor processor;
+        readonly CommandProcessor processor;
 
         string name_of_the_menu { get; set; }
         Action command_to_execute { get; set; }
@@ -30,7 +30,7 @@ namespace MoMoney.Presentation.Model.Menu
         ShortcutKey key { get; set; }
         Func<bool> can_be_clicked = () => true;
 
-        public MenuItemBuilder(DependencyRegistry registry, IEventAggregator aggregator, ICommandProcessor processor)
+        public MenuItemBuilder(DependencyRegistry registry, IEventAggregator aggregator, CommandProcessor processor)
         {
             name_of_the_menu = "Unknown";
             command_to_execute = () => {};

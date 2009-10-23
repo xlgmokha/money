@@ -49,7 +49,7 @@ namespace MoMoney.boot.container.registration
             registry.transient<ICommandPump, CommandPump>();
             registry.transient<ICommandFactory, CommandFactory>();
             registry.transient<ISynchronizationContextFactory, SynchronizationContextFactory>();
-            registry.singleton<ICommandProcessor, AsynchronousCommandProcessor>();
+            registry.singleton<CommandProcessor, AsynchronousCommandProcessor>();
         }
     }
 }

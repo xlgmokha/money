@@ -28,11 +28,11 @@ namespace momoney.database
             }
         }
 
-        public void apply(IStatement statement)
+        public void apply(DatabaseCommand command)
         {
             using (var connection = factory.open_connection_to(path_to_database()))
             {
-                statement.prepare(connection);
+                command.run(connection);
                 connection.commit();
             }
         }

@@ -19,13 +19,13 @@ namespace momoney.presentation.presenters
             context c = () =>
             {
                 controller = the_dependency<IApplicationController>();
-                processor = the_dependency<ICommandProcessor>();
+                processor = the_dependency<CommandProcessor>();
             };
 
             because b = () => sut.run();
 
             static IApplicationController controller;
-            static ICommandProcessor processor;
+            static CommandProcessor processor;
         }
     }
 }

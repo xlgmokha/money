@@ -8,11 +8,11 @@ namespace momoney.database.transactions
     public class ChangeTracker<T> : IChangeTracker<T> where T : Identifiable<Guid>
     {
         readonly ITrackerEntryMapper<T> mapper;
-        readonly IStatementRegistry registry;
+        readonly DatabaseCommandRegistry registry;
         readonly IList<ITrackerEntry<T>> items;
         readonly IList<T> to_be_deleted;
 
-        public ChangeTracker(ITrackerEntryMapper<T> mapper, IStatementRegistry registry)
+        public ChangeTracker(ITrackerEntryMapper<T> mapper, DatabaseCommandRegistry registry)
         {
             this.mapper = mapper;
             this.registry = registry;
@@ -33,7 +33,7 @@ namespace momoney.database.transactions
         public void commit_to(IDatabase database)
         {
             items.each(x => commit(x, database));
-            to_be_deleted.each(x => database.apply(registry.prepare_command_for(x)));
+            to_be_deleted.each(x => database.apply(registry.prepare_for_deletion(x)));
         }
 
         public bool is_dirty()
@@ -48,7 +48,7 @@ namespace momoney.database.transactions
 
         void commit(ITrackerEntry<T> entry, IDatabase database)
         {
-            if (entry.has_changes()) database.apply(registry.prepare_command_for(entry.current));
+            if (entry.has_changes()) database.apply(registry.prepare_for_flushing(entry.current));
         }
     }
 }

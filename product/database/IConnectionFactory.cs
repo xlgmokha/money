@@ -5,6 +5,6 @@ namespace momoney.database
 {
     public interface IConnectionFactory
     {
-        IDatabaseConnection open_connection_to(File the_path_to_the_database_file);
+        DatabaseConnection open_connection_to(File the_path_to_the_database_file);
     }
 }

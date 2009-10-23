@@ -6,10 +6,10 @@ namespace momoney.database.transactions
 {
     public class ChangeTrackerFactory : IChangeTrackerFactory
     {
-        readonly IStatementRegistry statement_registry;
+        readonly DatabaseCommandRegistry statement_registry;
         readonly DependencyRegistry registry;
 
-        public ChangeTrackerFactory(IStatementRegistry statement_registry, DependencyRegistry registry)
+        public ChangeTrackerFactory(DatabaseCommandRegistry statement_registry, DependencyRegistry registry)
         {
             this.statement_registry = statement_registry;
             this.registry = registry;

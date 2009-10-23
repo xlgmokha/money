@@ -15,11 +15,11 @@ namespace momoney.database.transactions
             context c = () =>
             {
                 mapper = the_dependency<ITrackerEntryMapper<Identifiable<Guid>>>();
-                registry = the_dependency<IStatementRegistry>();
+                registry = the_dependency<DatabaseCommandRegistry>();
             };
 
             static protected ITrackerEntryMapper<Identifiable<Guid>> mapper;
-            static protected IStatementRegistry registry;
+            static protected DatabaseCommandRegistry registry;
         }
 
         [Concern(typeof (ChangeTracker<Identifiable<Guid>>))]
@@ -30,14 +30,14 @@ namespace momoney.database.transactions
             context c = () =>
             {
                 item = an<Identifiable<Guid>>();
-                statement = an<IStatement>();
+                statement = an<DatabaseCommand>();
                 database = an<IDatabase>();
                 var entry = an<ITrackerEntry<Identifiable<Guid>>>();
 
                 when_the(mapper).is_told_to(x => x.map_from(item)).it_will_return(entry);
                 when_the(entry).is_told_to(x => x.has_changes()).it_will_return(true);
                 when_the(entry).is_told_to(x => x.current).it_will_return(item);
-                when_the(registry).is_told_to(x => x.prepare_command_for(item)).it_will_return(statement);
+                when_the(registry).is_told_to(x => x.prepare_for_flushing(item)).it_will_return(statement);
             };
 
             because b = () =>
@@ -48,7 +48,7 @@ namespace momoney.database.transactions
 
             static Identifiable<Guid> item;
             static IDatabase database;
-            static IStatement statement;
+            static DatabaseCommand statement;
         }
 
         [Concern(typeof (ChangeTracker<Identifiable<Guid>>))]

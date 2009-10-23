@@ -11,9 +11,9 @@ namespace MoMoney.Presentation.Core
 
     public class ApplicationEnvironment : IApplication
     {
-        readonly ICommandProcessor processor;
+        readonly CommandProcessor processor;
 
-        public ApplicationEnvironment(ICommandProcessor processor)
+        public ApplicationEnvironment(CommandProcessor processor)
         {
             this.processor = processor;
         }

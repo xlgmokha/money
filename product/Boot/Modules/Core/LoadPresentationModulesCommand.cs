@@ -7,9 +7,9 @@ namespace MoMoney.Modules.Core
     public class LoadPresentationModulesCommand : ILoadPresentationModulesCommand
     {
         readonly Registry<IModule> registry;
-        readonly ICommandProcessor processor;
+        readonly CommandProcessor processor;
 
-        public LoadPresentationModulesCommand(Registry<IModule> registry, ICommandProcessor processor)
+        public LoadPresentationModulesCommand(Registry<IModule> registry, CommandProcessor processor)
         {
             this.registry = registry;
             this.processor = processor;

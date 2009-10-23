@@ -5,11 +5,11 @@ using momoney.database.transactions;
 
 namespace momoney.database.db4o
 {
-    public class DatabaseConnection : IDatabaseConnection
+    public class ObjectDatabaseConnection : DatabaseConnection
     {
         readonly IObjectContainer container;
 
-        public DatabaseConnection(IObjectContainer container)
+        public ObjectDatabaseConnection(IObjectContainer container)
         {
             this.container = container;
         }

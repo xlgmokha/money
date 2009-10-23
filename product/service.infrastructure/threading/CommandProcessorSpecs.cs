@@ -5,10 +5,10 @@ using MoMoney.Service.Infrastructure.Threading;
 
 namespace momoney.service.infrastructure.threading
 {
-    [Concern(typeof (CommandProcessor))]
-    public abstract class behaves_like_a_command_processor : concerns_for<ICommandProcessor, CommandProcessor> {}
+    [Concern(typeof (SynchronousCommandProcessor))]
+    public abstract class behaves_like_a_command_processor : concerns_for<CommandProcessor, SynchronousCommandProcessor> {}
 
-    [Concern(typeof (CommandProcessor))]
+    [Concern(typeof (SynchronousCommandProcessor))]
     public class when_running_all_the_queued_commands_waiting_for_execution : behaves_like_a_command_processor
     {
         it should_run_the_first_command_in_the_queue = () => first_command.was_told_to(f => f.run());
@@ -32,7 +32,7 @@ namespace momoney.service.infrastructure.threading
         static Command second_command;
     }
 
-    [Concern(typeof (CommandProcessor))]
+    [Concern(typeof (SynchronousCommandProcessor))]
     public class when_attempting_to_rerun_the_command_processor : behaves_like_a_command_processor
     {
         it should_not_re_run_the_commands_that_have_already_executed =

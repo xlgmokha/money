@@ -15,7 +15,7 @@ namespace MoMoney.Modules.Core
         context c = () =>
         {
             registry = the_dependency<Registry<IModule>>();
-            processor = the_dependency<ICommandProcessor>();
+            processor = the_dependency<CommandProcessor>();
             module = an<IModule>();
             when_the(registry).is_told_to(r => r.all()).it_will_return(module);
         };
@@ -24,6 +24,6 @@ namespace MoMoney.Modules.Core
 
         static Registry<IModule> registry;
         static IModule module;
-        static ICommandProcessor processor;
+        static CommandProcessor processor;
     }
 }

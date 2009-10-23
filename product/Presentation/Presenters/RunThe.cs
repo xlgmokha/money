@@ -9,9 +9,9 @@ namespace momoney.presentation.presenters
     public class RunThe<TPresenter> : IRunThe<TPresenter> where TPresenter : IPresenter
     {
         readonly IApplicationController controller;
-        readonly ICommandProcessor processor;
+        readonly CommandProcessor processor;
 
-        public RunThe(IApplicationController controller, ICommandProcessor processor)
+        public RunThe(IApplicationController controller, CommandProcessor processor)
         {
             this.controller = controller;
             this.processor = processor;

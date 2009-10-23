@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace momoney.database.transactions
 {
-    public interface IDatabaseConnection : IDisposable
+    public interface DatabaseConnection : IDisposable
     {
         IEnumerable<T> query<T>();
         IEnumerable<T> query<T>(Predicate<T> predicate);

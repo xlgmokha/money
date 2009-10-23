@@ -11,10 +11,10 @@ namespace MoMoney.Presentation.Model.Menu
     {
         readonly DependencyRegistry registry;
         readonly ToolStripButton item;
-        readonly ICommandProcessor processor;
+        readonly CommandProcessor processor;
         Func<bool> the_condition;
 
-        public ToolBarItemBuilder(DependencyRegistry registry, IEventAggregator aggregator, ICommandProcessor processor)
+        public ToolBarItemBuilder(DependencyRegistry registry, IEventAggregator aggregator, CommandProcessor processor)
         {
             this.registry = registry;
             this.processor = processor;

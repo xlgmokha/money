@@ -7,19 +7,17 @@ namespace MoMoney.Presentation.Presenters
     public interface ICommandPump
     {
         ICommandPump run<Command>() where Command : gorilla.commons.utility.Command;
-        ICommandPump run<Command>(Command command) where Command : gorilla.commons.utility.Command;
         ICommandPump run<Command, T>(T input) where Command : ParameterizedCommand<T>;
-        ICommandPump run<T>(Callback<T> item, Query<T> query);
         ICommandPump run<Output, Query>(Callback<Output> item) where Query : Query<Output>;
     }
 
     public class CommandPump : ICommandPump
     {
-        readonly ICommandProcessor processor;
+        readonly CommandProcessor processor;
         readonly DependencyRegistry registry;
         readonly ICommandFactory factory;
 
-        public CommandPump(ICommandProcessor processor, DependencyRegistry registry, ICommandFactory factory)
+        public CommandPump(CommandProcessor processor, DependencyRegistry registry, ICommandFactory factory)
         {
             this.processor = processor;
             this.factory = factory;

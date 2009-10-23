@@ -17,11 +17,11 @@ namespace momoney.database.db4o
             this.setup_container = setup_container;
         }
 
-        public IDatabaseConnection open_connection_to(File the_path_to_the_database_file)
+        public DatabaseConnection open_connection_to(File the_path_to_the_database_file)
         {
             var configuration = Db4oFactory.NewConfiguration();
             setup.configure(configuration);
-            return new DatabaseConnection(get_container(the_path_to_the_database_file, configuration));
+            return new ObjectDatabaseConnection(get_container(the_path_to_the_database_file, configuration));
         }
 
         IObjectContainer get_container(File the_path_to_the_database_file, IConfiguration configuration)

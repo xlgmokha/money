@@ -6,7 +6,7 @@ using gorilla.commons.utility;
 
 namespace MoMoney.Service.Infrastructure.Threading
 {
-    public class AsynchronousCommandProcessor : ICommandProcessor
+    public class AsynchronousCommandProcessor : CommandProcessor
     {
         readonly Queue<Command> queued_commands;
         readonly EventWaitHandle manual_reset;

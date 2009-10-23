@@ -6,9 +6,9 @@ namespace MoMoney.Presentation.Presenters
     public class RunPresenterCommand : IRunPresenterCommand
     {
         readonly IApplicationController application_controller;
-        readonly ICommandProcessor processor;
+        readonly CommandProcessor processor;
 
-        public RunPresenterCommand(IApplicationController application_controller, ICommandProcessor processor)
+        public RunPresenterCommand(IApplicationController application_controller, CommandProcessor processor)
         {
             this.application_controller = application_controller;
             this.processor = processor;

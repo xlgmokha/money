@@ -101,9 +101,9 @@
     <Compile Include="threading\BackgroundThreadFactory.cs" />
     <Compile Include="threading\BackgroundThreadFactorySpecs.cs" />
     <Compile Include="threading\BackgroundThreadSpecs.cs" />
-    <Compile Include="threading\CommandProcessor.cs" />
+    <Compile Include="threading\SynchronousCommandProcessor.cs" />
     <Compile Include="threading\CommandProcessorSpecs.cs" />
-    <Compile Include="threading\ICommandProcessor.cs" />
+    <Compile Include="threading\CommandProcessor.cs" />
     <Compile Include="threading\IntervalTimer.cs" />
     <Compile Include="threading\IntervalTimerSpecs.cs" />
     <Compile Include="threading\ITimerClient.cs" />
