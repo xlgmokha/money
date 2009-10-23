@@ -33,7 +33,8 @@ namespace MoMoney.boot.container.registration
             registry.transient(typeof (ITrackerEntryMapper<>), typeof (TrackerEntryMapper<>));
             registry.transient(typeof (IKey<>), typeof (TypedKey<>));
             registry.transient(typeof (ComponentFactory<>), typeof (DefaultConstructorFactory<>));
-            registry.singleton<IContext>(() => new Context(new Hashtable()));
+            //registry.singleton<IContext>(() => new Context(new Hashtable()));
+            registry.singleton<IContext>(() => new PerThread());
 
             registry.singleton(() => AsyncOperationManager.SynchronizationContext);
             registry.singleton<AsyncOperation>(() => AsyncOperationManager.CreateOperation(new object()));

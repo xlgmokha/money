@@ -3,13 +3,13 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.Accounting
 {
-    public interface IPayment : IEntity
+    public interface IPayment : Entity
     {
         Money apply_to(Money money);
     }
 
     [Serializable]
-    internal class Payment : Entity<IPayment>, IPayment
+    internal class Payment : GenericEntity<IPayment>, IPayment
     {
         Money amount_paid { get; set; }
 

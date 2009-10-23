@@ -25,7 +25,7 @@ namespace MoMoney.boot.container
 
         static public Specification<Type> is_an_entity(this Type item)
         {
-            return new PredicateSpecification<Type>(x => typeof (IEntity).IsAssignableFrom(x));
+            return new PredicateSpecification<Type>(x => typeof (Entity).IsAssignableFrom(x));
         }
 
         static public Specification<Type> is_an_interface(this Type item)

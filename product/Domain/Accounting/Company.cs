@@ -5,7 +5,7 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.Accounting
 {
-    public interface ICompany : IEntity
+    public interface ICompany : Entity
     {
         string name { get; }
         void change_name_to(string company_name);
@@ -14,7 +14,7 @@ namespace MoMoney.Domain.Accounting
     }
 
     [Serializable]
-    public class Company : Entity<ICompany>, ICompany
+    public class Company : GenericEntity<ICompany>, ICompany
     {
         public string name { get; private set; }
 

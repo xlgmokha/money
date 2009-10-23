@@ -6,7 +6,7 @@ using gorilla.commons.utility;
 
 namespace MoMoney.Domain.Accounting
 {
-    public interface IBill : IEntity
+    public interface IBill : Entity
     {
         bool is_paid_for();
         void pay(Money amount_to_pay);
@@ -16,7 +16,7 @@ namespace MoMoney.Domain.Accounting
     }
 
     [Serializable]
-    public class Bill : Entity<IBill>, IBill
+    public class Bill : GenericEntity<IBill>, IBill
     {
         IList<IPayment> payments { get; set; }
 

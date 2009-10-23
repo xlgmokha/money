@@ -80,6 +80,7 @@
     <Compile Include="accounting\GeneralLedgerSpecs.cs" />
     <Compile Include="accounting\AnnualIncomeVisitor.cs" />
     <Compile Include="accounting\IncomeExtensions.cs" />
+    <Compile Include="core\GenericEntity.cs" />
     <Compile Include="core\Entity.cs" />
     <Compile Include="core\Money.cs" />
     <Compile Include="core\MoneyExtensions.cs" />

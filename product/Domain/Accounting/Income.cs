@@ -4,7 +4,7 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.Accounting
 {
-    public interface IIncome : IEntity
+    public interface IIncome : Entity
     {
         Date date_of_issue { get; }
         Money amount_tendered { get; }
@@ -12,7 +12,7 @@ namespace MoMoney.Domain.Accounting
     }
 
     [Serializable]
-    internal class Income : Entity<IIncome>, IIncome
+    internal class Income : GenericEntity<IIncome>, IIncome
     {
         public Income(Date date_of_issue, Money amount_tendered, ICompany company)
         {

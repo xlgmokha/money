@@ -24,14 +24,12 @@ namespace momoney.database.repositories
 
         public ICompany find_company_named(string name)
         {
-            return session
-                .all<ICompany>()
-                .SingleOrDefault(x => x.name.is_equal_to_ignoring_case(name));
+            return all().SingleOrDefault(x => x.name.is_equal_to_ignoring_case(name));
         }
 
         public ICompany find_company_by(Guid id)
         {
-            return session.all<ICompany>().SingleOrDefault(x => x.id.Equals(id));
+            return all().SingleOrDefault(x => x.id.Equals(id));
         }
 
         public void save(ICompany company)

@@ -7,7 +7,7 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.accounting
 {
-    public interface IAccountHolder : IEntity
+    public interface IAccountHolder : Entity
     {
         void receive(IBill bill);
         void receive(IIncome income);
@@ -16,7 +16,7 @@ namespace MoMoney.Domain.accounting
     }
 
     [Serializable]
-    public class AccountHolder : Entity<IAccountHolder>, IAccountHolder
+    public class AccountHolder : GenericEntity<IAccountHolder>, IAccountHolder
     {
         IList<IBill> all_bills { get; set; }
         IList<IIncome> income_collected { get; set; }

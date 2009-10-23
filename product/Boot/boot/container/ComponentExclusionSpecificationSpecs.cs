@@ -92,7 +92,7 @@ namespace MoMoney.boot.container
 
     static public class FakeStaticClass {}
 
-    public class FakeEntity : IEntity
+    public class FakeEntity : Entity
     {
         public Id<Guid> id
         {

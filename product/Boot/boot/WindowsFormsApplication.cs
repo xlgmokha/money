@@ -29,23 +29,21 @@ namespace MoMoney.boot
 
         public void run()
         {
-            var stopwatch = new Stopwatch();
-            stopwatch.Start();
-            Func<ISplashScreenPresenter> presenter = () => new SplashScreenPresenter();
-            presenter = presenter.memorize();
+            using (new LogTime())
+            {
+                Func<ISplashScreenPresenter> presenter = () => new SplashScreenPresenter();
+                presenter = presenter.memorize();
 
-            var startup_screen = new display_the_splash_screen(presenter).on_a_background_thread();
+                var startup_screen = new display_the_splash_screen(presenter).on_a_background_thread();
 
-            AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
-            hookup
-                .the<global_error_handling>()
-                .then(startup_screen)
-                .then<wire_up_the_container>()
-                .then(new start_the_application(startup_screen))
-                .run();
-
-            stopwatch.Stop();
-            this.log().debug("application startup took: {0}", stopwatch.Elapsed);
+                AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
+                hookup
+                    .the<global_error_handling>()
+                    .then(startup_screen)
+                    .then<wire_up_the_container>()
+                    .then(new start_the_application(startup_screen))
+                    .run();
+            }
             start();
         }
 
@@ -60,6 +58,23 @@ namespace MoMoney.boot
                 this.log().error(e);
                 Resolve.the<IEventAggregator>().publish(new UnhandledErrorOccurred(e));
             }
+        }
+    }
+
+    public class LogTime : IDisposable
+    {
+        Stopwatch stopwatch;
+
+        public LogTime()
+        {
+            stopwatch = new Stopwatch();
+            stopwatch.Start();
+        }
+
+        public void Dispose()
+        {
+            stopwatch.Stop();
+            this.log().debug("application startup took: {0}", stopwatch.Elapsed);
         }
     }
 

@@ -18,8 +18,7 @@ namespace MoMoney.Presentation.Winforms.Views
         public AddBillPaymentView()
         {
             InitializeComponent();
-            titled("Add Bill Payment")
-                .icon(ApplicationIcons.AddBillPayment);
+            titled("Add Bill Payment").icon(ApplicationIcons.AddBillPayment);
             ux_submit_button.Click += (sender, e) => submit_clicked(e);
             companies_list = ux_company_names.create_for<CompanyDTO>();
         }
