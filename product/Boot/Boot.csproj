@@ -223,6 +223,10 @@
       <Project>{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}</Project>
       <Name>presentation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\service.infrastructure\service.infrastructure.csproj">
+      <Project>{81412692-F3EE-4FBF-A7C7-69454DD1BD46}</Project>
+      <Name>service.infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\service.csproj">
       <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
       <Name>service</Name>

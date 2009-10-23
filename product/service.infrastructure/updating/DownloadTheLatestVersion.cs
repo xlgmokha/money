@@ -1,6 +1,6 @@
 using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using momoney.service.contracts.infrastructure.updating;
+using momoney.service.infrastructure.updating;
 
 namespace MoMoney.Service.Infrastructure.Updating
 {

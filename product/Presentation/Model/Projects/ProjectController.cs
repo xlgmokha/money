@@ -2,9 +2,9 @@ using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
 using momoney.presentation.model.eventing;
-using MoMoney.Service.Contracts.Infrastructure;
-using momoney.service.contracts.infrastructure.transactions;
+using momoney.service.infrastructure;
 using MoMoney.Service.Infrastructure.Eventing;
+using momoney.service.infrastructure.transactions;
 
 namespace MoMoney.Presentation.Model.Projects
 {

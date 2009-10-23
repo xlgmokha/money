@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</ProjectGuid>
+    <ProjectGuid>{F04F922F-C0CC-45FC-BD33-A758BD1B8B36}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>momoney.service.contracts</RootNamespace>
-    <AssemblyName>momoney.service.contracts</AssemblyName>
+    <RootNamespace>domain.services</RootNamespace>
+    <AssemblyName>domain.services</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,20 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="gorilla.commons.infrastructure, Version=2009.9.4.1823, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="gorilla.commons.utility, Version=2009.9.4.1823, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.ServiceModel">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -56,19 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="application\IAddNewIncomeCommand.cs" />
-    <Compile Include="application\IGetAllBillsQuery.cs" />
-    <Compile Include="application\IGetAllCompanysQuery.cs" />
-    <Compile Include="application\IGetAllIncomeQuery.cs" />
-    <Compile Include="application\IRegisterNewCompanyCommand.cs" />
-    <Compile Include="application\ISaveNewBillCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DTO\dto.csproj">
-      <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
-      <Name>dto</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

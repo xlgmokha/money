@@ -1,7 +1,7 @@
 using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using MoMoney.DTO;
 using momoney.presentation.presenters;
+using momoney.service.infrastructure.updating;
 
 namespace momoney.presentation.views
 {

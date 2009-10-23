@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</ProjectGuid>
+    <ProjectGuid>{81412692-F3EE-4FBF-A7C7-69454DD1BD46}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>momoney.service</RootNamespace>
-    <AssemblyName>momoney.service</AssemblyName>
+    <RootNamespace>momoney.service.infrastructure</RootNamespace>
+    <AssemblyName>momoney.service.infrastructure</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,15 +47,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
     </Reference>
-    <Reference Include="gorilla.commons.infrastructure, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+    <Reference Include="gorilla.commons.infrastructure, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="gorilla.commons.infrastructure.thirdparty, Version=2009.9.5.2051, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+    <Reference Include="gorilla.commons.infrastructure.thirdparty, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.thirdparty.dll</HintPath>
     </Reference>
-    <Reference Include="gorilla.commons.utility, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
+    <Reference Include="gorilla.commons.utility, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
     </Reference>
@@ -72,12 +72,6 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Deployment" />
-    <Reference Include="System.Runtime.Serialization">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.ServiceModel">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -88,37 +82,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="application\AddNewIncomeCommand.cs" />
-    <Compile Include="application\AddNewIncomeCommandSpecs.cs" />
-    <Compile Include="application\GetTheCurrentCustomerQuery.cs" />
-    <Compile Include="application\EventLog.cs" />
-    <Compile Include="application\GetAllBillsQuery.cs" />
-    <Compile Include="application\GetAllCompanysQuery.cs" />
-    <Compile Include="application\GetAllIncomeQuery.cs" />
-    <Compile Include="application\IEventLog.cs" />
-    <Compile Include="application\RegisterNewCompanyCommand.cs" />
-    <Compile Include="application\SaveNewBillCommand.cs" />
+    <Compile Include="debugging\Launch.cs" />
+    <Compile Include="eventing\EventAggregator.cs" />
+    <Compile Include="eventing\EventAggregatorSpecs.cs" />
+    <Compile Include="eventing\IEvent.cs" />
+    <Compile Include="eventing\IEventAggregator.cs" />
+    <Compile Include="eventing\IEventSubscriber.cs" />
+    <Compile Include="IProjectTasks.cs" />
+    <Compile Include="logging\ILogFileTasks.cs" />
+    <Compile Include="logging\LogFileTasks.cs" />
+    <Compile Include="ProjectTasks.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="security\IsInRole.cs" />
+    <Compile Include="security\IsInRoleSpecs.cs" />
+    <Compile Include="security\Role.cs" />
+    <Compile Include="threading\AsynchronousCommandProcessor.cs" />
+    <Compile Include="threading\BackgroundThread.cs" />
+    <Compile Include="threading\BackgroundThreadFactory.cs" />
+    <Compile Include="threading\BackgroundThreadFactorySpecs.cs" />
+    <Compile Include="threading\BackgroundThreadSpecs.cs" />
+    <Compile Include="threading\CommandProcessor.cs" />
+    <Compile Include="threading\CommandProcessorSpecs.cs" />
+    <Compile Include="threading\ICommandProcessor.cs" />
+    <Compile Include="threading\IntervalTimer.cs" />
+    <Compile Include="threading\IntervalTimerSpecs.cs" />
+    <Compile Include="threading\ITimerClient.cs" />
+    <Compile Include="threading\IWorkerThread.cs" />
+    <Compile Include="threading\RaiseEventInterceptor.cs" />
+    <Compile Include="threading\RunOnBackgroundThreadInterceptor.cs" />
+    <Compile Include="threading\RunOnBackgroundThreadInterceptorSpecs.cs" />
+    <Compile Include="threading\RunOnUIThread.cs" />
+    <Compile Include="threading\SynchronizationContextFactory.cs" />
+    <Compile Include="threading\SynchronizedCommand.cs" />
+    <Compile Include="threading\SynchronizedContext.cs" />
+    <Compile Include="threading\Synchronizer.cs" />
+    <Compile Include="threading\ThreadingExtensions.cs" />
+    <Compile Include="threading\TimerFactory.cs" />
+    <Compile Include="threading\TimerFactorySpecs.cs" />
+    <Compile Include="threading\WorkerThread.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="threading\WorkItem.cs" />
+    <Compile Include="transactions\EmptyUnitOfWork.cs" />
+    <Compile Include="transactions\IUnitOfWork.cs" />
+    <Compile Include="transactions\IUnitOfWorkFactory.cs" />
+    <Compile Include="transactions\UnitOfWork.cs" />
+    <Compile Include="transactions\UnitOfWorkFactory.cs" />
+    <Compile Include="transactions\UnitOfWorkFactorySpecs.cs" />
+    <Compile Include="transactions\UnitOfWorkSpecs.cs" />
+    <Compile Include="updating\CancelUpdate.cs" />
+    <Compile Include="updating\CancelUpdateSpecs.cs" />
+    <Compile Include="updating\CurrentDeployment.cs" />
+    <Compile Include="updating\DownloadTheLatestVersion.cs" />
+    <Compile Include="updating\ICancelUpdate.cs" />
+    <Compile Include="updating\IDeployment.cs" />
+    <Compile Include="updating\IDownloadTheLatestVersion.cs" />
+    <Compile Include="updating\IWhatIsTheAvailableVersion.cs" />
+    <Compile Include="updating\NullDeployment.cs" />
+    <Compile Include="updating\WhatIsTheAvailableVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\database\database.csproj">
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
       <Name>database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\domain.csproj">
-      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
-      <Name>domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DTO\dto.csproj">
-      <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
-      <Name>dto</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Service.Contracts\service.contracts.csproj">
-      <Project>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</Project>
-      <Name>service.contracts</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

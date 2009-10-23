@@ -1,6 +1,6 @@
 using Gorilla.Commons.Infrastructure.FileSystem;
 using momoney.database;
-using MoMoney.Service.Contracts.Infrastructure;
+using momoney.service.infrastructure;
 
 namespace MoMoney.Service.Infrastructure
 {

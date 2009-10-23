@@ -3,19 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "build", "build\build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "boot", "product\boot\boot.csproj", "{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "boot", "product\Boot\boot.csproj", "{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domain", "product\domain\domain.csproj", "{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domain", "product\Domain\domain.csproj", "{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service", "product\service\service.csproj", "{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service", "product\Service\service.csproj", "{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "database", "product\database\database.csproj", "{580E68A8-EDEE-4350-8BBE-A053645B0F83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dto", "product\dto\dto.csproj", "{ACF52FAB-435B-48C9-A383-C787CB2D8000}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dto", "product\DTO\dto.csproj", "{ACF52FAB-435B-48C9-A383-C787CB2D8000}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "presentation", "product\presentation\presentation.csproj", "{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service.contracts", "product\service.contracts\service.contracts.csproj", "{41D2B68B-031B-44FF-BAC5-7752D9E29F94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service.infrastructure", "product\service.infrastructure\service.infrastructure.csproj", "{81412692-F3EE-4FBF-A7C7-69454DD1BD46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domain.services", "product\domain.services\domain.services.csproj", "{F04F922F-C0CC-45FC-BD33-A758BD1B8B36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +59,14 @@ Global
 		{41D2B68B-031B-44FF-BAC5-7752D9E29F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41D2B68B-031B-44FF-BAC5-7752D9E29F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41D2B68B-031B-44FF-BAC5-7752D9E29F94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81412692-F3EE-4FBF-A7C7-69454DD1BD46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81412692-F3EE-4FBF-A7C7-69454DD1BD46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81412692-F3EE-4FBF-A7C7-69454DD1BD46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81412692-F3EE-4FBF-A7C7-69454DD1BD46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04F922F-C0CC-45FC-BD33-A758BD1B8B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04F922F-C0CC-45FC-BD33-A758BD1B8B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04F922F-C0CC-45FC-BD33-A758BD1B8B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04F922F-C0CC-45FC-BD33-A758BD1B8B36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using momoney.presentation.views;
-using MoMoney.Service.Contracts.Infrastructure.Logging;
+using momoney.service.infrastructure.logging;
 
 namespace momoney.presentation.presenters
 {

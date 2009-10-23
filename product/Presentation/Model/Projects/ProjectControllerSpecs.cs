@@ -4,193 +4,194 @@ using Gorilla.Commons.Infrastructure.FileSystem;
 using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
 using momoney.presentation.model.eventing;
-using MoMoney.Service.Contracts.Infrastructure;
-using momoney.service.contracts.infrastructure.transactions;
+using momoney.service.infrastructure;
 using MoMoney.Service.Infrastructure.Eventing;
+using momoney.service.infrastructure.transactions;
 
 namespace MoMoney.Presentation.Model.Projects
 {
-    public class ProjectControllerSpecs {}
-
-    [Concern(typeof (ProjectController))]
-    public abstract class behaves_like_a_project : concerns_for<IProjectController, ProjectController>
+    public class ProjectControllerSpecs
     {
-        context c = () =>
+        [Concern(typeof (ProjectController))]
+        public abstract class behaves_like_a_project : concerns_for<IProjectController, ProjectController>
         {
-            broker = the_dependency<IEventAggregator>();
-            tasks = the_dependency<IProjectTasks>();
-        };
+            context c = () =>
+            {
+                broker = the_dependency<IEventAggregator>();
+                tasks = the_dependency<IProjectTasks>();
+            };
 
-        static protected IEventAggregator broker;
-        static protected IProjectTasks tasks;
-    }
+            static protected IEventAggregator broker;
+            static protected IProjectTasks tasks;
+        }
 
-    public class when_saving_the_current_project : behaves_like_a_project
-    {
-        it should_notify_the_rest_of_the_application = () => broker.was_told_to(x => x.publish<SavedChangesEvent>());
-
-        context c = () =>
+        public class when_saving_the_current_project : behaves_like_a_project
         {
-            file_to_update = an<File>();
-            when_the(file_to_update).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
-        };
+            it should_notify_the_rest_of_the_application = () => broker.was_told_to(x => x.publish<SavedChangesEvent>());
 
-        because b = () =>
+            context c = () =>
+            {
+                file_to_update = an<File>();
+                when_the(file_to_update).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
+            };
+
+            because b = () =>
+            {
+                sut.open_project_from(file_to_update);
+                sut.save_changes();
+            };
+
+            static File file_to_update;
+        }
+
+        public class when_attempting_to_save_the_changes_to_a_project_and_a_file_to_save_to_has_not_been_specified :
+            behaves_like_a_project
         {
-            sut.open_project_from(file_to_update);
-            sut.save_changes();
-        };
+            it should_inform_the_user_of_an_error = () => the_call.should_have_thrown<FileNotSpecifiedException>();
 
-        static File file_to_update;
-    }
+            because b = () =>
+            {
+                the_call = call.to(() => sut.save_changes());
+            };
 
-    public class when_attempting_to_save_the_changes_to_a_project_and_a_file_to_save_to_has_not_been_specified :
-        behaves_like_a_project
-    {
-        it should_inform_the_user_of_an_error = () => the_call.should_have_thrown<FileNotSpecifiedException>();
+            static Action the_call;
+        }
 
-        because b = () =>
+        public class when_specifying_a_new_path_to_save_an_opened_project_to : behaves_like_a_project
         {
-            the_call = call.to(() => sut.save_changes());
-        };
+            it should_save_the_current_database_to_the_new_path = () => tasks.was_told_to(x => x.copy_to("blah"));
 
-        static Action the_call;
-    }
+            context c = () =>
+            {
+                original_file = an<File>();
+                new_file = an<File>();
+                when_the(new_file).is_told_to(x => x.path).it_will_return("blah");
+            };
 
-    public class when_specifying_a_new_path_to_save_an_opened_project_to : behaves_like_a_project
-    {
-        it should_save_the_current_database_to_the_new_path = () => tasks.was_told_to(x => x.copy_to("blah"));
+            because b = () =>
+            {
+                sut.open_project_from(original_file);
+                sut.save_project_to(new_file);
+            };
 
-        context c = () =>
+            static File original_file;
+            static File new_file;
+        }
+
+        public class when_attempting_to_open_an_invalid_project_file_path : behaves_like_a_project
         {
-            original_file = an<File>();
-            new_file = an<File>();
-            when_the(new_file).is_told_to(x => x.path).it_will_return("blah");
-        };
+            it should_not_change_the_current_working_file = () => result.should_be_equal_to(false);
 
-        because b = () =>
+            context c = () =>
+            {
+                invalid_file = an<File>();
+                when_the(invalid_file).is_told_to(x => x.does_the_file_exist()).it_will_return(false);
+            };
+
+            because b = () =>
+            {
+                sut.open_project_from(invalid_file);
+                result = sut.has_been_saved_at_least_once();
+            };
+
+            static File invalid_file;
+            static bool result;
+        }
+
+        public class when_attempting_to_save_all_changes_to_a_new_file_with_an_invalid_path : behaves_like_a_project
         {
-            sut.open_project_from(original_file);
-            sut.save_project_to(new_file);
-        };
+            it should_not_change_the_current_file_to_the_invalid_one = () => result.should_be_equal_to(false);
 
-        static File original_file;
-        static File new_file;
-    }
+            context c = () =>
+            {
+                invalid_file = an<File>();
 
-    public class when_attempting_to_open_an_invalid_project_file_path : behaves_like_a_project
-    {
-        it should_not_change_the_current_working_file = () => result.should_be_equal_to(false);
+                when_the(invalid_file).is_told_to(x => x.path).it_will_return(string.Empty);
+            };
 
-        context c = () =>
+            because b = () =>
+            {
+                sut.save_project_to(invalid_file);
+                result = sut.has_been_saved_at_least_once();
+            };
+
+            static File invalid_file;
+            static bool result;
+        }
+
+        public class when_opening_a_new_file : behaves_like_a_project
         {
-            invalid_file = an<File>();
-            when_the(invalid_file).is_told_to(x => x.does_the_file_exist()).it_will_return(false);
-        };
+            context c = () =>
+            {
+                file = an<File>();
+                when_the(file).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
+            };
 
-        because b = () =>
+            because b = () => sut.open_project_from(file);
+
+            static File file;
+        }
+
+        public class when_checking_if_there_are_any_unsaved_changes_and_a_project_is_not_open : behaves_like_a_project
         {
-            sut.open_project_from(invalid_file);
-            result = sut.has_been_saved_at_least_once();
-        };
+            it should_return_false = () => result.should_be_equal_to(false);
 
-        static File invalid_file;
-        static bool result;
-    }
+            because b = () =>
+            {
+                result = sut.has_unsaved_changes();
+            };
 
-    public class when_attempting_to_save_all_changes_to_a_new_file_with_an_invalid_path : behaves_like_a_project
-    {
-        it should_not_change_the_current_file_to_the_invalid_one = () => result.should_be_equal_to(false);
+            static bool result;
+        }
 
-        context c = () =>
+        public class when_checking_if_there_are_any_unsaved_changes_and_there_are : behaves_like_a_project
         {
-            invalid_file = an<File>();
+            it should_return_true = () => result.should_be_true();
 
-            when_the(invalid_file).is_told_to(x => x.path).it_will_return(string.Empty);
-        };
+            context c = () =>
+            {
+                unit_of_work = an<IUnitOfWork>();
+                when_the(unit_of_work).is_told_to(x => x.is_dirty()).it_will_return(true);
+            };
 
-        because b = () =>
+            because b = () =>
+            {
+                sut.downcast_to<ProjectController>().run(unit_of_work);
+                result = sut.has_unsaved_changes();
+            };
+
+            static bool result;
+            static IUnitOfWork unit_of_work;
+        }
+
+        public class when_starting_a_new_project_and_a_project_was_already_open : behaves_like_a_project
         {
-            sut.save_project_to(invalid_file);
-            result = sut.has_been_saved_at_least_once();
-        };
+            it should_close_the_previous_project = () => broker.was_told_to(x => x.publish<ClosingProjectEvent>());
 
-        static File invalid_file;
-        static bool result;
-    }
+            because b = () =>
+            {
+                sut.start_new_project();
+                sut.start_new_project();
+            };
+        }
 
-    public class when_opening_a_new_file : behaves_like_a_project
-    {
-        context c = () =>
+        public class when_opening_an_existing_project_and_a_project_was_already_open : behaves_like_a_project
         {
-            file = an<File>();
-            when_the(file).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
-        };
+            it should_close_the_previous_project = () => broker.was_told_to(x => x.publish<ClosingProjectEvent>());
 
-        because b = () => sut.open_project_from(file);
+            context c = () =>
+            {
+                file = an<File>();
+                when_the(file).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
+            };
 
-        static File file;
-    }
+            because b = () =>
+            {
+                sut.open_project_from(file);
+                sut.start_new_project();
+            };
 
-    public class when_checking_if_there_are_any_unsaved_changes_and_a_project_is_not_open : behaves_like_a_project
-    {
-        it should_return_false = () => result.should_be_equal_to(false);
-
-        because b = () =>
-        {
-            result = sut.has_unsaved_changes();
-        };
-
-        static bool result;
-    }
-
-    public class when_checking_if_there_are_any_unsaved_changes_and_there_are : behaves_like_a_project
-    {
-        it should_return_true = () => result.should_be_true();
-
-        context c = () =>
-        {
-            unit_of_work = an<IUnitOfWork>();
-            when_the(unit_of_work).is_told_to(x => x.is_dirty()).it_will_return(true);
-        };
-
-        because b = () =>
-        {
-            sut.downcast_to<ProjectController>().run(unit_of_work);
-            result = sut.has_unsaved_changes();
-        };
-
-        static bool result;
-        static IUnitOfWork unit_of_work;
-    }
-
-    public class when_starting_a_new_project_and_a_project_was_already_open : behaves_like_a_project
-    {
-        it should_close_the_previous_project = () => broker.was_told_to(x => x.publish<ClosingProjectEvent>());
-
-        because b = () =>
-        {
-            sut.start_new_project();
-            sut.start_new_project();
-        };
-    }
-
-    public class when_opening_an_existing_project_and_a_project_was_already_open : behaves_like_a_project
-    {
-        it should_close_the_previous_project = () => broker.was_told_to(x => x.publish<ClosingProjectEvent>());
-
-        context c = () =>
-        {
-            file = an<File>();
-            when_the(file).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
-        };
-
-        because b = () =>
-        {
-            sut.open_project_from(file);
-            sut.start_new_project();
-        };
-
-        static File file;
+            static File file;
+        }
     }
 }

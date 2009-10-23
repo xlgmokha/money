@@ -1,7 +1,10 @@
 using System;
+using gorilla.commons.utility;
 
-namespace MoMoney.DTO
+namespace momoney.service.infrastructure.updating
 {
+    public interface IWhatIsTheAvailableVersion : Query<ApplicationVersion> {}
+
     public class ApplicationVersion
     {
         public Uri activation_url { get; set; }

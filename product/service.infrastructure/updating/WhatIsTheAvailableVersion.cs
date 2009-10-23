@@ -1,5 +1,4 @@
-using MoMoney.DTO;
-using MoMoney.Service.Contracts.Infrastructure.Updating;
+using momoney.service.infrastructure.updating;
 
 namespace MoMoney.Service.Infrastructure.Updating
 {

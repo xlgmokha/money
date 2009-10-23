@@ -1,6 +1,5 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
-using momoney.service.contracts.infrastructure.updating;
 using MoMoney.Service.Infrastructure.Updating;
 
 namespace momoney.service.infrastructure.updating

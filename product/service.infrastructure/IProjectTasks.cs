@@ -1,6 +1,6 @@
 using Gorilla.Commons.Infrastructure.FileSystem;
 
-namespace MoMoney.Service.Contracts.Infrastructure
+namespace momoney.service.infrastructure
 {
     public interface IProjectTasks
     {

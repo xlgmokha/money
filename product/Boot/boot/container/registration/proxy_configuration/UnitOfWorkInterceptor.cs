@@ -1,8 +1,7 @@
 using Castle.Core.Interceptor;
 using gorilla.commons.utility;
-using momoney.service.contracts.infrastructure.transactions;
-using MoMoney.Service.Contracts.Infrastructure.Transactions;
 using MoMoney.Service.Infrastructure.Eventing;
+using momoney.service.infrastructure.transactions;
 
 namespace MoMoney.boot.container.registration.proxy_configuration
 {

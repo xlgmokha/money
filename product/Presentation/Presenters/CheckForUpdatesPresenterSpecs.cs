@@ -2,11 +2,9 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using MoMoney.DTO;
 using MoMoney.Presentation.Presenters;
 using momoney.presentation.views;
-using momoney.service.contracts.infrastructure.updating;
-using MoMoney.Service.Contracts.Infrastructure.Updating;
+using momoney.service.infrastructure.updating;
 
 namespace momoney.presentation.presenters
 {

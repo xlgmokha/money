@@ -2,11 +2,11 @@ using System;
 using System.Reflection;
 using System.Windows.Forms;
 using Gorilla.Commons.Utility;
-using MoMoney.DTO;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
+using momoney.service.infrastructure.updating;
 
 namespace MoMoney.Presentation.Winforms.Views
 {
@@ -38,12 +38,12 @@ namespace MoMoney.Presentation.Winforms.Views
         public void attach_to(ICheckForUpdatesPresenter presenter)
         {
             update_button = x =>
-                                {
-                                    ux_update_button.Enabled = false;
-                                    ux_dont_update_button.Enabled = false;
-                                    ux_cancel_button.Enabled = true;
-                                    presenter.begin_update();
-                                };
+            {
+                ux_update_button.Enabled = false;
+                ux_dont_update_button.Enabled = false;
+                ux_cancel_button.Enabled = true;
+                presenter.begin_update();
+            };
             dont_update_button = x => presenter.do_not_update();
             cancel_button = x => presenter.cancel_update();
         }
@@ -60,13 +60,13 @@ namespace MoMoney.Presentation.Winforms.Views
         {
             shell.region<ToolStripProgressBar>(
                 x =>
+                {
+                    while (percentage_complete.is_less_than(x.Value))
                     {
-                        while (percentage_complete.is_less_than(x.Value))
-                        {
-                            if (percentage_complete.represents(x.Value)) break;
-                            x.PerformStep();
-                        }
-                    });
+                        if (percentage_complete.represents(x.Value)) break;
+                        x.PerformStep();
+                    }
+                });
         }
 
         public void update_complete()

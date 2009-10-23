@@ -6,7 +6,7 @@ using MoMoney.boot.container.registration.proxy_configuration;
 using momoney.database;
 using momoney.database.db4o;
 using momoney.database.transactions;
-using MoMoney.Service.Contracts.Infrastructure.Transactions;
+using momoney.service.infrastructure.transactions;
 using MoMoney.Service.Infrastructure.Transactions;
 
 namespace MoMoney.boot.container.registration

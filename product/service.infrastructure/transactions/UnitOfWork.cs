@@ -1,5 +1,5 @@
 using momoney.database.transactions;
-using momoney.service.contracts.infrastructure.transactions;
+using momoney.service.infrastructure.transactions;
 
 namespace MoMoney.Service.Infrastructure.Transactions
 {
