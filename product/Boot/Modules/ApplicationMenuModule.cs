@@ -20,7 +20,7 @@ namespace MoMoney.Modules
         public void run()
         {
             broker.subscribe(this);
-            command.run<IApplicationMenuPresenter>();
+            command.run<ApplicationMenuPresenter>();
         }
 
         public void notify(NewProjectOpened message)

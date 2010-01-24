@@ -2,17 +2,12 @@ using MoMoney.Presentation;
 using MoMoney.Presentation.Core;
 using momoney.presentation.model.eventing;
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters
 {
-    public interface IUnhandledErrorPresenter : IModule, IPresenter,
-                                                IEventSubscriber<UnhandledErrorOccurred>
-    {
-        void restart_application();
-    }
-
-    public class UnhandledErrorPresenter : IUnhandledErrorPresenter
+    public class UnhandledErrorPresenter : IModule, IPresenter, IEventSubscriber<UnhandledErrorOccurred>
     {
         readonly IUnhandledErrorView view;
         readonly IEventAggregator broker;
@@ -25,10 +20,8 @@ namespace momoney.presentation.presenters
             this.broker = broker;
         }
 
-        public void present()
+        public void present(IShell shell)
         {
-            view.attach_to(this);
-            broker.subscribe_to(this);
         }
 
         public void notify(UnhandledErrorOccurred message)
@@ -43,7 +36,7 @@ namespace momoney.presentation.presenters
 
         public void run()
         {
-            present();
+            broker.subscribe_to(this);
         }
     }
 }

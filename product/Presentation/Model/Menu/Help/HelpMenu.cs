@@ -37,7 +37,7 @@ namespace MoMoney.Presentation.Model.Menu.Help
                 .a_menu_item()
                 .named("Check For Updates...")
                 .represented_by(ApplicationIcons.Update)
-                .that_executes(() => command.run<ICheckForUpdatesPresenter>())
+                .that_executes(() => command.run<CheckForUpdatesPresenter>())
                 .build();
 
             yield return Create.a_menu_item_separator();

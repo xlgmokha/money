@@ -17,7 +17,7 @@ namespace MoMoney.Presentation.Presenters
             this.registry = registry;
         }
 
-        public override void present()
+        protected override void present()
         {
             var report = registry.get_a<Report>();
             report.run(registry.get_a<Query>().fetch());

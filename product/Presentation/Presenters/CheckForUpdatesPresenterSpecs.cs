@@ -4,13 +4,13 @@ using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
 using MoMoney.Presentation.Presenters;
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 using momoney.service.infrastructure.updating;
 
 namespace momoney.presentation.presenters
 {
     [Concern(typeof (CheckForUpdatesPresenter))]
-    public abstract class behaves_like_check_for_updates_presenter :
-        concerns_for<ICheckForUpdatesPresenter, CheckForUpdatesPresenter>
+    public abstract class behaves_like_check_for_updates_presenter : concerns_for< CheckForUpdatesPresenter>
     {
         context c = () =>
         {
@@ -24,15 +24,18 @@ namespace momoney.presentation.presenters
 
     public class when_attempting_to_check_for_updates : behaves_like_check_for_updates_presenter
     {
-        it should_tell_the_view_to_attach_itself_to_the_presenter = () => view.was_told_to(x => x.attach_to(sut));
-
         it should_tell_the_view_to_display_the_information_on_the_current_version_of_the_application =
             () => view.was_told_to(x => x.display());
 
         it should_go_and_find_out_what_the_latest_version_is =
             () => pump.was_told_to(x => x.run<ApplicationVersion, IWhatIsTheAvailableVersion>(view));
 
-        because b = () => sut.present();
+        context c = () =>
+                    {
+                        shell = an<IShell>();
+                    };
+        because b = () => sut.present(shell);
+        static IShell shell;
     }
 
     public class when_initiating_an_update_and_one_is_available : behaves_like_check_for_updates_presenter

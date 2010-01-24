@@ -2,24 +2,20 @@ using System.Windows.Forms;
 using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu;
-using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 
 namespace momoney.presentation.presenters
 {
-    public interface IApplicationMenuPresenter : IPresenter {}
-
-    public class ApplicationMenuPresenter : IApplicationMenuPresenter
+    public class ApplicationMenuPresenter : IPresenter
     {
-        readonly ISubMenuRegistry registry;
-        readonly IRegionManager shell;
+        ISubMenuRegistry registry;
 
-        public ApplicationMenuPresenter(ISubMenuRegistry registry, IRegionManager shell)
+        public ApplicationMenuPresenter(ISubMenuRegistry registry)
         {
             this.registry = registry;
-            this.shell = shell;
         }
 
-        public void present()
+        public void present(IShell shell)
         {
             shell.region<MenuStrip>(x => registry.all().each(y => y.add_to(x)));
         }

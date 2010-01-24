@@ -19,7 +19,7 @@ namespace MoMoney.Modules
 
         public void run()
         {
-            command.run<IApplicationShellPresenter>();
+            command.run<ApplicationShellPresenter>();
         }
     }
 }

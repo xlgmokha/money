@@ -8,10 +8,5 @@ namespace momoney.presentation.presenters
         public GettingStartedPresenter(IGettingStartedView view) : base(view)
         {
         }
-
-        public override void present()
-        {
-            view.attach_to(this);
-        }
     }
 }

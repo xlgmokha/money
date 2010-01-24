@@ -6,14 +6,14 @@ namespace momoney.presentation.presenters
 {
     public class LogFilePresenter : ContentPresenter<ILogFileView>
     {
-        readonly ILogFileTasks tasks;
+        ILogFileTasks tasks;
 
         public LogFilePresenter(ILogFileView view, ILogFileTasks tasks) : base(view)
         {
             this.tasks = tasks;
         }
 
-        public override void present()
+        protected override void present()
         {
             view.display(tasks.get_the_path_to_the_log_file());
             view.run(tasks.get_the_contents_of_the_log_file());

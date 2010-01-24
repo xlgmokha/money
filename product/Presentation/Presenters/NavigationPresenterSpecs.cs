@@ -2,6 +2,7 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Navigation;
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 
 namespace momoney.presentation.presenters
 {
@@ -12,13 +13,15 @@ namespace momoney.presentation.presenters
 
         context c = () =>
         {
+            shell = an<IShell>();
             view = the_dependency<INavigationView>();
             tree_view_visitor = the_dependency<INavigationTreeVisitor>();
         };
 
-        because b = () => sut.present();
+        because b = () => sut.present(shell);
 
         static INavigationView view;
         static INavigationTreeVisitor tree_view_visitor;
+        static IShell shell;
     }
 }

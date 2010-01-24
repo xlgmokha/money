@@ -4,6 +4,7 @@ using MoMoney.Presentation.Core;
 using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Model.Projects;
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Model.Menu.File
 {
@@ -37,7 +38,7 @@ namespace MoMoney.Presentation.Model.Menu.File
             this.view = view;
         }
 
-        public void present()
+        public void present(IShell shell)
         {
             throw new NotImplementedException();
         }

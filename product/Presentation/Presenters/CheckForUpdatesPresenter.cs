@@ -4,19 +4,12 @@ using Gorilla.Commons.Utility;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters;
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 using momoney.service.infrastructure.updating;
 
 namespace momoney.presentation.presenters
 {
-    public interface ICheckForUpdatesPresenter : IPresenter, Callback<Percent>
-    {
-        void begin_update();
-        void cancel_update();
-        void restart();
-        void do_not_update();
-    }
-
-    public class CheckForUpdatesPresenter : ICheckForUpdatesPresenter
+    public class CheckForUpdatesPresenter : IPresenter, Callback<Percent>
     {
         readonly ICheckForUpdatesView view;
         readonly ICommandPump pump;
@@ -27,10 +20,9 @@ namespace momoney.presentation.presenters
             this.view = view;
         }
 
-        public void present()
+        public void present(IShell shell)
         {
             pump.run<ApplicationVersion, IWhatIsTheAvailableVersion>(view);
-            view.attach_to(this);
             view.display();
         }
 

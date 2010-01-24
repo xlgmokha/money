@@ -27,7 +27,7 @@ namespace MoMoney.Presentation.Winforms.Views
             this.window = window;
         }
 
-        public void attach_to(IUnhandledErrorPresenter presenter)
+        public void attach_to(UnhandledErrorPresenter presenter)
         {
             close_action = x => Close();
             restart_action = x => presenter.restart_application();

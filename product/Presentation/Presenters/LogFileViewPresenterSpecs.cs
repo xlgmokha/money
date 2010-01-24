@@ -1,6 +1,7 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Testing;
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 using momoney.service.infrastructure.logging;
 
 namespace momoney.presentation.presenters
@@ -23,15 +24,17 @@ namespace momoney.presentation.presenters
 
         context c = () =>
         {
+            shell = an<IShell>();
             log_file_path = "log.txt";
             log_file_contents = "hello_jello";
             tasks.is_told_to(x => x.get_the_path_to_the_log_file()).it_will_return(log_file_path);
             tasks.is_told_to(x => x.get_the_contents_of_the_log_file()).it_will_return(log_file_contents);
         };
 
-        because b = () => sut.present();
+        because b = () => sut.present(shell);
 
         static string log_file_contents;
         static string log_file_path;
+        static IShell shell;
     }
 }

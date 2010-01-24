@@ -9,16 +9,20 @@ namespace MoMoney.Presentation.Core
 
     public class CachedPresenterFactory : PresenterFactory
     {
-        readonly IPresenterRegistry registered_presenters;
+        IPresenterRegistry registered_presenters;
+        ViewFactory view_factory;
 
-        public CachedPresenterFactory(IPresenterRegistry registered_presenters)
+        public CachedPresenterFactory(IPresenterRegistry registered_presenters, ViewFactory view_factory)
         {
             this.registered_presenters = registered_presenters;
+            this.view_factory = view_factory;
         }
 
         public Presenter create<Presenter>() where Presenter : IPresenter
         {
-            return registered_presenters.find_an_implementation_of<IPresenter, Presenter>();
+            var presenter = registered_presenters.find_an_implementation_of<IPresenter, Presenter>();
+            view_factory.create_for<Presenter>().attach_to(presenter);
+            return presenter;
         }
     }
 }

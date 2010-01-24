@@ -7,14 +7,8 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters
 {
-    public class behaves_like_unhandled_error_presenter :
-        concerns_for<IUnhandledErrorPresenter, UnhandledErrorPresenter>
+    public class behaves_like_unhandled_error_presenter : concerns_for<UnhandledErrorPresenter>
     {
-        //public override IUnhandledErrorPresenter create_sut()
-        //{
-        //    return new UnhandledErrorPresenter(view, broker);
-        //}
-
         context c = () =>
         {
             view = the_dependency<IUnhandledErrorView>();

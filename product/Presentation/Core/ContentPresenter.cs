@@ -1,4 +1,5 @@
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Core
 {
@@ -11,24 +12,14 @@ namespace MoMoney.Presentation.Core
             this.view = view;
         }
 
-        IDockedContentView IContentPresenter.View
-        {
-            get { return view; }
-        }
-
-        public abstract void present();
-
-        public virtual void activate()
+        protected virtual void present()
         {
         }
 
-        public virtual void deactivate()
+        public void present(IShell shell)
         {
-        }
-
-        public virtual bool can_close()
-        {
-            return true;
+            shell.add(view);
+            present();
         }
     }
 }

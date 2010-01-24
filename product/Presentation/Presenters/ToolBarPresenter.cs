@@ -6,18 +6,15 @@ using MoMoney.Presentation.Model.Menu;
 using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Model.Projects;
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace momoney.presentation.presenters
 {
-    public interface IToolbarPresenter : IPresenter
+    public class ToolBarPresenter : IPresenter
     {
-    }
-
-    public class ToolBarPresenter : IToolbarPresenter
-    {
-        readonly IRegionManager shell;
-        readonly IProjectController project;
+        IRegionManager shell;
+        IProjectController project;
 
         public ToolBarPresenter(IRegionManager shell, IProjectController project)
         {
@@ -25,7 +22,7 @@ namespace momoney.presentation.presenters
             this.project = project;
         }
 
-        public void present()
+        public void present(IShell shell1)
         {
             shell.region<ToolStrip>(x => buttons().each(y => y.add_to(x)));
         }

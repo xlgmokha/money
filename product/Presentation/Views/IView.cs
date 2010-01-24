@@ -9,8 +9,8 @@ namespace momoney.presentation.views
     {
     }
 
-    public interface IView<TPresenter> : IView where TPresenter : IPresenter
+    public interface IView<Presenter> : IView where Presenter : IPresenter
     {
-        void attach_to(TPresenter presenter);
+        void attach_to(Presenter presenter);
     }
 }

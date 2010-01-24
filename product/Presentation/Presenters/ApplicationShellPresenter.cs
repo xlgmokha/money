@@ -6,16 +6,15 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters
 {
-    public interface IApplicationShellPresenter : IPresenter, IEventSubscriber<ClosingProjectEvent>
+    public class ApplicationShellPresenter : IPresenter, IEventSubscriber<ClosingProjectEvent>
     {
-        void shut_down();
-    }
+         IShell shell;
+         IEventAggregator broker;
+         IExitCommand command;
 
-    public class ApplicationShellPresenter : IApplicationShellPresenter
-    {
-        readonly IShell shell;
-        readonly IEventAggregator broker;
-        readonly IExitCommand command;
+        protected ApplicationShellPresenter()
+        {
+        }
 
         public ApplicationShellPresenter(IEventAggregator broker, IShell shell, IExitCommand command)
         {
@@ -24,18 +23,17 @@ namespace momoney.presentation.presenters
             this.shell = shell;
         }
 
-        public void present()
+        public virtual void present(IShell shell1)
         {
             broker.subscribe(this);
-            shell.attach_to(this);
         }
 
-        public void notify(ClosingProjectEvent message)
+        public virtual void notify(ClosingProjectEvent message)
         {
             shell.close_all_windows();
         }
 
-        public void shut_down()
+        public virtual void shut_down()
         {
             command.run();
         }

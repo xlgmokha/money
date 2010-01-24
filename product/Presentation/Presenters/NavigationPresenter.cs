@@ -13,7 +13,7 @@ namespace momoney.presentation.presenters
             this.tree_view_visitor = tree_view_visitor;
         }
 
-        public override void present()
+        protected override void present()
         {
             view.accept(tree_view_visitor);
         }

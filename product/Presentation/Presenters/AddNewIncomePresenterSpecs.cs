@@ -43,13 +43,14 @@ namespace momoney.presentation.presenters
         it should_display_a_list_of_all_the_registered_company_to_select =
             () => pump.was_told_to(x => x.run<IEnumerable<CompanyDTO>, IGetAllCompanysQuery>(view));
 
-        it should_bind_a_presenter_to_the_screen = () => view.was_told_to(x => x.attach_to(sut));
-
         it should_display_the_income_already_added =
             () => pump.was_told_to(x => x.run<IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>(view));
 
-        context c = () => { };
+        context c = () => {
+                              shell = an<IShell>();
+        };
 
-        because b = () => sut.present();
+        because b = () => sut.present(shell);
+        static IShell shell;
     }
 }

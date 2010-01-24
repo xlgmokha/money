@@ -1,4 +1,3 @@
-using gorilla.commons.utility;
 using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Core
@@ -8,28 +7,20 @@ namespace MoMoney.Presentation.Core
         void run<Presenter>() where Presenter : IPresenter;
     }
 
-    public class ApplicationController : IApplicationController, ParameterizedCommand<IPresenter>
+    public class ApplicationController : IApplicationController
     {
         IShell shell;
-        PresenterFactory factory;
+        PresenterFactory presenter_factory;
 
-        public ApplicationController(IShell shell, PresenterFactory factory)
+        public ApplicationController(IShell shell, PresenterFactory presenter_factory)
         {
-            this.factory = factory;
+            this.presenter_factory = presenter_factory;
             this.shell = shell;
         }
 
         public void run<Presenter>() where Presenter : IPresenter
         {
-            run(factory.create<Presenter>());
-        }
-
-        public void run(IPresenter presenter)
-        {
-            presenter.present();
-            if (!presenter.is_an_implementation_of<IContentPresenter>()) return;
-
-            shell.add(presenter.downcast_to<IContentPresenter>().View);
+            presenter_factory.create<Presenter>().present(shell);
         }
     }
 }

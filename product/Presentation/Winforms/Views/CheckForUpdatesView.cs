@@ -35,7 +35,7 @@ namespace MoMoney.Presentation.Winforms.Views
             ux_cancel_button.Click += (o, e) => cancel_button(e);
         }
 
-        public void attach_to(ICheckForUpdatesPresenter presenter)
+        public void attach_to(CheckForUpdatesPresenter presenter)
         {
             update_button = x =>
             {

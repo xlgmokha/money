@@ -5,6 +5,6 @@ namespace momoney.presentation.views
 {
     public interface IRegionManager
     {
-        void region<T>(Action<T> action) where T : IComponent;
+        void region<Control>(Action<Control> action) where Control : IComponent;
     }
 }

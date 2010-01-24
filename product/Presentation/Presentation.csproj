@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="core\CachedPresenterFactory.cs" />
+    <Compile Include="core\CachingViewFactory.cs" />
     <Compile Include="model\eventing\FinishedRunningCommand.cs" />
     <Compile Include="model\eventing\StartedRunningCommand.cs" />
     <Compile Include="model\navigation\INavigationTreeVisitor.cs" />

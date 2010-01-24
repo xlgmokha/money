@@ -8,9 +8,5 @@ namespace momoney.presentation.presenters
         public AboutTheApplicationPresenter(IAboutApplicationView view) : base(view)
         {
         }
-
-        public override void present()
-        {
-        }
     }
 }

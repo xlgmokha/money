@@ -41,7 +41,7 @@ namespace MoMoney.Presentation.Winforms.Views
             try_to_reduce_flickering();
         }
 
-        public void attach_to(IApplicationShellPresenter presenter)
+        public void attach_to(ApplicationShellPresenter presenter)
         {
             closed_action = x => presenter.shut_down();
         }
