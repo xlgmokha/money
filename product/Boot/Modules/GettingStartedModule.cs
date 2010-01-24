@@ -26,17 +26,17 @@ namespace MoMoney.Modules
         public void run()
         {
             broker.subscribe(this);
-            command.run<IGettingStartedPresenter>();
+            command.run<GettingStartedPresenter>();
         }
 
         public void notify(NewProjectOpened message)
         {
-            command.run<IGettingStartedPresenter>();
+            command.run<GettingStartedPresenter>();
         }
 
         public void notify(ClosingProjectEvent message)
         {
-            command.run<IGettingStartedPresenter>();
+            command.run<GettingStartedPresenter>();
         }
     }
 }

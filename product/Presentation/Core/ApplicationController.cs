@@ -10,7 +10,7 @@ namespace MoMoney.Presentation.Core
 
     public class ApplicationController : IApplicationController, ParameterizedCommand<IPresenter>
     {
-        readonly IShell shell;
+        IShell shell;
         PresenterFactory factory;
 
         public ApplicationController(IShell shell, PresenterFactory factory)
@@ -27,11 +27,9 @@ namespace MoMoney.Presentation.Core
         public void run(IPresenter presenter)
         {
             presenter.present();
-            if (presenter.is_an_implementation_of<IContentPresenter>())
-            {
-                var content_presenter = presenter.downcast_to<IContentPresenter>();
-                shell.add(content_presenter.View);
-            }
+            if (!presenter.is_an_implementation_of<IContentPresenter>()) return;
+
+            shell.add(presenter.downcast_to<IContentPresenter>().View);
         }
     }
 }

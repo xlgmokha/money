@@ -8,7 +8,7 @@ namespace momoney.presentation.presenters
     public class GettingStartedPresenterSpecs
     {
         public class behaves_like_the_getting_started_presenter :
-            concerns_for<IGettingStartedPresenter, GettingStartedPresenter>
+            concerns_for< GettingStartedPresenter>
         {
             context c = () =>
             {

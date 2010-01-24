@@ -21,13 +21,13 @@ namespace MoMoney.Presentation.Presenters
                 Build.task_pane_item()
                     .named("Add Income")
                     .represented_by_icon(ApplicationIcons.AddNewIncome)
-                    .when_clicked_execute(() => command.run<IAddNewIncomePresenter>())
+                    .when_clicked_execute(() => command.run<AddNewIncomePresenter>())
                 )
                 .with_item(
                 Build.task_pane_item()
                     .named("View All Income")
                     .represented_by_icon(ApplicationIcons.ViewAllIncome)
-                    .when_clicked_execute(() => command.run<IViewIncomeHistoryPresenter>())
+                    .when_clicked_execute(() => command.run<ViewIncomeHistoryPresenter>())
                 )
                 .build();
         }

@@ -14,7 +14,7 @@ namespace MoMoney.Presentation.Model.Navigation
 
         public void visit(ITreeBranch item_to_visit)
         {
-            item_to_visit.add_child("Add Bills", ApplicationIcons.AddIncome, () => command.run<IAddCompanyPresenter>());
+            item_to_visit.add_child("Add Bills", ApplicationIcons.AddIncome, () => command.run<AddCompanyPresenter>());
         }
     }
 }

@@ -24,7 +24,7 @@ namespace MoMoney.Presentation.Winforms.Views
                 .with_tool_tip("Create New File", "Create a new project.");
         }
 
-        public void attach_to(IGettingStartedPresenter presenter)
+        public void attach_to(GettingStartedPresenter presenter)
         {
         }
     }

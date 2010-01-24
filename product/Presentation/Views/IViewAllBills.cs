@@ -7,7 +7,7 @@ using momoney.presentation.views;
 namespace MoMoney.Presentation.Views
 {
     public interface IViewAllBills : IDockedContentView,
-                                     IView<IViewAllBillsPresenter>,
+                                     IView<ViewAllBillsPresenter>,
                                      Callback<IEnumerable<BillInformationDTO>>
     {
     }

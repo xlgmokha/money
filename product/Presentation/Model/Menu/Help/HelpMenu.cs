@@ -46,7 +46,7 @@ namespace MoMoney.Presentation.Model.Menu.Help
                 .a_menu_item()
                 .named("View Log File")
                 .represented_by(ApplicationIcons.ViewLog)
-                .that_executes(() => command.run<ILogFilePresenter>())
+                .that_executes(() => command.run<LogFilePresenter>())
                 .build();
         }
     }

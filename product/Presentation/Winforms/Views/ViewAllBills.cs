@@ -15,7 +15,7 @@ namespace MoMoney.Presentation.Winforms.Views
             titled("View Bill Payments").icon(ApplicationIcons.ViewAllBillPayments);
         }
 
-        public void attach_to(IViewAllBillsPresenter presenter)
+        public void attach_to(ViewAllBillsPresenter presenter)
         {
         }
 

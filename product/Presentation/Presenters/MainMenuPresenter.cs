@@ -6,9 +6,7 @@ using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public interface IMainMenuPresenter : IContentPresenter {}
-
-    public class MainMenuPresenter : ContentPresenter<IMainMenuView>, IMainMenuPresenter
+    public class MainMenuPresenter : ContentPresenter<IMainMenuView>
     {
         IRunPresenterCommand command;
 

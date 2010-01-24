@@ -15,7 +15,7 @@ namespace MoMoney.Presentation.Winforms.Views
             titled("View All Income").icon(ApplicationIcons.ViewAllIncome);
         }
 
-        public void attach_to(IViewIncomeHistoryPresenter presenter) {}
+        public void attach_to(ViewIncomeHistoryPresenter presenter) {}
 
         public void run(IEnumerable<IncomeInformationDTO> summary)
         {

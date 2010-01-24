@@ -7,8 +7,8 @@ namespace MoMoney.Modules
 {
     public class NavigationModule : INavigationModule
     {
-        readonly IEventAggregator broker;
-        readonly IRunPresenterCommand command;
+        IEventAggregator broker;
+        IRunPresenterCommand command;
 
         public NavigationModule(IEventAggregator broker, IRunPresenterCommand command)
         {
@@ -23,7 +23,7 @@ namespace MoMoney.Modules
 
         public void notify(NewProjectOpened message)
         {
-            command.run<INavigationPresenter>();
+            command.run<NavigationPresenter>();
         }
     }
 }

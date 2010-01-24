@@ -7,8 +7,7 @@ using MoMoney.Service.Contracts.Application;
 namespace MoMoney.Presentation.Presenters
 {
     [Concern(typeof (AddCompanyPresenter))]
-    public abstract class behaves_like_the_add_company_presenter :
-        concerns_for<IAddCompanyPresenter, AddCompanyPresenter>
+    public abstract class behaves_like_the_add_company_presenter : concerns_for<AddCompanyPresenter>
     {
         context c = () =>
                         {

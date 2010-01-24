@@ -5,9 +5,9 @@ namespace MoMoney.Presentation.Model.Navigation
 {
     public class ViewAllBillsBranch : IBranchVisitor
     {
-        private readonly IRunThe<IViewAllBillsPresenter> command;
+        private readonly IRunThe<ViewAllBillsPresenter> command;
 
-        public ViewAllBillsBranch(IRunThe<IViewAllBillsPresenter> command)
+        public ViewAllBillsBranch(IRunThe<ViewAllBillsPresenter> command)
         {
             this.command = command;
         }

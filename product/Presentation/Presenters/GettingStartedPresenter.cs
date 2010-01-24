@@ -3,11 +3,7 @@ using momoney.presentation.views;
 
 namespace momoney.presentation.presenters
 {
-    public interface IGettingStartedPresenter : IContentPresenter
-    {
-    }
-
-    public class GettingStartedPresenter : ContentPresenter<IGettingStartedView>, IGettingStartedPresenter
+    public class GettingStartedPresenter : ContentPresenter<IGettingStartedView>
     {
         public GettingStartedPresenter(IGettingStartedView view) : base(view)
         {

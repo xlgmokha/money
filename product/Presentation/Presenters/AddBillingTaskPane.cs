@@ -28,7 +28,7 @@ namespace MoMoney.Presentation.Presenters
                 Build.task_pane_item()
                     .named("View All Bills Payments")
                     .represented_by_icon(ApplicationIcons.ViewAllBillPayments)
-                    .when_clicked_execute(() => command.run<IViewAllBillsPresenter>())
+                    .when_clicked_execute(() => command.run<ViewAllBillsPresenter>())
                 )
                 .build();
         }

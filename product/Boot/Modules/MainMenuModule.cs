@@ -22,7 +22,7 @@ namespace MoMoney.Modules
 
         public void notify(NewProjectOpened message)
         {
-            command.run<IMainMenuPresenter>();
+            command.run<MainMenuPresenter>();
         }
     }
 }

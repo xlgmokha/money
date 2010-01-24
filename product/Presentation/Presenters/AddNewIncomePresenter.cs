@@ -6,12 +6,7 @@ using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public interface IAddNewIncomePresenter : IContentPresenter
-    {
-        void submit_new(IncomeSubmissionDTO income);
-    }
-
-    public class AddNewIncomePresenter : ContentPresenter<IAddNewIncomeView>, IAddNewIncomePresenter
+    public class AddNewIncomePresenter : ContentPresenter<IAddNewIncomeView>
     {
         readonly ICommandPump pump;
 

@@ -6,11 +6,7 @@ using MoMoney.Service.Contracts.Application;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public interface IViewIncomeHistoryPresenter : IContentPresenter
-    {
-    }
-
-    public class ViewIncomeHistoryPresenter : ContentPresenter<IViewIncomeHistory>, IViewIncomeHistoryPresenter
+    public class ViewIncomeHistoryPresenter : ContentPresenter<IViewIncomeHistory>
     {
         readonly ICommandPump pump;
 

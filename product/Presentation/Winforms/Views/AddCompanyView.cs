@@ -33,7 +33,7 @@ namespace MoMoney.Presentation.Winforms.Views
             ux_cancel_button.Click += (x, y) => Close();
         }
 
-        public void attach_to(IAddCompanyPresenter presenter)
+        public void attach_to(AddCompanyPresenter presenter)
         {
             ux_company_name.bind_to(dto, x => x.company_name);
             submit_button = x => presenter.submit(dto);

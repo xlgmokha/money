@@ -26,7 +26,7 @@ namespace MoMoney.Presentation.Winforms.Views
             companies_list = ux_companys.create_for<CompanyDTO>();
         }
 
-        public void attach_to(IAddNewIncomePresenter presenter)
+        public void attach_to(AddNewIncomePresenter presenter)
         {
             submit_button = x => presenter.submit_new(create_income());
         }

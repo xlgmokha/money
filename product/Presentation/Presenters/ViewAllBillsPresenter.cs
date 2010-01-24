@@ -7,11 +7,7 @@ using MoMoney.Service.Contracts.Application;
 
 namespace momoney.presentation.presenters
 {
-    public interface IViewAllBillsPresenter : IContentPresenter
-    {
-    }
-
-    public class ViewAllBillsPresenter : ContentPresenter<IViewAllBills>, IViewAllBillsPresenter
+    public class ViewAllBillsPresenter : ContentPresenter<IViewAllBills>
     {
         readonly ICommandPump pump;
 

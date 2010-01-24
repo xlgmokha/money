@@ -5,7 +5,7 @@ using momoney.service.infrastructure.logging;
 
 namespace momoney.presentation.presenters
 {
-    public class behaves_like_log_file_presenter : concerns_for<ILogFilePresenter, LogFilePresenter>
+    public class behaves_like_log_file_presenter : concerns_for< LogFilePresenter>
     {
         context c = () =>
         {

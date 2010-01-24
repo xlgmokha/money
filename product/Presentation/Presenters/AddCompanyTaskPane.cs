@@ -21,7 +21,7 @@ namespace MoMoney.Presentation.Presenters
                 Build.task_pane_item()
                     .named("Add Company")
                     .represented_by_icon(ApplicationIcons.AddCompany)
-                    .when_clicked_execute(() => command.run<IAddCompanyPresenter>()))
+                    .when_clicked_execute(() => command.run<AddCompanyPresenter>()))
                 .build();
         }
     }
