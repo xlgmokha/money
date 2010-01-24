@@ -13,7 +13,7 @@ namespace momoney.presentation.presenters
         {
         }
 
-        public override void run()
+        public override void present()
         {
             view.attach_to(this);
         }

@@ -29,7 +29,7 @@ namespace momoney.presentation.presenters
             tasks.is_told_to(x => x.get_the_contents_of_the_log_file()).it_will_return(log_file_contents);
         };
 
-        because b = () => sut.run();
+        because b = () => sut.present();
 
         static string log_file_contents;
         static string log_file_path;

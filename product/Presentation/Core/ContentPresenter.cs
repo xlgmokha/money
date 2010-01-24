@@ -16,7 +16,7 @@ namespace MoMoney.Presentation.Core
             get { return view; }
         }
 
-        public abstract void run();
+        public abstract void present();
 
         public virtual void activate()
         {

@@ -1,6 +1,7 @@
-using gorilla.commons.utility;
-
 namespace MoMoney.Presentation.Core
 {
-    public interface IPresenter : Command {}
+    public interface IPresenter
+    {
+        void present();
+    }
 }

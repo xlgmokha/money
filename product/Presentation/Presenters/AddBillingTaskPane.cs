@@ -22,7 +22,7 @@ namespace MoMoney.Presentation.Presenters
                 Build.task_pane_item()
                     .named("Add Bill Payments")
                     .represented_by_icon(ApplicationIcons.AddBillPayment)
-                    .when_clicked_execute(() => command.run<IAddBillPaymentPresenter>())
+                    .when_clicked_execute(() => command.run<AddBillPaymentPresenter>())
                 )
                 .with_item(
                 Build.task_pane_item()

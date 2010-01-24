@@ -128,7 +128,7 @@ namespace momoney.database.transactions
                 wrong_item = an<ITestEntity>();
                 correct_item = an<ITestEntity>();
                 map = an<IIdentityMap<Guid, ITestEntity>>();
-                when_the(wrong_item).is_told_to(x => x.id).it_will_return<Id<Guid>>(Guid.NewGuid());
+                when_the(wrong_item).is_told_to(x => x.id).it_will_return(Guid.NewGuid());
                 when_the(correct_item).is_told_to(x => x.id).it_will_return(id);
                 when_the(database)
                     .is_told_to(x => x.fetch_all<ITestEntity>())

@@ -27,7 +27,7 @@ namespace momoney.presentation.presenters
             this.view = view;
         }
 
-        public void run()
+        public void present()
         {
             pump.run<ApplicationVersion, IWhatIsTheAvailableVersion>(view);
             view.attach_to(this);

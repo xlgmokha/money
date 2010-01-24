@@ -17,7 +17,7 @@ namespace MoMoney.Presentation.Presenters
             this.command = command;
         }
 
-        public override void run()
+        public override void present()
         {
             all_factories().each(x => view.add(x));
         }

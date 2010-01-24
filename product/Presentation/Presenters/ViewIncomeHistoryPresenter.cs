@@ -19,7 +19,7 @@ namespace MoMoney.Presentation.Presenters
             this.pump = pump;
         }
 
-        public override void run()
+        public override void present()
         {
             view.attach_to(this);
             pump.run<IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>(view);

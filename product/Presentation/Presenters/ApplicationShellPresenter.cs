@@ -24,7 +24,7 @@ namespace momoney.presentation.presenters
             this.shell = shell;
         }
 
-        public void run()
+        public void present()
         {
             broker.subscribe(this);
             shell.attach_to(this);

@@ -23,7 +23,7 @@ namespace MoMoney.Presentation.Winforms.Views
             companies_list = ux_company_names.create_for<CompanyDTO>();
         }
 
-        public void attach_to(IAddBillPaymentPresenter presenter)
+        public void attach_to(AddBillPaymentPresenter presenter)
         {
             submit_clicked = x => presenter.submit_bill_payment(create_dto());
         }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.ComponentModel;
 using System.Deployment.Application;
 using Gorilla.Commons.Infrastructure.Registries;
@@ -37,10 +36,10 @@ namespace MoMoney.boot.container.registration
             registry.singleton<IContext>(() => new PerThread());
 
             registry.singleton(() => AsyncOperationManager.SynchronizationContext);
-            registry.singleton<AsyncOperation>(() => AsyncOperationManager.CreateOperation(new object()));
-            registry.singleton<ApplicationDeployment>(
+            registry.singleton(() => AsyncOperationManager.CreateOperation(new object()));
+            registry.singleton(
                 () => ApplicationDeployment.IsNetworkDeployed ? ApplicationDeployment.CurrentDeployment : null);
-            registry.singleton<IDeployment>(
+            registry.singleton(
                 () =>
                 ApplicationDeployment.IsNetworkDeployed
                     ? (IDeployment) new CurrentDeployment()

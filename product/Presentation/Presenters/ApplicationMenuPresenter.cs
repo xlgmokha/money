@@ -19,7 +19,7 @@ namespace momoney.presentation.presenters
             this.shell = shell;
         }
 
-        public void run()
+        public void present()
         {
             shell.region<MenuStrip>(x => registry.all().each(y => y.add_to(x)));
         }

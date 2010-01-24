@@ -103,6 +103,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="core\CachedPresenterFactory.cs" />
     <Compile Include="model\eventing\FinishedRunningCommand.cs" />
     <Compile Include="model\eventing\StartedRunningCommand.cs" />
     <Compile Include="model\navigation\INavigationTreeVisitor.cs" />
@@ -240,6 +241,8 @@
     <Compile Include="views\IApplicationDockedWindow.cs" />
     <Compile Include="views\IApplicationWindow.cs" />
     <Compile Include="views\IViewAllIncomeReport.cs" />
+    <Compile Include="winforms\helpers\GridListControl.cs" />
+    <Compile Include="winforms\helpers\ListViewControl.cs" />
     <Compile Include="winforms\resources\ApplicationIcons.cs" />
     <Compile Include="winforms\resources\ApplicationImages.cs" />
     <Compile Include="presenters\RunQueryCommand.cs" />

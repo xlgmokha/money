@@ -25,7 +25,7 @@ namespace momoney.presentation.presenters
             this.project = project;
         }
 
-        public void run()
+        public void present()
         {
             shell.region<ToolStrip>(x => buttons().each(y => y.add_to(x)));
         }

@@ -24,7 +24,7 @@ namespace MoMoney.Presentation.Presenters
     {
         it should_display_the_correct_screen = () => view.was_told_to(x => x.attach_to(sut));
 
-        because b = () => sut.run();
+        because b = () => sut.present();
     }
 
     [Concern(typeof (AddCompanyPresenter))]

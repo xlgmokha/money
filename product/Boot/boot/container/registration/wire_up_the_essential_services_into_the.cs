@@ -1,4 +1,3 @@
-using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.infrastructure.thirdparty;
 using gorilla.commons.infrastructure.thirdparty.Log4Net;
@@ -17,8 +16,8 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            registration.singleton<DependencyRegistration>(() => registration);
-            registration.singleton<DependencyRegistry>(() => registration.build());
+            registration.singleton(() => registration);
+            registration.singleton(() => registration.build());
             registration.singleton<LogFactory, Log4NetLogFactory>();
         }
     }

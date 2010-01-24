@@ -20,7 +20,7 @@ namespace momoney.presentation.presenters
             this.pump = pump;
         }
 
-        public override void run()
+        public override void present()
         {
             view.attach_to(this);
             pump.run<IEnumerable<BillInformationDTO>, IGetAllBillsQuery>(view);

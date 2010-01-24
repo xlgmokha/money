@@ -24,7 +24,7 @@ namespace momoney.presentation.presenters
         {
             it should_display_the_getting_started_screen = () => view.was_told_to(x => x.attach_to(sut));
 
-            because b = () => sut.run();
+            because b = () => sut.present();
         }
     }
 }

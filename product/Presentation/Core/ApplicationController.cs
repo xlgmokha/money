@@ -10,34 +10,27 @@ namespace MoMoney.Presentation.Core
 
     public class ApplicationController : IApplicationController, ParameterizedCommand<IPresenter>
     {
-        readonly IPresenterRegistry registered_presenters;
         readonly IShell shell;
+        PresenterFactory factory;
 
-        public ApplicationController(IPresenterRegistry registered_presenters, IShell shell)
+        public ApplicationController(IShell shell, PresenterFactory factory)
         {
-            this.registered_presenters = registered_presenters;
+            this.factory = factory;
             this.shell = shell;
         }
 
         public void run<Presenter>() where Presenter : IPresenter
         {
-            run(registered_presenters.find_an_implementation_of<IPresenter, Presenter>());
+            run(factory.create<Presenter>());
         }
 
         public void run(IPresenter presenter)
         {
-            presenter.run();
+            presenter.present();
             if (presenter.is_an_implementation_of<IContentPresenter>())
             {
                 var content_presenter = presenter.downcast_to<IContentPresenter>();
-                var view = content_presenter.View;
-
-                //view.on_activated = x => content_presenter.activate();
-                //view.deactivated = x => content_presenter.deactivate();
-                //view.on_closing = x => x.Cancel = !content_presenter.can_close();
-                //view.closed = x => remove(presenter);
-
-                shell.add(view);
+                shell.add(content_presenter.View);
             }
         }
     }

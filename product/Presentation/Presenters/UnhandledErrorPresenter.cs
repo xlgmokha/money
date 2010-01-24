@@ -25,7 +25,7 @@ namespace momoney.presentation.presenters
             this.broker = broker;
         }
 
-        public void run()
+        public void present()
         {
             view.attach_to(this);
             broker.subscribe_to(this);
@@ -39,6 +39,11 @@ namespace momoney.presentation.presenters
         public void restart_application()
         {
             restart.run();
+        }
+
+        public void run()
+        {
+            present();
         }
     }
 }

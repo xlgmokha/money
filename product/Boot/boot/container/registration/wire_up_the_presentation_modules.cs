@@ -31,7 +31,7 @@ namespace MoMoney.boot.container.registration
         public void run(Assembly item)
         {
             Func<IApplicationController> target =
-                () => new ApplicationController(Lazy.load<IPresenterRegistry>(), Lazy.load<IShell>());
+                () => new ApplicationController(Lazy.load<IShell>(), Lazy.load<PresenterFactory>());
             registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(target.memorize());
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
             registry.transient<IFileMenu, FileMenu>();

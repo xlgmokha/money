@@ -51,6 +51,6 @@ namespace momoney.presentation.presenters
 
         context c = () => { };
 
-        because b = () => sut.run();
+        because b = () => sut.present();
     }
 }

@@ -6,7 +6,7 @@ using momoney.presentation.presenters;
 namespace momoney.presentation.views
 {
     public interface IAddBillPaymentView : IDockedContentView,
-                                           IView<IAddBillPaymentPresenter>,
+                                           IView<AddBillPaymentPresenter>,
                                            Callback<IEnumerable<CompanyDTO>>,
                                            Callback<IEnumerable<BillInformationDTO>> {}
 }

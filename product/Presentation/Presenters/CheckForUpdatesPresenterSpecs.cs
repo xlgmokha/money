@@ -32,7 +32,7 @@ namespace momoney.presentation.presenters
         it should_go_and_find_out_what_the_latest_version_is =
             () => pump.was_told_to(x => x.run<ApplicationVersion, IWhatIsTheAvailableVersion>(view));
 
-        because b = () => sut.run();
+        because b = () => sut.present();
     }
 
     public class when_initiating_an_update_and_one_is_available : behaves_like_check_for_updates_presenter

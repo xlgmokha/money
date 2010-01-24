@@ -37,7 +37,7 @@ namespace MoMoney.Presentation.Model.Menu.File
             this.view = view;
         }
 
-        public void run()
+        public void present()
         {
             throw new NotImplementedException();
         }

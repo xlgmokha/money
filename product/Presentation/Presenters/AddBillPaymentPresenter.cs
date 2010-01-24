@@ -7,12 +7,7 @@ using MoMoney.Service.Contracts.Application;
 
 namespace momoney.presentation.presenters
 {
-    public interface IAddBillPaymentPresenter : IContentPresenter
-    {
-        void submit_bill_payment(AddNewBillDTO dto);
-    }
-
-    public class AddBillPaymentPresenter : ContentPresenter<IAddBillPaymentView>, IAddBillPaymentPresenter
+    public class AddBillPaymentPresenter : ContentPresenter<IAddBillPaymentView>
     {
         readonly ICommandPump pump;
 
@@ -21,7 +16,7 @@ namespace momoney.presentation.presenters
             this.pump = pump;
         }
 
-        public override void run()
+        public override void present()
         {
             view.attach_to(this);
             pump

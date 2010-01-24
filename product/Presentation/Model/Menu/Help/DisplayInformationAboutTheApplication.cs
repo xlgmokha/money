@@ -4,7 +4,9 @@ using MoMoney.Presentation.Presenters;
 
 namespace MoMoney.Presentation.model.menu.help
 {
-    public interface IDisplayInformationAboutTheApplication : Command {}
+    public interface IDisplayInformationAboutTheApplication : Command
+    {
+    }
 
     public class DisplayInformationAboutTheApplication : IDisplayInformationAboutTheApplication
     {
@@ -15,7 +17,7 @@ namespace MoMoney.Presentation.model.menu.help
 
         public void run()
         {
-            run_presenter.run<IAboutApplicationPresenter>();
+            run_presenter.run<AboutTheApplicationPresenter>();
         }
 
         readonly IRunPresenterCommand run_presenter;

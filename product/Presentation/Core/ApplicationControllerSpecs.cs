@@ -34,7 +34,7 @@ namespace MoMoney.Presentation.Core
         it should_ask_the_registered_presenters_for_an_instance_of_the_presenter_to_run =
             () => presenter_registry.was_told_to(r => r.all());
 
-        it should_initialize_the_presenter_to_run = () => implementation_of_the_presenter.was_told_to(p => p.run());
+        it should_initialize_the_presenter_to_run = () => implementation_of_the_presenter.was_told_to(p => p.present());
 
         static IPresenter implementation_of_the_presenter;
     }

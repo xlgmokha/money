@@ -16,7 +16,7 @@ namespace momoney.presentation.presenters
             tree_view_visitor = the_dependency<INavigationTreeVisitor>();
         };
 
-        because b = () => sut.run();
+        because b = () => sut.present();
 
         static INavigationView view;
         static INavigationTreeVisitor tree_view_visitor;
