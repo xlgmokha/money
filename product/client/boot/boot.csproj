@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="ActiveReports6, Version=6.0.1797.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\active.reports\ActiveReports6.dll</HintPath>
+      <HintPath>..\..\..\build\lib\app\active.reports\ActiveReports6.dll</HintPath>
     </Reference>
     <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -46,22 +46,6 @@
     <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
-    </Reference>
-    <Reference Include="gorilla.commons.infrastructure, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="gorilla.commons.infrastructure.thirdparty, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.thirdparty.dll</HintPath>
-    </Reference>
-    <Reference Include="gorilla.commons.infrastructure.thirdparty.log4net, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.thirdparty.log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="gorilla.commons.utility, Version=2009.10.21.739, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
     </Reference>
     <Reference Include="gorilla.testing, Version=2009.5.5.194, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -202,6 +186,22 @@
     <Compile Include="boot\container\registration\wire_up_the_views_in_to_the.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\commons\infrastructure.thirdparty.log4net\infrastructure.thirdparty.log4net.csproj">
+      <Project>{6BDCB0C1-51E1-435A-93D8-CA02BF8E409C}</Project>
+      <Name>infrastructure.thirdparty.log4net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\commons\infrastructure.thirdparty\infrastructure.thirdparty.csproj">
+      <Project>{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}</Project>
+      <Name>infrastructure.thirdparty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\commons\infrastructure\infrastructure.csproj">
+      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
+      <Name>infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\commons\utility\utility.csproj">
+      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
+      <Name>utility %28commons\utility%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\database\database.csproj">
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
       <Name>database</Name>

@@ -1,4 +1,3 @@
-using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
 using MoMoney.Presentation;
 using MoMoney.Service.Infrastructure.Eventing;
@@ -22,7 +21,6 @@ namespace MoMoney.Modules.Core
                 .all()
                 .each(x =>
                       {
-                          this.log().debug("loading... {0}", x);
                           broker.subscribe(x);
                           x.run();
                       });

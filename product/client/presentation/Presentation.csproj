@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="ActiveReports.Document, Version=6.0.1797.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\active.reports\ActiveReports.Document.dll</HintPath>
+      <HintPath>..\..\..\build\lib\app\active.reports\ActiveReports.Document.dll</HintPath>
     </Reference>
     <Reference Include="ActiveReports.Viewer6, Version=6.0.1797.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -548,6 +548,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\commons\infrastructure\infrastructure.csproj">
+      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
+      <Name>infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\commons\utility\utility.csproj">
+      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
+      <Name>utility %28commons\utility%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\dto.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
       <Name>dto</Name>
