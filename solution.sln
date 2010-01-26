@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "build", "build\build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "boot", "product\Boot\boot.csproj", "{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "boot", "product\boot\boot.csproj", "{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domain", "product\Domain\domain.csproj", "{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domain", "product\domain\domain.csproj", "{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service", "product\Service\service.csproj", "{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service", "product\service\service.csproj", "{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "database", "product\database\database.csproj", "{580E68A8-EDEE-4350-8BBE-A053645B0F83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dto", "product\DTO\dto.csproj", "{ACF52FAB-435B-48C9-A383-C787CB2D8000}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dto", "product\dto\dto.csproj", "{ACF52FAB-435B-48C9-A383-C787CB2D8000}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "presentation", "product\presentation\presentation.csproj", "{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}"
 EndProject
