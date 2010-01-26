@@ -24,10 +24,10 @@ namespace MoMoney.Presentation.Winforms.Views
                 .icon(ApplicationIcons.AddCompany);
             dto = new RegisterNewCompany();
 
-            listView1.View = View.LargeIcon;
-            listView1.LargeImageList = new ImageList();
-            ApplicationIcons.all().each(x => listView1.LargeImageList.Images.Add(x.name_of_the_icon, x));
-            listView1.Columns.Add("Name");
+            companiesListView.View = View.LargeIcon;
+            companiesListView.LargeImageList = new ImageList();
+            ApplicationIcons.all().each(x => companiesListView.LargeImageList.Images.Add(x.name_of_the_icon, x));
+            companiesListView.Columns.Add("Name");
 
             ux_submit_button.Click += (x, y) => submit_button(y);
             ux_cancel_button.Click += (x, y) => Close();
@@ -41,10 +41,8 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void run(IEnumerable<CompanyDTO> companies)
         {
-            ux_companys_listing.DataSource = companies.databind();
-
-            listView1.Items.Clear();
-            listView1.Items.AddRange(companies.Select(x => new ListViewItem(x.name, 0)).ToArray());
+            companiesListView.Items.Clear();
+            companiesListView.Items.AddRange(companies.Select(x => new ListViewItem(x.name, 0)).ToArray());
         }
     }
 }

@@ -1,4 +1,3 @@
-using Gorilla.Commons.Infrastructure.Logging;
 using MoMoney.Presentation;
 using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Model.Projects;
@@ -7,39 +6,29 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters
 {
-    public interface ITitleBarPresenter : IModule,
-                                          IEventSubscriber<UnsavedChangesEvent>,
-                                          IEventSubscriber<SavedChangesEvent>,
-                                          IEventSubscriber<NewProjectOpened>,
-                                          IEventSubscriber<ClosingProjectEvent>
-    {
-    }
-
-    public class TitleBarPresenter : ITitleBarPresenter
+    public class TitleBarPresenter :
+        IModule,
+        IEventSubscriber<UnsavedChangesEvent>,
+        IEventSubscriber<SavedChangesEvent>,
+        IEventSubscriber<NewProjectOpened>,
+        IEventSubscriber<ClosingProjectEvent>
     {
         readonly ITitleBar view;
         readonly IProjectController project;
-        readonly IEventAggregator broker;
 
-        public TitleBarPresenter(ITitleBar view, IProjectController project, IEventAggregator broker)
+        public TitleBarPresenter(ITitleBar view, IProjectController project)
         {
             this.view = view;
             this.project = project;
-            this.broker = broker;
         }
 
         public void run()
         {
             view.display(project.name());
-            broker.subscribe_to<UnsavedChangesEvent>(this);
-            broker.subscribe_to<SavedChangesEvent>(this);
-            broker.subscribe_to<NewProjectOpened>(this);
-            broker.subscribe_to<ClosingProjectEvent>(this);
         }
 
         public void notify(UnsavedChangesEvent dto)
         {
-            this.log().debug("adding asterik");
             view.append_asterik();
         }
 

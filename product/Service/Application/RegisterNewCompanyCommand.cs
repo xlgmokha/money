@@ -13,8 +13,7 @@ namespace MoMoney.Service.Application
         readonly Notification notification;
         readonly ICompanyRepository companies;
 
-        public RegisterNewCompanyCommand(ICompanyFactory factory, Notification notification,
-                                         ICompanyRepository companies)
+        public RegisterNewCompanyCommand(ICompanyFactory factory, Notification notification, ICompanyRepository companies)
         {
             this.factory = factory;
             this.notification = notification;
@@ -23,15 +22,15 @@ namespace MoMoney.Service.Application
 
         public void run(RegisterNewCompany item)
         {
-            if (company_has_already_been_registered(item))
+            if (is_there_a_company_registered_with(item.company_name))
                 notification.notify(create_error_message_from(item));
             else
                 factory.create().change_name_to(item.company_name);
         }
 
-        bool company_has_already_been_registered(RegisterNewCompany dto)
+        bool is_there_a_company_registered_with(string company_name)
         {
-            return companies.all().Count(x => x.name.is_equal_to_ignoring_case(dto.company_name)) > 0;
+            return companies.all().Any(x => x.name.is_equal_to_ignoring_case(company_name));
         }
 
         string create_error_message_from(RegisterNewCompany dto)

@@ -29,14 +29,14 @@ namespace MoMoney.boot.container.registration
         {
             registry.proxy<IGetAllCompanysQuery, ServiceLayerConfiguration<IGetAllCompanysQuery>>(
                 () =>
-                new GetAllCompanysQuery(Lazy.load<ICompanyRepository>(), Lazy.load<Mapper<ICompany, CompanyDTO>>()));
+                new GetAllCompanysQuery(Lazy.load<ICompanyRepository>(), Lazy.load<Mapper<Company, CompanyDTO>>()));
             registry.proxy<IGetAllBillsQuery, ServiceLayerConfiguration<IGetAllBillsQuery>>(
                 () =>
-                new GetAllBillsQuery(Lazy.load<IBillRepository>(), Lazy.load<Mapper<IBill, BillInformationDTO>>()));
+                new GetAllBillsQuery(Lazy.load<IBillRepository>(), Lazy.load<Mapper<Bill, BillInformationDTO>>()));
             registry.proxy<IGetAllIncomeQuery, ServiceLayerConfiguration<IGetAllIncomeQuery>>(
                 () =>
                 new GetAllIncomeQuery(Lazy.load<IIncomeRepository>(),
-                                      Lazy.load<Mapper<IIncome, IncomeInformationDTO>>()));
+                                      Lazy.load<Mapper<Income, IncomeInformationDTO>>()));
             registry.proxy<IGetTheCurrentCustomerQuery, ServiceLayerConfiguration<IGetTheCurrentCustomerQuery>>(
                 () => new GetTheCurrentCustomerQuery(Lazy.load<IAccountHolderRepository>()));
         }

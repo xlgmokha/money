@@ -5,16 +5,8 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.Accounting
 {
-    public interface ICompany : Entity
-    {
-        string name { get; }
-        void change_name_to(string company_name);
-        void issue_bill_to(IAccountHolder customer, DateTime that_is_due_on, Money for_amount);
-        void pay(IAccountHolder person, Money amount, Date date_of_payment);
-    }
-
     [Serializable]
-    public class Company : GenericEntity<ICompany>, ICompany
+    public class Company : GenericEntity<Company>
     {
         public string name { get; private set; }
 
@@ -23,14 +15,14 @@ namespace MoMoney.Domain.Accounting
             name = company_name;
         }
 
-        public void issue_bill_to(IAccountHolder customer, DateTime that_is_due_on, Money for_amount)
+        public void issue_bill_to(AccountHolder customer, DateTime that_is_due_on, Money for_amount)
         {
-            customer.receive(new Bill(this, for_amount, that_is_due_on));
+            customer.receive( Bill.New(this, for_amount, that_is_due_on));
         }
 
-        public void pay(IAccountHolder person, Money amount, Date date_of_payment)
+        public void pay(AccountHolder person, Money amount, Date date_of_payment)
         {
-            person.receive(new Income(date_of_payment, amount, this));
+            person.receive( Income.New(date_of_payment, amount, this));
         }
 
         public override string ToString()

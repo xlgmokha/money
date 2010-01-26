@@ -24,8 +24,6 @@ namespace MoMoney.Presentation.Winforms.Views
             ux_logo.Image = ApplicationImages.Splash;
         }
 
-        public void display() {}
-
         string assembly_version
         {
             get { return GetType().Assembly.GetName().Version.ToString(); }

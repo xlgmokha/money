@@ -1,3 +1,4 @@
+using MoMoney.Presentation;
 using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Model.Menu;
 using momoney.presentation.presenters;
@@ -6,7 +7,12 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Modules
 {
-    public class ToolbarModule : IToolbarModule
+    public class ToolbarModule :
+        IModule,
+        IEventSubscriber<NewProjectOpened>,
+        IEventSubscriber<ClosingProjectEvent>,
+        IEventSubscriber<SavedChangesEvent>,
+        IEventSubscriber<UnsavedChangesEvent>
     {
         readonly IEventAggregator broker;
         readonly IRunPresenterCommand command;
@@ -19,28 +25,32 @@ namespace MoMoney.Modules
 
         public void run()
         {
-            broker.subscribe(this);
             command.run<ToolBarPresenter>();
         }
 
         public void notify(NewProjectOpened message)
+        {
+            refresh_toolbar();
+        }
+
+        void refresh_toolbar()
         {
             broker.publish<IToolbarButton>(x => x.refresh());
         }
 
         public void notify(ClosingProjectEvent message)
         {
-            broker.publish<IToolbarButton>(x => x.refresh());
+            refresh_toolbar();
         }
 
         public void notify(SavedChangesEvent message)
         {
-            broker.publish<IToolbarButton>(x => x.refresh());
+            refresh_toolbar();
         }
 
         public void notify(UnsavedChangesEvent message)
         {
-            broker.publish<IToolbarButton>(x => x.refresh());
+            refresh_toolbar();
         }
     }
 }

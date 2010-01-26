@@ -5,7 +5,7 @@ using MoMoney.Domain.repositories;
 
 namespace MoMoney.Service.Application
 {
-    public interface IGetTheCurrentCustomerQuery : Query<IAccountHolder> {}
+    public interface IGetTheCurrentCustomerQuery : Query<AccountHolder> {}
 
     public class GetTheCurrentCustomerQuery : IGetTheCurrentCustomerQuery
     {
@@ -16,7 +16,7 @@ namespace MoMoney.Service.Application
             this.account_holders = account_holders;
         }
 
-        public IAccountHolder fetch()
+        public AccountHolder fetch()
         {
             var c = account_holders.all().SingleOrDefault();
 

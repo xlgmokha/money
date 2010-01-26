@@ -10,9 +10,9 @@ namespace MoMoney.Service.Application
     public class GetAllBillsQuery : IGetAllBillsQuery
     {
         readonly IBillRepository bills;
-        readonly Mapper<IBill, BillInformationDTO> mapper;
+        readonly Mapper<Bill, BillInformationDTO> mapper;
 
-        public GetAllBillsQuery(IBillRepository bills, Mapper<IBill, BillInformationDTO> mapper)
+        public GetAllBillsQuery(IBillRepository bills, Mapper<Bill, BillInformationDTO> mapper)
         {
             this.bills = bills;
             this.mapper = mapper;

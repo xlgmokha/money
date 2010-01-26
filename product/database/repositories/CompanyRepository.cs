@@ -17,22 +17,22 @@ namespace momoney.database.repositories
             this.session = session;
         }
 
-        public IEnumerable<ICompany> all()
+        public IEnumerable<Company> all()
         {
-            return session.all<ICompany>();
+            return session.all<Company>();
         }
 
-        public ICompany find_company_named(string name)
+        public Company find_company_named(string name)
         {
             return all().SingleOrDefault(x => x.name.is_equal_to_ignoring_case(name));
         }
 
-        public ICompany find_company_by(Guid id)
+        public Company find_company_by(Guid id)
         {
             return all().SingleOrDefault(x => x.id.Equals(id));
         }
 
-        public void save(ICompany company)
+        public void save(Company company)
         {
             session.save(company);
         }

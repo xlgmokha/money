@@ -8,7 +8,7 @@ using MoMoney.Service.Infrastructure.Eventing;
 namespace momoney.presentation.presenters
 {
     [Concern(typeof (TitleBarPresenter))]
-    public abstract class behaves_like_a_title_bar_presenter : concerns_for<ITitleBarPresenter, TitleBarPresenter>
+    public abstract class behaves_like_a_title_bar_presenter : concerns_for<TitleBarPresenter>
     {
         context c = () =>
         {
@@ -25,15 +25,6 @@ namespace momoney.presentation.presenters
     public class when_initializing_the_title_bar_for_the_first_time : behaves_like_a_title_bar_presenter
     {
         it should_display_the_name_of_the_file_that_is_opened = () => view.was_told_to(x => x.display("untitled.mo"));
-
-        it should_ask_to_be_notified_of_any_unsaved_changes =
-            () => broker.was_told_to(x => x.subscribe_to<UnsavedChangesEvent>(sut));
-
-        it should_ask_to_be_notified_when_the_project_is_saved =
-            () => broker.was_told_to(x => x.subscribe_to<SavedChangesEvent>(sut));
-
-        it should_ask_to_be_notified_when_a_new_project_is_opened =
-            () => broker.was_told_to(x => x.subscribe_to<NewProjectOpened>(sut));
 
         context c = () => when_the(project).is_told_to(x => x.name()).it_will_return("untitled.mo");
 

@@ -11,9 +11,9 @@ namespace MoMoney.Domain.Core
             id = Guid.NewGuid();
         }
 
-        public Id<Guid> id { get; private set; }
+        public virtual Id<Guid> id { get; private set; }
 
-        public bool Equals(GenericEntity<T> obj)
+        public virtual bool Equals(GenericEntity<T> obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
@@ -24,7 +24,7 @@ namespace MoMoney.Domain.Core
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (GenericEntity<T>)) return false;
+            if (!(obj is GenericEntity<T>)) return false;
             return Equals((GenericEntity<T>) obj);
         }
 

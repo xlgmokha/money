@@ -5,6 +5,6 @@ namespace MoMoney.Domain.repositories
 {
     public interface IBillRepository
     {
-        IEnumerable<IBill> all();
+        IEnumerable<Bill> all();
     }
 }

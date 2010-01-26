@@ -166,15 +166,10 @@
     <Compile Include="modules\core\ILoadPresentationModulesCommand.cs" />
     <Compile Include="modules\DatabaseModule.cs" />
     <Compile Include="modules\ApplicationMenuModule.cs" />
-    <Compile Include="modules\IApplicationMenuModule.cs" />
     <Compile Include="modules\IDatabaseModule.cs" />
-    <Compile Include="modules\IMainMenuModule.cs" />
-    <Compile Include="modules\INavigationModule.cs" />
-    <Compile Include="modules\IToolbarModule.cs" />
     <Compile Include="modules\MainMenuModule.cs" />
     <Compile Include="modules\NavigationModule.cs" />
     <Compile Include="modules\GettingStartedModule.cs" />
-    <Compile Include="modules\GettingStartedModuleSpecs.cs" />
     <Compile Include="modules\ToolbarModule.cs" />
     <Compile Include="modules\core\LoadPresentationModulesCommandSpecs.cs" />
     <Compile Include="boot\hookup.cs" />

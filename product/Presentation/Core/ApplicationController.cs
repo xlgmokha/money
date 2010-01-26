@@ -1,4 +1,5 @@
 using MoMoney.Presentation.Views;
+using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Presentation.Core
 {
@@ -11,16 +12,20 @@ namespace MoMoney.Presentation.Core
     {
         IShell shell;
         PresenterFactory presenter_factory;
+        IEventAggregator broker;
 
-        public ApplicationController(IShell shell, PresenterFactory presenter_factory)
+        public ApplicationController(IShell shell, PresenterFactory presenter_factory, IEventAggregator broker)
         {
             this.presenter_factory = presenter_factory;
+            this.broker = broker;
             this.shell = shell;
         }
 
         public void run<Presenter>() where Presenter : IPresenter
         {
-            presenter_factory.create<Presenter>().present(shell);
+            var presenter = presenter_factory.create<Presenter>();
+            broker.subscribe(presenter);
+            presenter.present(shell);
         }
     }
 }

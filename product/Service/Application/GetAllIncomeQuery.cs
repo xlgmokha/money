@@ -10,9 +10,9 @@ namespace MoMoney.Service.Application
     public class GetAllIncomeQuery : IGetAllIncomeQuery
     {
         readonly IIncomeRepository all_income;
-        readonly Mapper<IIncome, IncomeInformationDTO> mapper;
+        readonly Mapper<Income, IncomeInformationDTO> mapper;
 
-        public GetAllIncomeQuery(IIncomeRepository all_income, Mapper<IIncome, IncomeInformationDTO> mapper)
+        public GetAllIncomeQuery(IIncomeRepository all_income, Mapper<Income, IncomeInformationDTO> mapper)
         {
             this.all_income = all_income;
             this.mapper = mapper;

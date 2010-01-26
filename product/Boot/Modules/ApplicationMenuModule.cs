@@ -1,3 +1,4 @@
+using MoMoney.Presentation;
 using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Model.Menu;
 using momoney.presentation.presenters;
@@ -6,7 +7,12 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Modules
 {
-    public class ApplicationMenuModule : IApplicationMenuModule
+    public class ApplicationMenuModule :
+        IModule,
+        IEventSubscriber<NewProjectOpened>,
+        IEventSubscriber<ClosingProjectEvent>,
+        IEventSubscriber<SavedChangesEvent>,
+        IEventSubscriber<UnsavedChangesEvent>
     {
         readonly IEventAggregator broker;
         readonly IRunPresenterCommand command;
@@ -19,7 +25,6 @@ namespace MoMoney.Modules
 
         public void run()
         {
-            broker.subscribe(this);
             command.run<ApplicationMenuPresenter>();
         }
 

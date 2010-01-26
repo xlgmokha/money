@@ -94,11 +94,10 @@ namespace MoMoney.Presentation.Winforms.Views
         {
             using (new SuspendLayout(panel))
             {
-                if (window_is_already_contained_in(panel)) remove_from(panel);
-                //else
-                {
-                    Show(panel, dock_state);
-                }
+                if (window_is_already_contained_in(panel)) 
+                    remove_from(panel);
+
+                Show(panel, dock_state);
             }
         }
 

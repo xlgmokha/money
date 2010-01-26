@@ -6,37 +6,31 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Modules
 {
-    public interface IGettingStartedModule : IModule,
-                                             IEventSubscriber<NewProjectOpened>,
-                                             IEventSubscriber<ClosingProjectEvent>
+    public class GettingStartedModule :
+        IModule,
+        IEventSubscriber<NewProjectOpened>,
+        IEventSubscriber<ClosingProjectEvent>
     {
-    }
+        IRunPresenterCommand command;
 
-    public class GettingStartedModule : IGettingStartedModule
-    {
-        readonly IEventAggregator broker;
-        readonly IRunPresenterCommand command;
-
-        public GettingStartedModule(IEventAggregator broker, IRunPresenterCommand command)
+        public GettingStartedModule(IRunPresenterCommand command)
         {
-            this.broker = broker;
             this.command = command;
         }
 
         public void run()
         {
-            broker.subscribe(this);
             command.run<GettingStartedPresenter>();
         }
 
         public void notify(NewProjectOpened message)
         {
-            command.run<GettingStartedPresenter>();
+            run();
         }
 
         public void notify(ClosingProjectEvent message)
         {
-            command.run<GettingStartedPresenter>();
+            run();
         }
     }
 }

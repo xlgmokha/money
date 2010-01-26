@@ -17,13 +17,6 @@ namespace MoMoney.Presentation.Model.Menu.File
         void cancel();
     }
 
-    public interface ISaveChangesCallback
-    {
-        void saved();
-        void not_saved();
-        void cancelled();
-    }
-
     public class SaveChangesCommand : ISaveChangesCommand, ISaveChangesPresenter
     {
         readonly IProjectController current_project;

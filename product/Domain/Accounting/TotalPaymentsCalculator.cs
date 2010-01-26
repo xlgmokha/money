@@ -3,16 +3,16 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.Accounting
 {
-    class TotalPaymentsCalculator : ValueReturningVisitor<Money, IPayment>
+    class TotalPaymentsCalculator : ValueReturningVisitor<Money, Payment>
     {
         public TotalPaymentsCalculator()
         {
             reset();
         }
 
-        public void visit(IPayment payment)
+        public void visit(Payment payment)
         {
-            value = payment.apply_to(value);
+            value = value.add(payment.amount_paid);
         }
 
         public Money value { get; private set; }

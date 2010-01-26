@@ -9,10 +9,10 @@ namespace MoMoney.Service.Application
 {
     public class GetAllCompanysQuery : IGetAllCompanysQuery
     {
-        readonly ICompanyRepository companys;
-        readonly Mapper<ICompany, CompanyDTO> mapper;
+        ICompanyRepository companys;
+        Mapper<Company, CompanyDTO> mapper;
 
-        public GetAllCompanysQuery(ICompanyRepository companys, Mapper<ICompany, CompanyDTO> mapper)
+        public GetAllCompanysQuery(ICompanyRepository companys, Mapper<Company, CompanyDTO> mapper)
         {
             this.companys = companys;
             this.mapper = mapper;

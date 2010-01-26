@@ -1,23 +1,31 @@
+using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
 using MoMoney.Presentation;
-using MoMoney.Service.Infrastructure.Threading;
+using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Modules.Core
 {
     public class LoadPresentationModulesCommand : ILoadPresentationModulesCommand
     {
-        readonly Registry<IModule> registry;
-        readonly CommandProcessor processor;
+        Registry<IModule> registry;
+        IEventAggregator broker;
 
-        public LoadPresentationModulesCommand(Registry<IModule> registry, CommandProcessor processor)
+        public LoadPresentationModulesCommand(Registry<IModule> registry, IEventAggregator broker)
         {
             this.registry = registry;
-            this.processor = processor;
+            this.broker = broker;
         }
 
         public void run()
         {
-            registry.all().each(x => processor.add(x));
+            registry
+                .all()
+                .each(x =>
+                      {
+                          this.log().debug("loading... {0}", x);
+                          broker.subscribe(x);
+                          x.run();
+                      });
         }
     }
 }

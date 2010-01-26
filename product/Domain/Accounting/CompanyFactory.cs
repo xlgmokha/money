@@ -3,7 +3,7 @@ using MoMoney.Domain.repositories;
 
 namespace MoMoney.Domain.Accounting
 {
-    public interface ICompanyFactory : Factory<ICompany> {}
+    public interface ICompanyFactory : Factory<Company> {}
 
     public class CompanyFactory : ICompanyFactory
     {
@@ -16,7 +16,7 @@ namespace MoMoney.Domain.Accounting
             this.companys = companys;
         }
 
-        public ICompany create()
+        public Company create()
         {
             var company = factory.create();
             companys.save(company);

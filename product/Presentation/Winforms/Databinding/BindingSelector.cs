@@ -11,8 +11,8 @@ namespace MoMoney.Presentation.Winforms.Databinding
 
     public class BindingSelector<TypeToBindTo> : IBindingSelector<TypeToBindTo>
     {
-        private readonly TypeToBindTo thing_to_bind_to;
-        private readonly IPropertyInspectorFactory factory;
+        TypeToBindTo thing_to_bind_to;
+        IPropertyInspectorFactory factory;
 
         public BindingSelector(TypeToBindTo thing_to_bind_to, IPropertyInspectorFactory factory)
         {
@@ -23,8 +23,9 @@ namespace MoMoney.Presentation.Winforms.Databinding
         public IPropertyBinder<TypeToBindTo, TypeOfProperty> bind_to_property<TypeOfProperty>(
             Expression<Func<TypeToBindTo, TypeOfProperty>> property_to_bind_to)
         {
-            var property_information = factory.create<TypeToBindTo, TypeOfProperty>().inspect(property_to_bind_to);
-            return new PropertyBinder<TypeToBindTo, TypeOfProperty>(property_information, thing_to_bind_to);
+            return
+                new PropertyBinder<TypeToBindTo, TypeOfProperty>(
+                    factory.create<TypeToBindTo, TypeOfProperty>().inspect(property_to_bind_to), thing_to_bind_to);
         }
     }
 }

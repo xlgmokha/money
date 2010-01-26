@@ -13,7 +13,6 @@ namespace MoMoney.Presentation.Winforms.Views
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
-            //this.log().debug("created {0}", GetType());
 
             activated = x => { };
             deactivated = x => { };

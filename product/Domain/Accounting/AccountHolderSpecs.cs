@@ -5,17 +5,18 @@ using Gorilla.Commons.Testing;
 using Gorilla.Commons.Utility;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.Core;
+using Rhino.Mocks;
 
 namespace MoMoney.Domain.accounting
 {
     public class AccountHolderSpecs
     {
         [Concern(typeof (AccountHolder))]
-        public abstract class behaves_like_an_account_holder : concerns_for<IAccountHolder, AccountHolder>
+        public abstract class concern : concerns_for<AccountHolder>
         {
         }
 
-        public class when_a_customer_is_checking_for_any_bills_that_have_not_been_paid : behaves_like_an_account_holder
+        public class when_a_customer_is_checking_for_any_bills_that_have_not_been_paid : concern
         {
             it should_return_all_the_unpaid_bills = () =>
                                                     {
@@ -25,9 +26,9 @@ namespace MoMoney.Domain.accounting
 
             context c = () =>
                         {
-                            first_unpaid_bill = an<IBill>();
-                            second_unpaid_bill = an<IBill>();
-                            paid_bill = an<IBill>();
+                            first_unpaid_bill = an<Bill>();
+                            second_unpaid_bill = an<Bill>();
+                            paid_bill = an<Bill>();
 
                             first_unpaid_bill.is_told_to(x => x.is_paid_for()).it_will_return(false);
                             second_unpaid_bill.is_told_to(x => x.is_paid_for()).it_will_return(false);
@@ -42,20 +43,20 @@ namespace MoMoney.Domain.accounting
                             result = sut.collect_all_the_unpaid_bills();
                         };
 
-            static IEnumerable<IBill> result;
-            static IBill first_unpaid_bill;
-            static IBill second_unpaid_bill;
-            static IBill paid_bill;
+            static IEnumerable<Bill> result;
+            static Bill first_unpaid_bill;
+            static Bill second_unpaid_bill;
+            static Bill paid_bill;
         }
 
         [Concern(typeof (AccountHolder))]
-        public class when_an_account_holder_is_calculating_their_income_for_a_year : behaves_like_an_account_holder
+        public class when_an_account_holder_is_calculating_their_income_for_a_year : concern
         {
             context c = () =>
                         {
-                            income_for_january_2007 = an<IIncome>();
-                            income_for_february_2007 = an<IIncome>();
-                            income_for_february_2008 = an<IIncome>();
+                            income_for_january_2007 = MockRepository.GenerateMock<Income>();
+                            income_for_february_2007 = MockRepository.GenerateMock<Income>();
+                            income_for_february_2008 = MockRepository.GenerateMock<Income>();
 
                             income_for_january_2007.is_told_to(x => x.date_of_issue).it_will_return<Date>(new DateTime(2007, 01, 01));
                             income_for_january_2007.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000, 00));
@@ -78,9 +79,9 @@ namespace MoMoney.Domain.accounting
             it should_return_the_correct_amount = () => result.should_be_equal_to(2000.as_money());
 
             static Money result;
-            static IIncome income_for_january_2007;
-            static IIncome income_for_february_2007;
-            static IIncome income_for_february_2008;
+            static Income income_for_january_2007;
+            static Income income_for_february_2007;
+            static Income income_for_february_2008;
         }
     }
 }

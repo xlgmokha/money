@@ -71,6 +71,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
@@ -93,9 +99,15 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.3392.19652, Culture=neutral, PublicKeyToken=b602bcfb76b4e90d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\dock.panel.suite\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="XPExplorerBar, Version=3.3.0.0, Culture=neutral, PublicKeyToken=26272737b5f33015">
       <SpecificVersion>False</SpecificVersion>
@@ -107,6 +119,7 @@
     <Compile Include="core\CachingViewFactory.cs" />
     <Compile Include="model\eventing\FinishedRunningCommand.cs" />
     <Compile Include="model\eventing\StartedRunningCommand.cs" />
+    <Compile Include="model\menu\file\ISaveChangesCallback.cs" />
     <Compile Include="model\navigation\INavigationTreeVisitor.cs" />
     <Compile Include="model\navigation\ITreeBranch.cs" />
     <Compile Include="model\navigation\ITreeViewToRootNodeMapper.cs" />
@@ -215,10 +228,10 @@
     <Compile Include="presenters\GettingStartedPresenterSpecs.cs" />
     <Compile Include="presenters\LogFilePresenter.cs" />
     <Compile Include="presenters\LogFileViewPresenterSpecs.cs" />
-    <Compile Include="presenters\NotificationIconPresenter.cs" />
+    <Compile Include="presenters\NotificationIconModule.cs" />
     <Compile Include="presenters\NotificationIconPresenterSpecs.cs" />
     <Compile Include="presenters\NotificationPresenter.cs" />
-    <Compile Include="presenters\StatusBarPresenter.cs" />
+    <Compile Include="presenters\StatusBarModule.cs" />
     <Compile Include="presenters\StatusBarPresenterSpecs.cs" />
     <Compile Include="presenters\TaskTrayPresenter.cs" />
     <Compile Include="presenters\TitleBarPresenter.cs" />

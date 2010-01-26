@@ -5,7 +5,7 @@ namespace MoMoney.Domain.repositories
 {
     public interface IAccountHolderRepository
     {
-        IEnumerable<IAccountHolder> all();
-        void save(IAccountHolder account_holder);
+        IEnumerable<AccountHolder> all();
+        void save(AccountHolder account_holder);
     }
 }

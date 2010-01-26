@@ -14,12 +14,12 @@ namespace momoney.database.repositories
             this.session = session;
         }
 
-        public IEnumerable<IAccountHolder> all()
+        public IEnumerable<AccountHolder> all()
         {
-            return session.all<IAccountHolder>();
+            return session.all<AccountHolder>();
         }
 
-        public void save(IAccountHolder account_holder)
+        public void save(AccountHolder account_holder)
         {
             session.save(account_holder);
         }

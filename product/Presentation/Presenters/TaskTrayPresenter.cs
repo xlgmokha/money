@@ -6,31 +6,24 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters
 {
-    public interface ITaskTrayPresenter : IModule,
-                                          IEventSubscriber<SavedChangesEvent>,
-                                          IEventSubscriber<StartedRunningCommand>,
-                                          IEventSubscriber<FinishedRunningCommand>,
-                                          IEventSubscriber<NewProjectOpened>
-    {
-    }
-
-    public class TaskTrayPresenter : ITaskTrayPresenter
+    public class TaskTrayPresenter :
+        IModule,
+        IEventSubscriber<SavedChangesEvent>,
+        IEventSubscriber<StartedRunningCommand>,
+        IEventSubscriber<FinishedRunningCommand>,
+        IEventSubscriber<NewProjectOpened>
     {
         readonly ITaskTrayMessageView view;
-        readonly IEventAggregator broker;
 
-        public TaskTrayPresenter(ITaskTrayMessageView view, IEventAggregator broker)
+        public TaskTrayPresenter(ITaskTrayMessageView view)
         {
             this.view = view;
-            this.broker = broker;
         }
 
         public void run()
         {
             view.display("Welcome!");
             view.display("Visit http://mokhan.ca for more information!");
-            broker.subscribe_to<SavedChangesEvent>(this);
-            broker.subscribe_to<NewProjectOpened>(this);
         }
 
         public void notify(SavedChangesEvent message)

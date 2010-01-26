@@ -8,6 +8,7 @@ using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
 using MoMoney.Service.Contracts.Application;
+using Rhino.Mocks;
 
 namespace MoMoney.Service.Application
 {
@@ -38,8 +39,8 @@ namespace MoMoney.Service.Application
 
         context c = () =>
         {
-            var a_company = an<ICompany>();
-            var matching_income = an<IIncome>();
+            var a_company = MockRepository.GenerateMock<Company>();
+            var matching_income = MockRepository.GenerateMock<Income>();
             var today = new Date(2008, 12, 26);
             Id<Guid> id = Guid.NewGuid();
 

@@ -18,16 +18,18 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             registry.transient(typeof (Mapper<,>), typeof (AnonymousMapper<,>));
-            registry.singleton<Converter<IBill, BillInformationDTO>>(
-                () => x => new BillInformationDTO
-                           {
-                               company_name = x.company_to_pay.name,
-                               the_amount_owed = x.the_amount_owed.ToString(),
-                               due_date = x.due_date.to_date_time(),
-                           });
-            registry.singleton<Converter<ICompany, CompanyDTO>>(() => x => new CompanyDTO {id = x.id, name = x.name});
+            //registry.singleton(()=> Mappers.bill_mapper);
+            registry.singleton<Converter<Bill, BillInformationDTO>>(
+                () => x =>
+                      new BillInformationDTO
+                      {
+                          company_name = x.company_to_pay.name,
+                          the_amount_owed = x.the_amount_owed.ToString(),
+                          due_date = x.due_date.to_date_time(),
+                      });
+            registry.singleton<Converter<Company, CompanyDTO>>(() => x => new CompanyDTO {id = x.id, name = x.name});
 
-            registry.singleton<Converter<IIncome, IncomeInformationDTO>>(
+            registry.singleton<Converter<Income, IncomeInformationDTO>>(
                 () => x => new IncomeInformationDTO
                            {
                                amount = x.amount_tendered.to_string(),

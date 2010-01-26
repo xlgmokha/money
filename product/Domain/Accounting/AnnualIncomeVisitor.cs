@@ -4,7 +4,7 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.Accounting
 {
-    public class AnnualIncomeVisitor : ValueReturningVisitor<Money, IIncome>
+    public class AnnualIncomeVisitor : ValueReturningVisitor<Money, Income>
     {
         readonly Year year;
 
@@ -14,7 +14,7 @@ namespace MoMoney.Domain.Accounting
             reset();
         }
 
-        public void visit(IIncome x)
+        public void visit(Income x)
         {
             if (x.date_of_issue.is_in(year)) value = value.add(x.amount_tendered);
         }

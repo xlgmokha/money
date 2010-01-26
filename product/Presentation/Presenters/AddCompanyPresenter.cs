@@ -22,9 +22,8 @@ namespace MoMoney.Presentation.Presenters
 
         public void submit(RegisterNewCompany dto)
         {
-            pump
-                .run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto)
-                .run<IEnumerable<CompanyDTO>, IGetAllCompanysQuery>(view);
+            pump.run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto);
+            pump.run<IEnumerable<CompanyDTO>, IGetAllCompanysQuery>(view);
         }
     }
 }

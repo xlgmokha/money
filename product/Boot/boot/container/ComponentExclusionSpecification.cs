@@ -1,6 +1,11 @@
 using System;
+using System.Windows.Forms;
+using Gorilla.Commons.Infrastructure.Container;
 using gorilla.commons.infrastructure.thirdparty.Castle.Windsor.Configuration;
 using gorilla.commons.utility;
+using MoMoney.Domain.Core;
+using MoMoney.Presentation;
+using MoMoney.Presentation.Core;
 
 namespace MoMoney.boot.container
 {
@@ -9,11 +14,13 @@ namespace MoMoney.boot.container
         public bool is_satisfied_by(Type type)
         {
             return type.has_no_interfaces()
-                .or(type.subclasses_form())
-                .or(type.is_an_implementation_of_dependency_registry())
-                .or(type.is_an_entity())
+                .or(type.is_a<Form>())
+                .or(type.is_a<DependencyRegistry>())
+                .or(type.is_a<Entity>())
                 .or(type.is_an_interface())
                 .or(type.is_abstract())
+                .or(type.is_a<IPresenter>())
+                .or(type.is_a<IModule>())
                 .is_satisfied_by(type);
         }
     }

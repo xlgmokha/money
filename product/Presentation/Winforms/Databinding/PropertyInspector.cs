@@ -14,8 +14,7 @@ namespace MoMoney.Presentation.Winforms.Databinding
     {
         public PropertyInfo inspect(Expression<Func<TypeToBindTo, TypeOfProperty>> property_to_bind_to)
         {
-            var expression = property_to_bind_to.Body.downcast_to<MemberExpression>();
-            return expression.Member.downcast_to<PropertyInfo>();
+            return property_to_bind_to.Body.downcast_to<MemberExpression>().Member.downcast_to<PropertyInfo>();
         }
     }
 }

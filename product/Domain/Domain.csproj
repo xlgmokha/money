@@ -72,12 +72,9 @@
     <Compile Include="accounting\BillSpecs.cs" />
     <Compile Include="accounting\Company.cs" />
     <Compile Include="accounting\CompanyFactory.cs" />
-    <Compile Include="accounting\ILedgerEntry.cs" />
     <Compile Include="accounting\Income.cs" />
     <Compile Include="accounting\Payment.cs" />
     <Compile Include="accounting\TotalPaymentsCalculator.cs" />
-    <Compile Include="accounting\GeneralLedger.cs" />
-    <Compile Include="accounting\GeneralLedgerSpecs.cs" />
     <Compile Include="accounting\AnnualIncomeVisitor.cs" />
     <Compile Include="accounting\IncomeExtensions.cs" />
     <Compile Include="core\GenericEntity.cs" />

@@ -1,3 +1,4 @@
+using System;
 using MoMoney.Presentation.Core;
 using momoney.presentation.model.eventing;
 using momoney.presentation.model.menu.file;
@@ -8,29 +9,32 @@ namespace momoney.presentation.presenters
 {
     public class ApplicationShellPresenter : IPresenter, IEventSubscriber<ClosingProjectEvent>
     {
-         IShell shell;
-         IEventAggregator broker;
-         IExitCommand command;
+        IExitCommand command;
+
+        Action shutdown = () =>
+                          {
+                          };
 
         protected ApplicationShellPresenter()
         {
         }
 
-        public ApplicationShellPresenter(IEventAggregator broker, IShell shell, IExitCommand command)
+        public ApplicationShellPresenter(IExitCommand command)
         {
-            this.broker = broker;
             this.command = command;
-            this.shell = shell;
         }
 
-        public virtual void present(IShell shell1)
+        public virtual void present(IShell shell)
         {
-            broker.subscribe(this);
+            shutdown = () =>
+                       {
+                           shell.close_all_windows();
+                       };
         }
 
         public virtual void notify(ClosingProjectEvent message)
         {
-            shell.close_all_windows();
+            shutdown();
         }
 
         public virtual void shut_down()

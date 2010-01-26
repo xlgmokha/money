@@ -3,25 +3,18 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.Accounting
 {
-    public interface IPayment : Entity
-    {
-        Money apply_to(Money money);
-    }
-
     [Serializable]
-    internal class Payment : GenericEntity<IPayment>, IPayment
+    class Payment : GenericEntity<Payment>
     {
-        Money amount_paid { get; set; }
-
-        public Payment(Money amount_paid)
+        static public Payment New(Money amount)
         {
-            this.amount_paid = amount_paid;
+            return new Payment
+                   {
+                       amount_paid = amount
+                   };
         }
 
-        public Money apply_to(Money money)
-        {
-            return money.add(amount_paid);
-        }
+        public Money amount_paid { get; set; }
 
         public bool Equals(Payment obj)
         {

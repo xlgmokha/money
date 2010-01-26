@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading;
 using gorilla.commons.utility;
 
@@ -9,13 +8,11 @@ namespace MoMoney.Service.Infrastructure.Eventing
     public class EventAggregator : IEventAggregator
     {
         readonly SynchronizationContext context;
-        readonly HashSet<object> subscribers;
-        readonly object mutex;
+        readonly HashSet<object> subscribers = new HashSet<object>();
+        readonly object mutex = new object();
 
         public EventAggregator(SynchronizationContext context)
         {
-            subscribers = new HashSet<object>();
-            mutex = new object();
             this.context = context;
         }
 
@@ -24,7 +21,7 @@ namespace MoMoney.Service.Infrastructure.Eventing
             subscribe(subscriber);
         }
 
-        public void subscribe<Listener>(Listener subscriber) where Listener : class
+        public void subscribe<Listener>(Listener subscriber) 
         {
             within_lock(() => subscribers.Add(subscriber));
         }
@@ -34,9 +31,9 @@ namespace MoMoney.Service.Infrastructure.Eventing
             process(() => subscribers.call_on_each<IEventSubscriber<Event>>(x => x.notify(the_event_to_broadcast)));
         }
 
-        public void publish<T>(Expression<Action<T>> call) where T : class
+        public void publish<T>(Action<T> call) where T : class
         {
-            process(() => subscribers.each(x => x.call_on(call.Compile())));
+            process(() => subscribers.each(x => x.call_on(call)));
         }
 
         public void publish<Event>() where Event : IEvent, new()

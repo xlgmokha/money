@@ -7,32 +7,18 @@ using MoMoney.Domain.Core;
 
 namespace MoMoney.Domain.accounting
 {
-    public interface IAccountHolder : Entity
-    {
-        void receive(IBill bill);
-        void receive(IIncome income);
-        IEnumerable<IBill> collect_all_the_unpaid_bills();
-        Money calculate_income_for(Year year);
-    }
-
     [Serializable]
-    public class AccountHolder : GenericEntity<IAccountHolder>, IAccountHolder
+    public class AccountHolder : GenericEntity<AccountHolder>
     {
-        IList<IBill> all_bills { get; set; }
-        IList<IIncome> income_collected { get; set; }
+        IList<Bill> all_bills = new List<Bill>();
+        IList<Income> income_collected = new List<Income>();
 
-        public AccountHolder()
-        {
-            all_bills = new List<IBill>();
-            income_collected = new List<IIncome>();
-        }
-
-        public void receive(IBill bill)
+        public void receive(Bill bill)
         {
             all_bills.Add(bill);
         }
 
-        public IEnumerable<IBill> collect_all_the_unpaid_bills()
+        public IEnumerable<Bill> collect_all_the_unpaid_bills()
         {
             return all_bills.where(bill => bill.is_not_paid());
         }
@@ -42,7 +28,7 @@ namespace MoMoney.Domain.accounting
             return income_collected.in_the(year);
         }
 
-        public void receive(IIncome income)
+        public void receive(Income income)
         {
             income_collected.Add(income);
         }

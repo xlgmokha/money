@@ -9,24 +9,21 @@ using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public interface IStatusBarPresenter : IModule,
-                                           IEventSubscriber<SavedChangesEvent>,
-                                           IEventSubscriber<NewProjectOpened>,
-                                           IEventSubscriber<ClosingTheApplication>,
-                                           IEventSubscriber<UnsavedChangesEvent>,
-                                           IEventSubscriber<StartedRunningCommand>,
-                                           IEventSubscriber<FinishedRunningCommand>,
-                                           IEventSubscriber<ClosingProjectEvent>
-    {
-    }
-
-    public class StatusBarPresenter : IStatusBarPresenter
+    public class StatusBarModule :
+        IModule,
+        IEventSubscriber<SavedChangesEvent>,
+        IEventSubscriber<NewProjectOpened>,
+        IEventSubscriber<ClosingTheApplication>,
+        IEventSubscriber<UnsavedChangesEvent>,
+        IEventSubscriber<StartedRunningCommand>,
+        IEventSubscriber<FinishedRunningCommand>,
+        IEventSubscriber<ClosingProjectEvent>
     {
         readonly IStatusBarView view;
         readonly IEventAggregator broker;
         readonly ITimer timer;
 
-        public StatusBarPresenter(IStatusBarView view, IEventAggregator broker, ITimer timer)
+        public StatusBarModule(IStatusBarView view, IEventAggregator broker, ITimer timer)
         {
             this.view = view;
             this.broker = broker;
@@ -35,7 +32,6 @@ namespace MoMoney.Presentation.Presenters
 
         public void run()
         {
-            broker.subscribe(this);
             view.display(ApplicationIcons.blue_circle, "...");
         }
 

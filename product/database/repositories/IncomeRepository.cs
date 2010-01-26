@@ -14,9 +14,9 @@ namespace momoney.database.repositories
             this.session = session;
         }
 
-        public IEnumerable<IIncome> all()
+        public IEnumerable<Income> all()
         {
-            return session.all<IIncome>();
+            return session.all<Income>();
         }
     }
 }

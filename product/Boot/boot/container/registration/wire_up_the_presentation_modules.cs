@@ -11,6 +11,7 @@ using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
 using momoney.presentation.presenters;
 using MoMoney.Presentation.Views;
+using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.boot.container.registration
 {
@@ -31,7 +32,7 @@ namespace MoMoney.boot.container.registration
         public void run(Assembly item)
         {
             Func<IApplicationController> target =
-                () => new ApplicationController(Lazy.load<IShell>(), Lazy.load<PresenterFactory>());
+                () => new ApplicationController(Lazy.load<IShell>(), Lazy.load<PresenterFactory>(), Lazy.load<IEventAggregator>());
             registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(target.memorize());
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
             registry.transient<IFileMenu, FileMenu>();

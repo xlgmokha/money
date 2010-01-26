@@ -6,16 +6,16 @@ using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Presenters
 {
-    [Concern(typeof (StatusBarPresenter))]
-    public class when_initializing_the_status_bar : concerns_for<IStatusBarPresenter, StatusBarPresenter>
+    [Concern(typeof (StatusBarModule))]
+    public class when_initializing_the_status_bar : concerns_for<StatusBarModule>
     {
         it should_display_a_ready_message =
             () => view.was_told_to(v => v.display(ApplicationIcons.green_circle, "Ready"));
 
         context c = () =>
-        {
-            view = the_dependency<IStatusBarView>();
-        };
+                    {
+                        view = the_dependency<IStatusBarView>();
+                    };
 
         because b = () => sut.notify(new NewProjectOpened(""));
 

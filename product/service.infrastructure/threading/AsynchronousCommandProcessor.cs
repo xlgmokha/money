@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading;
 using gorilla.commons.utility;
 
@@ -20,9 +19,9 @@ namespace MoMoney.Service.Infrastructure.Threading
             manual_reset = new ManualResetEvent(false);
         }
 
-        public void add(Expression<Action> action_to_process)
+        public void add(Action command)
         {
-            add(new AnonymousCommand(action_to_process));
+            add(new AnonymousCommand(command));
         }
 
         public void add(Command command_to_process)

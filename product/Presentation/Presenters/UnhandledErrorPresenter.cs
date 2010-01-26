@@ -10,14 +10,12 @@ namespace momoney.presentation.presenters
     public class UnhandledErrorPresenter : IModule, IPresenter, IEventSubscriber<UnhandledErrorOccurred>
     {
         readonly IUnhandledErrorView view;
-        readonly IEventAggregator broker;
         readonly IRestartCommand restart;
 
-        public UnhandledErrorPresenter(IUnhandledErrorView view, IEventAggregator broker, IRestartCommand command)
+        public UnhandledErrorPresenter(IUnhandledErrorView view, IRestartCommand command)
         {
             this.view = view;
             restart = command;
-            this.broker = broker;
         }
 
         public void present(IShell shell)
@@ -36,7 +34,6 @@ namespace momoney.presentation.presenters
 
         public void run()
         {
-            broker.subscribe_to(this);
         }
     }
 }

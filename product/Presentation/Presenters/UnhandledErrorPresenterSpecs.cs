@@ -19,13 +19,6 @@ namespace momoney.presentation.presenters
         protected static IEventAggregator broker;
     }
 
-    public class when_the_presenter_is_run : behaves_like_unhandled_error_presenter
-    {
-        it should_listen_for_any_errors_in_the_application = () => broker.was_told_to(x => x.subscribe_to(sut));
-
-        because b = () => sut.run();
-    }
-
     public class when_an_error_occurs_in_the_application : behaves_like_unhandled_error_presenter
     {
         it should_display_the_error = () => view.was_told_to(x => x.display(error));

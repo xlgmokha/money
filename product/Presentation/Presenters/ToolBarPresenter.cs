@@ -22,7 +22,7 @@ namespace momoney.presentation.presenters
             this.project = project;
         }
 
-        public void present(IShell shell1)
+        public void present(IShell shell)
         {
             shell.region<ToolStrip>(x => buttons().each(y => y.add_to(x)));
         }

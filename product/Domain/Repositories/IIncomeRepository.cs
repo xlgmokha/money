@@ -5,6 +5,6 @@ namespace MoMoney.Domain.repositories
 {
     public interface IIncomeRepository
     {
-        IEnumerable<IIncome> all();
+        IEnumerable<Income> all();
     }
 }
