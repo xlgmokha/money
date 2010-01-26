@@ -10,7 +10,7 @@ namespace MoMoney.Presentation.Winforms.Views
     [Integration]
     public class when_prompted_to_save_changes_to_the_project : concerns_for<SaveChangesView>
     {
-        context c = () => { presenter = an<ISaveChangesPresenter>(); };
+        context c = () => { presenter = an<SaveChangesPresenter>(); };
 
         after_the_sut_has_been_created after = () =>
                                                    {
@@ -18,7 +18,7 @@ namespace MoMoney.Presentation.Winforms.Views
                                                        save_changes_window.attach_to(presenter);
                                                    };
 
-        protected static ISaveChangesPresenter presenter;
+        protected static SaveChangesPresenter presenter;
         protected static SaveChangesView save_changes_window;
     }
 

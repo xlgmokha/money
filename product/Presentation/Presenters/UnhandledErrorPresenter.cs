@@ -24,6 +24,7 @@ namespace momoney.presentation.presenters
 
         public void notify(UnhandledErrorOccurred message)
         {
+            view.attach_to(this);
             view.display(message.error);
         }
 

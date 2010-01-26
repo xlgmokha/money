@@ -120,6 +120,7 @@
     <Compile Include="model\eventing\FinishedRunningCommand.cs" />
     <Compile Include="model\eventing\StartedRunningCommand.cs" />
     <Compile Include="model\menu\file\ISaveChangesCallback.cs" />
+    <Compile Include="model\menu\file\ISaveChangesCommand.cs" />
     <Compile Include="model\navigation\INavigationTreeVisitor.cs" />
     <Compile Include="model\navigation\ITreeBranch.cs" />
     <Compile Include="model\navigation\ITreeViewToRootNodeMapper.cs" />
@@ -147,7 +148,7 @@
     <Compile Include="model\menu\file\OpenCommandSpecs.cs" />
     <Compile Include="model\menu\file\SaveAsCommand.cs" />
     <Compile Include="model\menu\file\SaveAsCommandSpecs.cs" />
-    <Compile Include="model\menu\file\SaveChangesCommand.cs" />
+    <Compile Include="model\menu\file\SaveChangesPresenter.cs" />
     <Compile Include="model\menu\file\SaveCommand.cs" />
     <Compile Include="model\menu\file\SaveCommandSpecs.cs" />
     <Compile Include="model\menu\help\DisplayInformationAboutTheApplication.cs" />

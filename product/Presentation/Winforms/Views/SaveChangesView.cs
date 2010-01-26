@@ -34,7 +34,7 @@ namespace MoMoney.Presentation.Winforms.Views
             Closing += (sender, e) => closing_action(e);
         }
 
-        public void attach_to(ISaveChangesPresenter presenter)
+        public void attach_to(SaveChangesPresenter presenter)
         {
             can_be_closed = false;
             save_action = x => { execute(presenter.save); };

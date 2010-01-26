@@ -18,7 +18,6 @@ namespace momoney.presentation.presenters
 
         protected override void present()
         {
-            view.attach_to(this);
             pump
                 .run<IEnumerable<CompanyDTO>, IGetAllCompanysQuery>(view)
                 .run<IEnumerable<BillInformationDTO>, IGetAllBillsQuery>(view);

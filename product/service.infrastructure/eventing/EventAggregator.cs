@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using gorilla.commons.utility;
 
@@ -28,12 +29,14 @@ namespace MoMoney.Service.Infrastructure.Eventing
 
         public void publish<Event>(Event the_event_to_broadcast) where Event : IEvent
         {
-            process(() => subscribers.call_on_each<IEventSubscriber<Event>>(x => x.notify(the_event_to_broadcast)));
+            var current_subscribers = subscribers.ToList();
+            process(() => current_subscribers.call_on_each<IEventSubscriber<Event>>(x => x.notify(the_event_to_broadcast)));
         }
 
         public void publish<T>(Action<T> call) where T : class
         {
-            process(() => subscribers.each(x => x.call_on(call)));
+            var current_subscribers = subscribers.ToList();
+            process(() => current_subscribers.each(x => x.call_on(call)));
         }
 
         public void publish<Event>() where Event : IEvent, new()

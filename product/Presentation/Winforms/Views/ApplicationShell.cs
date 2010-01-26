@@ -15,7 +15,7 @@ namespace MoMoney.Presentation.Winforms.Views
     public partial class ApplicationShell : ApplicationWindow, IShell
     {
         readonly IDictionary<string, IComponent> regions;
-        ControlAction<EventArgs> closed_action;
+        ControlAction<EventArgs> closed_action = x => { };
 
         public ApplicationShell()
         {

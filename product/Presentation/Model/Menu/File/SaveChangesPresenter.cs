@@ -1,5 +1,4 @@
 using System;
-using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
 using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Model.Projects;
@@ -8,23 +7,14 @@ using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Model.Menu.File
 {
-    public interface ISaveChangesCommand : ParameterizedCommand<ISaveChangesCallback> {}
-
-    public interface ISaveChangesPresenter : IPresenter
-    {
-        void save();
-        void dont_save();
-        void cancel();
-    }
-
-    public class SaveChangesCommand : ISaveChangesCommand, ISaveChangesPresenter
+    public class SaveChangesPresenter : ISaveChangesCommand, IPresenter
     {
         readonly IProjectController current_project;
         readonly ISaveChangesView view;
         readonly ISaveAsCommand save_as_command;
         ISaveChangesCallback callback;
 
-        public SaveChangesCommand(IProjectController current_project, ISaveChangesView view, ISaveAsCommand save_as_command)
+        public SaveChangesPresenter(IProjectController current_project, ISaveChangesView view, ISaveAsCommand save_as_command)
         {
             this.current_project = current_project;
             this.save_as_command = save_as_command;
