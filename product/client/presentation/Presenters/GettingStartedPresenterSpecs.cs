@@ -23,11 +23,11 @@ namespace momoney.presentation.presenters
 
             context c = () =>
                         {
-                            shell = an<IShell>();
+                            shell = an<Shell>();
                         };
 
             because b = () => sut.present(shell);
-            static IShell shell;
+            static Shell shell;
         }
     }
 }

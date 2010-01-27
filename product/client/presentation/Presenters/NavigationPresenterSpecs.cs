@@ -13,7 +13,7 @@ namespace momoney.presentation.presenters
 
         context c = () =>
         {
-            shell = an<IShell>();
+            shell = an<Shell>();
             view = the_dependency<INavigationView>();
             tree_view_visitor = the_dependency<INavigationTreeVisitor>();
         };
@@ -22,6 +22,6 @@ namespace momoney.presentation.presenters
 
         static INavigationView view;
         static INavigationTreeVisitor tree_view_visitor;
-        static IShell shell;
+        static Shell shell;
     }
 }

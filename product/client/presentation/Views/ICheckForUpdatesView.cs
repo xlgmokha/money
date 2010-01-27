@@ -5,7 +5,7 @@ using momoney.service.infrastructure.updating;
 
 namespace momoney.presentation.views
 {
-    public interface ICheckForUpdatesView : IView<CheckForUpdatesPresenter>, Callback<ApplicationVersion>
+    public interface ICheckForUpdatesView : IDialog<CheckForUpdatesPresenter>, Callback<ApplicationVersion>
     {
         void display();
         void downloaded(Percent percentage_complete);

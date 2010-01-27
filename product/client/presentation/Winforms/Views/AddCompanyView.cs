@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Gorilla.Commons.Infrastructure.Logging;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters;
 using momoney.presentation.views;
@@ -35,8 +36,13 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void attach_to(AddCompanyPresenter presenter)
         {
+            this.log().debug("attaching add company presenter");
             ux_company_name.bind_to(dto, x => x.company_name);
-            submit_button = x => presenter.submit(dto);
+            submit_button = x =>
+                            {
+                                this.log().debug("clicked on submit button");
+                                presenter.submit(dto);
+                            };
         }
 
         public void run(IEnumerable<CompanyDTO> companies)

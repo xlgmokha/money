@@ -1,9 +1,6 @@
-using System;
-using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using gorilla.commons.utility;
-using momoney.presentation.views;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Resources;
@@ -21,41 +18,7 @@ namespace MoMoney.Presentation.Winforms.Views
             Icon = ApplicationIcons.Application;
             dock_state = DockState.Document;
             HideOnClose = true;
-
-            activated = x => { };
-            deactivated = x => { };
-            closed = x => { };
-            closing = x => { };
         }
-
-        protected override void OnActivated(EventArgs e)
-        {
-            base.OnActivated(e);
-            activated(e);
-        }
-
-        protected override void OnDeactivate(EventArgs e)
-        {
-            base.OnDeactivate(e);
-            deactivated(e);
-        }
-
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            closing(e);
-        }
-
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-            closed(e);
-        }
-
-        public ControlAction<EventArgs> activated { get; set; }
-        public ControlAction<EventArgs> deactivated { get; set; }
-        public ControlAction<EventArgs> closed { get; set; }
-        public ControlAction<CancelEventArgs> closing { get; set; }
 
         public IApplicationDockedWindow create_tool_tip_for(string title, string caption, Control control)
         {
@@ -94,36 +57,36 @@ namespace MoMoney.Presentation.Winforms.Views
         {
             using (new SuspendLayout(panel))
             {
-                if (window_is_already_contained_in(panel)) 
-                    remove_from(panel);
+                //if (window_is_already_contained_in(panel)) 
+                //    remove_from(panel);
 
                 Show(panel, dock_state);
             }
         }
 
-        void remove_from(DockPanel panel)
-        {
-            using (new SuspendLayout(panel))
-            {
-                var panel_to_remove = get_window_from(panel);
-                panel_to_remove.DockHandler.Close();
-                panel_to_remove.DockHandler.Dispose();
-            }
-        }
+        //void remove_from(DockPanel panel)
+        //{
+        //    using (new SuspendLayout(panel))
+        //    {
+        //        //var panel_to_remove = get_window_from(panel);
+        //        //panel_to_remove.DockHandler.Close();
+        //        //panel_to_remove.DockHandler.Dispose();
+        //    }
+        //}
 
-        IDockContent get_window_from(DockPanel panel)
-        {
-            return panel.Documents.Single(matches);
-        }
+        //IDockContent get_window_from(DockPanel panel)
+        //{
+        //    return panel.Documents.Single(matches);
+        //}
 
-        bool window_is_already_contained_in(DockPanel panel)
-        {
-            return panel.Documents.Count(matches) > 0;
-        }
+        //bool window_is_already_contained_in(DockPanel panel)
+        //{
+        //    return panel.Documents.Count(matches) > 0;
+        //}
 
-        bool matches(IDockContent x)
-        {
-            return x.DockHandler.TabText.Equals(TabText);
-        }
+        //bool matches(IDockContent x)
+        //{
+        //    return x.DockHandler.TabText.Equals(TabText);
+        //}
     }
 }

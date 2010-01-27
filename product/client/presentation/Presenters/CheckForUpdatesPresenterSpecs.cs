@@ -32,10 +32,10 @@ namespace momoney.presentation.presenters
 
         context c = () =>
                     {
-                        shell = an<IShell>();
+                        shell = an<Shell>();
                     };
         because b = () => sut.present(shell);
-        static IShell shell;
+        static Shell shell;
     }
 
     public class when_initiating_an_update_and_one_is_available : behaves_like_check_for_updates_presenter

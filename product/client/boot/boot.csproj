@@ -105,6 +105,7 @@
     </Compile>
     <Compile Include="boot\container\registration\auto_wire_components_in_to_the.cs" />
     <Compile Include="boot\container\registration\auto_wire_components_in_to_the_specs.cs" />
+    <Compile Include="boot\container\registration\IContainerStartup.cs" />
     <Compile Include="boot\container\registration\IStartupCommand.cs" />
     <Compile Include="boot\container\registration\mapping\Mappers.cs" />
     <Compile Include="boot\container\registration\mapping\DelegateTargetAction.cs" />

@@ -12,11 +12,11 @@ namespace momoney.presentation.presenters
         context c = () =>
         {
             view = the_dependency<IUnhandledErrorView>();
-            broker = the_dependency<IEventAggregator>();
+            broker = the_dependency<EventAggregator>();
         };
 
         protected static IUnhandledErrorView view;
-        protected static IEventAggregator broker;
+        protected static EventAggregator broker;
     }
 
     public class when_an_error_occurs_in_the_application : behaves_like_unhandled_error_presenter

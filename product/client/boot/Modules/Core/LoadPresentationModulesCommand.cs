@@ -7,9 +7,9 @@ namespace MoMoney.Modules.Core
     public class LoadPresentationModulesCommand : ILoadPresentationModulesCommand
     {
         Registry<IModule> registry;
-        IEventAggregator broker;
+        EventAggregator broker;
 
-        public LoadPresentationModulesCommand(Registry<IModule> registry, IEventAggregator broker)
+        public LoadPresentationModulesCommand(Registry<IModule> registry, EventAggregator broker)
         {
             this.registry = registry;
             this.broker = broker;

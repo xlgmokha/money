@@ -7,7 +7,7 @@ using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Model.Menu.File
 {
-    public class SaveChangesPresenter : ISaveChangesCommand, IPresenter
+    public class SaveChangesPresenter : ISaveChangesCommand, DialogPresenter
     {
         readonly IProjectController current_project;
         readonly ISaveChangesView view;
@@ -25,7 +25,7 @@ namespace MoMoney.Presentation.Model.Menu.File
             this.view = view;
         }
 
-        public virtual void present(IShell shell)
+        public virtual void present(Shell shell)
         {
             throw new NotImplementedException();
         }

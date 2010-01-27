@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
 
 namespace MoMoney.Service.Infrastructure.Threading
@@ -11,6 +12,8 @@ namespace MoMoney.Service.Infrastructure.Threading
         readonly EventWaitHandle manual_reset;
         readonly IList<Thread> worker_threads;
         bool keep_working;
+
+        static public readonly Command Empty = new EmptyCommand();
 
         public AsynchronousCommandProcessor()
         {
@@ -63,26 +66,48 @@ namespace MoMoney.Service.Infrastructure.Threading
 
         void run_next_command()
         {
-            Command command;
-            lock (queued_commands)
-            {
-                if (queued_commands.Count == 0)
-                {
-                    manual_reset.Reset();
-                    return;
-                }
-                command = queued_commands.Dequeue();
-            }
-            command.run();
+            var command = Empty;
+            within_lock(() =>
+                        {
+                            if (queued_commands.Count == 0)
+                                manual_reset.Reset();
+                            else
+                                command = queued_commands.Dequeue();
+                        });
+            safely_invoke(() =>
+                          {
+                              this.log().debug("running command: {0}", command);
+                              command.run();
+                          });
             reset_thread();
+        }
+
+        void safely_invoke(Action action)
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception e)
+            {
+                this.log().error(e);
+            }
         }
 
         void reset_thread()
         {
+            within_lock(() =>
+                        {
+                            if (queued_commands.Count > 0) manual_reset.Set();
+                            else manual_reset.Reset();
+                        });
+        }
+
+        void within_lock(Action action)
+        {
             lock (queued_commands)
             {
-                if (queued_commands.Count > 0) manual_reset.Set();
-                else manual_reset.Reset();
+                action();
             }
         }
     }

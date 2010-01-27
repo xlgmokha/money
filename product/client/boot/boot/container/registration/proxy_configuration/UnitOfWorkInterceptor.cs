@@ -9,10 +9,10 @@ namespace MoMoney.boot.container.registration.proxy_configuration
 
     public class UnitOfWorkInterceptor : IUnitOfWorkInterceptor
     {
-        readonly IEventAggregator broker;
+        readonly EventAggregator broker;
         readonly IUnitOfWorkFactory factory;
 
-        public UnitOfWorkInterceptor(IEventAggregator broker, IUnitOfWorkFactory factory)
+        public UnitOfWorkInterceptor(EventAggregator broker, IUnitOfWorkFactory factory)
         {
             this.broker = broker;
             this.factory = factory;

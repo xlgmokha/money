@@ -6,7 +6,7 @@ using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public class ReportPresenter<Report, T, Query> : ContentPresenter<IReportViewer>
+    public class ReportPresenter<Report, T, Query> : TabPresenter<IReportViewer>
         where Report : IBindReportTo<T, Query>
         where Query : Query<T>
     {

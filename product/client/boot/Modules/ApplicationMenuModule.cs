@@ -9,15 +9,15 @@ namespace MoMoney.Modules
 {
     public class ApplicationMenuModule :
         IModule,
-        IEventSubscriber<NewProjectOpened>,
-        IEventSubscriber<ClosingProjectEvent>,
-        IEventSubscriber<SavedChangesEvent>,
-        IEventSubscriber<UnsavedChangesEvent>
+        EventSubscriber<NewProjectOpened>,
+        EventSubscriber<ClosingProjectEvent>,
+        EventSubscriber<SavedChangesEvent>,
+        EventSubscriber<UnsavedChangesEvent>
     {
-        readonly IEventAggregator broker;
+        readonly EventAggregator broker;
         readonly IRunPresenterCommand command;
 
-        public ApplicationMenuModule(IEventAggregator broker, IRunPresenterCommand command)
+        public ApplicationMenuModule(EventAggregator broker, IRunPresenterCommand command)
         {
             this.broker = broker;
             this.command = command;

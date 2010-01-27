@@ -6,7 +6,7 @@ using MoMoney.Presentation.Views;
 
 namespace momoney.presentation.presenters
 {
-    public class ApplicationMenuPresenter : IPresenter
+    public class ApplicationMenuPresenter : Presenter
     {
         ISubMenuRegistry registry;
 
@@ -15,7 +15,7 @@ namespace momoney.presentation.presenters
             this.registry = registry;
         }
 
-        public void present(IShell shell)
+        public void present(Shell shell)
         {
             shell.region<MenuStrip>(x => registry.all().each(y => y.add_to(x)));
         }

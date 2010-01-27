@@ -9,7 +9,7 @@ namespace MoMoney.Presentation.Winforms.Views
 {
     public class ApplicationShellSpecs
     {
-        public class concern : concerns_for<IShell, ApplicationShell>
+        public class concern : concerns_for<Shell, ApplicationShell>
         {
         }
 

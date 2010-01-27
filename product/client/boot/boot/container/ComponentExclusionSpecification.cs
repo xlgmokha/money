@@ -19,7 +19,7 @@ namespace MoMoney.boot.container
                 .or(type.is_a<Entity>())
                 .or(type.is_an_interface())
                 .or(type.is_abstract())
-                .or(type.is_a<IPresenter>())
+                .or(type.is_a<Presenter>())
                 .or(type.is_a<IModule>())
                 .is_satisfied_by(type);
         }

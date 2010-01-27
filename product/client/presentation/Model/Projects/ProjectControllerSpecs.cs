@@ -17,11 +17,11 @@ namespace MoMoney.Presentation.Model.Projects
         {
             context c = () =>
             {
-                broker = the_dependency<IEventAggregator>();
+                broker = the_dependency<EventAggregator>();
                 tasks = the_dependency<IProjectTasks>();
             };
 
-            static protected IEventAggregator broker;
+            static protected EventAggregator broker;
             static protected IProjectTasks tasks;
         }
 

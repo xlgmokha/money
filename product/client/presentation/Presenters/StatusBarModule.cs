@@ -11,19 +11,19 @@ namespace MoMoney.Presentation.Presenters
 {
     public class StatusBarModule :
         IModule,
-        IEventSubscriber<SavedChangesEvent>,
-        IEventSubscriber<NewProjectOpened>,
-        IEventSubscriber<ClosingTheApplication>,
-        IEventSubscriber<UnsavedChangesEvent>,
-        IEventSubscriber<StartedRunningCommand>,
-        IEventSubscriber<FinishedRunningCommand>,
-        IEventSubscriber<ClosingProjectEvent>
+        EventSubscriber<SavedChangesEvent>,
+        EventSubscriber<NewProjectOpened>,
+        EventSubscriber<ClosingTheApplication>,
+        EventSubscriber<UnsavedChangesEvent>,
+        EventSubscriber<StartedRunningCommand>,
+        EventSubscriber<FinishedRunningCommand>,
+        EventSubscriber<ClosingProjectEvent>
     {
         readonly IStatusBarView view;
-        readonly IEventAggregator broker;
+        readonly EventAggregator broker;
         readonly ITimer timer;
 
-        public StatusBarModule(IStatusBarView view, IEventAggregator broker, ITimer timer)
+        public StatusBarModule(IStatusBarView view, EventAggregator broker, ITimer timer)
         {
             this.view = view;
             this.broker = broker;

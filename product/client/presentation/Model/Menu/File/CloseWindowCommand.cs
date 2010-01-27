@@ -7,9 +7,9 @@ namespace momoney.presentation.model.menu.file
 
     public class CloseWindowCommand : ICloseWindowCommand
     {
-        readonly IShell shell;
+        readonly Shell shell;
 
-        public CloseWindowCommand(IShell shell)
+        public CloseWindowCommand(Shell shell)
         {
             this.shell = shell;
         }

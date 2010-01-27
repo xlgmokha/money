@@ -6,9 +6,9 @@ namespace MoMoney.Modules
     public class DatabaseModule : IDatabaseModule
     {
         readonly IDatabaseConfiguration configuration;
-        readonly IEventAggregator broker;
+        readonly EventAggregator broker;
 
-        public DatabaseModule(IDatabaseConfiguration configuration, IEventAggregator broker)
+        public DatabaseModule(IDatabaseConfiguration configuration, EventAggregator broker)
         {
             this.configuration = configuration;
             this.broker = broker;

@@ -11,8 +11,8 @@ using MoMoney.Presentation.Winforms.Helpers;
 
 namespace MoMoney.Presentation.Winforms.Views
 {
-    [Export(typeof (IShell))]
-    public partial class ApplicationShell : ApplicationWindow, IShell
+    [Export(typeof (Shell))]
+    public partial class ApplicationShell : ApplicationWindow, Shell
     {
         readonly IDictionary<string, IComponent> regions;
         ControlAction<EventArgs> closed_action = x => { };

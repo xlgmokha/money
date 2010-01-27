@@ -5,7 +5,7 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Modules
 {
-    public class MainMenuModule : IModule, IEventSubscriber<NewProjectOpened>
+    public class MainMenuModule : IModule, EventSubscriber<NewProjectOpened>
     {
         readonly IRunPresenterCommand command;
 

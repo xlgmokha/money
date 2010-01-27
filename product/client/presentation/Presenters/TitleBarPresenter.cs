@@ -8,10 +8,10 @@ namespace momoney.presentation.presenters
 {
     public class TitleBarPresenter :
         IModule,
-        IEventSubscriber<UnsavedChangesEvent>,
-        IEventSubscriber<SavedChangesEvent>,
-        IEventSubscriber<NewProjectOpened>,
-        IEventSubscriber<ClosingProjectEvent>
+        EventSubscriber<UnsavedChangesEvent>,
+        EventSubscriber<SavedChangesEvent>,
+        EventSubscriber<NewProjectOpened>,
+        EventSubscriber<ClosingProjectEvent>
     {
         readonly ITitleBar view;
         readonly IProjectController project;

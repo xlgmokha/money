@@ -18,12 +18,12 @@ namespace momoney.presentation.model.menu.file
         context c = () =>
         {
             application = the_dependency<IApplication>();
-            broker = the_dependency<IEventAggregator>();
+            broker = the_dependency<EventAggregator>();
             save_changes_command = the_dependency<ISaveChangesCommand>();
         };
 
         protected static IApplication application;
-        protected static IEventAggregator broker;
+        protected static EventAggregator broker;
         protected static ISaveChangesCommand save_changes_command;
     }
 

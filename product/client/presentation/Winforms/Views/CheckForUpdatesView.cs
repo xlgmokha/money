@@ -12,12 +12,12 @@ namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class CheckForUpdatesView : ApplicationWindow, ICheckForUpdatesView
     {
-        readonly IShell shell;
+        readonly Shell shell;
         ControlAction<EventArgs> update_button;
         ControlAction<EventArgs> dont_update_button;
         ControlAction<EventArgs> cancel_button;
 
-        public CheckForUpdatesView(IShell shell)
+        public CheckForUpdatesView(Shell shell)
         {
             InitializeComponent();
 

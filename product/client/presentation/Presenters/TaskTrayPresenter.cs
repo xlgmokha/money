@@ -8,10 +8,10 @@ namespace momoney.presentation.presenters
 {
     public class TaskTrayPresenter :
         IModule,
-        IEventSubscriber<SavedChangesEvent>,
-        IEventSubscriber<StartedRunningCommand>,
-        IEventSubscriber<FinishedRunningCommand>,
-        IEventSubscriber<NewProjectOpened>
+        EventSubscriber<SavedChangesEvent>,
+        EventSubscriber<StartedRunningCommand>,
+        EventSubscriber<FinishedRunningCommand>,
+        EventSubscriber<NewProjectOpened>
     {
         readonly ITaskTrayMessageView view;
 

@@ -1,4 +1,5 @@
 using Gorilla.Commons.Infrastructure.Container;
+using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
 using MoMoney.Service.Infrastructure.Threading;
 
@@ -15,9 +16,9 @@ namespace MoMoney.Presentation.Presenters
     {
         readonly CommandProcessor processor;
         readonly DependencyRegistry registry;
-        readonly ICommandFactory factory;
+        readonly CommandFactory factory;
 
-        public CommandPump(CommandProcessor processor, DependencyRegistry registry, ICommandFactory factory)
+        public CommandPump(CommandProcessor processor, DependencyRegistry registry, CommandFactory factory)
         {
             this.processor = processor;
             this.factory = factory;
@@ -37,11 +38,14 @@ namespace MoMoney.Presentation.Presenters
 
         public ICommandPump run<Command, T>(T input) where Command : ParameterizedCommand<T>
         {
-            processor.add(() => registry.get_a<Command>().run(input));
+            var cached = input;
+            var command = registry.get_a<Command>();
+            this.log().debug("found: {0}", command);
+            processor.add(() => command.run(cached));
             return this;
         }
 
-        public ICommandPump run<T>(Callback<T> item, Query<T> query)
+        ICommandPump run<T>(Callback<T> item, Query<T> query)
         {
             return run(factory.create_for(item, query));
         }

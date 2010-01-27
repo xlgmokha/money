@@ -7,7 +7,7 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters
 {
-    public class UnhandledErrorPresenter : IModule, IPresenter, IEventSubscriber<UnhandledErrorOccurred>
+    public class UnhandledErrorPresenter : IModule, Presenter, EventSubscriber<UnhandledErrorOccurred>
     {
         readonly IUnhandledErrorView view;
         readonly IRestartCommand restart;
@@ -18,7 +18,7 @@ namespace momoney.presentation.presenters
             restart = command;
         }
 
-        public void present(IShell shell)
+        public void present(Shell shell)
         {
         }
 

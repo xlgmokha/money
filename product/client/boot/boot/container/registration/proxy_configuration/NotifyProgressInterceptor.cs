@@ -10,9 +10,9 @@ namespace MoMoney.boot.container.registration.proxy_configuration
 
     public class NotifyProgressInterceptor : INotifyProgressInterceptor
     {
-        readonly IEventAggregator broker;
+        readonly EventAggregator broker;
 
-        public NotifyProgressInterceptor(IEventAggregator broker)
+        public NotifyProgressInterceptor(EventAggregator broker)
         {
             this.broker = broker;
         }

@@ -10,12 +10,12 @@ namespace MoMoney.Presentation.Model.Projects
 {
     public class ProjectController : IProjectController, Callback<IUnitOfWork>
     {
-        readonly IEventAggregator broker;
+        readonly EventAggregator broker;
         readonly IProjectTasks configuration;
         IProject project;
         bool unsaved_changes = false;
 
-        public ProjectController(IEventAggregator broker, IProjectTasks configuration)
+        public ProjectController(EventAggregator broker, IProjectTasks configuration)
         {
             this.broker = broker;
             this.configuration = configuration;

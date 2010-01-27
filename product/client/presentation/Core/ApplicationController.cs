@@ -5,23 +5,23 @@ namespace MoMoney.Presentation.Core
 {
     public interface IApplicationController
     {
-        void run<Presenter>() where Presenter : IPresenter;
+        void run<Presenter>() where Presenter : Core.Presenter;
     }
 
     public class ApplicationController : IApplicationController
     {
-        IShell shell;
+        Shell shell;
         PresenterFactory presenter_factory;
-        IEventAggregator broker;
+        EventAggregator broker;
 
-        public ApplicationController(IShell shell, PresenterFactory presenter_factory, IEventAggregator broker)
+        public ApplicationController(Shell shell, PresenterFactory presenter_factory, EventAggregator broker)
         {
             this.presenter_factory = presenter_factory;
             this.broker = broker;
             this.shell = shell;
         }
 
-        public void run<Presenter>() where Presenter : IPresenter
+        public void run<Presenter>() where Presenter : Core.Presenter
         {
             var presenter = presenter_factory.create<Presenter>();
             broker.subscribe(presenter);

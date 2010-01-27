@@ -21,11 +21,11 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            registry.transient<IReportViewer, ReportViewer>();
-            registry.transient(typeof (IPresenter), typeof (ReportPresenter<IViewAllBillsReport, IEnumerable<BillInformationDTO>, IGetAllBillsQuery>));
-            registry.transient<IViewAllBillsReport, ViewAllBillsReport>();
-            registry.transient(typeof (IPresenter), typeof (ReportPresenter<IViewAllIncomeReport, IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>));
-            registry.transient<IViewAllIncomeReport, ViewAllIncomeReport>();
+            registry.singleton<IReportViewer, ReportViewer>();
+            registry.transient(typeof (Presenter), typeof (ReportPresenter<IViewAllBillsReport, IEnumerable<BillInformationDTO>, IGetAllBillsQuery>));
+            registry.singleton<IViewAllBillsReport, ViewAllBillsReport>();
+            registry.transient(typeof (Presenter), typeof (ReportPresenter<IViewAllIncomeReport, IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>));
+            registry.singleton<IViewAllIncomeReport, ViewAllIncomeReport>();
         }
     }
 }

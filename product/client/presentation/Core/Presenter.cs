@@ -2,8 +2,8 @@ using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Core
 {
-    public interface IPresenter
+    public interface Presenter
     {
-        void present(IShell shell);
+        void present(Shell shell);
     }
 }

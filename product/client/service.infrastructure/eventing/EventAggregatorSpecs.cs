@@ -6,15 +6,15 @@ using Rhino.Mocks;
 
 namespace MoMoney.Service.Infrastructure.Eventing
 {
-    public abstract class behaves_like_event_aggregator : concerns_for<IEventAggregator, EventAggregator>
+    public abstract class behaves_like_event_aggregator : concerns_for<EventAggregator, SynchronizedEventAggregator>
     {
-        public override IEventAggregator create_sut()
+        public override EventAggregator create_sut()
         {
-            return new EventAggregator(new SynchronizationContext());
+            return new SynchronizedEventAggregator(new SynchronizationContext());
         }
     }
 
-    [Concern(typeof (EventAggregator))]
+    [Concern(typeof (SynchronizedEventAggregator))]
     public class when_a_event_is_raised_in_the_system : behaves_like_event_aggregator
     {
         it should_notify_all_subscribers_of_the_event = () =>
@@ -29,9 +29,9 @@ namespace MoMoney.Service.Infrastructure.Eventing
         context c = () =>
         {
             message = new TestEvent();
-            first_subscriber = an<IEventSubscriber<TestEvent>>();
-            second_subscriber = an<IEventSubscriber<TestEvent>>();
-            incorrect_subscriber = an<IEventSubscriber<AnotherEvent>>();
+            first_subscriber = an<EventSubscriber<TestEvent>>();
+            second_subscriber = an<EventSubscriber<TestEvent>>();
+            incorrect_subscriber = an<EventSubscriber<AnotherEvent>>();
         };
 
         because b = () =>
@@ -42,12 +42,12 @@ namespace MoMoney.Service.Infrastructure.Eventing
         };
 
         static TestEvent message;
-        static IEventSubscriber<TestEvent> first_subscriber;
-        static IEventSubscriber<TestEvent> second_subscriber;
-        static IEventSubscriber<AnotherEvent> incorrect_subscriber;
+        static EventSubscriber<TestEvent> first_subscriber;
+        static EventSubscriber<TestEvent> second_subscriber;
+        static EventSubscriber<AnotherEvent> incorrect_subscriber;
     }
 
-    [Concern(typeof (EventAggregator))]
+    [Concern(typeof (SynchronizedEventAggregator))]
     public class when_publishing_a_call_to_all_subscribers : behaves_like_event_aggregator
     {
         it should_make_the_call_on_each_subscriber = () => connection.was_told_to(x => x.ChangeDatabase("localhost"));

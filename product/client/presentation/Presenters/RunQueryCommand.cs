@@ -3,9 +3,7 @@ using MoMoney.Presentation.Presenters;
 
 namespace momoney.presentation.presenters
 {
-    public interface IRunQueryCommand<T> : Command {}
-
-    public class RunQueryCommand<T> : IRunQueryCommand<T>
+    public class RunQueryCommand<T> : Command
     {
         readonly Callback<T> callback;
         readonly IProcessQueryCommand<T> command;

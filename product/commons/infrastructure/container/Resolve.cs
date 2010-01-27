@@ -5,12 +5,10 @@ namespace Gorilla.Commons.Infrastructure.Container
     static public class Resolve
     {
         static DependencyRegistry underlying_registry;
-        static bool initialized;
 
         static public void initialize_with(DependencyRegistry registry)
         {
             underlying_registry = registry;
-            initialized = registry != null;
         }
 
         static public DependencyToResolve the<DependencyToResolve>()
@@ -27,7 +25,7 @@ namespace Gorilla.Commons.Infrastructure.Container
 
         static public bool is_initialized()
         {
-            return initialized;
+            return underlying_registry != null;
         }
     }
 }

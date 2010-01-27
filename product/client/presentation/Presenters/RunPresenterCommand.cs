@@ -11,7 +11,7 @@ namespace MoMoney.Presentation.Presenters
             this.application_controller = application_controller;
         }
 
-        public void run<Presenter>() where Presenter : IPresenter
+        public void run<Presenter>() where Presenter : Core.Presenter
         {
             application_controller.run<Presenter>();
         }

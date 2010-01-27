@@ -1,5 +1,3 @@
-using System;
-using System.ComponentModel;
 using System.Windows.Forms;
 using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Helpers;
@@ -13,17 +11,7 @@ namespace MoMoney.Presentation.Winforms.Views
         {
             InitializeComponent();
             Icon = ApplicationIcons.Application;
-
-            activated = x => { };
-            deactivated = x => { };
-            closed = x => { };
-            closing = x => { };
         }
-
-        public ControlAction<EventArgs> activated { get; set; }
-        public ControlAction<EventArgs> deactivated { get; set; }
-        public ControlAction<EventArgs> closed { get; set; }
-        public ControlAction<CancelEventArgs> closing { get; set; }
 
         public IApplicationWindow create_tool_tip_for(string title, string caption, Control control)
         {
@@ -52,30 +40,6 @@ namespace MoMoney.Presentation.Winforms.Views
         {
             base.Text = "MoMoney (BETA) - " + title;
             return this;
-        }
-
-        protected override void OnActivated(EventArgs e)
-        {
-            base.OnActivated(e);
-            activated(e);
-        }
-
-        protected override void OnDeactivate(EventArgs e)
-        {
-            base.OnDeactivate(e);
-            deactivated(e);
-        }
-
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            closing(e);
-        }
-
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-            closed(e);
         }
     }
 }

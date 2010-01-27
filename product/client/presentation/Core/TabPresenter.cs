@@ -3,11 +3,11 @@ using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Core
 {
-    public abstract class ContentPresenter<T> : IContentPresenter where T : IDockedContentView
+    public abstract class TabPresenter<T> : IContentPresenter where T : IDockedContentView
     {
         protected readonly T view;
 
-        protected ContentPresenter(T view)
+        protected TabPresenter(T view)
         {
             this.view = view;
         }
@@ -16,7 +16,7 @@ namespace MoMoney.Presentation.Core
         {
         }
 
-        public void present(IShell shell)
+        public void present(Shell shell)
         {
             shell.add(view);
             present();

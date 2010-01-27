@@ -117,6 +117,7 @@
   <ItemGroup>
     <Compile Include="core\CachedPresenterFactory.cs" />
     <Compile Include="core\CachingViewFactory.cs" />
+    <Compile Include="core\DialogPresenter.cs" />
     <Compile Include="model\eventing\FinishedRunningCommand.cs" />
     <Compile Include="model\eventing\StartedRunningCommand.cs" />
     <Compile Include="model\menu\file\ISaveChangesCallback.cs" />
@@ -126,13 +127,14 @@
     <Compile Include="model\navigation\ITreeViewToRootNodeMapper.cs" />
     <Compile Include="model\reporting\IBindReportTo.cs" />
     <Compile Include="presenters\CommandFactory.cs" />
+    <Compile Include="presenters\SynchronizedCommandFactory.cs" />
     <Compile Include="presenters\CommandPump.cs" />
     <Compile Include="core\ApplicationController.cs" />
     <Compile Include="core\ApplicationControllerSpecs.cs" />
     <Compile Include="core\ApplicationEnvironment.cs" />
-    <Compile Include="core\ContentPresenter.cs" />
+    <Compile Include="core\TabPresenter.cs" />
     <Compile Include="core\IContentPresenter.cs" />
-    <Compile Include="core\IPresenter.cs" />
+    <Compile Include="core\Presenter.cs" />
     <Compile Include="core\PresenterRegistry.cs" />
     <Compile Include="IModule.cs" />
     <Compile Include="model\filesystem\folder.cs" />
@@ -248,6 +250,7 @@
     <Compile Include="presenters\CheckForUpdatesPresenter.cs" />
     <Compile Include="presenters\CheckForUpdatesPresenterSpecs.cs" />
     <Compile Include="presenters\ProcessQueryCommand.cs" />
+    <Compile Include="views\IDialog.cs" />
     <Compile Include="views\ISelectFileToOpenDialog.cs" />
     <Compile Include="views\ISelectFileToSaveToDialog.cs" />
     <Compile Include="views\ITaskTrayMessageView.cs" />
@@ -310,7 +313,6 @@
     <Compile Include="views\IDialogLauncher.cs" />
     <Compile Include="views\IDockedContentView.cs" />
     <Compile Include="views\IView.cs" />
-    <Compile Include="views\IWindowEvents.cs" />
     <Compile Include="views\ISaveChangesView.cs" />
     <Compile Include="winforms\views\SaveChangesView.cs">
       <SubType>Form</SubType>
@@ -375,7 +377,7 @@
     <Compile Include="views\ILogFileView.cs" />
     <Compile Include="views\INotificationIconView.cs" />
     <Compile Include="views\IRegionManager.cs" />
-    <Compile Include="views\IShell.cs" />
+    <Compile Include="views\Shell.cs" />
     <Compile Include="views\IStatusBarView.cs" />
     <Compile Include="views\IUnhandledErrorView.cs" />
     <Compile Include="winforms\views\LogFileView.cs">

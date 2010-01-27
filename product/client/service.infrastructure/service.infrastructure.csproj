@@ -83,11 +83,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="debugging\Launch.cs" />
-    <Compile Include="eventing\EventAggregator.cs" />
+    <Compile Include="eventing\SynchronizedEventAggregator.cs" />
     <Compile Include="eventing\EventAggregatorSpecs.cs" />
     <Compile Include="eventing\IEvent.cs" />
-    <Compile Include="eventing\IEventAggregator.cs" />
-    <Compile Include="eventing\IEventSubscriber.cs" />
+    <Compile Include="eventing\EventAggregator.cs" />
+    <Compile Include="eventing\EventSubscriber.cs" />
     <Compile Include="IProjectTasks.cs" />
     <Compile Include="logging\ILogFileTasks.cs" />
     <Compile Include="logging\LogFileTasks.cs" />

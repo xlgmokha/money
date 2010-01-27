@@ -1,6 +1,6 @@
 namespace MoMoney.Presentation.Core
 {
-    public interface IContentPresenter : IPresenter
+    public interface IContentPresenter : Presenter
     {
     }
 }

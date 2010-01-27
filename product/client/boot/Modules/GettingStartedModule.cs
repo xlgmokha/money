@@ -8,8 +8,8 @@ namespace MoMoney.Modules
 {
     public class GettingStartedModule :
         IModule,
-        IEventSubscriber<NewProjectOpened>,
-        IEventSubscriber<ClosingProjectEvent>
+        EventSubscriber<NewProjectOpened>,
+        EventSubscriber<ClosingProjectEvent>
     {
         IRunPresenterCommand command;
 

@@ -4,7 +4,7 @@ using momoney.presentation.views;
 
 namespace momoney.presentation.presenters
 {
-    public class NavigationPresenter : ContentPresenter<INavigationView>
+    public class NavigationPresenter : TabPresenter<INavigationView>
     {
         readonly INavigationTreeVisitor tree_view_visitor;
 

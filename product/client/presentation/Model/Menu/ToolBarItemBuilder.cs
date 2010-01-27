@@ -14,7 +14,7 @@ namespace MoMoney.Presentation.Model.Menu
         readonly CommandProcessor processor;
         Func<bool> the_condition;
 
-        public ToolBarItemBuilder(DependencyRegistry registry, IEventAggregator aggregator, CommandProcessor processor)
+        public ToolBarItemBuilder(DependencyRegistry registry, EventAggregator aggregator, CommandProcessor processor)
         {
             this.registry = registry;
             this.processor = processor;

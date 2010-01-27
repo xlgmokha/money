@@ -25,7 +25,9 @@ namespace MoMoney.Service.Application
             if (is_there_a_company_registered_with(item.company_name))
                 notification.notify(create_error_message_from(item));
             else
+            {
                 factory.create().change_name_to(item.company_name);
+            }
         }
 
         bool is_there_a_company_registered_with(string company_name)

@@ -20,27 +20,27 @@ namespace MoMoney.boot.container.registration
         public void run()
         {
             var shell = new ApplicationShell();
-            register.singleton<IShell>(() => shell);
+            register.singleton<Shell>(() => shell);
             register.singleton<IWin32Window>(() => shell);
             register.singleton<ISynchronizeInvoke>(() => shell);
             register.singleton<IRegionManager>(() => shell);
             register.singleton(() => shell);
-            register.transient<IAboutApplicationView, AboutTheApplicationView>();
-            register.transient<ISplashScreenView, SplashScreenView>();
-            register.transient<INavigationView, NavigationView>();
-            register.transient<IAddCompanyView, AddCompanyView>();
-            register.transient<IViewAllBills, ViewAllBills>();
-            register.transient<IAddBillPaymentView, AddBillPaymentView>();
-            register.transient<IMainMenuView, MainMenuView>();
-            register.transient<IAddNewIncomeView, AddNewIncomeView>();
-            register.transient<IViewIncomeHistory, ViewAllIncome>();
+            register.singleton<IAboutApplicationView, AboutTheApplicationView>();
+            register.singleton<ISplashScreenView, SplashScreenView>();
+            register.singleton<INavigationView, NavigationView>();
+            register.singleton<IAddCompanyView, AddCompanyView>();
+            register.singleton<IViewAllBills, ViewAllBills>();
+            register.singleton<IAddBillPaymentView, AddBillPaymentView>();
+            register.singleton<IMainMenuView, MainMenuView>();
+            register.singleton<IAddNewIncomeView, AddNewIncomeView>();
+            register.singleton<IViewIncomeHistory, ViewAllIncome>();
             register.transient<ISaveChangesView, SaveChangesView>();
             register.transient<ICheckForUpdatesView, CheckForUpdatesView>();
             register.singleton<INotificationIconView, NotificationIconView>();
-            register.transient<IStatusBarView, StatusBarView>();
+            register.singleton<IStatusBarView, StatusBarView>();
             register.transient<IUnhandledErrorView, UnhandledErrorView>();
-            register.transient<IGettingStartedView, WelcomeScreen>();
-            register.transient<ILogFileView, LogFileView>();
+            register.singleton<IGettingStartedView, WelcomeScreen>();
+            register.singleton<ILogFileView, LogFileView>();
         }
     }
 }

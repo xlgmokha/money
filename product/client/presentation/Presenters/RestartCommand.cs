@@ -10,9 +10,9 @@ namespace momoney.presentation.presenters
     public class RestartCommand : IRestartCommand
     {
         readonly IApplication application;
-        readonly IEventAggregator broker;
+        readonly EventAggregator broker;
 
-        public RestartCommand(IApplication application, IEventAggregator broker)
+        public RestartCommand(IApplication application, EventAggregator broker)
         {
             this.application = application;
             this.broker = broker;

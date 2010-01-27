@@ -13,10 +13,10 @@ namespace momoney.presentation.model.menu.file
     public class ExitCommand : IExitCommand
     {
         readonly IApplication application;
-        readonly IEventAggregator broker;
+        readonly EventAggregator broker;
         readonly ISaveChangesCommand command;
 
-        public ExitCommand(IApplication application, IEventAggregator broker, ISaveChangesCommand command)
+        public ExitCommand(IApplication application, EventAggregator broker, ISaveChangesCommand command)
         {
             this.application = application;
             this.command = command;

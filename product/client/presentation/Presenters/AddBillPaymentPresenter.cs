@@ -7,7 +7,7 @@ using MoMoney.Service.Contracts.Application;
 
 namespace momoney.presentation.presenters
 {
-    public class AddBillPaymentPresenter : ContentPresenter<IAddBillPaymentView>
+    public class AddBillPaymentPresenter : TabPresenter<IAddBillPaymentView>
     {
         readonly ICommandPump pump;
 

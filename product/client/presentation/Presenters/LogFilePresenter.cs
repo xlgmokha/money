@@ -4,7 +4,7 @@ using momoney.service.infrastructure.logging;
 
 namespace momoney.presentation.presenters
 {
-    public class LogFilePresenter : ContentPresenter<ILogFileView>
+    public class LogFilePresenter : TabPresenter<ILogFileView>
     {
         ILogFileTasks tasks;
 

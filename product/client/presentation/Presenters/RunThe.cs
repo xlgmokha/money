@@ -4,9 +4,9 @@ using MoMoney.Service.Infrastructure.Threading;
 
 namespace momoney.presentation.presenters
 {
-    public interface IRunThe<TPresenter> : Command where TPresenter : IPresenter {}
+    public interface IRunThe<TPresenter> : Command where TPresenter : Presenter {}
 
-    public class RunThe<TPresenter> : IRunThe<TPresenter> where TPresenter : IPresenter
+    public class RunThe<TPresenter> : IRunThe<TPresenter> where TPresenter : Presenter
     {
         readonly IApplicationController controller;
         readonly CommandProcessor processor;

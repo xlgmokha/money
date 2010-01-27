@@ -9,7 +9,7 @@ using momoney.service.infrastructure.updating;
 
 namespace momoney.presentation.presenters
 {
-    public class CheckForUpdatesPresenter : IPresenter, Callback<Percent>
+    public class CheckForUpdatesPresenter : DialogPresenter, Callback<Percent>
     {
         readonly ICheckForUpdatesView view;
         readonly ICommandPump pump;
@@ -20,7 +20,7 @@ namespace momoney.presentation.presenters
             this.view = view;
         }
 
-        public void present(IShell shell)
+        public void present(Shell shell)
         {
             pump.run<ApplicationVersion, IWhatIsTheAvailableVersion>(view);
             view.display();

@@ -32,7 +32,7 @@ namespace MoMoney.boot.container.registration
         public void run(Assembly item)
         {
             Func<IApplicationController> target =
-                () => new ApplicationController(Lazy.load<IShell>(), Lazy.load<PresenterFactory>(), Lazy.load<IEventAggregator>());
+                () => new ApplicationController(Lazy.load<Shell>(), Lazy.load<PresenterFactory>(), Lazy.load<EventAggregator>());
             registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(target.memorize());
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));
             registry.transient<IFileMenu, FileMenu>();
@@ -42,11 +42,11 @@ namespace MoMoney.boot.container.registration
 
             item
                 .all_types()
-                .where(x => typeof (IPresenter).IsAssignableFrom(x))
+                .where(x => typeof (Presenter).IsAssignableFrom(x))
                 .where(x => !x.IsInterface)
                 .where(x => !x.IsAbstract)
                 .where(x => !x.IsGenericType)
-                .each(type => registry.transient(typeof (IPresenter), type));
+                .each(type => registry.transient(typeof (Presenter), type));
 
             item
                 .all_types()

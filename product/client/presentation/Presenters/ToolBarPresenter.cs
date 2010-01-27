@@ -11,7 +11,7 @@ using MoMoney.Presentation.Winforms.Resources;
 
 namespace momoney.presentation.presenters
 {
-    public class ToolBarPresenter : IPresenter
+    public class ToolBarPresenter : Presenter
     {
         IRegionManager shell;
         IProjectController project;
@@ -22,7 +22,7 @@ namespace momoney.presentation.presenters
             this.project = project;
         }
 
-        public void present(IShell shell)
+        public void present(Shell shell)
         {
             shell.region<ToolStrip>(x => buttons().each(y => y.add_to(x)));
         }

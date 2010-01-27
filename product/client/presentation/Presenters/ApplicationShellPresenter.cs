@@ -7,7 +7,7 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters
 {
-    public class ApplicationShellPresenter : IPresenter, IEventSubscriber<ClosingProjectEvent>
+    public class ApplicationShellPresenter : Presenter, EventSubscriber<ClosingProjectEvent>
     {
         IExitCommand command;
 
@@ -24,7 +24,7 @@ namespace momoney.presentation.presenters
             this.command = command;
         }
 
-        public virtual void present(IShell shell)
+        public virtual void present(Shell shell)
         {
             shutdown = () =>
                        {

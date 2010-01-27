@@ -4,23 +4,23 @@ using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Core
 {
-    public interface IPresenterRegistry : Registry<IPresenter> {}
+    public interface IPresenterRegistry : Registry<Presenter> {}
 
     public class PresenterRegistry : IPresenterRegistry
     {
-        readonly Registry<IPresenter> presenters;
+        readonly Registry<Presenter> presenters;
 
-        public PresenterRegistry(Registry<IPresenter> presenters)
+        public PresenterRegistry(Registry<Presenter> presenters)
         {
             this.presenters = presenters;
         }
 
-        public IEnumerable<IPresenter> all()
+        public IEnumerable<Presenter> all()
         {
             return presenters.all();
         }
 
-        public IEnumerator<IPresenter> GetEnumerator()
+        public IEnumerator<Presenter> GetEnumerator()
         {
             return all().GetEnumerator();
         }

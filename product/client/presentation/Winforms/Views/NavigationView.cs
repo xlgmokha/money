@@ -10,9 +10,9 @@ namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class NavigationView : ApplicationDockedWindow, INavigationView
     {
-        readonly IShell shell;
+        readonly Shell shell;
 
-        public NavigationView(IShell shell)
+        public NavigationView(Shell shell)
         {
             InitializeComponent();
             this.shell = shell;

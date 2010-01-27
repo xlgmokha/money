@@ -14,11 +14,11 @@ namespace momoney.presentation.presenters
         {
             project = the_dependency<IProjectController>();
             view = the_dependency<ITitleBar>();
-            broker = the_dependency<IEventAggregator>();
+            broker = the_dependency<EventAggregator>();
         };
 
         protected static ITitleBar view;
-        protected static IEventAggregator broker;
+        protected static EventAggregator broker;
         protected static IProjectController project;
     }
 

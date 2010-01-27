@@ -8,8 +8,8 @@ using MoMoney.Service.Infrastructure.Eventing;
 namespace momoney.presentation.presenters
 {
     public class NotificationIconModule : IModule,
-                                          IEventSubscriber<ClosingTheApplication>,
-                                          IEventSubscriber<NewProjectOpened>
+                                          EventSubscriber<ClosingTheApplication>,
+                                          EventSubscriber<NewProjectOpened>
     {
         readonly INotificationIconView view;
 

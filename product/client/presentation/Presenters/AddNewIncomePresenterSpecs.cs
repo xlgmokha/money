@@ -47,10 +47,10 @@ namespace momoney.presentation.presenters
             () => pump.was_told_to(x => x.run<IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>(view));
 
         context c = () => {
-                              shell = an<IShell>();
+                              shell = an<Shell>();
         };
 
         because b = () => sut.present(shell);
-        static IShell shell;
+        static Shell shell;
     }
 }

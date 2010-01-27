@@ -25,7 +25,7 @@ namespace MoMoney.boot.container.registration
 
         public void run()
         {
-            registry.singleton<IEventAggregator, EventAggregator>();
+            registry.singleton<EventAggregator, SynchronizedEventAggregator>();
             registry.singleton<ITimer, IntervalTimer>();
             registry.singleton<IProjectController, ProjectController>();
             registry.transient(typeof (Registry<>), typeof (DefaultRegistry<>));
@@ -46,7 +46,7 @@ namespace MoMoney.boot.container.registration
                     : (IDeployment) new NullDeployment());
 
             registry.transient<ICommandPump, CommandPump>();
-            registry.transient<ICommandFactory, CommandFactory>();
+            registry.transient<CommandFactory, SynchronizedCommandFactory>();
             registry.transient<ISynchronizationContextFactory, SynchronizationContextFactory>();
             registry.singleton<CommandProcessor, AsynchronousCommandProcessor>();
         }

@@ -12,10 +12,10 @@ namespace MoMoney.Presentation.Core
             context c = () =>
                         {
                             presenter_factory = the_dependency<PresenterFactory>();
-                            shell = the_dependency<IShell>();
+                            shell = the_dependency<Shell>();
                         };
 
-            static protected IShell shell;
+            static protected Shell shell;
             static protected PresenterFactory presenter_factory;
         }
 
@@ -23,18 +23,18 @@ namespace MoMoney.Presentation.Core
         {
             context c = () =>
                         {
-                            implementation_of_the_presenter = an<IPresenter>();
+                            implementation_of_the_presenter = an<Presenter>();
                             presenter_factory
-                                .is_told_to(r => r.create<IPresenter>())
+                                .is_told_to(r => r.create<Presenter>())
                                 .it_will_return(implementation_of_the_presenter);
                         };
 
-            because b = () => sut.run<IPresenter>();
+            because b = () => sut.run<Presenter>();
 
             it should_initialize_the_presenter_to_run =
                 () => implementation_of_the_presenter.was_told_to(p => p.present(shell));
 
-            static IPresenter implementation_of_the_presenter;
+            static Presenter implementation_of_the_presenter;
         }
     }
 }

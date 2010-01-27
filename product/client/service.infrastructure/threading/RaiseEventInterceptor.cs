@@ -9,9 +9,9 @@ namespace momoney.service.infrastructure.threading
 
     public class RaiseEventInterceptor<Event> : IRaiseEventInterceptor<Event> where Event : IEvent, new()
     {
-        readonly IEventAggregator broker;
+        readonly EventAggregator broker;
 
-        public RaiseEventInterceptor(IEventAggregator broker)
+        public RaiseEventInterceptor(EventAggregator broker)
         {
             this.broker = broker;
         }
