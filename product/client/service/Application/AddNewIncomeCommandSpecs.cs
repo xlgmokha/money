@@ -4,7 +4,6 @@ using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
 using MoMoney.Domain.Accounting;
-using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
 using MoMoney.Service.Contracts.Application;
@@ -51,7 +50,7 @@ namespace MoMoney.Service.Application
                          recieved_date = today,
                      };
 
-            when_the(matching_income).is_asked_for(x => x.amount_tendered).it_will_return(100.as_money());
+            when_the(matching_income).is_asked_for(x => x.amount_tendered).it_will_return(100);
             when_the(matching_income).is_asked_for(x => x.company).it_will_return(a_company);
             when_the(matching_income).is_asked_for(x => x.date_of_issue).it_will_return(today);
             when_the(a_company).is_asked_for(x => x.id).it_will_return(id);

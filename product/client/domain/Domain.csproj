@@ -80,7 +80,6 @@
     <Compile Include="core\GenericEntity.cs" />
     <Compile Include="core\Entity.cs" />
     <Compile Include="core\Money.cs" />
-    <Compile Include="core\MoneyExtensions.cs" />
     <Compile Include="core\MoneyExtensionsSpecs.cs" />
     <Compile Include="core\MoneySpecs.cs" />
     <Compile Include="core\Month.cs" />

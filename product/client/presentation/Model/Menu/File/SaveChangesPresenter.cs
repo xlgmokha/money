@@ -14,6 +14,10 @@ namespace MoMoney.Presentation.Model.Menu.File
         readonly ISaveAsCommand save_as_command;
         ISaveChangesCallback callback;
 
+        protected SaveChangesPresenter()
+        {
+        }
+
         public SaveChangesPresenter(IProjectController current_project, ISaveChangesView view, ISaveAsCommand save_as_command)
         {
             this.current_project = current_project;
@@ -21,12 +25,12 @@ namespace MoMoney.Presentation.Model.Menu.File
             this.view = view;
         }
 
-        public void present(IShell shell)
+        public virtual void present(IShell shell)
         {
             throw new NotImplementedException();
         }
 
-        public void run(ISaveChangesCallback item)
+        public virtual void run(ISaveChangesCallback item)
         {
             callback = item;
             if (current_project.has_unsaved_changes())
@@ -40,7 +44,7 @@ namespace MoMoney.Presentation.Model.Menu.File
             }
         }
 
-        public void save()
+        public virtual void save()
         {
             if (current_project.has_been_saved_at_least_once())
             {
@@ -53,12 +57,12 @@ namespace MoMoney.Presentation.Model.Menu.File
             callback.saved();
         }
 
-        public void dont_save()
+        public virtual void dont_save()
         {
             callback.not_saved();
         }
 
-        public void cancel()
+        public virtual void cancel()
         {
             callback.cancelled();
         }

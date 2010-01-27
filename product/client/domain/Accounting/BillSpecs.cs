@@ -36,7 +36,7 @@ namespace MoMoney.Domain.Accounting
 
         context c = () =>
                         {
-                            one_hundred_twenty_three_dollars_fourty_five_cents = new Money(123, 45);
+                            one_hundred_twenty_three_dollars_fourty_five_cents = new Money(123.45);
                             direct_energy = an<Company>();
                         };
 

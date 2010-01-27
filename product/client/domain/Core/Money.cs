@@ -1,60 +1,47 @@
 using System;
-using gorilla.commons.utility;
 
 namespace MoMoney.Domain.Core
 {
     [Serializable]
     public class Money : IEquatable<Money>
     {
-        readonly long dollars;
-        readonly int cents;
+        double value;
 
-        public Money(long dollars) : this(dollars, 0) {}
+        public static readonly Money Zero = new Money(0);
 
-        public Money(long dollars, int cents)
+        public Money(double value)
         {
-            this.dollars = dollars;
-            this.cents = cents;
-            if (this.cents >= 100)
-            {
-                this.dollars += (this.cents/100).to_long();
-                this.cents = this.cents%100;
-            }
+            this.value = value;
         }
 
         public Money add(Money other)
         {
-            var new_dollars = dollars + other.dollars;
-            if (other.cents + cents > 100)
-            {
-                ++new_dollars;
-                var pennies = cents + other.cents - 100;
-                return new Money(new_dollars, pennies);
-            }
-            return new Money(new_dollars, cents + other.cents);
+            return new Money(value + other.value);
+        }
+
+        static public implicit operator Money(double value)
+        {
+            return new Money(value);
         }
 
         public bool Equals(Money other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return other.dollars == dollars && other.cents == cents;
+            return other.value.Equals(value);
         }
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (Money)) return false;
+            if (!(obj is Money)) return false;
             return Equals((Money) obj);
         }
 
         public override int GetHashCode()
         {
-            unchecked
-            {
-                return (dollars.GetHashCode()*397) ^ cents;
-            }
+            return value.GetHashCode();
         }
 
         static public bool operator ==(Money left, Money right)
@@ -69,7 +56,7 @@ namespace MoMoney.Domain.Core
 
         public override string ToString()
         {
-            return "{0}.{1:d2}".formatted_using(dollars, cents);
+            return value.ToString("c");
         }
     }
 }

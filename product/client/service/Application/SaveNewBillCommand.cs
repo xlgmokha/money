@@ -1,4 +1,3 @@
-using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
 using MoMoney.Service.Contracts.Application;
@@ -23,7 +22,7 @@ namespace MoMoney.Service.Application
                 .issue_bill_to(
                 tasks.fetch(),
                 item.due_date,
-                item.total.as_money()
+                item.total
                 );
         }
     }

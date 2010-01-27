@@ -1,6 +1,5 @@
 using System.Linq;
 using gorilla.commons.utility;
-using MoMoney.Domain.Core;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
 using MoMoney.Service.Contracts.Application;
@@ -35,7 +34,7 @@ namespace MoMoney.Service.Application
                     .find_company_by(item.company_id)
                     .pay(
                     query.fetch(),
-                    item.amount.as_money(),
+                    item.amount,
                     item.recieved_date
                     );
             }
@@ -46,7 +45,7 @@ namespace MoMoney.Service.Application
             if (all_income.all().Count() == 0) return false;
             return all_income
                        .all()
-                       .where(x => x.amount_tendered.Equals(income.amount.as_money()))
+                       .where(x => x.amount_tendered.Equals(income.amount))
                        .where(x => x.company.id.Equals(income.company_id))
                        .where(x => x.date_of_issue.Equals(income.recieved_date))
                        .Count() > 0;

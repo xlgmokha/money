@@ -26,13 +26,10 @@ namespace MoMoney.Domain.accounting
 
             context c = () =>
                         {
-                            first_unpaid_bill = an<Bill>();
-                            second_unpaid_bill = an<Bill>();
-                            paid_bill = an<Bill>();
-
-                            first_unpaid_bill.is_told_to(x => x.is_paid_for()).it_will_return(false);
-                            second_unpaid_bill.is_told_to(x => x.is_paid_for()).it_will_return(false);
-                            paid_bill.is_told_to(x => x.is_paid_for()).it_will_return(true);
+                            
+                            first_unpaid_bill = Bill.New(null,10.00, DateTime.Now);
+                            second_unpaid_bill = Bill.New(null, 11.00, DateTime.Now);
+                            paid_bill = Bill.New(null, 0.00, DateTime.Now);
                         };
 
             because b = () =>
@@ -59,13 +56,13 @@ namespace MoMoney.Domain.accounting
                             income_for_february_2008 = MockRepository.GenerateMock<Income>();
 
                             income_for_january_2007.is_told_to(x => x.date_of_issue).it_will_return<Date>(new DateTime(2007, 01, 01));
-                            income_for_january_2007.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000, 00));
+                            income_for_january_2007.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000.00));
 
                             income_for_february_2007.is_told_to(x => x.date_of_issue).it_will_return<Date>(new DateTime(2007, 02, 01));
-                            income_for_february_2007.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000, 00));
+                            income_for_february_2007.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000.00));
 
                             income_for_february_2008.is_told_to(x => x.date_of_issue).it_will_return<Date>(new DateTime(2008, 02, 01));
-                            income_for_february_2008.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000, 00));
+                            income_for_february_2008.is_told_to(x => x.amount_tendered).it_will_return(new Money(1000.00));
                         };
 
             because b = () =>
@@ -76,7 +73,7 @@ namespace MoMoney.Domain.accounting
                             result = sut.calculate_income_for(2007);
                         };
 
-            it should_return_the_correct_amount = () => result.should_be_equal_to(2000.as_money());
+            it should_return_the_correct_amount = () => result.should_be_equal_to(2000);
 
             static Money result;
             static Income income_for_january_2007;
