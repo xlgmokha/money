@@ -55,7 +55,17 @@ namespace MoMoney.Presentation.Winforms.Views
         public void region<Region>(Action<Region> action) where Region : IComponent
         {
             ensure_that_the_region_exists<Region>();
-            action(regions[typeof (Region).FullName].downcast_to<Region>());
+            if (InvokeRequired)
+            {
+                Action safe_action = () =>
+                {
+                    action(regions[typeof (Region).FullName].downcast_to<Region>());
+                };
+                BeginInvoke(safe_action);
+            }
+            else {
+                action(regions[typeof (Region).FullName].downcast_to<Region>());
+            }
         }
 
         public void close_the_active_window()

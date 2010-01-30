@@ -1,17 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using gorilla.commons.utility;
 
 namespace Gorilla.Commons.Infrastructure.Reflection
 {
     public class ApplicationAssembly : Assembly
     {
-        IList<Type> types;
+        IList<Type> types = new List<Type>();
 
-        public ApplicationAssembly(System.Reflection.Assembly assembly)
+        public ApplicationAssembly(params System.Reflection.Assembly[] assemblies)
         {
-            types = assembly.GetTypes().ToList();
+            assemblies.each(x => types.add_range(x.GetTypes()));
         }
 
         public IEnumerable<Type> all_types()

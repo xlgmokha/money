@@ -128,6 +128,7 @@
     <Compile Include="model\navigation\ITreeBranch.cs" />
     <Compile Include="model\navigation\ITreeViewToRootNodeMapper.cs" />
     <Compile Include="model\reporting\IBindReportTo.cs" />
+    <Compile Include="PresentationAssembly.cs" />
     <Compile Include="presenters\CommandFactory.cs" />
     <Compile Include="presenters\SynchronizedCommandFactory.cs" />
     <Compile Include="presenters\CommandPump.cs" />

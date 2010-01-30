@@ -31,7 +31,10 @@ namespace MoMoney.Service.Infrastructure.Threading
             stop_notifying(client_to_be_notified);
 
             var timer = factory.create_for(span);
-            timer.Elapsed += (sender, args) => client_to_be_notified.notify();
+            timer.Elapsed += (sender, args) =>
+            {
+                client_to_be_notified.notify();
+            };
             timer.Start();
             timers[client_to_be_notified] = timer;
         }

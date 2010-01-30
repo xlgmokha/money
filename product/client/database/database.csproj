@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseAssembly.cs" />
     <Compile Include="db4o\ConfigureObjectContainerStep.cs" />
     <Compile Include="db4o\Spiking\db40_spike_specs.cs" />
     <Compile Include="repositories\AccountHolderRepository.cs" />

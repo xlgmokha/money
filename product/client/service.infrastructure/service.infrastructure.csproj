@@ -88,6 +88,7 @@
     <Compile Include="eventing\IEvent.cs" />
     <Compile Include="eventing\EventAggregator.cs" />
     <Compile Include="eventing\EventSubscriber.cs" />
+    <Compile Include="InfrastructureAssembly.cs" />
     <Compile Include="IProjectTasks.cs" />
     <Compile Include="logging\ILogFileTasks.cs" />
     <Compile Include="logging\LogFileTasks.cs" />

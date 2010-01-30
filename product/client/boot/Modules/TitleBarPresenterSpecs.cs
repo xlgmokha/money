@@ -3,7 +3,6 @@ using Gorilla.Commons.Testing;
 using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Views;
-using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.modules
 {
@@ -14,12 +13,10 @@ namespace momoney.modules
         {
             project = the_dependency<IProjectController>();
             view = the_dependency<ITitleBar>();
-            broker = the_dependency<EventAggregator>();
         };
 
-        protected static ITitleBar view;
-        protected static EventAggregator broker;
-        protected static IProjectController project;
+        static protected ITitleBar view;
+        static protected IProjectController project;
     }
 
     public class when_initializing_the_title_bar_for_the_first_time : behaves_like_a_title_bar_presenter
@@ -35,7 +32,10 @@ namespace momoney.modules
     {
         it should_display_an_asterik_in_the_title = () => view.was_told_to(x => x.append_asterik());
 
-        context c = () => { dto = new UnsavedChangesEvent(); };
+        context c = () =>
+        {
+            dto = new UnsavedChangesEvent();
+        };
 
         because b = () => sut.notify(dto);
 
