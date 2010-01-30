@@ -52,8 +52,11 @@
   <target name="create.configs">
 		<property name="target" value="${log4net.config}" />
 		<call target="expand.template.file" />
-		<copy file="${log4net.config}" tofile="${build.compile.dir}\log4net.config.xml" />
-		<copy file="${build.compile.dir}\log4net.config.xml" tofile="${product.dir}\client\boot\log4net.config.xml" />
+		<copy file="${build.config.dir}\log4net.config.xml" tofile="${product.dir}\client\boot\log4net.config.xml" />
+    
+		<property name="target" value="${assembly.config}" />
+		<call target="expand.template.file" />
+		<copy file="${build.config.dir}\AssemblyInfo.cs" tofile="${product.dir}\client\boot\Properties\AssemblyInfo.cs" />
   </target>
 	
 </project>

@@ -13,6 +13,7 @@ _ReSharper.*
 *.properties.xml
 *.config.xml
 *.bootstrap.xml
+AssemblyInfo.cs
 build/config/AssemblyInfo.cs
 compile
 artifacts
