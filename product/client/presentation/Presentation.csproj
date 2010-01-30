@@ -109,6 +109,9 @@
     <Reference Include="WindowsBase">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="XPExplorerBar, Version=3.3.0.0, Culture=neutral, PublicKeyToken=26272737b5f33015">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\xp.explorer.bar\XPExplorerBar.dll</HintPath>
@@ -306,7 +309,7 @@
     </Compile>
     <Compile Include="views\ControlAction.cs" />
     <Compile Include="views\IDialogLauncher.cs" />
-    <Compile Include="views\IDockedContentView.cs" />
+    <Compile Include="views\ITab.cs" />
     <Compile Include="views\View.cs" />
     <Compile Include="views\ISaveChangesView.cs" />
     <Compile Include="winforms\views\SaveChangesView.cs">

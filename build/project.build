@@ -16,10 +16,8 @@
 	<property name="app.output" value="${project.name}.exe" />
 	
 	<include buildfile="project.test.build" />
-	<include buildfile="project.test.reports.build" />
 	<include buildfile="project.deploy.build" />
 	<include buildfile="project.install.build" />
-	<include buildfile="project.ci.build" />
 	<include buildfile="local.properties.xml" />
 		
 	<target name="clean">

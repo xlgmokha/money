@@ -9,7 +9,7 @@ namespace MoMoney.Presentation.Views
                               IRegionManager
     {
         void attach_to(ApplicationShellPresenter presenter);
-        void add(IDockedContentView view);
+        void add(ITab view);
         void close_the_active_window();
         void close_all_windows();
     }

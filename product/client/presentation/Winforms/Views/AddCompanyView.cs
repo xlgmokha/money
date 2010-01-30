@@ -16,8 +16,9 @@ namespace MoMoney.Presentation.Winforms.Views
 {
     public partial class AddCompanyView : ApplicationDockedWindow, IAddCompanyView
     {
-        ControlAction<EventArgs> submit_button = x => {};
+        ControlAction<EventArgs> submit_button;// = x => {};
         readonly RegisterNewCompany dto;
+        Guid id = Guid.NewGuid();
 
         public AddCompanyView()
         {
@@ -32,14 +33,17 @@ namespace MoMoney.Presentation.Winforms.Views
             companiesListView.Columns.Add("Name");
 
             ux_company_name.bind_to(dto, x => x.company_name);
-            ux_submit_button.Click += (x, y) => submit_button(y);
+            ux_submit_button.Click += (x, y) =>
+            {
+                this.submit_button(y);
+            };
             ux_cancel_button.Click += (x, y) => Close();
         }
 
         public void attach_to(AddCompanyPresenter presenter)
         {
             this.log().debug("attaching add company presenter");
-            submit_button = x =>
+            this.submit_button = x =>
             {
                 this.log().debug("clicked on submit button");
                 presenter.submit(dto);

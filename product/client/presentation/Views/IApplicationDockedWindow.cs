@@ -4,7 +4,7 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace MoMoney.Presentation.Views
 {
-    public interface IApplicationDockedWindow : IDockedContentView
+    public interface IApplicationDockedWindow : ITab
     {
         IApplicationDockedWindow titled(string title, params object[] arguments);
         IApplicationDockedWindow icon(ApplicationIcon icon);

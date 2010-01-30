@@ -3,7 +3,7 @@ using momoney.presentation.presenters;
 
 namespace momoney.presentation.views
 {
-    public interface ILogFileView : IDockedContentView, Callback<string>, View<LogFilePresenter>
+    public interface ILogFileView : ITab, Callback<string>, View<LogFilePresenter>
     {
         void display(string file_path);
     }

@@ -2,5 +2,5 @@ using momoney.presentation.presenters;
 
 namespace momoney.presentation.views
 {
-    public interface IAboutApplicationView : IDockedContentView, View<AboutTheApplicationPresenter> {}
+    public interface IAboutApplicationView : ITab, View<AboutTheApplicationPresenter> {}
 }

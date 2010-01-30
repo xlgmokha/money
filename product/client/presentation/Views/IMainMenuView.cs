@@ -4,7 +4,7 @@ using momoney.presentation.views;
 
 namespace MoMoney.Presentation.Views
 {
-    public interface IMainMenuView : IDockedContentView, View<MainMenuPresenter>
+    public interface IMainMenuView : ITab, View<MainMenuPresenter>
     {
         void add(IActionTaskPaneFactory factory);
     }

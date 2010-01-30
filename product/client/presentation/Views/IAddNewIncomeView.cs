@@ -6,7 +6,7 @@ using momoney.presentation.views;
 
 namespace MoMoney.Presentation.Views
 {
-    public interface IAddNewIncomeView : IDockedContentView,
+    public interface IAddNewIncomeView : ITab,
                                          View<AddNewIncomePresenter>,
                                          Callback<IEnumerable<CompanyDTO>>,
                                          Callback<IEnumerable<IncomeInformationDTO>> {}

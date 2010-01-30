@@ -6,7 +6,7 @@ using momoney.presentation.views;
 
 namespace MoMoney.Presentation.Views
 {
-    public interface IViewIncomeHistory : IDockedContentView,
+    public interface IViewIncomeHistory : ITab,
                                           View<ViewIncomeHistoryPresenter>,
                                           Callback<IEnumerable<IncomeInformationDTO>>
 

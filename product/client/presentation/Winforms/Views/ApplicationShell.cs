@@ -47,7 +47,7 @@ namespace MoMoney.Presentation.Winforms.Views
             closed_action = x => presenter.shut_down();
         }
 
-        public void add(IDockedContentView view)
+        public void add(ITab view)
         {
             view.add_to(ux_dock_panel);
         }
