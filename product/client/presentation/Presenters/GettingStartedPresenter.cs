@@ -5,8 +5,6 @@ namespace momoney.presentation.presenters
 {
     public class GettingStartedPresenter : TabPresenter<IGettingStartedView>
     {
-        public GettingStartedPresenter(IGettingStartedView view) : base(view)
-        {
-        }
+        public GettingStartedPresenter(IGettingStartedView view) : base(view) {}
     }
 }

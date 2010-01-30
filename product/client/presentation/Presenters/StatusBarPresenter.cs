@@ -1,17 +1,18 @@
 using System;
 using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
-using MoMoney.Presentation;
+using MoMoney.Presentation.Core;
 using momoney.presentation.model.eventing;
+using momoney.presentation.views;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 using MoMoney.Service.Infrastructure.Eventing;
 using MoMoney.Service.Infrastructure.Threading;
 
-namespace momoney.modules
+namespace momoney.presentation.presenters
 {
-    public class StatusBarModule :
-        IModule,
+    public class StatusBarPresenter :
+        Presenter,
         EventSubscriber<SavedChangesEvent>,
         EventSubscriber<NewProjectOpened>,
         EventSubscriber<ClosingTheApplication>,
@@ -23,14 +24,18 @@ namespace momoney.modules
         readonly IStatusBarView view;
         readonly ITimer timer;
 
-        public StatusBarModule(IStatusBarView view, ITimer timer)
+        public StatusBarPresenter(IStatusBarView view, ITimer timer)
         {
             this.view = view;
             this.timer = timer;
         }
 
-        public void run()
+        public IRegionManager shell { get; set; }
+
+        public void present(Shell shell)
         {
+            this.shell = shell;
+            view.attach_to(this);
             view.display(ApplicationIcons.blue_circle, "...");
         }
 

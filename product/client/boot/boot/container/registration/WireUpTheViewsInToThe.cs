@@ -2,11 +2,9 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.Reflection;
 using gorilla.commons.infrastructure.thirdparty;
-using gorilla.commons.utility;
 using momoney.presentation.views;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Views;
-using View = momoney.presentation.views.View;
 
 namespace MoMoney.boot.container.registration
 {
@@ -27,29 +25,30 @@ namespace MoMoney.boot.container.registration
             register.singleton<ISynchronizeInvoke>(() => shell);
             register.singleton<IRegionManager>(() => shell);
             register.singleton(() => shell);
-            register.singleton<IAboutApplicationView, AboutTheApplicationView>();
-            register.singleton<ISplashScreenView, SplashScreenView>();
-            register.singleton<INavigationView, NavigationView>();
-            register.singleton<IAddCompanyView, AddCompanyView>();
-            register.singleton<IViewAllBills, ViewAllBills>();
-            register.singleton<IAddBillPaymentView, AddBillPaymentView>();
-            register.singleton<IMainMenuView, MainMenuView>();
-            register.singleton<IAddNewIncomeView, AddNewIncomeView>();
-            register.singleton<IViewIncomeHistory, ViewAllIncome>();
-            register.singleton<INotificationIconView, NotificationIconView>();
-            register.singleton<IStatusBarView, StatusBarView>();
-            register.singleton<IGettingStartedView, WelcomeScreen>();
-            register.singleton<ILogFileView, LogFileView>();
+            register_tab<IAboutApplicationView, AboutTheApplicationView>();
+            register_tab<ISplashScreenView, SplashScreenView>();
+            register_tab<INavigationView, NavigationView>();
+            register_tab<IAddCompanyView, AddCompanyView>();
+            register_tab<IViewAllBills, ViewAllBills>();
+            register_tab<IAddBillPaymentView, AddBillPaymentView>();
+            register_tab<IMainMenuView, MainMenuView>();
+            register_tab<IAddNewIncomeView, AddNewIncomeView>();
+            register_tab<IViewIncomeHistory, ViewAllIncome>();
+            register_tab<INotificationIconView, NotificationIconView>();
+            register_tab<IStatusBarView, StatusBarView>();
+            register_tab<IGettingStartedView, WelcomeScreen>();
+            register_tab<ILogFileView, LogFileView>();
 
             register.transient<ISaveChangesView, SaveChangesView>();
             register.transient<ICheckForUpdatesView, CheckForUpdatesView>();
             register.transient<IUnhandledErrorView, UnhandledErrorView>();
+        }
 
-
-            item.all_classes_that_implement<View>().each(x =>
-            {
-                register.singleton(typeof (View), x);
-            });
+        void register_tab<Interface, View>() where View : Interface, new() where Interface : momoney.presentation.views.View
+        {
+            var view = new View();
+            register.singleton<Interface>(() => view);
+            register.singleton<momoney.presentation.views.View>(() => view);
         }
     }
 }

@@ -119,7 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="core\CachedPresenterFactory.cs" />
-    <Compile Include="core\ViewRegistry.cs" />
+    <Compile Include="core\CachingViewFactory.cs" />
     <Compile Include="core\DialogPresenter.cs" />
     <Compile Include="core\PresenterFactory.cs" />
     <Compile Include="core\ViewFactory.cs" />
@@ -133,6 +133,9 @@
     <Compile Include="model\reporting\IBindReportTo.cs" />
     <Compile Include="PresentationAssembly.cs" />
     <Compile Include="presenters\CommandFactory.cs" />
+    <Compile Include="presenters\NotificationIconPresenter.cs" />
+    <Compile Include="presenters\StatusBarPresenter.cs" />
+    <Compile Include="presenters\StatusBarPresenterSpecs.cs" />
     <Compile Include="presenters\SynchronizedCommandFactory.cs" />
     <Compile Include="presenters\CommandPump.cs" />
     <Compile Include="core\ApplicationController.cs" />
@@ -141,7 +144,6 @@
     <Compile Include="core\TabPresenter.cs" />
     <Compile Include="core\IContentPresenter.cs" />
     <Compile Include="core\Presenter.cs" />
-    <Compile Include="core\PresenterRegistry.cs" />
     <Compile Include="IModule.cs" />
     <Compile Include="model\filesystem\folder.cs" />
     <Compile Include="model\menu\create.cs" />
@@ -201,6 +203,7 @@
     <Compile Include="presenters\AddCompanyPresenterSpecs.cs" />
     <Compile Include="presenters\AddBillPaymentPresenter.cs" />
     <Compile Include="presenters\IRunPresenterCommand.cs" />
+    <Compile Include="presenters\TaskTrayPresenter.cs" />
     <Compile Include="presenters\UnhandledErrorPresenter.cs" />
     <Compile Include="presenters\ViewAllBillsPresenter.cs" />
     <Compile Include="presenters\RestartCommand.cs" />

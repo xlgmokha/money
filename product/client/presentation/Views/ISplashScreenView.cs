@@ -1,6 +1,6 @@
 namespace momoney.presentation.views
 {
-    public interface ISplashScreenView
+    public interface ISplashScreenView : View
     {
         void increment_the_opacity();
         double current_opacity();

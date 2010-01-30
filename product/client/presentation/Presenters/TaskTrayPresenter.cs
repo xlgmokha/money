@@ -1,13 +1,14 @@
 using gorilla.commons.utility;
-using MoMoney.Presentation;
+using MoMoney.Presentation.Core;
 using momoney.presentation.model.eventing;
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.modules
 {
     public class TaskTrayPresenter :
-        IModule,
+        Presenter,
         EventSubscriber<SavedChangesEvent>,
         EventSubscriber<StartedRunningCommand>,
         EventSubscriber<FinishedRunningCommand>,
@@ -20,7 +21,7 @@ namespace momoney.modules
             this.view = view;
         }
 
-        public void run()
+        public void present(Shell shell)
         {
             view.display("Welcome!");
             view.display("Visit http://mokhan.ca for more information!");

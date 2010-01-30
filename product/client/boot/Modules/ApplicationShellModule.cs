@@ -1,3 +1,4 @@
+using momoney.modules;
 using MoMoney.Presentation;
 using momoney.presentation.presenters;
 using MoMoney.Presentation.Presenters;
@@ -16,6 +17,10 @@ namespace MoMoney.Modules
         public void run()
         {
             command.run<ApplicationShellPresenter>();
+            command.run<NotificationIconPresenter>();
+            command.run<StatusBarPresenter>();
+            command.run<TaskTrayPresenter>();
+            command.run<MainMenuPresenter>();
         }
     }
 }

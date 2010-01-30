@@ -4,10 +4,10 @@ using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
-namespace momoney.modules
+namespace momoney.presentation.presenters
 {
-    [Concern(typeof (StatusBarModule))]
-    public class when_initializing_the_status_bar : concerns_for<StatusBarModule>
+    [Concern(typeof (StatusBarPresenter))]
+    public class when_initializing_the_status_bar : concerns_for<StatusBarPresenter>
     {
         it should_display_a_ready_message =
             () => view.was_told_to(v => v.display(ApplicationIcons.green_circle, "Ready"));

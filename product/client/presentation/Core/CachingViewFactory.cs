@@ -17,11 +17,7 @@ namespace MoMoney.Presentation.Core
 
         public View<Presenter> create_for<Presenter>() where Presenter : Core.Presenter
         {
-            if (views.all().Any(x =>
-            {
-                //this.log().debug("is {0} a {1} = {2}", x, typeof (View<Presenter>).Name, typeof (View<Presenter>).IsAssignableFrom(x.GetType()));
-                return typeof (View<Presenter>).IsAssignableFrom(x.GetType());
-            }))
+            if (views.all().Any(x => typeof (View<Presenter>).IsAssignableFrom(x.GetType())))
             {
                 return views.find_an_implementation_of<View, View<Presenter>>();
             }
