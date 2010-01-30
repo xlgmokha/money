@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
+using System.Linq;
 using System.Windows.Forms;
 using gorilla.commons.utility;
 using momoney.presentation.presenters;
@@ -59,7 +60,8 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void close_the_active_window()
         {
-            ux_dock_panel.ActiveDocument.DockHandler.Close();
+            //ux_dock_panel.ActiveDocument.DockHandler.Hide();
+            //ux_dock_panel.ActiveDocument.DockHandler.Close();
         }
 
         public void close_all_windows()
@@ -67,7 +69,8 @@ namespace MoMoney.Presentation.Winforms.Views
             using (new SuspendLayout(ux_dock_panel))
                 while (ux_dock_panel.Contents.Count > 0)
                 {
-                    ux_dock_panel.Contents[0].DockHandler.Close();
+                    ux_dock_panel.Contents[0].DockHandler.Hide();
+                    //ux_dock_panel.Contents[0].DockHandler.Close();
                 }
         }
 

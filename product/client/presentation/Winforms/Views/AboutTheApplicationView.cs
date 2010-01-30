@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using gorilla.commons.utility;
+using momoney.presentation.presenters;
 using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Resources;
 
@@ -27,6 +28,10 @@ namespace MoMoney.Presentation.Winforms.Views
         string assembly_version
         {
             get { return GetType().Assembly.GetName().Version.ToString(); }
+        }
+
+        public void attach_to(AboutTheApplicationPresenter presenter)
+        {
         }
     }
 }

@@ -35,6 +35,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\active.reports\ActiveReports6.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\lib\app\auto.fac\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
@@ -103,7 +107,7 @@
     <Compile Include="boot\container\ComponentExclusionSpecificationSpecs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="boot\container\registration\auto_wire_components_in_to_the.cs" />
+    <Compile Include="boot\container\registration\AutoWireComponentsInToThe.cs" />
     <Compile Include="boot\container\registration\auto_wire_components_in_to_the_specs.cs" />
     <Compile Include="boot\container\registration\IContainerStartup.cs" />
     <Compile Include="boot\container\registration\IStartupCommand.cs" />
@@ -138,23 +142,29 @@
     <Compile Include="boot\container\registration\proxy_configuration\ServiceLayerConfiguration.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\SynchronizedConfiguration.cs" />
     <Compile Include="boot\container\registration\proxy_configuration\UnitOfWorkInterceptor.cs" />
-    <Compile Include="boot\container\registration\wire_up_the_infrastructure_in_to_the.cs" />
+    <Compile Include="boot\container\registration\WireUpTheInfrastructureInToThe.cs" />
     <Compile Include="boot\container\tear_down_the_container.cs" />
-    <Compile Include="boot\container\registration\wire_up_the_data_access_components_into_the.cs" />
-    <Compile Include="boot\container\registration\wire_up_the_presentation_modules.cs" />
-    <Compile Include="boot\container\registration\wire_up_the_services_in_to_the.cs" />
+    <Compile Include="boot\container\registration\WireUpTheDataAccessComponentsIntoThe.cs" />
+    <Compile Include="boot\container\registration\WireUpThePresentationModules.cs" />
+    <Compile Include="boot\container\registration\WireUpTheServicesInToThe.cs" />
     <Compile Include="boot\container\type_extensions.cs" />
-    <Compile Include="boot\display_the_splash_screen.cs" />
-    <Compile Include="boot\global_error_handling.cs" />
+    <Compile Include="boot\DisplayTheSplashScreen.cs" />
+    <Compile Include="boot\GlobalErrorHandling.cs" />
     <Compile Include="boot\WindowsFormsApplication.cs" />
     <Compile Include="modules\ApplicationShellModule.cs" />
     <Compile Include="modules\core\ILoadPresentationModulesCommand.cs" />
     <Compile Include="modules\DatabaseModule.cs" />
     <Compile Include="modules\ApplicationMenuModule.cs" />
-    <Compile Include="modules\IDatabaseModule.cs" />
     <Compile Include="modules\MainMenuModule.cs" />
     <Compile Include="modules\NavigationModule.cs" />
     <Compile Include="modules\GettingStartedModule.cs" />
+    <Compile Include="modules\NotificationIconModule.cs" />
+    <Compile Include="modules\NotificationIconPresenterSpecs.cs" />
+    <Compile Include="modules\StatusBarModule.cs" />
+    <Compile Include="modules\StatusBarPresenterSpecs.cs" />
+    <Compile Include="modules\TaskTrayPresenter.cs" />
+    <Compile Include="modules\TitleBarPresenter.cs" />
+    <Compile Include="modules\TitleBarPresenterSpecs.cs" />
     <Compile Include="modules\ToolbarModule.cs" />
     <Compile Include="modules\core\LoadPresentationModulesCommandSpecs.cs" />
     <Compile Include="boot\hookup.cs" />
@@ -179,12 +189,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="boot\start_the_application.cs" />
-    <Compile Include="boot\container\wire_up_the_container.cs" />
-    <Compile Include="boot\container\registration\wire_up_the_essential_services_into_the.cs" />
-    <Compile Include="boot\container\registration\wire_up_the_mappers_in_to_the.cs" />
-    <Compile Include="boot\container\registration\wire_up_the_reports_in_to_the.cs" />
-    <Compile Include="boot\container\registration\wire_up_the_views_in_to_the.cs" />
+    <Compile Include="boot\StartTheApplication.cs" />
+    <Compile Include="boot\container\WireUpTheContainer.cs" />
+    <Compile Include="boot\container\registration\WireUpTheEssentialServicesIntoThe.cs" />
+    <Compile Include="boot\container\registration\WireUpTheMappersInToThe.cs" />
+    <Compile Include="boot\container\registration\WireUpTheReportsInToThe.cs" />
+    <Compile Include="boot\container\registration\WireUpTheViewsInToThe.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\commons\infrastructure.thirdparty.log4net\infrastructure.thirdparty.log4net.csproj">

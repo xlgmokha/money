@@ -10,7 +10,7 @@ namespace MoMoney.boot.container.registration
 {
     [Ignore("I am not sure why but line 19 throws a BadImageFormatException")]
     public abstract class behaves_like_auto_registering_components_into_container :
-        concerns_for<IStartupCommand, auto_wire_components_in_to_the>
+        concerns_for<IStartupCommand, AutoWireComponentsInToThe>
     {
         context c = () =>
         {
@@ -20,7 +20,7 @@ namespace MoMoney.boot.container.registration
 
         public override IStartupCommand create_sut()
         {
-            return new auto_wire_components_in_to_the(builder, exclusions_criteria);
+            return new AutoWireComponentsInToThe(builder, exclusions_criteria);
         }
 
         static protected DependencyRegistration builder;

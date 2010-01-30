@@ -2,7 +2,7 @@ using System.Windows.Forms;
 
 namespace momoney.presentation.views
 {
-    public interface IApplicationWindow : IView
+    public interface IApplicationWindow : View
     {
         IApplicationWindow titled(string title);
         IApplicationWindow create_tool_tip_for(string title, string caption, Control control);

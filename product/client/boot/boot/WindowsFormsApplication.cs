@@ -1,6 +1,4 @@
 using System;
-using System.ComponentModel;
-using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Globalization;
 using System.Security.Principal;
@@ -34,14 +32,14 @@ namespace MoMoney.boot
                 Func<ISplashScreenPresenter> presenter = () => new SplashScreenPresenter();
                 presenter = presenter.memorize();
 
-                var startup_screen = new display_the_splash_screen(presenter).on_a_background_thread();
+                var startup_screen = new DisplayTheSplashScreen(presenter).on_a_background_thread();
 
                 AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
-                hookup
-                    .the<global_error_handling>()
+                Hookup
+                    .the<GlobalErrorHandling>()
                     .then(startup_screen)
-                    .then<wire_up_the_container>()
-                    .then(new start_the_application(startup_screen))
+                    .then<WireUpTheContainer>()
+                    .then(new StartTheApplication(startup_screen))
                     .run();
             }
             start();
@@ -75,23 +73,6 @@ namespace MoMoney.boot
         {
             stopwatch.Stop();
             this.log().debug("application startup took: {0}", stopwatch.Elapsed);
-        }
-    }
-
-    public class ApplicationContainer : Container
-    {
-        readonly IServiceContainer container;
-
-        public ApplicationContainer() : this(new ServiceContainer()) {}
-
-        public ApplicationContainer(IServiceContainer container)
-        {
-            this.container = container;
-        }
-
-        protected override object GetService(Type service)
-        {
-            return container.GetService(service) ?? base.GetService(service);
         }
     }
 }

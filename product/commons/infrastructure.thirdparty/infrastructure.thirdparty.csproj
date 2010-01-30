@@ -127,8 +127,6 @@
     <Compile Include="castle\windsor\configuration\LogEverythingInterceptor.cs" />
     <Compile Include="castle\windsor\configuration\RegisterComponentContract.cs" />
     <Compile Include="castle\windsor\WindsorContainerFactory.cs" />
-    <Compile Include="castle\windsor\WindsorDependencyRegistry.cs" />
-    <Compile Include="castle\windsor\WindsorDependencyRegistrySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\infrastructure\infrastructure.csproj">

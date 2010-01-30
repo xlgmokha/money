@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Windows.Forms;
 using gorilla.commons.utility;
 using MoMoney.Presentation.Views;

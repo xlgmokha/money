@@ -1,6 +1,7 @@
 using System.Windows.Forms;
 using gorilla.commons.utility;
 using MoMoney.Presentation.Model.Navigation;
+using momoney.presentation.presenters;
 using momoney.presentation.views;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
@@ -26,6 +27,10 @@ namespace MoMoney.Presentation.Winforms.Views
             uxNavigationTreeView.Nodes.Clear();
             tree_view_visitor.visit(uxNavigationTreeView);
             shell.add(this);
+        }
+
+        public void attach_to(NavigationPresenter presenter)
+        {
         }
     }
 }

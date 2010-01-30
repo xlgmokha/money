@@ -1,6 +1,6 @@
 namespace momoney.boot
 {
-    class hookup
+    class Hookup
     {
         static public Command the<Command>() where Command : gorilla.commons.utility.Command, new()
         {

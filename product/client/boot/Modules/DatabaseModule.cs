@@ -1,9 +1,10 @@
 using momoney.database;
+using MoMoney.Presentation;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Modules
 {
-    public class DatabaseModule : IDatabaseModule
+    public class DatabaseModule : IModule
     {
         readonly IDatabaseConfiguration configuration;
         readonly EventAggregator broker;

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using gorilla.commons.utility;
+using MoMoney.Presentation.Winforms.Helpers;
 
 namespace MoMoney.Presentation.Model.Menu
 {
@@ -12,11 +13,12 @@ namespace MoMoney.Presentation.Model.Menu
 
         public void add_to(MenuStrip strip)
         {
-            strip.SuspendLayout();
-            var menu_item = new ToolStripMenuItem(name);
-            strip.Items.Add(menu_item);
-            all_menu_items().each(x => menu_item.DropDownItems.Add(x.build()));
-            strip.ResumeLayout();
+            using (new SuspendLayout(strip))
+            {
+                var menu_item = new ToolStripMenuItem(name);
+                strip.Items.Add(menu_item);
+                all_menu_items().each(x => menu_item.DropDownItems.Add(x.build()));
+            }
         }
     }
 }

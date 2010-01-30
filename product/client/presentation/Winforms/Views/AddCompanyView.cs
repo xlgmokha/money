@@ -10,6 +10,7 @@ using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Databinding;
 using MoMoney.Presentation.Winforms.Resources;
 using gorilla.commons.utility;
+using View = System.Windows.Forms.View;
 
 namespace MoMoney.Presentation.Winforms.Views
 {

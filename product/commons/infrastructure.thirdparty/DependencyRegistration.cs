@@ -8,10 +8,13 @@ namespace gorilla.commons.infrastructure.thirdparty
     public interface DependencyRegistration : Builder<DependencyRegistry>
     {
         void singleton<Contract, Implementation>() where Implementation : Contract;
+        void singleton(Type contract, Type implementation);
         void singleton<Contract>(Func<Contract> instance_of_the_contract);
+
         void transient<Contract, Implementation>() where Implementation : Contract;
         void transient(Type contract, Type implementation);
-        void proxy<T>(Configuration<ProxyBuilder<T>> configuration, Func<T> target);
+
+        [Obsolete]
         void proxy<T, Configuration>(Func<T> target) where Configuration : Configuration<ProxyBuilder<T>>, new();
     }
 }

@@ -1,4 +1,5 @@
 using momoney.presentation.presenters;
+using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Resources;
@@ -23,6 +24,10 @@ namespace MoMoney.Presentation.Winforms.Views
         public void add(IActionTaskPaneFactory factory)
         {
             using (ux_system_task_pane.suspend_layout()) ux_system_task_pane.Expandos.Add(factory.create());
+        }
+
+        public void attach_to(MainMenuPresenter presenter)
+        {
         }
     }
 }

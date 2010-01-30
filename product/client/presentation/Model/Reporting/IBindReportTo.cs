@@ -2,5 +2,5 @@ using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Model.reporting
 {
-    public interface IBindReportTo<T, Query> : IReport, ParameterizedCommand<T> where Query : Query<T> {}
+    public interface IBindReportTo<T, TQuery> : IReport, ParameterizedCommand<T> where TQuery : Query<T> {}
 }

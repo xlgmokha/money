@@ -4,11 +4,7 @@ using MoMoney.Presentation.Presenters;
 
 namespace MoMoney.Modules
 {
-    public interface IApplicationShellModule : IModule
-    {
-    }
-
-    public class ApplicationShellModule : IApplicationShellModule
+    public class ApplicationShellModule : IModule
     {
         readonly IRunPresenterCommand command;
 

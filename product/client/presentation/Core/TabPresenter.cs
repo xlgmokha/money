@@ -3,23 +3,26 @@ using MoMoney.Presentation.Views;
 
 namespace MoMoney.Presentation.Core
 {
-    public abstract class TabPresenter<T> : IContentPresenter where T : IDockedContentView
+    public abstract class TabPresenter<Tab> : IContentPresenter where Tab : IDockedContentView
     {
-        protected readonly T view;
+        protected readonly Tab view;
 
-        protected TabPresenter(T view)
+        protected TabPresenter(Tab view)
         {
             this.view = view;
         }
 
-        protected virtual void present()
-        {
-        }
+        protected virtual void present() {}
 
         public void present(Shell shell)
         {
             shell.add(view);
             present();
+        }
+
+        public override string ToString()
+        {
+            return GetType().Name;
         }
     }
 }

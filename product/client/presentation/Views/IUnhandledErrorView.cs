@@ -3,7 +3,7 @@ using momoney.presentation.presenters;
 
 namespace momoney.presentation.views
 {
-    public interface IUnhandledErrorView : IView<UnhandledErrorPresenter>
+    public interface IUnhandledErrorView : Dialog<UnhandledErrorPresenter>
     {
         void display(Exception exception);
     }

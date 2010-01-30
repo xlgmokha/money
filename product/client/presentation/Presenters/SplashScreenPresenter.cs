@@ -31,7 +31,7 @@ namespace MoMoney.Presentation.Presenters
 
         public void Dispose()
         {
-            current_state = new hide_the_splash_screen(timer, view, this);
+            current_state = new HideTheSplashScreen(timer, view, this);
         }
 
         public void notify()

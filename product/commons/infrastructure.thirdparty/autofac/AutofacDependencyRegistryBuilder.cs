@@ -14,10 +14,6 @@ namespace gorilla.commons.infrastructure.thirdparty.Autofac
         readonly ContainerBuilder builder;
         readonly Func<IContainer> container;
 
-        public AutofacDependencyRegistryBuilder() : this(new ContainerBuilder())
-        {
-        }
-
         public AutofacDependencyRegistryBuilder(ContainerBuilder builder)
         {
             this.builder = builder;
@@ -32,9 +28,17 @@ namespace gorilla.commons.infrastructure.thirdparty.Autofac
             builder.Register<Implementation>().As<Contract>().SingletonScoped();
         }
 
+        public void singleton(Type contract, Type implementation)
+        {
+            builder.Register(implementation).As(contract).SingletonScoped();
+        }
+
         public void singleton<Contract>(Func<Contract> instance_of_the_contract)
         {
-            builder.Register(x => instance_of_the_contract()).As<Contract>().SingletonScoped();
+            builder
+                .Register(x => instance_of_the_contract())
+                .As<Contract>()
+                .SingletonScoped();
         }
 
         public void transient<Contract, Implementation>() where Implementation : Contract

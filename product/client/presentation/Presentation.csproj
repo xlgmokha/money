@@ -116,8 +116,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="core\CachedPresenterFactory.cs" />
-    <Compile Include="core\CachingViewFactory.cs" />
+    <Compile Include="core\ViewRegistry.cs" />
     <Compile Include="core\DialogPresenter.cs" />
+    <Compile Include="core\PresenterFactory.cs" />
+    <Compile Include="core\ViewFactory.cs" />
     <Compile Include="model\eventing\FinishedRunningCommand.cs" />
     <Compile Include="model\eventing\StartedRunningCommand.cs" />
     <Compile Include="model\menu\file\ISaveChangesCallback.cs" />
@@ -195,6 +197,7 @@
     <Compile Include="presenters\AddCompanyPresenterSpecs.cs" />
     <Compile Include="presenters\AddBillPaymentPresenter.cs" />
     <Compile Include="presenters\IRunPresenterCommand.cs" />
+    <Compile Include="presenters\UnhandledErrorPresenter.cs" />
     <Compile Include="presenters\ViewAllBillsPresenter.cs" />
     <Compile Include="presenters\RestartCommand.cs" />
     <Compile Include="presenters\RunPresenterCommand.cs" />
@@ -231,26 +234,18 @@
     <Compile Include="presenters\GettingStartedPresenterSpecs.cs" />
     <Compile Include="presenters\LogFilePresenter.cs" />
     <Compile Include="presenters\LogFileViewPresenterSpecs.cs" />
-    <Compile Include="presenters\NotificationIconModule.cs" />
-    <Compile Include="presenters\NotificationIconPresenterSpecs.cs" />
     <Compile Include="presenters\NotificationPresenter.cs" />
-    <Compile Include="presenters\StatusBarModule.cs" />
-    <Compile Include="presenters\StatusBarPresenterSpecs.cs" />
-    <Compile Include="presenters\TaskTrayPresenter.cs" />
-    <Compile Include="presenters\TitleBarPresenter.cs" />
-    <Compile Include="presenters\TitleBarPresenterSpecs.cs" />
     <Compile Include="presenters\ToolBarPresenter.cs" />
-    <Compile Include="presenters\UnhandledErrorPresenter.cs" />
     <Compile Include="presenters\UnhandledErrorPresenterSpecs.cs" />
     <Compile Include="presenters\DisplayTheSplashScreen.cs" />
-    <Compile Include="presenters\hide_the_splash_screen.cs" />
+    <Compile Include="presenters\HideTheSplashScreen.cs" />
     <Compile Include="presenters\ISplashScreenState.cs" />
     <Compile Include="presenters\SplashScreenPresenter.cs" />
     <Compile Include="presenters\SplashScreenPresenterSpecs.cs" />
     <Compile Include="presenters\CheckForUpdatesPresenter.cs" />
     <Compile Include="presenters\CheckForUpdatesPresenterSpecs.cs" />
     <Compile Include="presenters\ProcessQueryCommand.cs" />
-    <Compile Include="views\IDialog.cs" />
+    <Compile Include="views\Dialog.cs" />
     <Compile Include="views\ISelectFileToOpenDialog.cs" />
     <Compile Include="views\ISelectFileToSaveToDialog.cs" />
     <Compile Include="views\ITaskTrayMessageView.cs" />
@@ -309,10 +304,9 @@
       <DependentUpon>ApplicationWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="views\ControlAction.cs" />
-    <Compile Include="views\ICommandDialog.cs" />
     <Compile Include="views\IDialogLauncher.cs" />
     <Compile Include="views\IDockedContentView.cs" />
-    <Compile Include="views\IView.cs" />
+    <Compile Include="views\View.cs" />
     <Compile Include="views\ISaveChangesView.cs" />
     <Compile Include="winforms\views\SaveChangesView.cs">
       <SubType>Form</SubType>

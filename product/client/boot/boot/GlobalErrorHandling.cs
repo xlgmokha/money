@@ -1,0 +1,25 @@
+using System;
+using System.Windows.Forms;
+using Gorilla.Commons.Infrastructure.Container;
+using Gorilla.Commons.Infrastructure.Logging;
+using gorilla.commons.utility;
+using momoney.presentation.model.eventing;
+using MoMoney.Service.Infrastructure.Eventing;
+
+namespace MoMoney.boot
+{
+    class GlobalErrorHandling : Command
+    {
+        public void run()
+        {
+            Application.ThreadException += (sender, e) => handle(e.Exception);
+            AppDomain.CurrentDomain.UnhandledException += (o, e) => handle(e.ExceptionObject.downcast_to<Exception>());
+        }
+
+        void handle(Exception e)
+        {
+            e.add_to_log();
+            Resolve.the<EventAggregator>().publish(new UnhandledErrorOccurred(e));
+        }
+    }
+}

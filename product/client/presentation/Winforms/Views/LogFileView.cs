@@ -1,3 +1,4 @@
+using momoney.presentation.presenters;
 using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Resources;
 
@@ -20,5 +21,7 @@ namespace MoMoney.Presentation.Winforms.Views
         {
             ux_log_file.Text = file_contents;
         }
+
+        public void attach_to(LogFilePresenter presenter) {}
     }
 }
