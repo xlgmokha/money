@@ -1,3 +1,4 @@
+using System;
 using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
@@ -23,7 +24,6 @@ namespace momoney.presentation.presenters
         public void present(Shell shell)
         {
             pump.run<ApplicationVersion, IWhatIsTheAvailableVersion>(view);
-            view.display();
         }
 
         public void begin_update()
@@ -34,7 +34,7 @@ namespace momoney.presentation.presenters
         public void cancel_update()
         {
             pump.run<ICancelUpdate>();
-            view.close();
+            close();
         }
 
         public void restart()
@@ -44,7 +44,7 @@ namespace momoney.presentation.presenters
 
         public void do_not_update()
         {
-            view.close();
+            close();
         }
 
         public void run(Percent completed)
@@ -53,7 +53,7 @@ namespace momoney.presentation.presenters
             {
                 this.log().debug("completed download");
                 view.update_complete();
-                restart();
+                //restart();
             }
             else
             {
@@ -61,5 +61,7 @@ namespace momoney.presentation.presenters
                 view.downloaded(completed);
             }
         }
+
+        public Action close { get; set; }
     }
 }

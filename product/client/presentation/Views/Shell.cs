@@ -1,12 +1,11 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using momoney.presentation.presenters;
-using momoney.presentation.views;
 
-namespace MoMoney.Presentation.Views
+namespace momoney.presentation.views
 {
     public interface Shell : IWin32Window, ISynchronizeInvoke, IContainerControl, IBindableComponent, IDropTarget,
-                              IRegionManager
+                             IRegionManager
     {
         void attach_to(ApplicationShellPresenter presenter);
         void add(ITab view);

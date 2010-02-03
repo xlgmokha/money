@@ -1,4 +1,4 @@
-using MoMoney.Presentation;
+using System;
 using MoMoney.Presentation.Core;
 using momoney.presentation.model.eventing;
 using momoney.presentation.views;
@@ -7,10 +7,11 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters
 {
-    public class UnhandledErrorPresenter : IModule, DialogPresenter, EventSubscriber<UnhandledErrorOccurred>
+    public class UnhandledErrorPresenter : DialogPresenter, EventSubscriber<UnhandledErrorOccurred>
     {
-        readonly IUnhandledErrorView view;
-        readonly IRestartCommand restart;
+        IUnhandledErrorView view;
+        IRestartCommand restart;
+        Shell shell;
 
         public UnhandledErrorPresenter(IUnhandledErrorView view, IRestartCommand command)
         {
@@ -18,12 +19,16 @@ namespace momoney.presentation.presenters
             restart = command;
         }
 
-        public void present(Shell shell) {}
+        public void present(Shell shell)
+        {
+            this.shell = shell;
+        }
 
         public void notify(UnhandledErrorOccurred message)
         {
             view.attach_to(this);
             view.display(message.error);
+            view.show_dialog(shell);
         }
 
         public void restart_application()
@@ -31,6 +36,6 @@ namespace momoney.presentation.presenters
             restart.run();
         }
 
-        public void run() {}
+        public Action close { get; set; }
     }
 }

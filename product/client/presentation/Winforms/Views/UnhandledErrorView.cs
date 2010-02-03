@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views
@@ -10,9 +11,8 @@ namespace MoMoney.Presentation.Winforms.Views
     {
         ControlAction<EventArgs> close_action = x => { };
         ControlAction<EventArgs> restart_action = x => { };
-        readonly IWin32Window window;
 
-        public UnhandledErrorView(IWin32Window window)
+        public UnhandledErrorView()
         {
             InitializeComponent();
             ux_image.Image = ApplicationImages.Splash;
@@ -24,19 +24,22 @@ namespace MoMoney.Presentation.Winforms.Views
 
             close_button.Click += (sender, args) => close_action(args);
             restart_button.Click += (sender, args) => restart_action(args);
-            this.window = window;
         }
 
         public void attach_to(UnhandledErrorPresenter presenter)
         {
-            close_action = x => Close();
+            close_action = x => presenter.close();
             restart_action = x => presenter.restart_application();
         }
 
         public void display(Exception exception)
         {
             ux_message.Text = exception.ToString();
-            ShowDialog(window);
+        }
+
+        public void show_dialog(Shell parent_window)
+        {
+            ShowDialog(parent_window);
         }
     }
 }

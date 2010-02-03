@@ -1,7 +1,7 @@
 using System.Collections.Generic;
+using MoMoney.Presentation.Core;
 using MoMoney.Presentation.model.menu.help;
 using momoney.presentation.presenters;
-using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Menu.Help
@@ -12,9 +12,9 @@ namespace MoMoney.Presentation.Model.Menu.Help
 
     public class HelpMenu : SubMenu, IHelpMenu
     {
-        readonly IRunPresenterCommand command;
+        readonly IApplicationController command;
 
-        public HelpMenu(IRunPresenterCommand command)
+        public HelpMenu(IApplicationController command)
         {
             this.command = command;
         }
@@ -37,7 +37,7 @@ namespace MoMoney.Presentation.Model.Menu.Help
                 .a_menu_item()
                 .named("Check For Updates...")
                 .represented_by(ApplicationIcons.Update)
-                .that_executes(() => command.run<CheckForUpdatesPresenter>())
+                .that_executes(() => command.launch_dialog<CheckForUpdatesPresenter>())
                 .build();
 
             yield return Create.a_menu_item_separator();

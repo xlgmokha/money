@@ -1,4 +1,3 @@
-using momoney.modules;
 using MoMoney.Presentation;
 using momoney.presentation.presenters;
 using MoMoney.Presentation.Presenters;
@@ -21,6 +20,7 @@ namespace MoMoney.Modules
             command.run<StatusBarPresenter>();
             command.run<TaskTrayPresenter>();
             command.run<MainMenuPresenter>();
+            command.run<UnhandledErrorPresenter>();
         }
     }
 }

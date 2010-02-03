@@ -24,7 +24,10 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void increment_the_opacity()
         {
-            Opacity += 0.2;
+            safely(() =>
+            {
+                Opacity += 0.2;
+            });
         }
 
         public double current_opacity()
@@ -34,7 +37,10 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void decrement_the_opacity()
         {
-            Opacity -= .1;
+            safely(() =>
+            {
+                Opacity -= .1;
+            });
         }
 
         public void close_the_screen()
@@ -46,6 +52,12 @@ namespace MoMoney.Presentation.Winforms.Views
         public void display()
         {
             Show();
+        }
+
+        void safely(Action action)
+        {
+            if (InvokeRequired) BeginInvoke(action);
+            else action();
         }
     }
 }

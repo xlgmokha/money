@@ -2,12 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
-using System.Linq;
 using System.Windows.Forms;
 using gorilla.commons.utility;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
-using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Helpers;
 
 namespace MoMoney.Presentation.Winforms.Views
@@ -16,7 +14,7 @@ namespace MoMoney.Presentation.Winforms.Views
     public partial class ApplicationShell : ApplicationWindow, Shell
     {
         readonly IDictionary<string, IComponent> regions;
-        ControlAction<EventArgs> closed_action = x => { };
+        ControlAction<EventArgs> closed_action = x => {};
 
         public ApplicationShell()
         {
@@ -63,7 +61,8 @@ namespace MoMoney.Presentation.Winforms.Views
                 };
                 BeginInvoke(safe_action);
             }
-            else {
+            else
+            {
                 action(regions[typeof (Region).FullName].downcast_to<Region>());
             }
         }

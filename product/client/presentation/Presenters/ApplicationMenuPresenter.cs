@@ -2,7 +2,7 @@ using System.Windows.Forms;
 using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 
 namespace momoney.presentation.presenters
 {

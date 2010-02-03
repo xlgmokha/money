@@ -121,6 +121,7 @@
     <Compile Include="core\CachedPresenterFactory.cs" />
     <Compile Include="core\CachingViewFactory.cs" />
     <Compile Include="core\DialogPresenter.cs" />
+    <Compile Include="core\IApplicationController.cs" />
     <Compile Include="core\PresenterFactory.cs" />
     <Compile Include="core\ViewFactory.cs" />
     <Compile Include="model\eventing\FinishedRunningCommand.cs" />

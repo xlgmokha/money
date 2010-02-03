@@ -5,7 +5,7 @@ using momoney.presentation.views;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace momoney.modules
+namespace momoney.presentation.presenters
 {
     public class TaskTrayPresenter :
         Presenter,

@@ -2,7 +2,7 @@ using System;
 using MoMoney.Presentation.Core;
 using momoney.presentation.model.eventing;
 using momoney.presentation.model.menu.file;
-using MoMoney.Presentation.Views;
+using momoney.presentation.views;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters
@@ -11,13 +11,9 @@ namespace momoney.presentation.presenters
     {
         IExitCommand command;
 
-        Action shutdown = () =>
-                          {
-                          };
+        Action shutdown = () => {};
 
-        protected ApplicationShellPresenter()
-        {
-        }
+        protected ApplicationShellPresenter() {}
 
         public ApplicationShellPresenter(IExitCommand command)
         {
@@ -27,9 +23,9 @@ namespace momoney.presentation.presenters
         public virtual void present(Shell shell)
         {
             shutdown = () =>
-                       {
-                           shell.close_all_windows();
-                       };
+            {
+                shell.close_all_windows();
+            };
         }
 
         public virtual void notify(ClosingProjectEvent message)

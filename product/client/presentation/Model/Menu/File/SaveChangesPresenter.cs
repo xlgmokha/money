@@ -14,9 +14,7 @@ namespace MoMoney.Presentation.Model.Menu.File
         readonly ISaveAsCommand save_as_command;
         ISaveChangesCallback callback;
 
-        protected SaveChangesPresenter()
-        {
-        }
+        protected SaveChangesPresenter() {}
 
         public SaveChangesPresenter(IProjectController current_project, ISaveChangesView view, ISaveAsCommand save_as_command)
         {
@@ -66,5 +64,7 @@ namespace MoMoney.Presentation.Model.Menu.File
         {
             callback.cancelled();
         }
+
+        public Action close { get; set; }
     }
 }

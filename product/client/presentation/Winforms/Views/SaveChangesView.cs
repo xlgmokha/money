@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using MoMoney.Presentation.Model.Menu.File;
 using momoney.presentation.views;
+using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Winforms.Views
@@ -54,6 +55,11 @@ namespace MoMoney.Presentation.Winforms.Views
             Hide();
             Close();
             action();
+        }
+
+        public void show_dialog(Shell parent_window)
+        {
+            ShowDialog(parent_window);
         }
     }
 }

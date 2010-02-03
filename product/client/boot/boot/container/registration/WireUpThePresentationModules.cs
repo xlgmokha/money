@@ -11,6 +11,7 @@ using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
 using momoney.presentation.presenters;
+using momoney.presentation.views;
 using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
@@ -27,7 +28,7 @@ namespace MoMoney.boot.container.registration
 
         public void run(Assembly item)
         {
-            Func<IApplicationController> target = () => new ApplicationController(Lazy.load<Shell>(), Lazy.load<PresenterFactory>(), Lazy.load<EventAggregator>());
+            Func<IApplicationController> target = () => new ApplicationController(Lazy.load<Shell>(), Lazy.load<PresenterFactory>(), Lazy.load<EventAggregator>(), Lazy.load<ViewFactory>());
             registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(target.memorize());
 
             registry.transient(typeof (IRunThe<>), typeof (RunThe<>));

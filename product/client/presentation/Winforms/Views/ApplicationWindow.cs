@@ -38,7 +38,7 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public IApplicationWindow titled(string title)
         {
-            base.Text = "MoMoney (BETA) - " + title;
+            base.Text = @"MoMoney (BETA) - " + title;
             return this;
         }
     }

@@ -7,9 +7,7 @@ namespace momoney.presentation.views
 {
     public interface ICheckForUpdatesView : Dialog<CheckForUpdatesPresenter>, Callback<ApplicationVersion>
     {
-        void display();
         void downloaded(Percent percentage_complete);
         void update_complete();
-        void close();
     }
 }

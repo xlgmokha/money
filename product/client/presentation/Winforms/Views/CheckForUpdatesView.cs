@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using Gorilla.Commons.Utility;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
-using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 using momoney.service.infrastructure.updating;
 
@@ -48,35 +47,22 @@ namespace MoMoney.Presentation.Winforms.Views
             cancel_button = x => presenter.cancel_update();
         }
 
-        public void display()
-        {
-            ux_update_button.Enabled = false;
-            ux_dont_update_button.Enabled = false;
-            ux_cancel_button.Enabled = false;
-            Show(shell);
-        }
-
         public void downloaded(Percent percentage_complete)
         {
             shell.region<ToolStripProgressBar>(
-                x =>
-                {
-                    while (percentage_complete.is_less_than(x.Value))
-                    {
-                        if (percentage_complete.represents(x.Value)) break;
-                        x.PerformStep();
-                    }
-                });
+                                                  x =>
+                                                  {
+                                                      while (percentage_complete.is_less_than(x.Value))
+                                                      {
+                                                          if (percentage_complete.represents(x.Value)) break;
+                                                          x.PerformStep();
+                                                      }
+                                                  });
         }
 
         public void update_complete()
         {
             downloaded(100);
-        }
-
-        public void close()
-        {
-            Close();
         }
 
         public void run(ApplicationVersion information)
@@ -98,6 +84,14 @@ namespace MoMoney.Presentation.Winforms.Views
                 ux_current_version.Text = "Current: " + Assembly.GetExecutingAssembly().GetName().Version;
                 ux_new_version.Text = "New: " + Assembly.GetExecutingAssembly().GetName().Version;
             }
+        }
+
+        public void show_dialog(Shell parent_window)
+        {
+            ux_update_button.Enabled = false;
+            ux_dont_update_button.Enabled = false;
+            ux_cancel_button.Enabled = false;
+            Show(parent_window);
         }
     }
 }
