@@ -1,8 +1,8 @@
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Winforms.Databinding;
 
-namespace MoMoney.Presentation.Winforms.Databinding
+namespace tests.unit.client.presentation.winforms.databinding
 {
     [Concern(typeof (Create))]
     public class when_binding_a_property_on_an_object_to_a_textbox : concerns
@@ -11,11 +11,11 @@ namespace MoMoney.Presentation.Winforms.Databinding
             () => text_box.Text.should_be_equal_to(first_name);
 
         context c = () =>
-                        {
-                            thing_to_bind_to = an<IAnInterface>();
-                            text_box = new TextBox();
-                            thing_to_bind_to.is_asked_for(t => t.FirstName).it_will_return(first_name);
-                        };
+        {
+            thing_to_bind_to = an<IAnInterface>();
+            text_box = new TextBox();
+            thing_to_bind_to.is_asked_for(t => t.FirstName).it_will_return(first_name);
+        };
 
         because b = () => Create
                               .binding_for(thing_to_bind_to)
@@ -34,15 +34,15 @@ namespace MoMoney.Presentation.Winforms.Databinding
             () => thing_to_bind_to.FirstName.should_be_equal_to(expected_name);
 
         context c = () =>
-                        {
-                            thing_to_bind_to = new AnImplementation {FirstName = "abshir"};
-                            text_box = new TextBox();
+        {
+            thing_to_bind_to = new AnImplementation {FirstName = "abshir"};
+            text_box = new TextBox();
 
-                            Create
-                                .binding_for(thing_to_bind_to)
-                                .bind_to_property(t => t.FirstName)
-                                .bound_to_control(text_box);
-                        };
+            Create
+                .binding_for(thing_to_bind_to)
+                .bind_to_property(t => t.FirstName)
+                .bound_to_control(text_box);
+        };
 
         because b = () => { text_box.Text = expected_name; };
 

@@ -1,8 +1,8 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Core;
 using momoney.presentation.views;
 
-namespace MoMoney.Presentation.Core
+namespace tests.unit.client.presentation.core
 {
     public class ApplicationControllerSpecs
     {

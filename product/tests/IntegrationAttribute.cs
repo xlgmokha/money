@@ -1,6 +1,6 @@
 using MbUnit.Framework;
 
-namespace Gorilla.Commons.Testing
+namespace tests
 {
     public class IntegrationAttribute : FixtureCategoryAttribute
     {

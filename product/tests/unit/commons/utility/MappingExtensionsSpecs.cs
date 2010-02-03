@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using gorilla.commons.utility;
 
-namespace gorilla.commons.utility
+namespace tests.unit.commons.utility
 {
     [Concern(typeof (MappingExtensions))]
     public class when_transforming_type_A_to_type_B_then_C : concerns

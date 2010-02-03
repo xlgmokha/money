@@ -3,10 +3,10 @@ using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Reflection;
 using gorilla.commons.infrastructure.thirdparty;
 using gorilla.commons.infrastructure.thirdparty.Castle.Windsor.Configuration;
-using Gorilla.Commons.Testing;
 using MbUnit.Framework;
+using MoMoney.boot.container.registration;
 
-namespace MoMoney.boot.container.registration
+namespace tests.unit.client.boot.container.registration
 {
     [Ignore("I am not sure why but line 19 throws a BadImageFormatException")]
     public abstract class behaves_like_auto_registering_components_into_container :

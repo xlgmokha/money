@@ -1,9 +1,9 @@
 using System;
 using DataDynamics.ActiveReports;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Model.reporting;
 
-namespace MoMoney.Presentation.Model.reporting
+namespace tests.unit.client.presentation.model
 {
     public class ReportBindingExtensionsSpecs
     {

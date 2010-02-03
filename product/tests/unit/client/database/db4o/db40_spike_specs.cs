@@ -2,10 +2,9 @@ using System.Collections.Generic;
 using System.IO;
 using Db4objects.Db4o;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
 
-namespace momoney.database.db4o.Spiking
+namespace tests.unit.client.database.db4o
 {
     [Concern(typeof (Db4oFactory))]
     public class when_opening_an_existing_database_ : concerns

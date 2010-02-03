@@ -1,9 +1,9 @@
 using System;
 using System.Linq.Expressions;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Winforms.Databinding;
 
-namespace MoMoney.Presentation.Winforms.Databinding
+namespace tests.unit.client.presentation.winforms.databinding
 {
     public class BindingSelectorSpecs
     {
@@ -19,22 +19,22 @@ namespace MoMoney.Presentation.Winforms.Databinding
             () => inspector.was_told_to(i => i.inspect(expression_to_parse));
 
         context c = () =>
-                        {
-                            thing_to_bind_to = an<IAnInterface>();
-                            factory = an<IPropertyInspectorFactory>();
-                            inspector = an<IPropertyInspector<IAnInterface, string>>();
+        {
+            thing_to_bind_to = an<IAnInterface>();
+            factory = an<IPropertyInspectorFactory>();
+            inspector = an<IPropertyInspector<IAnInterface, string>>();
 
-                            factory.is_told_to(f => f.create<IAnInterface, string>()).it_will_return(inspector);
+            factory.is_told_to(f => f.create<IAnInterface, string>()).it_will_return(inspector);
 
-                            inspector.is_told_to(i => i.inspect(null))
-                                .IgnoreArguments().it_will_return(typeof (IAnInterface).GetProperty("FirstName"));
-                        };
+            inspector.is_told_to(i => i.inspect(null))
+                .IgnoreArguments().it_will_return(typeof (IAnInterface).GetProperty("FirstName"));
+        };
 
         because b = () =>
-                        {
-                            expression_to_parse = (s => s.FirstName);
-                            result = sut.bind_to_property(expression_to_parse);
-                        };
+        {
+            expression_to_parse = (s => s.FirstName);
+            result = sut.bind_to_property(expression_to_parse);
+        };
 
         public override IBindingSelector<IAnInterface> create_sut()
         {

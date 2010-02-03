@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors;
-using Gorilla.Commons.Testing;
 
-namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
+namespace tests.unit.commons.infrastructure.thirdparty.castle
 {
     [Concern(typeof (CastleDynamicInterceptorConstraint<>))]
     public abstract class behaves_like_constraint : concerns_for<InterceptorConstraint<string>, CastleDynamicInterceptorConstraint<string>>

@@ -1,10 +1,10 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using MbUnit.Framework;
 using MoMoney.Presentation.Core;
+using momoney.presentation.presenters;
 using MoMoney.Service.Infrastructure.Threading;
 
-namespace momoney.presentation.presenters
+namespace tests.unit.client.presentation.presenters
 {
     public class RunTheSpecs
     {

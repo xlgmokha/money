@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.Core
+namespace tests.unit.client.domain.core
 {
     public class RankingSpecs
     {
@@ -10,18 +10,18 @@ namespace MoMoney.Domain.Core
     public abstract class behaves_like_a_list_of_calgary_flames_point_leaders : concerns_for<IRanking<string>, Ranking<string>>
     {
         after_the_sut_has_been_created c = () =>
-                        {
-                            sut.add("Jarome Iginla");
-                            sut.add("Mike Cammalleri");
-                            sut.add("Daymond Langkow");
-                            sut.add("Todd Bertuzzi");
-                            sut.add("Rene Bourque");
-                            sut.add("Dion Phaneuf");
-                            sut.add("Craig Conroy");
-                            sut.add("Curtis Glencross");
-                            sut.add("David Moss");
-                            sut.add("Adrian Aucoin");
-                        };
+        {
+            sut.add("Jarome Iginla");
+            sut.add("Mike Cammalleri");
+            sut.add("Daymond Langkow");
+            sut.add("Todd Bertuzzi");
+            sut.add("Rene Bourque");
+            sut.add("Dion Phaneuf");
+            sut.add("Craig Conroy");
+            sut.add("Curtis Glencross");
+            sut.add("David Moss");
+            sut.add("Adrian Aucoin");
+        };
     }
 
     public class when_someone_ranked_higher_is_compared_with_someone_ranked_lower :

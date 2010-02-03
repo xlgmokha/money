@@ -1,9 +1,9 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using gorilla.commons.Utility;
+using momoney.service.infrastructure.threading;
 using Rhino.Mocks;
 
-namespace momoney.service.infrastructure.threading
+namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (BackgroundThread))]
     public abstract class behaves_like_a_background_thread : concerns_for<IBackgroundThread, BackgroundThread>

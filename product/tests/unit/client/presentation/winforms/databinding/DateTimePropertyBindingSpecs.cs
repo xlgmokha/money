@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Winforms.Databinding;
 
-namespace MoMoney.Presentation.Winforms.Databinding
+namespace tests.unit.client.presentation.winforms.databinding
 {
     [Concern(typeof (Create))]
     public class when_a_new_date_is_selected_by_a_date_time_picker_that_is_bound_to_a_property : concerns
@@ -12,14 +12,14 @@ namespace MoMoney.Presentation.Winforms.Databinding
             () => thing_to_bind_to.birth_day.should_be_equal_to(november_nineteenth);
 
         context c = () =>
-                        {
-                            date_time_picker = new DateTimePicker {Value = DateTime.Now};
-                            thing_to_bind_to = new TestDTO {birth_day = DateTime.Now};
+        {
+            date_time_picker = new DateTimePicker {Value = DateTime.Now};
+            thing_to_bind_to = new TestDTO {birth_day = DateTime.Now};
 
-                            Create.binding_for(thing_to_bind_to)
-                                .bind_to_property(x => x.birth_day)
-                                .bound_to_control(date_time_picker);
-                        };
+            Create.binding_for(thing_to_bind_to)
+                .bind_to_property(x => x.birth_day)
+                .bound_to_control(date_time_picker);
+        };
 
         because b = () => { date_time_picker.Value = november_nineteenth; };
 

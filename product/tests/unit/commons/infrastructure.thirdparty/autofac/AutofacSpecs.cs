@@ -4,9 +4,8 @@ using Autofac;
 using Autofac.Builder;
 using Autofac.Modules;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 
-namespace gorilla.commons.infrastructure.thirdparty.autofac
+namespace tests.unit.commons.infrastructure.thirdparty.autofac
 {
     [Concern(typeof (ContainerBuilder))]
     public class when_trying_to_register_a_single_item_in_the_autofac_container : concerns

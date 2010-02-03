@@ -1,14 +1,14 @@
 using System;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.FileSystem;
-using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
 using momoney.presentation.model.eventing;
+using MoMoney.Presentation.Model.Projects;
 using momoney.service.infrastructure;
 using MoMoney.Service.Infrastructure.Eventing;
 using momoney.service.infrastructure.transactions;
 
-namespace MoMoney.Presentation.Model.Projects
+namespace tests.unit.client.presentation.model
 {
     public class ProjectControllerSpecs
     {

@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using Gorilla.Commons.Infrastructure.Proxies;
 
-namespace Gorilla.Commons.Infrastructure.Proxies
+namespace tests.unit.commons.infrastructure
 {
     public class ProxyFactorySpecs
     {

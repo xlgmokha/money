@@ -1,9 +1,9 @@
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using gorilla.commons.Utility;
+using momoney.service.infrastructure.threading;
 
-namespace momoney.service.infrastructure.threading
+namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (RunOnBackgroundThreadInterceptor<>))]
     public abstract class behaves_like_background_thread_interceptor :

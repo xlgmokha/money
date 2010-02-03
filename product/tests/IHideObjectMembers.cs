@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace Gorilla.Commons.Testing
+namespace tests
 {
     [EditorBrowsable(EditorBrowsableState.Never)]
     public interface IHideObjectMembers

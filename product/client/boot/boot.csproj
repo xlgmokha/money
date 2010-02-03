@@ -149,7 +149,6 @@
     <Compile Include="modules\core\ILoadPresentationModulesCommand.cs" />
     <Compile Include="modules\DatabaseModule.cs" />
     <Compile Include="modules\ApplicationMenuModule.cs" />
-    <Compile Include="modules\NavigationModule.cs" />
     <Compile Include="modules\GettingStartedModule.cs" />
     <Compile Include="modules\TitleBarPresenter.cs" />
     <Compile Include="modules\ToolbarModule.cs" />

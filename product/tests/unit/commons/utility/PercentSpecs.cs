@@ -1,8 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
-using gorilla.commons.utility;
+using Gorilla.Commons.Utility;
 
-namespace Gorilla.Commons.Utility
+namespace tests.unit.commons.utility
 {
     [Concern(typeof (Percent))]
     public class when_comparing_fifty_divided_by_one_hundred_to_fifty_percent : concerns

@@ -1,8 +1,8 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Testing;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 
-namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
+namespace tests.unit.commons.infrastructure.thirdparty.castle
 {
     public class LazySpecs
     {

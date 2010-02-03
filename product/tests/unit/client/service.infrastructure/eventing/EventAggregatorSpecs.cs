@@ -1,10 +1,10 @@
 using System.Data;
 using System.Threading;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Service.Infrastructure.Eventing;
 using Rhino.Mocks;
 
-namespace MoMoney.Service.Infrastructure.Eventing
+namespace tests.unit.client.service.infrastructure.eventing
 {
     public abstract class behaves_like_event_aggregator : concerns_for<EventAggregator, SynchronizedEventAggregator>
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Winforms.Helpers;
 
-namespace MoMoney.Presentation.Winforms.Helpers
+namespace tests.unit.client.presentation.winforms.helpers
 {
     public class BindableListBoxSpecs
     {
@@ -20,10 +20,10 @@ namespace MoMoney.Presentation.Winforms.Helpers
     public class when_binding_a_bunch_of_items_to_a_list_control : behaves_like_bindable_list
     {
         it should_add_each_item_to_the_list_control = () =>
-                                                          {
-                                                              control.was_told_to(x => x.add_item("timone"));
-                                                              control.was_told_to(x => x.add_item("pumba"));
-                                                          };
+        {
+            control.was_told_to(x => x.add_item("timone"));
+            control.was_told_to(x => x.add_item("pumba"));
+        };
 
         because b = () => sut.bind_to(new List<string> {"timone", "pumba",});
     }

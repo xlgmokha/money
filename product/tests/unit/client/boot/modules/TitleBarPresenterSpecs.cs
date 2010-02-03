@@ -1,10 +1,10 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using momoney.modules;
 using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Model.Projects;
 using MoMoney.Presentation.Views;
 
-namespace momoney.modules
+namespace tests.unit.client.boot.modules
 {
     [Concern(typeof (TitleBarPresenter))]
     public abstract class behaves_like_a_title_bar_presenter : concerns_for<TitleBarPresenter>

@@ -1,8 +1,8 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
+using MoMoney.Presentation.Winforms.Helpers;
 
-namespace MoMoney.Presentation.Winforms.Helpers
+namespace tests.unit.client.presentation.winforms.helpers
 {
     public class BindableTextBoxSpecs
     {

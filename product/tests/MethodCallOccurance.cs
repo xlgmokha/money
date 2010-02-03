@@ -1,7 +1,7 @@
 using System;
 using Rhino.Mocks;
 
-namespace Gorilla.Commons.Testing
+namespace tests
 {
     public class MethodCallOccurance<T> : IHideObjectMembers
     {

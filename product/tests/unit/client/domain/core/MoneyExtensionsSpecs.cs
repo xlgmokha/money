@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.Core
+namespace tests.unit.client.domain.core
 {
     public class when_converting_a_valid_amount_to_a_money : concerns
     {

@@ -1,9 +1,9 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using Gorilla.Commons.Infrastructure.Container;
 using gorilla.commons.utility;
 
-namespace Gorilla.Commons.Infrastructure.Container
+namespace tests.unit.commons.infrastructure
 {
     [Concern(typeof (Resolve))]
     public abstract class behaves_like_a_inversion_of_control_container : concerns
@@ -14,12 +14,12 @@ namespace Gorilla.Commons.Infrastructure.Container
     public class when_resolving_a_dependency_using_the_container : behaves_like_a_inversion_of_control_container
     {
         context c = () =>
-                        {
-                            registry = an<DependencyRegistry>();
-                            presenter = an<Command>();
-                            registry.is_told_to(x => x.get_a<Command>()).it_will_return(presenter);
-                            Resolve.initialize_with(registry);
-                        };
+        {
+            registry = an<DependencyRegistry>();
+            presenter = an<Command>();
+            registry.is_told_to(x => x.get_a<Command>()).it_will_return(presenter);
+            Resolve.initialize_with(registry);
+        };
 
         because b = () => { result = Resolve.the<Command>(); };
 
@@ -39,11 +39,11 @@ namespace Gorilla.Commons.Infrastructure.Container
     public class when_resolving_a_dependency_that_is_not_registered_ : behaves_like_a_inversion_of_control_container
     {
         context c = () =>
-                        {
-                            registry = an<DependencyRegistry>();
-                            registry.is_told_to(x => x.get_a<Command>()).it_will_throw(new Exception());
-                            Resolve.initialize_with(registry);
-                        };
+        {
+            registry = an<DependencyRegistry>();
+            registry.is_told_to(x => x.get_a<Command>()).it_will_throw(new Exception());
+            Resolve.initialize_with(registry);
+        };
 
         because b = () => { the_call = call.to(() => Resolve.the<Command>()); };
 

@@ -4,7 +4,7 @@ using System.Linq;
 using Rhino.Mocks;
 using Rhino.Mocks.Interfaces;
 
-namespace Gorilla.Commons.Testing
+namespace tests
 {
     public static class MockingExtensions
     {

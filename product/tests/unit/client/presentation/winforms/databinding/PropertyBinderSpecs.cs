@@ -1,8 +1,8 @@
 using System.Reflection;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Winforms.Databinding;
 
-namespace MoMoney.Presentation.Winforms.Databinding
+namespace tests.unit.client.presentation.winforms.databinding
 {
     [Concern(typeof (PropertyBinder<,>))]
     public abstract class behaves_like_a_property_binder :
@@ -14,10 +14,10 @@ namespace MoMoney.Presentation.Winforms.Databinding
         }
 
         context c = () =>
-                        {
-                            target = new AnImplementation {FirstName = "malik"};
-                            property = typeof (IAnInterface).GetProperty("FirstName");
-                        };
+        {
+            target = new AnImplementation {FirstName = "malik"};
+            property = typeof (IAnInterface).GetProperty("FirstName");
+        };
 
         static protected IAnInterface target;
         static protected PropertyInfo property;

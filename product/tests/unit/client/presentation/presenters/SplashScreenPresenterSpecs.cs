@@ -1,10 +1,10 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Presenters;
 using momoney.presentation.views;
 using MoMoney.Service.Infrastructure.Threading;
 
-namespace MoMoney.Presentation.Presenters
+namespace tests.unit.client.presentation.presenters
 {
     [Concern(typeof (SplashScreenPresenter))]
     public abstract class behaves_like_splash_screen_presenter : concerns_for<ISplashScreenPresenter>

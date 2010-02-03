@@ -209,7 +209,6 @@
     <Compile Include="presenters\ExpandoItemBuilder.cs" />
     <Compile Include="presenters\IActionTaskPaneFactory.cs" />
     <Compile Include="presenters\MainMenuPresenter.cs" />
-    <Compile Include="presenters\NavigationPresenter.cs" />
     <Compile Include="presenters\ReportPresenter.cs" />
     <Compile Include="presenters\ApplicationShellPresenter.cs" />
     <Compile Include="presenters\GettingStartedPresenter.cs" />
@@ -316,18 +315,11 @@
     </Compile>
     <Compile Include="views\IAboutApplicationView.cs" />
     <Compile Include="views\IMainMenuView.cs" />
-    <Compile Include="views\INavigationView.cs" />
     <Compile Include="winforms\views\MainMenuView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="winforms\views\MainMenuView.Designer.cs">
       <DependentUpon>MainMenuView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="winforms\views\NavigationView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="winforms\views\NavigationView.Designer.cs">
-      <DependentUpon>NavigationView.cs</DependentUpon>
     </Compile>
     <Compile Include="views\IReportViewer.cs" />
     <Compile Include="winforms\views\ReportViewer.cs">
@@ -475,10 +467,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="winforms\views\MainMenuView.resx">
       <DependentUpon>MainMenuView.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="winforms\views\NavigationView.resx">
-      <DependentUpon>NavigationView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="winforms\views\ReportViewer.resx">

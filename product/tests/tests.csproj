@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ActiveReports6, Version=6.0.1797.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\active.reports\ActiveReports6.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\auto.fac\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
@@ -50,6 +58,10 @@
     <Reference Include="developwithpassion.commons.core.infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.commons.core.infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=4.5.1181.216, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\jetbrains\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
       <SpecificVersion>False</SpecificVersion>
@@ -72,6 +84,10 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.3392.19652, Culture=neutral, PublicKeyToken=b602bcfb76b4e90d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\dock.panel.suite\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="assertions.cs" />
@@ -123,7 +139,6 @@
     <Compile Include="unit\client\presentation\presenters\CheckForUpdatesPresenterSpecs.cs" />
     <Compile Include="unit\client\presentation\presenters\GettingStartedPresenterSpecs.cs" />
     <Compile Include="unit\client\presentation\presenters\LogFileViewPresenterSpecs.cs" />
-    <Compile Include="unit\client\presentation\presenters\NavigationPresenterSpecs.cs" />
     <Compile Include="unit\client\presentation\presenters\RunTheSpecs.cs" />
     <Compile Include="unit\client\presentation\presenters\SplashScreenPresenterSpecs.cs" />
     <Compile Include="unit\client\presentation\presenters\StatusBarPresenterSpecs.cs" />
@@ -144,6 +159,7 @@
     <Compile Include="unit\client\presentation\winforms\views\ApplicationShellSpecs.cs" />
     <Compile Include="unit\client\presentation\winforms\views\SaveChangesViewSpecs.cs" />
     <Compile Include="unit\client\service.infrastructure\eventing\EventAggregatorSpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\security\IsInRoleSpecs.cs" />
     <Compile Include="unit\client\service.infrastructure\threading\BackgroundThreadFactorySpecs.cs" />
     <Compile Include="unit\client\service.infrastructure\threading\BackgroundThreadSpecs.cs" />
     <Compile Include="unit\client\service.infrastructure\threading\CommandProcessorSpecs.cs" />

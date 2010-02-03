@@ -1,9 +1,9 @@
 using System;
 using System.Timers;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using momoney.service.infrastructure.threading;
 
-namespace momoney.service.infrastructure.threading
+namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (TimerFactory))]
     public abstract class behaves_like_a_timer_factory : concerns_for<ITimerFactory, TimerFactory>

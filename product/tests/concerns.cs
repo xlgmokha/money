@@ -1,7 +1,7 @@
 using developwithpassion.bdd.mbunit.standard.observations;
 using Rhino.Mocks;
 
-namespace Gorilla.Commons.Testing
+namespace tests
 {
     public abstract class concerns_for<Contract> : observations_for_a_sut_without_a_contract<Contract>,
                                                    IHideObjectMembers

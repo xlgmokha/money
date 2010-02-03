@@ -1,8 +1,8 @@
 using System.Reflection;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Winforms.Databinding;
 
-namespace MoMoney.Presentation.Winforms.Databinding
+namespace tests.unit.client.presentation.winforms.databinding
 {
     [Concern(typeof (PropertyInspector<,>))]
     public class when_parsing_a_valie_expression_for_the_information_on_the_property :

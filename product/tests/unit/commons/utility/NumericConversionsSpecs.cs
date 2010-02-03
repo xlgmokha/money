@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using gorilla.commons.utility;
 
-namespace gorilla.commons.utility
+namespace tests.unit.commons.utility
 {
     [Concern(typeof (NumericConversions))]
     public class when_converting_a_valid_string_to_a_long : concerns

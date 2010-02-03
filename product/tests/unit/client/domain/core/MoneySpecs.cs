@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.Core
+namespace tests.unit.client.domain.core
 {
     [Concern(typeof (Money))]
     public class when_adding_two_monies_together : concerns_for<Money>
@@ -9,9 +9,9 @@ namespace MoMoney.Domain.Core
         it should_return_the_correct_money = () => result.should_be_equal_to(new Money(2.98));
 
         because b = () =>
-                    {
-                        result = sut.add(new Money(1.99));
-                    };
+        {
+            result = sut.add(new Money(1.99));
+        };
 
         public override Money create_sut()
         {
@@ -28,9 +28,9 @@ namespace MoMoney.Domain.Core
 
 
         because b = () =>
-                    {
-                        result = sut.Equals(new Money(1.99));
-                    };
+        {
+            result = sut.Equals(new Money(1.99));
+        };
 
         public override Money create_sut()
         {

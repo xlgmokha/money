@@ -1,6 +1,6 @@
 using System;
 
-namespace Gorilla.Commons.Testing
+namespace tests
 {
     public class ConcernAttribute : bdddoc.core.ConcernAttribute
     {

@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Winforms.Helpers;
 
-namespace MoMoney.Presentation.Winforms.Helpers
+namespace tests.unit.client.presentation.winforms.helpers
 {
     public class BindableTextBoxExtensionsSpecs
     {

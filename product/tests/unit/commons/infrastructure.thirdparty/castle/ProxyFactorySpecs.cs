@@ -3,9 +3,9 @@ using System.Data;
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
 using developwithpassion.bdd.mbunit;
-using Gorilla.Commons.Testing;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 
-namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
+namespace tests.unit.commons.infrastructure.thirdparty.castle
 {
     [Concern(typeof(CastleDynamicProxyFactory))]
     public abstract class behaves_like_proxy_factory : concerns_for<ProxyFactory, CastleDynamicProxyFactory>

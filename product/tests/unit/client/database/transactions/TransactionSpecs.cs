@@ -1,9 +1,9 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
+using momoney.database.transactions;
 
-namespace momoney.database.transactions
+namespace tests.unit.client.database.transactions
 {
     public class TransactionSpecs
     {

@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using momoney.database.transactions;
 
-namespace momoney.database.transactions
+namespace tests.unit.client.database.transactions
 {
     public class SessionFactorySpecs
     {

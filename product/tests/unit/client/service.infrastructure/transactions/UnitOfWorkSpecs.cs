@@ -1,9 +1,9 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using momoney.database.transactions;
 using momoney.service.infrastructure.transactions;
+using MoMoney.Service.Infrastructure.Transactions;
 
-namespace MoMoney.Service.Infrastructure.Transactions
+namespace tests.unit.client.service.infrastructure.transactions
 {
     public class UnitOfWorkSpecs
     {

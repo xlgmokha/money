@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.Core
+namespace tests.unit.client.domain.core
 {
     public class RangeSpecs
     {
@@ -65,9 +65,9 @@ namespace MoMoney.Domain.Core
         behaves_like_a_range_from_10_to_1
     {
         it should_flip_the_start_and_end_of_the_range = () =>
-                                                            {
-                                                                sut.start_of_range.should_be_equal_to(1);
-                                                                sut.end_of_range.should_be_equal_to(10);
-                                                            };
+        {
+            sut.start_of_range.should_be_equal_to(1);
+            sut.end_of_range.should_be_equal_to(10);
+        };
     }
 }

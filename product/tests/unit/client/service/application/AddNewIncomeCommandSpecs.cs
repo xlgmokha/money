@@ -1,15 +1,15 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.repositories;
 using MoMoney.DTO;
+using MoMoney.Service.Application;
 using MoMoney.Service.Contracts.Application;
 using Rhino.Mocks;
 
-namespace MoMoney.Service.Application
+namespace tests.unit.client.service.application
 {
     public class AddNewIncomeCommandSpecs {}
 

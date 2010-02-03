@@ -1,12 +1,12 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
+using momoney.presentation.presenters;
 using MoMoney.Presentation.Presenters;
 using momoney.presentation.views;
 using momoney.service.infrastructure.updating;
 
-namespace momoney.presentation.presenters
+namespace tests.unit.client.presentation.presenters
 {
     public class CheckForUpdatesPresentersSpecs
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace momoney.utility
+namespace gorilla.commons.utility
 {
     static public class AttributeExtensions
     {

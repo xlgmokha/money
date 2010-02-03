@@ -27,7 +27,6 @@ namespace MoMoney.boot.container.registration
             register.singleton(() => shell);
             register_tab<IAboutApplicationView, AboutTheApplicationView>();
             register_tab<ISplashScreenView, SplashScreenView>();
-            register_tab<INavigationView, NavigationView>();
             register_tab<IAddCompanyView, AddCompanyView>();
             register_tab<IViewAllBills, ViewAllBills>();
             register_tab<IAddBillPaymentView, AddBillPaymentView>();

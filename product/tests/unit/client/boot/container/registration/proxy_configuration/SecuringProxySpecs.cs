@@ -2,10 +2,10 @@ using System.Security.Principal;
 using System.Threading;
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
+using MoMoney.boot.container.registration.proxy_configuration;
 
-namespace MoMoney.boot.container.registration.proxy_configuration
+namespace tests.unit.client.boot.container.registration.proxy_configuration
 {
     public class SecuringProxySpecs {}
 

@@ -1,9 +1,9 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Domain.Accounting;
 using MoMoney.Domain.Core;
 
-namespace MoMoney.Domain.Accounting
+namespace tests.unit.client.domain.accounting
 {
     [Concern(typeof (Bill))]
     public class when_checking_to_see_if_a_new_bill_has_been_paid_for : concerns_for<Bill>
@@ -16,10 +16,10 @@ namespace MoMoney.Domain.Accounting
         }
 
         context c = () =>
-                        {
-                            amount_owed = new Money(100);
-                            enmax = an<Company>();
-                        };
+        {
+            amount_owed = new Money(100);
+            enmax = an<Company>();
+        };
 
         because b = () => { result = sut.is_paid_for(); };
 
@@ -35,16 +35,16 @@ namespace MoMoney.Domain.Accounting
 
 
         context c = () =>
-                        {
-                            one_hundred_twenty_three_dollars_fourty_five_cents = new Money(123.45);
-                            direct_energy = an<Company>();
-                        };
+        {
+            one_hundred_twenty_three_dollars_fourty_five_cents = new Money(123.45);
+            direct_energy = an<Company>();
+        };
 
         because b = () =>
-                        {
-                            sut.pay(one_hundred_twenty_three_dollars_fourty_five_cents);
-                            result = sut.is_paid_for();
-                        };
+        {
+            sut.pay(one_hundred_twenty_three_dollars_fourty_five_cents);
+            result = sut.is_paid_for();
+        };
 
         public override Bill create_sut()
         {

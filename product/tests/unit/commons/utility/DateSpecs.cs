@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using Gorilla.Commons.Utility;
 
-namespace Gorilla.Commons.Utility
+namespace tests.unit.commons.utility
 {
     public class DateSpecs
     {

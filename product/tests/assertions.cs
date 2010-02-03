@@ -4,7 +4,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using MbUnit.Framework;
 
-namespace Gorilla.Commons.Testing
+namespace tests
 {
     public static class Assertions
     {

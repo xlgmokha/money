@@ -1,8 +1,8 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Model.Projects;
 
-namespace momoney.presentation.model.menu.file
+namespace tests.unit.client.presentation.model
 {
     [Concern(typeof (SaveCommand))]
     public abstract class behaves_like_the_save_command : concerns_for<ISaveCommand, SaveCommand>

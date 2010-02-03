@@ -5,11 +5,11 @@ using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
 using gorilla.commons.infrastructure.thirdparty.Castle.Windsor.Configuration;
-using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
+using MoMoney.boot.container;
 using MoMoney.Domain.Core;
 
-namespace MoMoney.boot.container
+namespace tests.unit.client.boot.container
 {
     public abstract class behaves_like_component_exclusion_specification :
         concerns_for<ComponentExclusionSpecification, ComponentExclusionSpecificationImplementation> {}

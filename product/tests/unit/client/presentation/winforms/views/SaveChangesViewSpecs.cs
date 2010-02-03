@@ -1,10 +1,10 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Winforms.Helpers;
+using MoMoney.Presentation.Winforms.Views;
 
-namespace MoMoney.Presentation.Winforms.Views
+namespace tests.unit.client.presentation.winforms.views
 {
     [Concern(typeof(SaveChangesView))]
     [Integration]
@@ -13,10 +13,10 @@ namespace MoMoney.Presentation.Winforms.Views
         context c = () => { presenter = an<SaveChangesPresenter>(); };
 
         after_the_sut_has_been_created after = () =>
-                                                   {
-                                                       save_changes_window = sut;
-                                                       save_changes_window.attach_to(presenter);
-                                                   };
+        {
+            save_changes_window = sut;
+            save_changes_window.attach_to(presenter);
+        };
 
         protected static SaveChangesPresenter presenter;
         protected static SaveChangesView save_changes_window;

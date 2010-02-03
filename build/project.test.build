@@ -12,6 +12,7 @@
 		<csc output="${build.compile.dir}\${test.output}" target="library" debug="${debug}">
 			<sources basedir="${product.dir}">
 				<include name="**\*Specs.cs" />
+				<include name="tests\**\*.cs" />
 			</sources>
 			<references refid="test.references.fileset"/>
 		</csc>

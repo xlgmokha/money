@@ -1,10 +1,10 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using momoney.presentation.model.eventing;
+using momoney.presentation.presenters;
 using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
-namespace momoney.presentation.presenters
+namespace tests.unit.client.presentation.presenters
 {
     [Concern(typeof (StatusBarPresenter))]
     public class when_initializing_the_status_bar : concerns_for<StatusBarPresenter>

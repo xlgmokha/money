@@ -1,9 +1,9 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
+using MoMoney.Modules.Core;
 using MoMoney.Presentation;
 
-namespace MoMoney.Modules.Core
+namespace tests.unit.client.boot.modules.core
 {
     public class LoadPresentationModulesCommandSpecs
     {
@@ -14,11 +14,11 @@ namespace MoMoney.Modules.Core
             it should_initialize_all_the_presentation_modules = () => module.was_told_to(x => x.run());
 
             context c = () =>
-                        {
-                            registry = the_dependency<Registry<IModule>>();
-                            module = an<IModule>();
-                            when_the(registry).is_told_to(r => r.all()).it_will_return(module);
-                        };
+            {
+                registry = the_dependency<Registry<IModule>>();
+                module = an<IModule>();
+                when_the(registry).is_told_to(r => r.all()).it_will_return(module);
+            };
 
             because b = () => sut.run();
 

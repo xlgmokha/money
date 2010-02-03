@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using gorilla.commons.utility;
 
-namespace gorilla.commons.utility
+namespace tests.unit.commons.utility
 {
     public class ListExtensionsSpecs
     {

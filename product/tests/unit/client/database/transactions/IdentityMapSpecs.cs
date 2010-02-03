@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using momoney.database.transactions;
 
-namespace momoney.database.transactions
+namespace tests.unit.client.database.transactions
 {
     [Concern(typeof (IdentityMap<,>))]
     public class behaves_like_identity_map : concerns_for<IIdentityMap<int, string>, IdentityMap<int, string>>

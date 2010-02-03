@@ -1,9 +1,9 @@
 using System;
 using System.Linq.Expressions;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Winforms.Helpers;
 
-namespace MoMoney.Presentation.Winforms.Helpers
+namespace tests.unit.client.presentation.winforms.helpers
 {
     public class RebindTextBoxCommandSpecs
     {
@@ -14,10 +14,10 @@ namespace MoMoney.Presentation.Winforms.Helpers
         concerns_for<ITextBoxCommand<string>, RebindTextBoxCommand<string>>
     {
         context c = () =>
-                        {
-                            textbox = an<IBindableTextBox<string>>();
-                            binder = x => "";
-                        };
+        {
+            textbox = an<IBindableTextBox<string>>();
+            binder = x => "";
+        };
 
         public override ITextBoxCommand<string> create_sut()
         {
@@ -34,10 +34,10 @@ namespace MoMoney.Presentation.Winforms.Helpers
         it should_bind_the_text_control_to_the_new_item = () => textbox.was_told_to(x => x.bind_to("kat"));
 
         context c = () =>
-                        {
-                            binder = x => "kat";
-                            when_the(textbox).is_told_to(x => x.text()).it_will_return("kitty");
-                        };
+        {
+            binder = x => "kat";
+            when_the(textbox).is_told_to(x => x.text()).it_will_return("kitty");
+        };
 
         because b = () => sut.run(textbox);
     }

@@ -1,11 +1,11 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Helpers;
+using MoMoney.Presentation.Winforms.Views;
 
-namespace MoMoney.Presentation.Winforms.Views
+namespace tests.unit.client.presentation.winforms.views
 {
     public class ApplicationShellSpecs
     {

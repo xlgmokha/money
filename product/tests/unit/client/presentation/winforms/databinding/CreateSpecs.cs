@@ -1,8 +1,8 @@
 using System.Windows.Forms;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using MoMoney.Presentation.Winforms.Databinding;
 
-namespace MoMoney.Presentation.Winforms.Databinding
+namespace tests.unit.client.presentation.winforms.databinding
 {
     public class CreateSpecs
     {
@@ -11,11 +11,11 @@ namespace MoMoney.Presentation.Winforms.Databinding
     public abstract class when_a_text_control_is_bound_to_an_item : concerns
     {
         context c = () =>
-                        {
-                            textbox = new TextBox();
-                            item = new TestItem {name = "k"};
-                            textbox.bind_to(item, x => x.name);
-                        };
+        {
+            textbox = new TextBox();
+            item = new TestItem {name = "k"};
+            textbox.bind_to(item, x => x.name);
+        };
 
         static protected TextBox textbox;
         static protected TestItem item;

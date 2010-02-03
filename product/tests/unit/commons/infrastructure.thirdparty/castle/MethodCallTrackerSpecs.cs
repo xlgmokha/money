@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors;
 
-namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors
+namespace tests.unit.commons.infrastructure.thirdparty.castle
 {
     [Concern(typeof (CastleDynamicMethodCallTracker<>))]
     public class behaves_like_method_call_tracker :

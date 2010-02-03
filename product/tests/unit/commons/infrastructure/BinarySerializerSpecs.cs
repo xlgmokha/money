@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using Gorilla.Commons.Infrastructure.Cloning;
 using MbUnit.Framework;
 
-namespace Gorilla.Commons.Infrastructure.Cloning
+namespace tests.unit.commons.infrastructure
 {
     [Concern(typeof (BinarySerializer<TestItem>))]
     public abstract class when_a_file_is_specified_to_serialize_an_item_to : concerns_for<Serializer<TestItem>, BinarySerializer<TestItem>>
@@ -37,10 +37,10 @@ namespace Gorilla.Commons.Infrastructure.Cloning
         context c = () => { original = new TestItem("hello world"); };
 
         because b = () =>
-                        {
-                            sut.serialize(original);
-                            result = sut.deserialize();
-                        };
+        {
+            sut.serialize(original);
+            result = sut.deserialize();
+        };
 
         static TestItem original;
         static TestItem result;

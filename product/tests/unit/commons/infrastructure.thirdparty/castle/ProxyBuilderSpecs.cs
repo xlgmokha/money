@@ -4,9 +4,9 @@ using System.Linq;
 using System.Reflection;
 using Castle.Core.Interceptor;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 
-namespace gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy
+namespace tests.unit.commons.infrastructure.thirdparty.castle
 {
     [Concern(typeof (CastleDynamicProxyBuilder<>))]
     public abstract class behaves_like_proxy_builder : concerns_for<ProxyBuilder<IAnInterface>, CastleDynamicProxyBuilder<IAnInterface>>

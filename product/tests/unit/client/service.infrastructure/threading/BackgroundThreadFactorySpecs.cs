@@ -1,9 +1,9 @@
 using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Testing;
 using gorilla.commons.Utility;
+using momoney.service.infrastructure.threading;
 
-namespace momoney.service.infrastructure.threading
+namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (BackgroundThreadFactory))]
     public abstract class behaves_like_a_background_thread_factory : concerns_for<IBackgroundThreadFactory, BackgroundThreadFactory>

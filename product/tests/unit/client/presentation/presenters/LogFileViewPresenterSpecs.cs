@@ -1,10 +1,9 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using momoney.presentation.presenters;
 using momoney.presentation.views;
-using MoMoney.Presentation.Views;
 using momoney.service.infrastructure.logging;
 
-namespace momoney.presentation.presenters
+namespace tests.unit.client.presentation.presenters
 {
     public class behaves_like_log_file_presenter : concerns_for< LogFilePresenter>
     {

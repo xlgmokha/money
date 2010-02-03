@@ -94,7 +94,6 @@
     <Compile Include="ProjectTasks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="security\IsInRole.cs" />
-    <Compile Include="security\IsInRoleSpecs.cs" />
     <Compile Include="security\Role.cs" />
     <Compile Include="threading\AsynchronousCommandProcessor.cs" />
     <Compile Include="threading\BackgroundThread.cs" />

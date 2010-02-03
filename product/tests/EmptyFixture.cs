@@ -1,6 +1,6 @@
 using MbUnit.Framework;
 
-namespace Gorilla.Commons.Testing
+namespace tests
 {
     [TestFixture]
     public class EmptyFixture

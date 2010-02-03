@@ -1,11 +1,11 @@
 using System;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using momoney.presentation.model.eventing;
+using momoney.presentation.presenters;
 using momoney.presentation.views;
 using MoMoney.Service.Infrastructure.Eventing;
 
-namespace momoney.presentation.presenters
+namespace tests.unit.client.presentation.presenters
 {
     public class behaves_like_unhandled_error_presenter : concerns_for<UnhandledErrorPresenter>
     {

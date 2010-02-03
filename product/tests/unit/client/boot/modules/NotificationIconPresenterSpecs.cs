@@ -1,11 +1,9 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
-using MoMoney.Presentation.Views;
 using MoMoney.Presentation.Winforms.Resources;
 
-namespace momoney.modules
+namespace tests.unit.client.boot.modules
 {
     [Concern(typeof (NotificationIconPresenter))]
     public abstract class behaves_like_notification_icon_presenter : concerns_for<NotificationIconPresenter>

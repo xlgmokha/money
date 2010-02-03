@@ -1,11 +1,11 @@
 using System;
 using System.Timers;
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
+using momoney.service.infrastructure.threading;
 using MoMoney.Service.Infrastructure.Threading;
 using Rhino.Mocks;
 
-namespace momoney.service.infrastructure.threading
+namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (IntervalTimer))]
     public abstract class behaves_like_an_interval_timer : concerns_for<ITimer, IntervalTimer>
@@ -106,7 +106,7 @@ namespace momoney.service.infrastructure.threading
             timer = dependency<Timer>();
 
             when_the(factory).is_told_to(t => t.create_for(Arg<TimeSpan>.Is.Anything)).it_will_return(
-                timer);
+                                                                                                         timer);
         };
 
         because b = () =>

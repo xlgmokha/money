@@ -1,9 +1,8 @@
 using developwithpassion.bdd.contexts;
-using Gorilla.Commons.Testing;
 using gorilla.commons.utility;
 using MoMoney.Service.Infrastructure.Threading;
 
-namespace momoney.service.infrastructure.threading
+namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (SynchronousCommandProcessor))]
     public abstract class behaves_like_a_command_processor : concerns_for<CommandProcessor, SynchronousCommandProcessor> {}
