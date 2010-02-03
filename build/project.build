@@ -7,9 +7,6 @@
 	
 	<property name="build.dir" value="${base.dir}\build" />
 	<property name="build.tools.dir" value="${build.dir}\tools" />
-	<property name="build.lib.dir" value="${build.dir}\lib" />
-	<property name="build.resources.dir" value="${build.dir}\resources" />
-	<property name="build.icons.dir" value="${build.resources.dir}\icons" />
 	<property name="build.config.dir" value="${build.dir}\config" />
 	<property name="build.compile.dir" value="${build.dir}\compile" />
 	
