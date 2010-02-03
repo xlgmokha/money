@@ -83,7 +83,6 @@
   <ItemGroup>
     <Compile Include="DatabaseAssembly.cs" />
     <Compile Include="db4o\ConfigureObjectContainerStep.cs" />
-    <Compile Include="db4o\Spiking\db40_spike_specs.cs" />
     <Compile Include="repositories\AccountHolderRepository.cs" />
     <Compile Include="repositories\BillRepository.cs" />
     <Compile Include="repositories\CompanyRepository.cs" />
@@ -96,11 +95,8 @@
     <Compile Include="IDatabaseConfiguration.cs" />
     <Compile Include="transactions\ChangeTracker.cs" />
     <Compile Include="transactions\ChangeTrackerFactory.cs" />
-    <Compile Include="transactions\ChangeTrackerFactorySpecs.cs" />
-    <Compile Include="transactions\ChangeTrackerSpecs.cs" />
     <Compile Include="transactions\Context.cs" />
     <Compile Include="transactions\ContextFactory.cs" />
-    <Compile Include="transactions\ContextFactorySpecs.cs" />
     <Compile Include="transactions\CurrentThread.cs" />
     <Compile Include="transactions\DeleteFromDatabase.cs" />
     <Compile Include="transactions\IChangeTracker.cs" />
@@ -109,7 +105,6 @@
     <Compile Include="transactions\IDatabase.cs" />
     <Compile Include="transactions\DatabaseConnection.cs" />
     <Compile Include="transactions\IdentityMapProxy.cs" />
-    <Compile Include="transactions\IdentityMapSpecs.cs" />
     <Compile Include="transactions\IIdentityMap.cs" />
     <Compile Include="transactions\IKey.cs" />
     <Compile Include="transactions\IScopedStorage.cs" />
@@ -118,31 +113,22 @@
     <Compile Include="transactions\IThread.cs" />
     <Compile Include="transactions\PerThread.cs" />
     <Compile Include="transactions\PerThreadScopedStorage.cs" />
-    <Compile Include="transactions\PerThreadScopedStorageSpecs.cs" />
     <Compile Include="transactions\SaveOrUpdateFromDatabase.cs" />
     <Compile Include="transactions\Session.cs" />
     <Compile Include="transactions\SessionFactory.cs" />
-    <Compile Include="transactions\SessionFactorySpecs.cs" />
     <Compile Include="transactions\SessionNotStartedException.cs" />
     <Compile Include="transactions\SessionProvider.cs" />
-    <Compile Include="transactions\SessionSpecs.cs" />
     <Compile Include="transactions\SingletonScopedStorage.cs" />
     <Compile Include="transactions\ObjectDatabaseCommandRegistry.cs" />
     <Compile Include="transactions\TrackerEntry.cs" />
     <Compile Include="transactions\TrackerEntryMapper.cs" />
-    <Compile Include="transactions\TrackerEntrySpecs.cs" />
     <Compile Include="transactions\Transaction.cs" />
-    <Compile Include="transactions\TransactionSpecs.cs" />
     <Compile Include="transactions\TypedKey.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\commons\infrastructure\infrastructure.csproj">
       <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
       <Name>infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\commons\testing\test.helpers.csproj">
-      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>test.helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\commons\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>

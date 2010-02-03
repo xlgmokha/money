@@ -35,10 +35,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\auto.fac\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="AutofacContrib.DynamicProxy2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\app\auto.fac.contrib\AutofacContrib.DynamicProxy2.dll</HintPath>
-    </Reference>
     <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
@@ -91,7 +87,6 @@
   <ItemGroup>
     <Compile Include="autofac\AutofacDependencyRegistry.cs" />
     <Compile Include="autofac\AutofacDependencyRegistryBuilder.cs" />
-    <Compile Include="autofac\AutofacSpecs.cs" />
     <Compile Include="castle\dynamicproxy\CastleDynamicInterceptorConstraint.cs" />
     <Compile Include="castle\dynamicproxy\CastleDynamicInterceptorConstraintFactory.cs" />
     <Compile Include="castle\dynamicproxy\interceptors\SynchronizeInvokeInterceptor.cs" />
@@ -104,21 +99,15 @@
     <Compile Include="castle\dynamicproxy\InterceptorConstraint.cs" />
     <Compile Include="castle\dynamicproxy\InterceptorConstraintFactory.cs" />
     <Compile Include="castle\dynamicproxy\MethodCallTrackerFactory.cs" />
-    <Compile Include="castle\dynamicproxy\InterceptorConstraintFactorySpecs.cs" />
-    <Compile Include="castle\dynamicproxy\InterceptorConstraintSpecs.cs" />
     <Compile Include="castle\dynamicproxy\interceptors\MethodCallTracker.cs" />
     <Compile Include="castle\dynamicproxy\interceptors\CastleDynamicMethodCallTracker.cs" />
-    <Compile Include="castle\dynamicproxy\interceptors\MethodCallTrackerSpecs.cs" />
     <Compile Include="castle\dynamicproxy\interceptors\SelectiveInterceptor.cs" />
     <Compile Include="castle\dynamicproxy\ProxyBuilder.cs" />
     <Compile Include="castle\dynamicproxy\ProxyFactory.cs" />
     <Compile Include="castle\dynamicproxy\Lazy.cs" />
     <Compile Include="castle\dynamicproxy\LazyLoadedInterceptor.cs" />
-    <Compile Include="castle\dynamicproxy\LazySpecs.cs" />
     <Compile Include="castle\dynamicproxy\CastleDynamicProxyBuilder.cs" />
-    <Compile Include="castle\dynamicproxy\ProxyBuilderSpecs.cs" />
     <Compile Include="castle\dynamicproxy\CastleDynamicProxyFactory.cs" />
-    <Compile Include="castle\dynamicproxy\ProxyFactorySpecs.cs" />
     <Compile Include="castle\windsor\configuration\ApplyLoggingInterceptor.cs" />
     <Compile Include="castle\windsor\configuration\ComponentRegistrationConfiguration.cs" />
     <Compile Include="castle\windsor\configuration\ConfigureComponentLifestyle.cs" />
@@ -133,13 +122,9 @@
       <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
       <Name>infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\testing\test.helpers.csproj">
-      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>test.helpers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
-      <Name>utility</Name>
+      <Name>utility %28commons\utility%29</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

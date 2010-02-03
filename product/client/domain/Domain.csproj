@@ -66,10 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="accounting\AccountHolder.cs" />
-    <Compile Include="accounting\AccountHolderSpecs.cs" />
     <Compile Include="accounting\Bill.cs" />
     <Compile Include="accounting\BillingExtensions.cs" />
-    <Compile Include="accounting\BillSpecs.cs" />
     <Compile Include="accounting\Company.cs" />
     <Compile Include="accounting\CompanyFactory.cs" />
     <Compile Include="accounting\Income.cs" />
@@ -80,24 +78,16 @@
     <Compile Include="core\GenericEntity.cs" />
     <Compile Include="core\Entity.cs" />
     <Compile Include="core\Money.cs" />
-    <Compile Include="core\MoneyExtensionsSpecs.cs" />
-    <Compile Include="core\MoneySpecs.cs" />
     <Compile Include="core\Month.cs" />
     <Compile Include="core\Months.cs" />
     <Compile Include="core\range.cs" />
-    <Compile Include="core\RangeSpecs.cs" />
     <Compile Include="core\Ranking.cs" />
-    <Compile Include="core\RankingSpecs.cs" />
     <Compile Include="repositories\IAccountHolderRepository.cs" />
     <Compile Include="repositories\IBillRepository.cs" />
     <Compile Include="repositories\ICompanyRepository.cs" />
     <Compile Include="repositories\IIncomeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\commons\testing\test.helpers.csproj">
-      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>test.helpers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\commons\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>utility %28commons\utility%29</Name>

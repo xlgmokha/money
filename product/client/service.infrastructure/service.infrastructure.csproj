@@ -84,7 +84,6 @@
   <ItemGroup>
     <Compile Include="debugging\Launch.cs" />
     <Compile Include="eventing\SynchronizedEventAggregator.cs" />
-    <Compile Include="eventing\EventAggregatorSpecs.cs" />
     <Compile Include="eventing\IEvent.cs" />
     <Compile Include="eventing\EventAggregator.cs" />
     <Compile Include="eventing\EventSubscriber.cs" />
@@ -100,25 +99,19 @@
     <Compile Include="threading\AsynchronousCommandProcessor.cs" />
     <Compile Include="threading\BackgroundThread.cs" />
     <Compile Include="threading\BackgroundThreadFactory.cs" />
-    <Compile Include="threading\BackgroundThreadFactorySpecs.cs" />
-    <Compile Include="threading\BackgroundThreadSpecs.cs" />
     <Compile Include="threading\SynchronousCommandProcessor.cs" />
-    <Compile Include="threading\CommandProcessorSpecs.cs" />
     <Compile Include="threading\CommandProcessor.cs" />
     <Compile Include="threading\IntervalTimer.cs" />
-    <Compile Include="threading\IntervalTimerSpecs.cs" />
     <Compile Include="threading\ITimerClient.cs" />
     <Compile Include="threading\IWorkerThread.cs" />
     <Compile Include="threading\RaiseEventInterceptor.cs" />
     <Compile Include="threading\RunOnBackgroundThreadInterceptor.cs" />
-    <Compile Include="threading\RunOnBackgroundThreadInterceptorSpecs.cs" />
     <Compile Include="threading\RunOnUIThread.cs" />
     <Compile Include="threading\SynchronizationContextFactory.cs" />
     <Compile Include="threading\SynchronizedCommand.cs" />
     <Compile Include="threading\SynchronizedContext.cs" />
     <Compile Include="threading\ThreadingExtensions.cs" />
     <Compile Include="threading\TimerFactory.cs" />
-    <Compile Include="threading\TimerFactorySpecs.cs" />
     <Compile Include="threading\WorkerThread.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -128,10 +121,7 @@
     <Compile Include="transactions\IUnitOfWorkFactory.cs" />
     <Compile Include="transactions\UnitOfWork.cs" />
     <Compile Include="transactions\UnitOfWorkFactory.cs" />
-    <Compile Include="transactions\UnitOfWorkFactorySpecs.cs" />
-    <Compile Include="transactions\UnitOfWorkSpecs.cs" />
     <Compile Include="updating\CancelUpdate.cs" />
-    <Compile Include="updating\CancelUpdateSpecs.cs" />
     <Compile Include="updating\CurrentDeployment.cs" />
     <Compile Include="updating\DownloadTheLatestVersion.cs" />
     <Compile Include="updating\ICancelUpdate.cs" />
@@ -149,10 +139,6 @@
     <ProjectReference Include="..\..\commons\infrastructure\infrastructure.csproj">
       <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
       <Name>infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\commons\testing\test.helpers.csproj">
-      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>test.helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\commons\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>

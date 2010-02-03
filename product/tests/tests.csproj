@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8DA6C771-9E24-42A0-BDC5-B56D277E99CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tests</RootNamespace>
+    <AssemblyName>tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\castle\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o, Version=7.5.57.11498, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
+    </Reference>
+    <Reference Include="developwithpassion.commons.core.infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.commons.core.infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="assertions.cs" />
+    <Compile Include="Call.cs" />
+    <Compile Include="ConcernAttribute.cs" />
+    <Compile Include="concerns.cs" />
+    <Compile Include="EmptyFixture.cs" />
+    <Compile Include="IHideObjectMembers.cs" />
+    <Compile Include="IntegrationAttribute.cs" />
+    <Compile Include="MethodCallOccurance.cs" />
+    <Compile Include="MockingExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="unit\client\boot\container\ComponentExclusionSpecificationSpecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="unit\client\boot\container\registration\AutoWiteComponentsInToTheSpecs.cs" />
+    <Compile Include="unit\client\boot\container\registration\proxy_configuration\InterceptingFilterFactorySpecs.cs" />
+    <Compile Include="unit\client\boot\container\registration\proxy_configuration\InterceptingFilterSpecs.cs" />
+    <Compile Include="unit\client\boot\container\registration\proxy_configuration\SecuringProxySpecs.cs" />
+    <Compile Include="unit\client\boot\modules\core\LoadPresentationModulesCommandSpecs.cs" />
+    <Compile Include="unit\client\boot\modules\NotificationIconPresenterSpecs.cs" />
+    <Compile Include="unit\client\boot\modules\TitleBarPresenterSpecs.cs" />
+    <Compile Include="unit\client\database\db4o\db40_spike_specs.cs" />
+    <Compile Include="unit\client\database\transactions\ChangeTrackerFactorySpecs.cs" />
+    <Compile Include="unit\client\database\transactions\ChangeTrackerSpecs.cs" />
+    <Compile Include="unit\client\database\transactions\ContextFactorySpecs.cs" />
+    <Compile Include="unit\client\database\transactions\IdentityMapSpecs.cs" />
+    <Compile Include="unit\client\database\transactions\PerThreadScopedStorageSpecs.cs" />
+    <Compile Include="unit\client\database\transactions\SessionFactorySpecs.cs" />
+    <Compile Include="unit\client\database\transactions\SessionSpecs.cs" />
+    <Compile Include="unit\client\database\transactions\TrackerEntrySpecs.cs" />
+    <Compile Include="unit\client\database\transactions\TransactionSpecs.cs" />
+    <Compile Include="unit\client\domain\accounting\AccountHolderSpecs.cs" />
+    <Compile Include="unit\client\domain\accounting\BillSpecs.cs" />
+    <Compile Include="unit\client\domain\core\MoneyExtensionsSpecs.cs" />
+    <Compile Include="unit\client\domain\core\MoneySpecs.cs" />
+    <Compile Include="unit\client\domain\core\RangeSpecs.cs" />
+    <Compile Include="unit\client\domain\core\RankingSpecs.cs" />
+    <Compile Include="unit\client\presentation\core\ApplicationControllerSpecs.cs" />
+    <Compile Include="unit\client\presentation\model\ExitCommandSpecs.cs" />
+    <Compile Include="unit\client\presentation\model\NewCommandSpecs.cs" />
+    <Compile Include="unit\client\presentation\model\OpenCommandSpecs.cs" />
+    <Compile Include="unit\client\presentation\model\ProjectControllerSpecs.cs" />
+    <Compile Include="unit\client\presentation\model\ReportBindingExtensionsSpecs.cs" />
+    <Compile Include="unit\client\presentation\model\SaveAsCommandSpecs.cs" />
+    <Compile Include="unit\client\presentation\model\SaveCommandSpecs.cs" />
+    <Compile Include="unit\client\presentation\presenters\AddCompanyPresenterSpecs.cs" />
+    <Compile Include="unit\client\presentation\presenters\AddNewIncomePresenterSpecs.cs" />
+    <Compile Include="unit\client\presentation\presenters\CheckForUpdatesPresenterSpecs.cs" />
+    <Compile Include="unit\client\presentation\presenters\GettingStartedPresenterSpecs.cs" />
+    <Compile Include="unit\client\presentation\presenters\LogFileViewPresenterSpecs.cs" />
+    <Compile Include="unit\client\presentation\presenters\NavigationPresenterSpecs.cs" />
+    <Compile Include="unit\client\presentation\presenters\RunTheSpecs.cs" />
+    <Compile Include="unit\client\presentation\presenters\SplashScreenPresenterSpecs.cs" />
+    <Compile Include="unit\client\presentation\presenters\StatusBarPresenterSpecs.cs" />
+    <Compile Include="unit\client\presentation\presenters\UnhandledErrorPresenterSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\databinding\BindingSelectorSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\databinding\ComboBoxDataBindingSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\databinding\CreateSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\databinding\DateTimePropertyBindingSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\databinding\PropertyBinderSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\databinding\PropertyInspectorSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\databinding\TextBoxDataBindingSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\helpers\BindableListBoxSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\helpers\BindableTextBoxExtensionsSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\helpers\BindableTextBoxSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\helpers\EventTriggerSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\helpers\RebindTextBoxCommandSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\helpers\TextControlSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\views\ApplicationShellSpecs.cs" />
+    <Compile Include="unit\client\presentation\winforms\views\SaveChangesViewSpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\eventing\EventAggregatorSpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\threading\BackgroundThreadFactorySpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\threading\BackgroundThreadSpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\threading\CommandProcessorSpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\threading\IntervalTimerSpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\threading\RunOnBackgroundThreadInterceptorSpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\threading\TimerFactorySpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\transactions\UnitOfWorkFactorySpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\transactions\UnitOfWorkSpecs.cs" />
+    <Compile Include="unit\client\service.infrastructure\updating\CancelUpdateSpecs.cs" />
+    <Compile Include="unit\client\service\application\AddNewIncomeCommandSpecs.cs" />
+    <Compile Include="unit\commons\infrastructure.thirdparty\autofac\AutofacSpecs.cs" />
+    <Compile Include="unit\commons\infrastructure.thirdparty\castle\InterceptorConstraintFactorySpecs.cs" />
+    <Compile Include="unit\commons\infrastructure.thirdparty\castle\InterceptorConstraintSpecs.cs" />
+    <Compile Include="unit\commons\infrastructure.thirdparty\castle\LazySpecs.cs" />
+    <Compile Include="unit\commons\infrastructure.thirdparty\castle\MethodCallTrackerSpecs.cs" />
+    <Compile Include="unit\commons\infrastructure.thirdparty\castle\ProxyBuilderSpecs.cs" />
+    <Compile Include="unit\commons\infrastructure.thirdparty\castle\ProxyFactorySpecs.cs" />
+    <Compile Include="unit\commons\infrastructure\BinarySerializerSpecs.cs" />
+    <Compile Include="unit\commons\infrastructure\DefaultRegistrySpecs.cs" />
+    <Compile Include="unit\commons\infrastructure\LogSpecs.cs" />
+    <Compile Include="unit\commons\infrastructure\ProxyFactorySpecs.cs" />
+    <Compile Include="unit\commons\infrastructure\ResolveSpecs.cs" />
+    <Compile Include="unit\commons\utility\ConfigurationExtensionsSpecs.cs" />
+    <Compile Include="unit\commons\utility\DateSpecs.cs" />
+    <Compile Include="unit\commons\utility\EnumerableExtensionsSpecs.cs" />
+    <Compile Include="unit\commons\utility\ListExtensionsSpecs.cs" />
+    <Compile Include="unit\commons\utility\MappingExtensionsSpecs.cs" />
+    <Compile Include="unit\commons\utility\NotSpecificationSpecs.cs" />
+    <Compile Include="unit\commons\utility\NumericConversionsSpecs.cs" />
+    <Compile Include="unit\commons\utility\OrSpecificationSpecs.cs" />
+    <Compile Include="unit\commons\utility\PercentSpecs.cs" />
+    <Compile Include="unit\commons\utility\PredicateSpecificationSpecs.cs" />
+    <Compile Include="unit\commons\utility\SpecificationExtensionsSpecs.cs" />
+    <Compile Include="unit\commons\utility\TypeExtensionsSpecs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\client\boot\boot.csproj">
+      <Project>{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}</Project>
+      <Name>boot</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\client\database\database.csproj">
+      <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
+      <Name>database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\client\domain.services\domain.services.csproj">
+      <Project>{F04F922F-C0CC-45FC-BD33-A758BD1B8B36}</Project>
+      <Name>domain.services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\client\domain\domain.csproj">
+      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
+      <Name>domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\client\dto\dto.csproj">
+      <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
+      <Name>dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\client\presentation\presentation.csproj">
+      <Project>{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}</Project>
+      <Name>presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\client\service.contracts\service.contracts.csproj">
+      <Project>{41D2B68B-031B-44FF-BAC5-7752D9E29F94}</Project>
+      <Name>service.contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\client\service.infrastructure\service.infrastructure.csproj">
+      <Project>{81412692-F3EE-4FBF-A7C7-69454DD1BD46}</Project>
+      <Name>service.infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\client\service\service.csproj">
+      <Project>{7EA4C557-6EF2-4B1F-85C8-5B3F51BAD8DB}</Project>
+      <Name>service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\commons\infrastructure.thirdparty.log4net\infrastructure.thirdparty.log4net.csproj">
+      <Project>{6BDCB0C1-51E1-435A-93D8-CA02BF8E409C}</Project>
+      <Name>infrastructure.thirdparty.log4net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\commons\infrastructure.thirdparty\infrastructure.thirdparty.csproj">
+      <Project>{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}</Project>
+      <Name>infrastructure.thirdparty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\commons\infrastructure\infrastructure.csproj">
+      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
+      <Name>infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\commons\utility\utility.csproj">
+      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
+      <Name>utility %28commons\utility%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="unit\client\domain.services\" />
+    <Folder Include="unit\client\presentation\views\" />
+    <Folder Include="unit\client\utility\" />
+    <Folder Include="unit\commons\infrastructure.thirdparty\log4net\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

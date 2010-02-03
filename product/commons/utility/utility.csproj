@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttributeExtensions.cs" />
     <Compile Include="ChainedParameterizedCommand.cs" />
     <Compile Include="Clock.cs" />
     <Compile Include="AnonymousCommand.cs" />
@@ -97,42 +98,24 @@
     <Compile Include="AnonymousMapper.cs" />
     <Compile Include="NotificationMessage.cs" />
     <Compile Include="NotSpecification.cs" />
-    <Compile Include="NotSpecificationSpecs.cs" />
     <Compile Include="OrSpecification.cs" />
-    <Compile Include="OrSpecificationSpecs.cs" />
     <Compile Include="PredicateSpecification.cs" />
-    <Compile Include="PredicateSpecificationSpecs.cs" />
     <Compile Include="Date.cs" />
-    <Compile Include="DateSpecs.cs" />
     <Compile Include="CommandExtensions.cs" />
     <Compile Include="ConfigurationExtensions.cs" />
-    <Compile Include="ConfigurationExtensionsSpecs.cs" />
     <Compile Include="ConversionExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
-    <Compile Include="EnumerableExtensionsSpecs.cs" />
     <Compile Include="FuncExtensions.cs" />
     <Compile Include="ListExtensions.cs" />
-    <Compile Include="ListExtensionsSpecs.cs" />
     <Compile Include="MappingExtensions.cs" />
-    <Compile Include="MappingExtensionsSpecs.cs" />
     <Compile Include="NumericConversions.cs" />
-    <Compile Include="NumericConversionsSpecs.cs" />
     <Compile Include="RegistryExtensions.cs" />
-    <Compile Include="SpecificationExtensionsSpecs.cs" />
     <Compile Include="SpecificationExtensions.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="TypeExtensions.cs" />
-    <Compile Include="TypeExtensionsSpecs.cs" />
     <Compile Include="VisitorExtensions.cs" />
     <Compile Include="Percent.cs" />
-    <Compile Include="PercentSpecs.cs" />
     <Compile Include="Year.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\testing\test.helpers.csproj">
-      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>test.helpers</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

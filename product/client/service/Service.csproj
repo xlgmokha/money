@@ -89,7 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="application\AddNewIncomeCommand.cs" />
-    <Compile Include="application\AddNewIncomeCommandSpecs.cs" />
     <Compile Include="application\GetTheCurrentCustomerQuery.cs" />
     <Compile Include="application\EventLog.cs" />
     <Compile Include="application\GetAllBillsQuery.cs" />
@@ -100,10 +99,6 @@
     <Compile Include="application\SaveNewBillCommand.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\commons\testing\test.helpers.csproj">
-      <Project>{44E65096-9657-4716-90F8-4535BABE8039}</Project>
-      <Name>test.helpers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\commons\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>utility %28commons\utility%29</Name>
