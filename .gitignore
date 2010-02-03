@@ -15,6 +15,7 @@ _ReSharper.*
 *.bootstrap.xml
 AssemblyInfo.cs
 build/config/AssemblyInfo.cs
+build/config/bootstrap.xml
 compile
 artifacts
 installation

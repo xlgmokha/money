@@ -1,54 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <project name="project.deployment">
 	<property name="assembly.config" value="${build.config.dir}\AssemblyInfo.cs" />
-
 	<property name="log4net.config" value="${build.config.dir}\log4net.config.xml" />
-
-	<target name="copy.app.dependencies">
-		<copy todir="${build.compile.dir}" flatten="true">
-			<fileset basedir="${build.lib.dir}\app">
-				<include name="\**\*.dll" />
-			</fileset>
-		</copy>
-		<copy todir="${build.compile.dir}" flatten="false">
-			<fileset basedir="${build.resources.dir}">
-				<include name="\**\*.*" />
-			</fileset>
-		</copy>
-		<property name="target" value="${log4net.config}" />
-		<call target="expand.template.file" />
-		<copy file="${log4net.config}" tofile="${build.compile.dir}\log4net.config.xml" />
-	</target>
-
-	<target name="create.licenses" depends="clean">
-		<copy todir="${build.compile.dir}" flatten="true">
-			<fileset basedir="${build.lib.dir}\app">
-				<include name="\**\*.dll" />
-				<include name="${build.lib.dir}\app\licenses.licx" />
-			</fileset>
-		</copy>
-		<exec 
-			basedir="${build.compile.dir}"
-			workingdir="${build.compile.dir}"
-			program="${dot.net.sdk.dir}\lc.exe"
-			commandline="/target:${app.output} /complist:licenses.licx /i:activereports3.dll /i:componentfactory.krypton.navigator.dll /i:componentfactory.krypton.ribbon.dll /i:componentfactory.krypton.toolkit.dll /i:componentfactory.krypton.workspace.dll /i:logicnp.fileview.dll /i:logicnp.folderview.dll /i:logicnp.shcombobox.dll /i:logicnp.shellobjects.dll /nologo /outdir:${build.lib.dir}\app"
-		/>
-	</target>     
-	
-	<!--<target name="deploy" depends="create.licenses">-->
-	<target name="deploy">
-		<property name="target" value="${assembly.config}" />
-		<call target="expand.template.file" />
-
-		<call target="app.compile" />
-		<call target="copy.app.dependencies" />		
-	</target>
-	
-	<target name="run" depends="deploy">
-		<exec program="${build.compile.dir}\${app.output}" commandline="" />
-	</target>
-
-
+  
   <target name="create.configs">
 		<property name="target" value="${log4net.config}" />
 		<call target="expand.template.file" />
@@ -58,5 +12,11 @@
 		<call target="expand.template.file" />
 		<copy file="${build.config.dir}\AssemblyInfo.cs" tofile="${product.dir}\client\boot\Properties\AssemblyInfo.cs" />
   </target>
-	
+
+	<target name="deploy" depends="create.configs, app.compile" />
+  
+	<target name="run" depends="deploy">
+		<exec program="${build.compile.dir}\${app.output}" commandline="" />
+	</target>
+
 </project>
