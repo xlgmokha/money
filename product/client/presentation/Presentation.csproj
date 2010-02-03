@@ -43,17 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\active.reports\ActiveReports6.dll</HintPath>
     </Reference>
-    <Reference Include="bdddoc, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\test\bdd.doc\bdddoc.dll</HintPath>
-    </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=3.0.8.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\component.factory\ComponentFactory.Krypton.Toolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
     </Reference>
     <Reference Include="gorilla.commons.infrastructure, Version=2009.5.5.1633, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -63,23 +55,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
     </Reference>
-    <Reference Include="gorilla.testing, Version=2009.5.5.194, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\test\gorilla\gorilla.testing.dll</HintPath>
-    </Reference>
-    <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="PresentationFramework">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\test\rhino.mocks\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition, Version=2009.1.23.0, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">

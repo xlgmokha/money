@@ -31,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="gorilla.commons.infrastructure, Version=2009.9.4.1823, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="gorilla.commons.utility, Version=2009.9.4.1823, Culture=neutral, PublicKeyToken=687787ccb6c36c9f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\gorilla\gorilla.commons.utility.dll</HintPath>
