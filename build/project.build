@@ -21,7 +21,6 @@
 	<include buildfile="local.properties.xml" />
 		
 	<target name="clean">
-		<exec program="taskkill.exe" commandline="/f /im ${editor.exe} /FI &quot;STATUS eq RUNNING&quot;"  />
 		<delete dir="${build.compile.dir}" />
 	</target>
 	
@@ -30,25 +29,10 @@
 	</target>
 	
 	<target name="app.compile" depends="init">
-		<csc output="${build.compile.dir}\${app.output}" debug="${debug}" target="winexe" win32icon="${build.icons.dir}\mokhan.ico" keyfile="${build.config.dir}\mokhan.snk">
-			<sources>
-				<include name="${product.dir}\**\*.cs" />
-				<include name="${build.config.dir}\**\*.cs" />
-				<exclude name="${product.dir}\**\AssemblyInfo.cs" />
-				<exclude name="${product.dir}\**\*Specs.cs" />
-				<exclude name="${product.dir}\tests\**\*.cs" />
-			</sources>			
-			<references>
-				<include name="${build.lib.dir}\app\**\*.dll" />
-			</references>
-			<resources dynamicprefix="true">
-				<include name="${product.dir}\**\*.resx" />
-			</resources>
-			<resources>
-				<include name="${build.lib.dir}\app\*.licenses" />
-			</resources>
-			<arg value="/nowin32manifest" />
-		</csc>
+    <exec program="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe"
+          workingdir="${base.dir}"
+          commandline="solution.sln /p:Configuration=Release;OutDir=${build.compile.dir}\ /t:Rebuild /nologo"
+          />
 	</target>
 
 	<target name="expand.template.file">

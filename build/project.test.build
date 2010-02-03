@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <project name="project.test">
-	<property name="test.output" value="${project.name}.test.dll" />
+	<property name="test.output" value="tests.dll" />
 	<property name="xunit.cons.exe" value="${build.tools.dir}\gallio\gallio.echo.exe" />
 
 	<fileset id="test.references.fileset">
@@ -9,17 +9,17 @@
 	</fileset>
 
 	<target name="test.compile" depends="app.compile, test.copy.dependencies">
-		<csc output="${build.compile.dir}\${test.output}" target="library" debug="${debug}">
+		<!--<csc output="${build.compile.dir}\${test.output}" target="library" debug="${debug}">
 			<sources basedir="${product.dir}">
 				<include name="**\*Specs.cs" />
 				<include name="tests\**\*.cs" />
 			</sources>
 			<references refid="test.references.fileset"/>
-		</csc>
+		</csc>-->
 	</target>
 
 	<target name="test.copy.dependencies">
-		<copy todir="${build.compile.dir}" flatten="true">
+		<!--<copy todir="${build.compile.dir}" flatten="true">
 			<fileset basedir="${build.lib.dir}">
 				<include name="\**\*.dll" />
 			</fileset>
@@ -31,7 +31,7 @@
 		</copy>
 		<property name="target" value="${log4net.config}" />
 		<call target="expand.template.file" />
-		<copy file="${log4net.config}" tofile="${build.compile.dir}\log4net.config.xml" />
+		<copy file="${log4net.config}" tofile="${build.compile.dir}\log4net.config.xml" />-->
 	</target>
 
 	<target name="run.test" depends="test.compile">

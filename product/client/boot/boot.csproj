@@ -36,7 +36,7 @@
     <SignManifests>true</SignManifests>
     <ManifestCertificateThumbprint>5207E60C15D1EB6327368431B305CB9A32B7DF39</ManifestCertificateThumbprint>
     <ManifestKeyFile>mokhan.pfx</ManifestKeyFile>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>mokhan.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
