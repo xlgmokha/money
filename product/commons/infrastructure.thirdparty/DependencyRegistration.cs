@@ -13,6 +13,7 @@ namespace gorilla.commons.infrastructure.thirdparty
 
         void transient<Contract, Implementation>() where Implementation : Contract;
         void transient(Type contract, Type implementation);
+        void transient<Contract>(Func<Contract> factory_method);
 
         [Obsolete]
         void proxy<T, Configuration>(Func<T> target) where Configuration : Configuration<ProxyBuilder<T>>, new();

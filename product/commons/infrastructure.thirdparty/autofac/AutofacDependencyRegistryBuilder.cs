@@ -54,6 +54,11 @@ namespace gorilla.commons.infrastructure.thirdparty.Autofac
                 builder.Register(implementation).As(contract).FactoryScoped();
         }
 
+        public void transient<Contract>(Func<Contract> factory_method)
+        {
+            builder.Register(x => factory_method()).As<Contract>().FactoryScoped();
+        }
+
         public void proxy<T>(Configuration<ProxyBuilder<T>> configuration, Func<T> target)
         {
             var proxy_builder = new CastleDynamicProxyBuilder<T>();

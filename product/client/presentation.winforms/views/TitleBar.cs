@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using Gorilla.Commons.Infrastructure.Container;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
 using MoMoney.Presentation.Views;
@@ -8,12 +9,6 @@ namespace MoMoney.Presentation.Winforms.Views
 {
     public class TitleBar : ITitleBar
     {
-        IRegionManager shell;
-
-        public TitleBar(IRegionManager shell)
-        {
-            this.shell = shell;
-        }
 
         public void attach_to(TitleBarPresenter presenter)
         {
@@ -21,7 +16,7 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void display(string title)
         {
-            shell.region<Form>(x =>
+            Resolve.the<IRegionManager>().region<Form>(x =>
             {
                 if (x.Text.Contains("-")) x.Text = x.Text.Remove(x.Text.IndexOf("-") - 1);
                 x.Text = x.Text + " - " + title;
@@ -30,7 +25,7 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void append_asterik()
         {
-            shell.region<Form>(x =>
+            Resolve.the<IRegionManager>().region<Form>(x =>
             {
                 if (x.Text.Contains("*")) return;
                 x.Text = x.Text + "*";
@@ -39,7 +34,7 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void remove_asterik()
         {
-            shell.region<Form>(x =>
+            Resolve.the<IRegionManager>().region<Form>(x =>
             {
                 x.Text = x.Text.Replace("*", "");
             });

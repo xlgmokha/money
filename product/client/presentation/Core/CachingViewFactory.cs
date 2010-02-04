@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
@@ -30,25 +29,6 @@ namespace MoMoney.Presentation.Core
             static public readonly View<T> View = new Null<T>();
 
             public void attach_to(T presenter) {}
-
-            public IAsyncResult BeginInvoke(Delegate method, object[] args)
-            {
-                return null;
-            }
-
-            public object EndInvoke(IAsyncResult result)
-            {
-                return new object();
-            }
-
-            public object Invoke(Delegate method, object[] args)
-            {
-                return new object();
-            }
-
-            public bool InvokeRequired { get; set; }
-
-            public void Dispose() {}
 
             public override string ToString()
             {

@@ -37,14 +37,14 @@ namespace MoMoney.boot.container.registration
             register_singleton<IStatusBarView, StatusBarView>();
             register_singleton<IGettingStartedView, WelcomeScreen>();
             register_singleton<ILogFileView, LogFileView>();
-            register.singleton<ITitleBar, TitleBar>();
-            register.singleton<ITaskTrayMessageView, TaskTrayMessage>();
+            register_singleton<ITitleBar, TitleBar>();
+            register_singleton<ITaskTrayMessageView, TaskTrayMessage>();
 
-            register_singleton<ISelectFileToOpenDialog, SelectFileToOpenDialog>();
-            register_singleton<ISelectFileToSaveToDialog, SelectFileToSaveToDialog>();
-            register_singleton<ISaveChangesView, SaveChangesView>();
-            register_singleton<ICheckForUpdatesView, CheckForUpdatesView>();
-            register_singleton<IUnhandledErrorView, UnhandledErrorView>();
+            register_transient<ISelectFileToOpenDialog, SelectFileToOpenDialog>();
+            register_transient<ISelectFileToSaveToDialog, SelectFileToSaveToDialog>();
+            register_transient<ISaveChangesView, SaveChangesView>();
+            register_transient<ICheckForUpdatesView, CheckForUpdatesView>();
+            register_transient<IUnhandledErrorView, UnhandledErrorView>();
         }
 
         void register_singleton<Interface, View>() where View : Interface, new() where Interface : momoney.presentation.views.View
@@ -52,6 +52,15 @@ namespace MoMoney.boot.container.registration
             var view = new View();
             register.singleton<Interface>(() => view);
             register.singleton<momoney.presentation.views.View>(() => view);
+        }
+
+        void register_transient<Interface, View>() where View : Interface, new() where Interface : momoney.presentation.views.View
+        {
+            var view = new View();
+            register.singleton<Interface>(() => view);
+            register.singleton<momoney.presentation.views.View>(() => view);
+            //register.transient<Interface,View>();
+            //register.transient<momoney.presentation.views.View>(() => Resolve.the<Interface>());
         }
     }
 }
