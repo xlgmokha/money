@@ -1,5 +1,5 @@
+using momoney.presentation.resources;
 using momoney.presentation.views;
-using MoMoney.Presentation.Winforms.Resources;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MoMoney.Presentation.Views

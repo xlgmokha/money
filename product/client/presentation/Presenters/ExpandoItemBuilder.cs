@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using gorilla.commons.utility;
-using MoMoney.Presentation.Winforms.Resources;
+using momoney.presentation.resources;
 using XPExplorerBar;
 
 namespace MoMoney.Presentation.Presenters

@@ -5,9 +5,9 @@ using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Model.Menu;
 using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Model.Projects;
+using momoney.presentation.resources;
 using momoney.presentation.views;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Winforms.Resources;
 
 namespace momoney.presentation.presenters
 {

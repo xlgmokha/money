@@ -1,6 +1,6 @@
 using momoney.presentation.presenters;
+using momoney.presentation.resources;
 using momoney.presentation.views;
-using MoMoney.Presentation.Winforms.Resources;
 using momoney.service.infrastructure.threading;
 
 namespace MoMoney.Presentation.Views

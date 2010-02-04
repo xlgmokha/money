@@ -21,6 +21,7 @@ namespace MoMoney.Modules
             command.run<TaskTrayPresenter>();
             command.run<MainMenuPresenter>();
             command.run<UnhandledErrorPresenter>();
+            command.run<TitleBarPresenter>();
         }
     }
 }

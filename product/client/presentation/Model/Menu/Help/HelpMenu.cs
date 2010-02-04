@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.model.menu.help;
 using momoney.presentation.presenters;
-using MoMoney.Presentation.Winforms.Resources;
+using momoney.presentation.resources;
 
 namespace MoMoney.Presentation.Model.Menu.Help
 {

@@ -1,6 +1,9 @@
+using momoney.presentation.presenters;
+using momoney.presentation.views;
+
 namespace MoMoney.Presentation.Views
 {
-    public interface ITitleBar
+    public interface ITitleBar : View<TitleBarPresenter>
     {
         void display(string title);
         void append_asterik();

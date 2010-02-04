@@ -1,9 +1,8 @@
 using System;
 using System.Windows.Forms;
 using Gorilla.Commons.Infrastructure.Container;
-using MoMoney.Presentation.Winforms.Resources;
+using momoney.presentation.resources;
 using MoMoney.Service.Infrastructure.Eventing;
-using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Presentation.Model.Menu
 {
@@ -11,13 +10,11 @@ namespace MoMoney.Presentation.Model.Menu
     {
         readonly DependencyRegistry registry;
         readonly ToolStripButton item;
-        readonly CommandProcessor processor;
         Func<bool> the_condition;
 
-        public ToolBarItemBuilder(DependencyRegistry registry, EventAggregator aggregator, CommandProcessor processor)
+        public ToolBarItemBuilder(DependencyRegistry registry, EventAggregator aggregator)
         {
             this.registry = registry;
-            this.processor = processor;
             aggregator.subscribe(this);
             the_condition = () => true;
             item = new ToolStripButton {};
@@ -31,7 +28,7 @@ namespace MoMoney.Presentation.Model.Menu
 
         public IToolbarItemBuilder when_clicked_executes<Command>() where Command : gorilla.commons.utility.Command
         {
-            item.Click += (sender, args) => processor.add(registry.get_a<Command>());
+            item.Click += (sender, args) => registry.get_a<Command>().run();
             return this;
         }
 

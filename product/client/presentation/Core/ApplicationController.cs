@@ -1,5 +1,4 @@
 using momoney.presentation.views;
-using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace MoMoney.Presentation.Core

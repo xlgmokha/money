@@ -152,7 +152,6 @@
     <Compile Include="modules\DatabaseModule.cs" />
     <Compile Include="modules\ApplicationMenuModule.cs" />
     <Compile Include="modules\GettingStartedModule.cs" />
-    <Compile Include="modules\TitleBarPresenter.cs" />
     <Compile Include="modules\ToolbarModule.cs" />
     <Compile Include="boot\hookup.cs" />
     <Compile Include="modules\core\LoadPresentationModulesCommand.cs" />
@@ -214,6 +213,10 @@
     <ProjectReference Include="..\DTO\dto.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
       <Name>dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\presentation.winforms\presentation.winforms.csproj">
+      <Project>{F3E06696-0CD2-46EE-B117-A05C1E7E8CD8}</Project>
+      <Name>presentation.winforms</Name>
     </ProjectReference>
     <ProjectReference Include="..\Presentation\presentation.csproj">
       <Project>{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}</Project>

@@ -11,8 +11,10 @@ using momoney.boot;
 using MoMoney.boot.container;
 using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Presenters;
+using MoMoney.Presentation.Winforms.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 using momoney.service.infrastructure.threading;
+using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.boot
 {
@@ -29,7 +31,7 @@ namespace MoMoney.boot
         {
             using (new LogTime())
             {
-                Func<ISplashScreenPresenter> presenter = () => new SplashScreenPresenter();
+                Func<ISplashScreenPresenter> presenter = () => new SplashScreenPresenter(new IntervalTimer(), new SplashScreenView());
                 presenter = presenter.memorize();
 
                 var startup_screen = new DisplayTheSplashScreen(presenter).on_a_background_thread();

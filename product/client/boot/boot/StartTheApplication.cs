@@ -26,7 +26,7 @@ namespace MoMoney.boot
         public void run()
         {
             command.run();
-            processor.add(() => thread.Dispose());
+            thread.Dispose();
             processor.run();
         }
     }

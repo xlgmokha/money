@@ -25,25 +25,29 @@ namespace MoMoney.boot.container.registration
             register.singleton<ISynchronizeInvoke>(() => shell);
             register.singleton<IRegionManager>(() => shell);
             register.singleton(() => shell);
-            register_tab<IAboutApplicationView, AboutTheApplicationView>();
-            register_tab<ISplashScreenView, SplashScreenView>();
-            register_tab<IAddCompanyView, AddCompanyView>();
-            register_tab<IViewAllBills, ViewAllBills>();
-            register_tab<IAddBillPaymentView, AddBillPaymentView>();
-            register_tab<IMainMenuView, MainMenuView>();
-            register_tab<IAddNewIncomeView, AddNewIncomeView>();
-            register_tab<IViewIncomeHistory, ViewAllIncome>();
-            register_tab<INotificationIconView, NotificationIconView>();
-            register_tab<IStatusBarView, StatusBarView>();
-            register_tab<IGettingStartedView, WelcomeScreen>();
-            register_tab<ILogFileView, LogFileView>();
+            register_singleton<IAboutApplicationView, AboutTheApplicationView>();
+            register_singleton<ISplashScreenView, SplashScreenView>();
+            register_singleton<IAddCompanyView, AddCompanyView>();
+            register_singleton<IViewAllBills, ViewAllBills>();
+            register_singleton<IAddBillPaymentView, AddBillPaymentView>();
+            register_singleton<IMainMenuView, MainMenuView>();
+            register_singleton<IAddNewIncomeView, AddNewIncomeView>();
+            register_singleton<IViewIncomeHistory, ViewAllIncome>();
+            register_singleton<INotificationIconView, NotificationIconView>();
+            register_singleton<IStatusBarView, StatusBarView>();
+            register_singleton<IGettingStartedView, WelcomeScreen>();
+            register_singleton<ILogFileView, LogFileView>();
+            register.singleton<ITitleBar, TitleBar>();
+            register.singleton<ITaskTrayMessageView, TaskTrayMessage>();
 
-            register.transient<ISaveChangesView, SaveChangesView>();
-            register.transient<ICheckForUpdatesView, CheckForUpdatesView>();
-            register.transient<IUnhandledErrorView, UnhandledErrorView>();
+            register_singleton<ISelectFileToOpenDialog, SelectFileToOpenDialog>();
+            register_singleton<ISelectFileToSaveToDialog, SelectFileToSaveToDialog>();
+            register_singleton<ISaveChangesView, SaveChangesView>();
+            register_singleton<ICheckForUpdatesView, CheckForUpdatesView>();
+            register_singleton<IUnhandledErrorView, UnhandledErrorView>();
         }
 
-        void register_tab<Interface, View>() where View : Interface, new() where Interface : momoney.presentation.views.View
+        void register_singleton<Interface, View>() where View : Interface, new() where Interface : momoney.presentation.views.View
         {
             var view = new View();
             register.singleton<Interface>(() => view);

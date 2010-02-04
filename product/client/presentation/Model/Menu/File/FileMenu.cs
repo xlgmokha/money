@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Model.Projects;
+using momoney.presentation.resources;
 using MoMoney.Presentation.Winforms.Keyboard;
-using MoMoney.Presentation.Winforms.Resources;
 
 namespace MoMoney.Presentation.Model.Menu.File
 {

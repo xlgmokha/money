@@ -1,7 +1,7 @@
 using developwithpassion.bdd.contexts;
 using momoney.presentation.presenters;
+using momoney.presentation.resources;
 using momoney.presentation.views;
-using MoMoney.Presentation.Winforms.Resources;
 
 namespace tests.unit.client.boot.modules
 {

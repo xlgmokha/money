@@ -1,5 +1,4 @@
 using MoMoney.Presentation.Core;
-using MoMoney.Presentation.Views;
 
 namespace momoney.presentation.views
 {

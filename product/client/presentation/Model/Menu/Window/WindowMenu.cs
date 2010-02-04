@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using momoney.presentation.model.menu.file;
-using MoMoney.Presentation.Winforms.Resources;
+using momoney.presentation.resources;
 
 namespace MoMoney.Presentation.Model.Menu.window
 {

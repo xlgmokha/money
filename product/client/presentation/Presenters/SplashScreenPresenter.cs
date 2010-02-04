@@ -1,7 +1,6 @@
 using gorilla.commons.Utility;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
-using MoMoney.Presentation.Winforms.Views;
 using momoney.service.infrastructure.threading;
 using MoMoney.Service.Infrastructure.Threading;
 
@@ -14,8 +13,6 @@ namespace MoMoney.Presentation.Presenters
         readonly ITimer timer;
         readonly ISplashScreenView view;
         ISplashScreenState current_state;
-
-        public SplashScreenPresenter() : this(new IntervalTimer(), new SplashScreenView()) {}
 
         public SplashScreenPresenter(ITimer timer, ISplashScreenView view)
         {

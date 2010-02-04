@@ -3,9 +3,9 @@ using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
 using MoMoney.Presentation.Core;
 using momoney.presentation.model.eventing;
+using momoney.presentation.resources;
 using momoney.presentation.views;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Winforms.Resources;
 using MoMoney.Service.Infrastructure.Eventing;
 using MoMoney.Service.Infrastructure.Threading;
 

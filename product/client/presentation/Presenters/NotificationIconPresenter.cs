@@ -4,8 +4,8 @@ using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Menu.Help;
 using MoMoney.Presentation.Model.Menu.window;
+using momoney.presentation.resources;
 using momoney.presentation.views;
-using MoMoney.Presentation.Winforms.Resources;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters

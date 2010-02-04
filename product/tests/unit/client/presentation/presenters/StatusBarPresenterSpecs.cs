@@ -1,8 +1,8 @@
 using developwithpassion.bdd.contexts;
 using momoney.presentation.model.eventing;
 using momoney.presentation.presenters;
+using momoney.presentation.resources;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Winforms.Resources;
 
 namespace tests.unit.client.presentation.presenters
 {

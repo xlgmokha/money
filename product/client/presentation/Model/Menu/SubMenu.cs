@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using gorilla.commons.utility;
-using MoMoney.Presentation.Winforms.Helpers;
+//using MoMoney.Presentation.Winforms.Helpers;
 
 namespace MoMoney.Presentation.Model.Menu
 {
@@ -13,7 +13,7 @@ namespace MoMoney.Presentation.Model.Menu
 
         public void add_to(MenuStrip strip)
         {
-            using (new SuspendLayout(strip))
+            //using (new SuspendLayout(strip))
             {
                 var menu_item = new ToolStripMenuItem(name);
                 strip.Items.Add(menu_item);

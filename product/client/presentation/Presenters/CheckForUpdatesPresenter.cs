@@ -5,7 +5,6 @@ using Gorilla.Commons.Utility;
 using MoMoney.Presentation.Core;
 using MoMoney.Presentation.Presenters;
 using momoney.presentation.views;
-using MoMoney.Presentation.Views;
 using momoney.service.infrastructure.updating;
 
 namespace momoney.presentation.presenters

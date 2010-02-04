@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using MoMoney.DTO;
 using momoney.presentation.presenters;
+using momoney.presentation.resources;
 using MoMoney.Presentation.Views;
-using MoMoney.Presentation.Winforms.Resources;
 using MoMoney.Service.Contracts.Application;
 using XPExplorerBar;
 

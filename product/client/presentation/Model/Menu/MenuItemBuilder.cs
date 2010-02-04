@@ -1,10 +1,9 @@
 using System;
 using Gorilla.Commons.Infrastructure.Container;
 using gorilla.commons.utility;
+using momoney.presentation.resources;
 using MoMoney.Presentation.Winforms.Keyboard;
-using MoMoney.Presentation.Winforms.Resources;
 using MoMoney.Service.Infrastructure.Eventing;
-using MoMoney.Service.Infrastructure.Threading;
 
 namespace MoMoney.Presentation.Model.Menu
 {
@@ -22,7 +21,6 @@ namespace MoMoney.Presentation.Model.Menu
     {
         readonly DependencyRegistry registry;
         readonly EventAggregator aggregator;
-        readonly CommandProcessor processor;
 
         string name_of_the_menu { get; set; }
         Action command_to_execute { get; set; }
@@ -30,12 +28,11 @@ namespace MoMoney.Presentation.Model.Menu
         ShortcutKey key { get; set; }
         Func<bool> can_be_clicked = () => true;
 
-        public MenuItemBuilder(DependencyRegistry registry, EventAggregator aggregator, CommandProcessor processor)
+        public MenuItemBuilder(DependencyRegistry registry, EventAggregator aggregator)
         {
             name_of_the_menu = "Unknown";
             command_to_execute = () => {};
             this.registry = registry;
-            this.processor = processor;
             this.aggregator = aggregator;
             icon = ApplicationIcons.Empty;
             key = ShortcutKeys.none;
@@ -49,7 +46,7 @@ namespace MoMoney.Presentation.Model.Menu
 
         public IMenuItemBuilder that_executes<TheCommand>() where TheCommand : Command
         {
-            command_to_execute = () => processor.add(registry.get_a<TheCommand>());
+            command_to_execute = () => registry.get_a<TheCommand>().run();
             return this;
         }
 

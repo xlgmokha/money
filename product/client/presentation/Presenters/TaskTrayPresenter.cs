@@ -2,7 +2,6 @@ using gorilla.commons.utility;
 using MoMoney.Presentation.Core;
 using momoney.presentation.model.eventing;
 using momoney.presentation.views;
-using MoMoney.Presentation.Views;
 using MoMoney.Service.Infrastructure.Eventing;
 
 namespace momoney.presentation.presenters

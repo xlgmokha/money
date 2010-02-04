@@ -1,0 +1,33 @@
+using momoney.presentation.presenters;
+using MoMoney.Presentation.Presenters;
+using momoney.presentation.resources;
+using MoMoney.Presentation.Views;
+using MoMoney.Presentation.Winforms.Helpers;
+using WeifenLuo.WinFormsUI.Docking;
+
+namespace MoMoney.Presentation.Winforms.Views
+{
+    public partial class MainMenuView : ApplicationDockedWindow, IMainMenuView
+    {
+        public MainMenuView()
+        {
+            InitializeComponent();
+
+            titled("Main Menu")
+                .icon(ApplicationIcons.FileExplorer)
+                .cannot_be_closed()
+                .docked_to(DockState.DockLeft);
+
+            ux_system_task_pane.UseClassicTheme();
+        }
+
+        public void add(IActionTaskPaneFactory factory)
+        {
+            using (ux_system_task_pane.suspend_layout()) ux_system_task_pane.Expandos.Add(factory.create());
+        }
+
+        public void attach_to(MainMenuPresenter presenter)
+        {
+        }
+    }
+}
