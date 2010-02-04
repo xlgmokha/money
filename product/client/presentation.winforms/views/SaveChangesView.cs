@@ -57,7 +57,7 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void show_dialog(Shell parent_window)
         {
-            ShowDialog(parent_window);
+            ShowDialog(parent_window as IWin32Window);
         }
     }
 }

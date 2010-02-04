@@ -119,7 +119,6 @@
     <Compile Include="krypton\KryptonTextControl.cs" />
     <Compile Include="krypton\ListboxExtensions.cs" />
     <Compile Include="krypton\TextBoxExtensions.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="views\AboutTheApplicationView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +332,9 @@
     <EmbeddedResource Include="views\WelcomeScreen.resx">
       <DependentUpon>WelcomeScreen.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

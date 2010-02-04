@@ -90,7 +90,7 @@ namespace MoMoney.Presentation.Winforms.Views
             ux_update_button.Enabled = false;
             ux_dont_update_button.Enabled = false;
             ux_cancel_button.Enabled = false;
-            Show(parent_window);
+            Show(parent_window as IWin32Window);
         }
     }
 }
