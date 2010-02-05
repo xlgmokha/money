@@ -5,7 +5,7 @@ using Gorilla.Commons.Infrastructure.Container;
 
 namespace gorilla.commons.infrastructure.thirdparty.autofac
 {
-    internal class AutofacDependencyRegistry : DependencyRegistry
+    public class AutofacDependencyRegistry : DependencyRegistry
     {
         readonly Func<IContainer> container;
 

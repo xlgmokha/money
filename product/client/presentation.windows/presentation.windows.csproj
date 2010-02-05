@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\lib\app\auto.fac\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -59,23 +63,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="IncomeTab.xaml">
+    <Page Include="views\CompensationTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ShellWIndow.xaml">
+    <Page Include="views\ShellWIndow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="ShellWIndow.xaml.cs">
+    <Compile Include="views\ShellWIndow.xaml.cs">
       <DependentUpon>ShellWIndow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IncomeTab.xaml.cs">
-      <DependentUpon>IncomeTab.xaml</DependentUpon>
+    <Compile Include="ApplicationController.cs" />
+    <Compile Include="presenters\CompensationPresenter.cs" />
+    <Compile Include="views\CompensationTab.xaml.cs">
+      <DependentUpon>CompensationTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ComposeShell.cs" />
+    <Compile Include="NeedStartup.cs" />
+    <Compile Include="Presenter.cs" />
+    <Compile Include="PresenterFactory.cs" />
+    <Compile Include="RegionManager.cs" />
+    <Compile Include="Shell.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -90,6 +102,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Tab.cs" />
+    <Compile Include="TabPresenter.cs" />
+    <Compile Include="WpfApplicationController.cs" />
+    <Compile Include="WpfPresenterFactory.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -99,6 +115,20 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\commons\infrastructure.thirdparty\infrastructure.thirdparty.csproj">
+      <Project>{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}</Project>
+      <Name>infrastructure.thirdparty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\commons\infrastructure\infrastructure.csproj">
+      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
+      <Name>infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\commons\utility\utility.csproj">
+      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
+      <Name>utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

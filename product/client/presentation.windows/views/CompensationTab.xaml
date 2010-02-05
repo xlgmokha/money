@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="presentation.windows.CompensationTab"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" MinWidth="800" MinHeight="600">
+    <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <StackPanel>
+            <TabControl TabStripPlacement="Left">
+                <TabItem Header="Base Pay">
+        <DockPanel>
+        <Label>Enter Salary:</Label>
+        <TextBox></TextBox>
+        </DockPanel>
+                </TabItem>
+                <TabItem Header="Bonus">
+        <DockPanel>
+        <Label>Enter Bonus:</Label>
+        <TextBox></TextBox>
+        </DockPanel>
+                    
+                </TabItem>
+                <TabItem Header="LTIP">
+        <DockPanel>
+        <Label>Enter Grant:</Label>
+        <TextBox></TextBox>
+        </DockPanel>
+                    
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

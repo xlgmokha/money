@@ -1,8 +1,8 @@
 ﻿namespace presentation.windows
 {
-    public partial class IncomeTab
+    public partial class CompensationTab : Tab<CompensationPresenter>
     {
-        public IncomeTab()
+        public CompensationTab()
         {
             InitializeComponent();
         }
