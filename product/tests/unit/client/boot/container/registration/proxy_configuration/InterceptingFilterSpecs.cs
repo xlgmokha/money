@@ -1,5 +1,4 @@
 using Castle.Core.Interceptor;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 using MoMoney.boot.container.registration.proxy_configuration;
 
@@ -7,11 +6,12 @@ namespace tests.unit.client.boot.container.registration.proxy_configuration
 {
     public class InterceptingFilterSpecs
     {
-        public class when_intercepting_a_call : concerns_for<IInterceptor, InterceptingFilter>
+        [Concern(typeof(InterceptingFilter))]
+        public class when_intercepting_a_call : runner<InterceptingFilter>
         {
             context c = () =>
             {
-                condition = the_dependency<Specification<IInvocation>>();
+                condition = dependency<Specification<IInvocation>>();
             };
 
             static protected Specification<IInvocation> condition;
@@ -22,7 +22,7 @@ namespace tests.unit.client.boot.container.registration.proxy_configuration
             context c = () =>
             {
                 invocation = an<IInvocation>();
-                when_the(condition).is_told_to(x => x.is_satisfied_by(invocation)).it_will_return(false);
+                condition.is_told_to(x => x.is_satisfied_by(invocation)).it_will_return(false);
             };
 
             because b = () => sut.Intercept(invocation);
@@ -37,7 +37,7 @@ namespace tests.unit.client.boot.container.registration.proxy_configuration
             context c = () =>
             {
                 invocation = an<IInvocation>();
-                when_the(condition).is_told_to(x => x.is_satisfied_by(invocation)).it_will_return(true);
+                condition.is_told_to(x => x.is_satisfied_by(invocation)).it_will_return(true);
             };
 
             because b = () => sut.Intercept(invocation);

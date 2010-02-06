@@ -1,12 +1,11 @@
 using System.Data;
 using System.Threading;
-using developwithpassion.bdd.contexts;
 using MoMoney.Service.Infrastructure.Eventing;
 using Rhino.Mocks;
 
 namespace tests.unit.client.service.infrastructure.eventing
 {
-    public abstract class behaves_like_event_aggregator : concerns_for<EventAggregator, SynchronizedEventAggregator>
+    public abstract class behaves_like_event_aggregator : TestsFor<EventAggregator>
     {
         public override EventAggregator create_sut()
         {

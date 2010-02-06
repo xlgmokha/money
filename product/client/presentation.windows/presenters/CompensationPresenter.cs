@@ -1,4 +1,4 @@
-namespace presentation.windows
+namespace presentation.windows.presenters
 {
     public class CompensationPresenter : TabPresenter
     {

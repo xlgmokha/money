@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Winforms.Databinding;
 
 namespace tests.unit.client.presentation.winforms.databinding
@@ -21,7 +20,10 @@ namespace tests.unit.client.presentation.winforms.databinding
                 .bound_to_control(date_time_picker);
         };
 
-        because b = () => { date_time_picker.Value = november_nineteenth; };
+        because b = () =>
+        {
+            date_time_picker.Value = november_nineteenth;
+        };
 
         static DateTimePicker date_time_picker;
         static TestDTO thing_to_bind_to;
@@ -33,7 +35,5 @@ namespace tests.unit.client.presentation.winforms.databinding
         public DateTime birth_day { get; set; }
     }
 
-    public class DateTimePropertyBindingSpecs
-    {
-    }
+    public class DateTimePropertyBindingSpecs {}
 }

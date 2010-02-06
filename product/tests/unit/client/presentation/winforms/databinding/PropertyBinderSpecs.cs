@@ -1,12 +1,11 @@
 using System.Reflection;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Winforms.Databinding;
 
 namespace tests.unit.client.presentation.winforms.databinding
 {
     [Concern(typeof (PropertyBinder<,>))]
     public abstract class behaves_like_a_property_binder :
-        concerns_for<IPropertyBinder<IAnInterface, string>, PropertyBinder<IAnInterface, string>>
+        TestsFor<IPropertyBinder<IAnInterface, string>>
     {
         public override IPropertyBinder<IAnInterface, string> create_sut()
         {
@@ -39,12 +38,13 @@ namespace tests.unit.client.presentation.winforms.databinding
     {
         it should_return_the_correct_value = () => result.should_be_equal_to("malik");
 
-        because b = () => { result = sut.current_value(); };
+        because b = () =>
+        {
+            result = sut.current_value();
+        };
 
         static string result;
     }
 
-    public class PropertyBinderSpecs
-    {
-    }
+    public class PropertyBinderSpecs {}
 }

@@ -1,6 +1,8 @@
 using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using presentation.windows.presenters;
+using presentation.windows.views;
 
 namespace presentation.windows
 {

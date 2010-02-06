@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Core;
 using momoney.presentation.model.eventing;
 using momoney.presentation.model.menu.file;
@@ -8,7 +7,7 @@ using MoMoney.Service.Infrastructure.Eventing;
 namespace tests.unit.client.presentation.model
 {
     [Concern(typeof (ExitCommand))]
-    public abstract class behaves_like_exit_command : concerns_for<IExitCommand>
+    public abstract class behaves_like_exit_command : runner<IExitCommand>
     {
         public override IExitCommand create_sut()
         {
@@ -17,14 +16,14 @@ namespace tests.unit.client.presentation.model
 
         context c = () =>
         {
-            application = the_dependency<IApplication>();
-            broker = the_dependency<EventAggregator>();
-            save_changes_command = the_dependency<ISaveChangesCommand>();
+            application = dependency<IApplication>();
+            broker = dependency<EventAggregator>();
+            save_changes_command = dependency<ISaveChangesCommand>();
         };
 
-        protected static IApplication application;
-        protected static EventAggregator broker;
-        protected static ISaveChangesCommand save_changes_command;
+        static protected IApplication application;
+        static protected EventAggregator broker;
+        static protected ISaveChangesCommand save_changes_command;
     }
 
     public class when_closing_the_application_after_saving_the_project : behaves_like_exit_command

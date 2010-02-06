@@ -1,15 +1,16 @@
-using developwithpassion.bdd.contexts;
 using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 
 namespace tests.unit.commons.infrastructure.thirdparty.castle
 {
     [Concern(typeof (CastleDynamicInterceptorConstraintFactory))]
-    public abstract class behaves_like_constraint_factory :
-        concerns_for<InterceptorConstraintFactory, CastleDynamicInterceptorConstraintFactory>
+    public abstract class behaves_like_constraint_factory : runner<CastleDynamicInterceptorConstraintFactory>
     {
-        context c = () => { method_call_tracker_factory = the_dependency<MethodCallTrackerFactory>(); };
+        context c = () =>
+        {
+            method_call_tracker_factory = dependency<MethodCallTrackerFactory>();
+        };
 
-        protected static MethodCallTrackerFactory method_call_tracker_factory;
+        static protected MethodCallTrackerFactory method_call_tracker_factory;
     }
 
     [Concern(typeof (CastleDynamicInterceptorConstraintFactory))]
@@ -23,6 +24,9 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
         it should_return_an_instance_of_an_interceptor_constraint =
             () => result.should_be_an_instance_of<CastleDynamicInterceptorConstraint<string>>();
 
-        because b = () => { result = sut.CreateFor<string>(); };
+        because b = () =>
+        {
+            result = sut.CreateFor<string>();
+        };
     }
 }

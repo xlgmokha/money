@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 
 namespace tests.unit.commons.utility
@@ -24,8 +23,8 @@ namespace tests.unit.commons.utility
 
             context c = () =>
             {
-                when_the(right).is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
-                when_the(left).is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+                right.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+                left.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
             };
 
             because b = () =>
@@ -43,8 +42,8 @@ namespace tests.unit.commons.utility
 
             context c = () =>
             {
-                when_the(right).is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
-                when_the(left).is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
+                right.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+                left.is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
             };
 
             because b = () =>
@@ -63,8 +62,8 @@ namespace tests.unit.commons.utility
 
             context c = () =>
             {
-                when_the(right).is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
-                when_the(left).is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+                right.is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
+                left.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
             };
 
             because b = () =>

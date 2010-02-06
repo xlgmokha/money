@@ -1,7 +1,5 @@
 using System;
-using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.FileSystem;
-using gorilla.commons.utility;
 using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Model.Projects;
 using momoney.service.infrastructure;
@@ -13,12 +11,12 @@ namespace tests.unit.client.presentation.model
     public class ProjectControllerSpecs
     {
         [Concern(typeof (ProjectController))]
-        public abstract class behaves_like_a_project : concerns_for<IProjectController, ProjectController>
+        public abstract class behaves_like_a_project : runner<ProjectController>
         {
             context c = () =>
             {
-                broker = the_dependency<EventAggregator>();
-                tasks = the_dependency<IProjectTasks>();
+                broker = dependency<EventAggregator>();
+                tasks = dependency<IProjectTasks>();
             };
 
             static protected EventAggregator broker;
@@ -32,7 +30,7 @@ namespace tests.unit.client.presentation.model
             context c = () =>
             {
                 file_to_update = an<File>();
-                when_the(file_to_update).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
+                file_to_update.is_told_to(x => x.does_the_file_exist()).it_will_return(true);
             };
 
             because b = () =>
@@ -65,7 +63,7 @@ namespace tests.unit.client.presentation.model
             {
                 original_file = an<File>();
                 new_file = an<File>();
-                when_the(new_file).is_told_to(x => x.path).it_will_return("blah");
+                new_file.is_told_to(x => x.path).it_will_return("blah");
             };
 
             because b = () =>
@@ -85,7 +83,7 @@ namespace tests.unit.client.presentation.model
             context c = () =>
             {
                 invalid_file = an<File>();
-                when_the(invalid_file).is_told_to(x => x.does_the_file_exist()).it_will_return(false);
+                invalid_file.is_told_to(x => x.does_the_file_exist()).it_will_return(false);
             };
 
             because b = () =>
@@ -106,7 +104,7 @@ namespace tests.unit.client.presentation.model
             {
                 invalid_file = an<File>();
 
-                when_the(invalid_file).is_told_to(x => x.path).it_will_return(string.Empty);
+                invalid_file.is_told_to(x => x.path).it_will_return(string.Empty);
             };
 
             because b = () =>
@@ -124,7 +122,7 @@ namespace tests.unit.client.presentation.model
             context c = () =>
             {
                 file = an<File>();
-                when_the(file).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
+                file.is_told_to(x => x.does_the_file_exist()).it_will_return(true);
             };
 
             because b = () => sut.open_project_from(file);
@@ -151,7 +149,7 @@ namespace tests.unit.client.presentation.model
             context c = () =>
             {
                 unit_of_work = an<IUnitOfWork>();
-                when_the(unit_of_work).is_told_to(x => x.is_dirty()).it_will_return(true);
+                unit_of_work.is_told_to(x => x.is_dirty()).it_will_return(true);
             };
 
             because b = () =>
@@ -182,7 +180,7 @@ namespace tests.unit.client.presentation.model
             context c = () =>
             {
                 file = an<File>();
-                when_the(file).is_told_to(x => x.does_the_file_exist()).it_will_return(true);
+                file.is_told_to(x => x.does_the_file_exist()).it_will_return(true);
             };
 
             because b = () =>

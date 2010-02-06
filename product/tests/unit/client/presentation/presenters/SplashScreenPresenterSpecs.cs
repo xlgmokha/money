@@ -1,5 +1,4 @@
 using System;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Presenters;
 using momoney.presentation.views;
 using MoMoney.Service.Infrastructure.Threading;
@@ -7,7 +6,7 @@ using MoMoney.Service.Infrastructure.Threading;
 namespace tests.unit.client.presentation.presenters
 {
     [Concern(typeof (SplashScreenPresenter))]
-    public abstract class behaves_like_splash_screen_presenter : concerns_for<ISplashScreenPresenter>
+    public abstract class behaves_like_splash_screen_presenter : tests_for<ISplashScreenPresenter>
     {
         public override ISplashScreenPresenter create_sut()
         {
@@ -16,12 +15,12 @@ namespace tests.unit.client.presentation.presenters
 
         context c = () =>
         {
-            timer = the_dependency<ITimer>();
-            view = the_dependency<ISplashScreenView>();
+            timer = dependency<ITimer>();
+            view = dependency<ISplashScreenView>();
         };
 
-        protected static ITimer timer;
-        protected static ISplashScreenView view;
+        static protected ITimer timer;
+        static protected ISplashScreenView view;
     }
 
     public class when_displaying_the_splash_screen : behaves_like_splash_screen_presenter
@@ -38,7 +37,7 @@ namespace tests.unit.client.presentation.presenters
     {
         it should_increment_the_views_opacity = () => view.was_told_to(v => v.increment_the_opacity());
 
-        context c = () => when_the(view).is_asked_for(v => v.current_opacity()).it_will_return(0.5);
+        context c = () => view.is_asked_for(v => v.current_opacity()).it_will_return(0.5);
 
         because b = () =>
         {
@@ -52,7 +51,7 @@ namespace tests.unit.client.presentation.presenters
     {
         it should_stop_the_timer = () => timer.was_told_to(t => t.stop_notifying(sut));
 
-        context c = () => when_the(view).is_asked_for(v => v.current_opacity()).it_will_return(1);
+        context c = () => view.is_asked_for(v => v.current_opacity()).it_will_return(1);
 
         because b = () =>
         {
@@ -68,7 +67,7 @@ namespace tests.unit.client.presentation.presenters
 
         it should_decrement_the_opacity_of_the_view = () => view.was_told_to(v => v.decrement_the_opacity());
 
-        context c = () => when_the(view).is_asked_for(v => v.current_opacity()).it_will_return(.5);
+        context c = () => view.is_asked_for(v => v.current_opacity()).it_will_return(.5);
 
         because b = () =>
         {
@@ -84,7 +83,7 @@ namespace tests.unit.client.presentation.presenters
 
         it should_close_the_view = () => view.was_told_to(v => v.close_the_screen());
 
-        context c = () => when_the(view).is_asked_for(v => v.current_opacity()).it_will_return(0);
+        context c = () => view.is_asked_for(v => v.current_opacity()).it_will_return(0);
 
         because b = () =>
         {

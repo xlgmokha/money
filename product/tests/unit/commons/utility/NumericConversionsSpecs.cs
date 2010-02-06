@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 
 namespace tests.unit.commons.utility
@@ -8,9 +7,15 @@ namespace tests.unit.commons.utility
     {
         it should_return_the_correct_result = () => result.should_be_equal_to(88L);
 
-        context c = () => { valid_numeric_string = "88"; };
+        context c = () =>
+        {
+            valid_numeric_string = "88";
+        };
 
-        because b = () => { result = valid_numeric_string.to_long(); };
+        because b = () =>
+        {
+            result = valid_numeric_string.to_long();
+        };
 
         static long result;
         static string valid_numeric_string;
@@ -21,9 +26,15 @@ namespace tests.unit.commons.utility
     {
         it should_return_the_correct_result = () => result.should_be_equal_to(66);
 
-        context c = () => { valid_numeric_string = "66"; };
+        context c = () =>
+        {
+            valid_numeric_string = "66";
+        };
 
-        because b = () => { result = valid_numeric_string.to_int(); };
+        because b = () =>
+        {
+            result = valid_numeric_string.to_int();
+        };
 
         static int result;
         static string valid_numeric_string;

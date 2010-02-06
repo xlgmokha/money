@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters;
 using MoMoney.Presentation.Views;
@@ -7,12 +6,12 @@ using MoMoney.Service.Contracts.Application;
 namespace tests.unit.client.presentation.presenters
 {
     [Concern(typeof (AddCompanyPresenter))]
-    public abstract class behaves_like_the_add_company_presenter : concerns_for<AddCompanyPresenter>
+    public abstract class behaves_like_the_add_company_presenter : tests_for<AddCompanyPresenter>
     {
         context c = () =>
         {
-            view = the_dependency<IAddCompanyView>();
-            pump = the_dependency<ICommandPump>();
+            view = dependency<IAddCompanyView>();
+            pump = dependency<ICommandPump>();
         };
 
         static protected IAddCompanyView view;
@@ -25,7 +24,7 @@ namespace tests.unit.client.presentation.presenters
         context c = () =>
         {
             dto = new RegisterNewCompany {company_name = "Microsoft"};
-            when_the(pump)
+            pump
                 .is_told_to(x => x.run<IRegisterNewCompanyCommand, RegisterNewCompany>(dto))
                 .it_will_return(pump);
         };

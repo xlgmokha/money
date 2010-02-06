@@ -1,10 +1,9 @@
-using developwithpassion.bdd.contexts;
 using momoney.database.transactions;
 
 namespace tests.unit.client.database.transactions
 {
     [Concern(typeof (IdentityMap<,>))]
-    public class behaves_like_identity_map : concerns_for<IIdentityMap<int, string>, IdentityMap<int, string>>
+    public class behaves_like_identity_map : TestsFor<IIdentityMap<int, string>>
     {
         public override IIdentityMap<int, string> create_sut()
         {
@@ -31,7 +30,10 @@ namespace tests.unit.client.database.transactions
     {
         it should_return_the_default_value_for_that_type = () => result.should_be_equal_to(null);
 
-        because b = () => { result = sut.item_that_belongs_to(2); };
+        because b = () =>
+        {
+            result = sut.item_that_belongs_to(2);
+        };
 
         static string result;
     }
@@ -57,7 +59,10 @@ namespace tests.unit.client.database.transactions
     {
         it should_return_false = () => result.should_be_false();
 
-        because b = () => { result = sut.contains_an_item_for(9); };
+        because b = () =>
+        {
+            result = sut.contains_an_item_for(9);
+        };
 
         static bool result;
     }
@@ -79,8 +84,7 @@ namespace tests.unit.client.database.transactions
     }
 
     [Concern(typeof (IdentityMap<,>))]
-    public class when_updating_the_value_for_a_key_that_has_not_been_added_to_the_identity_map :
-        behaves_like_identity_map
+    public class when_updating_the_value_for_a_key_that_has_not_been_added_to_the_identity_map : behaves_like_identity_map
     {
         it should_add_the_new_item = () => result.should_be_equal_to("3");
 

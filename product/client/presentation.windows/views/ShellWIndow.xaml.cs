@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using gorilla.commons.utility;
 
-namespace presentation.windows
+namespace presentation.windows.views
 {
     public partial class ShellWindow : Shell, RegionManager
     {

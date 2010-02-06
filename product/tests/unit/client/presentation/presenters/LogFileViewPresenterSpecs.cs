@@ -1,16 +1,15 @@
-using developwithpassion.bdd.contexts;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
 using momoney.service.infrastructure.logging;
 
 namespace tests.unit.client.presentation.presenters
 {
-    public class behaves_like_log_file_presenter : concerns_for< LogFilePresenter>
+    public class behaves_like_log_file_presenter : tests_for<LogFilePresenter>
     {
         context c = () =>
         {
-            view = the_dependency<ILogFileView>();
-            tasks = the_dependency<ILogFileTasks>();
+            view = dependency<ILogFileView>();
+            tasks = dependency<ILogFileTasks>();
         };
 
         static protected ILogFileView view;

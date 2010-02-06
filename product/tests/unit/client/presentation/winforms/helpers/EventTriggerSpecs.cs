@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Winforms.Helpers;
 
 namespace tests.unit.client.presentation.winforms.helpers
@@ -15,7 +14,10 @@ namespace tests.unit.client.presentation.winforms.helpers
                 control.called_on_enter.should_be_false();
             };
 
-        context c = () => { control = new TestControl(); };
+        context c = () =>
+        {
+            control = new TestControl();
+        };
 
         because b =
             () =>
@@ -38,7 +40,10 @@ namespace tests.unit.client.presentation.winforms.helpers
         //    control.key_press_arguments.should_be_equal_to(new_args);
         //}
 
-        context c = () => { control = new TestControl(); };
+        context c = () =>
+        {
+            control = new TestControl();
+        };
 
         because b = () => EventTrigger.trigger_event<Events.ControlEvents>(x => x.OnKeyPress(args), control);
 
@@ -47,7 +52,7 @@ namespace tests.unit.client.presentation.winforms.helpers
         static readonly KeyPressEventArgs args = new KeyPressEventArgs('A');
     }
 
-    internal class TestControl
+    class TestControl
     {
         public bool called_on_enter;
         public bool called_on_key_press;

@@ -1,16 +1,18 @@
 using System.Collections.Generic;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy.Interceptors;
 
 namespace tests.unit.commons.infrastructure.thirdparty.castle
 {
     [Concern(typeof (CastleDynamicInterceptorConstraint<>))]
-    public abstract class behaves_like_constraint : concerns_for<InterceptorConstraint<string>, CastleDynamicInterceptorConstraint<string>>
+    public abstract class behaves_like_constraint : runner<CastleDynamicInterceptorConstraint<string>>
     {
-        context c = () => { method_call_tracker = the_dependency<MethodCallTracker<string>>(); };
+        context c = () =>
+        {
+            method_call_tracker = dependency<MethodCallTracker<string>>();
+        };
 
-        protected static MethodCallTracker<string> method_call_tracker;
+        static protected MethodCallTracker<string> method_call_tracker;
     }
 
     [Concern(typeof (CastleDynamicInterceptorConstraint<>))]
@@ -30,12 +32,14 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
                 .it_will_return(methods_to_intercept);
         };
 
-        because b = () => { result = sut.methods_to_intercept(); };
+        because b = () =>
+        {
+            result = sut.methods_to_intercept();
+        };
     }
 
     [Concern(typeof (CastleDynamicInterceptorConstraint<int>))]
-    public class when_asking_for_the_target_of_the_interception_constrain :
-        concerns_for<InterceptorConstraint<int>, CastleDynamicInterceptorConstraint<int>>
+    public class when_asking_for_the_target_of_the_interception_constrain : runner<CastleDynamicInterceptorConstraint<int>>
     {
         static MethodCallTracker<int> method_call_tracker;
         static int result;
@@ -43,11 +47,14 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
 
         context c = () =>
         {
-            method_call_tracker = the_dependency<MethodCallTracker<int>>();
+            method_call_tracker = dependency<MethodCallTracker<int>>();
             method_call_tracker.is_told_to(t => t.target).it_will_return(target_of_interception);
         };
 
-        because b = () => { result = sut.intercept_on; };
+        because b = () =>
+        {
+            result = sut.intercept_on;
+        };
 
         it should_return_the_target_of_the_method_call_tracker =
             () => result.should_be_equal_to(target_of_interception);

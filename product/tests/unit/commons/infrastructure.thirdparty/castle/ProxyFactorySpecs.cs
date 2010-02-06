@@ -1,14 +1,12 @@
 using System;
 using System.Data;
 using Castle.Core.Interceptor;
-using developwithpassion.bdd.contexts;
-using developwithpassion.bdd.mbunit;
 using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 
 namespace tests.unit.commons.infrastructure.thirdparty.castle
 {
-    [Concern(typeof(CastleDynamicProxyFactory))]
-    public abstract class behaves_like_proxy_factory : concerns_for<ProxyFactory, CastleDynamicProxyFactory>
+    [Concern(typeof (CastleDynamicProxyFactory))]
+    public abstract class behaves_like_proxy_factory : TestsFor<ProxyFactory>
     {
         public override ProxyFactory create_sut()
         {
@@ -16,21 +14,24 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
         }
     }
 
-    [Concern(typeof(CastleDynamicProxyFactory))]
+    [Concern(typeof (CastleDynamicProxyFactory))]
     public class when_creating_a_proxy_with_a_target : behaves_like_proxy_factory
     {
         it should_forward_all_calls_to_the_target = () => target.was_told_to(x => x.Open());
 
         it should_return_a_proxy_to_the_target = () =>
         {
-            AssertionExtensions.should_not_be_null(result);
+            result.should_not_be_null();
             result.GetType().should_not_be_equal_to(target.GetType());
         };
 
         it should_allow_the_interceptors_to_intercept_all_calls =
-            () => AssertionExtensions.should_be_true(interceptor.recieved_call);
+            () => interceptor.recieved_call.should_be_true();
 
-        context c = () => { target = the_dependency<IDbConnection>(); };
+        context c = () =>
+        {
+            target = dependency<IDbConnection>();
+        };
 
         because b = () =>
         {
@@ -44,54 +45,56 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
         static TestInterceptor interceptor;
     }
 
-    [Concern(typeof(CastleDynamicProxyFactory))]
+    [Concern(typeof (CastleDynamicProxyFactory))]
     public class when_creating_a_proxy_of_a_target_but_a_call_has_not_been_made_to_the_proxy_yet :
         behaves_like_proxy_factory
     {
-        it should_not_create_an_instance_of_the_target = () => AssertionExtensions.should_be_false(TestClass.was_created);
+        it should_not_create_an_instance_of_the_target = () => TestClass.was_created.should_be_false();
 
         context c = TestClass.reset;
 
-        because b = () => { result = sut.create_proxy_for<IDisposable>(() => new TestClass()); };
+        because b = () =>
+        {
+            result = sut.create_proxy_for<IDisposable>(() => new TestClass());
+        };
 
-        after_each_observation ae = TestClass.reset;
+        after_all ae = TestClass.reset;
 
         static IDisposable result;
     }
 
-    [Concern(typeof(CastleDynamicProxyFactory))]
+    [Concern(typeof (CastleDynamicProxyFactory))]
     public class when_creating_a_proxy_of_a_component_that_does_not_implement_an_interface : behaves_like_proxy_factory
     {
-        it should_return_a_proxy = () => AssertionExtensions.should_not_be_null(result);
+        it should_return_a_proxy = () => result.should_not_be_null();
 
-        because b = () => { result = sut.create_proxy_for(() => new ClassWithNoInterface()); };
+        because b = () =>
+        {
+            result = sut.create_proxy_for(() => new ClassWithNoInterface());
+        };
 
-        after_each_observation ae = TestClass.reset;
+        after_all ae = TestClass.reset;
 
         static ClassWithNoInterface result;
     }
 
-    public class ClassWithNoInterface
-    {
-    }
+    public class ClassWithNoInterface {}
 
     public class TestClass : IDisposable
     {
-        public static bool was_created;
+        static public bool was_created;
 
         public TestClass()
         {
             was_created = true;
         }
 
-        public static void reset()
+        static public void reset()
         {
             was_created = false;
         }
 
-        public void Dispose()
-        {
-        }
+        public void Dispose() {}
     }
 
     public class TestInterceptor : IInterceptor

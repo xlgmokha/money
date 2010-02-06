@@ -1,5 +1,4 @@
 using System.Windows.Forms;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Winforms.Databinding;
 
 namespace tests.unit.client.presentation.winforms.databinding
@@ -20,7 +19,7 @@ namespace tests.unit.client.presentation.winforms.databinding
             combo_box.Items.Add(baby_boy);
             combo_box.Items.Add(baby_girl);
 
-            when_the(thing_to_bind_to).is_asked_for(t => t.Child).it_will_return(baby_girl);
+            thing_to_bind_to.is_asked_for(t => t.Child).it_will_return(baby_girl);
         };
 
         because b = () => Create
@@ -56,7 +55,10 @@ namespace tests.unit.client.presentation.winforms.databinding
                 .bound_to_control(combo_box);
         };
 
-        because b = () => { combo_box.SelectedItem = baby_boy; };
+        because b = () =>
+        {
+            combo_box.SelectedItem = baby_boy;
+        };
 
         static ComboBox combo_box;
         static IAnInterface thing_to_bind_to;

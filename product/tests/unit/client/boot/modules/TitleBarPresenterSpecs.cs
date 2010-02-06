@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using momoney.presentation.model.eventing;
 using MoMoney.Presentation.Model.Projects;
 using momoney.presentation.presenters;
@@ -7,19 +6,19 @@ using MoMoney.Presentation.Views;
 
 namespace tests.unit.client.boot.modules
 {
-    [Concern(typeof (TitleBarPresenter))]
-    public abstract class behaves_like_a_title_bar_presenter : concerns_for<TitleBarPresenter>
+    public abstract class behaves_like_a_title_bar_presenter : runner<TitleBarPresenter>
     {
         context c = () =>
         {
-            project = the_dependency<IProjectController>();
-            view = the_dependency<ITitleBar>();
+            project = dependency<IProjectController>();
+            view = dependency<ITitleBar>();
         };
 
         static protected ITitleBar view;
         static protected IProjectController project;
     }
 
+    [Concern(typeof (TitleBarPresenter))]
     public class when_initializing_the_title_bar_for_the_first_time : behaves_like_a_title_bar_presenter
     {
         it should_display_the_name_of_the_file_that_is_opened = () => view.was_told_to(x => x.display("untitled.mo"));
@@ -27,7 +26,7 @@ namespace tests.unit.client.boot.modules
         context c = () =>
         {
             shell = an<Shell>();
-            when_the(project).is_told_to(x => x.name()).it_will_return("untitled.mo");
+            project.is_told_to(x => x.name()).it_will_return("untitled.mo");
         };
 
         because b = () => sut.present(shell);
@@ -35,6 +34,7 @@ namespace tests.unit.client.boot.modules
         static Shell shell;
     }
 
+    [Concern(typeof (TitleBarPresenter))]
     public class when_there_are_unsaved_changes_in_the_project : behaves_like_a_title_bar_presenter
     {
         it should_display_an_asterik_in_the_title = () => view.was_told_to(x => x.append_asterik());

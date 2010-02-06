@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 
 namespace tests.unit.commons.utility
@@ -6,7 +5,7 @@ namespace tests.unit.commons.utility
     public class OrSpecificationSpecs
     {
         [Concern(typeof (OrSpecification<>))]
-        public abstract class when_checking_if_one_of_two_conditions_are_met : concerns_for<Specification<int>, OrSpecification<int>>
+        public abstract class when_checking_if_one_of_two_conditions_are_met : TestsFor<Specification<int>>
         {
             public override Specification<int> create_sut()
             {
@@ -28,7 +27,7 @@ namespace tests.unit.commons.utility
         {
             it should_return_true = () => result.should_be_true();
 
-            context c = () => when_the(left).is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+            context c = () => left.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
 
             because b = () =>
             {
@@ -43,7 +42,7 @@ namespace tests.unit.commons.utility
         {
             it should_return_true = () => result.should_be_true();
 
-            context c = () => when_the(right).is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+            context c = () => right.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
 
             because b = () =>
             {

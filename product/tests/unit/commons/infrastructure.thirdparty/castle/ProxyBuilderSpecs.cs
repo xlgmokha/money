@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Castle.Core.Interceptor;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 
 namespace tests.unit.commons.infrastructure.thirdparty.castle
 {
     [Concern(typeof (CastleDynamicProxyBuilder<>))]
-    public abstract class behaves_like_proxy_builder : concerns_for<ProxyBuilder<IAnInterface>, CastleDynamicProxyBuilder<IAnInterface>>
+    public abstract class behaves_like_proxy_builder : runner<ProxyBuilder<IAnInterface>>
     {
         public override ProxyBuilder<IAnInterface> create_sut()
         {
@@ -34,7 +33,10 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
                 AnotherInterceptor.MethodsCalled.Count().should_be_equal_to(2);
             };
 
-        context c = () => { an_implementation_of_the_interface = an<IAnInterface>(); };
+        context c = () =>
+        {
+            an_implementation_of_the_interface = an<IAnInterface>();
+        };
 
         because b = () =>
         {
@@ -45,7 +47,7 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
             proxy.SecondMethod();
         };
 
-        after_each_observation ae = () =>
+        after_all ae = () =>
         {
             SomeInterceptor.Cleanup();
             AnotherInterceptor.Cleanup();
@@ -54,7 +56,6 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
         static IAnInterface an_implementation_of_the_interface;
     }
 
-    [Integration]
     [Concern(typeof (CastleDynamicProxyBuilder<>))]
     public class when_building_a_proxy_to_target_certain_methods_on_a_type : behaves_like_proxy_builder
     {
@@ -65,7 +66,10 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
                 SomeInterceptor.MethodsCalled.First().Name.should_be_equal_to("OneMethod");
             };
 
-        context c = () => { an_implementation = an<IAnInterface>(); };
+        context c = () =>
+        {
+            an_implementation = an<IAnInterface>();
+        };
 
         because b = () =>
         {
@@ -77,7 +81,7 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
             proxy.SecondMethod();
         };
 
-        after_each_observation ae = () =>
+        after_all ae = () =>
         {
             SomeInterceptor.Cleanup();
             AnotherInterceptor.Cleanup();
@@ -92,13 +96,16 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
         it should_intercept_each_call =
             () =>
             {
-                SomeInterceptor.MethodsCalled.Count().should_be_equal_to(3 );
+                SomeInterceptor.MethodsCalled.Count().should_be_equal_to(3);
                 SomeInterceptor.MethodsCalled.First().Name.should_be_equal_to("OneMethod");
                 SomeInterceptor.MethodsCalled.Skip(1).First().Name.should_be_equal_to("SecondMethod");
                 SomeInterceptor.MethodsCalled.Skip(2).First().Name.should_be_equal_to("region");
             };
 
-        context c = () => { an_implementation = an<IAnInterface>(); };
+        context c = () =>
+        {
+            an_implementation = an<IAnInterface>();
+        };
 
         because b = () =>
         {
@@ -111,7 +118,7 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
             proxy.region(() => "mo");
         };
 
-        after_each_observation ae = () =>
+        after_all ae = () =>
         {
             SomeInterceptor.Cleanup();
             AnotherInterceptor.Cleanup();
@@ -132,13 +139,8 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
 
     public class SomeInterceptor : IInterceptor
     {
-        public static bool WasCalled;
-        public static IList<MethodInfo> MethodsCalled;
-
-        static SomeInterceptor()
-        {
-            MethodsCalled = new List<MethodInfo>();
-        }
+        static public bool WasCalled;
+        static public IList<MethodInfo> MethodsCalled= new List<MethodInfo>();
 
         public void Intercept(IInvocation invocation)
         {
@@ -147,7 +149,7 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
             invocation.Proceed();
         }
 
-        public static void Cleanup()
+        static public void Cleanup()
         {
             WasCalled = false;
             MethodsCalled.Clear();
@@ -156,8 +158,8 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
 
     public class AnotherInterceptor : IInterceptor
     {
-        public static bool WasCalled;
-        public static IList<MethodInfo> MethodsCalled;
+        static public bool WasCalled;
+        static public IList<MethodInfo> MethodsCalled;
 
         static AnotherInterceptor()
         {
@@ -171,7 +173,7 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
             invocation.Proceed();
         }
 
-        public static void Cleanup()
+        static public void Cleanup()
         {
             WasCalled = false;
             MethodsCalled.Clear();
@@ -182,13 +184,9 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
     {
         public string GetterAndSetterProperty { get; set; }
 
-        public void OneMethod()
-        {
-        }
+        public void OneMethod() {}
 
-        public void SecondMethod()
-        {
-        }
+        public void SecondMethod() {}
 
         public int FirstValueReturningMethod()
         {
@@ -200,8 +198,6 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
             return number + 1;
         }
 
-        public void region<T>(Func<T> call)
-        {
-        }
+        public void region<T>(Func<T> call) {}
     }
 }

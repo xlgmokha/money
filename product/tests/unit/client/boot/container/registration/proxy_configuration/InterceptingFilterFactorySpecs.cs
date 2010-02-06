@@ -1,5 +1,4 @@
 using Castle.Core.Interceptor;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 using MoMoney.boot.container.registration.proxy_configuration;
 
@@ -7,8 +6,8 @@ namespace tests.unit.client.boot.container.registration.proxy_configuration
 {
     public class InterceptingFilterFactorySpecs
     {
-        public class when_creating_an_intercepting_filter :
-            concerns_for<IInterceptingFilterFactory, InterceptingFilterFactory>
+        [Concern(typeof (InterceptingFilterFactory))]
+        public class when_creating_an_intercepting_filter : runner<InterceptingFilterFactory>
         {
             context c = () =>
             {

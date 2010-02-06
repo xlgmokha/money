@@ -1,6 +1,5 @@
 using System;
 using System.Linq.Expressions;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Winforms.Databinding;
 
 namespace tests.unit.client.presentation.winforms.databinding
@@ -8,7 +7,7 @@ namespace tests.unit.client.presentation.winforms.databinding
     public class BindingSelectorSpecs
     {
         [Concern(typeof (BindingSelector<>))]
-        public class when_selecting_a_property_as_the_target_of_a_binding : concerns_for<IBindingSelector<IAnInterface>>
+        public class when_selecting_a_property_as_the_target_of_a_binding : tests_for<IBindingSelector<IAnInterface>>
         {
             it should_return_a_binder_bound_to_the_correct_property =
                 () => result.property.Name.should_be_equal_to("FirstName");

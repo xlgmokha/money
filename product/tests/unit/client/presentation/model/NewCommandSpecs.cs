@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Model.Projects;
@@ -6,16 +5,16 @@ using MoMoney.Presentation.Model.Projects;
 namespace tests.unit.client.presentation.model
 {
     [Concern(typeof (NewCommand))]
-    public abstract class behaves_like_new_command : concerns_for<INewCommand, NewCommand>
+    public abstract class behaves_like_new_command : runner<NewCommand>
     {
         context c = () =>
         {
-            current_project = the_dependency<IProjectController>();
-            save_changes_command = the_dependency<ISaveChangesCommand>();
+            current_project = dependency<IProjectController>();
+            save_changes_command = dependency<ISaveChangesCommand>();
         };
 
-        protected static IProjectController current_project;
-        protected static ISaveChangesCommand save_changes_command;
+        static protected IProjectController current_project;
+        static protected ISaveChangesCommand save_changes_command;
     }
 
     public class before_starting_a_new_project : behaves_like_new_command

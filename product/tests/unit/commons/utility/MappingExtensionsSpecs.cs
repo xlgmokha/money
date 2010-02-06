@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 
 namespace tests.unit.commons.utility
@@ -14,11 +13,14 @@ namespace tests.unit.commons.utility
             second_mapper = an<Mapper<string, int>>();
             a = 1;
 
-            when_the(first_mapper).is_told_to(x => x.map_from(a)).it_will_return("1");
-            when_the(second_mapper).is_told_to(x => x.map_from("1")).it_will_return(1);
+            first_mapper.is_told_to(x => x.map_from(a)).it_will_return("1");
+            second_mapper.is_told_to(x => x.map_from("1")).it_will_return(1);
         };
 
-        because b = () => { result = first_mapper.then(second_mapper).map_from(a); };
+        because b = () =>
+        {
+            result = first_mapper.then(second_mapper).map_from(a);
+        };
 
 
         static int result;

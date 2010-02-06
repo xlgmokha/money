@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.FileSystem;
 using momoney.presentation.model.menu.file;
 using MoMoney.Presentation.Model.Menu.File;
@@ -8,22 +7,21 @@ using momoney.presentation.views;
 namespace tests.unit.client.presentation.model
 {
     [Concern(typeof (OpenCommand))]
-    public abstract class behaves_like_command_to_open_a_project : concerns_for<IOpenCommand, OpenCommand>
+    public abstract class behaves_like_command_to_open_a_project : runner<OpenCommand>
     {
         context c = () =>
         {
-            view = the_dependency<ISelectFileToOpenDialog>();
-            project = the_dependency<IProjectController>();
-            save_changes_command = the_dependency<ISaveChangesCommand>();
+            view = dependency<ISelectFileToOpenDialog>();
+            project = dependency<IProjectController>();
+            save_changes_command = dependency<ISaveChangesCommand>();
         };
 
-        protected static IProjectController project;
-        protected static ISelectFileToOpenDialog view;
-        protected static ISaveChangesCommand save_changes_command;
+        static protected IProjectController project;
+        static protected ISelectFileToOpenDialog view;
+        static protected ISaveChangesCommand save_changes_command;
     }
 
-    public class before_opening_a_new_project :
-        behaves_like_command_to_open_a_project
+    public class before_opening_a_new_project : behaves_like_command_to_open_a_project
     {
         it should_check_to_see_if_you_want_to_save_the_previously_opened_project =
             () => save_changes_command.was_told_to(x => x.run(sut));
@@ -40,7 +38,7 @@ namespace tests.unit.client.presentation.model
         context c = () =>
         {
             file_path = "blah_blah";
-            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
+            view.is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
         };
 
         because b = () => sut.saved();
@@ -57,7 +55,7 @@ namespace tests.unit.client.presentation.model
         context c = () =>
         {
             file_path = "blah_blah";
-            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
+            view.is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
         };
 
         because b = () => sut.not_saved();
@@ -75,7 +73,7 @@ namespace tests.unit.client.presentation.model
         context c = () =>
         {
             file_path = "blah_blah";
-            when_the(view).is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
+            view.is_told_to(x => x.tell_me_the_path_to_the_file()).it_will_return(file_path);
         };
 
         because b = () => sut.cancelled();

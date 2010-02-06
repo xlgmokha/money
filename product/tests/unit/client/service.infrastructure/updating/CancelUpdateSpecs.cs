@@ -1,21 +1,22 @@
-using developwithpassion.bdd.contexts;
-using momoney.service.infrastructure.updating;
 using MoMoney.Service.Infrastructure.Updating;
 
 namespace tests.unit.client.service.infrastructure.updating
 {
     public class CancelUpdateSpecs
     {
-    }
+        [Concern(typeof (CancelUpdate))]
+        public class when_cancelling_an_update_of_the_application : runner<CancelUpdate>
+        {
+            it should_stop_downloading_the_update = () => deployment.was_told_to(x => x.UpdateAsyncCancel());
 
-    public class when_cancelling_an_update_of_the_application : concerns_for<ICancelUpdate, CancelUpdate>
-    {
-        it should_stop_downloading_the_update = () => deployment.was_told_to(x => x.UpdateAsyncCancel());
+            context c = () =>
+            {
+                deployment = dependency<IDeployment>();
+            };
 
-        context c = () => { deployment = the_dependency<IDeployment>(); };
+            because b = () => sut.run();
 
-        because b = () => sut.run();
-
-        static IDeployment deployment;
+            static IDeployment deployment;
+        }
     }
 }

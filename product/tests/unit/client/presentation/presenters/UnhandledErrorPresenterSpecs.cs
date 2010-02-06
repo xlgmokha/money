@@ -1,5 +1,4 @@
 using System;
-using developwithpassion.bdd.contexts;
 using momoney.presentation.model.eventing;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
@@ -7,16 +6,16 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace tests.unit.client.presentation.presenters
 {
-    public class behaves_like_unhandled_error_presenter : concerns_for<UnhandledErrorPresenter>
+    public class behaves_like_unhandled_error_presenter : tests_for<UnhandledErrorPresenter>
     {
         context c = () =>
         {
-            view = the_dependency<IUnhandledErrorView>();
-            broker = the_dependency<EventAggregator>();
+            view = dependency<IUnhandledErrorView>();
+            broker = dependency<EventAggregator>();
         };
 
-        protected static IUnhandledErrorView view;
-        protected static EventAggregator broker;
+        static protected IUnhandledErrorView view;
+        static protected EventAggregator broker;
     }
 
     public class when_an_error_occurs_in_the_application : behaves_like_unhandled_error_presenter

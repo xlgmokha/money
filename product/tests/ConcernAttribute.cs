@@ -1,11 +1,15 @@
 using System;
+using NUnit.Framework;
 
 namespace tests
 {
-    public class ConcernAttribute : bdddoc.core.ConcernAttribute
+    public class ConcernAttribute : TestFixtureAttribute
     {
-        public ConcernAttribute(Type concern) : base(concern)
+        public Type SUT { get; set; }
+
+        public ConcernAttribute(Type sut)
         {
+            SUT = sut;
         }
     }
 }

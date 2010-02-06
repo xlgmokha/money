@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
 
@@ -21,9 +20,12 @@ namespace tests.unit.commons.infrastructure
                 Resolve.initialize_with(registry);
             };
 
-        because b = () => { result = Log.For("mo"); };
+        because b = () =>
+        {
+            result = Log.For("mo");
+        };
 
-        after_each_observation a = () => Resolve.initialize_with(null);
+        after_all a = () => Resolve.initialize_with(null);
 
         static Logger result;
         static Logger logger;

@@ -51,21 +51,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.dll</HintPath>
     </Reference>
-    <Reference Include="developwithpassion.bdd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.bdd.dll</HintPath>
-    </Reference>
-    <Reference Include="developwithpassion.commons.core.infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\test\developwithpassion\developwithpassion.commons.core.infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="JetBrains.Annotations, Version=4.5.1181.216, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\jetbrains\JetBrains.Annotations.dll</HintPath>
     </Reference>
-    <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
+    <Reference Include="nunit.framework, Version=2.5.0.9122, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\test\mbunit\MbUnit.Framework.dll</HintPath>
+      <HintPath>..\..\build\tools\nunit\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -90,15 +82,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="assertions.cs" />
     <Compile Include="Call.cs" />
-    <Compile Include="ConcernAttribute.cs" />
-    <Compile Include="concerns.cs" />
-    <Compile Include="EmptyFixture.cs" />
-    <Compile Include="IHideObjectMembers.cs" />
-    <Compile Include="IntegrationAttribute.cs" />
     <Compile Include="MethodCallOccurance.cs" />
     <Compile Include="MockingExtensions.cs" />
+    <Compile Include="AssertionExtensions.cs" />
+    <Compile Include="Casting.cs" />
+    <Compile Include="ConcernAttribute.cs" />
+    <Compile Include="Iterating.cs" />
+    <Compile Include="ObservationAttribute.cs" />
+    <Compile Include="Reflecting.cs" />
+    <Compile Include="runner.cs" />
+    <Compile Include="test.cs" />
+    <Compile Include="TestRunner.cs" />
     <Compile Include="unit\client\boot\container\ComponentExclusionSpecificationSpecs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +188,9 @@
     <Compile Include="unit\commons\utility\PredicateSpecificationSpecs.cs" />
     <Compile Include="unit\commons\utility\SpecificationExtensionsSpecs.cs" />
     <Compile Include="unit\commons\utility\TypeExtensionsSpecs.cs" />
+    <Compile Include="unit\ConcernsFor.cs" />
+    <Compile Include="unit\IMockFactory.cs" />
+    <Compile Include="unit\RhinoMockFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\client\boot\boot.csproj">

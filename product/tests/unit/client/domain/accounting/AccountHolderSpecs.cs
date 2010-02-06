@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Utility;
 using MoMoney.Domain.accounting;
 using MoMoney.Domain.Accounting;
@@ -12,11 +11,9 @@ namespace tests.unit.client.domain.accounting
     public class AccountHolderSpecs
     {
         [Concern(typeof (AccountHolder))]
-        public abstract class concern : concerns_for<AccountHolder>
-        {
-        }
+        public abstract class Test : tests_for<AccountHolder> {}
 
-        public class when_a_customer_is_checking_for_any_bills_that_have_not_been_paid : concern
+        public class when_a_customer_is_checking_for_any_bills_that_have_not_been_paid : Test
         {
             it should_return_all_the_unpaid_bills = () =>
             {
@@ -26,8 +23,7 @@ namespace tests.unit.client.domain.accounting
 
             context c = () =>
             {
-                            
-                first_unpaid_bill = Bill.New(null,10.00, DateTime.Now);
+                first_unpaid_bill = Bill.New(null, 10.00, DateTime.Now);
                 second_unpaid_bill = Bill.New(null, 11.00, DateTime.Now);
                 paid_bill = Bill.New(null, 0.00, DateTime.Now);
             };
@@ -47,7 +43,7 @@ namespace tests.unit.client.domain.accounting
         }
 
         [Concern(typeof (AccountHolder))]
-        public class when_an_account_holder_is_calculating_their_income_for_a_year : concern
+        public class when_an_account_holder_is_calculating_their_income_for_a_year : Test
         {
             context c = () =>
             {

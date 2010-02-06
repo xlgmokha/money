@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
 using gorilla.commons.infrastructure.thirdparty.Castle.DynamicProxy;
 
@@ -7,7 +6,7 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
     public class LazySpecs
     {
         [Concern(typeof (Lazy))]
-        public abstract class behaves_like_a_lazy_loaded_object : concerns
+        public abstract class behaves_like_a_lazy_loaded_object : test
         {
             context c = () =>
             {
@@ -15,7 +14,7 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
                 Resolve.initialize_with(test_container);
             };
 
-            after_each_observation a = () => Resolve.initialize_with(null);
+            after_all a = () => Resolve.initialize_with(null);
 
             static protected DependencyRegistry test_container;
         }
@@ -119,7 +118,8 @@ namespace tests.unit.commons.infrastructure.thirdparty.castle
             {
                 var target = an<ITargetObject>();
 
-                target.GetterAndSetterProperty = "mo";
+                //target.GetterAndSetterProperty = "mo";
+                target.is_told_to(x => x.GetterAndSetterProperty).it_will_return("mo");
                 test_container.is_told_to(t => t.get_a<ITargetObject>()).it_will_return(target).Repeat.Once();
             };
 

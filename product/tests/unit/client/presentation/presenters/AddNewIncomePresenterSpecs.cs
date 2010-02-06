@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using developwithpassion.bdd.contexts;
 using MoMoney.DTO;
 using MoMoney.Presentation.Presenters;
 using momoney.presentation.views;
@@ -9,12 +8,12 @@ using MoMoney.Service.Contracts.Application;
 namespace tests.unit.client.presentation.presenters
 {
     [Concern(typeof (AddNewIncomePresenter))]
-    public abstract class behaves_like_add_new_income_presenter : concerns_for< AddNewIncomePresenter>
+    public abstract class behaves_like_add_new_income_presenter : tests_for<AddNewIncomePresenter>
     {
         context c = () =>
         {
-            view = the_dependency<IAddNewIncomeView>();
-            pump = the_dependency<ICommandPump>();
+            view = dependency<IAddNewIncomeView>();
+            pump = dependency<ICommandPump>();
         };
 
         static protected ICommandPump pump;
@@ -30,7 +29,10 @@ namespace tests.unit.client.presentation.presenters
         it should_display_the_new_income =
             () => pump.was_told_to(x => x.run<IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>(view));
 
-        context c = () => { income = new IncomeSubmissionDTO {}; };
+        context c = () =>
+        {
+            income = new IncomeSubmissionDTO {};
+        };
 
         because b = () => sut.submit_new(income);
 
@@ -46,8 +48,9 @@ namespace tests.unit.client.presentation.presenters
         it should_display_the_income_already_added =
             () => pump.was_told_to(x => x.run<IEnumerable<IncomeInformationDTO>, IGetAllIncomeQuery>(view));
 
-        context c = () => {
-                              shell = an<Shell>();
+        context c = () =>
+        {
+            shell = an<Shell>();
         };
 
         because b = () => sut.present(shell);

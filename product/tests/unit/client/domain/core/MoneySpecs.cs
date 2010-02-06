@@ -1,10 +1,9 @@
-using developwithpassion.bdd.contexts;
 using MoMoney.Domain.Core;
 
 namespace tests.unit.client.domain.core
 {
     [Concern(typeof (Money))]
-    public class when_adding_two_monies_together : concerns_for<Money>
+    public class when_adding_two_monies_together : runner<Money>
     {
         it should_return_the_correct_money = () => result.should_be_equal_to(new Money(2.98));
 
@@ -22,10 +21,9 @@ namespace tests.unit.client.domain.core
     }
 
     [Concern(typeof (Money))]
-    public class when_two_monies_of_the_same_value_are_compared_to_one_another : concerns_for<Money>
+    public class when_two_monies_of_the_same_value_are_compared_to_one_another : runner<Money>
     {
         it they_should_be_equal = () => result.should_be_equal_to(true);
-
 
         because b = () =>
         {

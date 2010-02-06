@@ -1,7 +1,5 @@
 using System;
-using developwithpassion.bdd.contexts;
 using momoney.presentation.presenters;
-using momoney.presentation.views;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Views;
 
@@ -9,7 +7,8 @@ namespace tests.unit.client.presentation.winforms.views
 {
     public class ApplicationShellSpecs
     {
-        public class concern : concerns_for<Shell, ApplicationShell> {}
+        [Concern(typeof (ApplicationShell))]
+        public class concern : runner<ApplicationShell> {}
 
         public class when_the_application_shell_is_closed : concern
         {

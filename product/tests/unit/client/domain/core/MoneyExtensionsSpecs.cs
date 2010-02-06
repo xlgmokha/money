@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using MoMoney.Domain.Core;
 
 namespace tests.unit.client.domain.core
@@ -7,7 +6,10 @@ namespace tests.unit.client.domain.core
     {
         it should_return_the_correct_money = () => result.should_be_equal_to(new Money(1.99));
 
-        because b = () => { result = 1.99; };
+        because b = () =>
+        {
+            result = 1.99;
+        };
 
         static Money result;
     }

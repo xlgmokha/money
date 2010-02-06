@@ -1,17 +1,14 @@
 using System;
 using System.Linq.Expressions;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Winforms.Helpers;
 
 namespace tests.unit.client.presentation.winforms.helpers
 {
-    public class RebindTextBoxCommandSpecs
-    {
-    }
+    public class RebindTextBoxCommandSpecs {}
 
     [Concern(typeof (RebindTextBoxCommand<>))]
     public class when_the_text_in_a_textbox_changes :
-        concerns_for<ITextBoxCommand<string>, RebindTextBoxCommand<string>>
+        TestsFor<ITextBoxCommand<string>>
     {
         context c = () =>
         {
@@ -36,7 +33,7 @@ namespace tests.unit.client.presentation.winforms.helpers
         context c = () =>
         {
             binder = x => "kat";
-            when_the(textbox).is_told_to(x => x.text()).it_will_return("kitty");
+            textbox.is_told_to(x => x.text()).it_will_return("kitty");
         };
 
         because b = () => sut.run(textbox);

@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 
 namespace tests.unit.commons.utility
@@ -6,13 +5,13 @@ namespace tests.unit.commons.utility
     public class NotSpecificationSpecs
     {
         [Concern(typeof (NotSpecification<>))]
-        public class when_checking_if_a_condition_is_not_met : concerns_for<Specification<int>, NotSpecification<int>>
+        public class when_checking_if_a_condition_is_not_met : TestsFor<Specification<int>>
         {
             static protected Specification<int> criteria;
 
             context c = () =>
             {
-                criteria = the_dependency<Specification<int>>();
+                criteria = dependency<Specification<int>>();
             };
 
             public override Specification<int> create_sut()
@@ -24,7 +23,7 @@ namespace tests.unit.commons.utility
         [Concern(typeof (NotSpecification<>))]
         public class when_a_condition_is_not_met : when_checking_if_a_condition_is_not_met
         {
-            context c = () => when_the(criteria).is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
+            context c = () => criteria.is_told_to(x => x.is_satisfied_by(1)).it_will_return(false);
 
             because b = () =>
             {
@@ -39,7 +38,7 @@ namespace tests.unit.commons.utility
         [Concern(typeof (NotSpecification<>))]
         public class when_a_condition_is_met : when_checking_if_a_condition_is_not_met
         {
-            context c = () => when_the(criteria).is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
+            context c = () => criteria.is_told_to(x => x.is_satisfied_by(1)).it_will_return(true);
 
             because b = () =>
             {

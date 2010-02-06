@@ -1,5 +1,4 @@
 using System.Security.Principal;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 using MoMoney.Service.Infrastructure.Security;
 
@@ -8,7 +7,7 @@ namespace tests.unit.client.service.infrastructure.security
     public class IsInRoleSpecs
     {
         public class when_checking_if_a_principal_belongs_to_a_role :
-            concerns_for<Specification<IPrincipal>, IsInRole>
+            TestsFor<Specification<IPrincipal>>
         {
             static protected readonly Role administrator_role = new Role("administrators");
 
@@ -22,8 +21,8 @@ namespace tests.unit.client.service.infrastructure.security
         {
             context c = () =>
             {
-                principal = the_dependency<IPrincipal>();
-                when_the(principal)
+                principal = dependency<IPrincipal>();
+                principal
                     .is_told_to(x => x.IsInRole(administrator_role))
                     .it_will_return(false);
             };
@@ -43,8 +42,8 @@ namespace tests.unit.client.service.infrastructure.security
         {
             context c = () =>
             {
-                principal = the_dependency<IPrincipal>();
-                when_the(principal)
+                principal = dependency<IPrincipal>();
+                principal
                     .is_told_to(x => x.IsInRole(administrator_role))
                     .it_will_return(true);
             };
@@ -60,4 +59,4 @@ namespace tests.unit.client.service.infrastructure.security
             static IPrincipal principal;
         }
     }
-}         
+}

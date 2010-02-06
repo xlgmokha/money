@@ -3,7 +3,6 @@ using System.Linq;
 using Autofac;
 using Autofac.Builder;
 using Autofac.Modules;
-using developwithpassion.bdd.contexts;
 
 namespace tests.unit.commons.infrastructure.thirdparty.autofac
 {
@@ -19,9 +18,12 @@ namespace tests.unit.commons.infrastructure.thirdparty.autofac
             container = builder.Build();
         };
 
-        because b = () => { result = container.Resolve<ITestItem>(); };
+        because b = () =>
+        {
+            result = container.Resolve<ITestItem>();
+        };
 
-        after_each_observation after_each = () => container.Dispose();
+        after_all after_each = () => container.Dispose();
 
         static ContainerBuilder builder;
         static IContainer container;
@@ -47,24 +49,21 @@ namespace tests.unit.commons.infrastructure.thirdparty.autofac
             container = builder.Build();
         };
 
-        because b = () => { results = container.Resolve<IEnumerable<ITestItem>>(); };
+        because b = () =>
+        {
+            results = container.Resolve<IEnumerable<ITestItem>>();
+        };
 
-        after_each_observation after_each = () => container.Dispose();
+        after_all after_each = () => container.Dispose();
 
         static ContainerBuilder builder;
         static IContainer container;
         static IEnumerable<ITestItem> results;
     }
 
-    public interface ITestItem
-    {
-    }
+    public interface ITestItem {}
 
-    public class A : ITestItem
-    {
-    }
+    public class A : ITestItem {}
 
-    public class B : ITestItem
-    {
-    }
+    public class B : ITestItem {}
 }

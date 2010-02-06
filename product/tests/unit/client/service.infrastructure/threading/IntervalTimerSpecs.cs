@@ -1,6 +1,5 @@
 using System;
 using System.Timers;
-using developwithpassion.bdd.contexts;
 using momoney.service.infrastructure.threading;
 using MoMoney.Service.Infrastructure.Threading;
 using Rhino.Mocks;
@@ -8,11 +7,14 @@ using Rhino.Mocks;
 namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (IntervalTimer))]
-    public abstract class behaves_like_an_interval_timer : concerns_for<ITimer, IntervalTimer>
+    public abstract class behaves_like_an_interval_timer : runner<IntervalTimer>
     {
-        context c = () => { factory = the_dependency<ITimerFactory>(); };
+        context c = () =>
+        {
+            factory = dependency<ITimerFactory>();
+        };
 
-        protected static ITimerFactory factory;
+        static protected ITimerFactory factory;
     }
 
     [Concern(typeof (IntervalTimer))]
@@ -105,8 +107,8 @@ namespace tests.unit.client.service.infrastructure.threading
             client = an<ITimerClient>();
             timer = dependency<Timer>();
 
-            when_the(factory).is_told_to(t => t.create_for(Arg<TimeSpan>.Is.Anything)).it_will_return(
-                                                                                                         timer);
+            factory.is_told_to(t => t.create_for(Arg<TimeSpan>.Is.Anything)).it_will_return(
+                                                                                               timer);
         };
 
         because b = () =>
@@ -120,9 +122,12 @@ namespace tests.unit.client.service.infrastructure.threading
     public class when_attempting_to_stop_notification_for_a_client_that_doesnt_have_a_timer_started_for_it :
         behaves_like_an_interval_timer
     {
-        it should_not_blow_up = () => { };
+        it should_not_blow_up = () => {};
 
-        context c = () => { client = an<ITimerClient>(); };
+        context c = () =>
+        {
+            client = an<ITimerClient>();
+        };
 
         because b = () => sut.stop_notifying(client);
 

@@ -1,4 +1,6 @@
-﻿namespace presentation.windows
+using presentation.windows.presenters;
+
+namespace presentation.windows.views
 {
     public partial class CompensationTab : Tab<CompensationPresenter>
     {

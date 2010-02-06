@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using gorilla.commons.Utility;
 using momoney.service.infrastructure.threading;
 using Rhino.Mocks;
@@ -6,12 +5,12 @@ using Rhino.Mocks;
 namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (BackgroundThread))]
-    public abstract class behaves_like_a_background_thread : concerns_for<IBackgroundThread, BackgroundThread>
+    public abstract class behaves_like_a_background_thread : runner<BackgroundThread>
     {
         context c = () =>
         {
-            command_to_execute = the_dependency<DisposableCommand>();
-            worker_thread = the_dependency<IWorkerThread>();
+            command_to_execute = dependency<DisposableCommand>();
+            worker_thread = dependency<IWorkerThread>();
         };
 
         static protected DisposableCommand command_to_execute;

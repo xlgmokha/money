@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using momoney.presentation.presenters;
 using momoney.presentation.views;
 
@@ -6,11 +5,11 @@ namespace tests.unit.client.presentation.presenters
 {
     public class GettingStartedPresenterSpecs
     {
-        public class behaves_like_the_getting_started_presenter : concerns_for<GettingStartedPresenter>
+        public class behaves_like_the_getting_started_presenter : tests_for<GettingStartedPresenter>
         {
             context c = () =>
             {
-                view = the_dependency<IGettingStartedView>();
+                view = dependency<IGettingStartedView>();
             };
 
             static protected IGettingStartedView view;

@@ -1,12 +1,11 @@
 using System;
-using developwithpassion.bdd.contexts;
 using MoMoney.Domain.Accounting;
 using MoMoney.Domain.Core;
 
 namespace tests.unit.client.domain.accounting
 {
     [Concern(typeof (Bill))]
-    public class when_checking_to_see_if_a_new_bill_has_been_paid_for : concerns_for<Bill>
+    public class when_checking_to_see_if_a_new_bill_has_been_paid_for : tests_for<Bill>
     {
         it should_return_false = () => result.should_be_equal_to(false);
 
@@ -21,7 +20,10 @@ namespace tests.unit.client.domain.accounting
             enmax = an<Company>();
         };
 
-        because b = () => { result = sut.is_paid_for(); };
+        because b = () =>
+        {
+            result = sut.is_paid_for();
+        };
 
         static bool result;
         static Money amount_owed;
@@ -29,7 +31,7 @@ namespace tests.unit.client.domain.accounting
     }
 
     [Concern(typeof (Bill))]
-    public class when_checking_if_a_paid_bill_has_been_paid_for : concerns_for<Bill>
+    public class when_checking_if_a_paid_bill_has_been_paid_for : tests_for<Bill>
     {
         it should_return_true = () => result.should_be_equal_to(true);
 
@@ -48,7 +50,7 @@ namespace tests.unit.client.domain.accounting
 
         public override Bill create_sut()
         {
-            return  Bill.New(direct_energy, one_hundred_twenty_three_dollars_fourty_five_cents, DateTime.Now);
+            return Bill.New(direct_energy, one_hundred_twenty_three_dollars_fourty_five_cents, DateTime.Now);
         }
 
         static Money one_hundred_twenty_three_dollars_fourty_five_cents;

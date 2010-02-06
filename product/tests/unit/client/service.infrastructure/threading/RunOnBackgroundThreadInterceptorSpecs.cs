@@ -1,17 +1,16 @@
 using Castle.Core.Interceptor;
-using developwithpassion.bdd.contexts;
+using gorilla.commons.utility;
 using gorilla.commons.Utility;
 using momoney.service.infrastructure.threading;
 
 namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (RunOnBackgroundThreadInterceptor<>))]
-    public abstract class behaves_like_background_thread_interceptor :
-        concerns_for<IInterceptor, RunOnBackgroundThreadInterceptor<DisposableCommand>>
+    public abstract class behaves_like_background_thread_interceptor : runner<RunOnBackgroundThreadInterceptor<DisposableCommand>>
     {
         context c = () =>
         {
-            thread_factory = the_dependency<IBackgroundThreadFactory>();
+            thread_factory = dependency<IBackgroundThreadFactory>();
         };
 
         static protected IBackgroundThreadFactory thread_factory;

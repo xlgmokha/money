@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using Db4objects.Db4o;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 
 namespace tests.unit.client.database.db4o
@@ -9,8 +8,6 @@ namespace tests.unit.client.database.db4o
     [Concern(typeof (Db4oFactory))]
     public class when_opening_an_existing_database_ : concerns
     {
-        before_each_observation be = () => {};
-
         context c = () =>
         {
             original = new TestObject(88, "mo");
@@ -35,7 +32,7 @@ namespace tests.unit.client.database.db4o
 
         it should_only_contain_the_original_item = () => results.Count.should_be_equal_to(1);
 
-        after_each_observation ae = () =>
+        after_all ae = () =>
         {
             database.Close();
             database.Dispose();

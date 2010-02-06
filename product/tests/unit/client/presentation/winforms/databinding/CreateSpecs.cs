@@ -1,12 +1,9 @@
 using System.Windows.Forms;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Winforms.Databinding;
 
 namespace tests.unit.client.presentation.winforms.databinding
 {
-    public class CreateSpecs
-    {
-    }
+    public class CreateSpecs {}
 
     public abstract class when_a_text_control_is_bound_to_an_item : concerns
     {
@@ -24,7 +21,11 @@ namespace tests.unit.client.presentation.winforms.databinding
     public class when_the_value_of_a_text_control_changes : when_a_text_control_is_bound_to_an_item
     {
         it should_update_the_value_of_the_property_on_the_item = () => item.name.should_be_equal_to("mo");
-        because b = () => { textbox.Text = "mo"; };
+
+        because b = () =>
+        {
+            textbox.Text = "mo";
+        };
     }
 
     public class TestItem

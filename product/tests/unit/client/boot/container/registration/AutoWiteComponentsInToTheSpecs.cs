@@ -1,21 +1,18 @@
 using System;
-using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Reflection;
 using gorilla.commons.infrastructure.thirdparty;
 using gorilla.commons.infrastructure.thirdparty.Castle.Windsor.Configuration;
-using MbUnit.Framework;
 using MoMoney.boot.container.registration;
+using NUnit.Framework;
 
 namespace tests.unit.client.boot.container.registration
 {
-    [Ignore("I am not sure why but line 19 throws a BadImageFormatException")]
-    public abstract class behaves_like_auto_registering_components_into_container :
-        concerns_for<IStartupCommand, AutoWireComponentsInToThe>
+    public abstract class behaves_like_auto_registering_components_into_container : runner<IStartupCommand>
     {
         context c = () =>
         {
-            exclusions_criteria = the_dependency<ComponentExclusionSpecification>();
-            builder = the_dependency<DependencyRegistration>();
+            exclusions_criteria = dependency<ComponentExclusionSpecification>();
+            builder = dependency<DependencyRegistration>();
         };
 
         public override IStartupCommand create_sut()
@@ -27,8 +24,9 @@ namespace tests.unit.client.boot.container.registration
         static protected ComponentExclusionSpecification exclusions_criteria;
     }
 
-    public class when_registering_all_the_components_from_an_assembly :
-        behaves_like_auto_registering_components_into_container
+    [Ignore("I am not sure why but line 19 throws a BadImageFormatException")]
+    [Concern(typeof (AutoWireComponentsInToThe))]
+    public class when_registering_all_the_components_from_an_assembly : behaves_like_auto_registering_components_into_container
     {
         it should_register_each_component_by_its_last_interface =
             () => builder.was_told_to(x => x.transient(interface_type, component_with_multiple_interfaces));
@@ -47,10 +45,10 @@ namespace tests.unit.client.boot.container.registration
             component_with_no_interface = typeof (ComponentNoInterface);
             bad_type = typeof (BadComponent);
 
-            when_the(assembly).is_told_to(x => x.all_types())
+            assembly.is_told_to(x => x.all_types())
                 .it_will_return(component_with_multiple_interfaces, component_with_no_interface,
                                 bad_type);
-            when_the(exclusions_criteria).is_told_to(x => x.is_satisfied_by(bad_type))
+            exclusions_criteria.is_told_to(x => x.is_satisfied_by(bad_type))
                 .it_will_return(false);
         };
 

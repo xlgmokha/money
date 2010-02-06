@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Proxies;
 
 namespace tests.unit.commons.infrastructure

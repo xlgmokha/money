@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Core;
 using momoney.presentation.views;
 
@@ -6,14 +5,13 @@ namespace tests.unit.client.presentation.core
 {
     public class ApplicationControllerSpecs
     {
-        [Concern(typeof (ApplicationController))]
-        public abstract class concern : concerns_for<IApplicationController, ApplicationController>
+        public abstract class concern : runner<ApplicationController>
         {
             context c = () =>
             {
-                presenter_factory = the_dependency<PresenterFactory>();
-                view_factory = the_dependency<ViewFactory>();
-                shell = the_dependency<Shell>();
+                presenter_factory = dependency<PresenterFactory>();
+                view_factory = dependency<ViewFactory>();
+                shell = dependency<Shell>();
             };
 
             static protected Shell shell;
@@ -21,6 +19,7 @@ namespace tests.unit.client.presentation.core
             static protected ViewFactory view_factory;
         }
 
+        [Concern(typeof (ApplicationController))]
         public class when_the_application_controller_is_asked_to_run_a_presenter : concern
         {
             context c = () =>

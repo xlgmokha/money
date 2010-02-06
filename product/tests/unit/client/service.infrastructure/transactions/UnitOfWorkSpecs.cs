@@ -1,6 +1,4 @@
-using developwithpassion.bdd.contexts;
 using momoney.database.transactions;
-using momoney.service.infrastructure.transactions;
 using MoMoney.Service.Infrastructure.Transactions;
 
 namespace tests.unit.client.service.infrastructure.transactions
@@ -8,13 +6,13 @@ namespace tests.unit.client.service.infrastructure.transactions
     public class UnitOfWorkSpecs
     {
         [Concern(typeof (UnitOfWork))]
-        public abstract class behaves_like_unit_of_work : concerns_for<IUnitOfWork, UnitOfWork>
+        public abstract class behaves_like_unit_of_work : runner<UnitOfWork>
         {
             context c = () =>
             {
-                session_context = the_dependency<IContext>();
-                session = the_dependency<ISession>();
-                key = the_dependency<IKey<ISession>>();
+                session_context = dependency<IContext>();
+                session = dependency<ISession>();
+                key = dependency<IKey<ISession>>();
             };
 
             static protected IContext session_context;
@@ -25,13 +23,13 @@ namespace tests.unit.client.service.infrastructure.transactions
         [Concern(typeof (UnitOfWork))]
         public abstract class when_a_unit_of_work_has_unsaved_changes : behaves_like_unit_of_work
         {
-            context c = () => when_the(session).is_told_to(x => x.is_dirty()).it_will_return(true);
+            context c = () => session.is_told_to(x => x.is_dirty()).it_will_return(true);
         }
 
         [Concern(typeof (UnitOfWork))]
         public abstract class when_a_unit_of_work_has_no_changes : behaves_like_unit_of_work
         {
-            context c = () => when_the(session).is_told_to(x => x.is_dirty()).it_will_return(false);
+            context c = () => session.is_told_to(x => x.is_dirty()).it_will_return(false);
         }
 
         [Concern(typeof (UnitOfWork))]

@@ -3,7 +3,7 @@ using Rhino.Mocks;
 
 namespace tests
 {
-    public class MethodCallOccurance<T> : IHideObjectMembers
+    public class MethodCallOccurance<T>
     {
         readonly Action<T> action;
         readonly T mock;

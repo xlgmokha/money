@@ -1,5 +1,4 @@
 using System.Windows.Forms;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Winforms.Databinding;
 
 namespace tests.unit.client.presentation.winforms.databinding
@@ -44,7 +43,10 @@ namespace tests.unit.client.presentation.winforms.databinding
                 .bound_to_control(text_box);
         };
 
-        because b = () => { text_box.Text = expected_name; };
+        because b = () =>
+        {
+            text_box.Text = expected_name;
+        };
 
         static TextBox text_box;
         static IAnInterface thing_to_bind_to;

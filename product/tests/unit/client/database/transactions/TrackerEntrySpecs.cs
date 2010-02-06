@@ -1,5 +1,4 @@
 using System;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 using momoney.database.transactions;
 
@@ -7,7 +6,7 @@ namespace tests.unit.client.database.transactions
 {
     public class TrackerEntrySpecs {}
 
-    public abstract class behaves_like_tracker_entry : concerns_for<ITrackerEntry<Pillow>> {}
+    public abstract class behaves_like_tracker_entry : tests_for<ITrackerEntry<Pillow>> {}
 
     [Concern(typeof (ITrackerEntry<>))]
     public class when_comparing_the_current_instance_of_a_component_with_its_original_and_it_has_changes :

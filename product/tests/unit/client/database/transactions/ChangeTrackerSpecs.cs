@@ -1,5 +1,4 @@
 using System;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 using momoney.database.transactions;
 
@@ -7,15 +6,13 @@ namespace tests.unit.client.database.transactions
 {
     public class ChangeTrackerSpecs
     {
-
         [Concern(typeof (ChangeTracker<Identifiable<Guid>>))]
-        public abstract class behaves_like_change_tracker :
-            concerns_for<IChangeTracker<Identifiable<Guid>>, ChangeTracker<Identifiable<Guid>>>
+        public abstract class behaves_like_change_tracker : runner<ChangeTracker<Identifiable<Guid>>>
         {
             context c = () =>
             {
-                mapper = the_dependency<ITrackerEntryMapper<Identifiable<Guid>>>();
-                registry = the_dependency<DatabaseCommandRegistry>();
+                mapper = dependency<ITrackerEntryMapper<Identifiable<Guid>>>();
+                registry = dependency<DatabaseCommandRegistry>();
             };
 
             static protected ITrackerEntryMapper<Identifiable<Guid>> mapper;
@@ -34,10 +31,10 @@ namespace tests.unit.client.database.transactions
                 database = an<IDatabase>();
                 var entry = an<ITrackerEntry<Identifiable<Guid>>>();
 
-                when_the(mapper).is_told_to(x => x.map_from(item)).it_will_return(entry);
-                when_the(entry).is_told_to(x => x.has_changes()).it_will_return(true);
-                when_the(entry).is_told_to(x => x.current).it_will_return(item);
-                when_the(registry).is_told_to(x => x.prepare_for_flushing(item)).it_will_return(statement);
+                mapper.is_told_to(x => x.map_from(item)).it_will_return(entry);
+                entry.is_told_to(x => x.has_changes()).it_will_return(true);
+                entry.is_told_to(x => x.current).it_will_return(item);
+                registry.is_told_to(x => x.prepare_for_flushing(item)).it_will_return(statement);
             };
 
             because b = () =>
@@ -61,9 +58,9 @@ namespace tests.unit.client.database.transactions
                 item = an<Identifiable<Guid>>();
                 var registration = an<ITrackerEntry<Identifiable<Guid>>>();
 
-                when_the(mapper).is_told_to(x => x.map_from(item)).it_will_return(registration);
-                when_the(registration).is_told_to(x => x.has_changes()).it_will_return(true);
-                when_the(registration).is_told_to(x => x.current).it_will_return(item);
+                mapper.is_told_to(x => x.map_from(item)).it_will_return(registration);
+                registration.is_told_to(x => x.has_changes()).it_will_return(true);
+                registration.is_told_to(x => x.current).it_will_return(item);
             };
 
             because b = () =>
@@ -86,8 +83,8 @@ namespace tests.unit.client.database.transactions
                 item = an<Identifiable<Guid>>();
                 var entry = an<ITrackerEntry<Identifiable<Guid>>>();
 
-                when_the(mapper).is_told_to(x => x.map_from(item)).it_will_return(entry);
-                when_the(entry).is_told_to(x => x.has_changes()).it_will_return(false);
+                mapper.is_told_to(x => x.map_from(item)).it_will_return(entry);
+                entry.is_told_to(x => x.has_changes()).it_will_return(false);
             };
 
             because b = () =>

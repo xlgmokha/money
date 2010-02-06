@@ -1,16 +1,17 @@
 using System;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Model.Menu.File;
 using MoMoney.Presentation.Winforms.Helpers;
 using MoMoney.Presentation.Winforms.Views;
 
 namespace tests.unit.client.presentation.winforms.views
 {
-    [Concern(typeof(SaveChangesView))]
-    [Integration]
-    public class when_prompted_to_save_changes_to_the_project : concerns_for<SaveChangesView>
+    [Concern(typeof (SaveChangesView))]
+    public class when_prompted_to_save_changes_to_the_project : tests_for<SaveChangesView>
     {
-        context c = () => { presenter = an<SaveChangesPresenter>(); };
+        context c = () =>
+        {
+            presenter = an<SaveChangesPresenter>();
+        };
 
         after_the_sut_has_been_created after = () =>
         {
@@ -18,8 +19,8 @@ namespace tests.unit.client.presentation.winforms.views
             save_changes_window.attach_to(presenter);
         };
 
-        protected static SaveChangesPresenter presenter;
-        protected static SaveChangesView save_changes_window;
+        static protected SaveChangesPresenter presenter;
+        static protected SaveChangesView save_changes_window;
     }
 
     public class when_the_save_button_is_pressed : when_prompted_to_save_changes_to_the_project

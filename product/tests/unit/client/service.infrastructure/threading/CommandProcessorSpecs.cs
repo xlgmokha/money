@@ -1,11 +1,10 @@
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 using MoMoney.Service.Infrastructure.Threading;
 
 namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (SynchronousCommandProcessor))]
-    public abstract class behaves_like_a_command_processor : concerns_for<CommandProcessor, SynchronousCommandProcessor> {}
+    public abstract class behaves_like_a_command_processor : runner<SynchronousCommandProcessor> {}
 
     [Concern(typeof (SynchronousCommandProcessor))]
     public class when_running_all_the_queued_commands_waiting_for_execution : behaves_like_a_command_processor

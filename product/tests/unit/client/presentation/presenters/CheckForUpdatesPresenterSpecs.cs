@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
 using momoney.presentation.presenters;
@@ -11,12 +10,12 @@ namespace tests.unit.client.presentation.presenters
     public class CheckForUpdatesPresentersSpecs
     {
         [Concern(typeof (CheckForUpdatesPresenter))]
-        public abstract class concern : concerns_for<CheckForUpdatesPresenter>
+        public abstract class concern : runner<CheckForUpdatesPresenter>
         {
             context c = () =>
             {
-                view = the_dependency<ICheckForUpdatesView>();
-                pump = the_dependency<ICommandPump>();
+                view = dependency<ICheckForUpdatesView>();
+                pump = dependency<ICommandPump>();
             };
 
             because b = () =>

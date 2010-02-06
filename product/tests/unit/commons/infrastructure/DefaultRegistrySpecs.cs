@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using developwithpassion.bdd.contexts;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Registries;
 using gorilla.commons.utility;
@@ -8,7 +7,7 @@ namespace tests.unit.commons.infrastructure
 {
     [Concern(typeof (DefaultRegistry<int>))]
     public class when_retrieving_all_the_items_from_the_default_repository :
-        concerns_for<Registry<int>, DefaultRegistry<int>>
+        TestsFor<Registry<int>>
     {
         it should_leverage_the_resolver_to_retrieve_all_the_implementations =
             () => registry.was_told_to(r => r.get_all<int>());
@@ -27,7 +26,10 @@ namespace tests.unit.commons.infrastructure
             return new DefaultRegistry<int>(registry);
         }
 
-        because b = () => { result = sut.all(); };
+        because b = () =>
+        {
+            result = sut.all();
+        };
 
         static DependencyRegistry registry;
         static IEnumerable<int> result;

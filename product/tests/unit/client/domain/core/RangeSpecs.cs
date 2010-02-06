@@ -1,14 +1,11 @@
-using developwithpassion.bdd.contexts;
 using MoMoney.Domain.Core;
 
 namespace tests.unit.client.domain.core
 {
-    public class RangeSpecs
-    {
-    }
+    public class RangeSpecs {}
 
     [Concern(typeof (Range<int>))]
-    public abstract class behaves_like_a_range_from_1_to_10 : concerns_for<IRange<int>>
+    public abstract class behaves_like_a_range_from_1_to_10 : tests_for<IRange<int>>
     {
         public override IRange<int> create_sut()
         {
@@ -17,7 +14,7 @@ namespace tests.unit.client.domain.core
     }
 
     [Concern(typeof (Range<int>))]
-    public abstract class behaves_like_a_range_from_10_to_1 : concerns_for<IRange<int>>
+    public abstract class behaves_like_a_range_from_10_to_1 : tests_for<IRange<int>>
     {
         public override IRange<int> create_sut()
         {
@@ -29,7 +26,10 @@ namespace tests.unit.client.domain.core
     {
         it should_return_true = () => result.should_be_equal_to(true);
 
-        because b = () => { result = sut.contains(1); };
+        because b = () =>
+        {
+            result = sut.contains(1);
+        };
 
         static bool result;
     }
@@ -38,7 +38,10 @@ namespace tests.unit.client.domain.core
     {
         it should_return_true = () => result.should_be_equal_to(true);
 
-        because b = () => { result = sut.contains(10); };
+        because b = () =>
+        {
+            result = sut.contains(10);
+        };
 
         static bool result;
     }
@@ -47,7 +50,10 @@ namespace tests.unit.client.domain.core
     {
         it should_return_false = () => result.should_be_equal_to(false);
 
-        because b = () => { result = sut.contains(0); };
+        because b = () =>
+        {
+            result = sut.contains(0);
+        };
 
         static bool result;
     }
@@ -56,7 +62,10 @@ namespace tests.unit.client.domain.core
     {
         it should_return_false = () => result.should_be_equal_to(false);
 
-        because b = () => { result = sut.contains(0); };
+        because b = () =>
+        {
+            result = sut.contains(0);
+        };
 
         static bool result;
     }

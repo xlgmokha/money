@@ -1,4 +1,3 @@
-using developwithpassion.bdd.contexts;
 using momoney.database.transactions;
 using momoney.service.infrastructure.transactions;
 using MoMoney.Service.Infrastructure.Transactions;
@@ -8,13 +7,13 @@ namespace tests.unit.client.service.infrastructure.transactions
     public class UnitOfWorkFactorySpecs
     {
         [Concern(typeof (UnitOfWorkFactory))]
-        public abstract class concerns_for_unit_of_work_factory : concerns_for<IUnitOfWorkFactory, UnitOfWorkFactory>
+        public abstract class TestsForUnitOfWorkFactory : runner<UnitOfWorkFactory>
         {
             context c = () =>
             {
-                session_context = the_dependency<IContext>();
-                factory = the_dependency<ISessionFactory>();
-                key = the_dependency<IKey<ISession>>();
+                session_context = dependency<IContext>();
+                factory = dependency<ISessionFactory>();
+                key = dependency<IKey<ISession>>();
             };
 
             static protected IContext session_context;
@@ -23,20 +22,20 @@ namespace tests.unit.client.service.infrastructure.transactions
         }
 
         [Concern(typeof (UnitOfWorkFactory))]
-        public class when_a_unit_of_work_has_not_been_started : concerns_for_unit_of_work_factory
+        public class when_a_unit_of_work_has_not_been_started : TestsForUnitOfWorkFactory
         {
             context c = () =>
             {
-                when_the(session_context).is_told_to(x => x.contains(key)).it_will_return(false);
+                session_context.is_told_to(x => x.contains(key)).it_will_return(false);
             };
         }
 
         [Concern(typeof (UnitOfWorkFactory))]
-        public class when_a_unit_of_work_has_been_started : concerns_for_unit_of_work_factory
+        public class when_a_unit_of_work_has_been_started : TestsForUnitOfWorkFactory
         {
             context c = () =>
             {
-                when_the(session_context).is_told_to(x => x.contains(key)).it_will_return(true);
+                session_context.is_told_to(x => x.contains(key)).it_will_return(true);
             };
         }
 
@@ -46,7 +45,7 @@ namespace tests.unit.client.service.infrastructure.transactions
             context c = () =>
             {
                 session = an<ISession>();
-                when_the(factory).is_told_to(x => x.create()).it_will_return(session);
+                factory.is_told_to(x => x.create()).it_will_return(session);
             };
 
             because b = () =>

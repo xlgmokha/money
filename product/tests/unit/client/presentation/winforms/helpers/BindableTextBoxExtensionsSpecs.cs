@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Winforms.Helpers;
 
 namespace tests.unit.client.presentation.winforms.helpers

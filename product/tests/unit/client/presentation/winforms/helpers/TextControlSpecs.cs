@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 using MoMoney.Presentation.Winforms.Helpers;
 
@@ -8,11 +7,13 @@ namespace tests.unit.client.presentation.winforms.helpers
 {
     public class TextControlSpecs
     {
-
         [Concern(typeof (TextControl<>))]
-        public abstract class behaves_like_text_control : concerns_for<ITextControl<DateTime>, TextControl<DateTime>>
+        public abstract class behaves_like_text_control : TestsFor<ITextControl<DateTime>>
         {
-            context c = () => { textbox = new TextBox(); };
+            context c = () =>
+            {
+                textbox = new TextBox();
+            };
 
             public override ITextControl<DateTime> create_sut()
             {
@@ -29,7 +30,10 @@ namespace tests.unit.client.presentation.winforms.helpers
 
             it should_bind_to_that_item = () => sut.get_selected_item().should_be_equal_to(date);
 
-            context c = () => { date = new DateTime(1984, 04, 28); };
+            context c = () =>
+            {
+                date = new DateTime(1984, 04, 28);
+            };
 
             because b = () => sut.set_selected_item(date);
 
@@ -41,7 +45,10 @@ namespace tests.unit.client.presentation.winforms.helpers
         {
             it should_invoke_the_action_bound_to_it = () => action.was_told_to(x => x.run());
 
-            context c = () => { action = an<Command>(); };
+            context c = () =>
+            {
+                action = an<Command>();
+            };
 
             because b = () =>
             {
@@ -55,7 +62,7 @@ namespace tests.unit.client.presentation.winforms.helpers
         [Concern(typeof (TextControl<>))]
         public class when_the_text_changes_on_a_text_control_and_action_is_not_specified : behaves_like_text_control
         {
-            it should_not_blow_up = () => { };
+            it should_not_blow_up = () => {};
 
             because b = () => textbox.control_is(x => x.OnLeave(new EventArgs()));
         }

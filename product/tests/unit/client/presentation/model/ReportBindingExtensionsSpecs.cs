@@ -1,13 +1,10 @@
 using System;
 using DataDynamics.ActiveReports;
-using developwithpassion.bdd.contexts;
 using MoMoney.Presentation.Model.reporting;
 
 namespace tests.unit.client.presentation.model
 {
-    public class ReportBindingExtensionsSpecs
-    {
-    }
+    public class ReportBindingExtensionsSpecs {}
 
     [Concern(typeof (ReportBindingExtensions))]
     public class when_binding_a_active_report_control_to_a_string_property_of_a_dto : concerns
@@ -15,7 +12,10 @@ namespace tests.unit.client.presentation.model
         it should_set_the_controls_datafield_property_to_the_name_of_the_dtos_property =
             () => control.was_told_to(x => x.DataField = "name");
 
-        context c = () => { control = dependency<ARControl>(); };
+        context c = () =>
+        {
+            control = dependency<ARControl>();
+        };
 
         because b = () => control.bind_to<test_dto, string>(x => x.name);
 
@@ -28,7 +28,10 @@ namespace tests.unit.client.presentation.model
         it should_set_the_controls_datafield_property_to_the_name_of_the_dtos_property =
             () => control.was_told_to(x => x.DataField = "birthdate");
 
-        context c = () => { control = dependency<ARControl>(); };
+        context c = () =>
+        {
+            control = dependency<ARControl>();
+        };
 
         because b = () => control.bind_to<test_dto, DateTime>(x => x.birthdate);
 

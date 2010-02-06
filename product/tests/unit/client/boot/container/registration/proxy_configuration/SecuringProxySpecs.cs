@@ -1,7 +1,6 @@
 using System.Security.Principal;
 using System.Threading;
 using Castle.Core.Interceptor;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 using MoMoney.boot.container.registration.proxy_configuration;
 
@@ -10,11 +9,11 @@ namespace tests.unit.client.boot.container.registration.proxy_configuration
     public class SecuringProxySpecs {}
 
     public class when_attempting_to_perform_an_action_that_requires_authentication :
-        concerns_for<SecuringProxy>
+        tests_for<SecuringProxy>
     {
         context c = () =>
         {
-            filter = the_dependency<Specification<IPrincipal>>();
+            filter = dependency<Specification<IPrincipal>>();
         };
 
         static protected Specification<IPrincipal> filter;
@@ -26,7 +25,7 @@ namespace tests.unit.client.boot.container.registration.proxy_configuration
         context c = () =>
         {
             invocation = an<IInvocation>();
-            when_the(filter)
+            filter
                 .is_told_to(x => x.is_satisfied_by(Thread.CurrentPrincipal))
                 .it_will_return(true);
         };
@@ -44,7 +43,7 @@ namespace tests.unit.client.boot.container.registration.proxy_configuration
         context c = () =>
         {
             invocation = an<IInvocation>();
-            when_the(filter)
+            filter
                 .is_told_to(x => x.is_satisfied_by(Thread.CurrentPrincipal))
                 .it_will_return(false);
         };

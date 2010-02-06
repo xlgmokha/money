@@ -1,5 +1,4 @@
 using System.Collections;
-using developwithpassion.bdd.contexts;
 using momoney.database.transactions;
 
 namespace tests.unit.client.database.transactions
@@ -7,14 +6,13 @@ namespace tests.unit.client.database.transactions
     public class PerThreadScopedStorageSpecs
     {
         [Concern(typeof (PerThreadScopedStorage))]
-        public class when_retrieving_the_storage_for_a_specific_thread :
-            concerns_for<IScopedStorage, PerThreadScopedStorage>
+        public class when_retrieving_the_storage_for_a_specific_thread : runner<PerThreadScopedStorage>
         {
             context c = () =>
             {
-                thread = the_dependency<IThread>();
+                thread = dependency<IThread>();
                 storage = new Hashtable();
-                when_the(thread)
+                thread
                     .is_told_to(x => x.provide_slot_for<Hashtable>())
                     .it_will_return(storage);
             };

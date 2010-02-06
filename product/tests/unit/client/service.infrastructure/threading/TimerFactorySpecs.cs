@@ -1,12 +1,11 @@
 using System;
 using System.Timers;
-using developwithpassion.bdd.contexts;
 using momoney.service.infrastructure.threading;
 
 namespace tests.unit.client.service.infrastructure.threading
 {
     [Concern(typeof (TimerFactory))]
-    public abstract class behaves_like_a_timer_factory : concerns_for<ITimerFactory, TimerFactory>
+    public abstract class behaves_like_a_timer_factory : TestsFor<ITimerFactory>
     {
         public override ITimerFactory create_sut()
         {
@@ -19,7 +18,10 @@ namespace tests.unit.client.service.infrastructure.threading
     {
         it should_return_a_timer_with_the_correct_interval = () => result.Interval.should_be_equal_to(1000);
 
-        because b = () => { result = sut.create_for(new TimeSpan(0, 0, 1)); };
+        because b = () =>
+        {
+            result = sut.create_for(new TimeSpan(0, 0, 1));
+        };
 
         static Timer result;
     }

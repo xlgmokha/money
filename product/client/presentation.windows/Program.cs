@@ -6,6 +6,8 @@ using Autofac.Builder;
 using Gorilla.Commons.Infrastructure.Container;
 using gorilla.commons.infrastructure.thirdparty.Autofac;
 using gorilla.commons.utility;
+using presentation.windows.presenters;
+using presentation.windows.views;
 
 namespace presentation.windows
 {

@@ -1,22 +1,22 @@
 using System;
-using developwithpassion.bdd.contexts;
 using gorilla.commons.utility;
 using momoney.database.transactions;
 
 namespace tests.unit.client.database.transactions
 {
-    public class ChangeTrackerFactorySpecs {}
-
-    [Concern(typeof (ChangeTrackerFactory))]
-    public class when_creating_a_change_tracker_for_an_item : concerns_for<IChangeTrackerFactory, ChangeTrackerFactory>
+    public class ChangeTrackerFactorySpecs
     {
-        it should_return_a_new_tracker = () => result.should_not_be_null();
-
-        because b = () =>
+        [Concern(typeof (ChangeTrackerFactory))]
+        public class when_creating_a_change_tracker_for_an_item : runner<ChangeTrackerFactory>
         {
-            result = sut.create_for<Identifiable<Guid>>();
-        };
+            it should_return_a_new_tracker = () => result.should_not_be_null();
 
-        static IChangeTracker<Identifiable<Guid>> result;
+            because b = () =>
+            {
+                result = sut.create_for<Identifiable<Guid>>();
+            };
+
+            static IChangeTracker<Identifiable<Guid>> result;
+        }
     }
 }
