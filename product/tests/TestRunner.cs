@@ -35,12 +35,12 @@ namespace tests
                 {
                     try
                     {
-                        Console.Out.Write("{0}", x);
                         x.invoke_delegate_on(target_instance);
-                        Console.Out.WriteLine(" :PASSED");
+                        Console.Out.WriteLine("  {0}", x);
                     }
                     catch (Exception e)
                     {
+                        Console.Out.WriteLine(":FAILED {0}", x);
                         throw e.InnerException;
                     }
                 });
@@ -50,13 +50,12 @@ namespace tests
         {
             try
             {
-                Console.Out.Write("it {0}", specification.Key);
                 specification.Value();
-                Console.Out.WriteLine(" :PASSED");
+                Console.Out.WriteLine("  it {0}", specification.Key);
             }
             catch
             {
-                Console.Out.WriteLine(" :FAILED");
+                Console.Out.WriteLine(":FAILED it {0}", specification.Key);
                 throw;
             }
         }

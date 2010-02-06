@@ -1,17 +1,18 @@
+using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 using tests.unit;
 
+public delegate void it();
+
+public delegate void because();
+
+public delegate void context();
+
+public delegate void after_all();
+
 namespace tests
 {
-    public delegate void it();
-
-    public delegate void because();
-
-    public delegate void context();
-
-    public delegate void after_all();
-
     public abstract class test
     {
         IDictionary<string, it> tests = new Dictionary<string, it>();
@@ -22,6 +23,8 @@ namespace tests
         {
             context();
             because();
+            Console.Out.WriteLine();
+            Console.Out.WriteLine(GetType().Name);
         }
 
         [Test]
@@ -29,7 +32,7 @@ namespace tests
         {
             GetType().run_all<it>(this);
             tests.each(test => test.run());
-            GetType().run_all<after_all>(this);
+            GetType().run_single<after_all>(this);
         }
 
         protected void it(string should, it test)
