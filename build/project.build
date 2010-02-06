@@ -11,7 +11,8 @@
 	<property name="build.config.dir" value="${build.dir}\config" />
 	<property name="build.compile.dir" value="${build.dir}\compile" />
 	
-	<property name="app.output" value="${project.name}.exe" />
+	<!--<property name="app.output" value="${project.name}.exe" />-->
+	<property name="app.output" value="${project.name}.wpf.exe" />
 	
 	<include buildfile="project.test.build" />
 	<include buildfile="project.deploy.build" />
@@ -29,7 +30,7 @@
 	<target name="app.compile" depends="init">
     <exec program="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe"
           workingdir="${base.dir}"
-          commandline="solution.sln /p:Configuration=Release;OutDir=${build.compile.dir}\ /t:Rebuild /nologo"
+          commandline="solution.sln /p:Configuration=Release;OutDir=${build.compile.dir}\ /t:Rebuild /nologo /m"
           />
 	</target>
 

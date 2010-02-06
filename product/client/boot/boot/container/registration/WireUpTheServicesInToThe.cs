@@ -51,7 +51,7 @@ namespace MoMoney.boot.container.registration
                                         Lazy.load<IIncomeRepository>(), Lazy.load<ICompanyRepository>()));
         }
 
-        public void run(Assembly item)
+        public void run_against(Assembly item)
         {
             wire_up_queries();
             wire_up_the_commands();

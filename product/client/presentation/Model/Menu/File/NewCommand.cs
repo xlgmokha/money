@@ -21,7 +21,7 @@ namespace momoney.presentation.model.menu.file
 
         public void run()
         {
-            save_changes_command.run(this);
+            save_changes_command.run_against(this);
         }
 
         public void saved()

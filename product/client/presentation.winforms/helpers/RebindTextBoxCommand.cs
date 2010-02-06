@@ -12,7 +12,7 @@ namespace MoMoney.Presentation.Winforms.Helpers
             this.binder = binder;
         }
 
-        public void run(IBindableTextBox<T> item)
+        public void run_against(IBindableTextBox<T> item)
         {
             item.bind_to(binder.Compile()(item.text()));
         }

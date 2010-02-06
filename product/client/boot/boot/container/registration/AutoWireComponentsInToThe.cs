@@ -21,7 +21,7 @@ namespace MoMoney.boot.container.registration
             this.exclusion_policy = exclusion_policy;
         }
 
-        public void run(Assembly item)
+        public void run_against(Assembly item)
         {
             item
                 .all_types(exclusion_policy.not())

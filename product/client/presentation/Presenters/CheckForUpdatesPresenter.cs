@@ -46,7 +46,7 @@ namespace momoney.presentation.presenters
             close();
         }
 
-        public void run(Percent completed)
+        public void run_against(Percent completed)
         {
             if (completed.Equals(new Percent(100)))
             {

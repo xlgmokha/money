@@ -24,7 +24,7 @@ namespace tests.unit.client.presentation.model
     public class before_opening_a_new_project : behaves_like_command_to_open_a_project
     {
         it should_check_to_see_if_you_want_to_save_the_previously_opened_project =
-            () => save_changes_command.was_told_to(x => x.run(sut));
+            () => save_changes_command.was_told_to(x => x.run_against(sut));
 
         because b = () => sut.run();
     }

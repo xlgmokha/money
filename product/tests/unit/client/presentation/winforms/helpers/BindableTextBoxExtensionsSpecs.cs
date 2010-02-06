@@ -9,7 +9,7 @@ namespace tests.unit.client.presentation.winforms.helpers
         [Concern(typeof (BindableTextBoxExtensions))]
         public class when_binding_a_text_control_to_a_command : concerns
         {
-            it should_run_each_command_when_the_text_changes_in_the_text_control = () => command.was_told_to(x => x.run(result));
+            it should_run_each_command_when_the_text_changes_in_the_text_control = () => command.was_told_to(x => x.run_against(result));
 
             context c = () =>
             {

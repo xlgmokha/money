@@ -12,7 +12,7 @@ namespace momoney.database.transactions
             this.entity = entity;
         }
 
-        public void run(DatabaseConnection connection)
+        public void run_against(DatabaseConnection connection)
         {
             connection.store(entity);
         }

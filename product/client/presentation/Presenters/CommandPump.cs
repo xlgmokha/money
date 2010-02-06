@@ -8,7 +8,7 @@ namespace MoMoney.Presentation.Presenters
     public interface ICommandPump
     {
         ICommandPump run<Command>() where Command : gorilla.commons.utility.Command;
-        ICommandPump run<Command, T>(T input) where Command : ParameterizedCommand<T>;
+        ICommandPump run<Command, T>(T input) where Command : ArgCommand<T>;
         ICommandPump run<Output, Query>(Callback<Output> item) where Query : Query<Output>;
     }
 
@@ -36,12 +36,12 @@ namespace MoMoney.Presentation.Presenters
             return this;
         }
 
-        public ICommandPump run<Command, T>(T input) where Command : ParameterizedCommand<T>
+        public ICommandPump run<Command, T>(T input) where Command : ArgCommand<T>
         {
             var cached = input;
             var command = registry.get_a<Command>();
             this.log().debug("found: {0}", command);
-            processor.add(() => command.run(cached));
+            processor.add(() => command.run_against(cached));
             return this;
         }
 

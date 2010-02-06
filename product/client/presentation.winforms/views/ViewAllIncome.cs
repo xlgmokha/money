@@ -17,7 +17,7 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public void attach_to(ViewIncomeHistoryPresenter presenter) {}
 
-        public void run(IEnumerable<IncomeInformationDTO> summary)
+        public void run_against(IEnumerable<IncomeInformationDTO> summary)
         {
             ux_view_all_income.DataSource = summary.databind();
         }

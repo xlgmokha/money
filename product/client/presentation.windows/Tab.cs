@@ -1,4 +1,4 @@
 namespace presentation.windows
 {
-    public interface Tab<Presenter> where Presenter : TabPresenter {}
+    public interface Tab<Presenter> : View<Presenter> where Presenter : TabPresenter {}
 }

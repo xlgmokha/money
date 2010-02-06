@@ -1,0 +1,21 @@
+<Window x:Class="presentation.windows.views.AddFamilyMemberDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit" Title="Add A Family Member" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <StackPanel>
+        <Label>Add A Family Member</Label>
+        <DockPanel>
+            <UniformGrid Rows="3">
+                <Label>first name</Label>
+                <TextBox Text="{Binding first_name}"></TextBox>
+                <Label>last name</Label>
+                <TextBox Text="{Binding last_name}"></TextBox>
+                <Label>date of birth</Label>
+                <Controls:DatePicker SelectedDate="{Binding date_of_birth}"></Controls:DatePicker>
+            </UniformGrid>
+        </DockPanel>
+        <Button Command="{Binding Save}">_Save</Button>
+        <Button Command="{Binding Cancel}">_Cancel</Button>
+        </StackPanel>
+    </DockPanel>
+</Window>

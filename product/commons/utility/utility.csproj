@@ -54,6 +54,7 @@
     <Compile Include="ChainedCommand.cs" />
     <Compile Include="ChainedConfiguration.cs" />
     <Compile Include="ChainedMapper.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="EmptyCallback.cs" />
     <Compile Include="EmptyCommand.cs" />
     <Compile Include="DefaultConstructorFactory.cs" />
@@ -63,7 +64,7 @@
     <Compile Include="Builder.cs" />
     <Compile Include="Callback.cs" />
     <Compile Include="CallbackCommand.cs" />
-    <Compile Include="Command.cs" />
+    <Compile Include="ArgCommand.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="ComponentFactory.cs" />
     <Compile Include="Id.cs" />
@@ -73,7 +74,6 @@
     <Compile Include="Import.cs" />
     <Compile Include="Mapper.cs" />
     <Compile Include="Notification.cs" />
-    <Compile Include="ParameterizedCommand.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Query.cs" />
     <Compile Include="Registry.cs" />

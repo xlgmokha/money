@@ -87,7 +87,7 @@ namespace MoMoney.Presentation.Model.Projects
             if (!has_been_saved_at_least_once()) throw new FileNotSpecifiedException();
         }
 
-        public void run(IUnitOfWork item)
+        public void run_against(IUnitOfWork item)
         {
             unsaved_changes = item.is_dirty();
             if (unsaved_changes)

@@ -1,20 +1,20 @@
 namespace gorilla.commons.utility
 {
-    public class ChainedParameterizedCommand<T> : ParameterizedCommand<T>
+    public class ChainedCommand<T> : ArgCommand<T>
     {
-        ParameterizedCommand<T> left;
-        ParameterizedCommand<T> right;
+        ArgCommand<T> left;
+        ArgCommand<T> right;
 
-        public ChainedParameterizedCommand(ParameterizedCommand<T> left, ParameterizedCommand<T> right)
+        public ChainedCommand(ArgCommand<T> left, ArgCommand<T> right)
         {
             this.left = left;
             this.right = right;
         }
 
-        public void run(T item)
+        public void run_against(T item)
         {
-            left.run(item);
-            right.run(item);
+            left.run_against(item);
+            right.run_against(item);
         }
     }
 }

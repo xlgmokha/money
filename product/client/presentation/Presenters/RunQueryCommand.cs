@@ -16,7 +16,7 @@ namespace momoney.presentation.presenters
 
         public void run()
         {
-            command.run(callback);
+            command.run_against(callback);
         }
     }
 }

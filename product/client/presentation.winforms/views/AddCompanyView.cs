@@ -42,7 +42,7 @@ namespace MoMoney.Presentation.Winforms.Views
             };
         }
 
-        public void run(IEnumerable<CompanyDTO> companies)
+        public void run_against(IEnumerable<CompanyDTO> companies)
         {
             companiesListView.Items.Clear();
             companiesListView.Items.AddRange(companies.Select(x => new ListViewItem(x.name, 0)).ToArray());

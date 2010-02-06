@@ -21,7 +21,7 @@ namespace MoMoney.boot.container.registration
             register = registry;
         }
 
-        public void run(Assembly item)
+        public void run_against(Assembly item)
         {
             register.singleton<IDatabase, ObjectDatabase>();
             register.singleton(() => Resolve.the<IDatabase>().downcast_to<IDatabaseConfiguration>());

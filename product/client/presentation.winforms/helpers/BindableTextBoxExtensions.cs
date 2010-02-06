@@ -21,7 +21,7 @@ namespace MoMoney.Presentation.Winforms.Helpers
         static public IBindableTextBox<ItemToBindTo> apply<ItemToBindTo>(this IBindableTextBox<ItemToBindTo> textbox,
                                                                          params ITextBoxCommand<ItemToBindTo>[] commands)
         {
-            commands.each(x => textbox.on_leave(y => x.run(y)));
+            commands.each(x => textbox.on_leave(y => x.run_against(y)));
             return textbox;
         }
     }

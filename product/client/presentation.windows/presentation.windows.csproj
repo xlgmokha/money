@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>presentation.windows</RootNamespace>
-    <AssemblyName>presentation.windows</AssemblyName>
+    <AssemblyName>momoney.wpf</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -61,8 +61,13 @@
     <Reference Include="PresentationFramework">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="views\AddFamilyMemberDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="views\CompensationTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,7 +83,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationController.cs" />
+    <Compile Include="commands\ParameterizedCommandBuilder.cs" />
+    <Compile Include="Dialog.cs" />
+    <Compile Include="DialogPresenter.cs" />
+    <Compile Include="presenters\AddFamilyMemberPresenter.cs" />
+    <Compile Include="commands\CommandBuilder.cs" />
+    <Compile Include="commands\AddMemberToFamily.cs" />
     <Compile Include="presenters\CompensationPresenter.cs" />
+    <Compile Include="commands\dto\FamilyMemberToAdd.cs" />
+    <Compile Include="commands\ContainerCommandBuilder.cs" />
+    <Compile Include="commands\NamedCommand.cs" />
+    <Compile Include="commands\ContainerAwareParameterizedCommandBuilder.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="views\AddFamilyMemberDialog.xaml.cs">
+      <DependentUpon>AddFamilyMemberDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="views\CompensationTab.xaml.cs">
       <DependentUpon>CompensationTab.xaml</DependentUpon>
     </Compile>
@@ -104,6 +123,10 @@
     </Compile>
     <Compile Include="Tab.cs" />
     <Compile Include="TabPresenter.cs" />
+    <Compile Include="presenters\IObservableCommand.cs" />
+    <Compile Include="views\MainMenu.cs" />
+    <Compile Include="views\MenuItemExtensions.cs" />
+    <Compile Include="presenters\SimpleCommand.cs" />
     <Compile Include="WpfApplicationController.cs" />
     <Compile Include="WpfPresenterFactory.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -128,6 +151,10 @@
     <ProjectReference Include="..\..\commons\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\service.infrastructure\service.infrastructure.csproj">
+      <Project>{81412692-F3EE-4FBF-A7C7-69454DD1BD46}</Project>
+      <Name>service.infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

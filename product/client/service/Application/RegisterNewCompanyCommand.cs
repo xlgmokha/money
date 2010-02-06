@@ -20,7 +20,7 @@ namespace MoMoney.Service.Application
             this.companies = companies;
         }
 
-        public void run(RegisterNewCompany item)
+        public void run_against(RegisterNewCompany item)
         {
             if (is_there_a_company_registered_with(item.company_name))
                 notification.notify(create_error_message_from(item));

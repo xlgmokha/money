@@ -15,7 +15,7 @@ namespace MoMoney.Service.Application
             this.tasks = tasks;
         }
 
-        public void run(AddNewBillDTO item)
+        public void run_against(AddNewBillDTO item)
         {
             companys
                 .find_company_by(item.company_id)

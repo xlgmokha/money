@@ -22,7 +22,7 @@ namespace momoney.presentation.model.menu.file
 
         public void run()
         {
-            command.run(this);
+            command.run_against(this);
         }
 
         public void saved()

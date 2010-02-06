@@ -14,7 +14,7 @@ namespace MoMoney.boot.container.registration
             this.registration = registration;
         }
 
-        public void run(Assembly item)
+        public void run_against(Assembly item)
         {
             registration.singleton(() => registration);
             registration.singleton(() => registration.build());

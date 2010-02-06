@@ -52,7 +52,7 @@ namespace tests.unit.client.boot.container.registration
                 .it_will_return(false);
         };
 
-        because b = () => sut.run(assembly);
+        because b = () => sut.run_against(assembly);
 
 
         static Assembly assembly;

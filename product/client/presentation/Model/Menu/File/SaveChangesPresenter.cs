@@ -28,7 +28,7 @@ namespace MoMoney.Presentation.Model.Menu.File
             throw new NotImplementedException();
         }
 
-        public virtual void run(ISaveChangesCallback item)
+        public virtual void run_against(ISaveChangesCallback item)
         {
             callback = item;
             if (current_project.has_unsaved_changes())

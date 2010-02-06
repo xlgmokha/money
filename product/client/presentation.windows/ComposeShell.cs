@@ -1,4 +1,5 @@
 using System.Threading;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using presentation.windows.presenters;
@@ -29,6 +30,19 @@ namespace presentation.windows
 
             region_manager.region<StatusBar>(x => x.Items.Add(new Label {Content = Thread.CurrentPrincipal.Identity.Name}));
             region_manager.region<StatusBar>(x => x.Items.Add(new Label {Content = "Software Developer"}));
+
+            region_manager.region<MainMenu>(x =>
+            {
+                x.add("_File").add("E_xit", () =>
+                {
+                    Application.Current.Shutdown();
+                });
+                x.add("F_amily").add("_Add Member", () =>
+                {
+                    controller.launch_dialog<AddFamilyMemberPresenter, AddFamilyMemberDialog>();
+                    MessageBox.Show("Add Family");
+                });
+            });
         }
     }
 }

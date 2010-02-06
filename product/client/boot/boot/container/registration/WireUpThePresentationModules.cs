@@ -26,7 +26,7 @@ namespace MoMoney.boot.container.registration
             this.registry = registry;
         }
 
-        public void run(Assembly item)
+        public void run_against(Assembly item)
         {
             Func<IApplicationController> target = () => new ApplicationController(Lazy.load<Shell>(), Lazy.load<PresenterFactory>(), Lazy.load<EventAggregator>(), Lazy.load<ViewFactory>());
             registry.proxy<IApplicationController, SynchronizedConfiguration<IApplicationController>>(target.memorize());

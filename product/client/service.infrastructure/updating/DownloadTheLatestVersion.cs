@@ -13,10 +13,10 @@ namespace MoMoney.Service.Infrastructure.Updating
             this.deployment = deployment;
         }
 
-        public void run(Callback<Percent> callback)
+        public void run_against(Callback<Percent> callback)
         {
-            deployment.UpdateProgressChanged += (o, e) => callback.run(new Percent(e.BytesCompleted, e.BytesTotal));
-            deployment.UpdateCompleted += (sender, args) => callback.run(100);
+            deployment.UpdateProgressChanged += (o, e) => callback.run_against(new Percent(e.BytesCompleted, e.BytesTotal));
+            deployment.UpdateCompleted += (sender, args) => callback.run_against(100);
             deployment.UpdateAsync();
         }
     }

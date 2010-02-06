@@ -1,5 +1,6 @@
 using System.Windows;
 using System.Windows.Controls;
+using presentation.windows.views;
 
 namespace presentation.windows
 {
@@ -23,6 +24,21 @@ namespace presentation.windows
                                                                    Header = presenter.Header,
                                                                    Content = new View {DataContext = presenter}
                                                                }));
+        }
+
+        public void launch_dialog<Presenter, Dialog>() where Presenter : DialogPresenter where Dialog : FrameworkElement, Dialog<Presenter>, new()
+        {
+            var presenter = factory.create<Presenter>();
+            var dialog = new Dialog {DataContext = presenter};
+            presenter.close = () =>
+            {
+                dialog.Close();
+            };
+            presenter.present();
+            region_manager.region<ShellWindow>(x =>
+            {
+                dialog.show_dialog(x);
+            });
         }
     }
 }

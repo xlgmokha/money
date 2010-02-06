@@ -3,5 +3,5 @@ using gorilla.commons.utility;
 
 namespace MoMoney.boot.container.registration
 {
-    public interface IStartupCommand : ParameterizedCommand<Assembly> {}
+    public interface IStartupCommand : ArgCommand<Assembly> {}
 }

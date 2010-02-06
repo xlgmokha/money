@@ -154,7 +154,7 @@ namespace tests.unit.client.presentation.model
 
             because b = () =>
             {
-                sut.downcast_to<ProjectController>().run(unit_of_work);
+                sut.downcast_to<ProjectController>().run_against(unit_of_work);
                 result = sut.has_unsaved_changes();
             };
 

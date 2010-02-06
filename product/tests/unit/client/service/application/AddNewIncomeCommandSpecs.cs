@@ -54,7 +54,7 @@ namespace tests.unit.client.service.application
                 all_income.is_told_to(x => x.all()).it_will_return(matching_income);
             };
 
-            because b = () => sut.run(income);
+            because b = () => sut.run_against(income);
 
             static IncomeSubmissionDTO income;
         }

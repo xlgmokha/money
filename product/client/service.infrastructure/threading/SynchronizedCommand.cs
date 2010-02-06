@@ -4,7 +4,7 @@ using gorilla.commons.utility;
 
 namespace momoney.service.infrastructure.threading
 {
-    public interface ISynchronizedCommand : ParameterizedCommand<Action>, ParameterizedCommand<Command> {}
+    public interface ISynchronizedCommand : ArgCommand<Action>, ArgCommand<Command> {}
 
     public class SynchronizedCommand : ISynchronizedCommand
     {
@@ -15,14 +15,14 @@ namespace momoney.service.infrastructure.threading
             this.context = context;
         }
 
-        public void run(Action item)
+        public void run_against(Action item)
         {
             context.Post(x => item(), new object());
         }
 
-        public void run(Command item)
+        public void run_against(Command item)
         {
-            run(item.run);
+            run_against(item.run);
         }
     }
 }

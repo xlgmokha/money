@@ -17,7 +17,7 @@ namespace MoMoney.Presentation.Winforms.Views
                 .icon(ApplicationIcons.ViewLog);
         }
 
-        public void run(string file_contents)
+        public void run_against(string file_contents)
         {
             ux_log_file.Text = file_contents;
         }

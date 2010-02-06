@@ -18,7 +18,7 @@ namespace MoMoney.Presentation.Winforms.Views
 
         public string name { get; private set; }
 
-        public void run(IEnumerable<BillInformationDTO> bills)
+        public void run_against(IEnumerable<BillInformationDTO> bills)
         {
             ux_company_name.bind_to<BillInformationDTO, string>(x => x.company_name);
             ux_amount.bind_to<BillInformationDTO, string>(x => x.the_amount_owed);

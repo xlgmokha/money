@@ -64,7 +64,7 @@ namespace MoMoney.Presentation.Winforms.Views
             downloaded(100);
         }
 
-        public void run(ApplicationVersion information)
+        public void run_against(ApplicationVersion information)
         {
             if (information.updates_available)
             {

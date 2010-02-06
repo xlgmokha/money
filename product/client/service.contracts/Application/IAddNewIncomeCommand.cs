@@ -5,5 +5,5 @@ using MoMoney.DTO;
 namespace MoMoney.Service.Contracts.Application
 {
     [ServiceContract]
-    public interface IAddNewIncomeCommand : ParameterizedCommand<IncomeSubmissionDTO> {}
+    public interface IAddNewIncomeCommand : ArgCommand<IncomeSubmissionDTO> {}
 }

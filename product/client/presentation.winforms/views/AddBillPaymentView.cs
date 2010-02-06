@@ -28,12 +28,12 @@ namespace MoMoney.Presentation.Winforms.Views
             submit_clicked = x => presenter.submit_bill_payment(create_dto());
         }
 
-        public void run(IEnumerable<CompanyDTO> companys)
+        public void run_against(IEnumerable<CompanyDTO> companys)
         {
             companies_list.bind_to(companys);
         }
 
-        public void run(IEnumerable<BillInformationDTO> bills)
+        public void run_against(IEnumerable<BillInformationDTO> bills)
         {
             ux_bill_payments_grid.DataSource = bills.databind();
         }

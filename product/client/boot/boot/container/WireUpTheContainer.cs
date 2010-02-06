@@ -29,7 +29,7 @@ namespace MoMoney.boot.container
                 .then(new WireUpThePresentationModules(registry))
                 .then(new WireUpTheViewsInToThe(registry))
                 .then(new WireUpTheReportsInToThe(registry))
-                .run(new ApplicationAssembly(
+                .run_against(new ApplicationAssembly(
                          System.Reflection.Assembly.GetExecutingAssembly(),
                          typeof (DatabaseAssembly).Assembly,
                          typeof (PresentationAssembly).Assembly,

@@ -31,12 +31,12 @@ namespace MoMoney.Presentation.Winforms.Views
             submit_button = x => presenter.submit_new(create_income());
         }
 
-        public void run(IEnumerable<CompanyDTO> companies)
+        public void run_against(IEnumerable<CompanyDTO> companies)
         {
             companies_list.bind_to(companies);
         }
 
-        public void run(IEnumerable<IncomeInformationDTO> incomes)
+        public void run_against(IEnumerable<IncomeInformationDTO> incomes)
         {
             ux_income_received_grid.DataSource = incomes.databind();
         }

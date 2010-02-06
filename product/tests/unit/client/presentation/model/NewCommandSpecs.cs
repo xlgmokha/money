@@ -20,7 +20,7 @@ namespace tests.unit.client.presentation.model
     public class before_starting_a_new_project : behaves_like_new_command
     {
         it should_check_to_see_if_there_were_any_unsaved_changes_to_a_previous_project =
-            () => save_changes_command.was_told_to(x => x.run(sut));
+            () => save_changes_command.was_told_to(x => x.run_against(sut));
 
         because b = () => sut.run();
     }

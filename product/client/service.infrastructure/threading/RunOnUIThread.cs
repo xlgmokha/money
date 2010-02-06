@@ -17,7 +17,7 @@ namespace momoney.service.infrastructure.threading
 
         public void Intercept(IInvocation invocation)
         {
-            factory.create().run(new AnonymousCommand(invocation.Proceed));
+            factory.create().run_against(new AnonymousCommand(invocation.Proceed));
         }
     }
 }

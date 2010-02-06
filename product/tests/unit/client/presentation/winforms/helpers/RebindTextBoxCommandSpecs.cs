@@ -36,6 +36,6 @@ namespace tests.unit.client.presentation.winforms.helpers
             textbox.is_told_to(x => x.text()).it_will_return("kitty");
         };
 
-        because b = () => sut.run(textbox);
+        because b = () => sut.run_against(textbox);
     }
 }

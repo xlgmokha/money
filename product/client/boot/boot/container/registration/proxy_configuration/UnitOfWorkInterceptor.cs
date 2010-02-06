@@ -23,7 +23,7 @@ namespace MoMoney.boot.container.registration.proxy_configuration
             using (var unit_of_work = factory.create())
             {
                 invocation.Proceed();
-                broker.publish<Callback<IUnitOfWork>>(x => x.run(unit_of_work));
+                broker.publish<Callback<IUnitOfWork>>(x => x.run_against(unit_of_work));
                 unit_of_work.commit();
             }
         }

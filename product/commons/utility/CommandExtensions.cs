@@ -19,9 +19,9 @@ namespace gorilla.commons.utility
             return new ChainedCommand(left, new AnonymousCommand(right));
         }
 
-        static public ParameterizedCommand<T> then<T>(this ParameterizedCommand<T> left, ParameterizedCommand<T> right)
+        static public ArgCommand<T> then<T>(this ArgCommand<T> left, ArgCommand<T> right)
         {
-            return new ChainedParameterizedCommand<T>(left, right);
+            return new ChainedCommand<T>(left, right);
         }
     }
 }

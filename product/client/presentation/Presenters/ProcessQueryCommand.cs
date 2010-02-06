@@ -4,7 +4,7 @@ using momoney.service.infrastructure.threading;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public interface IProcessQueryCommand<T> : ParameterizedCommand<Callback<T>> {}
+    public interface IProcessQueryCommand<T> : ArgCommand<Callback<T>> {}
 
     public class ProcessQueryCommand<T> : IProcessQueryCommand<T>
     {
@@ -17,10 +17,10 @@ namespace MoMoney.Presentation.Presenters
             this.factory = factory;
         }
 
-        public void run(Callback<T> callback)
+        public void run_against(Callback<T> callback)
         {
             var dto = query.fetch();
-            factory.create().run(new AnonymousCommand((Action) (() => callback.run(dto))));
+            factory.create().run_against(new AnonymousCommand((Action) (() => callback.run_against(dto))));
         }
     }
 }

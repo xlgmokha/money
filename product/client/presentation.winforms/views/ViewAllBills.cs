@@ -19,7 +19,7 @@ namespace MoMoney.Presentation.Winforms.Views
         {
         }
 
-        public void run(IEnumerable<BillInformationDTO> bills)
+        public void run_against(IEnumerable<BillInformationDTO> bills)
         {
             ux_bills.DataSource = bills.ToList();
         }

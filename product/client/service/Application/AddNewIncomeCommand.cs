@@ -22,7 +22,7 @@ namespace MoMoney.Service.Application
             this.companys = companys;
         }
 
-        public void run(IncomeSubmissionDTO item)
+        public void run_against(IncomeSubmissionDTO item)
         {
             if (similar_income_has_been_submitted(item))
             {

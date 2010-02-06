@@ -17,7 +17,7 @@ namespace MoMoney.boot.container.registration
             register = registry;
         }
 
-        public void run(Assembly item)
+        public void run_against(Assembly item)
         {
             var shell = new ApplicationShell();
             register.singleton<Shell>(() => shell);

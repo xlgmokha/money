@@ -2,5 +2,5 @@ using gorilla.commons.utility;
 
 namespace MoMoney.Presentation.Model.Menu.File
 {
-    public interface ISaveChangesCommand : ParameterizedCommand<ISaveChangesCallback> {}
+    public interface ISaveChangesCommand : ArgCommand<ISaveChangesCallback> {}
 }

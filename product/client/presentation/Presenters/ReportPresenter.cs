@@ -20,7 +20,7 @@ namespace MoMoney.Presentation.Presenters
         protected override void present()
         {
             var report = registry.get_a<Report>();
-            report.run(registry.get_a<Query>().fetch());
+            report.run_against(registry.get_a<Query>().fetch());
             view.display(report);
         }
     }

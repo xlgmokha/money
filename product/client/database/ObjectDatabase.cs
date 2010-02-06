@@ -32,7 +32,7 @@ namespace momoney.database
         {
             using (var connection = factory.open_connection_to(path_to_database()))
             {
-                command.run(connection);
+                command.run_against(connection);
                 connection.commit();
             }
         }
