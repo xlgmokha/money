@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="views\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="views\ShellWIndow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationController.cs" />
+    <Compile Include="bootstrappers\Bootstrapper.cs" />
     <Compile Include="commands\ParameterizedCommandBuilder.cs" />
     <Compile Include="commands\UpdateOnLongRunningProcess.cs" />
     <Compile Include="Dialog.cs" />
@@ -130,6 +135,9 @@
     <Compile Include="Tab.cs" />
     <Compile Include="TabPresenter.cs" />
     <Compile Include="presenters\IObservableCommand.cs" />
+    <Compile Include="views\ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="views\MainMenu.cs" />
     <Compile Include="views\MenuItemExtensions.cs" />
     <Compile Include="presenters\SimpleCommand.cs" />
