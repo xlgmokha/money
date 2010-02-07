@@ -19,6 +19,7 @@ namespace presentation.windows.views
                           {Tabs.GetType(), Tabs},
                           {StatusBar.GetType(), StatusBar},
                           {Menu.GetType(), Menu},
+                          {SelectedFamilyMember.GetType(), SelectedFamilyMember},
                       };
         }
 

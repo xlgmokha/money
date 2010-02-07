@@ -76,7 +76,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="views\ShellWIndow.xaml">
+    <Page Include="views\FamilyMemberRegion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\ShellWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -84,8 +88,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="views\ShellWIndow.xaml.cs">
-      <DependentUpon>ShellWIndow.xaml</DependentUpon>
+    <Compile Include="views\ShellWindow.xaml.cs">
+      <DependentUpon>ShellWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -137,6 +141,9 @@
     <Compile Include="presenters\IObservableCommand.cs" />
     <Compile Include="views\ErrorWindow.xaml.cs">
       <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\FamilyMemberRegion.xaml.cs">
+      <DependentUpon>FamilyMemberRegion.xaml</DependentUpon>
     </Compile>
     <Compile Include="views\MainMenu.cs" />
     <Compile Include="views\MenuItemExtensions.cs" />
