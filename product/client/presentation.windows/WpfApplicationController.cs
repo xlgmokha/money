@@ -1,5 +1,6 @@
 using System.Windows;
 using System.Windows.Controls;
+using MoMoney.Service.Infrastructure.Eventing;
 using presentation.windows.views;
 
 namespace presentation.windows
@@ -8,16 +9,19 @@ namespace presentation.windows
     {
         RegionManager region_manager;
         PresenterFactory factory;
+        EventAggregator event_aggregator;
 
-        public WpfApplicationController(RegionManager region_manager, PresenterFactory factory)
+        public WpfApplicationController(RegionManager region_manager, PresenterFactory factory, EventAggregator event_aggregator)
         {
             this.region_manager = region_manager;
+            this.event_aggregator = event_aggregator;
             this.factory = factory;
         }
 
         public void add_tab<Presenter, View>() where Presenter : TabPresenter where View : FrameworkElement, Tab<Presenter>, new()
         {
             var presenter = factory.create<Presenter>();
+            event_aggregator.subscribe(presenter);
             presenter.present();
             region_manager.region<TabControl>(x => x.Items.Add(new TabItem
                                                                {
@@ -38,6 +42,17 @@ namespace presentation.windows
             region_manager.region<ShellWindow>(x =>
             {
                 dialog.show_dialog(x);
+            });
+        }
+
+        public void load_region<Presenter, Region>() where Presenter : windows.Presenter where Region : FrameworkElement, View<Presenter>, new()
+        {
+            var presenter = factory.create<Presenter>();
+            event_aggregator.subscribe(presenter);
+            presenter.present();
+            region_manager.region<Region>(x =>
+            {
+                x.DataContext = presenter;
             });
         }
     }

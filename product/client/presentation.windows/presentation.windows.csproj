@@ -76,6 +76,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="views\StatusBarRegion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="views\ShellWIndow.xaml.cs">
       <DependentUpon>ShellWIndow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -84,16 +88,19 @@
   <ItemGroup>
     <Compile Include="ApplicationController.cs" />
     <Compile Include="commands\ParameterizedCommandBuilder.cs" />
+    <Compile Include="commands\UpdateOnLongRunningProcess.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="DialogPresenter.cs" />
     <Compile Include="presenters\AddFamilyMemberPresenter.cs" />
     <Compile Include="commands\CommandBuilder.cs" />
-    <Compile Include="commands\AddMemberToFamily.cs" />
+    <Compile Include="commands\AddFamilyMember.cs" />
     <Compile Include="presenters\CompensationPresenter.cs" />
     <Compile Include="commands\dto\FamilyMemberToAdd.cs" />
     <Compile Include="commands\ContainerCommandBuilder.cs" />
     <Compile Include="commands\NamedCommand.cs" />
     <Compile Include="commands\ContainerAwareParameterizedCommandBuilder.cs" />
+    <Compile Include="presenters\StatusBarPresenter.cs" />
+    <Compile Include="presenters\Observable.cs" />
     <Compile Include="View.cs" />
     <Compile Include="views\AddFamilyMemberDialog.xaml.cs">
       <DependentUpon>AddFamilyMemberDialog.xaml</DependentUpon>
@@ -101,12 +108,11 @@
     <Compile Include="views\CompensationTab.xaml.cs">
       <DependentUpon>CompensationTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ComposeShell.cs" />
+    <Compile Include="bootstrappers\ComposeShell.cs" />
     <Compile Include="NeedStartup.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="PresenterFactory.cs" />
     <Compile Include="RegionManager.cs" />
-    <Compile Include="Shell.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -127,6 +133,9 @@
     <Compile Include="views\MainMenu.cs" />
     <Compile Include="views\MenuItemExtensions.cs" />
     <Compile Include="presenters\SimpleCommand.cs" />
+    <Compile Include="views\StatusBarRegion.xaml.cs">
+      <DependentUpon>StatusBarRegion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WpfApplicationController.cs" />
     <Compile Include="WpfPresenterFactory.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -140,6 +149,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\commons\infrastructure.thirdparty.log4net\infrastructure.thirdparty.log4net.csproj">
+      <Project>{6BDCB0C1-51E1-435A-93D8-CA02BF8E409C}</Project>
+      <Name>infrastructure.thirdparty.log4net</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\commons\infrastructure.thirdparty\infrastructure.thirdparty.csproj">
       <Project>{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}</Project>
       <Name>infrastructure.thirdparty</Name>
@@ -156,6 +169,9 @@
       <Project>{81412692-F3EE-4FBF-A7C7-69454DD1BD46}</Project>
       <Name>service.infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="log4net.config.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

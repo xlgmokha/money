@@ -2,7 +2,6 @@ using System;
 using MoMoney.Service.Infrastructure.Threading;
 using presentation.windows.commands;
 using presentation.windows.commands.dto;
-using presentation.windows.views;
 
 namespace presentation.windows.presenters
 {
@@ -28,7 +27,7 @@ namespace presentation.windows.presenters
                                                last_name = last_name,
                                                date_of_birth = date_of_birth
                                            })
-                                  .build<AddMemberToFamily>("Adding Family Member")
+                                  .build<AddFamilyMember>("Adding Family Member")
                     );
                 close();
             });

@@ -1,11 +1,8 @@
-using System.Threading;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using presentation.windows.presenters;
 using presentation.windows.views;
 
-namespace presentation.windows
+namespace presentation.windows.bootstrappers
 {
     public class ComposeShell : NeedStartup
     {
@@ -28,21 +25,15 @@ namespace presentation.windows
             region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "Liabilities"}));
             region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "Budget"}));
 
-            region_manager.region<StatusBar>(x => x.Items.Add(new Label {Content = Thread.CurrentPrincipal.Identity.Name}));
-            region_manager.region<StatusBar>(x => x.Items.Add(new Label {Content = "Software Developer"}));
-
             region_manager.region<MainMenu>(x =>
             {
-                x.add("_File").add("E_xit", () =>
-                {
-                    Application.Current.Shutdown();
-                });
-                x.add("F_amily").add("_Add Member", () =>
+                x.add("_Family").add("_Add Member", () =>
                 {
                     controller.launch_dialog<AddFamilyMemberPresenter, AddFamilyMemberDialog>();
-                    MessageBox.Show("Add Family");
                 });
             });
+
+            controller.load_region<StatusBarPresenter, StatusBarRegion>();
         }
     }
 }

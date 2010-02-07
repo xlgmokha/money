@@ -1,6 +1,7 @@
 using System;
 using Gorilla.Commons.Infrastructure.Container;
 using gorilla.commons.utility;
+using MoMoney.Service.Infrastructure.Eventing;
 
 namespace presentation.windows.commands
 {
@@ -8,18 +9,28 @@ namespace presentation.windows.commands
     {
         readonly T data;
         Action action;
-        string message;
-        public ContainerAwareParameterizedCommandBuilder(T data)
+        EventAggregator event_broker;
+
+        public ContainerAwareParameterizedCommandBuilder(T data, EventAggregator event_broker)
         {
             this.data = data;
+            this.event_broker = event_broker;
         }
 
         public Command build<TCommand>(string message) where TCommand : ArgCommand<T>
         {
-            this.message = message;
             action = () =>
             {
+                event_broker.publish(new UpdateOnLongRunningProcess
+                                     {
+                                         message = message,
+                                         percent_complete = 0,
+                                     });
                 Resolve.the<TCommand>().run_against(data);
+                event_broker.publish(new UpdateOnLongRunningProcess
+                                     {
+                                         percent_complete = 100,
+                                     });
             };
 
             return this;
@@ -28,11 +39,6 @@ namespace presentation.windows.commands
         public void run()
         {
             action();
-        }
-
-        public override string ToString()
-        {
-            return message;
         }
     }
 }

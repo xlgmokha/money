@@ -76,7 +76,6 @@ namespace MoMoney.Service.Infrastructure.Threading
                         });
             safely_invoke(() =>
                           {
-                              this.log().debug("running command: {0}", command);
                               command.run();
                           });
             reset_thread();

@@ -1,14 +1,13 @@
 using Autofac.Builder;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Reflection;
-using gorilla.commons.infrastructure.thirdparty;
 using gorilla.commons.infrastructure.thirdparty.Autofac;
 using gorilla.commons.utility;
 using MoMoney.boot.container.registration;
 using momoney.database;
-using MoMoney.Domain.Accounting;
 using MoMoney.Presentation;
 using momoney.service.infrastructure;
+using Assembly = System.Reflection.Assembly;
 
 namespace MoMoney.boot.container
 {
@@ -30,14 +29,13 @@ namespace MoMoney.boot.container
                 .then(new WireUpTheViewsInToThe(registry))
                 .then(new WireUpTheReportsInToThe(registry))
                 .run_against(new ApplicationAssembly(
-                         System.Reflection.Assembly.GetExecutingAssembly(),
-                         typeof (DatabaseAssembly).Assembly,
-                         typeof (PresentationAssembly).Assembly,
-                         typeof (InfrastructureAssembly).Assembly
-                         ));
+                                 Assembly.GetExecutingAssembly(),
+                                 typeof (DatabaseAssembly).Assembly,
+                                 typeof (PresentationAssembly).Assembly,
+                                 typeof (InfrastructureAssembly).Assembly
+                                 ));
 
             Resolve.initialize_with(registry.build());
         }
     }
-
 }

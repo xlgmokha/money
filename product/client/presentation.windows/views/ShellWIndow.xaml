@@ -4,16 +4,13 @@
     <DockPanel  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <ui:MainMenu x:Name="Menu" DockPanel.Dock="Top">
         </ui:MainMenu>
-        <StatusBar Name="StatusBar" HorizontalAlignment="Right" DockPanel.Dock="Bottom">
-            <Label>Test</Label>
-        </StatusBar>
+        <ui:StatusBarRegion x:Name="StatusBar" DockPanel.Dock="Bottom"></ui:StatusBarRegion>
         <StackPanel>
             <Expander>
                 <Expander.Header>
                     <DockPanel>
                     <Label>Family Member:</Label>
                     <ComboBox Width="150"></ComboBox>
-                    <Button >Test</Button>
                     </DockPanel>
                 </Expander.Header>
                 <UniformGrid>
@@ -23,9 +20,7 @@
                     <Label>Khan</Label>
                 </UniformGrid>
             </Expander>
-        <TabControl Name="Tabs">
-            <TabItem Header="Test"></TabItem>
-        </TabControl>
+        <TabControl Name="Tabs"></TabControl>
         </StackPanel>
     </DockPanel>
 </Window>

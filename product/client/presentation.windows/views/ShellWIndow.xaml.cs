@@ -5,7 +5,7 @@ using gorilla.commons.utility;
 
 namespace presentation.windows.views
 {
-    public partial class ShellWindow : Shell, RegionManager
+    public partial class ShellWindow : RegionManager
     {
         readonly IDictionary<Type, UIElement> regions;
 

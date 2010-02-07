@@ -58,6 +58,7 @@
     <Compile Include="EmptyCallback.cs" />
     <Compile Include="EmptyCommand.cs" />
     <Compile Include="DefaultConstructorFactory.cs" />
+    <Compile Include="ExpressionExtensions.cs" />
     <Compile Include="FactoryDelegate.cs" />
     <Compile Include="FilteredVisitor.cs" />
     <Compile Include="FuncSpecification.cs" />
