@@ -27,7 +27,7 @@ namespace presentation.windows.presenters
                                                last_name = last_name,
                                                date_of_birth = date_of_birth
                                            })
-                                  .build<AddFamilyMember>("Adding Family Member")
+                                  .build<AddFamilyMemberCommand>("Adding Family Member")
                     );
                 close();
             });

@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,9 +38,25 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\auto.fac\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\lib\app\nhibernate\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\lib\app\nhibernate\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\lib\app\nhibernate\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.60.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\lib\app\sqlite\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -76,7 +93,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="views\FamilyMemberRegion.xaml">
+    <Page Include="views\SelectedFamilyMemberRegion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,17 +114,26 @@
     <Compile Include="ApplicationController.cs" />
     <Compile Include="bootstrappers\Bootstrapper.cs" />
     <Compile Include="commands\ParameterizedCommandBuilder.cs" />
+    <Compile Include="domain\Entity.cs" />
+    <Compile Include="events\SelectedFamilyMember.cs" />
     <Compile Include="commands\UpdateOnLongRunningProcess.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="DialogPresenter.cs" />
+    <Compile Include="domain\Person.cs" />
+    <Compile Include="orm\mappings\DateUserType.cs" />
+    <Compile Include="orm\mappings\MappingAssembly.cs" />
+    <Compile Include="orm\mappings\PersonMapping.cs" />
+    <Compile Include="orm\nhibernate\NHibernatePersonRepository.cs" />
+    <Compile Include="orm\PersonRepository.cs" />
     <Compile Include="presenters\AddFamilyMemberPresenter.cs" />
     <Compile Include="commands\CommandBuilder.cs" />
-    <Compile Include="commands\AddFamilyMember.cs" />
+    <Compile Include="commands\AddFamilyMemberCommand.cs" />
     <Compile Include="presenters\CompensationPresenter.cs" />
     <Compile Include="commands\dto\FamilyMemberToAdd.cs" />
     <Compile Include="commands\ContainerCommandBuilder.cs" />
     <Compile Include="commands\NamedCommand.cs" />
     <Compile Include="commands\ContainerAwareParameterizedCommandBuilder.cs" />
+    <Compile Include="presenters\SelectedFamilyMemberPresenter.cs" />
     <Compile Include="presenters\StatusBarPresenter.cs" />
     <Compile Include="presenters\Observable.cs" />
     <Compile Include="View.cs" />
@@ -142,8 +168,8 @@
     <Compile Include="views\ErrorWindow.xaml.cs">
       <DependentUpon>ErrorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="views\FamilyMemberRegion.xaml.cs">
-      <DependentUpon>FamilyMemberRegion.xaml</DependentUpon>
+    <Compile Include="views\SelectedFamilyMemberRegion.xaml.cs">
+      <DependentUpon>SelectedFamilyMemberRegion.xaml</DependentUpon>
     </Compile>
     <Compile Include="views\MainMenu.cs" />
     <Compile Include="views\MenuItemExtensions.cs" />
@@ -179,6 +205,14 @@
     <ProjectReference Include="..\..\commons\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\database\database.csproj">
+      <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
+      <Name>database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\domain\domain.csproj">
+      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
+      <Name>domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\service.infrastructure\service.infrastructure.csproj">
       <Project>{81412692-F3EE-4FBF-A7C7-69454DD1BD46}</Project>

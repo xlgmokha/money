@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="presentation.windows.views.SelectedFamilyMemberRegion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" MinWidth="1024">
+<Expander>
+    <Expander.Header>
+        <DockPanel>
+        <Label>Family Member:</Label>
+        <ComboBox Width="150"></ComboBox>
+        </DockPanel>
+    </Expander.Header>
+    <UniformGrid>
+        <Label FontWeight="Bold">First Name</Label>
+        <Label>Mo</Label>
+        <Label FontWeight="Bold">Last Name</Label>
+        <Label>Khan</Label>
+    </UniformGrid>
+</Expander>
+</UserControl>

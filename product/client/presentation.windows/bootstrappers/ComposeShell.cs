@@ -34,6 +34,7 @@ namespace presentation.windows.bootstrappers
             });
 
             controller.load_region<StatusBarPresenter, StatusBarRegion>();
+            controller.load_region<SelectedFamilyMemberPresenter, SelectedFamilyMemberRegion>();
         }
     }
 }

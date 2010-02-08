@@ -6,7 +6,7 @@
         </ui:MainMenu>
         <ui:StatusBarRegion x:Name="StatusBar" DockPanel.Dock="Bottom"></ui:StatusBarRegion>
         <StackPanel>
-            <ui:FamilyMemberRegion x:Name="SelectedFamilyMember"></ui:FamilyMemberRegion>
+            <ui:SelectedFamilyMemberRegion x:Name="SelectedFamilyMember"></ui:SelectedFamilyMemberRegion>
             <TabControl Name="Tabs"></TabControl>
         </StackPanel>
     </DockPanel>
