@@ -1,12 +1,8 @@
 using System;
 using Gorilla.Commons.Infrastructure.Container;
 using gorilla.commons.utility;
-using momoney.database.transactions;
 using MoMoney.Service.Infrastructure.Eventing;
 using momoney.service.infrastructure.transactions;
-using ISession = NHibernate.ISession;
-using ISessionFactory = NHibernate.ISessionFactory;
-using ITransaction = NHibernate.ITransaction;
 
 namespace presentation.windows.commands
 {
@@ -51,59 +47,6 @@ namespace presentation.windows.commands
                 action();
                 unit_of_work.commit();
             }
-        }
-    }
-
-    public class NHibernateUnitOfWorkFactory : IUnitOfWorkFactory
-    {
-        readonly ISessionFactory factory;
-        readonly IContext context;
-
-        public NHibernateUnitOfWorkFactory(ISessionFactory factory, IContext context)
-        {
-            this.factory = factory;
-            this.context = context;
-        }
-
-        public IUnitOfWork create()
-        {
-            var open_session = factory.OpenSession();
-            context.add(new TypedKey<ISession>(), open_session);
-            return new NHibernateUnitOfWork(open_session, context);
-        }
-    }
-
-    public class NHibernateUnitOfWork : IUnitOfWork
-    {
-        readonly ISession session;
-        readonly IContext context;
-        ITransaction transaction;
-
-        public NHibernateUnitOfWork(ISession session, IContext context)
-        {
-            this.session = session;
-            this.context = context;
-            transaction = session.BeginTransaction();
-        }
-
-        public void Dispose()
-        {
-            if (!transaction.WasCommitted && !transaction.WasRolledBack)
-            {
-                transaction.Rollback();
-            }
-            session.Dispose();
-            context.remove(new TypedKey<ISession>());
-        }
-
-        public void commit()
-        {
-            if (is_dirty()) transaction.Commit();
-        }
-
-        public bool is_dirty()
-        {
-            return session.IsDirty();
         }
     }
 }

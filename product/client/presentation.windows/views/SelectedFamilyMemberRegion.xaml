@@ -5,14 +5,14 @@
     <Expander.Header>
         <DockPanel>
         <Label>Family Member:</Label>
-        <ComboBox Width="150"></ComboBox>
+        <ComboBox ItemsSource="{Binding family_members}" SelectedItem="{Binding selected_member}" Width="150"></ComboBox>
         </DockPanel>
     </Expander.Header>
     <UniformGrid>
         <Label FontWeight="Bold">First Name</Label>
-        <Label>Mo</Label>
+        <Label Content="{Binding fist_name}"/>
         <Label FontWeight="Bold">Last Name</Label>
-        <Label>Khan</Label>
+        <Label Content="{Binding last_name}"/>
     </UniformGrid>
 </Expander>
 </UserControl>

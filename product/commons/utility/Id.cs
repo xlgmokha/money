@@ -6,7 +6,7 @@ namespace gorilla.commons.utility
     public class Id<T>
     {
         static public readonly Id<T> Default = new Id<T>(default(T));
-        readonly T id;
+        public T id { get; private set; }
 
         public Id(T id)
         {

@@ -1,10 +1,16 @@
 using System;
+using gorilla.commons.utility;
 
 namespace presentation.windows.domain
 {
     public class Entity : IEquatable<Entity>
     {
-        public virtual Guid id { get; set; }
+        protected Entity()
+        {
+            id = Id<Guid>.Default;
+        }
+
+        public virtual Guid id { get; private set; }
 
         public virtual bool Equals(Entity other)
         {

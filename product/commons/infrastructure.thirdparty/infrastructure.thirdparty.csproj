@@ -75,8 +75,16 @@
     <Compile Include="castle\dynamicproxy\CastleDynamicInterceptorConstraintFactory.cs" />
     <Compile Include="castle\dynamicproxy\interceptors\SynchronizeInvokeInterceptor.cs" />
     <Compile Include="castle\dynamicproxy\CastleDynamicMethodCallTrackerFactory.cs" />
-    <Compile Include="castle\windsor\configuration\RegistrationConfiguration.cs" />
+    <Compile Include="castle\windsor\configuration\ApplyLoggingInterceptor.cs" />
+    <Compile Include="castle\windsor\configuration\ComponentExclusionSpecification.cs" />
+    <Compile Include="castle\windsor\configuration\ComponentRegistrationConfiguration.cs" />
+    <Compile Include="castle\windsor\configuration\ConfigureComponentLifestyle.cs" />
+    <Compile Include="castle\windsor\configuration\LogComponent.cs" />
+    <Compile Include="castle\windsor\configuration\LogEverythingInterceptor.cs" />
     <Compile Include="castle\windsor\configuration\LoggingInterceptor.cs" />
+    <Compile Include="castle\windsor\configuration\RegisterComponentContract.cs" />
+    <Compile Include="castle\windsor\configuration\RegistrationConfiguration.cs" />
+    <Compile Include="castle\windsor\WindsorContainerFactory.cs" />
     <Compile Include="castle\windsor\WindsorExtensions.cs" />
     <Compile Include="DependencyRegistration.cs" />
     <Compile Include="castle\dynamicproxy\ConstraintSelector.cs" />
@@ -92,14 +100,6 @@
     <Compile Include="castle\dynamicproxy\LazyLoadedInterceptor.cs" />
     <Compile Include="castle\dynamicproxy\CastleDynamicProxyBuilder.cs" />
     <Compile Include="castle\dynamicproxy\CastleDynamicProxyFactory.cs" />
-    <Compile Include="castle\windsor\configuration\ApplyLoggingInterceptor.cs" />
-    <Compile Include="castle\windsor\configuration\ComponentRegistrationConfiguration.cs" />
-    <Compile Include="castle\windsor\configuration\ConfigureComponentLifestyle.cs" />
-    <Compile Include="castle\windsor\configuration\ComponentExclusionSpecification.cs" />
-    <Compile Include="castle\windsor\configuration\LogComponent.cs" />
-    <Compile Include="castle\windsor\configuration\LogEverythingInterceptor.cs" />
-    <Compile Include="castle\windsor\configuration\RegisterComponentContract.cs" />
-    <Compile Include="castle\windsor\WindsorContainerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\infrastructure\infrastructure.csproj">

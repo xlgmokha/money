@@ -22,9 +22,10 @@ namespace presentation.windows.commands
         {
             var person = Person.New(item.first_name, item.last_name, item.date_of_birth);
             people.save(person);
-            event_aggregator.publish(new SelectedFamilyMember
+            event_aggregator.publish(new AddedNewFamilyMember
                                      {
                                          id = person.id,
+                                         first_name = person.first_name,
                                      });
         }
     }

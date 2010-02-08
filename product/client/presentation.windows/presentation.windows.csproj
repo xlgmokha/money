@@ -38,6 +38,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\auto.fac\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=0.3.1.71, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\lib\app\automapper\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\lib\app\nhibernate\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\lib\app\nhibernate\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
     <Reference Include="FluentNHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\nhibernate\FluentNHibernate.dll</HintPath>
@@ -49,6 +61,10 @@
     <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\nhibernate\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\lib\app\nhibernate\NHibernate.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -113,9 +129,13 @@
   <ItemGroup>
     <Compile Include="ApplicationController.cs" />
     <Compile Include="bootstrappers\Bootstrapper.cs" />
+    <Compile Include="bootstrappers\ConfigureMappings.cs" />
+    <Compile Include="orm\nhibernate\NHibernateUnitOfWorkFactory.cs" />
+    <Compile Include="orm\nhibernate\NHibernateUnitOfWork.cs" />
+    <Compile Include="infrastructure\DefaultMapper.cs" />
     <Compile Include="commands\ParameterizedCommandBuilder.cs" />
     <Compile Include="domain\Entity.cs" />
-    <Compile Include="events\SelectedFamilyMember.cs" />
+    <Compile Include="events\AddedNewFamilyMember.cs" />
     <Compile Include="commands\UpdateOnLongRunningProcess.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="DialogPresenter.cs" />
@@ -128,14 +148,20 @@
     <Compile Include="presenters\AddFamilyMemberPresenter.cs" />
     <Compile Include="commands\CommandBuilder.cs" />
     <Compile Include="commands\AddFamilyMemberCommand.cs" />
+    <Compile Include="infrastructure\AnonymousInterceptor.cs" />
     <Compile Include="presenters\CompensationPresenter.cs" />
     <Compile Include="commands\dto\FamilyMemberToAdd.cs" />
     <Compile Include="commands\ContainerCommandBuilder.cs" />
     <Compile Include="commands\NamedCommand.cs" />
     <Compile Include="commands\ContainerAwareParameterizedCommandBuilder.cs" />
+    <Compile Include="queries\ContainerAwareQueryBuilder.cs" />
+    <Compile Include="queries\FindAllFamily.cs" />
+    <Compile Include="queries\FindMemberIdentifiedBy.cs" />
     <Compile Include="presenters\SelectedFamilyMemberPresenter.cs" />
     <Compile Include="presenters\StatusBarPresenter.cs" />
     <Compile Include="presenters\Observable.cs" />
+    <Compile Include="queries\PersonDetails.cs" />
+    <Compile Include="queries\QueryBuilder.cs" />
     <Compile Include="View.cs" />
     <Compile Include="views\AddFamilyMemberDialog.xaml.cs">
       <DependentUpon>AddFamilyMemberDialog.xaml</DependentUpon>
@@ -205,6 +231,10 @@
     <ProjectReference Include="..\..\commons\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\boot\boot.csproj">
+      <Project>{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}</Project>
+      <Name>boot</Name>
     </ProjectReference>
     <ProjectReference Include="..\database\database.csproj">
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>

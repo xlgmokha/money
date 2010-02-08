@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -17,10 +18,12 @@ using NHibernate.ByteCode.Castle;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using presentation.windows.commands;
+using presentation.windows.infrastructure;
 using presentation.windows.orm;
 using presentation.windows.orm.mappings;
 using presentation.windows.orm.nhibernate;
 using presentation.windows.presenters;
+using presentation.windows.queries;
 using presentation.windows.views;
 using Environment = System.Environment;
 using ISession = NHibernate.ISession;
@@ -39,14 +42,15 @@ namespace presentation.windows.bootstrappers
 
             //needs startups
             builder.Register<ComposeShell>().As<NeedStartup>();
+            builder.Register<ConfigureMappings>().As<NeedStartup>();
 
             // infrastructure
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
-
+            builder.Register<DefaultMapper>().As<Mapper>().SingletonScoped();
 
             var session_factory = bootstrap_nhibernate();
             builder.Register(x => session_factory).SingletonScoped();
-            builder.Register(x => x.Resolve<IContext>().value_for(new momoney.database.transactions.TypedKey<ISession>()));
+            builder.Register(x => x.Resolve<IContext>().value_for(new TypedKey<ISession>()));
             builder.Register<NHibernateUnitOfWorkFactory>().As<IUnitOfWorkFactory>();
             builder.Register(x => new ContextFactory().create_for(new PerThreadScopedStorage(new CurrentThread())));
 
@@ -66,6 +70,11 @@ namespace presentation.windows.bootstrappers
             builder.Register<ContainerCommandBuilder>().As<CommandBuilder>().SingletonScoped();
             builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
             builder.Register<AddFamilyMemberCommand>();
+
+            // queries
+            builder.Register<FindMemberIdentifiedBy>();
+            builder.Register<FindAllFamily>();
+            builder.Register<ContainerAwareQueryBuilder>().As<QueryBuilder>();
 
             // repositories
             builder.Register<NHibernatePersonRepository>().As<PersonRepository>();
