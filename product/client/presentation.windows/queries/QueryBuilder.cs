@@ -1,7 +1,9 @@
+using System;
+
 namespace presentation.windows.queries
 {
     public interface QueryBuilder
     {
-        Query build<Query>() where Query : class;
+        void build<Query>(Action<Query> action) where Query : class;
     }
 }

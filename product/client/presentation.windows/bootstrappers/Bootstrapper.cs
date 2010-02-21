@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using Autofac.Builder;
 using FluentNHibernate.Cfg;
@@ -36,6 +37,7 @@ namespace presentation.windows.bootstrappers
         static public ShellWindow create_window()
         {
             var builder = new ContainerBuilder();
+            Resolve.initialize_with(new AutofacDependencyRegistryBuilder(builder).build());
             var shell_window = new ShellWindow();
             builder.Register(x => shell_window).SingletonScoped();
             builder.Register(x => shell_window).As<RegionManager>().SingletonScoped();
@@ -50,9 +52,9 @@ namespace presentation.windows.bootstrappers
 
             var session_factory = bootstrap_nhibernate();
             builder.Register(x => session_factory).SingletonScoped();
-            builder.Register(x => x.Resolve<IContext>().value_for(new TypedKey<ISession>()));
+            builder.Register(x => current_session(x));
             builder.Register<NHibernateUnitOfWorkFactory>().As<IUnitOfWorkFactory>();
-            builder.Register(x => new ContextFactory().create_for(new PerThreadScopedStorage(new CurrentThread())));
+            builder.Register(x => create_application_context()).SingletonScoped();
 
             // presentation infrastructure
             builder.Register<WpfApplicationController>().As<ApplicationController>().SingletonScoped();
@@ -77,13 +79,24 @@ namespace presentation.windows.bootstrappers
             builder.Register<ContainerAwareQueryBuilder>().As<QueryBuilder>();
 
             // repositories
-            builder.Register<NHibernatePersonRepository>().As<PersonRepository>();
+            builder.Register<NHibernatePersonRepository>().As<PersonRepository>().FactoryScoped();
 
-            Resolve.initialize_with(new AutofacDependencyRegistryBuilder(builder).build());
             Resolve.the<IEnumerable<NeedStartup>>().each(x => x.run());
             Resolve.the<CommandProcessor>().run();
 
             return shell_window;
+        }
+
+        static IContext create_application_context()
+        {
+            return new ContextFactory().create_for(new PerThreadScopedStorage(new CurrentThread()));
+        }
+
+        static ISession current_session(Autofac.IContext x)
+        {
+            var session = x.Resolve<IContext>().value_for(new TypedKey<ISession>());
+            if(null == session) Debugger.Break();
+            return session;
         }
 
         static ISessionFactory bootstrap_nhibernate()
@@ -110,13 +123,12 @@ namespace presentation.windows.bootstrappers
 
         static void export(Configuration configuration)
         {
-            //var database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney\default.db");
-            //if (!File.Exists(database_path))
+            var database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney\default.db");
+            if (File.Exists(database_path))
             {
-                //Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney"));
-                var export = new SchemaExport(configuration);
-                export.Execute(true, true, false);
+                File.Delete(database_path);
             }
+            new SchemaExport(configuration).Execute(true, true, false);
         }
     }
 }

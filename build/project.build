@@ -30,7 +30,7 @@
 	<target name="app.compile" depends="init">
     <exec program="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe"
           workingdir="${base.dir}"
-          commandline="solution.sln /p:Configuration=Release;OutDir=${build.compile.dir}\ /t:Rebuild /nologo /m"
+          commandline="solution.sln /p:Configuration=Release;OutDir=${build.compile.dir}\ /t:Rebuild /nologo /m /v:q"
           />
 	</target>
 

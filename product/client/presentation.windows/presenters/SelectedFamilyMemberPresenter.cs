@@ -10,14 +10,14 @@ namespace presentation.windows.presenters
     {
         PersonDetails selected_member;
         QueryBuilder builder;
+        EventAggregator event_aggregator;
 
-        public SelectedFamilyMemberPresenter(QueryBuilder builder)
+        public SelectedFamilyMemberPresenter(QueryBuilder builder, EventAggregator event_aggregator)
         {
             this.builder = builder;
+            this.event_aggregator = event_aggregator;
         }
 
-        public string first_name { get; set; }
-        public string last_name { get; set; }
         public IList<PersonDetails> family_members { get; set; }
 
         public PersonDetails SelectedMember
@@ -26,21 +26,20 @@ namespace presentation.windows.presenters
             set
             {
                 selected_member = value;
-                first_name = selected_member.first_name;
-                last_name = selected_member.last_name;
-                update(x => x.first_name, x => x.last_name);
+                update(x => x.SelectedMember);
+                event_aggregator.publish(new SelectedFamilyMember {id = value.id});
             }
         }
 
         public void present()
         {
-            family_members = builder.build<FindAllFamily>().fetch().ToList();
+            builder.build<FindAllFamily>(x => family_members = x.fetch().ToList());
             update(x => x.family_members);
         }
 
         public void notify(AddedNewFamilyMember message)
         {
-            family_members.Add(builder.build<FindMemberIdentifiedBy>().fetch(message.id));
+            builder.build<FindMemberIdentifiedBy>(x => family_members.Add(x.fetch(message.id)));
             update(x => x.family_members);
         }
     }

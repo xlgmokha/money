@@ -7,11 +7,11 @@
         <DockPanel>
             <UniformGrid Rows="3">
                 <Label>first name</Label>
-                <TextBox Text="{Binding first_name}"></TextBox>
+                <TextBox Text="{Binding Path=first_name, Mode=TwoWay}"></TextBox>
                 <Label>last name</Label>
-                <TextBox Text="{Binding last_name}"></TextBox>
+                <TextBox Text="{Binding Path=last_name, Mode=TwoWay}"></TextBox>
                 <Label>date of birth</Label>
-                <Controls:DatePicker SelectedDate="{Binding date_of_birth}"></Controls:DatePicker>
+                <Controls:DatePicker SelectedDate="{Binding Path=date_of_birth, Mode=TwoWay}"></Controls:DatePicker>
             </UniformGrid>
         </DockPanel>
         <Button Command="{Binding Save}">_Save</Button>

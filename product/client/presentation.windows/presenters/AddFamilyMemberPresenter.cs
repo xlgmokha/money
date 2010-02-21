@@ -42,7 +42,6 @@ namespace presentation.windows.presenters
         public DateTime date_of_birth { get; set; }
         public IObservableCommand Save { get; set; }
         public IObservableCommand Cancel { get; set; }
-
         public Action close { get; set; }
     }
 }
