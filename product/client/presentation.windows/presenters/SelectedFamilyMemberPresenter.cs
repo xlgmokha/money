@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using System.Linq;
+using System.Collections.ObjectModel;
 using MoMoney.Service.Infrastructure.Eventing;
 using presentation.windows.events;
 using presentation.windows.queries;
@@ -18,7 +17,7 @@ namespace presentation.windows.presenters
             this.event_aggregator = event_aggregator;
         }
 
-        public IList<PersonDetails> family_members { get; set; }
+        public ObservableCollection<PersonDetails> family_members { get; set; }
 
         public PersonDetails SelectedMember
         {
@@ -33,7 +32,7 @@ namespace presentation.windows.presenters
 
         public void present()
         {
-            builder.build<FindAllFamily>(x => family_members = x.fetch().ToList());
+            builder.build<FindAllFamily>(x => family_members = x.fetch().to_observable());
             update(x => x.family_members);
         }
 

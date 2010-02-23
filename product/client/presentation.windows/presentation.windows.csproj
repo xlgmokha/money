@@ -122,6 +122,14 @@
     <Compile Include="ApplicationController.cs" />
     <Compile Include="bootstrappers\Bootstrapper.cs" />
     <Compile Include="bootstrappers\ConfigureMappings.cs" />
+    <Compile Include="domain\payroll\Calendar.cs" />
+    <Compile Include="domain\payroll\Compensation.cs" />
+    <Compile Include="domain\payroll\Date.cs" />
+    <Compile Include="domain\payroll\Grant.cs" />
+    <Compile Include="domain\payroll\History.cs" />
+    <Compile Include="domain\payroll\Money.cs" />
+    <Compile Include="domain\payroll\Unit.cs" />
+    <Compile Include="domain\payroll\UnitPrice.cs" />
     <Compile Include="events\SelectedFamilyMember.cs" />
     <Compile Include="orm\nhibernate\NHibernateUnitOfWorkFactory.cs" />
     <Compile Include="orm\nhibernate\NHibernateUnitOfWork.cs" />
@@ -146,6 +154,7 @@
     <Compile Include="commands\ContainerCommandBuilder.cs" />
     <Compile Include="commands\NamedCommand.cs" />
     <Compile Include="commands\ContainerAwareParameterizedCommandBuilder.cs" />
+    <Compile Include="presenters\WpfBindingExtensinos.cs" />
     <Compile Include="queries\ContainerAwareQueryBuilder.cs" />
     <Compile Include="queries\FindAllFamily.cs" />
     <Compile Include="queries\FindMemberIdentifiedBy.cs" />

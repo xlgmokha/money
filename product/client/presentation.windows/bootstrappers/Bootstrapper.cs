@@ -1,8 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
+using System.Windows.Threading;
 using Autofac.Builder;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
@@ -57,16 +58,19 @@ namespace presentation.windows.bootstrappers
             builder.Register(x => create_application_context()).SingletonScoped();
 
             // presentation infrastructure
+            SynchronizationContext.SetSynchronizationContext(new DispatcherSynchronizationContext());
             builder.Register<WpfApplicationController>().As<ApplicationController>().SingletonScoped();
             builder.Register<WpfPresenterFactory>().As<PresenterFactory>().SingletonScoped();
             builder.Register<SynchronizedEventAggregator>().As<EventAggregator>().SingletonScoped();
-            builder.Register(x => AsyncOperationManager.SynchronizationContext);
+            //builder.Register(x => AsyncOperationManager.SynchronizationContext);
+            builder.Register(x => SynchronizationContext.Current);
+
 
             // presenters
             builder.Register<StatusBarPresenter>().SingletonScoped();
-            builder.Register<CompensationPresenter>();
+            builder.Register<CompensationPresenter>().SingletonScoped();
+            builder.Register<SelectedFamilyMemberPresenter>().SingletonScoped();
             builder.Register<AddFamilyMemberPresenter>();
-            builder.Register<SelectedFamilyMemberPresenter>();
 
             // commanding
             builder.Register<ContainerCommandBuilder>().As<CommandBuilder>().SingletonScoped();
@@ -95,7 +99,7 @@ namespace presentation.windows.bootstrappers
         static ISession current_session(Autofac.IContext x)
         {
             var session = x.Resolve<IContext>().value_for(new TypedKey<ISession>());
-            if(null == session) Debugger.Break();
+            if (null == session) Debugger.Break();
             return session;
         }
 

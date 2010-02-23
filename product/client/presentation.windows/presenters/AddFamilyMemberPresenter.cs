@@ -1,4 +1,5 @@
 using System;
+using Gorilla.Commons.Utility;
 using MoMoney.Service.Infrastructure.Threading;
 using presentation.windows.commands;
 using presentation.windows.commands.dto;
@@ -35,6 +36,7 @@ namespace presentation.windows.presenters
             {
                 close();
             });
+            date_of_birth = Clock.today();
         }
 
         public string first_name { get; set; }
