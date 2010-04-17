@@ -3,7 +3,7 @@ using gorilla.commons.utility;
 
 namespace momoney.service.infrastructure.threading
 {
-    public interface ISynchronizationContext : ArgCommand<Command> {}
+    public interface ISynchronizationContext : Command<Command> {}
 
     public class SynchronizedContext : ISynchronizationContext
     {

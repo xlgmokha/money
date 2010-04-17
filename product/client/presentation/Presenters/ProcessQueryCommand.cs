@@ -4,7 +4,7 @@ using momoney.service.infrastructure.threading;
 
 namespace MoMoney.Presentation.Presenters
 {
-    public interface IProcessQueryCommand<T> : ArgCommand<Callback<T>> {}
+    public interface IProcessQueryCommand<T> : Command<Callback<T>> {}
 
     public class ProcessQueryCommand<T> : IProcessQueryCommand<T>
     {

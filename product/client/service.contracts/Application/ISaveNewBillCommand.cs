@@ -5,5 +5,5 @@ using MoMoney.DTO;
 namespace MoMoney.Service.Contracts.Application
 {
     [ServiceContract]
-    public interface ISaveNewBillCommand : ArgCommand<AddNewBillDTO> {}
+    public interface ISaveNewBillCommand : Command<AddNewBillDTO> {}
 }

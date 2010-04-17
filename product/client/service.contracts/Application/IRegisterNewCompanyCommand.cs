@@ -5,5 +5,5 @@ using MoMoney.DTO;
 namespace MoMoney.Service.Contracts.Application
 {
     [ServiceContract]
-    public interface IRegisterNewCompanyCommand : ArgCommand<RegisterNewCompany> {}
+    public interface IRegisterNewCompanyCommand : Command<RegisterNewCompany> {}
 }

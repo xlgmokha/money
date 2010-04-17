@@ -7,7 +7,7 @@ using presentation.windows.orm;
 
 namespace presentation.windows.commands
 {
-    public class AddFamilyMemberCommand : ArgCommand<FamilyMemberToAdd>
+    public class AddFamilyMemberCommand : Command<FamilyMemberToAdd>
     {
         PersonRepository people;
         EventAggregator event_aggregator;
@@ -27,6 +27,11 @@ namespace presentation.windows.commands
                                          id = person.id,
                                          first_name = person.first_name,
                                      });
+        }
+
+        public override string ToString()
+        {
+            return "Adding Family Member";
         }
     }
 }

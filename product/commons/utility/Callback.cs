@@ -4,7 +4,7 @@ namespace gorilla.commons.utility
     {
     }
 
-    public interface Callback<T> : ArgCommand<T>
+    public interface Callback<T> : Command<T>
     {
     }
 }

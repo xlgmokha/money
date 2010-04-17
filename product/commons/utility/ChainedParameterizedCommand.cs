@@ -1,11 +1,11 @@
 namespace gorilla.commons.utility
 {
-    public class ChainedCommand<T> : ArgCommand<T>
+    public class ChainedCommand<T> : Command<T>
     {
-        ArgCommand<T> left;
-        ArgCommand<T> right;
+        Command<T> left;
+        Command<T> right;
 
-        public ChainedCommand(ArgCommand<T> left, ArgCommand<T> right)
+        public ChainedCommand(Command<T> left, Command<T> right)
         {
             this.left = left;
             this.right = right;

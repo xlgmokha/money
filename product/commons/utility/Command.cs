@@ -4,4 +4,9 @@ namespace gorilla.commons.utility
     {
         void run();
     }
+
+    public interface Command<T>
+    {
+        void run_against(T item);
+    }
 }

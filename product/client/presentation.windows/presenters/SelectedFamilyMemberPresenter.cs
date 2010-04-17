@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using MoMoney.Service.Infrastructure.Eventing;
 using presentation.windows.events;
 using presentation.windows.queries;
@@ -17,7 +17,7 @@ namespace presentation.windows.presenters
             this.event_aggregator = event_aggregator;
         }
 
-        public ObservableCollection<PersonDetails> family_members { get; set; }
+        public ICollection<PersonDetails> family_members { get; set; }
 
         public PersonDetails SelectedMember
         {

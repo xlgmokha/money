@@ -4,7 +4,7 @@ using gorilla.commons.utility;
 
 namespace momoney.service.infrastructure.threading
 {
-    public interface ISynchronizedCommand : ArgCommand<Action>, ArgCommand<Command> {}
+    public interface ISynchronizedCommand : Command<Action>, Command<Command> {}
 
     public class SynchronizedCommand : ISynchronizedCommand
     {

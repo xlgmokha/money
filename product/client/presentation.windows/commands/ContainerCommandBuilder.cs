@@ -16,9 +16,9 @@ namespace presentation.windows.commands
             this.unit_of_work_factory = unit_of_work_factory;
         }
 
-        public ParameterizedCommandBuilder<T> prepare<T>(T data)
+        public CommandBuilder<T> prepare<T>(T data)
         {
-            return new ContainerAwareParameterizedCommandBuilder<T>(data, event_aggregator, unit_of_work_factory);
+            return new ContainerAwareCommandBuilder<T>(data, event_aggregator, unit_of_work_factory);
         }
 
         public Command build<T>(string message) where T : Command

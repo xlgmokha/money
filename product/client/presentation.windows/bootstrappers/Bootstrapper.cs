@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
@@ -65,17 +64,19 @@ namespace presentation.windows.bootstrappers
             //builder.Register(x => AsyncOperationManager.SynchronizationContext);
             builder.Register(x => SynchronizationContext.Current);
 
-
             // presenters
             builder.Register<StatusBarPresenter>().SingletonScoped();
             builder.Register<CompensationPresenter>().SingletonScoped();
             builder.Register<SelectedFamilyMemberPresenter>().SingletonScoped();
             builder.Register<AddFamilyMemberPresenter>();
+            builder.Register<SaveCommand>();
+            builder.Register<CancelCommand>();
 
             // commanding
             builder.Register<ContainerCommandBuilder>().As<CommandBuilder>().SingletonScoped();
             builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
             builder.Register<AddFamilyMemberCommand>();
+            builder.Register<WpfCommandBuilder>().As<UICommandBuilder>();
 
             // queries
             builder.Register<FindMemberIdentifiedBy>();
@@ -88,6 +89,7 @@ namespace presentation.windows.bootstrappers
             Resolve.the<IEnumerable<NeedStartup>>().each(x => x.run());
             Resolve.the<CommandProcessor>().run();
 
+            shell_window.Closed += (sender, args) => Resolve.the<CommandProcessor>().stop();
             return shell_window;
         }
 

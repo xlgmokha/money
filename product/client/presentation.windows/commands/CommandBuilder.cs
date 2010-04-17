@@ -4,8 +4,12 @@ namespace presentation.windows.commands
 {
     public interface CommandBuilder
     {
-        ParameterizedCommandBuilder<TData> prepare<TData>(TData data);
+        CommandBuilder<TData> prepare<TData>(TData data);
         Command build<TCommand>(string message) where TCommand : Command;
     }
 
+    public interface CommandBuilder<T>
+    {
+        Command build<TCommand>(string message) where TCommand : Command<T>;
+    }
 }

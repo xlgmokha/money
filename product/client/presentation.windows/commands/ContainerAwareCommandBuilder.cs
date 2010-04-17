@@ -6,21 +6,21 @@ using momoney.service.infrastructure.transactions;
 
 namespace presentation.windows.commands
 {
-    public class ContainerAwareParameterizedCommandBuilder<T> : ParameterizedCommandBuilder<T>, Command
+    public class ContainerAwareCommandBuilder<T> : CommandBuilder<T>, Command
     {
         readonly T data;
         Action action;
         EventAggregator event_broker;
         IUnitOfWorkFactory factory;
 
-        public ContainerAwareParameterizedCommandBuilder(T data, EventAggregator event_broker, IUnitOfWorkFactory factory)
+        public ContainerAwareCommandBuilder(T data, EventAggregator event_broker, IUnitOfWorkFactory factory)
         {
             this.data = data;
             this.factory = factory;
             this.event_broker = event_broker;
         }
 
-        public Command build<TCommand>(string message) where TCommand : ArgCommand<T>
+        public Command build<TCommand>(string message) where TCommand : Command<T>
         {
             action = () =>
             {

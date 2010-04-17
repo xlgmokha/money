@@ -65,7 +65,6 @@
     <Compile Include="Builder.cs" />
     <Compile Include="Callback.cs" />
     <Compile Include="CallbackCommand.cs" />
-    <Compile Include="ArgCommand.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="ComponentFactory.cs" />
     <Compile Include="Id.cs" />

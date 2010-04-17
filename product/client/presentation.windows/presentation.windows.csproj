@@ -134,7 +134,6 @@
     <Compile Include="orm\nhibernate\NHibernateUnitOfWorkFactory.cs" />
     <Compile Include="orm\nhibernate\NHibernateUnitOfWork.cs" />
     <Compile Include="infrastructure\DefaultMapper.cs" />
-    <Compile Include="commands\ParameterizedCommandBuilder.cs" />
     <Compile Include="domain\Entity.cs" />
     <Compile Include="events\AddedNewFamilyMember.cs" />
     <Compile Include="commands\UpdateOnLongRunningProcess.cs" />
@@ -149,12 +148,17 @@
     <Compile Include="presenters\AddFamilyMemberPresenter.cs" />
     <Compile Include="commands\CommandBuilder.cs" />
     <Compile Include="commands\AddFamilyMemberCommand.cs" />
+    <Compile Include="presenters\CancelCommand.cs" />
     <Compile Include="presenters\CompensationPresenter.cs" />
     <Compile Include="commands\dto\FamilyMemberToAdd.cs" />
     <Compile Include="commands\ContainerCommandBuilder.cs" />
     <Compile Include="commands\NamedCommand.cs" />
-    <Compile Include="commands\ContainerAwareParameterizedCommandBuilder.cs" />
+    <Compile Include="commands\ContainerAwareCommandBuilder.cs" />
+    <Compile Include="presenters\SaveCommand.cs" />
+    <Compile Include="presenters\UICommand.cs" />
+    <Compile Include="presenters\UICommandBuilder.cs" />
     <Compile Include="presenters\WpfBindingExtensinos.cs" />
+    <Compile Include="presenters\WpfCommandBuilder.cs" />
     <Compile Include="queries\ContainerAwareQueryBuilder.cs" />
     <Compile Include="queries\FindAllFamily.cs" />
     <Compile Include="queries\FindMemberIdentifiedBy.cs" />
@@ -163,6 +167,7 @@
     <Compile Include="presenters\Observable.cs" />
     <Compile Include="queries\PersonDetails.cs" />
     <Compile Include="queries\QueryBuilder.cs" />
+    <Compile Include="service\infrastructure\ServiceBus.cs" />
     <Compile Include="View.cs" />
     <Compile Include="views\AddFamilyMemberDialog.xaml.cs">
       <DependentUpon>AddFamilyMemberDialog.xaml</DependentUpon>
@@ -252,6 +257,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="log4net.config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="service\application\" />
+    <Folder Include="service\domain\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

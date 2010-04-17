@@ -1,41 +1,21 @@
 using System;
 using Gorilla.Commons.Utility;
-using MoMoney.Service.Infrastructure.Threading;
-using presentation.windows.commands;
-using presentation.windows.commands.dto;
 
 namespace presentation.windows.presenters
 {
     public class AddFamilyMemberPresenter : DialogPresenter
     {
-        CommandBuilder command_builder;
-        CommandProcessor processor;
+        UICommandBuilder ui_builder;
 
-        public AddFamilyMemberPresenter(CommandBuilder command_builder, CommandProcessor processor)
+        public AddFamilyMemberPresenter(UICommandBuilder ui_builder)
         {
-            this.command_builder = command_builder;
-            this.processor = processor;
+            this.ui_builder = ui_builder;
         }
 
         public void present()
         {
-            Save = new SimpleCommand(() =>
-            {
-                processor.add(command_builder
-                                  .prepare(new FamilyMemberToAdd
-                                           {
-                                               first_name = first_name,
-                                               last_name = last_name,
-                                               date_of_birth = date_of_birth
-                                           })
-                                  .build<AddFamilyMemberCommand>("Adding Family Member")
-                    );
-                close();
-            });
-            Cancel = new SimpleCommand(() =>
-            {
-                close();
-            });
+            Save = ui_builder.build<SaveCommand>(this);
+            Cancel = ui_builder.build<CancelCommand>(this);
             date_of_birth = Clock.today();
         }
 
