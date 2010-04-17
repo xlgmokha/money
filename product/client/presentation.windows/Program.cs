@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Security.Principal;
 using System.Windows;
 using System.Windows.Threading;
@@ -12,6 +13,7 @@ namespace presentation.windows
         [STAThread]
         static public void Main()
         {
+            Process.Start("presentation.windows.server.exe");
             AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
             Dispatcher.CurrentDispatcher.UnhandledException += (o, e) =>
             {

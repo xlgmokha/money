@@ -1,7 +1,6 @@
 using System.Windows;
 using System.Windows.Controls;
 using MoMoney.Service.Infrastructure.Eventing;
-using presentation.windows.views;
 
 namespace presentation.windows
 {
@@ -39,10 +38,7 @@ namespace presentation.windows
                 dialog.Close();
             };
             presenter.present();
-            region_manager.region<ShellWindow>(x =>
-            {
-                dialog.show_dialog(x);
-            });
+            dialog.open();
         }
 
         public void load_region<Presenter, Region>() where Presenter : windows.Presenter where Region : FrameworkElement, View<Presenter>, new()

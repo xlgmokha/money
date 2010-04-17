@@ -1,31 +1,26 @@
-using MoMoney.Service.Infrastructure.Threading;
-using presentation.windows.commands;
-using presentation.windows.commands.dto;
+using presentation.windows.common;
+using presentation.windows.common.messages;
+using presentation.windows.service.infrastructure;
 
 namespace presentation.windows.presenters
 {
     public class SaveCommand : UICommand<AddFamilyMemberPresenter>
     {
-        CommandBuilder command_builder;
-        CommandProcessor processor;
+        ServiceBus bus;
 
-        public SaveCommand(CommandBuilder command_builder, CommandProcessor processor)
+        public SaveCommand(ServiceBus bus)
         {
-            this.command_builder = command_builder;
-            this.processor = processor;
+            this.bus = bus;
         }
 
         protected override void run(AddFamilyMemberPresenter presenter)
         {
-            processor.add(command_builder
-                              .prepare(new FamilyMemberToAdd
-                                       {
-                                           first_name = presenter.first_name,
-                                           last_name = presenter.last_name,
-                                           date_of_birth = presenter.date_of_birth
-                                       })
-                              .build<AddFamilyMemberCommand>("Adding Family Member")
-                );
+            bus.publish<FamilyMemberToAdd>(x =>
+            {
+                x.first_name = presenter.first_name;
+                x.last_name = presenter.last_name;
+                x.date_of_birth = presenter.date_of_birth;
+            });
             presenter.close();
         }
     }

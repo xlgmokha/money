@@ -42,22 +42,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\automapper\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="FluentNHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\app\nhibernate\FluentNHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\app\nhibernate\NHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\app\nhibernate\NHibernate.ByteCode.Castle.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.Linq, Version=1.0.0.4000, Culture=neutral, PublicKeyToken=444cf6a87fdab271, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\lib\app\nhibernate\NHibernate.Linq.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -89,7 +73,15 @@
     <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="views\AccountTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="views\AddFamilyMemberDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\AddNewAccountDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,61 +114,44 @@
     <Compile Include="ApplicationController.cs" />
     <Compile Include="bootstrappers\Bootstrapper.cs" />
     <Compile Include="bootstrappers\ConfigureMappings.cs" />
-    <Compile Include="domain\payroll\Calendar.cs" />
-    <Compile Include="domain\payroll\Compensation.cs" />
-    <Compile Include="domain\payroll\Date.cs" />
-    <Compile Include="domain\payroll\Grant.cs" />
-    <Compile Include="domain\payroll\History.cs" />
-    <Compile Include="domain\payroll\Money.cs" />
-    <Compile Include="domain\payroll\Unit.cs" />
-    <Compile Include="domain\payroll\UnitPrice.cs" />
     <Compile Include="events\SelectedFamilyMember.cs" />
-    <Compile Include="orm\nhibernate\NHibernateUnitOfWorkFactory.cs" />
-    <Compile Include="orm\nhibernate\NHibernateUnitOfWork.cs" />
-    <Compile Include="infrastructure\DefaultMapper.cs" />
-    <Compile Include="domain\Entity.cs" />
-    <Compile Include="events\AddedNewFamilyMember.cs" />
-    <Compile Include="commands\UpdateOnLongRunningProcess.cs" />
+    <Compile Include="service\infrastructure\UpdateOnLongRunningProcess.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="DialogPresenter.cs" />
-    <Compile Include="domain\Person.cs" />
-    <Compile Include="orm\mappings\DateUserType.cs" />
-    <Compile Include="orm\mappings\MappingAssembly.cs" />
-    <Compile Include="orm\mappings\PersonMapping.cs" />
-    <Compile Include="orm\nhibernate\NHibernatePersonRepository.cs" />
-    <Compile Include="orm\PersonRepository.cs" />
+    <Compile Include="presenters\AccountPresenter.cs" />
     <Compile Include="presenters\AddFamilyMemberPresenter.cs" />
-    <Compile Include="commands\CommandBuilder.cs" />
-    <Compile Include="commands\AddFamilyMemberCommand.cs" />
+    <Compile Include="service\infrastructure\CommandBuilder.cs" />
+    <Compile Include="presenters\AddNewAccountPresenter.cs" />
     <Compile Include="presenters\CancelCommand.cs" />
     <Compile Include="presenters\CompensationPresenter.cs" />
-    <Compile Include="commands\dto\FamilyMemberToAdd.cs" />
-    <Compile Include="commands\ContainerCommandBuilder.cs" />
-    <Compile Include="commands\NamedCommand.cs" />
-    <Compile Include="commands\ContainerAwareCommandBuilder.cs" />
+    <Compile Include="service\infrastructure\ContainerCommandBuilder.cs" />
+    <Compile Include="service\infrastructure\NamedCommand.cs" />
+    <Compile Include="service\infrastructure\ContainerAwareCommandBuilder.cs" />
     <Compile Include="presenters\SaveCommand.cs" />
     <Compile Include="presenters\UICommand.cs" />
     <Compile Include="presenters\UICommandBuilder.cs" />
     <Compile Include="presenters\WpfBindingExtensinos.cs" />
     <Compile Include="presenters\WpfCommandBuilder.cs" />
     <Compile Include="queries\ContainerAwareQueryBuilder.cs" />
-    <Compile Include="queries\FindAllFamily.cs" />
-    <Compile Include="queries\FindMemberIdentifiedBy.cs" />
     <Compile Include="presenters\SelectedFamilyMemberPresenter.cs" />
     <Compile Include="presenters\StatusBarPresenter.cs" />
     <Compile Include="presenters\Observable.cs" />
     <Compile Include="queries\PersonDetails.cs" />
     <Compile Include="queries\QueryBuilder.cs" />
-    <Compile Include="service\infrastructure\ServiceBus.cs" />
     <Compile Include="View.cs" />
+    <Compile Include="views\AccountTab.xaml.cs">
+      <DependentUpon>AccountTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="views\AddFamilyMemberDialog.xaml.cs">
       <DependentUpon>AddFamilyMemberDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\AddNewAccountDialog.xaml.cs">
+      <DependentUpon>AddNewAccountDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="views\CompensationTab.xaml.cs">
       <DependentUpon>CompensationTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="bootstrappers\ComposeShell.cs" />
-    <Compile Include="NeedStartup.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="PresenterFactory.cs" />
     <Compile Include="RegionManager.cs" />
@@ -238,6 +213,10 @@
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\presentation.windows.common\presentation.windows.common.csproj">
+      <Project>{72B22B1E-1B62-41A6-9392-BD5283D17F79}</Project>
+      <Name>presentation.windows.common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\boot\boot.csproj">
       <Project>{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}</Project>
       <Name>boot</Name>
@@ -259,6 +238,7 @@
     <Resource Include="log4net.config.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="infrastructure\" />
     <Folder Include="service\application\" />
     <Folder Include="service\domain\" />
   </ItemGroup>

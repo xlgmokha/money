@@ -1,4 +1,5 @@
 using System.Windows.Controls;
+using presentation.windows.common;
 using presentation.windows.presenters;
 using presentation.windows.views;
 
@@ -18,6 +19,7 @@ namespace presentation.windows.bootstrappers
         public void run()
         {
             controller.add_tab<CompensationPresenter, CompensationTab>();
+            controller.add_tab<AccountPresenter, AccountTab>();
             region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "Expenses"}));
             region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "RRSP"}));
             region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "Party"}));

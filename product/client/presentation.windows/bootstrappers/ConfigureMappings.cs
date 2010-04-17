@@ -1,5 +1,6 @@
 using AutoMapper;
-using presentation.windows.domain;
+using presentation.windows.common;
+using presentation.windows.common.messages;
 using presentation.windows.queries;
 
 namespace presentation.windows.bootstrappers
@@ -8,14 +9,16 @@ namespace presentation.windows.bootstrappers
     {
         public void run()
         {
-            Mapper
-                .CreateMap<Person, PersonDetails>()
-                .ConvertUsing(x => new PersonDetails
-                                   {
-                                       id = x.id,
-                                       first_name = x.first_name,
-                                       last_name = x.last_name,
-                                   });
+            Mapper.CreateMap<AddedNewFamilyMember, PersonDetails>()
+                .ConvertUsing(x =>
+                {
+                    return new PersonDetails
+                           {
+                               id = x.id,
+                               first_name = x.first_name,
+                               last_name = x.last_name,
+                           };
+                });
         }
     }
 }

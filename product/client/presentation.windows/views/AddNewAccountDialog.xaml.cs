@@ -1,11 +1,11 @@
-using System.Windows;
+﻿using System.Windows;
 using presentation.windows.presenters;
 
 namespace presentation.windows.views
 {
-    public partial class AddFamilyMemberDialog : Dialog<AddFamilyMemberPresenter>
+    public partial class AddNewAccountDialog : Dialog<AddNewAccountPresenter>
     {
-        public AddFamilyMemberDialog()
+        public AddNewAccountDialog()
         {
             InitializeComponent();
         }

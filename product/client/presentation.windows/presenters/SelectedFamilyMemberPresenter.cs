@@ -1,5 +1,9 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using gorilla.commons.utility;
 using MoMoney.Service.Infrastructure.Eventing;
+using presentation.windows.common;
+using presentation.windows.common.messages;
 using presentation.windows.events;
 using presentation.windows.queries;
 
@@ -8,13 +12,16 @@ namespace presentation.windows.presenters
     public class SelectedFamilyMemberPresenter : Observable<SelectedFamilyMemberPresenter>, Presenter, EventSubscriber<AddedNewFamilyMember>
     {
         PersonDetails selected_member;
-        QueryBuilder builder;
         EventAggregator event_aggregator;
+        Mapper mapper;
+        ServiceBus bus;
 
-        public SelectedFamilyMemberPresenter(QueryBuilder builder, EventAggregator event_aggregator)
+        public SelectedFamilyMemberPresenter(EventAggregator event_aggregator, Mapper mapper, ServiceBus bus)
         {
-            this.builder = builder;
+            this.bus = bus;
+            this.mapper = mapper;
             this.event_aggregator = event_aggregator;
+            family_members = new ObservableCollection<PersonDetails>();
         }
 
         public ICollection<PersonDetails> family_members { get; set; }
@@ -32,13 +39,12 @@ namespace presentation.windows.presenters
 
         public void present()
         {
-            builder.build<FindAllFamily>(x => family_members = x.fetch().to_observable());
-            update(x => x.family_members);
+            bus.publish<FindAllFamily>();
         }
 
         public void notify(AddedNewFamilyMember message)
         {
-            builder.build<FindMemberIdentifiedBy>(x => family_members.Add(x.fetch(message.id)));
+            family_members.Add(mapper.map_from<AddedNewFamilyMember, PersonDetails>(message));
             update(x => x.family_members);
         }
     }

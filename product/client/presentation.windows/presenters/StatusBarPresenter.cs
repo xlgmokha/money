@@ -1,6 +1,6 @@
 using System.Threading;
 using MoMoney.Service.Infrastructure.Eventing;
-using presentation.windows.commands;
+using presentation.windows.service.infrastructure;
 
 namespace presentation.windows.presenters
 {
