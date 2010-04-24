@@ -13,7 +13,7 @@ namespace presentation.windows
         [STAThread]
         static public void Main()
         {
-            Process.Start("presentation.windows.server.exe");
+            Process.Start(@"D:\development\mokhan\git\mo.money\product\presentation.windows.server\bin\Debug\presentation.windows.server.exe");
             AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
             Dispatcher.CurrentDispatcher.UnhandledException += (o, e) =>
             {

@@ -33,6 +33,7 @@ namespace presentation.windows.server
 
             //needs startups
             builder.Register<ConfigureMappings>().As<NeedStartup>();
+            builder.Register<StartServiceBus>().As<NeedStartup>();
 
             // infrastructure
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();

@@ -50,7 +50,8 @@ namespace presentation.windows.bootstrappers
             builder.Register<SelectedFamilyMemberPresenter>().SingletonScoped();
             builder.Register<AddFamilyMemberPresenter>();
             builder.Register<AccountPresenter>();
-            builder.Register<SaveCommand>();
+            builder.Register<AccountPresenter.AddNewAccountCommand>();
+            builder.Register<AddFamilyMemberPresenter.SaveCommand>();
             builder.Register<CancelCommand>();
 
             // commanding
