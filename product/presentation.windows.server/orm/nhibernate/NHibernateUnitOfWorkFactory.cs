@@ -10,6 +10,7 @@ namespace presentation.windows.server.orm.nhibernate
     {
         readonly ISessionFactory factory;
         readonly IContext context;
+        TypedKey<ISession> key = new TypedKey<ISession>();
 
         public NHibernateUnitOfWorkFactory(ISessionFactory factory, IContext context)
         {
@@ -19,11 +20,7 @@ namespace presentation.windows.server.orm.nhibernate
 
         public IUnitOfWork create()
         {
-            var key = new TypedKey<ISession>();
-            if (context.contains(key))
-            {
-                return new EmptyUnitOfWork();
-            }
+            if (context.contains(key)) return new EmptyUnitOfWork();
             var open_session = factory.OpenSession();
             context.add(key, open_session);
             return new NHibernateUnitOfWork(open_session, context);

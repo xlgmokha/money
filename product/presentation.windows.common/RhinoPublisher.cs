@@ -3,6 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Transactions;
 using gorilla.commons.utility;
+using ProtoBuf;
 using Rhino.Queues;
 
 namespace presentation.windows.common
@@ -30,11 +31,11 @@ namespace presentation.windows.common
         {
             using (var tx = new TransactionScope())
             {
-                var buffer = new byte[255];
-                using (var stream = new MemoryStream(buffer))
+                using (var stream = new MemoryStream())
                 {
+                    //Serializer.Serialize(stream, item);
                     formatter.Serialize(stream, item);
-                    sender.Send(new Uri("rhino.queues://localhost:{0}/{1}".formatted_using(port, destination_queue)), new MessagePayload {Data = buffer});
+                    sender.Send(new Uri("rhino.queues://localhost:{0}/{1}".formatted_using(port, destination_queue)), new MessagePayload {Data = stream.ToArray()});
                 }
                 tx.Complete();
             }

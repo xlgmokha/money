@@ -17,11 +17,13 @@ using NHibernate.ByteCode.Castle;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using presentation.windows.common;
+using presentation.windows.server.handlers;
 using presentation.windows.server.orm;
 using presentation.windows.server.orm.mappings;
 using presentation.windows.server.orm.nhibernate;
 using Rhino.Queues;
 using Environment = System.Environment;
+using ISession = NHibernate.ISession;
 using ISessionFactory = NHibernate.ISessionFactory;
 
 namespace presentation.windows.server
@@ -31,8 +33,10 @@ namespace presentation.windows.server
         static public void run()
         {
             var builder = new ContainerBuilder();
-            Resolve.initialize_with(new AutofacDependencyRegistryBuilder(builder).build());
+            var registry = new AutofacDependencyRegistryBuilder(builder).build();
+            Resolve.initialize_with(registry);
 
+            builder.Register(x => registry).As<DependencyRegistry>().SingletonScoped();
             //needs startups
             builder.Register<ConfigureMappings>().As<NeedStartup>();
             builder.Register<StartServiceBus>().As<NeedStartup>();
@@ -41,26 +45,29 @@ namespace presentation.windows.server
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
             builder.Register<DefaultMapper>().As<Mapper>().SingletonScoped();
 
-            var manager = new QueueManager(new IPEndPoint(IPAddress.Loopback, 2200),"server.esent");
+            var manager = new QueueManager(new IPEndPoint(IPAddress.Loopback, 2200), "server.esent");
             manager.CreateQueues("server");
             builder.Register(x => new RhinoPublisher("client", 2201, manager)).As<ServiceBus>().SingletonScoped();
             builder.Register(x => new RhinoReceiver(manager.GetQueue("server"))).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
 
             var session_factory = bootstrap_nhibernate();
-            builder.Register(x => session_factory).SingletonScoped();
-            builder.Register(x => current_session(x));
+            builder.Register<ISessionFactory>(x => session_factory).SingletonScoped();
+            builder.Register<ISession>(x => current_session(x));
             builder.Register<NHibernateUnitOfWorkFactory>().As<IUnitOfWorkFactory>();
-            builder.Register(x => create_application_context()).SingletonScoped();
+            builder.Register<IContext>(x => create_application_context()).SingletonScoped();
 
             // commanding
             //builder.Register<ContainerCommandBuilder>().As<CommandBuilder>().SingletonScoped();
             builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
-            //builder.Register<AddFamilyMemberCommand>();
+            builder.Register<AddNewFamilyMemberHandler>().As<Handler>();
+            builder.Register<FindAllFamilyHandler>().As<Handler>();
+            builder.Register<SaveNewAccountCommand>().As<Handler>();
 
             // queries
 
             // repositories
             builder.Register<NHibernatePersonRepository>().As<PersonRepository>().FactoryScoped();
+            builder.Register<NHibernateAccountRepository>().As<AccountRepository>().FactoryScoped();
 
             Resolve.the<IEnumerable<NeedStartup>>().each(x => x.run());
             Resolve.the<CommandProcessor>().run();
@@ -73,7 +80,8 @@ namespace presentation.windows.server
 
         static ISession current_session(Autofac.IContext x)
         {
-            var session = x.Resolve<IContext>().value_for(new TypedKey<ISession>());
+            var context = x.Resolve<IContext>();
+            var session = context.value_for(new TypedKey<ISession>());
             if (null == session) Debugger.Break();
             return session;
         }

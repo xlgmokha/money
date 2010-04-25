@@ -47,6 +47,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\nhibernate\FluentNHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="protobuf-net, Version=1.0.0.282, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\thirdparty\proto-buf.net\protobuf-net.dll</HintPath>
+    </Reference>
     <Reference Include="Rhino.Queues, Version=1.2.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\thirdparty\rhino.queues\Rhino.Queues.dll</HintPath>
@@ -67,7 +71,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractHandler.cs" />
     <Compile Include="DefaultMapper.cs" />
+    <Compile Include="Handler.cs" />
+    <Compile Include="MessageHandler.cs" />
     <Compile Include="messages\AddedNewFamilyMember.cs" />
     <Compile Include="messages\CreateNewAccount.cs" />
     <Compile Include="messages\FamilyMemberToAdd.cs" />
@@ -86,6 +93,10 @@
     <ProjectReference Include="..\client\service.infrastructure\service.infrastructure.csproj">
       <Project>{81412692-F3EE-4FBF-A7C7-69454DD1BD46}</Project>
       <Name>service.infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\commons\infrastructure\infrastructure.csproj">
+      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
+      <Name>infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\commons\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>

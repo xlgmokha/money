@@ -5,7 +5,7 @@ using presentation.windows.server.orm;
 
 namespace presentation.windows.server.handlers
 {
-    public class AddNewFamilyMemberHandler : Handler<FamilyMemberToAdd>
+    public class AddNewFamilyMemberHandler : AbstractHandler<FamilyMemberToAdd>
     {
         PersonRepository people;
         ServiceBus bus;
@@ -16,7 +16,7 @@ namespace presentation.windows.server.handlers
             this.bus = bus;
         }
 
-        public void handle(FamilyMemberToAdd item)
+        public override void handle(FamilyMemberToAdd item)
         {
             var person = Person.New(item.first_name, item.last_name, item.date_of_birth);
             people.save(person);

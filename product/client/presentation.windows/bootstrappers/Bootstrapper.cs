@@ -11,7 +11,6 @@ using gorilla.commons.utility;
 using MoMoney.Service.Infrastructure.Eventing;
 using MoMoney.Service.Infrastructure.Threading;
 using presentation.windows.common;
-using presentation.windows.common.messages;
 using presentation.windows.presenters;
 using presentation.windows.queries;
 using presentation.windows.service.infrastructure;
@@ -25,7 +24,10 @@ namespace presentation.windows.bootstrappers
         static public ShellWindow create_window()
         {
             var builder = new ContainerBuilder();
-            Resolve.initialize_with(new AutofacDependencyRegistryBuilder(builder).build());
+            var registry = new AutofacDependencyRegistryBuilder(builder).build();
+            Resolve.initialize_with(registry);
+            builder.Register(x => registry).As<DependencyRegistry>().SingletonScoped();
+
             var shell_window = new ShellWindow();
             builder.Register(x => shell_window).SingletonScoped();
             builder.Register(x => shell_window).As<RegionManager>().SingletonScoped();
@@ -39,7 +41,7 @@ namespace presentation.windows.bootstrappers
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
             builder.Register<DefaultMapper>().As<Mapper>().SingletonScoped();
 
-            var manager = new QueueManager(new IPEndPoint(IPAddress.Loopback, 2201),"client.esent");
+            var manager = new QueueManager(new IPEndPoint(IPAddress.Loopback, 2201), "client.esent");
             manager.CreateQueues("client");
             builder.Register(x => new RhinoPublisher("server", 2200, manager)).As<ServiceBus>().SingletonScoped();
             builder.Register(x => new RhinoReceiver(manager.GetQueue("client"))).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
@@ -68,7 +70,6 @@ namespace presentation.windows.bootstrappers
             builder.Register<WpfCommandBuilder>().As<UICommandBuilder>();
 
             // queries
-            builder.Register<FindAllFamily>();
             builder.Register<ContainerAwareQueryBuilder>().As<QueryBuilder>();
 
             Resolve.the<IEnumerable<NeedStartup>>().each(x => x.run());

@@ -6,7 +6,7 @@ using presentation.windows.server.orm;
 
 namespace presentation.windows.server.handlers
 {
-    public class FindAllFamilyHandler : Handler<FindAllFamily>
+    public class FindAllFamilyHandler : AbstractHandler<FindAllFamily>
     {
         PersonRepository people;
         Mapper mapper;
@@ -19,7 +19,7 @@ namespace presentation.windows.server.handlers
             this.mapper = mapper;
         }
 
-        public void handle(FindAllFamily item)
+        public override void handle(FindAllFamily item)
         {
             people
                 .find_all()

@@ -5,7 +5,7 @@ using presentation.windows.server.orm;
 
 namespace presentation.windows.server.handlers
 {
-    public class SaveNewAccountCommand : Handler<CreateNewAccount>
+    public class SaveNewAccountCommand : AbstractHandler<CreateNewAccount>
     {
         AccountRepository accounts;
         ServiceBus bus;
@@ -16,7 +16,7 @@ namespace presentation.windows.server.handlers
             this.bus = bus;
         }
 
-        public void handle(CreateNewAccount item)
+        public override void handle(CreateNewAccount item)
         {
             accounts.save(Account.New(item.account_name, Currency.named(item.currency)));
             bus.publish<NewAccountCreated>(x => x.name = item.account_name);

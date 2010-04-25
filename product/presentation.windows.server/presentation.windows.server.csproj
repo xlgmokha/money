@@ -100,12 +100,12 @@
     <Compile Include="domain\payroll\UnitPrice.cs" />
     <Compile Include="domain\Person.cs" />
     <Compile Include="handlers\FindAllFamilyHandler.cs" />
-    <Compile Include="handlers\Handler.cs" />
     <Compile Include="handlers\SaveNewAccountCommand.cs" />
     <Compile Include="orm\AccountRepository.cs" />
     <Compile Include="orm\mappings\DateUserType.cs" />
     <Compile Include="orm\mappings\MappingAssembly.cs" />
     <Compile Include="orm\mappings\PersonMapping.cs" />
+    <Compile Include="orm\nhibernate\NHibernateAccountRepository.cs" />
     <Compile Include="orm\nhibernate\NHibernatePersonRepository.cs" />
     <Compile Include="orm\nhibernate\NHibernateUnitOfWork.cs" />
     <Compile Include="orm\nhibernate\NHibernateUnitOfWorkFactory.cs" />
@@ -143,6 +143,11 @@
       <Project>{72B22B1E-1B62-41A6-9392-BD5283D17F79}</Project>
       <Name>presentation.windows.common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="log4net.config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
