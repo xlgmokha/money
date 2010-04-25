@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Net;
 using System.Threading;
 using System.Windows.Threading;
 using Autofac.Builder;
@@ -15,6 +16,7 @@ using presentation.windows.presenters;
 using presentation.windows.queries;
 using presentation.windows.service.infrastructure;
 using presentation.windows.views;
+using Rhino.Queues;
 
 namespace presentation.windows.bootstrappers
 {
@@ -36,8 +38,11 @@ namespace presentation.windows.bootstrappers
             // infrastructure
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
             builder.Register<DefaultMapper>().As<Mapper>().SingletonScoped();
-            builder.Register(x => new RhinoPublisher(23456, "server", "client_sender.esent", 2201)).As<ServiceBus>().SingletonScoped();
-            builder.Register(x => new RhinoReceiver(23457, "client", "client_receiver.esent")).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
+
+            var manager = new QueueManager(new IPEndPoint(IPAddress.Loopback, 2201),"client.esent");
+            manager.CreateQueues("client");
+            builder.Register(x => new RhinoPublisher("server", 2200, manager)).As<ServiceBus>().SingletonScoped();
+            builder.Register(x => new RhinoReceiver(manager.GetQueue("client"))).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
 
             // presentation infrastructure
             SynchronizationContext.SetSynchronizationContext(new DispatcherSynchronizationContext());

@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
 using System.Transactions;
 using gorilla.commons.utility;
 using Rhino.Queues;
@@ -12,17 +10,11 @@ namespace presentation.windows.common
     {
         bool running = true;
         List<Observer<Message>> observers = new List<Observer<Message>>();
-        string queue_name;
         IQueue queue;
 
-        public RhinoReceiver(int port, string queue_name, string esent_name)
+        public RhinoReceiver(IQueue queue)
         {
-            this.queue_name = queue_name;
-
-            if (Directory.Exists(esent_name)) Directory.Delete(esent_name, true);
-            var manager = new QueueManager(new IPEndPoint(IPAddress.Loopback, port), esent_name);
-            manager.CreateQueues(this.queue_name);
-            queue = manager.GetQueue(this.queue_name);
+            this.queue = queue;
         }
 
         public void register(Observer<Message> observer)

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using Autofac.Builder;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
@@ -19,6 +20,7 @@ using presentation.windows.common;
 using presentation.windows.server.orm;
 using presentation.windows.server.orm.mappings;
 using presentation.windows.server.orm.nhibernate;
+using Rhino.Queues;
 using Environment = System.Environment;
 using ISessionFactory = NHibernate.ISessionFactory;
 
@@ -38,8 +40,11 @@ namespace presentation.windows.server
             // infrastructure
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
             builder.Register<DefaultMapper>().As<Mapper>().SingletonScoped();
-            builder.Register(x => new RhinoPublisher(23457, "client", "server_sender.esent", 23456)).As<ServiceBus>().SingletonScoped();
-            builder.Register(x => new RhinoReceiver(23456, "server", "server_receiver.esent")).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
+
+            var manager = new QueueManager(new IPEndPoint(IPAddress.Loopback, 2200),"server.esent");
+            manager.CreateQueues("server");
+            builder.Register(x => new RhinoPublisher("client", 2201, manager)).As<ServiceBus>().SingletonScoped();
+            builder.Register(x => new RhinoReceiver(manager.GetQueue("server"))).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
 
             var session_factory = bootstrap_nhibernate();
             builder.Register(x => session_factory).SingletonScoped();
