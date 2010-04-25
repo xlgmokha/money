@@ -1,4 +1,6 @@
 ﻿using System;
+using Gorilla.Commons.Infrastructure.Container;
+using presentation.windows.common;
 
 namespace presentation.windows.server
 {
@@ -8,6 +10,7 @@ namespace presentation.windows.server
         {
             Bootstrapper.run();
             Console.ReadLine();
+            Resolve.the<Receiver>().stop();
         }
     }
 }

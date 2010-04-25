@@ -39,15 +39,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.dll</HintPath>
     </Reference>
+    <Reference Include="Esent.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b93b4ad6c4b80595, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\thirdparty\rhino.queues\Esent.Interop.dll</HintPath>
+    </Reference>
     <Reference Include="FluentNHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\nhibernate\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Queues, Version=1.2.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\thirdparty\rhino.queues\Rhino.Queues.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -64,9 +73,13 @@
     <Compile Include="messages\FamilyMemberToAdd.cs" />
     <Compile Include="messages\FindAllFamily.cs" />
     <Compile Include="messages\NewAccountCreated.cs" />
+    <Compile Include="messages\StartedApplication.cs" />
     <Compile Include="MsmqBus.cs" />
     <Compile Include="NeedStartup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receiver.cs" />
+    <Compile Include="RhinoPublisher.cs" />
+    <Compile Include="RhinoReceiver.cs" />
     <Compile Include="ServiceBus.cs" />
   </ItemGroup>
   <ItemGroup>

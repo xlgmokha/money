@@ -38,6 +38,8 @@ namespace presentation.windows.server
             // infrastructure
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
             builder.Register<DefaultMapper>().As<Mapper>().SingletonScoped();
+            builder.Register(x => new RhinoPublisher(23457, "client", "server_sender.esent", 23456)).As<ServiceBus>().SingletonScoped();
+            builder.Register(x => new RhinoReceiver(23456, "server", "server_receiver.esent")).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
 
             var session_factory = bootstrap_nhibernate();
             builder.Register(x => session_factory).SingletonScoped();

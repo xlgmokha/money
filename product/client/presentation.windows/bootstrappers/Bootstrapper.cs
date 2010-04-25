@@ -31,10 +31,13 @@ namespace presentation.windows.bootstrappers
             //needs startups
             builder.Register<ComposeShell>().As<NeedStartup>();
             builder.Register<ConfigureMappings>().As<NeedStartup>();
+            builder.Register<StartServiceBus>().As<NeedStartup>();
 
             // infrastructure
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
             builder.Register<DefaultMapper>().As<Mapper>().SingletonScoped();
+            builder.Register(x => new RhinoPublisher(23456, "server", "client_sender.esent", 2201)).As<ServiceBus>().SingletonScoped();
+            builder.Register(x => new RhinoReceiver(23457, "client", "client_receiver.esent")).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
 
             // presentation infrastructure
             SynchronizationContext.SetSynchronizationContext(new DispatcherSynchronizationContext());

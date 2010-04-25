@@ -42,6 +42,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\lib\app\automapper\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Queues, Version=1.2.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\thirdparty\rhino.queues\Rhino.Queues.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -114,6 +118,7 @@
     <Compile Include="ApplicationController.cs" />
     <Compile Include="bootstrappers\Bootstrapper.cs" />
     <Compile Include="bootstrappers\ConfigureMappings.cs" />
+    <Compile Include="bootstrappers\StartServiceBus.cs" />
     <Compile Include="events\SelectedFamilyMember.cs" />
     <Compile Include="service\infrastructure\UpdateOnLongRunningProcess.cs" />
     <Compile Include="Dialog.cs" />

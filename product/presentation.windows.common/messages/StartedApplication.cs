@@ -3,8 +3,8 @@ using System;
 namespace presentation.windows.common.messages
 {
     [Serializable]
-    public class NewAccountCreated
+    public class StartedApplication
     {
-        public string name { get; set; }
+        public string message { get; set; }
     }
 }

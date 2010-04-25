@@ -36,6 +36,6 @@ namespace presentation.windows.common
             publish(item);
         }
 
-        void process(Message message) {}
+        void process(Message message) { }
     }
 }

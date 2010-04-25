@@ -2,6 +2,7 @@ using System;
 
 namespace presentation.windows.common.messages
 {
+    [Serializable]
     public class FamilyMemberToAdd
     {
         public string first_name { get; set; }

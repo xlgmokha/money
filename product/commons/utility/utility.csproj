@@ -74,6 +74,7 @@
     <Compile Include="Import.cs" />
     <Compile Include="Mapper.cs" />
     <Compile Include="Notification.cs" />
+    <Compile Include="Observer.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Query.cs" />
     <Compile Include="Registry.cs" />

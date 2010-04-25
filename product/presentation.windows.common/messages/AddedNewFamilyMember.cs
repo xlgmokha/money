@@ -3,6 +3,7 @@ using MoMoney.Service.Infrastructure.Eventing;
 
 namespace presentation.windows.common.messages
 {
+    [Serializable]
     public class AddedNewFamilyMember : IEvent
     {
         public Guid id { get; set; }

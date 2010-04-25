@@ -3,7 +3,7 @@ using Gorilla.Commons.Infrastructure.Container;
 using presentation.windows.common;
 using presentation.windows.common.messages;
 
-namespace presentation.windows.server
+namespace presentation.windows.bootstrappers
 {
     public class StartServiceBus : NeedStartup
     {
@@ -11,8 +11,9 @@ namespace presentation.windows.server
         {
             var receiver = Resolve.the<RhinoReceiver>();
             receiver.register(x => Console.Out.WriteLine(x));
-            Resolve.the<ServiceBus>().publish<StartedApplication>(x => x.message = "server");
             receiver.run();
+
+            //Resolve.the<ServiceBus>().publish<StartedApplication>(x => x.message = "client");
         }
     }
 }
