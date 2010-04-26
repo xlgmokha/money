@@ -38,8 +38,8 @@ namespace presentation.windows.server
 
             builder.Register(x => registry).As<DependencyRegistry>().SingletonScoped();
             //needs startups
-            builder.Register<ConfigureMappings>().As<NeedStartup>();
             builder.Register<StartServiceBus>().As<NeedStartup>();
+            builder.Register<ConfigureMappings>().As<NeedStartup>();
 
             // infrastructure
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
@@ -48,7 +48,7 @@ namespace presentation.windows.server
             var manager = new QueueManager(new IPEndPoint(IPAddress.Loopback, 2200), "server.esent");
             manager.CreateQueues("server");
             builder.Register(x => new RhinoPublisher("client", 2201, manager)).As<ServiceBus>().SingletonScoped();
-            builder.Register(x => new RhinoReceiver(manager.GetQueue("server"))).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
+            builder.Register(x => new RhinoReceiver(manager.GetQueue("server"), x.Resolve<CommandProcessor>())).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
 
             var session_factory = bootstrap_nhibernate();
             builder.Register<ISessionFactory>(x => session_factory).SingletonScoped();

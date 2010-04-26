@@ -33,9 +33,9 @@ namespace presentation.windows.bootstrappers
             builder.Register(x => shell_window).As<RegionManager>().SingletonScoped();
 
             //needs startups
+            builder.Register<StartServiceBus>().As<NeedStartup>();
             builder.Register<ComposeShell>().As<NeedStartup>();
             builder.Register<ConfigureMappings>().As<NeedStartup>();
-            builder.Register<StartServiceBus>().As<NeedStartup>();
 
             // infrastructure
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
@@ -44,7 +44,7 @@ namespace presentation.windows.bootstrappers
             var manager = new QueueManager(new IPEndPoint(IPAddress.Loopback, 2201), "client.esent");
             manager.CreateQueues("client");
             builder.Register(x => new RhinoPublisher("server", 2200, manager)).As<ServiceBus>().SingletonScoped();
-            builder.Register(x => new RhinoReceiver(manager.GetQueue("client"))).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
+            builder.Register(x => new RhinoReceiver(manager.GetQueue("client"), x.Resolve<CommandProcessor>())).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
 
             // presentation infrastructure
             SynchronizationContext.SetSynchronizationContext(new DispatcherSynchronizationContext());

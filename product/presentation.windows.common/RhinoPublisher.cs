@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Transactions;
+using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
 using ProtoBuf;
 using Rhino.Queues;
@@ -29,17 +30,26 @@ namespace presentation.windows.common
 
         public void publish<T>(T item) where T : new()
         {
-            using (var tx = new TransactionScope())
+            using (var transaction = new TransactionScope())
             {
-                using (var stream = new MemoryStream())
-                {
-                    //Serializer.Serialize(stream, item);
-                    formatter.Serialize(stream, item);
-                    sender.Send(new Uri("rhino.queues://localhost:{0}/{1}".formatted_using(port, destination_queue)), new MessagePayload {Data = stream.ToArray()});
-                }
-                tx.Complete();
+                var destination = "rhino.queues://localhost:{0}/{1}".formatted_using(port, destination_queue);
+                this.log().debug("sending {0} to {1}", item, destination);
+                sender.Send(new Uri(destination), create_payload_from(item));
+                transaction.Complete();
             }
-            //sender.WaitForAllMessagesToBeSent();
+        }
+
+        MessagePayload create_payload_from<T>(T item)
+        {
+            using (var stream = new MemoryStream())
+            {
+                Serializer.Serialize(stream, item);
+                //formatter.Serialize(stream, item);
+
+                var payload = new MessagePayload {Data = stream.ToArray()};
+                payload.Headers["type"] = typeof (T).FullName;
+                return payload;
+            }
         }
 
         public void publish<T>(Action<T> configure) where T : new()

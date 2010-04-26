@@ -1,5 +1,6 @@
 using System.Threading;
 using Gorilla.Commons.Infrastructure.Container;
+using MoMoney.Service.Infrastructure.Threading;
 using momoney.service.infrastructure.transactions;
 using presentation.windows.common;
 using presentation.windows.common.messages;
@@ -20,7 +21,8 @@ namespace presentation.windows.server
                     unit_of_work.commit();
                 }
             });
-            ThreadPool.QueueUserWorkItem(x => receiver.run());
+            Resolve.the<CommandProcessor>().add(receiver);
+            //ThreadPool.QueueUserWorkItem(x => receiver.run());
             Resolve.the<ServiceBus>().publish<StartedApplication>(x => x.message = "server");
         }
     }

@@ -4,8 +4,8 @@ namespace presentation.windows.common
 {
     public interface ServiceBus
     {
-        void publish<T>() where T : new();
-        void publish<T>(T item) where T : new();
-        void publish<T>(Action<T> configure) where T : new();
+        void publish<Message>() where Message : new();
+        void publish<Message>(Message item) where Message : new();
+        void publish<Message>(Action<Message> configure) where Message : new();
     }
 }

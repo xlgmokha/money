@@ -9,5 +9,10 @@ namespace presentation.windows.common.messages
     {
         [ProtoMember(1)]
         public string message { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString() + message;
+        }
     }
 }

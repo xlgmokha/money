@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Transactions;
+using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
+using MoMoney.Service.Infrastructure.Threading;
 using Rhino.Queues;
 using Rhino.Queues.Model;
 
@@ -8,13 +11,14 @@ namespace presentation.windows.common
 {
     public class RhinoReceiver : Receiver
     {
-        bool running = true;
         List<Observer<Message>> observers = new List<Observer<Message>>();
         IQueue queue;
+        CommandProcessor processor;
 
-        public RhinoReceiver(IQueue queue)
+        public RhinoReceiver(IQueue queue, CommandProcessor processor)
         {
             this.queue = queue;
+            this.processor = processor;
         }
 
         public void register(Observer<Message> observer)
@@ -24,21 +28,23 @@ namespace presentation.windows.common
 
         public void run()
         {
-            running = true;
-            while (running)
+            try
             {
                 using (var transaction = new TransactionScope())
                 {
                     var message = queue.Receive();
-                    observers.each(x => x(message));
+                    observers.each(observer => observer(message));
                     transaction.Complete();
                 }
             }
-        }
-
-        public void stop()
-        {
-            running = false;
+            catch (Exception e)
+            {
+                e.add_to_log();
+            }
+            finally
+            {
+                processor.add(this);
+            }
         }
     }
 }

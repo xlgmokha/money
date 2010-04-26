@@ -1,5 +1,5 @@
-using System.Threading;
 using Gorilla.Commons.Infrastructure.Container;
+using MoMoney.Service.Infrastructure.Threading;
 using presentation.windows.common;
 using presentation.windows.common.messages;
 
@@ -16,12 +16,8 @@ namespace presentation.windows.bootstrappers
                 // synchronize with ui thread?
                 handler.handler(x);
             });
-            ThreadPool.QueueUserWorkItem(x =>
-            {
-                receiver.run();
-            });
-
-            Resolve.the<ServiceBus>().publish<StartedApplication>(x => x.message = "client");
+            Resolve.the<CommandProcessor>().add(receiver);
+            //Resolve.the<ServiceBus>().publish<StartedApplication>(x => x.message = "client");
         }
     }
 }
