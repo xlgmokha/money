@@ -1,9 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "build", "build\build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{07187CAA-7272-4E29-A736-5CBD5118D40B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "commons", "commons", "{099D479D-7BFC-428E-A897-9189C294C9C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "support", "support", "{842107F2-46AF-4FF8-BF8B-0907B3C4B6D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "build", "build\build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "boot", "product\client\boot\boot.csproj", "{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}"
 EndProject
@@ -23,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service.contracts", "produc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service.infrastructure", "product\client\service.infrastructure\service.infrastructure.csproj", "{81412692-F3EE-4FBF-A7C7-69454DD1BD46}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "commons", "commons", "{099D479D-7BFC-428E-A897-9189C294C9C8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure", "product\commons\infrastructure\infrastructure.csproj", "{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure.thirdparty", "product\commons\infrastructure.thirdparty\infrastructure.thirdparty.csproj", "{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}"
@@ -32,8 +34,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure.thirdparty.log4net", "product\commons\infrastructure.thirdparty.log4net\infrastructure.thirdparty.log4net.csproj", "{6BDCB0C1-51E1-435A-93D8-CA02BF8E409C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utility", "product\commons\utility\utility.csproj", "{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "support", "support", "{842107F2-46AF-4FF8-BF8B-0907B3C4B6D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "product\tests\tests.csproj", "{8DA6C771-9E24-42A0-BDC5-B56D277E99CD}"
 EndProject
