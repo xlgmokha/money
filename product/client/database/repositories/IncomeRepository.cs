@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using momoney.database.transactions;
 //using MoMoney.Domain.Accounting;
 //using MoMoney.Domain.repositories;
 

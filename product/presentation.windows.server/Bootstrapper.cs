@@ -13,7 +13,6 @@ using gorilla.commons.utility;
 using momoney.database.transactions;
 using MoMoney.Service.Infrastructure.Threading;
 using momoney.service.infrastructure.transactions;
-using NHibernate.ByteCode.Castle;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using presentation.windows.common;

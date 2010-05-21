@@ -1,7 +1,6 @@
 using Gorilla.Commons.Infrastructure.Container;
 using MoMoney.Service.Infrastructure.Threading;
 using presentation.windows.common;
-using presentation.windows.common.messages;
 
 namespace presentation.windows.bootstrappers
 {
