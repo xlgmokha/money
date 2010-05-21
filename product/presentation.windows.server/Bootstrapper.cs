@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -13,6 +14,7 @@ using gorilla.commons.utility;
 using momoney.database.transactions;
 using MoMoney.Service.Infrastructure.Threading;
 using momoney.service.infrastructure.transactions;
+using NHibernate.ByteCode.Castle;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using presentation.windows.common;
@@ -88,18 +90,18 @@ namespace presentation.windows.server
         static ISessionFactory bootstrap_nhibernate()
         {
             var configuration = new Configuration();
+            //var connection = new SQLiteConnection();
             var database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney\default.db");
             var fluent_configuration = Fluently
                 .Configure(configuration)
-                //.Database(SQLiteConfiguration.Standard
-                //              .UsingFile(database_path)
-                //              .AdoNetBatchSize(500)
-                //              .ConnectionString(x => x.Is("Data Source={0};Version=3;New=True;".formatted_using(database_path)))
-                //              .ShowSql()
-                //              .ProxyFactoryFactory<ProxyFactoryFactory>()
-                //)
-                .Database(SQLiteConfiguration.Standard .UsingFile(database_path)
+                .Database(SQLiteConfiguration.Standard
+                              .UsingFile(database_path)
+                              .AdoNetBatchSize(500)
+                              .ConnectionString(x => x.Is("Data Source={0};Version=3;New=True;".formatted_using(database_path)))
+                              .ShowSql()
+                              .ProxyFactoryFactory<ProxyFactoryFactory>()
                 )
+                //.Database(SQLiteConfiguration.Standard .UsingFile(database_path) )
                 .Mappings(x =>
                 {
                     x.FluentMappings.AddFromAssemblyOf<MappingAssembly>();
