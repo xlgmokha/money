@@ -92,12 +92,14 @@ namespace presentation.windows.server
             var database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney\default.db");
             var fluent_configuration = Fluently
                 .Configure(configuration)
-                .Database(SQLiteConfiguration.Standard
-                              .UsingFile(database_path)
-                              .AdoNetBatchSize(500)
-                              .ConnectionString(x => x.Is("Data Source={0};Version=3;New=True;".formatted_using(database_path)))
-                              .ShowSql()
-                              .ProxyFactoryFactory<ProxyFactoryFactory>()
+                //.Database(SQLiteConfiguration.Standard
+                //              .UsingFile(database_path)
+                //              .AdoNetBatchSize(500)
+                //              .ConnectionString(x => x.Is("Data Source={0};Version=3;New=True;".formatted_using(database_path)))
+                //              .ShowSql()
+                //              .ProxyFactoryFactory<ProxyFactoryFactory>()
+                //)
+                .Database(SQLiteConfiguration.Standard .UsingFile(database_path)
                 )
                 .Mappings(x =>
                 {

@@ -93,10 +93,6 @@
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
       <Name>database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\domain.csproj">
-      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
-      <Name>domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTO\dto.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
       <Name>dto</Name>

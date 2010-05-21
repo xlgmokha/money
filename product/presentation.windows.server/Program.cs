@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
 using MoMoney.Service.Infrastructure.Threading;
@@ -19,8 +20,12 @@ namespace presentation.windows.server
                 AppDomain.CurrentDomain.ProcessExit += (o, e) =>
                 {
                     "shutting down".log();
-                    Resolve.the<CommandProcessor>().stop();
-                    Resolve.the<IQueueManager>().Dispose();
+                    try
+                    {
+                        Resolve.the<CommandProcessor>().stop();
+                        Resolve.the<IQueueManager>().Dispose();
+                    }
+                    catch { }
                     Environment.Exit(Environment.ExitCode);
                 };
                 Bootstrapper.run();
@@ -29,6 +34,7 @@ namespace presentation.windows.server
             catch (Exception e)
             {
                 e.add_to_log();
+                if(Debugger.IsAttached) Debugger.Break();
                 //Console.ReadLine();
             }
         }

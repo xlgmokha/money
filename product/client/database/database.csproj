@@ -128,10 +128,6 @@
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>utility %28commons\utility%29</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\domain.csproj">
-      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
-      <Name>domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

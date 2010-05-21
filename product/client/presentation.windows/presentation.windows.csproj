@@ -171,7 +171,6 @@
     <Compile Include="service\infrastructure\ContainerCommandBuilder.cs" />
     <Compile Include="service\infrastructure\NamedCommand.cs" />
     <Compile Include="service\infrastructure\ContainerAwareCommandBuilder.cs" />
-    <Compile Include="presenters\SaveCommand.cs" />
     <Compile Include="presenters\UICommand.cs" />
     <Compile Include="presenters\UICommandBuilder.cs" />
     <Compile Include="presenters\WpfBindingExtensinos.cs" />
@@ -261,18 +260,6 @@
     <ProjectReference Include="..\..\presentation.windows.common\presentation.windows.common.csproj">
       <Project>{72B22B1E-1B62-41A6-9392-BD5283D17F79}</Project>
       <Name>presentation.windows.common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\boot\boot.csproj">
-      <Project>{2DB82691-BF15-4538-8C5E-6BF8F4F875A9}</Project>
-      <Name>boot</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\database\database.csproj">
-      <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
-      <Name>database</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\domain\domain.csproj">
-      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
-      <Name>domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\service.infrastructure\service.infrastructure.csproj">
       <Project>{81412692-F3EE-4FBF-A7C7-69454DD1BD46}</Project>
