@@ -15,7 +15,7 @@
     <ApplicationIcon>mokhan.ico</ApplicationIcon>
     <StartupObject>MoMoney.Bootstrap</StartupObject>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <ManifestCertificateThumbprint>5207E60C15D1EB6327368431B305CB9A32B7DF39</ManifestCertificateThumbprint>
     <ManifestKeyFile>mokhan.pfx</ManifestKeyFile>
     <SignAssembly>false</SignAssembly>
@@ -214,21 +214,9 @@
       <Project>{580E68A8-EDEE-4350-8BBE-A053645B0F83}</Project>
       <Name>database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain\domain.csproj">
-      <Project>{BE790BCC-4412-473F-9D0A-5AA48FE7A74F}</Project>
-      <Name>domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTO\dto.csproj">
       <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
       <Name>dto</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\presentation.winforms\presentation.winforms.csproj">
-      <Project>{F3E06696-0CD2-46EE-B117-A05C1E7E8CD8}</Project>
-      <Name>presentation.winforms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Presentation\presentation.csproj">
-      <Project>{D7C83DB3-492D-4514-8C53-C57AD8E7ACE7}</Project>
-      <Name>presentation</Name>
     </ProjectReference>
     <ProjectReference Include="..\service.infrastructure\service.infrastructure.csproj">
       <Project>{81412692-F3EE-4FBF-A7C7-69454DD1BD46}</Project>

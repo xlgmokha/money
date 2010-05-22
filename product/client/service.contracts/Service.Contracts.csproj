@@ -83,10 +83,6 @@
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
       <Name>utility %28commons\utility%29</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DTO\dto.csproj">
-      <Project>{ACF52FAB-435B-48C9-A383-C787CB2D8000}</Project>
-      <Name>dto</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

@@ -19,3 +19,4 @@ build/config/bootstrap.xml
 compile
 artifacts
 installation
+*.user
