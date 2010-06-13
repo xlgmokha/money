@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Data.SqlServerCe;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -91,15 +92,29 @@ namespace presentation.windows.server
         {
             var configuration = new Configuration();
             //var connection = new SQLiteConnection();
-            var database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney\default.db");
+            //var database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney\default.db");
+            var database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney\default.sdf");
+            var connection_string = string.Format("Data Source='{0}'; Password=;Persist Security Info=True", database_path);
+
+            using (var engine = new SqlCeEngine(connection_string))
+            {
+                if (File.Exists(database_path)) File.Delete(database_path);
+                engine.CreateDatabase();
+            }
             var fluent_configuration = Fluently
                 .Configure(configuration)
-                .Database(SQLiteConfiguration.Standard
-                              .UsingFile(database_path)
-                              .AdoNetBatchSize(500)
-                              .ConnectionString(x => x.Is("Data Source={0};Version=3;New=True;".formatted_using(database_path)))
-                              .ShowSql()
-                              .ProxyFactoryFactory<ProxyFactoryFactory>()
+                //.Database(SQLiteConfiguration.Standard
+                //              .UsingFile(database_path)
+                //              .AdoNetBatchSize(500)
+                //              .ConnectionString(x => x.Is("Data Source={0};Version=3;New=True;".formatted_using(database_path)))
+                //              .ShowSql()
+                //              .ProxyFactoryFactory<ProxyFactoryFactory>()
+                //)
+                .Database(
+                    MsSqlCeConfiguration.Standard.ConnectionString(connection_string)
+                    .AdoNetBatchSize(500)
+                    .ShowSql()
+                    .ProxyFactoryFactory<ProxyFactoryFactory>()
                 )
                 //.Database(SQLiteConfiguration.Standard .UsingFile(database_path) )
                 .Mappings(x =>

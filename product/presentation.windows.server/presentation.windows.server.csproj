@@ -94,6 +94,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\lib\app\sqlite\System.Data.SQLite.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\thirdparty\sql.server.compact\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
