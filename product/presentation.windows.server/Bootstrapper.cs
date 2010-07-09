@@ -1,12 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Data.SqlServerCe;
 using System.Diagnostics;
-using System.IO;
 using System.Net;
 using Autofac.Builder;
-using FluentNHibernate.Cfg;
-using FluentNHibernate.Cfg.Db;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.infrastructure.thirdparty.Autofac;
@@ -15,16 +12,11 @@ using gorilla.commons.utility;
 using momoney.database.transactions;
 using MoMoney.Service.Infrastructure.Threading;
 using momoney.service.infrastructure.transactions;
-using NHibernate.ByteCode.Castle;
-using NHibernate.Cfg;
-using NHibernate.Tool.hbm2ddl;
 using presentation.windows.common;
 using presentation.windows.server.handlers;
 using presentation.windows.server.orm;
-using presentation.windows.server.orm.mappings;
 using presentation.windows.server.orm.nhibernate;
 using Rhino.Queues;
-using Environment = System.Environment;
 using ISession = NHibernate.ISession;
 using ISessionFactory = NHibernate.ISessionFactory;
 
@@ -52,7 +44,7 @@ namespace presentation.windows.server
             builder.Register(x => new RhinoPublisher("client", 2201, manager)).As<ServiceBus>().SingletonScoped();
             builder.Register(x => new RhinoReceiver(manager.GetQueue("server"), x.Resolve<CommandProcessor>())).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
 
-            var session_factory = bootstrap_nhibernate();
+            var session_factory = new NHibernateBootstrapper().fetch();
             builder.Register<ISessionFactory>(x => session_factory).SingletonScoped();
             builder.Register<ISession>(x => current_session(x));
             builder.Register<NHibernateUnitOfWorkFactory>().As<IUnitOfWorkFactory>();
@@ -86,54 +78,6 @@ namespace presentation.windows.server
             var session = context.value_for(new TypedKey<ISession>());
             if (null == session) Debugger.Break();
             return session;
-        }
-
-        static ISessionFactory bootstrap_nhibernate()
-        {
-            var configuration = new Configuration();
-            //var connection = new SQLiteConnection();
-            //var database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney\default.db");
-            var database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney\default.sdf");
-            var connection_string = string.Format("Data Source='{0}'; Password=;Persist Security Info=True", database_path);
-
-            using (var engine = new SqlCeEngine(connection_string))
-            {
-                if (File.Exists(database_path)) File.Delete(database_path);
-                engine.CreateDatabase();
-            }
-            var fluent_configuration = Fluently
-                .Configure(configuration)
-                //.Database(SQLiteConfiguration.Standard
-                //              .UsingFile(database_path)
-                //              .AdoNetBatchSize(500)
-                //              .ConnectionString(x => x.Is("Data Source={0};Version=3;New=True;".formatted_using(database_path)))
-                //              .ShowSql()
-                //              .ProxyFactoryFactory<ProxyFactoryFactory>()
-                //)
-                .Database(
-                    MsSqlCeConfiguration.Standard.ConnectionString(connection_string)
-                    .AdoNetBatchSize(500)
-                    .ShowSql()
-                    .ProxyFactoryFactory<ProxyFactoryFactory>()
-                )
-                //.Database(SQLiteConfiguration.Standard .UsingFile(database_path) )
-                .Mappings(x =>
-                {
-                    x.FluentMappings.AddFromAssemblyOf<MappingAssembly>();
-                })
-                .ExposeConfiguration(x => export(x))
-                ;
-            return fluent_configuration.BuildSessionFactory();
-        }
-
-        static void export(Configuration configuration)
-        {
-            var database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"mokhan.ca\momoney\default.db");
-            if (File.Exists(database_path))
-            {
-                File.Delete(database_path);
-            }
-            new SchemaExport(configuration).Execute(true, true, false);
         }
     }
 }
