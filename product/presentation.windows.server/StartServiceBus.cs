@@ -22,7 +22,7 @@ namespace presentation.windows.server
             });
             Resolve.the<CommandProcessor>().add(receiver);
             //ThreadPool.QueueUserWorkItem(x => receiver.run());
-            Resolve.the<ServiceBus>().publish<StartedApplication>(x => x.message = "server");
+            //Resolve.the<ServiceBus>().publish<StartedApplication>(x => x.message = "server");
         }
     }
 }

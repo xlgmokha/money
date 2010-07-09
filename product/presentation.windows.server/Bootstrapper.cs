@@ -26,6 +26,8 @@ namespace presentation.windows.server
     {
         static public void run()
         {
+            new ConfigureApplicationDirectory().run();
+
             var builder = new ContainerBuilder();
             var registry = new AutofacDependencyRegistryBuilder(builder).build();
             Resolve.initialize_with(registry);
@@ -52,7 +54,8 @@ namespace presentation.windows.server
 
             // commanding
             //builder.Register<ContainerCommandBuilder>().As<CommandBuilder>().SingletonScoped();
-            builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
+            //builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
+            builder.Register<SynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
             builder.Register<AddNewFamilyMemberHandler>().As<Handler>();
             builder.Register<FindAllFamilyHandler>().As<Handler>();
             builder.Register<SaveNewAccountCommand>().As<Handler>();

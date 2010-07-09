@@ -110,6 +110,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigureApplicationDirectory.cs" />
     <Compile Include="handlers\AddNewFamilyMemberHandler.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="ConfigureMappings.cs" />

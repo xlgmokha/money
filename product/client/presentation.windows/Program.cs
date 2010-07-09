@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Security.Principal;
 using System.Windows;
 using System.Windows.Threading;
@@ -13,7 +14,7 @@ namespace presentation.windows
         [STAThread]
         static public void Main()
         {
-            Process.Start(@"D:\development\mokhan\git\mo.money\product\presentation.windows.server\bin\Debug\presentation.windows.server.exe");
+            Process.Start(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\..\presentation.windows.server\bin\Debug\presentation.windows.server.exe")));
             AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
             Dispatcher.CurrentDispatcher.UnhandledException += (o, e) =>
             {

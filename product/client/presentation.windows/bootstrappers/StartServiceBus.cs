@@ -1,6 +1,7 @@
 using Gorilla.Commons.Infrastructure.Container;
 using MoMoney.Service.Infrastructure.Threading;
 using presentation.windows.common;
+using presentation.windows.common.messages;
 
 namespace presentation.windows.bootstrappers
 {
@@ -16,7 +17,7 @@ namespace presentation.windows.bootstrappers
                 handler.handler(x);
             });
             Resolve.the<CommandProcessor>().add(receiver);
-            //Resolve.the<ServiceBus>().publish<StartedApplication>(x => x.message = "client");
+            Resolve.the<ServiceBus>().publish<StartedApplication>(x => x.message = "client");
         }
     }
 }
