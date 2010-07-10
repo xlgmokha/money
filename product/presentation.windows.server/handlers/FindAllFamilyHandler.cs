@@ -1,3 +1,4 @@
+using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
 using presentation.windows.common;
 using presentation.windows.common.messages;
@@ -21,6 +22,7 @@ namespace presentation.windows.server.handlers
 
         public override void handle(FindAllFamily item)
         {
+            this.log().debug("receieved find all family request.");
             people
                 .find_all()
                 .map_all_using<Person, AddedNewFamilyMember>(mapper)

@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Transactions;
 using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
@@ -11,7 +10,6 @@ namespace presentation.windows.common
 {
     public class RhinoPublisher : ServiceBus
     {
-        BinaryFormatter formatter = new BinaryFormatter();
         readonly int port;
         string destination_queue;
         IQueueManager sender;
@@ -30,7 +28,7 @@ namespace presentation.windows.common
 
         public void publish<T>(T item) where T : new()
         {
-            using (var transaction = new TransactionScope())
+            using (var transaction = new TransactionScope(TransactionScopeOption.RequiresNew))
             {
                 var destination = "rhino.queues://localhost:{0}/{1}".formatted_using(port, destination_queue);
                 this.log().debug("sending {0} to {1}", item, destination);
@@ -44,7 +42,6 @@ namespace presentation.windows.common
             using (var stream = new MemoryStream())
             {
                 Serializer.Serialize(stream, item);
-                //formatter.Serialize(stream, item);
 
                 var payload = new MessagePayload {Data = stream.ToArray()};
                 payload.Headers["type"] = typeof (T).FullName;

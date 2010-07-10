@@ -12,7 +12,7 @@ namespace presentation.windows.common.messages
 
         public override string ToString()
         {
-            return base.ToString() + message;
+            return base.ToString() + " " + message;
         }
     }
 }

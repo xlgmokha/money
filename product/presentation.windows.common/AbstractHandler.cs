@@ -7,7 +7,6 @@ namespace presentation.windows.common
     {
         bool can_handle(Type type)
         {
-            this.log().debug("{0} can handle {1} = {2}", this, type, typeof (T).Equals(type));
             return typeof (T).Equals(type);
         }
 

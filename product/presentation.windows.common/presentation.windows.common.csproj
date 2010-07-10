@@ -103,7 +103,6 @@
     <Compile Include="messages\FindAllFamily.cs" />
     <Compile Include="messages\NewAccountCreated.cs" />
     <Compile Include="messages\StartedApplication.cs" />
-    <Compile Include="MsmqBus.cs" />
     <Compile Include="NeedStartup.cs" />
     <Compile Include="Receiver.cs" />
     <Compile Include="RhinoPublisher.cs" />

@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
@@ -9,9 +8,8 @@ using Rhino.Queues.Model;
 
 namespace presentation.windows.common
 {
-    public class MessageHandler
+    public class MessageHandler : Handler<Message>
     {
-        BinaryFormatter formatter = new BinaryFormatter();
         DependencyRegistry registry;
 
         public MessageHandler(DependencyRegistry registry)
@@ -19,7 +17,7 @@ namespace presentation.windows.common
             this.registry = registry;
         }
 
-        public void handler(Message item)
+        public void handle(Message item)
         {
             var payload = parse_payload_from(item);
             this.log().debug("received: {0}", payload);
@@ -32,7 +30,6 @@ namespace presentation.windows.common
         {
             using (var stream = new MemoryStream(item.Data))
             {
-                //return formatter.Deserialize(stream);
                 return Serializer.NonGeneric.Deserialize(Type.GetType(item.Headers["type"]), stream);
             }
         }

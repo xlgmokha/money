@@ -24,6 +24,7 @@ namespace presentation.windows.server.handlers
             {
                 x.id = person.id;
                 x.first_name = person.first_name;
+                x.last_name = person.last_name;
             });
         }
     }

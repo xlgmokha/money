@@ -11,6 +11,7 @@ using gorilla.commons.utility;
 using MoMoney.Service.Infrastructure.Eventing;
 using MoMoney.Service.Infrastructure.Threading;
 using presentation.windows.common;
+using presentation.windows.common.messages;
 using presentation.windows.presenters;
 using presentation.windows.queries;
 using presentation.windows.service.infrastructure;
@@ -59,18 +60,21 @@ namespace presentation.windows.bootstrappers
             builder.Register<CompensationPresenter>().SingletonScoped();
             builder.Register<SelectedFamilyMemberPresenter>().SingletonScoped();
             builder.Register<AddFamilyMemberPresenter>();
+            builder.Register<AddFamilyMemberPresenter.SaveCommand>();
             builder.Register<AccountPresenter>();
             builder.Register<AccountPresenter.AddNewAccountCommand>();
-            builder.Register<AddFamilyMemberPresenter.SaveCommand>();
             builder.Register<CancelCommand>();
 
             // commanding
             builder.Register<ContainerCommandBuilder>().As<CommandBuilder>().SingletonScoped();
             builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
+            //builder.Register<SynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
             builder.Register<WpfCommandBuilder>().As<UICommandBuilder>();
 
             // queries
             builder.Register<ContainerAwareQueryBuilder>().As<QueryBuilder>();
+
+            builder.Register<PublishEventHandler<AddedNewFamilyMember>>().As<Handler>();
 
             Resolve.the<IEnumerable<NeedStartup>>().each(x => x.run());
             Resolve.the<CommandProcessor>().run();

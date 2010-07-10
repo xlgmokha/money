@@ -31,7 +31,7 @@ namespace presentation.windows.server
                 .Database(MsSqlCeConfiguration.Standard
                               .ConnectionString(connection_string)
                               .AdoNetBatchSize(500)
-                              .ShowSql()
+                              //.ShowSql()
                               .ProxyFactoryFactory<ProxyFactoryFactory>()
                 )
                 .Mappings(x => { x.FluentMappings.AddFromAssemblyOf<MappingAssembly>(); })

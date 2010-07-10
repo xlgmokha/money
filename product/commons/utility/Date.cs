@@ -9,14 +9,9 @@ namespace Gorilla.Commons.Utility
     {
         readonly long ticks;
 
-        public Date(int year, int month, int day)
+        public Date( DateTime date)
         {
-            ticks = new DateTime(year, month, day).Ticks;
-        }
-
-        public bool is_in(Year the_year)
-        {
-            return the_year.represents(to_date_time());
+            this.ticks = date.Date.Ticks;
         }
 
         public DateTime to_date_time()
@@ -26,7 +21,7 @@ namespace Gorilla.Commons.Utility
 
         static public implicit operator Date(DateTime date)
         {
-            return new Date(date.Year, date.Month, date.Day);
+            return new Date(date);
         }
 
         static public implicit operator DateTime(Date date)

@@ -30,6 +30,7 @@ namespace presentation.windows.server.orm.nhibernate
 
         public void commit()
         {
+            //transaction.Commit();
             if (is_dirty()) transaction.Commit();
         }
 

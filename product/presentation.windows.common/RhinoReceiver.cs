@@ -30,12 +30,8 @@ namespace presentation.windows.common
         {
             try
             {
-                using (var transaction = new TransactionScope())
-                {
-                    var message = queue.Receive();
-                    observers.each(observer => observer(message));
-                    transaction.Complete();
-                }
+                var message = next_message();
+                observers.each(observer => observer(message));
             }
             catch (Exception e)
             {
@@ -45,6 +41,17 @@ namespace presentation.windows.common
             {
                 processor.add(this);
             }
+        }
+
+        Message next_message()
+        {
+            Message message;
+            using (var transaction = new TransactionScope(TransactionScopeOption.RequiresNew))
+            {
+                message = queue.Receive();
+                transaction.Complete();
+            }
+            return message;
         }
     }
 }

@@ -22,7 +22,7 @@ namespace presentation.windows.server.orm.mappings
         public object NullSafeGet(IDataReader rs, string[] names, object owner)
         {
             var date = (DateTime) NHibernateUtil.DateTime.NullSafeGet(rs, names);
-            return new Date(date.Year, date.Month, date.Day);
+            return new Date(date);
         }
 
         public void NullSafeSet(IDbCommand cmd, object value, int index)

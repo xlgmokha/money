@@ -9,4 +9,12 @@ namespace presentation.windows.common
             return AutoMapper.Mapper.Map<Input, Output>(item);
         }
     }
+
+    public class DefaultMapper<Input, Output> : Mapper<Input, Output>
+    {
+        public Output map_from(Input item)
+        {
+            return AutoMapper.Mapper.Map<Input, Output>(item);
+        }
+    }
 }

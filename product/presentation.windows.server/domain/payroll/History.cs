@@ -1,3 +1,5 @@
+using Gorilla.Commons.Utility;
+
 namespace presentation.windows.server.domain.payroll
 {
     public class History

@@ -14,7 +14,7 @@ namespace presentation.windows.bootstrappers
             receiver.register(x =>
             {
                 // synchronize with ui thread?
-                handler.handler(x);
+                handler.handle(x);
             });
             Resolve.the<CommandProcessor>().add(receiver);
             Resolve.the<ServiceBus>().publish<StartedApplication>(x => x.message = "client");
