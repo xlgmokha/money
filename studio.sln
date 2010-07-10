@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "support", "support", "{8421
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "build", "build\build.csproj", "{B8505B10-85C7-45F4-B039-D364DD556D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service.infrastructure", "product\client\service.infrastructure\service.infrastructure.csproj", "{81412692-F3EE-4FBF-A7C7-69454DD1BD46}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure", "product\commons\infrastructure\infrastructure.csproj", "{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure.thirdparty", "product\commons\infrastructure.thirdparty\infrastructure.thirdparty.csproj", "{04DC09B4-5DF9-44A6-8DD1-05941F0D0228}"
@@ -19,11 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure.thirdparty.l
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utility", "product\commons\utility\utility.csproj", "{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client", "product\client\presentation.windows\client.csproj", "{81E2CF6C-4D61-442E-8086-BF1E017C7041}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client", "product\client\client.ui\client.csproj", "{81E2CF6C-4D61-442E-8086-BF1E017C7041}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server", "product\presentation.windows.server\server.csproj", "{4E60988E-1A43-4807-8CEC-4E13F63DE363}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server", "product\client\server\server.csproj", "{4E60988E-1A43-4807-8CEC-4E13F63DE363}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common", "product\presentation.windows.common\common.csproj", "{72B22B1E-1B62-41A6-9392-BD5283D17F79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common", "product\client\common\common.csproj", "{72B22B1E-1B62-41A6-9392-BD5283D17F79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
