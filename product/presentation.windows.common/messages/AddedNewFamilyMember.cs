@@ -1,5 +1,4 @@
 using System;
-using MoMoney.Service.Infrastructure.Eventing;
 using ProtoBuf;
 
 namespace presentation.windows.common.messages

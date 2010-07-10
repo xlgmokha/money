@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Controls;
-using presentation.windows.presenters;
 
 namespace presentation.windows.views
 {

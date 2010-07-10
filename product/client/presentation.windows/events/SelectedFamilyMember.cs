@@ -1,5 +1,5 @@
 using System;
-using MoMoney.Service.Infrastructure.Eventing;
+using presentation.windows.common;
 
 namespace presentation.windows.events
 {

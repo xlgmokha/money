@@ -7,14 +7,12 @@ using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.infrastructure.thirdparty.Autofac;
 using gorilla.commons.infrastructure.thirdparty.Log4Net;
+using gorilla.commons.infrastructure.threading;
 using gorilla.commons.utility;
-using MoMoney.Service.Infrastructure.Eventing;
-using MoMoney.Service.Infrastructure.Threading;
 using presentation.windows.common;
 using presentation.windows.common.messages;
+using presentation.windows.eventing;
 using presentation.windows.presenters;
-using presentation.windows.queries;
-using presentation.windows.service.infrastructure;
 using presentation.windows.views;
 using Rhino.Queues;
 
@@ -66,13 +64,11 @@ namespace presentation.windows.bootstrappers
             builder.Register<CancelCommand>();
 
             // commanding
-            builder.Register<ContainerCommandBuilder>().As<CommandBuilder>().SingletonScoped();
             builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
             //builder.Register<SynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
             builder.Register<WpfCommandBuilder>().As<UICommandBuilder>();
 
             // queries
-            builder.Register<ContainerAwareQueryBuilder>().As<QueryBuilder>();
 
             builder.Register<PublishEventHandler<AddedNewFamilyMember>>().As<Handler>();
 

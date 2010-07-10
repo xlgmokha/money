@@ -1,7 +1,7 @@
 using AutoMapper;
 using presentation.windows.common;
 using presentation.windows.common.messages;
-using presentation.windows.queries;
+using presentation.windows.presenters;
 
 namespace presentation.windows.bootstrappers
 {

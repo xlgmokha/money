@@ -1,6 +1,6 @@
 using System.Windows;
 using System.Windows.Controls;
-using MoMoney.Service.Infrastructure.Eventing;
+using presentation.windows.eventing;
 
 namespace presentation.windows
 {

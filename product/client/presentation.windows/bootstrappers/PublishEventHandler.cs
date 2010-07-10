@@ -1,5 +1,5 @@
-﻿using MoMoney.Service.Infrastructure.Eventing;
-using presentation.windows.common;
+﻿using presentation.windows.common;
+using presentation.windows.eventing;
 
 namespace presentation.windows.bootstrappers
 {

@@ -1,4 +1,4 @@
-using MoMoney.Service.Infrastructure.Eventing;
+using presentation.windows.eventing;
 using presentation.windows.events;
 
 namespace presentation.windows.presenters

@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Transactions;
 using Gorilla.Commons.Infrastructure.Logging;
+using gorilla.commons.infrastructure.threading;
 using gorilla.commons.utility;
-using MoMoney.Service.Infrastructure.Threading;
 using Rhino.Queues;
 using Rhino.Queues.Model;
 

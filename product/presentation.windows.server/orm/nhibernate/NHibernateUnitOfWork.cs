@@ -1,5 +1,4 @@
-using momoney.database.transactions;
-using momoney.service.infrastructure.transactions;
+using gorilla.commons.utility;
 using ISession = NHibernate.ISession;
 using ITransaction = NHibernate.ITransaction;
 
@@ -30,7 +29,6 @@ namespace presentation.windows.server.orm.nhibernate
 
         public void commit()
         {
-            //transaction.Commit();
             if (is_dirty()) transaction.Commit();
         }
 

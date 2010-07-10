@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using gorilla.commons.utility;
-using MoMoney.Service.Infrastructure.Eventing;
 using presentation.windows.common;
 using presentation.windows.common.messages;
+using presentation.windows.eventing;
 using presentation.windows.events;
-using presentation.windows.queries;
 
 namespace presentation.windows.presenters
 {

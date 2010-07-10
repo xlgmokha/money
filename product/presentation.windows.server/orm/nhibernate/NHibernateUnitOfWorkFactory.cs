@@ -1,6 +1,4 @@
-using momoney.database.transactions;
-using momoney.service.infrastructure.transactions;
-using MoMoney.Service.Infrastructure.Transactions;
+using gorilla.commons.utility;
 using ISession = NHibernate.ISession;
 using ISessionFactory = NHibernate.ISessionFactory;
 

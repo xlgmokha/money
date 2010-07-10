@@ -19,13 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure.thirdparty.l
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utility", "product\commons\utility\utility.csproj", "{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "presentation.windows", "product\client\presentation.windows\presentation.windows.csproj", "{81E2CF6C-4D61-442E-8086-BF1E017C7041}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client", "product\client\presentation.windows\client.csproj", "{81E2CF6C-4D61-442E-8086-BF1E017C7041}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "presentation.windows.server", "product\presentation.windows.server\presentation.windows.server.csproj", "{4E60988E-1A43-4807-8CEC-4E13F63DE363}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server", "product\presentation.windows.server\server.csproj", "{4E60988E-1A43-4807-8CEC-4E13F63DE363}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "presentation.windows.common", "product\presentation.windows.common\presentation.windows.common.csproj", "{72B22B1E-1B62-41A6-9392-BD5283D17F79}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "database", "product\client\database\database.csproj", "{580E68A8-EDEE-4350-8BBE-A053645B0F83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common", "product\presentation.windows.common\common.csproj", "{72B22B1E-1B62-41A6-9392-BD5283D17F79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,10 +66,6 @@ Global
 		{72B22B1E-1B62-41A6-9392-BD5283D17F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72B22B1E-1B62-41A6-9392-BD5283D17F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72B22B1E-1B62-41A6-9392-BD5283D17F79}.Release|Any CPU.Build.0 = Release|Any CPU
-		{580E68A8-EDEE-4350-8BBE-A053645B0F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{580E68A8-EDEE-4350-8BBE-A053645B0F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{580E68A8-EDEE-4350-8BBE-A053645B0F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{580E68A8-EDEE-4350-8BBE-A053645B0F83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,7 +75,6 @@ Global
 		{81E2CF6C-4D61-442E-8086-BF1E017C7041} = {07187CAA-7272-4E29-A736-5CBD5118D40B}
 		{4E60988E-1A43-4807-8CEC-4E13F63DE363} = {07187CAA-7272-4E29-A736-5CBD5118D40B}
 		{72B22B1E-1B62-41A6-9392-BD5283D17F79} = {07187CAA-7272-4E29-A736-5CBD5118D40B}
-		{580E68A8-EDEE-4350-8BBE-A053645B0F83} = {07187CAA-7272-4E29-A736-5CBD5118D40B}
 		{AA5EEED9-4531-45F7-AFCD-AD9717D2E405} = {099D479D-7BFC-428E-A897-9189C294C9C8}
 		{04DC09B4-5DF9-44A6-8DD1-05941F0D0228} = {099D479D-7BFC-428E-A897-9189C294C9C8}
 		{6BDCB0C1-51E1-435A-93D8-CA02BF8E409C} = {099D479D-7BFC-428E-A897-9189C294C9C8}

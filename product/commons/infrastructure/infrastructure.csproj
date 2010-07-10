@@ -93,11 +93,31 @@
     <Compile Include="reflection\EnvironmentExtensions.cs" />
     <Compile Include="reflection\Assembly.cs" />
     <Compile Include="registries\DefaultRegistry.cs" />
+    <Compile Include="threading\AsynchronousCommandProcessor.cs" />
+    <Compile Include="threading\BackgroundThread.cs" />
+    <Compile Include="threading\BackgroundThreadFactory.cs" />
+    <Compile Include="threading\CommandProcessor.cs" />
+    <Compile Include="threading\CurrentThread.cs" />
+    <Compile Include="threading\IntervalTimer.cs" />
+    <Compile Include="threading\IThread.cs" />
+    <Compile Include="threading\ITimerClient.cs" />
+    <Compile Include="threading\IWorkerThread.cs" />
+    <Compile Include="threading\PerThread.cs" />
+    <Compile Include="threading\PerThreadScopedStorage.cs" />
+    <Compile Include="threading\SynchronizationContextFactory.cs" />
+    <Compile Include="threading\SynchronizedCommand.cs" />
+    <Compile Include="threading\SynchronizedContext.cs" />
+    <Compile Include="threading\SynchronousCommandProcessor.cs" />
+    <Compile Include="threading\ThreadingExtensions.cs" />
+    <Compile Include="threading\TimerFactory.cs" />
+    <Compile Include="threading\WorkerThread.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\utility\utility.csproj">
       <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
-      <Name>utility %28commons\utility%29</Name>
+      <Name>utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

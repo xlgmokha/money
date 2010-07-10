@@ -1,5 +1,5 @@
 using Gorilla.Commons.Infrastructure.Container;
-using MoMoney.Service.Infrastructure.Threading;
+using gorilla.commons.infrastructure.threading;
 using presentation.windows.common;
 using presentation.windows.common.messages;
 

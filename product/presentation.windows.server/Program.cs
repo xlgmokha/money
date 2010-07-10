@@ -1,14 +1,14 @@
 ﻿using System;
 using Gorilla.Commons.Infrastructure.Container;
 using Gorilla.Commons.Infrastructure.Logging;
-using MoMoney.Service.Infrastructure.Threading;
+using gorilla.commons.infrastructure.threading;
 using Rhino.Queues;
 
 namespace presentation.windows.server
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             try
             {
