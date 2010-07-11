@@ -18,7 +18,7 @@
 	<target name="deploy" depends="create.configs, app.compile" />
   
 	<target name="run" depends="deploy">
-		<exec program="${build.compile.dir}\${app.output}" commandline="" />
+		<exec program="${build.compile.dir}\${app.output}" commandline="${build.compile.dir}" />
 	</target>
 
 </project>
