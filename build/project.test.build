@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <project name="project.test">
-	<property name="test.output" value="tests.dll" />
+	<property name="test.output" value="unit.dll" />
 	<!--<property name="xunit.cons.exe" value="${build.tools.dir}\gallio\gallio.echo.exe" />-->
 	<!--<property name="xunit.cons.exe" value="${build.tools.dir}\nunit\nunit-console.exe" />-->
-	<property name="xunit.cons.exe" value="${build.tools.dir}\nunit\machine.specifications.consolerunner.exe" />
+	<property name="xunit.cons.exe" value="${thirdparty.dir}\mspec\mspec.exe" />
 
 	<target name="run.test" depends="app.compile">
 		<exec program="${xunit.cons.exe}" workingdir="${build.compile.dir}" commandline="${xunit.arguments}" />
@@ -12,7 +12,7 @@
 	<target name="test">
 		<!--<property name="xunit.arguments" value="${build.compile.dir}/${test.output} /sr /rt:text /rd:${build.compile.dir}" />-->
 		<!--<property name="xunit.arguments" value="${build.compile.dir}/${test.output}" />-->
-		<property name="xunit.arguments" value=" --html ${build.compile.dir} ${build.compile.dir}/${test.output} " />
+		<property name="xunit.arguments" value="${build.compile.dir}/${test.output} --html ${build.compile.dir}" />
 		<call target="run.test" />
 	</target>
 

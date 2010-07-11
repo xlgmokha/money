@@ -5,6 +5,7 @@
 
 	<property name="base.dir" value="${directory::get-parent-directory(project::get-base-directory())}" />
 	<property name="product.dir" value="${base.dir}\product" />
+	<property name="thirdparty.dir" value="${base.dir}\thirdparty" />
 	
 	<property name="build.dir" value="${base.dir}\build" />
 	<property name="build.tools.dir" value="${build.dir}\tools" />
