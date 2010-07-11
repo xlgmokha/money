@@ -48,13 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="client\presenters\AddFamilyMemberPresenterSpecs.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\client\client.ui\client.csproj">
       <Project>{81E2CF6C-4D61-442E-8086-BF1E017C7041}</Project>
       <Name>client %28client\client%29</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

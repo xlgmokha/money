@@ -28,9 +28,10 @@
 	</target>
 	
 	<target name="app.compile" depends="init">
-    <exec program="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe"
+	  <property name="msbuild.exe" value="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe" />
+	  <exec program="${msbuild.exe}"
           workingdir="${base.dir}"
-          commandline="solution.sln /p:Configuration=Release;OutDir=${build.compile.dir}\ /t:Rebuild /nologo /m /v:q"
+          commandline="studio.sln /p:Configuration=Release;OutDir=${build.compile.dir}\ /t:Rebuild /nologo /m /v:q"
           />
 	</target>
 

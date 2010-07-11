@@ -18,6 +18,7 @@
 	<root>
 		<level value='@log.level@' />
 		<appender-ref ref='RollingFileAppender' />			
+		<appender-ref ref='Console' />			
 	</root>
 	<logger name="NHibernate" additivity="false">
 		<level value="ERROR" />

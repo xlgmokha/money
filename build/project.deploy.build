@@ -6,14 +6,13 @@
   <target name="create.configs">
 		<property name="target" value="${log4net.config}" />
 		<call target="expand.template.file" />
-		<copy file="${build.config.dir}\log4net.config.xml" tofile="${product.dir}\client\boot\log4net.config.xml" />
-		<copy file="${build.config.dir}\log4net.config.xml" tofile="${product.dir}\client\presentation.windows\log4net.config.xml" />
-		<copy file="${build.config.dir}\log4net.config.xml" tofile="${product.dir}\presentation.windows.server\log4net.config.xml" />
+		<copy file="${build.config.dir}\log4net.config.xml" tofile="${product.dir}\client\client.ui\log4net.config.xml" />
+		<copy file="${build.config.dir}\log4net.config.xml" tofile="${product.dir}\client\server\log4net.config.xml" />
     
 		<property name="target" value="${assembly.config}" />
 		<call target="expand.template.file" />
-		<copy file="${build.config.dir}\AssemblyInfo.cs" tofile="${product.dir}\client\boot\Properties\AssemblyInfo.cs" />
-		<copy file="${build.config.dir}\AssemblyInfo.cs" tofile="${product.dir}\client\presentation.windows\Properties\AssemblyInfo.cs" />
+		<copy file="${build.config.dir}\AssemblyInfo.cs" tofile="${product.dir}\client\client.ui\Properties\AssemblyInfo.cs" />
+		<copy file="${build.config.dir}\AssemblyInfo.cs" tofile="${product.dir}\client\server\Properties\AssemblyInfo.cs" />
   </target>
 
 	<target name="deploy" depends="create.configs, app.compile" />
