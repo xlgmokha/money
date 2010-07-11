@@ -74,7 +74,9 @@
     <None Include="project.build" />
     <None Include="project.deploy.build" />
     <None Include="project.install.build" />
-    <None Include="project.test.build" />
+    <None Include="project.test.build">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="tools\psake\build_utilities.ps1" />
     <None Include="tools\psake\psake.ps1" />
   </ItemGroup>

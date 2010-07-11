@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="momoney">	
 	<property name="project.name" value="${project::get-name()}" />
-  <property name="nant.settings.currentframework" value="net-3.5" />
+  <!--<property name="nant.settings.currentframework" value="net-4.0" />-->
 
 	<property name="base.dir" value="${directory::get-parent-directory(project::get-base-directory())}" />
 	<property name="product.dir" value="${base.dir}\product" />
@@ -28,7 +28,8 @@
 	</target>
 	
 	<target name="app.compile" depends="init">
-	  <property name="msbuild.exe" value="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe" />
+	  <!--<property name="msbuild.exe" value="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe" />-->
+	  <property name="msbuild.exe" value="c:\windows\microsoft.net\framework\v4.0.30319\msbuild.exe" />
 	  <exec program="${msbuild.exe}"
           workingdir="${base.dir}"
           commandline="studio.sln /p:Configuration=Release;OutDir=${build.compile.dir}\ /t:Rebuild /nologo /m /v:q"

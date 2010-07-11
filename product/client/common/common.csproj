@@ -57,25 +57,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\thirdparty\automapper\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Db4objects.Db4o, Version=7.5.57.11498, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\db40\Db4objects.Db4o.dll</HintPath>
-    </Reference>
-    <Reference Include="Esent.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b93b4ad6c4b80595, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\thirdparty\rhino.queues\Esent.Interop.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentNHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\lib\app\nhibernate\FluentNHibernate.dll</HintPath>
-    </Reference>
     <Reference Include="protobuf-net, Version=1.0.0.282, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\spiking\spiking.rq\external\proto-buf.net\protobuf-net.dll</HintPath>
+      <HintPath>..\..\..\thirdparty\proto-buf.net\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Queues, Version=1.2.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\spiking\spiking.rq\external\rhino.queues\Rhino.Queues.dll</HintPath>
+      <HintPath>..\..\..\thirdparty\rhino.queues\Rhino.Queues.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -111,10 +99,6 @@
     <Compile Include="ServiceBus.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\client\service.infrastructure\service.infrastructure.csproj">
-      <Project>{81412692-F3EE-4FBF-A7C7-69454DD1BD46}</Project>
-      <Name>service.infrastructure</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\commons\infrastructure\infrastructure.csproj">
       <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
       <Name>infrastructure</Name>
