@@ -1,19 +1,19 @@
-using Autofac;
+using Gorilla.Commons.Infrastructure.Container;
 
 namespace presentation.windows.presenters
 {
     public class WPFCommandBuilder : UICommandBuilder
     {
-        IContainer container;
+        DependencyRegistry container;
 
-        public WPFCommandBuilder(IContainer container)
+        public WPFCommandBuilder(DependencyRegistry container)
         {
             this.container = container;
         }
 
         public IObservableCommand build<T>(Presenter presenter) where T : UICommand
         {
-            var command = container.Resolve<T>();
+            var command = container.get_a<T>();
             return new SimpleCommand(() =>
             {
                 command.run(presenter);

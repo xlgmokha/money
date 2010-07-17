@@ -63,6 +63,7 @@ namespace presentation.windows.bootstrappers
             builder.Register<AccountPresenter.AddNewAccountCommand>();
             builder.Register<CancelCommand>();
             builder.Register<AddNewAccountPresenter>();
+            builder.Register<AddNewAccountPresenter.CreateNewAccount>();
 
             // commanding
             builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();

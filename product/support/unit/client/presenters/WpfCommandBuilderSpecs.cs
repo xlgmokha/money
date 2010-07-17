@@ -1,4 +1,5 @@
 using Autofac;
+using Gorilla.Commons.Infrastructure.Container;
 using Machine.Specifications;
 using presentation.windows;
 using presentation.windows.presenters;
@@ -12,12 +13,12 @@ namespace unit.client.presenters
         {
             Establish context = () =>
             {
-                container = a<IContainer>();
+                container = a<DependencyRegistry>();
                 sut = new WPFCommandBuilder(container);
             };
 
             static protected WPFCommandBuilder sut;
-            static protected IContainer container;
+            static protected DependencyRegistry container;
         }
 
         public class when_building_a_command_to_bind_to_a_presenter : concern
@@ -31,7 +32,7 @@ namespace unit.client.presenters
             {
                 presenter = a<Presenter>();
                 command = a<UICommand>();
-                container.is_told_to(x => x.Resolve<UICommand>()).it_will_return(command);
+                container.is_told_to(x => x.get_a<UICommand>()).it_will_return(command);
             };
 
             Because b = () =>

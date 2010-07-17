@@ -58,6 +58,10 @@
       <Project>{81E2CF6C-4D61-442E-8086-BF1E017C7041}</Project>
       <Name>client %28client\client%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\commons\infrastructure\infrastructure.csproj">
+      <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
+      <Name>infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
