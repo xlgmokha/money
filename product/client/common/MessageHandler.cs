@@ -1,7 +1,6 @@
 using System;
 using System.IO;
 using Gorilla.Commons.Infrastructure.Container;
-using Gorilla.Commons.Infrastructure.Logging;
 using gorilla.commons.utility;
 using ProtoBuf;
 using Rhino.Queues.Model;
@@ -20,7 +19,6 @@ namespace presentation.windows.common
         public void handle(Message item)
         {
             var payload = parse_payload_from(item);
-            this.log().debug("received: {0}", payload);
             registry
                 .get_all<Handler>()
                 .each(x => x.handle(payload));

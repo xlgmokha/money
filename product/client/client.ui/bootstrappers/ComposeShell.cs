@@ -17,14 +17,7 @@ namespace presentation.windows.bootstrappers
 
         public void run()
         {
-            controller.add_tab<CompensationPresenter, CompensationTab>();
             controller.add_tab<AccountPresenter, AccountTab>();
-            //region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "Expenses"}));
-            //region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "RRSP"}));
-            //region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "Party"}));
-            //region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "Assets"}));
-            //region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "Liabilities"}));
-            //region_manager.region<TabControl>(x => x.Items.Add(new TabItem {Header = "Budget"}));
 
             region_manager.region<MainMenu>(x =>
             {
@@ -32,8 +25,8 @@ namespace presentation.windows.bootstrappers
                 {
                     controller.launch_dialog<AddFamilyMemberPresenter, AddFamilyMemberDialog>();
                 });
-                x.add("_Accounts").add("_Add Detail Account", () => { 
-                    controller.launch_dialog<AddNewAccountPresenter, AddNewAccountDialog>();
+                x.add("_Accounts").add("_Add Account", () => { 
+                    controller.launch_dialog<AddNewDetailAccountPresenter, AddNewDetailAccountDialog>();
                 });
             });
 

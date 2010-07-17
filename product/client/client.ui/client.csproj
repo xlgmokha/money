@@ -108,13 +108,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\AddNewAccountDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="views\CompensationTab.xaml">
+    <Page Include="views\AddNewDetailAccountDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +142,7 @@
     <Compile Include="eventing\EventAggregator.cs" />
     <Compile Include="eventing\EventSubscriber.cs" />
     <Compile Include="eventing\SynchronizedEventAggregator.cs" />
+    <Compile Include="views\ImageButton.cs" />
     <Compile Include="views\ShellWindow.xaml.cs">
       <DependentUpon>ShellWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -164,9 +159,8 @@
     <Compile Include="DialogPresenter.cs" />
     <Compile Include="presenters\AccountPresenter.cs" />
     <Compile Include="presenters\AddFamilyMemberPresenter.cs" />
-    <Compile Include="presenters\AddNewAccountPresenter.cs" />
+    <Compile Include="presenters\AddNewDetailAccountPresenter.cs" />
     <Compile Include="CancelCommand.cs" />
-    <Compile Include="presenters\CompensationPresenter.cs" />
     <Compile Include="UICommand.cs" />
     <Compile Include="UICommandBuilder.cs" />
     <Compile Include="presenters\WpfBindingExtensinos.cs" />
@@ -182,11 +176,8 @@
     <Compile Include="views\AddFamilyMemberDialog.xaml.cs">
       <DependentUpon>AddFamilyMemberDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="views\AddNewAccountDialog.xaml.cs">
-      <DependentUpon>AddNewAccountDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="views\CompensationTab.xaml.cs">
-      <DependentUpon>CompensationTab.xaml</DependentUpon>
+    <Compile Include="views\AddNewDetailAccountDialog.xaml.cs">
+      <DependentUpon>AddNewDetailAccountDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="bootstrappers\ComposeShell.cs" />
     <Compile Include="Presenter.cs" />
@@ -257,6 +248,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="views\images\cancel.png" />
+    <Resource Include="views\images\save.png" />
     <Content Include="log4net.config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

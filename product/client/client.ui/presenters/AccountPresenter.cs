@@ -1,5 +1,3 @@
-using presentation.windows.views;
-
 namespace presentation.windows.presenters
 {
     public class AccountPresenter : TabPresenter
@@ -13,29 +11,28 @@ namespace presentation.windows.presenters
 
         public void present()
         {
-            AddAccount = ui_builder.build<AddNewAccountCommand>(this);
+            import = ui_builder.build<ImportTransactionCommand>(this);
         }
+
+        public SelectedAccountDetails SelectedAccount { get; set; }
+
+        public IObservableCommand import { get; set; }
 
         public string Header
         {
             get { return "Accounts"; }
         }
 
-        IObservableCommand AddAccount { get; set; }
-
-        public class AddNewAccountCommand : UICommand<AccountPresenter>
+        public class ImportTransactionCommand : UICommand<AccountPresenter>
         {
             ApplicationController controller;
 
-            public AddNewAccountCommand(ApplicationController controller)
-            {
-                this.controller = controller;
-            }
-
             protected override void run(AccountPresenter presenter)
             {
-                controller.launch_dialog<AddNewAccountPresenter, AddNewAccountDialog>();
+                //controller.launch_dialog<ImportTransactionsPresenter, ImportTransactionDialog>(presenter.SelectedAccount);
             }
         }
     }
+
+    public class SelectedAccountDetails {}
 }

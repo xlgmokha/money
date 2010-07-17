@@ -1,4 +1,3 @@
-using Autofac;
 using Gorilla.Commons.Infrastructure.Container;
 using Machine.Specifications;
 using presentation.windows;

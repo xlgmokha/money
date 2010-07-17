@@ -39,6 +39,7 @@ namespace presentation.windows.bootstrappers
             // infrastructure
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
             builder.Register<DefaultMapper>().As<Mapper>().SingletonScoped();
+            builder.RegisterGeneric(typeof(Mapper<,>));
 
             var manager = new QueueManager(new IPEndPoint(IPAddress.Loopback, 2201), "client.esent");
             manager.CreateQueues("client");
@@ -55,15 +56,14 @@ namespace presentation.windows.bootstrappers
 
             // presenters
             builder.Register<StatusBarPresenter>().SingletonScoped();
-            builder.Register<CompensationPresenter>().SingletonScoped();
             builder.Register<SelectedFamilyMemberPresenter>().SingletonScoped();
             builder.Register<AddFamilyMemberPresenter>();
             builder.Register<AddFamilyMemberPresenter.SaveCommand>();
             builder.Register<AccountPresenter>();
-            builder.Register<AccountPresenter.AddNewAccountCommand>();
+            builder.Register<AccountPresenter.ImportTransactionCommand>();
             builder.Register<CancelCommand>();
-            builder.Register<AddNewAccountPresenter>();
-            builder.Register<AddNewAccountPresenter.CreateNewAccount>();
+            builder.Register<AddNewDetailAccountPresenter>();
+            builder.Register<AddNewDetailAccountPresenter.CreateNewAccount>();
 
             // commanding
             builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();

@@ -3,9 +3,9 @@ using presentation.windows.presenters;
 
 namespace presentation.windows.views
 {
-    public partial class AddNewAccountDialog : Dialog<AddNewAccountPresenter>
+    public partial class AddNewDetailAccountDialog : Dialog<AddNewDetailAccountPresenter>
     {
-        public AddNewAccountDialog()
+        public AddNewDetailAccountDialog()
         {
             InitializeComponent();
         }

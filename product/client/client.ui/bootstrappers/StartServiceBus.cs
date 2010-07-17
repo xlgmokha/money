@@ -13,7 +13,6 @@ namespace presentation.windows.bootstrappers
             var handler = new MessageHandler(Resolve.the<DependencyRegistry>());
             receiver.register(x =>
             {
-                // synchronize with ui thread?
                 handler.handle(x);
             });
             Resolve.the<CommandProcessor>().add(receiver);
