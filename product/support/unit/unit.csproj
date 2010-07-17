@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="client\presenters\AddFamilyMemberPresenterSpecs.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="client\presenters\WpfCommandBuilderSpecs.cs" />
     <Compile Include="Mocking.cs" />
   </ItemGroup>

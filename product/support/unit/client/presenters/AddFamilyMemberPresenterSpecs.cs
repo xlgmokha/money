@@ -1,17 +1,17 @@
 using Machine.Specifications;
 using presentation.windows;
 using presentation.windows.presenters;
-using Rhino.Mocks;
 
 namespace unit.client.presenters
 {
+    [Subject(typeof(AddFamilyMemberPresenter))]
     public class AddFamilyMemberPresenterSpecs
     {
-        public class concern
+        public class concern : Helpers
         {
             Establish context = () =>
             {
-                command_builder = MockRepository.GenerateMock<UICommandBuilder>();
+                command_builder = a<UICommandBuilder>();
 
                 sut = new AddFamilyMemberPresenter(command_builder);
             };
@@ -24,14 +24,14 @@ namespace unit.client.presenters
         {
             It should_invoke_the_save_command = () =>
             {
-                save_command.AssertWasCalled(x => x.Execute(null));
+                save_command.received(x => x.Execute(null));
             };
 
             Establish context = () =>
             {
-                save_command = MockRepository.GenerateMock<IObservableCommand>();
+                save_command = a<IObservableCommand>();
 
-                command_builder.Stub(x => x.build<AddFamilyMemberPresenter.SaveCommand>(sut)).Return(save_command);
+                command_builder.is_told_to(x => x.build<AddFamilyMemberPresenter.SaveCommand>(sut)).it_will_return(save_command);
             };
 
             Because b = () =>

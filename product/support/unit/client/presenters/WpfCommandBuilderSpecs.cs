@@ -2,24 +2,19 @@ using Autofac;
 using Machine.Specifications;
 using presentation.windows;
 using presentation.windows.presenters;
-using Rhino.Mocks;
 
 namespace unit.client.presenters
 {
+    [Subject(typeof (WPFCommandBuilder))]
     public class WPFCommandBuilderSpecs
     {
-        public class concern
+        public class concern : Helpers
         {
             Establish context = () =>
             {
                 container = a<IContainer>();
                 sut = new WPFCommandBuilder(container);
             };
-
-            static public T a<T>() where T : class
-            {
-                return MockRepository.GenerateMock<T>();
-            }
 
             static protected WPFCommandBuilder sut;
             static protected IContainer container;
@@ -36,7 +31,7 @@ namespace unit.client.presenters
             {
                 presenter = a<Presenter>();
                 command = a<UICommand>();
-                container.Stub(x => x.Resolve<UICommand>()).Return(command);
+                container.is_told_to(x => x.Resolve<UICommand>()).it_will_return(command);
             };
 
             Because b = () =>
