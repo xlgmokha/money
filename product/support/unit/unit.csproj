@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL" />
     <Reference Include="Machine.Specifications">
       <HintPath>..\..\..\thirdparty\mspec\Machine.Specifications.dll</HintPath>
     </Reference>
@@ -48,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="client\presenters\AddFamilyMemberPresenterSpecs.cs" />
+    <Compile Include="client\presenters\WpfCommandBuilderSpecs.cs" />
+    <Compile Include="Mocking.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\client\client.ui\client.csproj">

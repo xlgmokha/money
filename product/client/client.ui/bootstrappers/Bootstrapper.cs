@@ -62,11 +62,12 @@ namespace presentation.windows.bootstrappers
             builder.Register<AccountPresenter>();
             builder.Register<AccountPresenter.AddNewAccountCommand>();
             builder.Register<CancelCommand>();
+            builder.Register<AddNewAccountPresenter>();
 
             // commanding
             builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
             //builder.Register<SynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
-            builder.Register<WpfCommandBuilder>().As<UICommandBuilder>();
+            builder.Register<WPFCommandBuilder>().As<UICommandBuilder>();
 
             // queries
 

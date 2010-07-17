@@ -2,11 +2,11 @@ using Autofac;
 
 namespace presentation.windows.presenters
 {
-    public class WpfCommandBuilder : UICommandBuilder
+    public class WPFCommandBuilder : UICommandBuilder
     {
         IContainer container;
 
-        public WpfCommandBuilder(IContainer container)
+        public WPFCommandBuilder(IContainer container)
         {
             this.container = container;
         }

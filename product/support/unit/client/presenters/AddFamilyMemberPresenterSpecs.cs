@@ -25,7 +25,7 @@ namespace unit.client.presenters
         {
             It should_invoke_the_save_command = () =>
             {
-                save_command.Verify(x => x.Execute(null));
+                save_command.received(x => x.Execute(null));
             };
 
             Establish context = () =>
