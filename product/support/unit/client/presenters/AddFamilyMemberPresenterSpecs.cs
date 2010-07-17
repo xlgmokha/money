@@ -1,8 +1,7 @@
 using Machine.Specifications;
-using Moq;
 using presentation.windows;
 using presentation.windows.presenters;
-using It = Machine.Specifications.It;
+using Rhino.Mocks;
 
 namespace unit.client.presenters
 {
@@ -12,27 +11,27 @@ namespace unit.client.presenters
         {
             Establish context = () =>
             {
-                command_builder = new Mock<UICommandBuilder>();
+                command_builder = MockRepository.GenerateMock<UICommandBuilder>();
 
-                sut = new AddFamilyMemberPresenter(command_builder.Object);
+                sut = new AddFamilyMemberPresenter(command_builder);
             };
 
             static protected AddFamilyMemberPresenter sut;
-            static protected Mock<UICommandBuilder> command_builder;
+            static protected UICommandBuilder command_builder;
         }
 
         public class when_clicking_on_the_save_button : concern
         {
             It should_invoke_the_save_command = () =>
             {
-                save_command.received(x => x.Execute(null));
+                save_command.AssertWasCalled(x => x.Execute(null));
             };
 
             Establish context = () =>
             {
-                save_command = new Mock<IObservableCommand>();
+                save_command = MockRepository.GenerateMock<IObservableCommand>();
 
-                command_builder.Setup(x => x.build<AddFamilyMemberPresenter.SaveCommand>(sut)).Returns(save_command.Object);
+                command_builder.Stub(x => x.build<AddFamilyMemberPresenter.SaveCommand>(sut)).Return(save_command);
             };
 
             Because b = () =>
@@ -41,7 +40,7 @@ namespace unit.client.presenters
                 sut.Save.Execute(null);
             };
 
-            static Mock<IObservableCommand> save_command;
+            static IObservableCommand save_command;
         }
     }
 }

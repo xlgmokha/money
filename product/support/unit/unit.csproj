@@ -35,10 +35,10 @@
     <Reference Include="Machine.Specifications">
       <HintPath>..\..\..\thirdparty\mspec\Machine.Specifications.dll</HintPath>
     </Reference>
-    <Reference Include="Moq">
-      <HintPath>..\..\..\thirdparty\moq\Moq.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\..\thirdparty\rhino.mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

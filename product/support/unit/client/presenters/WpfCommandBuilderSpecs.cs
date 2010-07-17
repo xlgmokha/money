@@ -1,9 +1,8 @@
 using Autofac;
 using Machine.Specifications;
-using Moq;
 using presentation.windows;
 using presentation.windows.presenters;
-using It = Machine.Specifications.It;
+using Rhino.Mocks;
 
 namespace unit.client.presenters
 {
@@ -13,40 +12,40 @@ namespace unit.client.presenters
         {
             Establish context = () =>
             {
-                container = new Mock<IContainer>();
-                sut = new WPFCommandBuilder(container.Object);
+                container = a<IContainer>();
+                sut = new WPFCommandBuilder(container);
             };
 
+            static public T a<T>() where T : class
+            {
+                return MockRepository.GenerateMock<T>();
+            }
+
             static protected WPFCommandBuilder sut;
-            static protected Mock<IContainer> container;
+            static protected IContainer container;
         }
 
         public class when_building_a_command_to_bind_to_a_presenter : concern
         {
             It should_return_a_command_that_executes_the_command_when_run = () =>
             {
-                command.received(x => x.run(presenter.Object));
+                command.received(x => x.run(presenter));
             };
 
             Establish context = () =>
             {
                 presenter = a<Presenter>();
                 command = a<UICommand>();
-                container.Setup(x => x.Resolve<UICommand>()).Returns(command.Object);
+                container.Stub(x => x.Resolve<UICommand>()).Return(command);
             };
-
-            static Mock<T> a<T>() where T : class
-            {
-                return new Mock<T>();
-            }
 
             Because b = () =>
             {
-                sut.build<UICommand>(presenter.Object).Execute(null);
+                sut.build<UICommand>(presenter).Execute(null);
             };
 
-            static Mock<Presenter> presenter;
-            static Mock<UICommand> command;
+            static Presenter presenter;
+            static UICommand command;
         }
     }
 }

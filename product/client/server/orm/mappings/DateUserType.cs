@@ -9,7 +9,7 @@ namespace presentation.windows.server.orm.mappings
 {
     public class DateUserType : IUserType
     {
-        public bool Equals(object x, object y)
+        public new bool Equals(object x, object y)
         {
             return x != null && x.Equals(y);
         }

@@ -1,15 +1,13 @@
 using System;
-using System.Linq.Expressions;
-using Moq;
+using Rhino.Mocks;
 
 namespace unit
 {
-    public static class Mocking
+    static public class Mocking
     {
-        public static void received<T>(this Mock<T> mock, Expression<Action<T>> action) where T : class
-        { 
-            mock.Verify(action);
+        static public void received<T>(this T mock, Action<T> action) where T : class
+        {
+            mock.AssertWasCalled(action);
         }
-        
     }
 }
