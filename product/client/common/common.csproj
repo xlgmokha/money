@@ -87,6 +87,7 @@
     <Compile Include="IEvent.cs" />
     <Compile Include="MessageHandler.cs" />
     <Compile Include="messages\AddedNewFamilyMember.cs" />
+    <Compile Include="messages\ApplicationShuttingDown.cs" />
     <Compile Include="messages\CreateNewDetailAccount.cs" />
     <Compile Include="messages\FamilyMemberToAdd.cs" />
     <Compile Include="messages\FindAllFamily.cs" />

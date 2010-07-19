@@ -212,6 +212,7 @@
     <Compile Include="views\StatusBarRegion.xaml.cs">
       <DependentUpon>StatusBarRegion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPFApplication.cs" />
     <Compile Include="WpfApplicationController.cs" />
     <Compile Include="WpfPresenterFactory.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

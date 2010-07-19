@@ -55,6 +55,7 @@ namespace presentation.windows.server
             builder.Register<AddNewFamilyMemberHandler>().As<Handler>();
             builder.Register<FindAllFamilyHandler>().As<Handler>();
             builder.Register<SaveNewAccountCommand>().As<Handler>();
+            builder.Register<ShutdownApplicationCommand>().As<Handler>();
 
             // queries
 

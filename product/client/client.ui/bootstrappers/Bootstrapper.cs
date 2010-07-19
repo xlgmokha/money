@@ -71,13 +71,14 @@ namespace presentation.windows.bootstrappers
             builder.Register<WPFCommandBuilder>().As<UICommandBuilder>();
 
             // queries
-
             builder.Register<PublishEventHandler<AddedNewFamilyMember>>().As<Handler>();
 
             Resolve.the<IEnumerable<NeedStartup>>().each(x => x.run());
             Resolve.the<CommandProcessor>().run();
 
+            shell_window.Closed += (o, e) => Resolve.the<ServiceBus>().publish<ApplicationShuttingDown>();
             shell_window.Closed += (o, e) => Resolve.the<CommandProcessor>().stop();
+            shell_window.Closed += (o, e) => manager.Dispose();
             return shell_window;
         }
     }

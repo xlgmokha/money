@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>presentation.windows.server</RootNamespace>
-    <AssemblyName>presentation.windows.server</AssemblyName>
+    <AssemblyName>momoney.server</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -128,6 +128,7 @@
     <Compile Include="domain\Person.cs" />
     <Compile Include="handlers\FindAllFamilyHandler.cs" />
     <Compile Include="handlers\SaveNewAccountCommand.cs" />
+    <Compile Include="handlers\ShutdownApplicationCommand.cs" />
     <Compile Include="NHibernateBootstrapper.cs" />
     <Compile Include="orm\AccountRepository.cs" />
     <Compile Include="orm\EmptyUnitOfWork.cs" />
