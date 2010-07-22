@@ -3,19 +3,20 @@ using gorilla.commons.utility;
 
 namespace presentation.windows.server.domain
 {
-    public class Entity : IEquatable<Entity>
+    public class Entity : IEquatable<Entity>, Identifiable<Guid>
     {
         protected Entity()
         {
             id = Id<Guid>.Default;
         }
 
-        public virtual Guid id { get;  set; }
+        public virtual Guid id { get; set; }
 
         public virtual bool Equals(Entity other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
+            if (id.Equals(Id<Guid>.Default) || other.id.Equals(Id<Guid>.Default)) return false;
             return other.id.Equals(id);
         }
 

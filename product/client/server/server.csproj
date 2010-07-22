@@ -131,6 +131,7 @@
     <Compile Include="domain\accounting\TransactionDoesNotBalance.cs" />
     <Compile Include="domain\accounting\TransactionType.cs" />
     <Compile Include="domain\accounting\Withdrawal.cs" />
+    <Compile Include="domain\Identifiable.cs" />
     <Compile Include="handlers\AddNewFamilyMemberHandler.cs" />
     <Compile Include="orm\mappings\DetailAccountMapping.cs" />
     <Compile Include="ServerBootstrapper.cs" />

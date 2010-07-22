@@ -11,20 +11,19 @@ namespace unit.server.domain.accounting
         {
             Establish c = () =>
             {
-                cash = DetailAccount.New(Currency.CAD);
-                cash.id = Guid.NewGuid();
-                credit = DetailAccount.New(Currency.CAD);
-                credit.id = Guid.NewGuid();
+                var cash = DetailAccount.New(Currency.CAD);
+                var credit = DetailAccount.New(Currency.CAD);
 
                 cash.deposit(50, Currency.CAD);
                 credit.deposit(50, Currency.CAD);
+
                 sut = SummaryAccount.New(Currency.CAD);
+                sut.add(cash);
+                sut.add(credit);
             };
 
             Because b = () =>
             {
-                sut.add(cash);
-                sut.add(credit);
                 result = sut.balance();
             };
 
@@ -34,9 +33,7 @@ namespace unit.server.domain.accounting
             };
 
             static Quantity result;
-            static DetailAccount cash;
-            static DetailAccount credit;
-            static protected SummaryAccount sut;
+            static SummaryAccount sut;
         }
     }
 }
