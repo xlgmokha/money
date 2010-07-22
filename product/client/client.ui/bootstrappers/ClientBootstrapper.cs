@@ -18,7 +18,7 @@ using Rhino.Queues;
 
 namespace presentation.windows.bootstrappers
 {
-    static public class Bootstrapper
+    static public class ClientBootstrapper
     {
         static public ShellWindow create_window()
         {
@@ -31,10 +31,7 @@ namespace presentation.windows.bootstrappers
             builder.Register(x => shell_window).SingletonScoped();
             builder.Register(x => shell_window).As<RegionManager>().SingletonScoped();
 
-            //needs startups
-            builder.Register<StartServiceBus>().As<NeedStartup>();
-            builder.Register<ComposeShell>().As<NeedStartup>();
-            builder.Register<ConfigureMappings>().As<NeedStartup>();
+            register_needs_startup(builder);
 
             // infrastructure
             builder.Register<Log4NetLogFactory>().As<LogFactory>().SingletonScoped();
@@ -46,15 +43,42 @@ namespace presentation.windows.bootstrappers
             builder.Register(x => new RhinoPublisher("server", 2200, manager)).As<ServiceBus>().SingletonScoped();
             builder.Register(x => new RhinoReceiver(manager.GetQueue("client"), x.Resolve<CommandProcessor>())).As<RhinoReceiver>().As<Receiver>().SingletonScoped();
 
-            // presentation infrastructure
+            register_presentation_infrastructure(builder);
+            register_presenters(builder);
+            register_for_message_to_listen_for(builder);
+
+            //shell_window.Closed += (o, e) => Resolve.the<ServiceBus>().publish<ApplicationShuttingDown>();
+            shell_window.Closed += (o, e) => Resolve.the<CommandProcessor>().stop();
+            shell_window.Closed += (o, e) => manager.Dispose();
+            shell_window.Closed += (o, e) => Resolve.the<IEnumerable<NeedsShutdown>>();
+
+            Resolve.the<IEnumerable<NeedStartup>>().each(x => x.run());
+            Resolve.the<CommandProcessor>().run();
+            return shell_window;
+        }
+
+        static void register_needs_startup(ContainerBuilder builder)
+        {
+            builder.Register<StartServiceBus>().As<NeedStartup>();
+            builder.Register<ComposeShell>().As<NeedStartup>();
+            builder.Register<ConfigureMappings>().As<NeedStartup>();
+        }
+
+        static void register_presentation_infrastructure(ContainerBuilder builder)
+        {
             SynchronizationContext.SetSynchronizationContext(new DispatcherSynchronizationContext());
             builder.Register<WpfApplicationController>().As<ApplicationController>().SingletonScoped();
             builder.Register<WpfPresenterFactory>().As<PresenterFactory>().SingletonScoped();
             builder.Register<SynchronizedEventAggregator>().As<EventAggregator>().SingletonScoped();
             //builder.Register(x => AsyncOperationManager.SynchronizationContext);
             builder.Register(x => SynchronizationContext.Current);
+            builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
+            //builder.Register<SynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
+            builder.Register<WPFCommandBuilder>().As<UICommandBuilder>();
+        }
 
-            // presenters
+        static void register_presenters(ContainerBuilder builder)
+        {
             builder.Register<StatusBarPresenter>().SingletonScoped();
             builder.Register<SelectedFamilyMemberPresenter>().SingletonScoped();
             builder.Register<AddFamilyMemberPresenter>();
@@ -64,22 +88,12 @@ namespace presentation.windows.bootstrappers
             builder.Register<CancelCommand>();
             builder.Register<AddNewDetailAccountPresenter>();
             builder.Register<AddNewDetailAccountPresenter.CreateNewAccount>();
+        }
 
-            // commanding
-            builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
-            //builder.Register<SynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
-            builder.Register<WPFCommandBuilder>().As<UICommandBuilder>();
-
-            // queries
+        static void register_for_message_to_listen_for(ContainerBuilder builder)
+        {
             builder.Register<PublishEventHandler<AddedNewFamilyMember>>().As<Handler>();
-
-            Resolve.the<IEnumerable<NeedStartup>>().each(x => x.run());
-            Resolve.the<CommandProcessor>().run();
-
-            shell_window.Closed += (o, e) => Resolve.the<ServiceBus>().publish<ApplicationShuttingDown>();
-            shell_window.Closed += (o, e) => Resolve.the<CommandProcessor>().stop();
-            shell_window.Closed += (o, e) => manager.Dispose();
-            return shell_window;
+            builder.Register<PublishEventHandler<NewAccountCreated>>().As<Handler>();
         }
     }
 }

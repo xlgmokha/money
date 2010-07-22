@@ -34,7 +34,7 @@ namespace presentation.windows
             new WPFApplication
             {
                 ShutdownMode = ShutdownMode.OnMainWindowClose,
-            }.Run(Bootstrapper.create_window());
+            }.Run(ClientBootstrapper.create_window());
         }
 
         static string get_service_startup_path(string[] args)

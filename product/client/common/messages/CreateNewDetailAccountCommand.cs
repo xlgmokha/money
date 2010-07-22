@@ -5,7 +5,7 @@ namespace presentation.windows.common.messages
 {
     [Serializable]
     [ProtoContract]
-    public class CreateNewDetailAccount
+    public class CreateNewDetailAccountCommand
     {
         [ProtoMember(1)]
         public string account_name { get; set; }

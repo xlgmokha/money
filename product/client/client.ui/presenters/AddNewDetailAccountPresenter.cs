@@ -38,7 +38,7 @@ namespace presentation.windows.presenters
 
             protected override void run(AddNewDetailAccountPresenter presenter)
             {
-                bus.publish<common.messages.CreateNewDetailAccount>(x =>
+                bus.publish<common.messages.CreateNewDetailAccountCommand>(x =>
                 {
                     x.account_name = presenter.account_name;
                     x.currency = presenter.currency;

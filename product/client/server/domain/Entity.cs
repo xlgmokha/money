@@ -10,7 +10,7 @@ namespace presentation.windows.server.domain
             id = Id<Guid>.Default;
         }
 
-        public virtual Guid id { get; private set; }
+        public virtual Guid id { get;  set; }
 
         public virtual bool Equals(Entity other)
         {

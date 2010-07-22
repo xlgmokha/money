@@ -18,7 +18,7 @@ using ISessionFactory = NHibernate.ISessionFactory;
 
 namespace presentation.windows.server
 {
-    public class Bootstrapper
+    public class ServerBootstrapper
     {
         static public void run()
         {
@@ -48,23 +48,27 @@ namespace presentation.windows.server
             builder.Register<NHibernateUnitOfWorkFactory>().As<IUnitOfWorkFactory>();
             builder.Register<IContext>(x => create_application_context()).SingletonScoped();
 
-            // commanding
-            //builder.Register<ContainerCommandBuilder>().As<CommandBuilder>().SingletonScoped();
-            //builder.Register<AsynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
-            builder.Register<SynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
-            builder.Register<AddNewFamilyMemberHandler>().As<Handler>();
-            builder.Register<FindAllFamilyHandler>().As<Handler>();
-            builder.Register<SaveNewAccountCommand>().As<Handler>();
-            builder.Register<ShutdownApplicationCommand>().As<Handler>();
-
-            // queries
-
-            // repositories
-            builder.Register<NHibernatePersonRepository>().As<PersonRepository>().FactoryScoped();
-            builder.Register<NHibernateAccountRepository>().As<AccountRepository>().FactoryScoped();
+            register_handlers(builder);
+            register_repositories(builder);
 
             Resolve.the<IEnumerable<NeedStartup>>().each(x => x.run());
             Resolve.the<CommandProcessor>().run();
+        }
+
+        static void register_handlers(ContainerBuilder builder)
+        {
+            builder.Register<SynchronousCommandProcessor>().As<CommandProcessor>().SingletonScoped();
+            builder.Register<AddNewFamilyMemberHandler>().As<Handler>();
+            builder.Register<FindAllFamilyHandler>().As<Handler>();
+            builder.Register<CreateNewDetailAccountHandler>().As<Handler>();
+            builder.Register<ShutdownApplicationCommand>().As<Handler>();
+
+        }
+
+        static void register_repositories(ContainerBuilder builder)
+        {
+            builder.Register<NHibernatePersonRepository>().As<PersonRepository>().FactoryScoped();
+            builder.Register<NHibernateAccountRepository>().As<AccountRepository>().FactoryScoped();
         }
 
         static IContext create_application_context()

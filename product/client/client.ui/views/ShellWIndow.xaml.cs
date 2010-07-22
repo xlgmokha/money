@@ -32,7 +32,7 @@ namespace presentation.windows.views
         void ensure_that_the_region_exists<Region>()
         {
             if (!regions.ContainsKey(typeof (Region)))
-                throw new Exception("Could not find region: {0}".formatted_using(typeof (Region)));
+                throw new Exception("Could not find region: {0}".format(typeof (Region)));
         }
     }
 }

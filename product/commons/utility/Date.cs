@@ -8,6 +8,8 @@ namespace Gorilla.Commons.Utility
     public class Date :  IComparable<Date>, IComparable, IEquatable<Date>
     {
         readonly long ticks;
+        static public readonly Date First = new Date(DateTime.MinValue);
+        static public readonly Date Last = new Date(DateTime.MaxValue);
 
         public Date( DateTime date)
         {

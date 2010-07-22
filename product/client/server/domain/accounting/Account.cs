@@ -1,12 +1,11 @@
-using System;
+using Gorilla.Commons.Utility;
 
 namespace presentation.windows.server.domain.accounting
 {
-    public class Account
+    public interface Account
     {
-        static public Account New(string account_name, UnitOfMeasure units)
-        {
-            throw new NotImplementedException();
-        }
+        Quantity balance();
+        Quantity balance(Date date);
+        Quantity balance(Range<Date> period);
     }
 }

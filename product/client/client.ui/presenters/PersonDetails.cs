@@ -13,7 +13,7 @@ namespace presentation.windows.presenters
 
         public override string ToString()
         {
-            return "{0} {1}".formatted_using(first_name, last_name);
+            return "{0} {1}".format(first_name, last_name);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace presentation.windows.server
                     catch { }
                     Environment.Exit(Environment.ExitCode);
                 };
-                Bootstrapper.run();
+                ServerBootstrapper.run();
                 Console.ReadLine();
             }
             catch (Exception e)

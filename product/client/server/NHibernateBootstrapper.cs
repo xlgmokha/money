@@ -14,8 +14,8 @@ namespace presentation.windows.server
 {
     public class NHibernateBootstrapper : Query<ISessionFactory>
     {
-        private string database_path;
-        private string connection_string;
+        string database_path;
+        string connection_string;
 
         public NHibernateBootstrapper()
         {
@@ -34,15 +34,18 @@ namespace presentation.windows.server
                               //.ShowSql()
                               .ProxyFactoryFactory<ProxyFactoryFactory>()
                 )
-                .Mappings(x => { x.FluentMappings.AddFromAssemblyOf<MappingAssembly>(); })
+                .Mappings(x =>
+                {
+                    x.FluentMappings.AddFromAssemblyOf<MappingAssembly>();
+                })
                 .ExposeConfiguration(x => export(x)).BuildSessionFactory();
         }
 
-        private void export(Configuration configuration)
+        void export(Configuration configuration)
         {
+            if (File.Exists(database_path)) File.Delete(database_path);
             using (var engine = new SqlCeEngine(connection_string))
             {
-                if (File.Exists(database_path)) File.Delete(database_path);
                 engine.CreateDatabase();
             }
             new SchemaExport(configuration).Execute(true, true, false);

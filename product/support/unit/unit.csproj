@@ -48,19 +48,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssertionExtensions.cs" />
     <Compile Include="client\presenters\AddFamilyMemberPresenterSpecs.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="client\presenters\WpfCommandBuilderSpecs.cs" />
     <Compile Include="Mocking.cs" />
+    <Compile Include="server\domain\accounting\BOEDSpecs.cs" />
+    <Compile Include="server\domain\accounting\CurrencySpecs.cs" />
+    <Compile Include="server\domain\accounting\DetailAccountSpecs.cs" />
+    <Compile Include="server\domain\accounting\QuantitySpecs.cs" />
+    <Compile Include="server\domain\accounting\SummaryAccountSpecs.cs" />
+    <Compile Include="server\domain\accounting\TransactionSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\client\client.ui\client.csproj">
       <Project>{81E2CF6C-4D61-442E-8086-BF1E017C7041}</Project>
       <Name>client %28client\client%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\client\server\server.csproj">
+      <Project>{4E60988E-1A43-4807-8CEC-4E13F63DE363}</Project>
+      <Name>server</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\commons\infrastructure\infrastructure.csproj">
       <Project>{AA5EEED9-4531-45F7-AFCD-AD9717D2E405}</Project>
       <Name>infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\commons\utility\utility.csproj">
+      <Project>{DD8FD29E-7424-415C-9BA3-7D9F6ECBA161}</Project>
+      <Name>utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -150,7 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationController.cs" />
-    <Compile Include="bootstrappers\Bootstrapper.cs" />
+    <Compile Include="bootstrappers\ClientBootstrapper.cs" />
     <Compile Include="bootstrappers\ConfigureMappings.cs" />
     <Compile Include="bootstrappers\StartServiceBus.cs" />
     <Compile Include="events\SelectedFamilyMember.cs" />

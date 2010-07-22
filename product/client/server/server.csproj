@@ -41,7 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -111,8 +111,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigureApplicationDirectory.cs" />
+    <Compile Include="domain\accounting\AnonymousVisitor.cs" />
+    <Compile Include="domain\accounting\BOED.cs" />
+    <Compile Include="domain\accounting\Calendar.cs" />
+    <Compile Include="domain\accounting\ConversionRatio.cs" />
+    <Compile Include="domain\accounting\DateRange.cs" />
+    <Compile Include="domain\accounting\Deposit.cs" />
+    <Compile Include="domain\accounting\DetailAccount.cs" />
+    <Compile Include="domain\accounting\Entry.cs" />
+    <Compile Include="domain\accounting\MCF.cs" />
+    <Compile Include="domain\accounting\Potential.cs" />
+    <Compile Include="domain\accounting\PotentialEntry.cs" />
+    <Compile Include="domain\accounting\Quantity.cs" />
+    <Compile Include="domain\accounting\Range.cs" />
+    <Compile Include="domain\accounting\SequentialRange.cs" />
+    <Compile Include="domain\accounting\SimpleUnitOfMeasure.cs" />
+    <Compile Include="domain\accounting\SummaryAccount.cs" />
+    <Compile Include="domain\accounting\Transaction.cs" />
+    <Compile Include="domain\accounting\TransactionDoesNotBalance.cs" />
+    <Compile Include="domain\accounting\TransactionType.cs" />
+    <Compile Include="domain\accounting\Withdrawal.cs" />
     <Compile Include="handlers\AddNewFamilyMemberHandler.cs" />
-    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="orm\mappings\DetailAccountMapping.cs" />
+    <Compile Include="ServerBootstrapper.cs" />
     <Compile Include="ConfigureMappings.cs" />
     <Compile Include="domain\accounting\Account.cs" />
     <Compile Include="domain\accounting\Currency.cs" />
@@ -127,7 +148,7 @@
     <Compile Include="domain\payroll\UnitPrice.cs" />
     <Compile Include="domain\Person.cs" />
     <Compile Include="handlers\FindAllFamilyHandler.cs" />
-    <Compile Include="handlers\SaveNewAccountCommand.cs" />
+    <Compile Include="handlers\CreateNewDetailAccountHandler.cs" />
     <Compile Include="handlers\ShutdownApplicationCommand.cs" />
     <Compile Include="NHibernateBootstrapper.cs" />
     <Compile Include="orm\AccountRepository.cs" />

@@ -30,7 +30,7 @@ namespace presentation.windows.common
         {
             using (var transaction = new TransactionScope(TransactionScopeOption.RequiresNew))
             {
-                var destination = "rhino.queues://localhost:{0}/{1}".formatted_using(port, destination_queue);
+                var destination = "rhino.queues://localhost:{0}/{1}".format(port, destination_queue);
                 this.log().debug("sending {0} to {1}", item, destination);
                 sender.Send(new Uri(destination), create_payload_from(item));
                 transaction.Complete();

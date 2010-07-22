@@ -5,20 +5,20 @@ using presentation.windows.server.orm;
 
 namespace presentation.windows.server.handlers
 {
-    public class SaveNewAccountCommand : AbstractHandler<CreateNewDetailAccount>
+    public class CreateNewDetailAccountHandler : AbstractHandler<CreateNewDetailAccountCommand>
     {
         AccountRepository accounts;
         ServiceBus bus;
 
-        public SaveNewAccountCommand(AccountRepository accounts, ServiceBus bus)
+        public CreateNewDetailAccountHandler(AccountRepository accounts, ServiceBus bus)
         {
             this.accounts = accounts;
             this.bus = bus;
         }
 
-        public override void handle(CreateNewDetailAccount item)
+        public override void handle(CreateNewDetailAccountCommand item)
         {
-            accounts.save(Account.New(item.account_name, Currency.named(item.currency)));
+            accounts.save(DetailAccount.New(Currency.named(item.currency)));
             bus.publish<NewAccountCreated>(x => x.name = item.account_name);
         }
     }
