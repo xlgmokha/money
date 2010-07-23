@@ -111,9 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigureApplicationDirectory.cs" />
-    <Compile Include="domain\accounting\AnonymousVisitor.cs" />
+    <Compile Include="domain\AnonymousVisitor.cs" />
     <Compile Include="domain\accounting\BOED.cs" />
-    <Compile Include="domain\accounting\Calendar.cs" />
+    <Compile Include="domain\Calendar.cs" />
     <Compile Include="domain\accounting\ConversionRatio.cs" />
     <Compile Include="domain\accounting\DateRange.cs" />
     <Compile Include="domain\accounting\Deposit.cs" />
@@ -132,6 +132,17 @@
     <Compile Include="domain\accounting\TransactionType.cs" />
     <Compile Include="domain\accounting\Withdrawal.cs" />
     <Compile Include="domain\Identifiable.cs" />
+    <Compile Include="domain\payroll\Annually.cs" />
+    <Compile Include="domain\payroll\BaseDenominator.cs" />
+    <Compile Include="domain\payroll\Denominator.cs" />
+    <Compile Include="domain\payroll\Fraction.cs" />
+    <Compile Include="domain\payroll\Frequency.cs" />
+    <Compile Include="domain\payroll\Monthly.cs" />
+    <Compile Include="domain\payroll\One.cs" />
+    <Compile Include="domain\payroll\Third.cs" />
+    <Compile Include="domain\payroll\Twelfth.cs" />
+    <Compile Include="domain\payroll\Units.cs" />
+    <Compile Include="domain\payroll\Vest.cs" />
     <Compile Include="handlers\AddNewFamilyMemberHandler.cs" />
     <Compile Include="orm\mappings\DetailAccountMapping.cs" />
     <Compile Include="ServerBootstrapper.cs" />
@@ -140,12 +151,10 @@
     <Compile Include="domain\accounting\Currency.cs" />
     <Compile Include="domain\accounting\UnitOfMeasure.cs" />
     <Compile Include="domain\Entity.cs" />
-    <Compile Include="domain\payroll\Calendar.cs" />
     <Compile Include="domain\payroll\Compensation.cs" />
     <Compile Include="domain\payroll\Grant.cs" />
     <Compile Include="domain\payroll\History.cs" />
     <Compile Include="domain\payroll\Money.cs" />
-    <Compile Include="domain\payroll\Unit.cs" />
     <Compile Include="domain\payroll\UnitPrice.cs" />
     <Compile Include="domain\Person.cs" />
     <Compile Include="handlers\FindAllFamilyHandler.cs" />

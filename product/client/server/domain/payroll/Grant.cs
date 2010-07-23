@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using gorilla.commons.utility;
 using Gorilla.Commons.Utility;
 
 namespace presentation.windows.server.domain.payroll
@@ -7,48 +6,77 @@ namespace presentation.windows.server.domain.payroll
     public class Grant
     {
         Date issued_on;
-        IList<Unit> units_issued = new List<Unit>();
+        History<UnitPrice> price_history = new History<UnitPrice>();
+        Units units = Units.Empty;
+        List<Vest> expirations = new List<Vest>();
 
-        static public Grant New(Money purchase_amount, UnitPrice price)
+        static public Grant New(Money purchase_amount, UnitPrice price, Fraction portion, Frequency frequency)
         {
             var grant = new Grant
                         {
                             issued_on = Calendar.now(),
                         };
-            price.purchase_units(purchase_amount).each(x => grant.add(x));
+            grant.change_unit_price_to(price);
+            grant.purchase(purchase_amount);
+            grant.apply_vesting_frequency(portion, frequency);
             return grant;
         }
 
-        public void change_unit_price_to(UnitPrice new_price)
+        Grant() {}
+
+        public virtual void change_unit_price_to(UnitPrice new_price)
         {
-            units_issued.each(x => x.change_price(new_price));
+            price_history.record(new_price);
         }
 
-        public bool was_issued_on(Date date)
+        public virtual bool was_issued_on(Date date)
         {
             return issued_on.Equals(date);
         }
 
-        public Money current_value()
+        public virtual Money balance()
         {
-            var total = Money.Zero;
-            units_issued.each(x => total = total.Plus(x.current_value()));
-            return total;
+            return balance(Calendar.now());
         }
 
-        void add(Unit unit)
+        public virtual Money balance(Date on_date)
         {
-            units_issued.Add(unit);
+            return unit_price(on_date).total_value_of(units_remaining(on_date));
         }
 
-        public bool will_vest_in(int year)
+        Units units_remaining(Date on_date)
         {
-            return true;
+            var remaining = Units.Empty;
+            foreach (var expiration in expirations)
+            {
+                remaining = remaining.combined_with(expiration.unvested_units(units, on_date));
+            }
+            return remaining;
         }
 
-        public Money vesting_amount()
+        void purchase(Money amount)
         {
-            return current_value().divided_by(3);
+            units = units.combined_with(current_unit_price().purchase_units(amount));
+        }
+
+        UnitPrice current_unit_price()
+        {
+            return unit_price(Calendar.now());
+        }
+
+        UnitPrice unit_price(Date on_date)
+        {
+            return price_history.recorded(on_date);
+        }
+
+        void apply_vesting_frequency(Fraction portion, Frequency frequency)
+        {
+            var next_date = issued_on.minus_days(1);
+            portion.each(x =>
+            {
+                next_date = frequency.next(next_date);
+                expirations.Add(new Vest(portion, next_date));
+            });
         }
     }
 }

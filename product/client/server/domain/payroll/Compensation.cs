@@ -5,19 +5,13 @@ using Gorilla.Commons.Utility;
 
 namespace presentation.windows.server.domain.payroll
 {
-    public class Compensation
+    public class Compensation : Visitable<Grant>
     {
-        Money salary = Money.Zero;
         IList<Grant> grants = new List<Grant>();
 
-        public void increase_salary_to(Money newSalary)
+        public void issue_grant(Money grant_value, UnitPrice price, Fraction portion_to_issue_at_each_vest, Frequency frequency)
         {
-            salary = newSalary;
-        }
-
-        public void issue_grant(Money grant_value, UnitPrice price)
-        {
-            grants.Add(Grant.New(grant_value, price));
+            grants.Add(Grant.New(grant_value, price, portion_to_issue_at_each_vest, frequency));
         }
 
         public Grant grant_for(Date date)
@@ -25,13 +19,16 @@ namespace presentation.windows.server.domain.payroll
             return grants.Single(x => x.was_issued_on(date));
         }
 
-        public Money how_much_will_they_take_home_in(int year)
+        public Money unvested_balance(Date on_date)
         {
             var total = Money.Zero;
-            grants
-                .Where(x => x.will_vest_in(year))
-                .each(x => total = total.Plus(x.vesting_amount()));
-            return total.Plus(salary);
+            accept(new AnonymousVisitor<Grant>(grant => total = total.plus(grant.balance(on_date))));
+            return total;
+        }
+
+        public void accept(Visitor<Grant> visitor)
+        {
+            grants.each(x => visitor.visit(x));
         }
     }
 }

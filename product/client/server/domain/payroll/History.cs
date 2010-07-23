@@ -1,26 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Gorilla.Commons.Utility;
 
 namespace presentation.windows.server.domain.payroll
 {
-    public class History
+    public class History<T>
     {
-        Date dateOfChange;
-        UnitPrice adjustedPrice;
+        Stack<Event<T>> events = new Stack<Event<T>>();
 
-        History() {}
-
-        static public History New(UnitPrice newPrice)
+        public void record(T change)
         {
-            return new History
-                   {
-                       dateOfChange = Calendar.now(),
-                       adjustedPrice = newPrice,
-                   };
+            events.Push(new Event<T>(change));
         }
 
-        public UnitPrice Adjustment()
+        public T recorded(Date date)
         {
-            return adjustedPrice;
+            return events.Where(x => x.occurred_on_or_before(date)).Max();
+        }
+
+        class Event<K> : IComparable<Event<K>>
+        {
+            public Event(K adjustment)
+            {
+                date_of_change = Calendar.now();
+                this.adjustment = adjustment;
+            }
+
+            K adjustment;
+            Date date_of_change;
+
+            public int CompareTo(Event<K> other)
+            {
+                return date_of_change.CompareTo(other.date_of_change);
+            }
+
+            public bool occurred_on_or_before(Date date)
+            {
+                return date_of_change.Equals(date) || date_of_change.is_before(date);
+            }
+
+            static public implicit operator K(Event<K> eventA)
+            {
+                return eventA.adjustment;
+            }
         }
     }
 }

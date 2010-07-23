@@ -59,6 +59,10 @@
     <Compile Include="server\domain\accounting\QuantitySpecs.cs" />
     <Compile Include="server\domain\accounting\SummaryAccountSpecs.cs" />
     <Compile Include="server\domain\accounting\TransactionSpecs.cs" />
+    <Compile Include="server\domain\payroll\CompensationSpecs.cs" />
+    <Compile Include="server\domain\payroll\DateSpecs.cs" />
+    <Compile Include="server\domain\payroll\GrantSpecs.cs" />
+    <Compile Include="server\domain\payroll\MoneySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\client\client.ui\client.csproj">

@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using Gorilla.Commons.Utility;
 
-namespace presentation.windows.server.domain.payroll
+namespace presentation.windows.server.domain
 {
     static public class Calendar
     {
@@ -21,6 +21,11 @@ namespace presentation.windows.server.domain.payroll
         static public Date now()
         {
             return date();
+        }
+
+        static public void reset()
+        {
+            date = default_date;
         }
     }
 }

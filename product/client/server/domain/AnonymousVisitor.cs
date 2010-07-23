@@ -1,7 +1,7 @@
 ﻿using System;
 using gorilla.commons.utility;
 
-namespace presentation.windows.server.domain.accounting
+namespace presentation.windows.server.domain
 {
     public class AnonymousVisitor<T> : Visitor<T>
     {

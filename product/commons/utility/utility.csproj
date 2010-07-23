@@ -77,8 +77,10 @@
     <Compile Include="ChainedConfiguration.cs" />
     <Compile Include="ChainedMapper.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="ComparableExtensions.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="ContextFactory.cs" />
+    <Compile Include="DateExtensions.cs" />
     <Compile Include="EmptyCallback.cs" />
     <Compile Include="EmptyCommand.cs" />
     <Compile Include="DefaultConstructorFactory.cs" />

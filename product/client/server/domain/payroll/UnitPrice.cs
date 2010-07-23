@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-
 namespace presentation.windows.server.domain.payroll
 {
     public class UnitPrice
     {
-        double price;
+        readonly double price;
 
         UnitPrice(double price)
         {
@@ -16,19 +14,14 @@ namespace presentation.windows.server.domain.payroll
             return new UnitPrice(raw);
         }
 
-        public IEnumerable<Unit> purchase_units(Money amount)
+        public Units purchase_units(Money amount)
         {
-            for (var i = 0; i < number_of_units(amount); i++) yield return Unit.New(this);
+            return amount.at_price(price);
         }
 
-        double number_of_units(Money amount)
+        public virtual Money total_value_of(Units units)
         {
-            return amount.value/price;
-        }
-
-        public Money to_money()
-        {
-            return price;
+            return units.value_at(price);
         }
     }
 }

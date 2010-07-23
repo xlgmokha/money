@@ -1,10 +1,11 @@
 using System;
+using gorilla.commons.utility;
 
 namespace presentation.windows.server.domain.payroll
 {
     public class Money : IEquatable<Money>
     {
-        public double value { get; private set; }
+        double value;
         static public Money Zero = new Money(0);
 
         Money(double value)
@@ -17,16 +18,21 @@ namespace presentation.windows.server.domain.payroll
             return new Money(raw);
         }
 
-        public Money Plus(Money otherMoney)
+        public virtual Money plus(Money other)
         {
-            return value + otherMoney.value;
+            return value + other.value;
         }
 
-        public bool Equals(Money other)
+        public virtual Money minus(Money other)
+        {
+            return value - other.value;
+        }
+
+        public virtual bool Equals(Money other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return other.value == value;
+            return other.value.Equals(value);
         }
 
         public override bool Equals(object obj)
@@ -42,24 +48,14 @@ namespace presentation.windows.server.domain.payroll
             return value.GetHashCode();
         }
 
-        static public bool operator ==(Money left, Money right)
-        {
-            return Equals(left, right);
-        }
-
-        static public bool operator !=(Money left, Money right)
-        {
-            return !Equals(left, right);
-        }
-
         public override string ToString()
         {
-            return value.ToString("c");
+            return "{0:C}".format(value);
         }
 
-        public Money divided_by(int denominator)
+        public Units at_price(double price)
         {
-            return new Money(value/denominator);
+            return Units.New((int)(value / price));
         }
     }
 }
